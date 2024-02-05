@@ -10,7 +10,7 @@ public enum GameState
     Paused,
     StartStage,
     Dialogue,
-    oldState
+    Shop,
 }
 
 public class GameManager : MonoBehaviour

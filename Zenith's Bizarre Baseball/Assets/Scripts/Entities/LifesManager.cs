@@ -24,9 +24,8 @@ public class LifesManager : MonoBehaviour
 
     Rigidbody2D rb;
 
-    UnityEvent<float> onLifeChange = new UnityEvent<float>();
-    UnityEvent onGetDamage = new UnityEvent();
-    UnityEvent onDeath = new UnityEvent();
+    public UnityEvent<float> onLifeChange = new UnityEvent<float>();
+    public UnityEvent<string> onStateChange = new UnityEvent<string>();
 
     private void Awake()
     {
@@ -36,12 +35,12 @@ public class LifesManager : MonoBehaviour
     public void GetDamage(float damage, Vector2 knockback)
     {
         life -= damage;
-        onGetDamage?.Invoke();
+        onStateChange?.Invoke("GetDamage");
         rb.AddForce(knockback * knockBackMultiplier, ForceMode2D.Impulse);
     }
 
     protected virtual void Die()
     {
-        onDeath?.Invoke();
+        onStateChange?.Invoke("Die");
     }
 }

@@ -17,9 +17,9 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void LoadScene(int sceneIndex)
+    public void ReloadScene()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 
 public class AudioManager : MonoBehaviour
 {
-    [HideInInspector] public Sound[] sounds;
+    public Sound[] sounds;
     public static AudioManager instance;
 
     private void Awake() {

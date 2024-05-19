@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PointToTargetBehaviour : MonoBehaviour, IBehaviour
 {
-    Pointer pointer;
     TargetHandler targetHandler;
+    [SerializeField] Pointer pointer;
     [SerializeField] float rotationSpeed = 5f;
 
     private void Awake() {
-        pointer = GetComponentInParent<Pointer>();
         targetHandler = GetComponentInParent<TargetHandler>();
     }
 

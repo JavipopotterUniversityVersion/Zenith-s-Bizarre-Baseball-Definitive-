@@ -319,11 +319,14 @@ MonoBehaviour:
   - condition: []
     behaviourContainers:
     - {fileID: 7460549541955659332}
-  onExitPerformers: []
+  onExitPerformers:
+  - condition: []
+    behaviourContainers:
+    - {fileID: 4545072957879046224}
   nextStates:
   - conditions:
-    - conditionContainer: {fileID: 7473135770731139921}
-      negated: 0
+    - conditionContainer: {fileID: 6819563449023415288}
+      negated: 1
     stateContainer: {fileID: 5428370365161119236}
 --- !u!1 &6819563449023415288
 GameObject:
@@ -371,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   size: {x: 15, y: 15}
   offset: {x: 0, y: 1.3}
   _thingToDetectName: Zenith
@@ -681,20 +684,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: nextStates.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: nextStates.Array.data[0].stateContainer
       value: 
       objectReference: {fileID: 7460490201854700659}
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: nextStates.Array.data[1].stateContainer
+      value: 
+      objectReference: {fileID: 6678037137314095653}
+    - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: nextStates.Array.data[0].conditions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: nextStates.Array.data[1].conditions.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: nextStates.Array.data[0].conditions.Array.data[0].conditionContainer
       value: 
       objectReference: {fileID: 3946569714416635803}
+    - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: nextStates.Array.data[1].conditions.Array.data[0].conditionContainer
+      value: 
+      objectReference: {fileID: 6819563449023415288}
     - target: {fileID: 4056519580575641585, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Controller
       value: 
@@ -771,6 +786,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &4545072957879046224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6229899301648358351, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+  m_PrefabInstance: {fileID: 7594858626396261279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5428370365161119236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2464359293181662619, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
@@ -779,10 +799,5 @@ GameObject:
 --- !u!4 &7284915583175890891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
-  m_PrefabInstance: {fileID: 7594858626396261279}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7473135770731139921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1068394134132807886, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
   m_PrefabInstance: {fileID: 7594858626396261279}
   m_PrefabAsset: {fileID: 0}

@@ -7,9 +7,11 @@ public class InmunityHandler : MonoBehaviour
 {
     HealthHandler healthHandler;
     [SerializeField] float inmunityTime = 1;
+    LayerMask _originalLayer;
 
     private void Awake()
     {
+        _originalLayer = gameObject.layer;
         healthHandler = GetComponent<HealthHandler>();
         healthHandler.OnGetDamage.AddListener(SetInmunity);
     }
@@ -18,9 +20,9 @@ public class InmunityHandler : MonoBehaviour
 
     IEnumerator Inmunity()
     {
-        healthHandler.SetInmunity(true);
+        gameObject.layer = LayerMask.NameToLayer("Inmune");
         yield return new WaitForSecondsRealtime(inmunityTime);
-        healthHandler.SetInmunity(false);
+        gameObject.layer = _originalLayer;
     }
 
     private void OnDestroy() {

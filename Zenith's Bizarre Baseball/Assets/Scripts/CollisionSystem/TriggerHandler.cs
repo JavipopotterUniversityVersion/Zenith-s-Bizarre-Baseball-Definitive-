@@ -11,22 +11,12 @@ public class TriggerHandler : MonoBehaviour
     [SerializeField] CollidableGroup[] OnExitCollidables;
     public CollidableGroup[] OnExitCollidablesProp() => OnExitCollidables;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) => CheckCollidables(OnEnterCollidables, collision);
+    private void OnTriggerExit2D(Collider2D collision) => CheckCollidables(OnExitCollidables, collision);
+
+    void CheckCollidables(CollidableGroup[] collidables, Collider2D collision)
     {
-        foreach (var collidableGroup in OnEnterCollidables)
-        {
-            if(collidableGroup.Layer == (collidableGroup.Layer | (1 << collision.gameObject.layer)))
-            {
-                foreach (var collidable in collidableGroup.Collidables)
-                {
-                    collidable.OnCollide(collision);
-                }
-            }
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        foreach (var collidableGroup in OnExitCollidables)
+        foreach (var collidableGroup in collidables)
         {
             if(collidableGroup.Layer == (collidableGroup.Layer | (1 << collision.gameObject.layer)))
             {

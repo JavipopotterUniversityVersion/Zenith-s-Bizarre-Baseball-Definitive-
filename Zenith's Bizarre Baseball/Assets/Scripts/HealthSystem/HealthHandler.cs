@@ -28,19 +28,12 @@ public class HealthHandler : MonoBehaviour
         }
     }
 
-    bool inmunity = false;
-
-
     private void Awake() => ResetHealth();
     public void ResetHealth() => CurrentHealth = maxHealth;
 
     public void TakeDamage(float damage)
     {
-        if(inmunity) return;
-
         CurrentHealth -= damage;
         onGetDamage.Invoke();
     }
-
-    public void SetInmunity(bool value) => inmunity = value;
 }

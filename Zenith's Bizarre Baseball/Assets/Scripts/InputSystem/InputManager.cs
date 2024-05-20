@@ -20,11 +20,11 @@ public class InputManager : MonoBehaviour
     }
 
     public void OnLook(InputAction.CallbackContext context) {
-        pointer.LookAt(Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()));
+        if(context.performed) pointer.LookAt(Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()));
     }
 
     public void OnGamepadLook(InputAction.CallbackContext context) {
-        pointer.SetPointer(context.ReadValue<Vector2>());
+        if(context.performed) pointer.SetPointer(context.ReadValue<Vector2>());
     }
 
     public void OnUse(InputAction.CallbackContext context) {

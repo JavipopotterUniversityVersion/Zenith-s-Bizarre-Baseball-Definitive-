@@ -55,10 +55,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7119830838737614386}
-  - component: {fileID: 7384720825631099093}
-  - component: {fileID: 2175551174993599382}
   - component: {fileID: 6344792939951504676}
   - component: {fileID: 1833760796585876201}
+  - component: {fileID: 8615583535814525437}
+  - component: {fileID: 8148405121007802749}
   m_Layer: 0
   m_Name: DamageArea
   m_TagString: Untagged
@@ -81,42 +81,6 @@ Transform:
   m_Father: {fileID: 8955837357540670887}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &7384720825631099093
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653502712672810954}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.68
---- !u!114 &2175551174993599382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653502712672810954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterCollidables:
-  - layer:
-      serializedVersion: 2
-      m_Bits: 128
-    collidables:
-    - {fileID: 6344792939951504676}
-    - {fileID: 1833760796585876201}
-  OnExitCollidables: []
 --- !u!114 &6344792939951504676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +107,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackForce: 30
+--- !u!114 &8615583535814525437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653502712672810954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterCollidables:
+  - layer:
+      serializedVersion: 2
+      m_Bits: 128
+    collidables:
+    - {fileID: 6344792939951504676}
+    - {fileID: 1833760796585876201}
+  OnExitCollidables: []
+--- !u!58 &8148405121007802749
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653502712672810954}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1001 &8085902167428522483
 PrefabInstance:
   m_ObjectHideFlags: 0

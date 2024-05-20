@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7065520165941769755}
   - component: {fileID: 5171384386339900838}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: KnockBackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4231587373565220098}
   - component: {fileID: 5446649569354358341}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: sr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 456120042143402520}
   - component: {fileID: 8516073803650040037}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: deactivate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7600186150818933227}
   - component: {fileID: 8113540993698504853}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: activate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,8 @@ GameObject:
   - component: {fileID: 5357634515182928792}
   - component: {fileID: 893114879862665561}
   - component: {fileID: 6933584744045371388}
-  m_Layer: 7
+  - component: {fileID: 7685649373682293575}
+  m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,8 +387,10 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 256
     collidables:
+    - {fileID: 7685649373682293575}
     - {fileID: 893114879862665561}
     - {fileID: 6933584744045371388}
+    - {fileID: 5171384386339900838}
   OnExitCollidables: []
 --- !u!114 &1149129183314528725
 MonoBehaviour:
@@ -401,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 4
 --- !u!95 &1220798240906805597
 Animator:
   serializedVersion: 5
@@ -481,6 +484,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: -987043204, guid: e51a746591eb3ea44a7e9ea4344e658c, type: 3}
+--- !u!114 &7685649373682293575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125766025389325077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d932d277b447c5b4c83c296157962507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPoint: {fileID: 0}
 --- !u!1 &5904972792013980989
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4935256706563752909}
   - component: {fileID: 5964276002223805668}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AttackState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1011428584843827806}
   - component: {fileID: 4646887929371222512}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AttackBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1804529835237215599}
   - component: {fileID: 3167481807328929173}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Wait 0,1s
   m_TagString: Untagged
   m_Icon: {fileID: 0}

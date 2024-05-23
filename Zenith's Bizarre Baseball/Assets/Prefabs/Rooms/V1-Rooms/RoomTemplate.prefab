@@ -5667,7 +5667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753396280052389112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03000021, y: -7.02, z: 0}
+  m_LocalPosition: {x: 0.3, y: -7.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5812,15 +5812,19 @@ MonoBehaviour:
     maxNormalAngle: 0
   nodeSettings:
   - _nodePrefab: {fileID: 7461771651339379633, guid: 80e678bca875a184689a635a596a0719, type: 3}
-    _probability: 0.508
+    _probability: 0.198
     _minNumberOfNodes: 0
     _maxNumberOfNodes: 0
   - _nodePrefab: {fileID: 2089418202490771014, guid: 37fd6a68b8e29f6479d836b174817060, type: 3}
-    _probability: 0.547
+    _probability: 0.218
+    _minNumberOfNodes: 0
+    _maxNumberOfNodes: 0
+  - _nodePrefab: {fileID: 3609810962296975213, guid: 57e2dde062abff445b54771e8a636c00, type: 3}
+    _probability: 0.27
     _minNumberOfNodes: 0
     _maxNumberOfNodes: 0
   _access: 0
-  limits:
+  _limits:
   - _min: {fileID: 7513802407822258925}
     _max: {fileID: 6543687285270242884}
 --- !u!61 &-4564803278183485906

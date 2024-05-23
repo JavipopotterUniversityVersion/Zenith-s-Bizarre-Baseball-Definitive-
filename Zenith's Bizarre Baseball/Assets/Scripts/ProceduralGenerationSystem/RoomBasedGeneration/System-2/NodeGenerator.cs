@@ -38,11 +38,11 @@ public class NodeGenerator : MonoBehaviour
     {
         foreach (var n in _nodes)
         {
-            foreach(Limit limit in n.limits)
+            foreach(Limit limit in n.Limits)
             {
-                foreach(Limit limit2 in node.limits)
+                foreach(Limit limit2 in node.Limits)
                 {
-                    if(limit.IsInside(limit2)) return true;
+                    if(limit.Overlaps(limit2)) return true;
                 }
             }
         }

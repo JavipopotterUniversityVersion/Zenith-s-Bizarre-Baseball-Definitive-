@@ -1,25 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 {
-    [SerializeField] GameObject[] behavioursContainers;
-    IBehaviour[] behaviours;
+    [SerializeField] BehaviourUnit[] behaviours;
 
-    private void Awake()
+    public void ExecuteBehaviour()
     {
-        behaviours = new IBehaviour[behavioursContainers.Length];
-        for (int i = 0; i < behavioursContainers.Length; i++)
+        float random = UnityEngine.Random.value;
+        float sum = 0;
+        foreach (var behaviourUnit in behaviours)
         {
-            behaviours[i] = behavioursContainers[i].GetComponent<IBehaviour>();
+            sum += behaviourUnit.Probability;
+            if (random < sum)
+            {
+                behaviourUnit.Behaviour.ExecuteBehaviour();
+                return;
+            }
         }
     }
-
-    public void ExecuteBehaviour() => behaviours[Random.Range(0, behaviours.Length)].ExecuteBehaviour();
 
     private void OnValidate() 
     {
         name = "RandomBehaviour";
     }
+}
+
+[Serializable]
+public class BehaviourUnit
+{
+    [SerializeField] GameObject _behaviourContainer;
+
+    public IBehaviour Behaviour => _behaviourContainer.GetComponent<IBehaviour>();
+
+    [SerializeField] [Range(0, 1)] float _probability;
+    public float Probability => _probability;
 }

@@ -10,7 +10,7 @@ public class DoorIdentifier : MonoBehaviour
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();
     [SerializeField] UnityEvent onFailIdentity = new UnityEvent();
 
-    private void Start() => StartCoroutine(Check());
+    private void Awake() => StartCoroutine(Check());
 
     private IEnumerator Check() {
         yield return null;

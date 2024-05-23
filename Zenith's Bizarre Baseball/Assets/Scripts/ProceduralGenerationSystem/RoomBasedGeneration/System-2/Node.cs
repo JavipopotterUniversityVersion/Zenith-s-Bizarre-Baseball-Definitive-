@@ -50,7 +50,7 @@ public class Node : MonoBehaviour
     public async Task GenerateNodesTask(float linearity, NodeGenerator generator, int branchExtension)
     {
         GenerateNodes(linearity, generator, branchExtension);
-        await Task.Delay(1500);
+        await Task.Delay(8000);
     }
 
     public async void GenerateNodes(float linearity, NodeGenerator generator, int branchExtension)
@@ -118,7 +118,9 @@ public class Node : MonoBehaviour
         return !_generator.CheckIntersecctions(this);
     }
 
-    public Limit[] limits;
+
+    [SerializeField] Limit[] _limits;
+    public Limit[] Limits => _limits;
 
     public bool ConnectNodes(ref Gate gate)
     {
@@ -220,9 +222,20 @@ public class Limit
     [SerializeField] Transform _max;
     public Transform Max => _max;
 
-    public bool IsInside(Limit otherLimit)
+    public bool Overlaps(Limit otherLimit)
     {
         return _min.position.x < otherLimit.Max.position.x && _max.position.x > otherLimit.Min.position.x &&
                _min.position.y < otherLimit.Max.position.y && _max.position.y > otherLimit.Min.position.y;
+    }
+
+    public bool Contains(Vector3 position)
+    {
+        return _min.position.x < position.x && _max.position.x > position.x &&
+               _min.position.y < position.y && _max.position.y > position.y;
+    }
+
+    public Vector3 RandomPosition()
+    {
+        return new Vector3(UnityEngine.Random.Range(_min.position.x, _max.position.x), UnityEngine.Random.Range(_min.position.y, _max.position.y), 0);
     }
 }

@@ -11,6 +11,7 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
     [SerializeField] string _thingToDetectName = "something";
 
     [SerializeField] int minimunColliders = 1;
+    [SerializeField] Color _gizmosColor;
 
     public bool CheckCondition()
     {
@@ -19,7 +20,7 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = _gizmosColor;
         Gizmos.DrawWireCube(transform.position + (Vector3)offset, size);
     }
 

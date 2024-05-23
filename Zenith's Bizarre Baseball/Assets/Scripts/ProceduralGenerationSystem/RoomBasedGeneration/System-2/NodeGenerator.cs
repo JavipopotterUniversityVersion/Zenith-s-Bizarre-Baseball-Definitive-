@@ -30,7 +30,7 @@ public class NodeGenerator : MonoBehaviour
 
     async void GenerateNode(Node _currentNode)
     {
-        await _currentNode.GenerateNodes(_linearity, this, maxBranchExtension);
+        await _currentNode.GenerateNodesTask(_linearity, this, maxBranchExtension);
         OnFinishedGeneration?.Invoke();
     }
 

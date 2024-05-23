@@ -36,7 +36,7 @@ public class Node : MonoBehaviour
     public void SetAccess(RoomAccess access) => Access = access;
     RoomAccess ReturnRandomAccess(RoomAccess accessValue)
     {
-        if(UnityEngine.Random.value < _linearity) return accessValue |= GetOppositeAccess(accessValue);
+        if(UnityEngine.Random.value < _linearity) return accessValue | GetOppositeAccess(accessValue);
 
         RoomAccess newAccess = (RoomAccess) UnityEngine.Random.Range(1, 15);
         while (accessValue == newAccess)
@@ -47,7 +47,13 @@ public class Node : MonoBehaviour
         return accessValue;
     }
 
-    public async Task GenerateNodes(float linearity, NodeGenerator generator, int branchExtension)
+    public async Task GenerateNodesTask(float linearity, NodeGenerator generator, int branchExtension)
+    {
+        GenerateNodes(linearity, generator, branchExtension);
+        await Task.Delay(1500);
+    }
+
+    public async void GenerateNodes(float linearity, NodeGenerator generator, int branchExtension)
     {
         _generator = generator;
         _linearity = linearity;
@@ -91,8 +97,9 @@ public class Node : MonoBehaviour
             _generator.Nodes.Add(node);
             node.SetAccess(ReturnRandomAccess(GetOppositeAccess(gate.Access)));
             extension--;
-            await Task.Delay(10);
-            await node.GenerateNodes(_linearity, _generator, branchExtension - 1);
+
+            await Task.Delay(100/(branchExtension+1));
+            node.GenerateNodes(_linearity, _generator, branchExtension - 1);
         }
     }
 

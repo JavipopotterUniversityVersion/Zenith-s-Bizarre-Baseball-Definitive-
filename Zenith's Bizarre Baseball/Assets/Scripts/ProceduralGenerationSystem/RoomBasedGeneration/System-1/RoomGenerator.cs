@@ -23,12 +23,18 @@ public class RoomGenerator : MonoBehaviour
     [SerializeField] UnityEvent onLoaded = new UnityEvent();
     public UnityEvent OnLoaded => onLoaded;
 
+    [SerializeField]
+    [Range(0, 1)]
+    float linearity = 0.5f;
+
+    [SerializeField] float timeBetweenRooms = 0.25f;
+
     private void Awake()
     {
         //pantalla de carga
         roomSettings = new RoomSettingStack(Rooms);
         transform.position = new Vector2(createdRooms.GetLength(0) / 2 * roomSize.x, createdRooms.GetLength(1) / 2 * roomSize.y);
-        GenerateRoom((int)transform.position.x / roomSize.x, (int)transform.position.y / roomSize.y, initialRoom, (RoomAccess)15);
+        GenerateRoom((int)transform.position.x / roomSize.x, (int)transform.position.y / roomSize.y, initialRoom, RoomAccess.North);
         StartCoroutine(GenerateRooms());
     }
 
@@ -66,6 +72,8 @@ public class RoomGenerator : MonoBehaviour
 
     RoomAccess ReturnRandomAccess(RoomAccess accesValue)
     {
+        if(Random.value < linearity) return OppossiteAccess(accesValue) | accesValue;
+        
         RoomAccess newAccess = (RoomAccess)Random.Range(1, 15);
         while (accesValue == newAccess)
         {           
@@ -174,7 +182,7 @@ public class RoomGenerator : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(1.01f);
+            yield return new WaitForSeconds(timeBetweenRooms);
         }
         
         foreach(RoomSetting roomSetting in roomSettings.RoomSettings)

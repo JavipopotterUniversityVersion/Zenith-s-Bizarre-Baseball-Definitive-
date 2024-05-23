@@ -25,7 +25,7 @@ public class InstanceExplosion : ICollidable, IBehaviour
                     if(Instantiate(instance.Prefab, transform.position, Quaternion.identity).TryGetComponent(out Rigidbody2D rb))
                     {
                         float angle = UnityEngine.Random.Range(_angleRange.x, _angleRange.y) * Mathf.Deg2Rad;
-                        rb.velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * UnityEngine.Random.Range(_force.x, _force.y);
+                        rb.velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized * UnityEngine.Random.Range(_force.x, _force.y);
                     }
                 }
             }

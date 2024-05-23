@@ -6,19 +6,21 @@ using UnityEngine.Events;
 public class DoorIdentifier : MonoBehaviour
 {
     private RoomAccess roomAccess;
-    private Room _DoorRoom;
+    private Node _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();
     [SerializeField] UnityEvent onFailIdentity = new UnityEvent();
 
-    private void Start() => CompareFlag();
-    private void Awake()
-    {
-        _DoorRoom = GetComponentInParent<Room>();   
+    private void Start() => StartCoroutine(Check());
+
+    private IEnumerator Check() {
+        yield return null;
+        _DoorRoom = GetComponentInParent<Node>();
+        _DoorRoom.Generator.OnFinishedGeneration.AddListener(CompareFlag);
     }
     private void CompareFlag() 
     {
         roomAccess = PositionRoomAccess();
-        if (_DoorRoom.totalAccess.HasFlag(roomAccess))
+        if (_DoorRoom.Access.HasFlag(roomAccess))
         {
             onVerifyIdentity?.Invoke();
         }
@@ -51,5 +53,9 @@ public class DoorIdentifier : MonoBehaviour
                 return RoomAccess.South;
             }
         }
+    }
+
+    private void OnValidate() {
+        name = $"Door {PositionRoomAccess()}";
     }
 }

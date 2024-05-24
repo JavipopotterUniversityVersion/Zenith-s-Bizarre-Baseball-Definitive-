@@ -8,8 +8,9 @@ public class SequencerBehaviour : MonoBehaviour, IBehaviour
     IBehaviour[] _behaviours;
     int _currentBehaviour = 0;
 
-    private void Awake() 
+    private void Awake()
     {
+        _behaviours = new IBehaviour[_behaviourContainers.Length];
         for (int i = 0; i < _behaviourContainers.Length; i++)
         {
             _behaviours[i] = _behaviourContainers[i].GetComponent<IBehaviour>();

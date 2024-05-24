@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &666833291498152055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4901295329151061090}
+  - component: {fileID: 1450764734986493869}
+  m_Layer: 0
+  m_Name: CounterPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4901295329151061090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666833291498152055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6233402110430004551}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1450764734986493869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666833291498152055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59904bcb77b256e40bed43c9ec9e98e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _counterMultiplier: 1.5
 --- !u!1 &1100722292288742931
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,11 +352,11 @@ GameObject:
   - component: {fileID: 6228306171474012798}
   - component: {fileID: 2150984968668188389}
   - component: {fileID: 1149129183314528725}
-  - component: {fileID: 1220798240906805597}
   - component: {fileID: 5357634515182928792}
   - component: {fileID: 893114879862665561}
   - component: {fileID: 6933584744045371388}
   - component: {fileID: 7685649373682293575}
+  - component: {fileID: 5011197823153750842}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -334,6 +379,7 @@ Transform:
   - {fileID: 4231587373565220098}
   - {fileID: 1011428584843827806}
   - {fileID: 7065520165941769755}
+  - {fileID: 4901295329151061090}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -390,7 +436,8 @@ MonoBehaviour:
     - {fileID: 7685649373682293575}
     - {fileID: 893114879862665561}
     - {fileID: 6933584744045371388}
-    - {fileID: 5171384386339900838}
+    - {fileID: 1450764734986493869}
+    - {fileID: 5011197823153750842}
   OnExitCollidables: []
 --- !u!114 &1149129183314528725
 MonoBehaviour:
@@ -405,27 +452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 4
---- !u!95 &1220798240906805597
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125766025389325077}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 65f3281aadcaca84abe885aa975405e8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &5357634515182928792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -497,6 +523,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPoint: {fileID: 0}
+--- !u!114 &5011197823153750842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125766025389325077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b01206d394e97f4e98465819bc0fa70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isMultiplier: 1
+  _damage: 2
 --- !u!1 &5904972792013980989
 GameObject:
   m_ObjectHideFlags: 0

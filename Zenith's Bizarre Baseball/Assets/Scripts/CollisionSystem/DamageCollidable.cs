@@ -13,4 +13,7 @@ public class DamageCollidable : ICollidable
             health.TakeDamage(damage);
         }
     }
+
+    public float GetDamage() => damage;
+    public void SetDamage(float newDamage) => damage = newDamage;
 }

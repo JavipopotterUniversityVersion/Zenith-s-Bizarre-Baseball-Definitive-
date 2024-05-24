@@ -14,7 +14,6 @@ public class ChangeStateBehaviour : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        print("Changing state to " + stateToChangeTo.name);
         stateHandler.ChangeState(stateToChangeTo);
     }
 

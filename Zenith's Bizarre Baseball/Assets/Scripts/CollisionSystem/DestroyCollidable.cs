@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class DestroyCollidable : ICollidable
 {
-    [SerializeField] int requiredCollisions = 1;
+    [SerializeField] Int maxCollisions;
+    int requiredCollisions = 1;
+
+    private void Start() => requiredCollisions = maxCollisions.Value;
+
     public override void OnCollide(Collider2D collision)
     {
         requiredCollisions--;

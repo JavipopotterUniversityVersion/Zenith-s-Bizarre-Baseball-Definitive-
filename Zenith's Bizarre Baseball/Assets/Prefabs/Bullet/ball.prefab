@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 5989457719749168021}
   - component: {fileID: 1455145129851851031}
   - component: {fileID: -8071011525051105728}
-  - component: {fileID: 8388297358626018487}
   - component: {fileID: 3544201081046175498}
+  - component: {fileID: 755721579564077804}
+  - component: {fileID: 8388297358626018487}
   - component: {fileID: 1124958039221683131}
   m_Layer: 8
   m_Name: ball
@@ -81,6 +82,12 @@ MonoBehaviour:
       m_Bits: 256
     collidables:
     - {fileID: 3544201081046175498}
+  - layer:
+      serializedVersion: 2
+      m_Bits: 1024
+    collidables:
+    - {fileID: -8071011525051105728}
+    - {fileID: 755721579564077804}
   OnExitCollidables: []
 --- !u!114 &5989457719749168021
 MonoBehaviour:
@@ -94,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  Damage: {fileID: 11400000, guid: 87ffc2cacad610045a2978bdcb092341, type: 2}
 --- !u!114 &1455145129851851031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: 15
+  knockBackForce: {fileID: 11400000, guid: 123fe53dd7e4e1c43b6d9805a59e8360, type: 2}
 --- !u!114 &-8071011525051105728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +127,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3831f54528bef4db2447ea7d9d2e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredCollisions: 1
+  maxCollisions: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
+--- !u!114 &3544201081046175498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989457719749168020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80f6ad3e1783cd49b0d7dca271b06a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deflectMultiplier: {fileID: 11400000, guid: a72dd6ea6c6900e4f95556a0f1a243d0, type: 2}
+--- !u!114 &755721579564077804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989457719749168020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a2ba66aa6b52148a5b81d70d10abd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reboundMultiplier: {fileID: 11400000, guid: a6525e08d1abe974fa6b21bea5ed1239, type: 2}
 --- !u!50 &8388297358626018487
 Rigidbody2D:
   serializedVersion: 4
@@ -142,19 +175,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3544201081046175498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5989457719749168020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80f6ad3e1783cd49b0d7dca271b06a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deflectMultiplier: 1
 --- !u!96 &1124958039221683131
 TrailRenderer:
   serializedVersion: 2

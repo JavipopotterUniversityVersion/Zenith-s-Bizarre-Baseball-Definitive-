@@ -8,7 +8,7 @@ public class DashPerformer : MonoBehaviour
     Rigidbody2D rb;
     Vector2 dashDirection;
 
-    [SerializeField] float dashSpeed = 20f;
+    [SerializeField] Float dashSpeed;
 
     private void Start() {
         movementController = GetComponent<MovementController>();
@@ -18,6 +18,6 @@ public class DashPerformer : MonoBehaviour
 
     public void Dash()
     {
-        rb.velocity = dashDirection * dashSpeed;
+        rb.velocity = dashDirection * dashSpeed.Value;
     }
 }

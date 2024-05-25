@@ -14,14 +14,14 @@ public class HealthHandler : MonoBehaviour
     [SerializeField] UnityEvent onDie = new UnityEvent();
     public UnityEvent OnDie => onDie;
 
-    [SerializeField] float maxHealth = 12;
+    [SerializeField] Float maxHealth;
     [SerializeField] float _currentHealth = 12;
     public float CurrentHealth
     {
         get => _currentHealth;
         set
         {
-            _currentHealth = Mathf.Clamp(value, 0, maxHealth);
+            _currentHealth = Mathf.Clamp(value, 0, maxHealth.Value);
             onHealthChanged.Invoke(_currentHealth);
 
             if(_currentHealth == 0) onDie.Invoke();
@@ -29,7 +29,7 @@ public class HealthHandler : MonoBehaviour
     }
 
     private void Awake() => ResetHealth();
-    public void ResetHealth() => CurrentHealth = maxHealth;
+    public void ResetHealth() => CurrentHealth = maxHealth.Value;
 
     public void TakeDamage(float damage)
     {

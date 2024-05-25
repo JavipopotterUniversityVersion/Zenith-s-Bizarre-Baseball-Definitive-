@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class KnockBackCollidable : ICollidable
 {
-    [SerializeField] float knockBackForce = 10f;
+    [SerializeField] Float knockBackForce;
 
     public override void OnCollide(Collider2D collider)
     {
         if (collider.TryGetComponent(out Rigidbody2D rigidbody))
         {
-            rigidbody.velocity = (collider.transform.position - transform.position).normalized * knockBackForce;
+            rigidbody.velocity = (collider.transform.position - transform.position).normalized * knockBackForce.Value;
         }
     }
 }

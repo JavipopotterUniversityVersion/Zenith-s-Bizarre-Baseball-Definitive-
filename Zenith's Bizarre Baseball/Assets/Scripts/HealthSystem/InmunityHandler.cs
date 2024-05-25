@@ -6,7 +6,7 @@ using UnityEngine;
 public class InmunityHandler : MonoBehaviour
 {
     HealthHandler healthHandler;
-    [SerializeField] float inmunityTime = 1;
+    [SerializeField] Float inmunityTime;
     LayerMask _originalLayer;
 
     private void Awake()
@@ -21,7 +21,7 @@ public class InmunityHandler : MonoBehaviour
     IEnumerator Inmunity()
     {
         gameObject.layer = LayerMask.NameToLayer("Inmune");
-        yield return new WaitForSecondsRealtime(inmunityTime);
+        yield return new WaitForSecondsRealtime(inmunityTime.Value);
         gameObject.layer = _originalLayer;
     }
 

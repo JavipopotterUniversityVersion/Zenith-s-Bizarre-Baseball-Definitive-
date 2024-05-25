@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59904bcb77b256e40bed43c9ec9e98e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counterMultiplier: 1.5
+  _counterMultiplier: {fileID: 0}
 --- !u!1 &1100722292288742931
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: 30
+  knockBackForce: {fileID: 0}
 --- !u!1 &1517834348628145000
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  Damage: {fileID: 0}
 --- !u!61 &5357634515182928792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -535,8 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b01206d394e97f4e98465819bc0fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isMultiplier: 1
-  _damage: 2
+  _multiplier: 1
 --- !u!1 &5904972792013980989
 GameObject:
   m_ObjectHideFlags: 0

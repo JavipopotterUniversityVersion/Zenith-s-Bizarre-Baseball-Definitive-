@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Bool", menuName = "Value/Bool")]
-public class Bool : ScriptableObject
+public class Bool : ScriptableICondition
 {
     [SerializeField] bool _value;
     public bool Value => _value;
@@ -22,4 +22,5 @@ public class Bool : ScriptableObject
     }
 
     public void ToggleValue() => SetValue(!_value);
+    public override bool CheckCondition() => _value;
 }

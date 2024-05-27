@@ -1,0 +1,45 @@
+{
+    "name": "DialogueInputs",
+    "maps": [
+        {
+            "name": "Talking",
+            "id": "6d6fc362-7723-4b7a-b227-83682f3abbff",
+            "actions": [
+                {
+                    "name": "NextLine",
+                    "type": "Button",
+                    "id": "55bef90e-9926-4d4e-af71-e95f3391ec1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7b5ae1ce-fb2f-4606-bca7-d29e7fe1001c",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextLine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f961208f-5ee3-4fa6-819d-73fab39900ad",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextLine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpriteSwapperCollidable : ICollidable
 {
-    [SerializeField] Sprite sprite;
+    [SerializeField] UnityEngine.Sprite sprite;
 
     public override void OnCollide(Collider2D collision)
     {

@@ -7,15 +7,23 @@ using UnityEngine.Events;
 public class Float : ScriptableObject
 {
     [SerializeField] float _value;
-    
-    UnityEvent<float> onValueChanged = new UnityEvent<float>();
-    public UnityEvent<float> OnValueChanged => onValueChanged;
-
     public float Value
     {
         get => _value;
-        set => _value = value;
+        set
+        {
+            _lastValue = _value;
+            _value = value;
+            onValueChanged.Invoke(_value);
+        }
     }
+
+    float _lastValue;
+    public float LastValue => _lastValue;
+
+    UnityEvent<float> onValueChanged = new UnityEvent<float>();
+    public UnityEvent<float> OnValueChanged => onValueChanged;
+
 
     public void SetValue(float value) => Value = value;
 

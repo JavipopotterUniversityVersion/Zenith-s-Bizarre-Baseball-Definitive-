@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  Damage: {fileID: 0}
 --- !u!1 &6390224662080061628
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,12 +242,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onUpdatePerformers.Array.data[0].behaviourContainers.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onUpdatePerformers.Array.data[0].behaviourContainers.Array.data[0]
       value: 
       objectReference: {fileID: 6390224662080061628}
+    - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: onUpdatePerformers.Array.data[0].behaviourContainers.Array.data[1]
+      value: 
+      objectReference: {fileID: 6924459957877023440}
     - target: {fileID: 4056519580575641585, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Controller
       value: 
@@ -262,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: maxHealth
-      value: 1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: _currentHealth
@@ -332,6 +336,10 @@ PrefabInstance:
       propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8234278341323660404, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9105301891046977518, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
       value: Cart Variant
@@ -357,6 +365,11 @@ Transform:
 --- !u!1 &1703469006630031075 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9105301891046977518, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+  m_PrefabInstance: {fileID: 7637955274294042893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6924459957877023440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 713794694969230301, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
   m_PrefabInstance: {fileID: 7637955274294042893}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7313868150001319257 stripped

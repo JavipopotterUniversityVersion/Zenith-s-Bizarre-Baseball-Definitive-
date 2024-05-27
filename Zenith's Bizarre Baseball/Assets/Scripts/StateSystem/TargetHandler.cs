@@ -17,4 +17,9 @@ public class TargetHandler : MonoBehaviour
     {
         _target = target;
     }
+
+    public Vector2 GetTargetDirection()
+    {
+        return (target.position - transform.position).normalized;
+    }
 }

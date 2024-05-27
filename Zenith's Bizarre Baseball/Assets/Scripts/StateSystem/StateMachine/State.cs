@@ -27,7 +27,7 @@ public class State : MonoBehaviour
 
     public void OnStateEnter()
     {
-        if(animationPlayer != null) animationPlayer.Play(stateAnimation);
+        if(animationPlayer != null && stateAnimation != "") animationPlayer.Play(stateAnimation);
         if(onEnterPerformers != null) Perform(onEnterPerformers);
     }
 

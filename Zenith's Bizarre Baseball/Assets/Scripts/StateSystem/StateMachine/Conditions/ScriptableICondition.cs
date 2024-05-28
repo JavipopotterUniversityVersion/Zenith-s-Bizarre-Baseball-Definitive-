@@ -11,9 +11,7 @@ public class ScriptableICondition : ScriptableObject, ICondition
 [Serializable]
 public class ScriptableCondition
 {
-    [SerializeField] private ScriptableICondition conditionContainer;
-
-    ScriptableICondition condition;
+    [SerializeField] ScriptableICondition condition;
     public ScriptableICondition Cond => condition;
 
     [SerializeField] private bool negated;

@@ -16,7 +16,6 @@ public class SpriteReceiver : MonoBehaviour
 
     void UpdateSprite()
     {
-        _image.enabled = _sprite.Value != null;
         _image.sprite = _sprite.Value;
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TimeCondition", menuName = "Conditions/TimeCondition")]
 public class ScriptedTimeCondition : ScriptableICondition
 {
-    float _time;
+    [SerializeField] float _time;
 
     public void SetTime(float time)
     {

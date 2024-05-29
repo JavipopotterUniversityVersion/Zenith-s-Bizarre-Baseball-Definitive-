@@ -8,5 +8,8 @@ public class ScriptedInputCondition : ScriptableICondition
 {
     [SerializeField] InputActionReference _inputAction;
     public void SetInputAction(InputActionReference inputAction) => _inputAction = inputAction;
-    public override bool CheckCondition() => _inputAction.action.WasPerformedThisFrame();
+    public override bool CheckCondition()
+    {
+        return _inputAction.action.triggered;
+    }
 }

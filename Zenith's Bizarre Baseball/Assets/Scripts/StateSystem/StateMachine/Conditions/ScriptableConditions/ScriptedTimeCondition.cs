@@ -6,11 +6,24 @@ using UnityEngine;
 public class ScriptedTimeCondition : ScriptableICondition
 {
     [SerializeField] float _time;
+    float _currentTime = 0;
 
     public void SetTime(float time)
     {
-        _time = Time.time + time;
+        _time = time;
+        _currentTime = _time;
     }
 
-    public override bool CheckCondition() => Time.time >= _time;
+    public override bool CheckCondition()
+    {
+        _currentTime -= Time.deltaTime;
+        
+        if(_currentTime <= 0)
+        {
+            _currentTime = _time;
+            return true;
+        }
+
+        return false;
+    }
 }

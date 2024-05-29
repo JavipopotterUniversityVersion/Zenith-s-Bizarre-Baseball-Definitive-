@@ -18,36 +18,34 @@ MonoBehaviour:
       _event:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 11400000, guid: ea5e7f460e1ee7d45aee3481c8d71b1d, type: 2}
+          - m_Target: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
             m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
             m_MethodName: SetSprite
             m_Mode: 2
             m_Arguments:
-              m_ObjectArgument: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
+              m_ObjectArgument: {fileID: 21300000, guid: 4225a98d2b6a8694f92446365a71df9e, type: 3}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 11400000, guid: 083eb7da49ec7464f947fe039142fdce, type: 2}
-            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
-            m_MethodName: SetSprite
-            m_Mode: 2
+          - m_Target: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 5
             m_Arguments:
-              m_ObjectArgument: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
-              m_StringArgument: 
+              m_StringArgument: FadeBlack
               m_BoolArgument: 0
             m_CallState: 2
     lines:
     - "Zenith se pasaba los d\xEDas aburrida en su habitaci\xF3n."
     _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 637cda51402d9604aa40d04a385e10a8, type: 2}
-        negated: 0
+      condition: []
       _event:
         m_PersistentCalls:
           m_Calls: []
@@ -71,9 +69,7 @@ MonoBehaviour:
     lines:
     - "Estoy aburrida en mi habitaci\xF3n."
     _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 637cda51402d9604aa40d04a385e10a8, type: 2}
-        negated: 0
+      condition: []
       _event:
         m_PersistentCalls:
           m_Calls: []
@@ -94,12 +90,34 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 21300000, guid: 5ad40865beaeec4419180861a7661128, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: CallString
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     lines:
     - "Hasta que una bola de be\xEDsbol por su ventana entr\xF3 y su Nintendo revent\xF3."
     _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 637cda51402d9604aa40d04a385e10a8, type: 2}
-        negated: 0
+      condition: []
       _event:
         m_PersistentCalls:
           m_Calls: []
@@ -123,9 +141,7 @@ MonoBehaviour:
     lines:
     - JODER MI PUTA NINTENDO!!!
     _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 637cda51402d9604aa40d04a385e10a8, type: 2}
-        negated: 0
+      condition: []
       _event:
         m_PersistentCalls:
           m_Calls: []
@@ -133,17 +149,34 @@ MonoBehaviour:
       condition: []
       _event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 21300000, guid: cb148a09e86bf9e4381a79fb9d599469, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: CallString
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     lines:
     - "\xBFUna bola de be\xEDsbol naranja?"
     _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 637cda51402d9604aa40d04a385e10a8, type: 2}
-        negated: 0
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
-  - _enter:
       condition: []
       _event:
         m_PersistentCalls:
@@ -160,11 +193,223 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 21300000, guid: 9b0f36897b28f964e997d74b880f92f8, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: cb8c3203bbdec524180893dda147f8ef, type: 2}
+            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+            m_MethodName: SetValue
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: CallString
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     lines: []
     _exit:
       condition:
       - condition: {fileID: 11400000, guid: 20b0b1786d3c11d4d84a123eb16fde5f, type: 2}
         negated: 0
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 21300000, guid: 83bf7d0076eaf12429cff70f6c935a64, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: CallString
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    lines: []
+    _exit:
+      condition:
+      - condition: {fileID: 11400000, guid: 20b0b1786d3c11d4d84a123eb16fde5f, type: 2}
+        negated: 0
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 21300000, guid: 90f64d63ff54868458433a5098486de3, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: CallString
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    lines: []
+    _exit:
+      condition:
+      - condition: {fileID: 11400000, guid: 20b0b1786d3c11d4d84a123eb16fde5f, type: 2}
+        negated: 0
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 20b0b1786d3c11d4d84a123eb16fde5f, type: 2}
+            m_TargetAssemblyTypeName: ScriptedTimeCondition, Assembly-CSharp
+            m_MethodName: SetTime
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 2.44
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 21300000, guid: 0539b09c7d6600b42a3909c956b49443, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: a250fcad594265a46bcb3c9b2e41f44b, type: 2}
+            m_TargetAssemblyTypeName: Float, Assembly-CSharp
+            m_MethodName: SetValue
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0.5
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: CallString
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    lines: []
+    _exit:
+      condition:
+      - condition: {fileID: 11400000, guid: 20b0b1786d3c11d4d84a123eb16fde5f, type: 2}
+        negated: 0
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: a250fcad594265a46bcb3c9b2e41f44b, type: 2}
+            m_TargetAssemblyTypeName: Float, Assembly-CSharp
+            m_MethodName: SetValue
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: cb8c3203bbdec524180893dda147f8ef, type: 2}
+            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+            m_MethodName: SetValue
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    lines:
+    - Vamos a matar a ese hijo de perra!!
+    _exit:
+      condition: []
       _event:
         m_PersistentCalls:
           m_Calls: []

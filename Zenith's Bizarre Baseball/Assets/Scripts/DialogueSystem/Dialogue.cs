@@ -34,6 +34,7 @@ public struct CondEventVector
 {
     [SerializeField] ScriptableCondition[] condition;
     public bool CheckCondition() => ScriptableCondition.CheckAllConditions(condition);
+    public bool IsEmpty() => condition.Length == 0;
 
     [SerializeField] UnityEvent _event;
     public void Invoke() => _event.Invoke();

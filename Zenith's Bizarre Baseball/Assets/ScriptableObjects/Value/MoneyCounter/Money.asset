@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd035af6a0a7f242b2862ac5349ffd5, type: 3}
   m_Name: Money
   m_EditorClassIdentifier: 
-  _value: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: e72459942d2a45148938b99288e4ddf1, type: 2}
         m_TargetAssemblyTypeName: Counter, Assembly-CSharp
-        m_MethodName: CheckIndebted
+        m_MethodName: CheckValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28,3 +27,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 43949975c575033409f11c71792d62ec, type: 2}
+        m_TargetAssemblyTypeName: String, Assembly-CSharp
+        m_MethodName: CallString
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _value: 0
+  _lastValue: 0

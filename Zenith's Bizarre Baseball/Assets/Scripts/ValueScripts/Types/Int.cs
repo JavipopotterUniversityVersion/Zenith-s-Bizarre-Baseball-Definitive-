@@ -7,7 +7,6 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "Int", menuName = "Value/Int")]
 public class Int : ScriptableObject
 {
-
     [SerializeField] UnityEvent onValueChanged = new UnityEvent();
     public UnityEvent OnValueChanged => onValueChanged;
 

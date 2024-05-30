@@ -13,3 +13,38 @@ MonoBehaviour:
   m_Name: Damage-Zenith
   m_EditorClassIdentifier: 
   _value: 4
+  _readModifiers:
+  - _type: 2
+    _value: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
+    _curve:
+      Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 3
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      _currentValue: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
+      MaxValue: 10
+  _setModifiers: []
+  _addModifiers: []
+  _subtractModifiers: []
+  _multiplyModifiers: []
+  _divideModifiers: []

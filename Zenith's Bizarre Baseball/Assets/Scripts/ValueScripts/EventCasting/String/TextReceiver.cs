@@ -11,6 +11,7 @@ public class TextReceiver : MonoBehaviour
     {
         _text = GetComponent<TMPro.TextMeshProUGUI>();
         _string.OnStringCall.AddListener(UpdateText);
+        UpdateText();
     }
 
     void UpdateText() => _text.text = _string.Value;

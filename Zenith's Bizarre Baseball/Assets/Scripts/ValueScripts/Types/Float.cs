@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 public class Float : ScriptableObject
 {
     [SerializeField] float _value;
-    [SerializeField] Operation _readProcessor;
+    [SerializeField] Processor _readProcessor;
 
     public float Value
     {
@@ -47,12 +47,22 @@ public class Float : ScriptableObject
 }
 
 [Serializable]
-public class Operation
+public class Processor
 {
-    string[] operationTypes = new string[] { "*", "/", "+", "-" };
+    static string[] operationTypes = new string[] {"^", "*", "/", "%", "+", "-" };
     public string operation = "input";
+
+    [Header("FLOAT REFERENCES")]
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary = new SerializableDictionary<string, Float>();
+
+    [Header("CURVE REFERENCES")]
     [SerializeField] SerializableDictionary<string, Curve> _curveDictionary = new SerializableDictionary<string, Curve>();
+
+    [Header("OPERATION REFERENCES")]
+    [SerializeField] SerializableDictionary<string, String> _operationDictionary = new SerializableDictionary<string, String>();
+
+    [Header("FUNCTION REFERENCES")]
+    [SerializeField] SerializableDictionary<string, Function> _functionDictionary = new SerializableDictionary<string, Function>();
 
     float Calculate(float input, string operation)
     {
@@ -81,7 +91,6 @@ public class Operation
 
     void Replace(ref string value, int startPoint, float input)
     {
-        Debug.Log(value[startPoint]);
         for(int i = startPoint; i < value.Length; i++)
         {
             if(value[i] == '(')
@@ -91,15 +100,28 @@ public class Operation
         }
         string result = value.Substring(startPoint).Split(')')[0];
         value = value.Replace("(" + result + ")", Translate(result, input).ToString());
-        // Debug.Log(value);
     }
 
     public float Result(float input)
     {
+        if(operation == "input" || operation == "") return input;
+
         string value = operation;
+        value = PlaceOperations(value);
         Replace(ref value, 0, input);
-        Debug.Log(operation);
         return Translate(value, input);
+    }
+
+    string PlaceOperations(string value)
+    {
+        foreach(var item in _operationDictionary)
+        {
+            if(value.Contains(item.Key))
+            {
+                value = value.Replace(item.Key, item.Value.Value);
+            }
+        }
+        return value;
     }
 
     float Translate(string value, float input)
@@ -110,10 +132,16 @@ public class Operation
 
         if(_floatDictionary.ContainsKey(value)) return _floatDictionary[value].Value;
 
-        if(SearchFunction(value, out string curveName))
+        if(SearchCurve(value, out string curveName))
         {
             string curveInput = value.Split('<')[1].Split('>')[0].Trim();
             return _curveDictionary[curveName].Evaluate(Translate(curveInput, input));
+        }
+
+        if(SearchFunction(value, out string functionName))
+        {
+            float functionInput = Translate(value.Split('<')[1].Split('>')[0], input);
+            return _functionDictionary[functionName].Result(functionInput);
         }
 
         if(value == "input") return input;
@@ -123,6 +151,22 @@ public class Operation
     }
 
     bool SearchFunction(string value, out string key)
+    {
+        foreach(var function in _functionDictionary)
+        {
+            if(value.Contains(function.Key))
+            {
+                key = function.Key;
+                return true;
+            }
+        }
+
+        key = "";
+
+        return false;
+    }
+
+    bool SearchCurve(string value, out string key)
     {
         foreach(var function in _curveDictionary)
         {
@@ -138,7 +182,19 @@ public class Operation
         return false;
     }
 
-    bool ContainsOperations(string value) => value.Contains("+") || value.Contains("-") || value.Contains("*") || value.Contains("/");
+    bool ContainsOperations(string value)
+    {
+        bool contains = false;
+
+        int i = 0;
+        while(i < operationTypes.Length && !contains)
+        {
+            contains = value.Contains(operationTypes[i]);
+            i++;
+        }
+        
+        return contains;
+    }
 
     float Operate(float value1, float value2, string operationType)
     {
@@ -152,6 +208,10 @@ public class Operation
                 return value1 * value2;
             case "/":
                 return value1 / value2;
+            case "%":
+                return value1 % value2;
+            case "^":
+                return Mathf.Pow(value1, value2);
             default:
                 return value1;
         }

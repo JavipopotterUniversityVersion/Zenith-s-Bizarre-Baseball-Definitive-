@@ -82,7 +82,7 @@ public class DialogueInterpreter : MonoBehaviour
 
             foreach (string dialogueLine in intervention.Lines)
             {
-                _dialogueText.text = dialogueLine;
+                _dialogueText.text = dialogue.StringProcessor.Process(dialogueLine);
                 _dialogueText.maxVisibleCharacters = 0;
 
                 for(int i = 0; i < dialogueLine.Length; i++)

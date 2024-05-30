@@ -12,25 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
   m_Name: DamageLevel
   m_EditorClassIdentifier: 
-  _value: 2
+  _value: 0
   _readProcessor:
     operation: input
     _floatDictionary:
       list: []
     _curveDictionary:
       list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 460f1524b187e774f95d257fb36d2b4d, type: 2}
-        m_TargetAssemblyTypeName: String, Assembly-CSharp
-        m_MethodName: CallString
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

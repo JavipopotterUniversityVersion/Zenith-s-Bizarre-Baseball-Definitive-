@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _readProcessor:
-    operation: f<((level + 1)/10)> - f<(level/10)>
+    operation: '[Diff]'
     _floatDictionary:
       list:
       - Key: level
@@ -23,6 +23,12 @@ MonoBehaviour:
       list:
       - Key: f
         Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
+    _operationDictionary:
+      list:
+      - Key: '[Diff]'
+        Value: {fileID: 11400000, guid: a3a45e7ef839e554e96dd5fbac901c18, type: 2}
+    _functionDictionary:
+      list: []
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

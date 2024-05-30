@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,12 @@ using UnityEngine.Events;
 public class String : ScriptableObject
 {
     [SerializeField] string _value;
-    public string Value => SetReferences();
+    public string Value => _stringProcessor.Process(_value);
 
     UnityEvent _onStringCall = new UnityEvent();
     public UnityEvent OnStringCall => _onStringCall;
 
-    [SerializeField] SerializableDictionary<string, Int> _intDictionary = new SerializableDictionary<string, Int>();
-    [SerializeField] SerializableDictionary<string, Float> _floatDictionary = new SerializableDictionary<string, Float>();
-    [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
+    [SerializeField] StringProcessor _stringProcessor;
 
     public void SetString(string _string)
     {
@@ -26,43 +25,50 @@ public class String : ScriptableObject
     {
         _onStringCall.Invoke();
     }
+}
 
-    string SetReferences()
+[Serializable]
+public struct ProcessedFloat
+{
+    [SerializeField] Float value;
+
+    public Processor processor;
+    public readonly float Value => processor.Result(value.Value);
+}
+
+[Serializable]
+public class StringProcessor
+{
+    [SerializeField] SerializableDictionary<string, Int> _intDictionary = new SerializableDictionary<string, Int>();
+    [SerializeField] SerializableDictionary<string, ProcessedFloat> _floatDictionary = new SerializableDictionary<string, ProcessedFloat>();
+    [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
+
+    public string Process(string value)
     {
-        string value = _value;
+        foreach (var item in _stringDictionary)
+        {
+            if (value.Contains(item.Key))
+            {
+                value = value.Replace(item.Key, item.Value.Value);
+            }
+        }
 
         foreach (var item in _intDictionary)
         {
-            if (_value.Contains(item.Key))
+            if (value.Contains(item.Key))
             {
-                value = _value.Replace(item.Key, item.Value.Value.ToString());
+                value = value.Replace(item.Key, item.Value.Value.ToString());
             }
         }
 
         foreach (var item in _floatDictionary)
         {
-            if (_value.Contains(item.Key))
+            if (value.Contains(item.Key))
             {
-                value = _value.Replace(item.Key, item.Value.Value.ToString());
-            }
-        }
-
-        foreach (var item in _stringDictionary)
-        {
-            if (_value.Contains(item.Key))
-            {
-                value = _value.Replace(item.Key, item.Value.Value);
+                value = value.Replace(item.Key, item.Value.Value.ToString());
             }
         }
 
         return value;
     }
-
-    // [System.Serializable]
-    // struct Mod
-    // {
-    //     [SerializeField] Float _value;
-    //     public readonly float Value => Modifier.Modify(_value.Value, _modifiers);
-    //     [SerializeField] Modifier[] _modifiers;
-    // }
 }

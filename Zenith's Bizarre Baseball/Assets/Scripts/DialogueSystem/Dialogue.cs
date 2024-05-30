@@ -13,6 +13,9 @@ public class Dialogue : ScriptableObject
 
     [SerializeField] UnityEvent onDialogueEnd = new UnityEvent();
     public UnityEvent OnDialogueEnd => onDialogueEnd;
+
+    [SerializeField] StringProcessor _stringProcessor;
+    public StringProcessor StringProcessor => _stringProcessor;
 }
 
 [Serializable]

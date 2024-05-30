@@ -14,8 +14,10 @@ public class TextReceiver : MonoBehaviour
         UpdateText();
     }
 
+    private void OnEnable() => UpdateText();
+
     [ContextMenu("Update Text")]
-    void UpdateText() => _text.text = _string.Value;
+    public void UpdateText() => _text.text = _string.Value;
 
     private void OnDestroy() {
         _string.OnStringCall.RemoveListener(UpdateText);

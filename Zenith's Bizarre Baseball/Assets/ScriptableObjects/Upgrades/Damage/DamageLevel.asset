@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
   m_Name: DamageLevel
   m_EditorClassIdentifier: 
-  _value: 3
-  _readModifiers: []
+  _value: 2
+  _readProcessor:
+    operation: input
+    _floatDictionary:
+      list: []
+    _curveDictionary:
+      list: []
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -29,8 +34,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _setModifiers: []
-  _addModifiers: []
-  _subtractModifiers: []
-  _multiplyModifiers: []
-  _divideModifiers: []

@@ -12,33 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
   m_Name: NextLevelDamageMultDiff
   m_EditorClassIdentifier: 
-  _value: 10
-  _readModifiers:
-  - _type: 2
-    _value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
-    _curve:
-    - Curve: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
-      _yMultiplier: 1
-      _value: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
-      _maxValue: 10
-    _extraModifiers:
-    - _type: 0
-      _value: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
-      _curve: []
-      _extraModifiers: []
-  - _type: 1
-    _value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
-    _curve:
-    - Curve: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
-      _yMultiplier: 1
-      _value: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
-      _maxValue: 10
-    _extraModifiers: []
+  _value: 1
+  _readProcessor:
+    operation: f<((level + 1)/10)> - f<(level/10)>
+    _floatDictionary:
+      list:
+      - Key: level
+        Value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
+    _curveDictionary:
+      list:
+      - Key: f
+        Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  _setModifiers: []
-  _addModifiers: []
-  _subtractModifiers: []
-  _multiplyModifiers: []
-  _divideModifiers: []

@@ -14,6 +14,7 @@ public class TextReceiver : MonoBehaviour
         UpdateText();
     }
 
+    [ContextMenu("Update Text")]
     void UpdateText() => _text.text = _string.Value;
 
     private void OnDestroy() {

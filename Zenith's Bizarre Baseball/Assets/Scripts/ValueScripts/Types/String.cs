@@ -13,7 +13,7 @@ public class String : ScriptableObject
     public UnityEvent OnStringCall => _onStringCall;
 
     [SerializeField] SerializableDictionary<string, Int> _intDictionary = new SerializableDictionary<string, Int>();
-    [SerializeField] SerializableDictionary<string, Mod> _floatDictionary = new SerializableDictionary<string, Mod>();
+    [SerializeField] SerializableDictionary<string, Float> _floatDictionary = new SerializableDictionary<string, Float>();
     [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
 
     public void SetString(string _string)
@@ -58,11 +58,11 @@ public class String : ScriptableObject
         return value;
     }
 
-    [System.Serializable]
-    struct Mod
-    {
-        [SerializeField] Float _value;
-        public readonly float Value => Modifier.Modify(_value.Value, _modifiers);
-        [SerializeField] Modifier[] _modifiers;
-    }
+    // [System.Serializable]
+    // struct Mod
+    // {
+    //     [SerializeField] Float _value;
+    //     public readonly float Value => Modifier.Modify(_value.Value, _modifiers);
+    //     [SerializeField] Modifier[] _modifiers;
+    // }
 }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
+  m_Name: Damage-Zenith
+  m_EditorClassIdentifier: 
+  _value: 4
+  _readProcessor:
+    operation: input * f (level/10) * (2 / (1+ (0 Random 1) > crit))
+    _floatDictionary:
+      list:
+      - Key: level
+        Value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
+      - Key: crit
+        Value: {fileID: 11400000, guid: 99e1565022875804586e19b14d6c9c5c, type: 2}
+    _curveDictionary:
+      list:
+      - Key: f
+        Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []

@@ -10,13 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c0e0fdb4b442474d90092994a3b993c, type: 3}
-  m_Name: MultiplierDifference
+  m_Name: UpgradeDamageDescription
   m_EditorClassIdentifier: 
-  _value: f ((level + 1)/10) - f (level/10)
+  _value: Increase Meele damage a [ref] %
   _stringProcessor:
     _intDictionary:
       list: []
     _floatDictionary:
-      list: []
+      list:
+      - Key: '[ref]'
+        Value:
+          value: {fileID: 11400000, guid: c17476ef1861b344f8ad06c311b97ed6, type: 2}
+          processor:
+            operation: 
+            _floatDictionary:
+              list: []
+            _curveDictionary:
+              list: []
+            _operationDictionary:
+              list: []
+            _functionDictionary:
+              list: []
     _stringDictionary:
       list: []

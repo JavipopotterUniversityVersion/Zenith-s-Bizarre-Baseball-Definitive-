@@ -49,7 +49,7 @@ public class Float : ScriptableObject
 [Serializable]
 public class Processor
 {
-    static string[] operationTypes = new string[] {"^", "*", "/", "%", "+", "-" };
+    static string[] operationTypes = new string[] {"!=", "==", ">", "<", "||", "&&", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
 
     [Header("FLOAT REFERENCES")]
@@ -134,13 +134,13 @@ public class Processor
 
         if(SearchCurve(value, out string curveName))
         {
-            string curveInput = value.Split('<')[1].Split('>')[0].Trim();
+            string curveInput = value.Split(" ")[1];
             return _curveDictionary[curveName].Evaluate(Translate(curveInput, input));
         }
 
         if(SearchFunction(value, out string functionName))
         {
-            float functionInput = Translate(value.Split('<')[1].Split('>')[0], input);
+            float functionInput = Translate(value.Split(" ")[1], input);
             return _functionDictionary[functionName].Result(functionInput);
         }
 
@@ -212,6 +212,20 @@ public class Processor
                 return value1 % value2;
             case "^":
                 return Mathf.Pow(value1, value2);
+            case "Random":
+                return UnityEngine.Random.Range(value1, value2);
+            case "==":
+                return value1 == value2 ? 1 : 0;
+            case "!=":
+                return value1 != value2 ? 1 : 0;
+            case ">":
+                return value1 > value2 ? 1 : 0;
+            case "<":
+                return value1 < value2 ? 1 : 0;
+            case "&&":
+                return value1 != 0 && value2 != 0 ? 1 : 0;
+            case "||":
+                return value1 != 0 || value2 != 0 ? 1 : 0;
             default:
                 return value1;
         }

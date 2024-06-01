@@ -18,7 +18,7 @@ public class FollowTarget : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        Vector2 direction = (targetHandler.target.position - transform.position).normalized * multiplier;
+        Vector2 direction = (targetHandler.Target.position - transform.position).normalized * multiplier;
         Vector2 fixedDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, direction, Time.deltaTime * weight * 100);
         movementController.Move(fixedDirection);
     }
@@ -28,8 +28,8 @@ public class FollowTarget : MonoBehaviour, IBehaviour
         if(movementController == null) return;
 
         if(multiplier >= 1)
-            gameObject.name = $"Follow Target {multiplier * movementController.speed} m/s";
+            gameObject.name = $"Follow Target {multiplier * movementController.Speed} m/s";
         else
-            gameObject.name = $"Move Away {multiplier * movementController.speed} m/s";
+            gameObject.name = $"Move Away {multiplier * movementController.Speed} m/s";
     }
 }

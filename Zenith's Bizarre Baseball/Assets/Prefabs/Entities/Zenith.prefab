@@ -602,7 +602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: {fileID: 4268377774385901763}
-  currentState: {fileID: 0}
   permanentBehaviours: []
 --- !u!1 &5271572575764198861
 GameObject:
@@ -830,7 +829,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: {fileID: 2004551557206204392}
-  currentState: {fileID: 0}
   permanentBehaviours: []
 --- !u!1 &7740919681925210772
 GameObject:
@@ -1829,7 +1827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: {fileID: 9213680094482711685}
-  currentState: {fileID: 0}
   permanentBehaviours: []
 --- !u!1 &9213680093821191708
 GameObject:
@@ -2348,6 +2345,14 @@ PrefabInstance:
       propertyPath: _counterMultiplier
       value: 
       objectReference: {fileID: 11400000, guid: 813e1e6ff1e1bc547876558dfe7df2bd, type: 2}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[5]
+      value: 
+      objectReference: {fileID: 1347144031039282595}
     - target: {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: _multiplier
       value: 
@@ -2416,3 +2421,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5125766025389325077, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_PrefabInstance: {fileID: 1153429947300558371}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1347144031039282595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279055166213524790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e799c9305860646850b41d81e8b67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventCasts:
+  - conditions: []
+    _eventsNames:
+    - Enemy

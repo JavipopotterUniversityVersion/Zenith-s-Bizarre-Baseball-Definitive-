@@ -22,13 +22,13 @@ public class OrbitalMovement : MonoBehaviour, IBehaviour
     public void ExecuteBehaviour()
     {
         //Describe an orbit around the target
-        Vector2 direction = (targetHandler.target.position - transform.position).normalized;
+        Vector2 direction = (targetHandler.Target.position - transform.position).normalized;
         Vector2 perpendicular = new Vector2(-direction.y, direction.x).normalized;
         Vector2 finalDirection;
 
-        if(Vector2.Distance(targetHandler.target.position, transform.position) < orbit_radius + 0.5f)
+        if(Vector2.Distance(targetHandler.Target.position, transform.position) < orbit_radius + 0.5f)
             finalDirection = Vector2.Lerp(perpendicular, -direction, Time.deltaTime * adjustFactor * 100).normalized;
-        else if(Vector2.Distance(targetHandler.target.position, transform.position) > orbit_radius - 0.5f)
+        else if(Vector2.Distance(targetHandler.Target.position, transform.position) > orbit_radius - 0.5f)
             finalDirection = Vector2.Lerp(perpendicular, direction, Time.deltaTime * adjustFactor * 100).normalized;
         else
             finalDirection = perpendicular;

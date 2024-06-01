@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,18 +7,8 @@ using UnityEngine.Events;
 public class FloatReceiver : MonoBehaviour
 {
     [SerializeField] Float _value;
-    [SerializeField] float _threshold;
-
-    [SerializeField] UnityEvent onLowValue = new UnityEvent();
-    public UnityEvent OnLowValue => onLowValue;
-
-    [SerializeField] UnityEvent onValue = new UnityEvent();
-    public UnityEvent OnValue => onValue;
-
-    [SerializeField] UnityEvent onHighValue = new UnityEvent();
-    public UnityEvent OnHighValue => onHighValue;
-
-    bool _isSubscribed;
+    [SerializeField] ObjectFloatEvent[] _floatEvents;
+    bool _isSubscribed = false;
 
     private void Start() => Subscribe();
 
@@ -25,12 +16,7 @@ public class FloatReceiver : MonoBehaviour
 
     public void CheckValue(float value) 
     {
-        if(value < _threshold && _value.LastValue >= _threshold)
-            onLowValue.Invoke();
-        else if(value > _threshold && _value.LastValue <= _threshold)
-            onHighValue.Invoke();
-        else if(value == _threshold)
-            onValue.Invoke();
+        foreach (ObjectFloatEvent floatEvent in _floatEvents) floatEvent.Invoke(value);
     }
 
     public void Subscribe()
@@ -42,4 +28,28 @@ public class FloatReceiver : MonoBehaviour
     }
 
     public void Unsubscribe() => _value.OnValueChanged.RemoveListener(CheckValue);
+}
+
+[Serializable]
+public struct ObjectFloatEvent
+{
+    [SerializeField] ObjectProcessor _processor;
+    [SerializeField] UnityEvent _event;
+
+    public readonly void Invoke(float input)
+    {
+        if(_processor.ResultBool(input)) _event.Invoke();
+    }
+}
+
+[Serializable]
+public struct FloatEvent
+{
+    [SerializeField] Processor _processor;
+    [SerializeField] UnityEvent _event;
+
+    public readonly void Invoke(float input)
+    {
+        if(_processor.ResultBool(input)) _event.Invoke();
+    }
 }

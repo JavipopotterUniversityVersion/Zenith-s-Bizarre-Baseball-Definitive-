@@ -435,6 +435,10 @@ MonoBehaviour:
   _thingToDetectName: Enemy
   minimunColliders: 1
   _gizmosColor: {r: 1, g: 0.9646237, b: 0, a: 1}
+  overlapType: 0
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5906999282283868123
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: {fileID: 5906999281276379017}
-  currentState: {fileID: 0}
   permanentBehaviours: []
 --- !u!1 &5906999282367275753
 GameObject:

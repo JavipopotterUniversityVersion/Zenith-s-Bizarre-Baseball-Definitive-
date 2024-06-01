@@ -16,7 +16,7 @@ public class DistanceCondition : MonoBehaviour, ICondition
     public bool CheckCondition()
     {
         float distance = 0;
-       if(targetHandler != null) distance = Vector2.Distance(transform.position, targetHandler.target.position); // si no entra en el if, interpretamos que el valor nos da igual
+       if(targetHandler != null) distance = Vector2.Distance(transform.position, targetHandler.Target.position); // si no entra en el if, interpretamos que el valor nos da igual
        // Debug.Log(distance <= range.x && distance <= range.y);
         bool condicion = distance >= range.x && distance <= range.y;
        // Debug.Log(condicion);

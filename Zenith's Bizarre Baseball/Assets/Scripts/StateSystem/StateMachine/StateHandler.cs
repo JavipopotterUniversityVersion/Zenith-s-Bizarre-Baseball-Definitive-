@@ -5,20 +5,32 @@ using UnityEngine;
 public class StateHandler : MonoBehaviour
 {
     [SerializeField] State initialState;
-    [SerializeField] State currentState;
+
+    State _currentState;
+    State CurrentState
+    {
+        get => _currentState;
+        set
+        {
+            lastState = _currentState;
+            _currentState = value;
+            _currentState.PlayStateAnimation();
+        }
+    }
+    State lastState;
+
     [SerializeField] BehaviourPerformer[] permanentBehaviours;
 
     void Start()
     {
-        currentState = initialState;
-        currentState.OnStateEnter();
-        currentState.transform.gameObject.name = "current";
+        CurrentState = initialState;
+        CurrentState.OnStateEnter();
     }
 
     private void Update() {
-        currentState.OnStateUpdate();
+        CurrentState.OnStateUpdate();
 
-        State newState = currentState.GetNextState();
+        State newState = CurrentState.GetNextState();
 
         if(newState != null)
         {
@@ -33,13 +45,11 @@ public class StateHandler : MonoBehaviour
 
     public void ChangeState(State newState)
     {
-        currentState.OnStateExit();
-        currentState.transform.gameObject.name = "passed";
+        CurrentState.OnStateExit();
 
-        currentState = newState;
+        CurrentState = newState;
         
-        currentState.OnStateEnter();
-        currentState.transform.gameObject.name = "current";
+        CurrentState.OnStateEnter();
     }
 
     void PerformPermanentBehaviours()
@@ -49,4 +59,7 @@ public class StateHandler : MonoBehaviour
             performer.Perform();
         }
     }
+
+    public void ReturnToLastState() => CurrentState = lastState;
+    public void FullReturnToLastState() => ChangeState(lastState);
 }

@@ -78,4 +78,6 @@ public class Condition
         }
         return true;
     }
+
+    public static float Value(Condition[] conditions) => CheckAllConditions(conditions) ? 1 : 0;
 }

@@ -16,7 +16,7 @@ public class FaceTargetBehaviour : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        if(targetHandler.target != null)
+        if(targetHandler.Target != null)
         {
             float direction = Mathf.Sign(targetHandler.GetTargetDirection().x);
 

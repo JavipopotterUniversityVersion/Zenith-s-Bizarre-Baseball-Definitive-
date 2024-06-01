@@ -220,6 +220,18 @@ PrefabInstance:
       propertyPath: _threshold
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2945539639634197334, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor.operation
+      value: input > 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945539639634197334, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor.operation
+      value: input < 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945539639634197334, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[2]._processor.operation
+      value: input == 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2945539639634197335, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -304,6 +316,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6804232957056955022, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor.operation
+      value: input > 0 || input == 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804232957056955022, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor.operation
+      value: input < 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
 --- !u!224 &746049142875407662 stripped
@@ -325,6 +345,18 @@ PrefabInstance:
     - target: {fileID: 2945539639634197334, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
       propertyPath: _threshold
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945539639634197334, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor.operation
+      value: input > 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945539639634197334, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor.operation
+      value: input < 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945539639634197334, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[2]._processor.operation
+      value: input == 2
       objectReference: {fileID: 0}
     - target: {fileID: 2945539639634197335, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
       propertyPath: m_Pivot.x
@@ -409,6 +441,14 @@ PrefabInstance:
     - target: {fileID: 2945539639634197335, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804232957056955022, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor.operation
+      value: input > 2 || input == 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804232957056955022, guid: 2e1210b6be61e8644b365d879786858a, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor.operation
+      value: input < 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1210b6be61e8644b365d879786858a, type: 3}

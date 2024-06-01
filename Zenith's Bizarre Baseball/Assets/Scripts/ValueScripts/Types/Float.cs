@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Float", menuName = "Value/Float")]
-public class Float : ScriptableObject
+public class Float : ScriptableICondition
 {
     [SerializeField] float _value;
     [SerializeField] Processor _readProcessor;
@@ -44,6 +44,8 @@ public class Float : ScriptableObject
     public void MultiplyValue(float value) => SetValue(_value * value);
 
     public void DivideValue(float value) => SetValue(_value / value);
+
+    public override bool CheckCondition() => Value != 0;
 }
 
 [Serializable]
@@ -104,13 +106,14 @@ public class Processor
 
     public float Result(float input)
     {
-        if(operation == "input" || operation == "") return input;
+        if(operation == "" || operation == "input") return input;
 
         string value = operation;
         value = PlaceOperations(value);
         Replace(ref value, 0, input);
         return Translate(value, input);
     }
+    public bool ResultBool(float input) => Result(input) != 0;
 
     string PlaceOperations(string value)
     {
@@ -124,7 +127,7 @@ public class Processor
         return value;
     }
 
-    float Translate(string value, float input)
+    public virtual float Translate(string value, float input)
     {
         value = value.Trim();
 
@@ -230,6 +233,37 @@ public class Processor
                 return value1;
         }
     }
+}
+
+[Serializable]
+public class ObjectProcessor : Processor
+{
+    public override float Translate(string value, float input)
+    {
+        value = value.Trim();
+
+        if(_conditionDictionary.ContainsKey(value))
+        {
+            return Condition.Value(_conditionDictionary[value]);
+        }
+
+        if(_readAbleDictionary.ContainsKey(value))
+        {
+            return _readAbleDictionary[value].Read();
+        }
+
+        return base.Translate(value, input);
+    }
+
+    [Header("CONDITION REFERENCES")]
+    [SerializeField] SerializableDictionary<string, Condition[]> _conditionDictionary = new SerializableDictionary<string, Condition[]>();
+    [SerializeField] SerializableDictionary<string, ReadAble> _readAbleDictionary = new SerializableDictionary<string, ReadAble>();
+}
+
+[Serializable]
+public abstract class ReadAble : MonoBehaviour
+{
+    public abstract float Read();
 }
 
 // [Serializable]

@@ -7,9 +7,10 @@ public class MovementController : MonoBehaviour
 {
     Rigidbody2D rb;
     public Rigidbody2D Rb => rb;
-    [SerializeField] public float _speed = 10f;
+
+    [SerializeField] float _speed = 10f;
     private float _OriginalSpeed;
-    public float speed => _speed;
+    public float Speed => _speed;
 
     [SerializeField] UnityEvent onStartMoving = new UnityEvent();
     public UnityEvent OnStartMoving => onStartMoving;
@@ -35,13 +36,16 @@ public class MovementController : MonoBehaviour
         }
         else if(rb.velocity != Vector2.zero && direction == Vector2.zero) onStopMoving.Invoke();
 
-        rb.velocity = direction * speed;
+        rb.velocity = direction * Speed;
     }
 
     public void SetSpeed(float newSpeed)
     {
         _speed = newSpeed;
     }
+
+    public void SpeedIsRigidbodyVelocity() => _speed = rb.velocity.magnitude;
+
     public void ReturnOriginalSpeed()
     {
         _speed = _OriginalSpeed;

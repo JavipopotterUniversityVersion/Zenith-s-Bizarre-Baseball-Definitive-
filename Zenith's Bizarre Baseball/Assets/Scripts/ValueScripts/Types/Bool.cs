@@ -23,4 +23,6 @@ public class Bool : ScriptableICondition
 
     public void ToggleValue() => SetValue(!_value);
     public override bool CheckCondition() => _value;
+
+
 }

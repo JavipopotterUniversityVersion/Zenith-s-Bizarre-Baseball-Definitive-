@@ -61,6 +61,7 @@ public class NodeGenerator : MonoBehaviour
                 }
 
                 if(i >= 10) Debug.LogError("Could not place the required node " + setting.NodePrefab.name);
+                else setting.TimesAppeared++;
             }
         }
 

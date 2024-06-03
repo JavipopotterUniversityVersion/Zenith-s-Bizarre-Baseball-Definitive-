@@ -128,6 +128,7 @@ public class Node : MonoBehaviour
     public bool TryPlaceNode(GameObject nodePrefab)
     {
         Gate gate = OpenFirstAvailableGate();
+        if(gate == null) return false;
 
         Node node = Instantiate(nodePrefab).GetComponent<Node>();
         node.Generator = _generator;
@@ -248,7 +249,11 @@ public class NodeSetting
     public int MinNumberOfNodes => _minNumberOfNodes;
 
     int _timesAppeared;
-    public int TimesAppeared => _timesAppeared;
+    public int TimesAppeared
+    {
+        get => _timesAppeared;
+        set => _timesAppeared = value;
+    }
 
     [SerializeField] int _maxNumberOfNodes;
     public int MaxNumberOfNodes => _maxNumberOfNodes;

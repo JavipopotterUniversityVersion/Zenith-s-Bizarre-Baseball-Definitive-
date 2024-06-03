@@ -5,13 +5,14 @@ using UnityEngine;
 public class DamageCollidable : ICollidable
 {
     [SerializeField] Float Damage;
+    [SerializeField] ObjectProcessor _processor;
     float multiplier = 1;
 
     public override void OnCollide(Collider2D collider)
     {
         if (collider.TryGetComponent(out HealthHandler health))
         {
-            health.TakeDamage(Damage.Value * multiplier);
+            health.TakeDamage(_processor.Result(Damage.Value) * multiplier);
         }
     }
 

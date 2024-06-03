@@ -78,6 +78,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onCollideEventWithTransform:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1007171140992380876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,9 +97,12 @@ MonoBehaviour:
   - layer:
       serializedVersion: 2
       m_Bits: 128
+    conditions: []
     collidables:
     - {fileID: 6104190473600213789}
     - {fileID: 5037343550723941653}
+  OnStayCollidables: []
+  checkDelay: 0.1
   OnExitCollidables: []
 --- !u!114 &5037343550723941653
 MonoBehaviour:
@@ -111,6 +117,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: {fileID: 0}
+  _processor:
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readableDictionary:
+      list: []
 --- !u!1 &6390224662080061628
 GameObject:
   m_ObjectHideFlags: 0

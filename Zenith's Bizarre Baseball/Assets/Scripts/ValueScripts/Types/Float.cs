@@ -53,6 +53,7 @@ public class Processor
 {
     static string[] operationTypes = new string[] {"!=", "==", ">", "<", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
+    [SerializeField] bool _debug = false;
 
     [Header("FLOAT REFERENCES")]
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary = new SerializableDictionary<string, Float>();
@@ -66,6 +67,9 @@ public class Processor
     [Header("FUNCTION REFERENCES")]
     [SerializeField] SerializableDictionary<string, Function> _functionDictionary = new SerializableDictionary<string, Function>();
 
+    [Header("String REFERENCES")]
+    [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
+
     float Calculate(float input, string operation)
     {
         float result = 0;
@@ -75,7 +79,8 @@ public class Processor
         while(i >= 0 && !foundOperation)
         {
             string[] operations = operation.Split(operationTypes[i], 2);
-            Debug.Log($"Trying to operate with {operationTypes[i]} in {operation}");
+
+            if(_debug)Debug.Log($"Trying to operate with {operationTypes[i]} in {operation}");
 
             if(operations.Length == 2)
             {
@@ -111,7 +116,7 @@ public class Processor
         string value = operation;
         value = PlaceOperations(value);
         Replace(ref value, 0, input);
-        Debug.Log(value);
+        if(_debug) Debug.Log(value);
         return Translate(value, input);
     }
     public bool ResultBool(float input) => Result(input) != 0;
@@ -148,10 +153,12 @@ public class Processor
             return _functionDictionary[functionName].Result(functionInput);
         }
 
+        if(_stringDictionary.ContainsKey(value)) return StringToFloat(_stringDictionary[value].Value);
+
         if(value == "input") return input;
 
         if(float.TryParse(value, out float result)) return result;
-        else return input;
+        else return StringToFloat(value);
     }
 
     bool SearchFunction(string value, out string key)
@@ -235,6 +242,20 @@ public class Processor
         }
     }
 
+    float StringToFloat(string value)
+    {
+        string result = "";
+
+        foreach(char c in value)
+        {
+            result += Convert.ToInt32(c).ToString();
+        }
+
+        Debug.Log(result);
+
+        return float.Parse(result);
+    }
+
     public void Subscribe(UnityAction action)
     {
         foreach(var item in _floatDictionary)
@@ -266,7 +287,6 @@ public class ObjectProcessor : Processor
 
         if(_readableDictionary.ContainsKey(value))
         {
-            Debug.Log($"Reading {_readableDictionary[value].Read()}");
             return _readableDictionary[value].Read();
         }
 

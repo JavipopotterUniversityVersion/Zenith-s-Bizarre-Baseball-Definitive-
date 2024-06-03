@@ -8,7 +8,10 @@ using UnityEngine.Events;
 public class NodeGenerator : MonoBehaviour
 {
     [SerializeField] Node _initialNode;
+    
     [SerializeField] int _extension;
+    public int Extension => _extension;
+
     [SerializeField] int maxBranchExtension;
 
     [SerializeField][Range(0, 1)] float _linearity = 0.5f;
@@ -18,6 +21,9 @@ public class NodeGenerator : MonoBehaviour
 
     UnityEvent onFinishedGeneration = new UnityEvent();
     public UnityEvent OnFinishedGeneration => onFinishedGeneration;
+
+    [SerializeField] NodeSetting[] _nodeSettings;
+    public NodeSetting[] NodeSettings => _nodeSettings;
 
     private void Start()
     {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 public class Node : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Node : MonoBehaviour
     float _linearity = 0.5f;
 
     public static int extension = 10;
+    int extensionIndex = 0;
 
     string[] names = new string[] {"Pepe", "Juan", "Pedro", "Luis", "Carlos", "Jorge", "Ricardo", "Miguel", "Alberto", "Fernando", "Rob", "John", "Mike", "Steve", "Tom", "Jerry", "Rick", "Morty", "Beth", "Summer", "Jerry", "Birdperson", "Tammy", "Squanchy", "Unity", "Mr. Poopybutthole", "Noob Noob", "Scary Terry", "Abradolf Lincler", "Pencilvester", "Photography Raptor", "Crocubot", "Gearhead", "Million Ants", "Trunk People", "Gazorpazorpfield", "Ants in my Eyes Johnson", "Reverse Giraffe", "Hamurai", "Amish Cyborg", "Purge Planet Ruler", "Cromulon", "Gromflomite", "Plutonian", "Zigerion", "Meeseeks", "Cronenberg", "Fart", "Giant Head", "Giant Testicle Monster", "Giant Arm", "Giant Cat", "Giant Beetle", "Giant Spider"};
 
@@ -58,6 +60,8 @@ public class Node : MonoBehaviour
         _generator = generator;
         _linearity = linearity;
 
+        nodeSettings.AddRange(generator.NodeSettings);
+        extensionIndex = extension - _generator.Extension;
 
         for (int i = 0; i < _gates.Length; i++)
         {
@@ -71,7 +75,10 @@ public class Node : MonoBehaviour
 
             if (gate.IsConnected || !Access.HasFlag(gate.Access)) continue;
 
-            Node node = Instantiate(NodeSetting.RandomNodeSetting(nodeSettings)).GetComponent<Node>();
+            GameObject nodePrefab = NodeSetting.RandomNodeSetting(nodeSettings);
+            if (nodePrefab == null) CloseNodes();
+
+            Node node = Instantiate(nodePrefab).GetComponent<Node>();
             node.Generator = _generator;
 
             int j = 0;
@@ -111,7 +118,56 @@ public class Node : MonoBehaviour
         }
     }
 
+    bool TryPlaceNode(GameObject nodePrefab)
+    {
+        Gate gate = OpenFirstAvailableGate();
+
+        Node node = Instantiate(nodePrefab).GetComponent<Node>();
+        node.Generator = _generator;
+
+        int j = 0;
+
+        while (!node.ConnectNodes(ref gate))
+        {
+            Destroy(node.gameObject);
+            node = Instantiate(NodeSetting.RandomNodeSetting(nodeSettings)).GetComponent<Node>();
+            node.Generator = _generator;
+
+            j++;
+
+            if (j > 10)
+            {
+                Destroy(node.gameObject);
+                CloseAccess(gate.Access);
+                break;
+            }
+        }
+
+        return true;
+    }
+
+    Gate OpenFirstAvailableGate()
+    {
+        Gate gate = null;
+
+        int i = 0;
+        while(i < _gates.Length && gate == null)
+        {
+            Gate gateToCheck = _gates[i];
+            if (!gateToCheck.IsConnected)
+            {
+                OpenAccess(gate.Access);
+                gate = gateToCheck;
+            }
+            i++;
+        }
+        
+
+        return gate;
+    }
+   
     void CloseAccess(RoomAccess access) => Access &= ~access;
+    void OpenAccess(RoomAccess access) => Access |= access;
 
     bool CanPlaceNode()
     {
@@ -189,11 +245,16 @@ public class NodeSetting
     [SerializeField] int _minNumberOfNodes;
     public int MinNumberOfNodes => _minNumberOfNodes;
 
+    int _timesAppeared;
+    public int TimesAppeared => _timesAppeared;
+
     [SerializeField] int _maxNumberOfNodes;
     public int MaxNumberOfNodes => _maxNumberOfNodes;
 
     public static GameObject RandomNodeSetting(NodeSetting[] nodeSettings)
     {
+        if(nodeSettings.Length == 0) return null;
+
         float totalProbability = 0;
         foreach(NodeSetting setting in nodeSettings)
         {
@@ -206,7 +267,11 @@ public class NodeSetting
         foreach(NodeSetting setting in nodeSettings)
         {
             currentProbability += setting.Probability;
-            if(randomValue <= currentProbability) return setting._nodePrefab;
+            if(randomValue <= currentProbability && setting.TimesAppeared < setting.MaxNumberOfNodes)
+            {
+                setting._timesAppeared++;
+                return setting._nodePrefab;
+            }
         }
 
         return null;

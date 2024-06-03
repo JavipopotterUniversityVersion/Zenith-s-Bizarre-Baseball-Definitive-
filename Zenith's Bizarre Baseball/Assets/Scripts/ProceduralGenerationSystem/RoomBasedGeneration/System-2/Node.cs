@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
+using System.Linq;
 
 public class Node : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Node : MonoBehaviour
     [SerializeField] Gate[] _gates;
     public Gate[] Gates => _gates;
     [SerializeField] ContactFilter2D _contactFilter;
-    [SerializeField] NodeSetting[] nodeSettings;
+    [SerializeField] List<NodeSetting> nodeSettings = new List<NodeSetting>();
     [SerializeField] RoomAccess _access;
     public RoomAccess Access
     {
@@ -27,7 +28,9 @@ public class Node : MonoBehaviour
     float _linearity = 0.5f;
 
     public static int extension = 10;
+
     int extensionIndex = 0;
+    public int ExtensionIndex => extensionIndex;
 
     string[] names = new string[] {"Pepe", "Juan", "Pedro", "Luis", "Carlos", "Jorge", "Ricardo", "Miguel", "Alberto", "Fernando", "Rob", "John", "Mike", "Steve", "Tom", "Jerry", "Rick", "Morty", "Beth", "Summer", "Jerry", "Birdperson", "Tammy", "Squanchy", "Unity", "Mr. Poopybutthole", "Noob Noob", "Scary Terry", "Abradolf Lincler", "Pencilvester", "Photography Raptor", "Crocubot", "Gearhead", "Million Ants", "Trunk People", "Gazorpazorpfield", "Ants in my Eyes Johnson", "Reverse Giraffe", "Hamurai", "Amish Cyborg", "Purge Planet Ruler", "Cromulon", "Gromflomite", "Plutonian", "Zigerion", "Meeseeks", "Cronenberg", "Fart", "Giant Head", "Giant Testicle Monster", "Giant Arm", "Giant Cat", "Giant Beetle", "Giant Spider"};
 
@@ -60,8 +63,8 @@ public class Node : MonoBehaviour
         _generator = generator;
         _linearity = linearity;
 
-        nodeSettings.AddRange(generator.NodeSettings);
-        extensionIndex = extension - _generator.Extension;
+        nodeSettings.AddRange(generator.NodeSettings.ToList());
+        extensionIndex = _generator.Extension - branchExtension;
 
         for (int i = 0; i < _gates.Length; i++)
         {
@@ -76,7 +79,11 @@ public class Node : MonoBehaviour
             if (gate.IsConnected || !Access.HasFlag(gate.Access)) continue;
 
             GameObject nodePrefab = NodeSetting.RandomNodeSetting(nodeSettings);
-            if (nodePrefab == null) CloseNodes();
+            if (nodePrefab == null)
+            {
+                CloseNodes();
+                return;
+            }
 
             Node node = Instantiate(nodePrefab).GetComponent<Node>();
             node.Generator = _generator;
@@ -118,32 +125,26 @@ public class Node : MonoBehaviour
         }
     }
 
-    bool TryPlaceNode(GameObject nodePrefab)
+    public bool TryPlaceNode(GameObject nodePrefab)
     {
         Gate gate = OpenFirstAvailableGate();
 
         Node node = Instantiate(nodePrefab).GetComponent<Node>();
         node.Generator = _generator;
 
-        int j = 0;
+        bool result = node.ConnectNodes(ref gate);
 
-        while (!node.ConnectNodes(ref gate))
+        if(!result)
         {
             Destroy(node.gameObject);
-            node = Instantiate(NodeSetting.RandomNodeSetting(nodeSettings)).GetComponent<Node>();
-            node.Generator = _generator;
-
-            j++;
-
-            if (j > 10)
-            {
-                Destroy(node.gameObject);
-                CloseAccess(gate.Access);
-                break;
-            }
+            CloseAccess(gate.Access);
+        }
+        else
+        {
+            node.SetAccess(GetOppositeAccess(gate.Access));
         }
 
-        return true;
+        return result;
     }
 
     Gate OpenFirstAvailableGate()
@@ -155,13 +156,13 @@ public class Node : MonoBehaviour
         {
             Gate gateToCheck = _gates[i];
             if (!gateToCheck.IsConnected)
-            {
-                OpenAccess(gate.Access);
+            { 
                 gate = gateToCheck;
+                OpenAccess(gate.Access);
             }
+
             i++;
         }
-        
 
         return gate;
     }
@@ -236,6 +237,7 @@ public class Gate
 public class NodeSetting
 {
     [SerializeField] GameObject _nodePrefab;
+    public GameObject NodePrefab => _nodePrefab;
 
     [SerializeField] [Range(0, 1)]
     float _probability;
@@ -250,6 +252,13 @@ public class NodeSetting
 
     [SerializeField] int _maxNumberOfNodes;
     public int MaxNumberOfNodes => _maxNumberOfNodes;
+
+    public bool AppearedRequiredTimes => _timesAppeared >= _minNumberOfNodes;
+
+    [SerializeField] int minExtension;
+    public int MinExtension => minExtension;
+
+    public static GameObject RandomNodeSetting(List<NodeSetting> nodeSettings) => RandomNodeSetting(nodeSettings.ToArray());
 
     public static GameObject RandomNodeSetting(NodeSetting[] nodeSettings)
     {
@@ -267,7 +276,8 @@ public class NodeSetting
         foreach(NodeSetting setting in nodeSettings)
         {
             currentProbability += setting.Probability;
-            if(randomValue <= currentProbability && setting.TimesAppeared < setting.MaxNumberOfNodes)
+            if(setting._maxNumberOfNodes > 0 && setting.TimesAppeared >= setting.MaxNumberOfNodes) continue;
+            if(randomValue <= currentProbability)
             {
                 setting._timesAppeared++;
                 return setting._nodePrefab;

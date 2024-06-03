@@ -4,11 +4,12 @@ using UnityEditor;
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.Events;
+using System.Linq;
 
 public class NodeGenerator : MonoBehaviour
 {
     [SerializeField] Node _initialNode;
-    
+
     [SerializeField] int _extension;
     public int Extension => _extension;
 
@@ -37,8 +38,35 @@ public class NodeGenerator : MonoBehaviour
     async void GenerateNode(Node _currentNode)
     {
         await _currentNode.GenerateNodesTask(_linearity, this, maxBranchExtension);
+        await PlaceRequiredNodes();
+        await Task.Delay(1000);
         OnFinishedGeneration?.Invoke();
     }
+
+    Task PlaceRequiredNodes()
+    {
+        foreach(NodeSetting setting in _nodeSettings)
+        {
+            while(setting.AppearedRequiredTimes == false)
+            {
+                List<Node> _nodesWithMinExtension = _nodes.Where(n => n.ExtensionIndex >= setting.MinExtension).ToList();
+
+                Node randomNode = _nodesWithMinExtension[Random.Range(0, _nodesWithMinExtension.Count)];
+
+                int i = 0;
+                while(randomNode.TryPlaceNode(setting.NodePrefab) == false && i < 10)
+                {
+                    randomNode = _nodesWithMinExtension[Random.Range(0, _nodesWithMinExtension.Count)];
+                    i++;
+                }
+
+                if(i >= 10) Debug.LogError("Could not place the required node " + setting.NodePrefab.name);
+            }
+        }
+
+        return Task.CompletedTask;
+    }
+
 
     public bool CheckIntersecctions(Node node)
     {

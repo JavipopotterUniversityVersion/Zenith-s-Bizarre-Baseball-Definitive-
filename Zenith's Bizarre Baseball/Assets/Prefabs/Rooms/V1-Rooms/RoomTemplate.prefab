@@ -5323,10 +5323,12 @@ MonoBehaviour:
     _probability: 0.198
     _minNumberOfNodes: 0
     _maxNumberOfNodes: 0
+    minExtension: 0
   - _nodePrefab: {fileID: 2089418202490771014, guid: 37fd6a68b8e29f6479d836b174817060, type: 3}
     _probability: 0.218
     _minNumberOfNodes: 0
     _maxNumberOfNodes: 0
+    minExtension: 0
   _access: 0
   _limits:
   - _min: {fileID: 7513802407822258925}
@@ -5376,6 +5378,8 @@ MonoBehaviour:
     conditions: []
     collidables:
     - {fileID: 8559031487484489052}
+  OnStayCollidables: []
+  checkDelay: 0.1
   OnExitCollidables: []
 --- !u!114 &8559031487484489052
 MonoBehaviour:
@@ -5404,6 +5408,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onCollideEventWithTransform:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &753396280676663295
 GameObject:
   m_ObjectHideFlags: 0

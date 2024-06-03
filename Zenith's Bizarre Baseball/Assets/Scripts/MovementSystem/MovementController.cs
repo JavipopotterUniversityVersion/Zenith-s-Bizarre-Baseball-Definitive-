@@ -12,6 +12,8 @@ public class MovementController : MonoBehaviour
     private float _OriginalSpeed;
     public float Speed => _speed;
 
+    [SerializeField] bool _ignoreSpeed = false;
+
     [SerializeField] UnityEvent onStartMoving = new UnityEvent();
     public UnityEvent OnStartMoving => onStartMoving;
 
@@ -36,15 +38,14 @@ public class MovementController : MonoBehaviour
         }
         else if(rb.velocity != Vector2.zero && direction == Vector2.zero) onStopMoving.Invoke();
 
-        rb.velocity = direction * Speed;
+        if(_ignoreSpeed) rb.velocity = rb.velocity.magnitude * direction.normalized;
+        else rb.velocity = direction * Speed;
     }
 
     public void SetSpeed(float newSpeed)
     {
         _speed = newSpeed;
     }
-
-    public void SpeedIsRigidbodyVelocity() => _speed = rb.velocity.magnitude;
 
     public void ReturnOriginalSpeed()
     {

@@ -7,6 +7,8 @@ public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] BehaviourUnit[] behaviours;
 
+    private void Awake() => BehaviourUnit.Initialize(behaviours);
+
     public void ExecuteBehaviour()
     {
         float random = UnityEngine.Random.value;
@@ -33,7 +35,16 @@ public class BehaviourUnit
 {
     [SerializeField] GameObject _behaviourContainer;
 
-    public IBehaviour Behaviour => _behaviourContainer.GetComponent<IBehaviour>();
+    IBehaviour _behaviour;
+    public IBehaviour Behaviour => _behaviour;
+
+    public static void Initialize(BehaviourUnit[] units)
+    {
+        foreach (var unit in units)
+        {
+            unit._behaviour = unit._behaviourContainer.GetComponent<IBehaviour>();
+        }
+    }
 
     [SerializeField] [Range(0, 1)] float _probability;
     public float Probability => _probability;

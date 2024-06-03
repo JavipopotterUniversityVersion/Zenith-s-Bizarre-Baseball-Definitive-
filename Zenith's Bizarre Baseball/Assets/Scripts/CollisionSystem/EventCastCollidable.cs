@@ -9,7 +9,7 @@ public class EventCastCollidable : ICollidable
     [SerializeField] EventCast[] eventCasts;
     public override void OnCollide(Collider2D collider)
     {
-        if(collider.TryGetComponent(out EventByTextReceiver eventByTextReceiver))
+        if(collider.TryGetComponent(out BehaviourByTextInput eventByTextReceiver))
         {
             List<string> eventsNames = new List<string>();
 
@@ -17,6 +17,10 @@ public class EventCastCollidable : ICollidable
             {
                 if(eventCast.CheckConditions())
                 {
+                    foreach (string eventName in eventCast.EventsNames)
+                    {
+                        print(eventName);
+                    }
                     eventsNames.AddRange(eventCast.EventsNames);
                 }
             }

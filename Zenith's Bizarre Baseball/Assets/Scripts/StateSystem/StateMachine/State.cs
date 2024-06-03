@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class State : MonoBehaviour
+public class State : MonoBehaviour, IBehaviour
 {
     Animator animationPlayer;
     [SerializeField] string stateAnimation = "";
@@ -18,12 +18,16 @@ public class State : MonoBehaviour
     [SerializeField] NextStatePerformer[] nextStates;
     public NextStatePerformer[] NextStates => nextStates;
 
+    StateHandler stateHandler;
+
     private void Awake()
     {
         animationPlayer = GetComponentInParent<Animator>();
         NextStatePerformer.InitializeAll(nextStates);
-
+        stateHandler = GetComponentInParent<StateHandler>();
     }
+
+    public void ExecuteBehaviour() => stateHandler.ChangeState(this);
 
     public void PlayStateAnimation()
     {

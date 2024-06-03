@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthHandler : MonoBehaviour
+public class HealthHandler : Readable
 {
     [SerializeField] UnityEvent<float> onHealthChanged = new UnityEvent<float>();
     public UnityEvent<float> OnHealthChanged => onHealthChanged;
@@ -27,6 +27,8 @@ public class HealthHandler : MonoBehaviour
             if(_currentHealth == 0) onDie.Invoke();
         }
     }
+
+    public override float Read() => CurrentHealth;
 
     private void Awake() => ResetHealth();
     public void ResetHealth() => CurrentHealth = maxHealth.Value;

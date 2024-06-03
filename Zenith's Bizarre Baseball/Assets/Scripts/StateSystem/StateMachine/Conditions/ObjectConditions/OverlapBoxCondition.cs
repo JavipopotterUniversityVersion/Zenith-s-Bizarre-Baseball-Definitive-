@@ -18,7 +18,8 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
     [SerializeField] OverlapType overlapType;
 
     [SerializeField] UnityEvent<Transform> _onOverlap = new UnityEvent<Transform>();
-
+    [SerializeField] UnityEvent<Vector2> _onOverlapDirection = new UnityEvent<Vector2>();
+ 
     public bool CheckCondition()
     {
         if(overlapType == OverlapType.Box)
@@ -27,23 +28,18 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
             return CheckCircle();
     }
 
+    public void Overlap() => CheckCondition();
+
     private bool CheckBox()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + (Vector3)offset, size, 0, layerMask);
-        OnOverLap(colliders);
         return colliders.Length >= minimunColliders;
     }
 
     private bool CheckCircle()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (Vector3)offset, size.x, layerMask);
-        OnOverLap(colliders);
         return colliders.Length >= minimunColliders;
-    }
-
-    void OnOverLap(Collider2D[] colliders)
-    {
-        if(colliders.Length > 0) _onOverlap.Invoke(colliders[0].transform);
     }
 
     private void OnDrawGizmos()
@@ -60,5 +56,6 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
         gameObject.name = $"At least {minimunColliders} of {_thingToDetectName}";
     }
 
-    public void SetTargetLayer(int layerMask) => this.layerMask = layerMask;
+    public void SetTargetLayer(int layerMask) => this.layerMask.value = layerMask;
+    public void SetTargetLayer(string layerName) => layerMask.value = LayerMask.GetMask(layerName);
 }

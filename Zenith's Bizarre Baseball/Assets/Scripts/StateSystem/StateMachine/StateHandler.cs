@@ -5,16 +5,17 @@ using UnityEngine;
 public class StateHandler : MonoBehaviour
 {
     [SerializeField] State initialState;
+    public State InitialState => initialState;
 
     State _currentState;
-    State CurrentState
+    public State CurrentState
     {
         get => _currentState;
-        set
+        private set
         {
             lastState = _currentState;
             _currentState = value;
-            _currentState.PlayStateAnimation();
+            PlayCurrentStateAnimation();
         }
     }
     State lastState;
@@ -62,4 +63,13 @@ public class StateHandler : MonoBehaviour
 
     public void ReturnToLastState() => CurrentState = lastState;
     public void FullReturnToLastState() => ChangeState(lastState);
+
+    public void PlayCurrentStateAnimation() => CurrentState.PlayStateAnimation();
+    public void StopHandler(float time) => StartCoroutine(StopRoutine(time));
+    IEnumerator StopRoutine(float time)
+    {
+        enabled = false;
+        yield return new WaitForSeconds(time);
+        enabled = true;
+    }
 }

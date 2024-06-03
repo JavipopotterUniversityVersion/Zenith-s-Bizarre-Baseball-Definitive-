@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TriggerHandler : MonoBehaviour
@@ -8,11 +9,35 @@ public class TriggerHandler : MonoBehaviour
     [SerializeField] CollidableGroup[] OnEnterCollidables;
     public CollidableGroup[] OnEnterCollidablesProp() => OnEnterCollidables;
 
+    [SerializeField] CollidableGroup[] OnStayCollidables;
+    public CollidableGroup[] OnStayCollidablesProp() => OnStayCollidables;
+    [SerializeField] float checkDelay = 0.1f;
+    float timer = 0;
+
     [SerializeField] CollidableGroup[] OnExitCollidables;
     public CollidableGroup[] OnExitCollidablesProp() => OnExitCollidables;
 
-    private void OnTriggerEnter2D(Collider2D collision) => CheckCollidables(OnEnterCollidables, collision);
-    private void OnTriggerExit2D(Collider2D collision) => CheckCollidables(OnExitCollidables, collision);
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        CheckCollidables(OnEnterCollidables, collision);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        CheckCollidables(OnExitCollidables, collision);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        timer += Time.deltaTime;
+
+        if(timer >= checkDelay)
+        {
+            timer = 0;
+            CheckCollidables(OnStayCollidables, collision);
+        }
+    }
 
     void CheckCollidables(CollidableGroup[] collidables, Collider2D collision)
     {
@@ -50,7 +75,18 @@ public class CollidableGroup
     public LayerMask Layer => layer;
 
     [SerializeField] Condition[] conditions;
-    public bool CheckConditions() => Condition.CheckAllConditions(conditions);
+
+    bool initialized = false;
+    public bool CheckConditions()
+    {
+        if(!initialized)
+        {
+            initialized = true;
+            Condition.InitializeAll(conditions);
+        }
+
+        return Condition.CheckAllConditions(conditions);
+    }
 
     public void SetLayer(LayerMask layer) => this.layer = layer;
 

@@ -12,6 +12,7 @@ public class SoftRandomMovement : MonoBehaviour, IBehaviour
     Vector2 initialPosition;
     [Range(0, 1)]
     [SerializeField] float lerpFactor = 1f;
+    [SerializeField] float multiplier = 1f;
     float maxTime;
 
     private void Awake() {
@@ -33,7 +34,7 @@ public class SoftRandomMovement : MonoBehaviour, IBehaviour
             Vector2 lerpDirection = Vector2.Lerp(movementController.Rb.velocity.normalized,
             randomDirection, timer / maxTime * lerpFactor);
 
-            movementController.Move(lerpDirection);
+            movementController.Move(lerpDirection * multiplier);
             timer += Time.deltaTime;
         }
     }

@@ -46,6 +46,6 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     }
 
     private void OnValidate() {
-        // name = $"ArcMovementBehaviour {duration}s";
+        name = $"ArcMovementBehaviour {duration}s";
     }
 }

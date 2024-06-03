@@ -14,6 +14,8 @@ public class OrbitalMovement : MonoBehaviour, IBehaviour
     [Range(0, 1)]
     [SerializeField] float weight = 1f;
 
+    [SerializeField] float multiplier = 1f;
+
     private void Awake() {
         movementController = GetComponentInParent<MovementController>();
         targetHandler = GetComponentInParent<TargetHandler>();
@@ -33,11 +35,14 @@ public class OrbitalMovement : MonoBehaviour, IBehaviour
         else
             finalDirection = perpendicular;
 
-        Vector2 ultimateDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, finalDirection, Time.deltaTime * weight * 100);
+        Vector2 ultimateDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, finalDirection, Time.deltaTime * weight * 100) * multiplier;
         movementController.Move(ultimateDirection);
     }
 
     private void OnValidate() {
-        name = $"Orbit: {orbit_radius} m";
+        movementController = GetComponentInParent<MovementController>();
+        if(movementController == null) return;
+
+        name = $"Orbit: { 1/(2 * Mathf.PI / (movementController.Speed * multiplier / orbit_radius))} r/s";
     }
 }

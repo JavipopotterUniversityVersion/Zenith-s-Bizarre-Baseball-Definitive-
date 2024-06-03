@@ -39,6 +39,14 @@ public class BehaviourPerformer
         
         return Condition.CheckAllConditions(condition);
     }
+
+    public static void Perform(BehaviourPerformer[] performers)
+    {
+        foreach(BehaviourPerformer performer in performers)
+        {
+            performer.Perform();
+        }
+    }
 }
 
 [System.Serializable]

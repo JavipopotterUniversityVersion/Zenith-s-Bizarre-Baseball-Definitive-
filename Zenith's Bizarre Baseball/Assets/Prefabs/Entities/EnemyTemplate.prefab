@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 7008777069481554732}
   - component: {fileID: -2983886410244225649}
   - component: {fileID: 1991014419145755101}
+  - component: {fileID: 5103514417680808131}
   m_Layer: 6
   m_Name: EnemyTemplate
   m_TagString: Untagged
@@ -913,6 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
       m_Calls: []
@@ -943,3 +945,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5103514417680808131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105301891046977518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e5894b0f464ca4384f0c1091c42b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchableType: 1

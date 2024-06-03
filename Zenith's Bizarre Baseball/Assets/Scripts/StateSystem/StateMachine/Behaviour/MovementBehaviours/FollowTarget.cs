@@ -18,7 +18,7 @@ public class FollowTarget : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        Vector2 direction = (targetHandler.Target.position - transform.position).normalized * multiplier;
+        Vector2 direction = targetHandler.GetTargetDirection() * multiplier;
         Vector2 fixedDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, direction, Time.deltaTime * weight * 100);
         movementController.Move(fixedDirection);
     }

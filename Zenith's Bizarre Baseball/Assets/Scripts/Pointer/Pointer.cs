@@ -27,4 +27,6 @@ public class Pointer : MonoBehaviour
     {
         return transform.up;
     }
+
+    public void LookAtTransform(Transform target) => LookAt(target.position);
 }

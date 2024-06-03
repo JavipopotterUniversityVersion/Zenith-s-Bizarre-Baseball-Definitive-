@@ -21,7 +21,7 @@ public class Float : ScriptableICondition
         {
             _lastValue = _value;
             _value = value;
-            onValueChanged.Invoke(_value);
+            onValueChanged.Invoke();
         }
     }
 
@@ -32,8 +32,8 @@ public class Float : ScriptableICondition
     [Header("EVENT")]
     [Space(10)]
 
-    [SerializeField] UnityEvent<float> onValueChanged = new UnityEvent<float>();
-    public UnityEvent<float> OnValueChanged => onValueChanged;
+    [SerializeField] UnityEvent onValueChanged = new UnityEvent();
+    public UnityEvent OnValueChanged => onValueChanged;
 
     public void SetValue(float value) => Value = value;
 
@@ -51,7 +51,7 @@ public class Float : ScriptableICondition
 [Serializable]
 public class Processor
 {
-    static string[] operationTypes = new string[] {"!=", "==", ">", "<", "||", "&&", "Random", "^", "*", "/", "%", "+", "-" };
+    static string[] operationTypes = new string[] {"!=", "==", ">", "<", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
 
     [Header("FLOAT REFERENCES")]
@@ -111,6 +111,7 @@ public class Processor
         string value = operation;
         value = PlaceOperations(value);
         Replace(ref value, 0, input);
+        Debug.Log(value);
         return Translate(value, input);
     }
     public bool ResultBool(float input) => Result(input) != 0;
@@ -233,6 +234,22 @@ public class Processor
                 return value1;
         }
     }
+
+    public void Subscribe(UnityAction action)
+    {
+        foreach(var item in _floatDictionary)
+        {
+            item.Value.OnValueChanged.AddListener(action);
+        }
+    }
+
+    public void Unsubscribe(UnityAction action)
+    {
+        foreach(var item in _floatDictionary)
+        {
+            item.Value.OnValueChanged.RemoveListener(action);
+        }
+    }
 }
 
 [Serializable]
@@ -247,9 +264,10 @@ public class ObjectProcessor : Processor
             return Condition.Value(_conditionDictionary[value]);
         }
 
-        if(_readAbleDictionary.ContainsKey(value))
+        if(_readableDictionary.ContainsKey(value))
         {
-            return _readAbleDictionary[value].Read();
+            Debug.Log($"Reading {_readableDictionary[value].Read()}");
+            return _readableDictionary[value].Read();
         }
 
         return base.Translate(value, input);
@@ -257,11 +275,11 @@ public class ObjectProcessor : Processor
 
     [Header("CONDITION REFERENCES")]
     [SerializeField] SerializableDictionary<string, Condition[]> _conditionDictionary = new SerializableDictionary<string, Condition[]>();
-    [SerializeField] SerializableDictionary<string, ReadAble> _readAbleDictionary = new SerializableDictionary<string, ReadAble>();
+    [SerializeField] SerializableDictionary<string, Readable> _readableDictionary = new SerializableDictionary<string, Readable>();
 }
 
 [Serializable]
-public abstract class ReadAble : MonoBehaviour
+public abstract class Readable : MonoBehaviour
 {
     public abstract float Read();
 }

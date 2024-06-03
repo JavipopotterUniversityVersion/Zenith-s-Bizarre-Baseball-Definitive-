@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2945539639634197417}
   - component: {fileID: 2945539639634197334}
   - component: {fileID: 6804232957056955022}
+  - component: {fileID: 4853732673844166544}
   m_Layer: 5
   m_Name: Heart
   m_TagString: Untagged
@@ -153,7 +154,7 @@ MonoBehaviour:
   _value: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
   _floatEvents:
   - _processor:
-      operation: input > 0
+      operation: input > index
       _floatDictionary:
         list: []
       _curveDictionary:
@@ -162,6 +163,12 @@ MonoBehaviour:
         list: []
       _functionDictionary:
         list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list:
+        - Key: index
+          Value: {fileID: 4853732673844166544}
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -178,7 +185,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - _processor:
-      operation: input < 0
+      operation: input < index
       _floatDictionary:
         list: []
       _curveDictionary:
@@ -186,6 +193,10 @@ MonoBehaviour:
       _operationDictionary:
         list: []
       _functionDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
         list: []
     _event:
       m_PersistentCalls:
@@ -203,7 +214,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - _processor:
-      operation: input == 0
+      operation: input == index
       _floatDictionary:
         list: []
       _curveDictionary:
@@ -212,6 +223,12 @@ MonoBehaviour:
         list: []
       _functionDictionary:
         list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list:
+        - Key: index
+          Value: {fileID: 4853732673844166544}
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -242,7 +259,7 @@ MonoBehaviour:
   _value: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
   _floatEvents:
   - _processor:
-      operation: input > 0 || input == 0
+      operation: input > index || input == index
       _floatDictionary:
         list: []
       _curveDictionary:
@@ -251,6 +268,12 @@ MonoBehaviour:
         list: []
       _functionDictionary:
         list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list:
+        - Key: index
+          Value: {fileID: 4853732673844166544}
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -267,7 +290,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   - _processor:
-      operation: input < 0
+      operation: input < index
       _floatDictionary:
         list: []
       _curveDictionary:
@@ -276,6 +299,12 @@ MonoBehaviour:
         list: []
       _functionDictionary:
         list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list:
+        - Key: index
+          Value: {fileID: 4853732673844166544}
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -291,6 +320,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4853732673844166544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945539639634197332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce757e2e7b4119548bb5813026696049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2945539639719317567
 GameObject:
   m_ObjectHideFlags: 0

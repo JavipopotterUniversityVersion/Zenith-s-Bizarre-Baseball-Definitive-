@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyCollidable : ICollidable
 {
     [SerializeField] Int maxCollisions;
-    int requiredCollisions = 1;
+    [SerializeField] int requiredCollisions = 1;
 
     private void Start() => requiredCollisions = maxCollisions.Value;
 
@@ -13,6 +13,9 @@ public class DestroyCollidable : ICollidable
     {
         requiredCollisions--;
 
-        if (requiredCollisions <= 0) Destroy(gameObject);
+        if (requiredCollisions <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

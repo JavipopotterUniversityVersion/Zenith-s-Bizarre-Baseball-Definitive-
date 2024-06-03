@@ -8,23 +8,20 @@ public class FloatReceiver : MonoBehaviour
 {
     [SerializeField] Float _value;
     [SerializeField] ObjectFloatEvent[] _floatEvents;
-    bool _isSubscribed = false;
 
     private void Start() => Subscribe();
 
     private void OnDestroy() => Unsubscribe();
 
-    public void CheckValue(float value) 
+    public void CheckValue() 
     {
-        foreach (ObjectFloatEvent floatEvent in _floatEvents) floatEvent.Invoke(value);
+        foreach (ObjectFloatEvent floatEvent in _floatEvents) floatEvent.Invoke(_value.Value);
     }
 
     public void Subscribe()
     {
-        if(_isSubscribed) return;
-        
         _value.OnValueChanged.AddListener(CheckValue);
-        CheckValue(_value.Value);
+        CheckValue();
     }
 
     public void Unsubscribe() => _value.OnValueChanged.RemoveListener(CheckValue);
@@ -35,6 +32,9 @@ public struct ObjectFloatEvent
 {
     [SerializeField] ObjectProcessor _processor;
     [SerializeField] UnityEvent _event;
+
+    public readonly void Subscribe(UnityAction action) => _processor.Subscribe(action);
+    public readonly void Unsubscribe(UnityAction action) => _processor.Unsubscribe(action);
 
     public readonly void Invoke(float input)
     {
@@ -47,6 +47,9 @@ public struct FloatEvent
 {
     [SerializeField] Processor _processor;
     [SerializeField] UnityEvent _event;
+
+    public readonly void Subscribe(UnityAction action) => _processor.Subscribe(action);
+    public readonly void Unsubscribe(UnityAction action) => _processor.Unsubscribe(action);
 
     public readonly void Invoke(float input)
     {

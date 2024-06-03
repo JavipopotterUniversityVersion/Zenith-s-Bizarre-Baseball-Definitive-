@@ -1284,6 +1284,7 @@ GameObject:
   - component: {fileID: 5188573643474554802}
   - component: {fileID: 5086686710499477413}
   - component: {fileID: 5614244263016356776}
+  - component: {fileID: 9026117230706812331}
   m_Layer: 7
   m_Name: Zenith
   m_TagString: Untagged
@@ -1431,6 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 16
+  _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
       m_Calls: []
@@ -1632,6 +1634,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inmunityTime: {fileID: 11400000, guid: 15ee825c1e5febe479278ec75748ff91, type: 2}
+--- !u!114 &9026117230706812331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213680093490472124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e5894b0f464ca4384f0c1091c42b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchableType: 0
 --- !u!1 &9213680093549052804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,11 +2335,13 @@ MonoBehaviour:
   - condition: []
     behaviourContainers:
     - {fileID: 5271572575764198861}
+    - {fileID: 3840985005712751578}
   onUpdatePerformers: []
   onExitPerformers:
   - condition: []
     behaviourContainers:
     - {fileID: 4187698627604333178}
+    - {fileID: 910166519658114306}
   nextStates:
   - conditions:
     - conditionContainer: {fileID: 8088525873443300006}
@@ -2409,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7620146048408973199, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: knockBackForce
+      value: 
+      objectReference: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
 --- !u!4 &5080254291214365540 stripped

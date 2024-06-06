@@ -21,6 +21,12 @@ public class String : ScriptableObject
        CallString();
     }
 
+    public void SetString(String _string)
+    {
+        _value = _string.Value;
+        CallString();
+    }
+
     public void CallString()
     {
         _onStringCall.Invoke();

@@ -10,6 +10,8 @@ public class ScriptedInputCondition : ScriptableICondition
     public void SetInputAction(InputActionReference inputAction) => _inputAction = inputAction;
     public override bool CheckCondition()
     {
-        return _inputAction.action.triggered;
+        if(_inputAction.action.enabled == false) _inputAction.action.Enable();
+
+        return _inputAction.action.WasPerformedThisFrame();
     }
 }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c4840c88ab318439bc23494122ba18, type: 3}
+  m_Name: VeganNotifier
+  m_EditorClassIdentifier: 
+  _processor:
+    operation: vegan == 3
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list:
+      - Key: vegan
+        Value: {fileID: 11400000, guid: a4b97a1995ce16a418f0b45501f0a80f, type: 2}
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+  _onTrue:
+    m_PersistentCalls:
+      m_Calls: []

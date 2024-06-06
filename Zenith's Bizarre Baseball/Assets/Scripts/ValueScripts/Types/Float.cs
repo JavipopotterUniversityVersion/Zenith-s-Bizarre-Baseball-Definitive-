@@ -15,6 +15,7 @@ public class Float : ScriptableICondition
     {
         get
         {
+            onRead.Invoke();
             return _readProcessor.Result(_value);
         }
         set
@@ -31,6 +32,9 @@ public class Float : ScriptableICondition
     [Space(10)]
     [Header("EVENT")]
     [Space(10)]
+
+    [SerializeField] UnityEvent onRead = new UnityEvent();
+    public UnityEvent OnRead => onRead;
 
     [SerializeField] UnityEvent onValueChanged = new UnityEvent();
     public UnityEvent OnValueChanged => onValueChanged;
@@ -58,6 +62,9 @@ public class Processor
     [Header("FLOAT REFERENCES")]
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary = new SerializableDictionary<string, Float>();
 
+    [Header("INT REFERENCES")]
+    [SerializeField] SerializableDictionary<string, Int> _intDictionary = new SerializableDictionary<string, Int>();
+
     [Header("CURVE REFERENCES")]
     [SerializeField] SerializableDictionary<string, Curve> _curveDictionary = new SerializableDictionary<string, Curve>();
 
@@ -69,6 +76,7 @@ public class Processor
 
     [Header("String REFERENCES")]
     [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
+
 
     float Calculate(float input, string operation)
     {
@@ -154,6 +162,7 @@ public class Processor
         }
 
         if(_stringDictionary.ContainsKey(value)) return StringToFloat(_stringDictionary[value].Value);
+        if(_intDictionary.ContainsKey(value)) return _intDictionary[value].Value;
 
         if(value == "input") return input;
 

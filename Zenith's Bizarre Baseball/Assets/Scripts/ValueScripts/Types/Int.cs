@@ -10,6 +10,9 @@ public class Int : ScriptableObject
     [SerializeField] UnityEvent onValueChanged = new UnityEvent();
     public UnityEvent OnValueChanged => onValueChanged;
 
+    [SerializeField] UnityEvent<int> onChangeLastValue = new UnityEvent<int>();
+    public UnityEvent<int> OnChangeLastValue => onChangeLastValue;
+
     [SerializeField] int _value;
     public int Value
     {
@@ -23,6 +26,8 @@ public class Int : ScriptableObject
     public void SetValue(int value)
     {
         _lastValue = _value;
+        onChangeLastValue.Invoke(_lastValue);
+        
         _value = value;
         onValueChanged.Invoke();
     }

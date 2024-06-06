@@ -36,7 +36,7 @@ public class MovementController : MonoBehaviour
             if(rb.velocity == Vector2.zero) OnStartMoving.Invoke();
             else onMoving.Invoke(direction);
         }
-        else if(rb.velocity != Vector2.zero && direction == Vector2.zero) onStopMoving.Invoke();
+        else if(direction == Vector2.zero) onStopMoving.Invoke();
 
         if(_ignoreSpeed) rb.velocity = rb.velocity.magnitude * direction.normalized;
         else rb.velocity = direction * Speed;

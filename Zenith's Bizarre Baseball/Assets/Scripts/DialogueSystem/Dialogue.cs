@@ -36,9 +36,9 @@ public class Intervention
 public struct CondEventVector
 {
     [SerializeField] ScriptableCondition[] condition;
-    public bool CheckCondition() => ScriptableCondition.CheckAllConditions(condition);
-    public bool IsEmpty() => condition.Length == 0;
+    public readonly bool CheckCondition() => ScriptableCondition.CheckAllConditions(condition);
+    public readonly bool IsEmpty() => condition.Length == 0;
 
     [SerializeField] UnityEvent _event;
-    public void Invoke() => _event.Invoke();
+    public readonly void Invoke() => _event.Invoke();
 }

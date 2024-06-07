@@ -175,7 +175,7 @@ MonoBehaviour:
     _minNumberOfNodes: 0
     _maxNumberOfNodes: 0
     minExtension: 0
-  _access: -1
+  _access: 0
   _limits:
   - _min: {fileID: 4945733046650046616}
     _max: {fileID: 8515037578137771057}
@@ -7960,6 +7960,10 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 2778787587262891406}
+    - target: {fileID: 7223186473358228441, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228442, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8010,7 +8014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228443, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: size.x
@@ -8032,7 +8036,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
 --- !u!4 &7977689203217381303 stripped
 Transform:
@@ -8122,6 +8127,10 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 2778787587262891406}
+    - target: {fileID: 7223186473358228441, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228442, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8172,7 +8181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228443, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: size.x
@@ -8194,7 +8203,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6.98
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
 --- !u!4 &4918416491033256865 stripped
 Transform:
@@ -8286,6 +8296,10 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 2778787587262891406}
+    - target: {fileID: 7223186473358228441, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228442, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8336,13 +8350,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228443, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 2778787589187571273}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
 --- !u!4 &2778787589075842739 stripped
 Transform:
@@ -8403,6 +8418,10 @@ PrefabInstance:
     - target: {fileID: 334573021082602170, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 777376260853273852, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: m_Name
+      value: Talking -> True
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
@@ -8504,6 +8523,10 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 2778787587262891406}
+    - target: {fileID: 7223186473358228441, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228442, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8554,7 +8577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473358228443, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
       propertyPath: tilemap
@@ -8564,7 +8587,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 13.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7223186473664219377, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 118ddcc1a909fec4b99cb887fb956b12, type: 3}
 --- !u!4 &1493451235333891246 stripped
 Transform:

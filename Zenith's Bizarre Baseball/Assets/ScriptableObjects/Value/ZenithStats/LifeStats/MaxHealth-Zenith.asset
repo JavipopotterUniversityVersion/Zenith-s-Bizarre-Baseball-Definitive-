@@ -13,3 +13,26 @@ MonoBehaviour:
   m_Name: MaxHealth-Zenith
   m_EditorClassIdentifier: 
   _value: 12
+  _readProcessor:
+    operation: input + level * 4
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list:
+      - Key: level
+        Value: {fileID: 11400000, guid: e6d17d59a65070d43ac14678b4e4016a, type: 2}
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+  onRead:
+    m_PersistentCalls:
+      m_Calls: []
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []

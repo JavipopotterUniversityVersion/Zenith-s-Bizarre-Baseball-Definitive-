@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: Round
   m_EditorClassIdentifier: 
   _processor:
-    operation: input + (input % 1) - (input + (input % 1)) % 1
+    operation: input + (input % 1) - ( input + (input % 1)) % 1
+    _debug: 0
     _floatDictionary:
+      list: []
+    _intDictionary:
       list: []
     _curveDictionary:
       list: []
     _operationDictionary:
       list: []
     _functionDictionary:
+      list: []
+    _stringDictionary:
       list: []

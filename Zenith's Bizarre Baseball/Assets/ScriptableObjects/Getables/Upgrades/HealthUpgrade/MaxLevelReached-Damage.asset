@@ -10,25 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
-  m_Name: NextLevelDamageMultDiff
+  m_Name: MaxLevelReached-Damage
   m_EditorClassIdentifier: 
-  _value: 1
+  _value: 0
   _readProcessor:
-    operation: '[Diff]'
+    operation: level > 9
+    _debug: 0
     _floatDictionary:
+      list: []
+    _intDictionary:
       list:
       - Key: level
-        Value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
+        Value: {fileID: 11400000, guid: e6d17d59a65070d43ac14678b4e4016a, type: 2}
     _curveDictionary:
-      list:
-      - Key: f
-        Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
+      list: []
     _operationDictionary:
-      list:
-      - Key: '[Diff]'
-        Value: {fileID: 11400000, guid: a3a45e7ef839e554e96dd5fbac901c18, type: 2}
+      list: []
     _functionDictionary:
       list: []
+    _stringDictionary:
+      list: []
+  onRead:
+    m_PersistentCalls:
+      m_Calls: []
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

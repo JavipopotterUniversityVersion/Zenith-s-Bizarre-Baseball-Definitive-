@@ -14,15 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 0.15
   _readProcessor:
-    operation: input
+    operation: '[value]'
+    _debug: 0
     _floatDictionary:
       list: []
+    _intDictionary:
+      list:
+      - Key: level
+        Value: {fileID: 11400000, guid: 69ae5130b627dd84487f31c4707e4ab7, type: 2}
     _curveDictionary:
-      list: []
+      list:
+      - Key: f
+        Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
     _operationDictionary:
-      list: []
+      list:
+      - Key: '[value]'
+        Value: {fileID: 11400000, guid: f7b710cc109857849968b2be0c6663b1, type: 2}
     _functionDictionary:
       list: []
+    _stringDictionary:
+      list: []
+  onRead:
+    m_PersistentCalls:
+      m_Calls: []
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

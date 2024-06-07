@@ -10,4 +10,5 @@ public class Function : ScriptableObject
     public Processor Processor => _processor;
 
     public float Result(float input) => _processor.Result(input);
+    public float Translate(string value, float input = 1) => _processor.ResultOf(value, input);
 }

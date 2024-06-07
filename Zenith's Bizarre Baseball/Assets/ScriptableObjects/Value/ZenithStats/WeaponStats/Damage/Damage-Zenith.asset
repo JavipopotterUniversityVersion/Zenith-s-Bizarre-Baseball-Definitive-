@@ -14,21 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 4
   _readProcessor:
-    operation: input * f (level/10) * (2 / (1+ (0 Random 1) > crit))
+    operation: '[value] * (2 / (1+ (0 Random 1) > crit))'
+    _debug: 0
     _floatDictionary:
       list:
       - Key: level
         Value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
       - Key: crit
         Value: {fileID: 11400000, guid: 99e1565022875804586e19b14d6c9c5c, type: 2}
+    _intDictionary:
+      list: []
     _curveDictionary:
       list:
       - Key: f
         Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
     _operationDictionary:
-      list: []
+      list:
+      - Key: '[value]'
+        Value: {fileID: 11400000, guid: f7b710cc109857849968b2be0c6663b1, type: 2}
     _functionDictionary:
       list: []
+    _stringDictionary:
+      list: []
+  onRead:
+    m_PersistentCalls:
+      m_Calls: []
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

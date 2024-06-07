@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904c1a5f20ec3884a947583768731849, type: 3}
+  m_Name: MeatUpgrade
+  m_EditorClassIdentifier: 
+  _appearCondition: []
+  _icon: {fileID: 0}
+  _name: Chorizo Sandwich
+  _description: A chorizo sandwich that heals you a little
+  _stringProcessor:
+    _intDictionary:
+      list: []
+    _floatDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _processorDictionary:
+      list: []
+  _upgradeEvent:
+    condition: []
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
+          m_TargetAssemblyTypeName: Float, Assembly-CSharp
+          m_MethodName: AddValue
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 440e19b5fb609d84d9043d6d455c63cf, type: 2}
+          m_TargetAssemblyTypeName: Int, Assembly-CSharp
+          m_MethodName: AddValue
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

@@ -15,7 +15,7 @@ public class UpgradeDealer : MonoBehaviour
     {
         _upgradeReceivers = GetComponentsInChildren<UpgradeReceiver>();
 
-        List<UpgradeData> availableUpgrades = new List<UpgradeData>();
+        List<UpgradeData> availableUpgrades = _upgradeDatas.ToList();
         for (int i = 0; i < _numberOfUpgrades; i++)
         {
             UpgradeData upgradeData = UpgradeData.GetRandomUpgrade(availableUpgrades);

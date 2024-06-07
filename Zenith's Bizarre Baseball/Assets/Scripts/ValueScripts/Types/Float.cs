@@ -92,7 +92,7 @@ public class Processor
 
             if(operations.Length == 2)
             {
-                Debug.Log(operations[0] + $"[{operationTypes[i]}]" + operations[1]);
+                if(_debug)Debug.Log(operations[0] + $"[{operationTypes[i]}]" + operations[1]);
                 foundOperation = true;
                 result = Operate(Translate(operations[0], input), Translate(operations[1], input), operationTypes[i]);
             }
@@ -106,18 +106,29 @@ public class Processor
 
     void Replace(ref string value, int startPoint, float input)
     {
+        if(value.Contains("(") == false) return;
+        
+        string readed = "";
         for(int i = startPoint; i < value.Length; i++)
         {
             if(value[i] == '(')
             {
                 Replace(ref value, i + 1, input);
             }
+
+            if(value[i] == ')')
+            {
+                value = value.Replace("(" + readed + ")", Translate(readed, input).ToString());
+                break;
+            }
+
+            readed += value[i];
         }
-        string result = value.Substring(startPoint).Split(')')[0];
-        value = value.Replace("(" + result + ")", Translate(result, input).ToString());
     }
 
-    public float Result(float input)
+    public float Result(float input) => ResultOf(operation, input);
+
+    public float ResultOf(string operation, float input)
     {
         if(operation == "" || operation == "input") return input;
 
@@ -127,12 +138,24 @@ public class Processor
         if(_debug) Debug.Log(value);
         return Translate(value, input);
     }
+
     public bool ResultBool(float input) => Result(input) != 0;
 
     string PlaceOperations(string value)
     {
         foreach(var item in _operationDictionary)
         {
+            foreach(var function in _functionDictionary)
+            {
+                string key = function.Key + " <= " + item.Key;
+
+                if(value.Contains(key))
+                {
+                    value = value.Replace(key, function.Value.Translate(item.Value.Value).ToString());
+                    Debug.Log("Replaced " + key + " with " + function.Value.Translate(item.Value.Value));
+                }
+            }
+
             if(value.Contains(item.Key))
             {
                 value = value.Replace(item.Key, item.Value.Value);
@@ -260,7 +283,7 @@ public class Processor
             result += Convert.ToInt32(c).ToString();
         }
 
-        Debug.Log(result);
+        Debug.Log(value + " is " + result + " we are in the processor:" + operation);
 
         return float.Parse(result);
     }

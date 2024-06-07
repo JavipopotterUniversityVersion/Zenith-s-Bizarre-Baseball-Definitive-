@@ -48,6 +48,7 @@ public class StringProcessor
     [SerializeField] SerializableDictionary<string, Int> _intDictionary = new SerializableDictionary<string, Int>();
     [SerializeField] SerializableDictionary<string, ProcessedFloat> _floatDictionary = new SerializableDictionary<string, ProcessedFloat>();
     [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
+    [SerializeField] SerializableDictionary<string, Processor> _processorDictionary = new SerializableDictionary<string, Processor>();
 
     public string Process(string value)
     {
@@ -72,6 +73,14 @@ public class StringProcessor
             if (value.Contains(item.Key))
             {
                 value = value.Replace(item.Key, item.Value.Value.ToString());
+            }
+        }
+
+        foreach (var item in _processorDictionary)
+        {
+            if (value.Contains(item.Key))
+            {
+                value = value.Replace(item.Key, item.Value.Result(0).ToString());
             }
         }
 

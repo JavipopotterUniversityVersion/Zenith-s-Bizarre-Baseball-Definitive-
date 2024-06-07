@@ -9,7 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
-  m_Name: Knockback-Zenith
+  m_Script: {fileID: 11500000, guid: 6c0e0fdb4b442474d90092994a3b993c, type: 3}
+  m_Name: LevelOperation
   m_EditorClassIdentifier: 
-  _value: 30
+  _value: input * f (level/10)
+  _stringProcessor:
+    _intDictionary:
+      list: []
+    _floatDictionary:
+      list: []
+    _stringDictionary:
+      list: []

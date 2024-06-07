@@ -85,7 +85,7 @@ public class DialogueInterpreter : MonoBehaviour
                 _dialogueText.text = dialogue.StringProcessor.Process(dialogueLine);
                 _dialogueText.maxVisibleCharacters = 0;
 
-                for(int i = 0; i < dialogueLine.Length; i++)
+                for(int i = 0; i < _dialogueText.text.Length; i++)
                 {
                     _dialogueText.maxVisibleCharacters = i + 1;
                     onCharWrite.Invoke();

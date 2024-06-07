@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
-  m_Name: TimesAppeared-Damage
+  m_Name: MaxLevelReached-Knockback
   m_EditorClassIdentifier: 
   _value: 0
   _readProcessor:
-    operation: input < 10
+    operation: level > 9
     _debug: 0
     _floatDictionary:
-      list: []
+      list:
+      - Key: level
+        Value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
     _intDictionary:
       list: []
     _curveDictionary:
@@ -30,19 +32,7 @@ MonoBehaviour:
       list: []
   onRead:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000}
-        m_TargetAssemblyTypeName: Float, Assembly-CSharp
-        m_MethodName: AddValue
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

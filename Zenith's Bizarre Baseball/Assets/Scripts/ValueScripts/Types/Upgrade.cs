@@ -15,8 +15,9 @@ public class Upgrade : ScriptableObject
     [SerializeField] string _name;
     public string Name => _name;
 
+    [TextArea(3, 10)]
     [SerializeField] string _description;
-    public string Description => _description;
+    public string Description => _stringProcessor.Process(_description);
     [SerializeField] StringProcessor _stringProcessor;
 
     [SerializeField] CondEventVector _upgradeEvent = new CondEventVector();

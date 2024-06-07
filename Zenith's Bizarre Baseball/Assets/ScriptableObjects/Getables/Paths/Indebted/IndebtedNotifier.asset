@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: IndebtedNotifier
   m_EditorClassIdentifier: 
   _processor:
-    operation: input
+    operation: (money < 0) && ((last_money * money) < 0)
     _debug: 0
     _floatDictionary:
       list: []
     _intDictionary:
-      list: []
+      list:
+      - Key: money
+        Value: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+      - Key: last_money
+        Value: {fileID: 11400000, guid: eee3cc8dbbd09e8498590c20006fca1d, type: 2}
     _curveDictionary:
       list: []
     _operationDictionary:

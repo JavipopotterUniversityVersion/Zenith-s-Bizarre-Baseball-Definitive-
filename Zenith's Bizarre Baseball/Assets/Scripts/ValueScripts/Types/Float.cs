@@ -50,6 +50,8 @@ public class Float : ScriptableICondition
     public void DivideValue(float value) => SetValue(_value / value);
 
     public override bool CheckCondition() => Value != 0;
+    public float GetRawValue() => _value;
+    public void SetRawValue(float value) => _value = value;
 }
 
 [Serializable]

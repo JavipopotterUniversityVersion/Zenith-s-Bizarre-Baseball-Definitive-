@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: VeganSandwichUpgrade
   m_EditorClassIdentifier: 
   _appearCondition: []
-  _icon: {fileID: 0}
+  _icon: {fileID: 1897456440, guid: 828db0d0c0bba944aa48980f7bc94584, type: 3}
   _name: Vegan Chorizo Sandwich
-  _description: A non-animal origin chorizo sandwich... Wait, how that even works?
+  _description: 'A non-animal origin chorizo sandwich...
+
+    Wait, how that even
+    works?'
   _stringProcessor:
     _intDictionary:
       list: []
@@ -26,7 +29,9 @@ MonoBehaviour:
     _processorDictionary:
       list: []
   _upgradeEvent:
-    condition: []
+    condition:
+    - condition: {fileID: 11400000, guid: 1f2c1dfce6baeee41a7db95b36e51253, type: 2}
+      negated: 0
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -38,6 +43,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+          m_TargetAssemblyTypeName: Int, Assembly-CSharp
+          m_MethodName: SubtractValue
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0

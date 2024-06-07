@@ -18,6 +18,11 @@ public class UpgradeReceiver : MonoBehaviour
         UpdateData();
     }
 
+    public void SetUpgrade(UpgradeReference upgradeReference)
+    {
+        SetUpgrade(upgradeReference.Value);
+    }
+
     public void UpdateData()
     {
         _onReceiveName.Invoke(_upgrade.Name);

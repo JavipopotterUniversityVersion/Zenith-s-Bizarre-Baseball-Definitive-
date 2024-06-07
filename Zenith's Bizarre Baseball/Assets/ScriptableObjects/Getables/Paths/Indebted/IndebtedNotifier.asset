@@ -33,4 +33,28 @@ MonoBehaviour:
       list: []
   _onTrue:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 819e8f25187347a47b1643d910c01c12, type: 2}
+        m_TargetAssemblyTypeName: UpgradeReference, Assembly-CSharp
+        m_MethodName: SetUpgrade
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 47c4daa304e8cf64b968b782233ead2e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Upgrade, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 2de0c0ce8274f08499940251aac32375, type: 2}
+        m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+        m_MethodName: SetValue
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MeatUpgrade
   m_EditorClassIdentifier: 
   _appearCondition: []
-  _icon: {fileID: 0}
+  _icon: {fileID: -2135264735, guid: 828db0d0c0bba944aa48980f7bc94584, type: 3}
   _name: Chorizo Sandwich
-  _description: A chorizo sandwich that heals you a little
+  _description: A chorizo sandwich that heals you a little.
   _stringProcessor:
     _intDictionary:
       list: []
@@ -50,6 +50,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+          m_TargetAssemblyTypeName: Int, Assembly-CSharp
+          m_MethodName: SubtractValue
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0

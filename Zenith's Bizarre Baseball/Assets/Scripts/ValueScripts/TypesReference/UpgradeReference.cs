@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UpgradeReference : MonoBehaviour
+[CreateAssetMenu(fileName = "UpgradeReference", menuName = "Value/UpgradeReference")]
+public class UpgradeReference : ScriptableObject
 {
     [SerializeField] Upgrade _value;
     public Upgrade Value => _value;

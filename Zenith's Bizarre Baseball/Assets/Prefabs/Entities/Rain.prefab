@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5097243518058856475}
   - component: {fileID: 2436890211618177628}
   - component: {fileID: 9143070712805706742}
+  - component: {fileID: 9167648287695653882}
   m_Layer: 5
   m_Name: BackGround
   m_TagString: Untagged
@@ -94,15 +95,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upgradeDatas:
-  - _upgrade: {fileID: 11400000, guid: ef5aabe820070ce479343de2f3e0d89a, type: 2}
-    _chance: 0.609
-  - _upgrade: {fileID: 11400000, guid: df736de7cba231846bea95137b4b6c28, type: 2}
-    _chance: 0.202
-  - _upgrade: {fileID: 11400000, guid: 29b34ded551502c4b8d73871b5744b50, type: 2}
-    _chance: 0.22
-  - _upgrade: {fileID: 11400000, guid: 73bdcd491975b3841bb26106886b9103, type: 2}
-    _chance: 0.149
-  _numberOfUpgrades: 3
+  - _upgrade: {fileID: 11400000, guid: 495355b800691514085d5e84b8fb6f68, type: 2}
+    _chance: 1
+  - _upgrade: {fileID: 11400000, guid: 226ecf68683d9f245a2f442baecdcf7e, type: 2}
+    _chance: 1
+  _numberOfUpgrades: 2
+--- !u!114 &9167648287695653882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283437912760554729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43f8e7a462951246bcf8bdce7875c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {fileID: 11400000, guid: 2de0c0ce8274f08499940251aac32375, type: 2}
+  _onTrue:
+    m_PersistentCalls:
+      m_Calls: []
+  _onFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4750038903808985836}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &334573019737579967
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +309,7 @@ GameObject:
   - component: {fileID: 884065834706555412}
   - component: {fileID: 862076959025148249}
   m_Layer: 0
-  m_Name: Talking -> True
+  m_Name: Talking -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

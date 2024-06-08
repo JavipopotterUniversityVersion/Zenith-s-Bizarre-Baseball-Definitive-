@@ -20,7 +20,9 @@ public class NodeGenerator : MonoBehaviour
     List<Node> _nodes = new List<Node>();
     public List<Node> Nodes => _nodes;
 
-    UnityEvent onFinishedGeneration = new UnityEvent();
+    [SerializeField] UnityEvent onStartedGeneration = new UnityEvent();
+
+    [SerializeField] UnityEvent onFinishedGeneration = new UnityEvent();
     public UnityEvent OnFinishedGeneration => onFinishedGeneration;
 
     [SerializeField] NodeSetting[] _nodeSettings;
@@ -28,6 +30,7 @@ public class NodeGenerator : MonoBehaviour
 
     private void Start()
     {
+        onStartedGeneration.Invoke();
         Node.extension = _extension;
         Node _currentNode = Instantiate(_initialNode, Vector3.zero, Quaternion.identity);
         Nodes.Add(_currentNode);

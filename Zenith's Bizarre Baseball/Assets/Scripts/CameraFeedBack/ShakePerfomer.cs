@@ -9,7 +9,7 @@ public class ShakePerfomer : MonoBehaviour
 {
     [SerializeField] CameraEffects cameraEffects;
     CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
-    [SerializeField] float shakeTime = 0.20f;
+    [SerializeField] Float shakeTime;
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class ShakePerfomer : MonoBehaviour
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = shakeValue;
         cinemachineBasicMultiChannelPerlin.m_FrequencyGain = shakeValue;
 
-        yield return new WaitForSecondsRealtime(shakeTime);
+        yield return new WaitForSecondsRealtime(shakeTime.Value);
 
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
         cinemachineBasicMultiChannelPerlin.m_FrequencyGain = 0;

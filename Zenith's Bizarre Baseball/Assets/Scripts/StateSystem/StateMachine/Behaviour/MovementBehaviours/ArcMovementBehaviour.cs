@@ -12,10 +12,17 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
 
     [SerializeField]
     float height = 1f;
+    
 
     [SerializeField] bool _random = true;
+
+    [Header("Outer Range")]
     [SerializeField] Vector2 rangeX;
     [SerializeField] Vector2 rangeY;
+
+    [Header("Inner Range")]
+    [SerializeField] Vector2 innerRangeX;
+    [SerializeField] Vector2 innerRangeY;
 
     private void Awake() {
         movementController = GetComponentInParent<MovementController>();
@@ -24,7 +31,9 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     public void ExecuteBehaviour()
     {
         Vector2 start = movementController.transform.position;
-        Vector2 end = new Vector2(Random.Range(rangeX.x, rangeX.y), Random.Range(rangeY.x, rangeY.y));
+
+        Vector2 end = new Vector2(Random.Range(Random.Range(innerRangeX.x, rangeX.x), Random.Range(innerRangeX.y, rangeX.y)), 
+        Random.Range(Random.Range(innerRangeY.x, rangeY.x), Random.Range(innerRangeY.y, rangeY.y)));
 
 
         if(!_random)

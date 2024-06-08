@@ -243,6 +243,8 @@ MonoBehaviour:
   _random: 0
   rangeX: {x: -2, y: 2}
   rangeY: {x: -2, y: 2}
+  innerRangeX: {x: 0, y: 0}
+  innerRangeY: {x: 0, y: 0}
 --- !u!1 &1985205410969679943
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,11 +819,15 @@ MonoBehaviour:
     _debug: 0
     _floatDictionary:
       list: []
+    _intDictionary:
+      list: []
     _curveDictionary:
       list: []
     _operationDictionary:
       list: []
     _functionDictionary:
+      list: []
+    _stringDictionary:
       list: []
     _conditionDictionary:
       list: []
@@ -845,11 +851,15 @@ MonoBehaviour:
     _debug: 0
     _floatDictionary:
       list: []
+    _intDictionary:
+      list: []
     _curveDictionary:
       list: []
     _operationDictionary:
       list: []
     _functionDictionary:
+      list: []
+    _stringDictionary:
       list: []
     _conditionDictionary:
       list: []
@@ -913,6 +923,7 @@ MonoBehaviour:
   onHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  getDamageConditions: []
   onGetDamage:
     m_PersistentCalls:
       m_Calls:
@@ -944,6 +955,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxHealth: {fileID: 11400000, guid: 20348183a65acc24ab06b0796f65a52d, type: 2}
+  currentHealthReference: {fileID: 0}
   _currentHealth: 12
 --- !u!95 &2927169873247748328
 Animator:
@@ -1004,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: {fileID: 0}
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:

@@ -8,9 +8,8 @@ public class MovementController : MonoBehaviour
     Rigidbody2D rb;
     public Rigidbody2D Rb => rb;
 
-    [SerializeField] float _speed = 10f;
-    private float _OriginalSpeed;
-    public float Speed => _speed;
+    [SerializeField] Float _speed;
+    public float Speed => _speed.Value;
 
     [SerializeField] bool _ignoreSpeed = false;
 
@@ -26,7 +25,6 @@ public class MovementController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        _OriginalSpeed = _speed;
     }
 
     public void Move(Vector2 direction)
@@ -40,15 +38,5 @@ public class MovementController : MonoBehaviour
 
         if(_ignoreSpeed) rb.velocity = rb.velocity.magnitude * direction.normalized;
         else rb.velocity = direction * Speed;
-    }
-
-    public void SetSpeed(float newSpeed)
-    {
-        _speed = newSpeed;
-    }
-
-    public void ReturnOriginalSpeed()
-    {
-        _speed = _OriginalSpeed;
     }
 }

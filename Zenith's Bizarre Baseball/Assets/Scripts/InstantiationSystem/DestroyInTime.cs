@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyInTime : MonoBehaviour
 {
-    [SerializeField] float _lifeTime = 1f;
+    [SerializeField] Float _lifeTime;
 
-    private void Start() => Destroy(gameObject, _lifeTime);
+    private void Start() => Destroy(gameObject, _lifeTime.Value);
 }

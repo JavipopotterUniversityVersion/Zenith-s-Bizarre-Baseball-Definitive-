@@ -10,7 +10,6 @@ public class SpeedReadable : Readable
 
     public override float Read()
     {
-        print(rb.velocity.magnitude);
         return rb.velocity.magnitude;
     }
 }

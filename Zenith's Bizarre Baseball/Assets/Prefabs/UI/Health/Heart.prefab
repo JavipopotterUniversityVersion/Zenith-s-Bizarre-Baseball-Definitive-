@@ -86,9 +86,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2945539639634197335}
   - component: {fileID: 2945539639634197417}
-  - component: {fileID: 2945539639634197334}
-  - component: {fileID: 6804232957056955022}
   - component: {fileID: 4853732673844166544}
+  - component: {fileID: 8694015688550555616}
+  - component: {fileID: 150348706267986601}
   m_Layer: 5
   m_Name: Heart
   m_TagString: Untagged
@@ -139,7 +139,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2945539639634197334
+--- !u!114 &4853732673844166544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945539639634197332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce757e2e7b4119548bb5813026696049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8694015688550555616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,8 +166,11 @@ MonoBehaviour:
   _value: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
   _floatEvents:
   - _processor:
-      operation: input > index
+      operation: input < (index * 4) || input == (index * 4)
+      _debug: 0
       _floatDictionary:
+        list: []
+      _intDictionary:
         list: []
       _curveDictionary:
         list: []
@@ -163,12 +178,50 @@ MonoBehaviour:
         list: []
       _functionDictionary:
         list: []
+      _stringDictionary:
+        list: []
       _conditionDictionary:
         list: []
       _readableDictionary:
         list:
         - Key: index
-          Value: {fileID: 4853732673844166544}
+          Value: {fileID: 150348706267986601}
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2945539639634197417}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Lost
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _processor:
+      operation: input > (index * 4)
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list:
+        - Key: index
+          Value: {fileID: 150348706267986601}
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -184,143 +237,7 @@ MonoBehaviour:
             m_StringArgument: Recover
             m_BoolArgument: 0
           m_CallState: 2
-  - _processor:
-      operation: input < index
-      _floatDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readableDictionary:
-        list: []
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2945539639634197417}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: Play
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Lose
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _processor:
-      operation: input == index
-      _floatDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readableDictionary:
-        list:
-        - Key: index
-          Value: {fileID: 4853732673844166544}
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2945539639634197417}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: Play
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Beat
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &6804232957056955022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2945539639634197332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
-  _floatEvents:
-  - _processor:
-      operation: input > index || input == index
-      _floatDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readableDictionary:
-        list:
-        - Key: index
-          Value: {fileID: 4853732673844166544}
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2945539639634197332}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - _processor:
-      operation: input < index
-      _floatDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readableDictionary:
-        list:
-        - Key: index
-          Value: {fileID: 4853732673844166544}
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2945539639634197332}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &4853732673844166544
+--- !u!114 &150348706267986601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

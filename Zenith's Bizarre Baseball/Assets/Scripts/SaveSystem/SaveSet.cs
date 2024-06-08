@@ -9,6 +9,7 @@ public class SaveSet : ScriptableObject
     [SerializeField] string _path;
     [SerializeField] SerializableDictionary<string, Float> _floatData;
     [SerializeField] SerializableDictionary<string, Int> _intData;
+    [SerializeField] SerializableDictionary<string, Bool> _boolData;
 
     [ContextMenu("Write")]
     public void Write()
@@ -29,6 +30,13 @@ public class SaveSet : ScriptableObject
             writer.WriteLine(pair.Key + " = " + pair.Value.Value);
         }
 
+        writer.WriteLine("Bools:");
+
+        foreach (KeyValuePair<string, Bool> pair in _boolData)
+        {
+            writer.WriteLine(pair.Key + " = " + pair.Value.Value);
+        }
+
         writer.Close();
     }
 
@@ -44,6 +52,7 @@ public class SaveSet : ScriptableObject
 
             if(line == "Floats:") { readType = 0; continue; }
             if(line == "Ints:") { readType = 1; continue; }
+            if(line == "Bools:") { readType = 2; continue; }
 
             switch (readType)
             {
@@ -52,6 +61,9 @@ public class SaveSet : ScriptableObject
                     break;
                 case 1:
                     ReadInt(line);
+                    break;
+                case 2:
+                    ReadBool(line);
                     break;
             }
         }
@@ -75,5 +87,14 @@ public class SaveSet : ScriptableObject
         int value = int.Parse(parts[1].Trim());
 
         _intData[key].Value = value;
+    }
+
+    void ReadBool(string line)
+    {
+        string[] parts = line.Split('=');
+        string key = parts[0].Trim();
+        bool value = bool.Parse(parts[1].Trim());
+
+        _boolData[key].SetValue(value);
     }
 }

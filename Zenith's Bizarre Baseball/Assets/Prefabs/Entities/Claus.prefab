@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 3873788385845401502}
   - component: {fileID: 2638169245298171473}
   m_Layer: 6
-  m_Name: 'Orbit: 0,4365393 r/s'
+  m_Name: 'Orbit: 0,6820926 r/s'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,6 +894,77 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialState: {fileID: 5673565764110894979}
   permanentBehaviours: []
+--- !u!1 &3839615325213927061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901376245610615614}
+  - component: {fileID: 7649051015541899648}
+  m_Layer: 6
+  m_Name: death
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1901376245610615614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839615325213927061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5194980972768927096}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7649051015541899648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839615325213927061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef76340760308e242bfc6008bf3a8626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnExecuteBehaviour:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
+        m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
+        m_MethodName: CastDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: ccadda9d94334d24ea0fee49f8ebbabe, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1950139155252584482}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4268656127265705518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 16
+  _speed: {fileID: 11400000, guid: 052ab28d9dff7144784e7b6d86d9a97d, type: 2}
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -1356,6 +1427,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  getDamageConditions: []
   onGetDamage:
     m_PersistentCalls:
       m_Calls:
@@ -1387,6 +1459,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   maxHealth: {fileID: 11400000, guid: 091957f8c8ec6eb458eb93f8881ae488, type: 2}
+  currentHealthReference: {fileID: 0}
   _currentHealth: 12
 --- !u!61 &8165690288997096640
 BoxCollider2D:
@@ -1539,7 +1612,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1901376245610615614}
   m_Father: {fileID: 5956147671838086393}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2265,7 +2339,7 @@ GameObject:
   - component: {fileID: 1582580292326081100}
   - component: {fileID: 1535187428759647654}
   m_Layer: 6
-  m_Name: Follow Target 112 m/s
+  m_Name: Follow Target 175 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2299,7 +2373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 7
-  weight: 0.5
+  weight: 0.503
 --- !u!1 &6268539816614536670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,11 +2600,15 @@ MonoBehaviour:
     _debug: 0
     _floatDictionary:
       list: []
+    _intDictionary:
+      list: []
     _curveDictionary:
       list: []
     _operationDictionary:
       list: []
     _functionDictionary:
+      list: []
+    _stringDictionary:
       list: []
     _conditionDictionary:
       list: []

@@ -43,8 +43,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9132954639432700182}
   - component: {fileID: 9132954639432700183}
-  - component: {fileID: 9132954639432700201}
   - component: {fileID: 2448052492704199944}
+  - component: {fileID: 9132954639432700201}
+  - component: {fileID: 4674116734408244211}
   m_Layer: 0
   m_Name: VC
   m_TagString: Untagged
@@ -106,6 +107,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 9132954639864154072}
+--- !u!114 &2448052492704199944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132954639432700180}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9132954639432700201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,19 +132,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraEffects: {fileID: 11400000, guid: b9c76d2fd98e21046bb951212172ad0a, type: 2}
-  shakeTime: 0.2
---- !u!114 &2448052492704199944
+  shakeTime: {fileID: 11400000, guid: d914510756fe96b40a690e9a8f64aa8c, type: 2}
+--- !u!114 &4674116734408244211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9132954639432700180}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ae5f35c27e362a48b585a62e53ccbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraEffects: {fileID: 11400000, guid: b9c76d2fd98e21046bb951212172ad0a, type: 2}
 --- !u!1 &9132954639801444085
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,15 +201,15 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0012062726
-    y: 0
-    width: 1.7129072
-    height: 0.8231511
+    x: 0
+    y: 0.0021344717
+    width: 1.5030011
+    height: 0.81109923
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 30
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -266,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
+  m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1

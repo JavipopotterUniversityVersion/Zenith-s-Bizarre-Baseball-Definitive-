@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 3063072573441554623}
   - component: {fileID: 8902687742766919718}
   m_Layer: 6
-  m_Name: Move Away -5 m/s
+  m_Name: Move Away 0 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,6 +533,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2983886410244225649, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _speed
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c444eb9316fa0e418f1f8ad41307a62, type: 2}
     - target: {fileID: 12215767774205197, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: nextStates.Array.data[0].stateContainer
       value: 
@@ -661,6 +665,10 @@ PrefabInstance:
       propertyPath: _currentHealth
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: m_Name
+      value: Alive -> True
+      objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x
       value: 1.4451056
@@ -680,6 +688,10 @@ PrefabInstance:
     - target: {fileID: 7254718051959695927, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048230017073773547, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8234278341323660404, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_RootOrder

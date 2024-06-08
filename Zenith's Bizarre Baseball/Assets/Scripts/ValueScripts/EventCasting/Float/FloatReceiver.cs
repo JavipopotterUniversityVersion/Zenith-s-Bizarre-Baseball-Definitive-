@@ -9,7 +9,8 @@ public class FloatReceiver : MonoBehaviour
     [SerializeField] Float _value;
     [SerializeField] ObjectFloatEvent[] _floatEvents;
 
-    private void Start() => Subscribe();
+    private void Awake() => Subscribe();
+    private void Start() => CheckValue();
 
     private void OnDestroy() => Unsubscribe();
 

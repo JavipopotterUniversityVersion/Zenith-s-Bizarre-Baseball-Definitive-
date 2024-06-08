@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6727584215129309531}
   - component: {fileID: 1940452452030109433}
   m_Layer: 6
-  m_Name: Follow Target 5 m/s
+  m_Name: Follow Target 0 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,6 +250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2983886410244225649, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _speed
+      value: 
+      objectReference: {fileID: 11400000, guid: 61f6817f8dcf1224f9b3a14df5937bca, type: 2}
     - target: {fileID: 12215767774205197, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onExitPerformers.Array.size
       value: 1

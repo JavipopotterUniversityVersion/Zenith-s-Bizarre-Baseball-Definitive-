@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [Serializable]
 public class InstanceUnit
@@ -14,7 +15,8 @@ public class InstanceUnit
 
     public static GameObject GetInstance(InstanceUnit[] _instances)
     {
-        float random = UnityEngine.Random.value;
+        float range = _instances.Sum(instance => instance.Probability);
+        float random = UnityEngine.Random.Range(0, range);
         float sum = 0;
         foreach (var instance in _instances)
         {

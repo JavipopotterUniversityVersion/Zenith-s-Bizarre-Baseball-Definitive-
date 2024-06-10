@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 0}
+  Damage: {fileID: 11400000, guid: 963521c26bfadff43a281630c368df20, type: 2}
   _processor:
     operation: input
     _debug: 0
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 66719096083757258}
   - component: {fileID: 4095571280425168679}
   m_Layer: 6
-  m_Name: Follow Target 5 m/s
+  m_Name: Follow Target 0 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 1
   weight: 0.817
+  instant: 0
 --- !u!1001 &7637955274294042893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: maxHealth
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: d41331b8c94f7134b8feac8172dc5192, type: 2}
     - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: _currentHealth
       value: 1

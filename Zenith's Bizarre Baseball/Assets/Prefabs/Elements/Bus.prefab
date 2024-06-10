@@ -175,10 +175,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 166466007}
-  - {fileID: 4862531162934491206}
   - {fileID: 3185696687029732256}
   - {fileID: 563067444200355731}
-  - {fileID: 8629522963036727550}
+  - {fileID: 5079164979529054094}
   m_Father: {fileID: 1895987293}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,13 +199,10 @@ MonoBehaviour:
   - condition: []
     behaviourContainers:
     - {fileID: 166466006}
-  onExitPerformers:
-  - condition: []
-    behaviourContainers:
-    - {fileID: 1221421941004005016}
+  onExitPerformers: []
   nextStates:
   - conditions:
-    - conditionContainer: {fileID: 4811145390387458675}
+    - conditionContainer: {fileID: 2854167486376047639}
       negated: 0
     stateContainer: {fileID: 5851701914342601894}
 --- !u!1 &847727192
@@ -793,7 +789,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 709104259}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3032275383722469393
 MonoBehaviour:
@@ -867,7 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToWait: 0.33
---- !u!1 &4586529200881107657
+--- !u!1 &2854167486376047639
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -875,43 +871,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8629522963036727550}
-  - component: {fileID: 7119482149414425105}
+  - component: {fileID: 5079164979529054094}
+  - component: {fileID: 3415027165644754346}
   m_Layer: 0
-  m_Name: Wait 0,2s
+  m_Name: Wait 0,5s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8629522963036727550
+--- !u!4 &5079164979529054094
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586529200881107657}
+  m_GameObject: {fileID: 2854167486376047639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 709104259}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7119482149414425105
+--- !u!114 &3415027165644754346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586529200881107657}
+  m_GameObject: {fileID: 2854167486376047639}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8da4b90bc677b294eac913160882da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 0.2
+  timeToWait: 0.5
 --- !u!1 &4811145390387458675
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +919,7 @@ GameObject:
   - component: {fileID: 4862531162934491206}
   - component: {fileID: 1558663781731584606}
   m_Layer: 0
-  m_Name: Wait 0,75s
+  m_Name: Wait 1s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,13 +932,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4811145390387458675}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 709104259}
-  m_RootOrder: 1
+  m_Father: {fileID: 2573438708708992089}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1558663781731584606
 MonoBehaviour:
@@ -956,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da4b90bc677b294eac913160882da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 0.75
+  timeToWait: 1
 --- !u!1 &5467113073771051799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1013,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4862531162934491206}
   m_Father: {fileID: 1895987293}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1034,7 +1031,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateAnimation: 
-  onEnterPerformers: []
+  onEnterPerformers:
+  - condition: []
+    behaviourContainers:
+    - {fileID: 1221421941004005016}
   onUpdatePerformers: []
   onExitPerformers:
   - condition: []
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     - {fileID: 9196686995199710520}
   nextStates:
   - conditions:
-    - conditionContainer: {fileID: 4586529200881107657}
+    - conditionContainer: {fileID: 4811145390387458675}
       negated: 0
     stateContainer: {fileID: 5905039840445782570}
 --- !u!1 &5905039840445782570
@@ -1884,7 +1884,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 709104259}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &171694226351100700
 MonoBehaviour:

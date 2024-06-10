@@ -9,6 +9,7 @@ public class FollowTarget : MonoBehaviour, IBehaviour
     [SerializeField]float multiplier = 1;
     [Range(0, 1)]
     [SerializeField] float weight = 1f;
+    [SerializeField] bool instant = false;
 
     private void Awake()
     { 
@@ -18,9 +19,13 @@ public class FollowTarget : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        Vector2 direction = targetHandler.GetTargetDirection() * multiplier;
-        Vector2 fixedDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, direction, Time.deltaTime * weight * 100);
-        movementController.Move(fixedDirection);
+        Vector2 direction = targetHandler.GetTargetDirection();
+        Vector2 fixedDirection;
+        
+        if(instant) fixedDirection = direction;
+        else fixedDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, direction, Time.deltaTime * weight * 100).normalized;
+
+        movementController.Move(fixedDirection * multiplier);
     }
 
     private void OnValidate() {

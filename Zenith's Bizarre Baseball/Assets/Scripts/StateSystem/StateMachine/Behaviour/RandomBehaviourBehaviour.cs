@@ -2,23 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 {
-    [SerializeField] BehaviourUnit[] behaviours;
-
-    private void Awake() => BehaviourUnit.Initialize(behaviours);
+    [SerializeField] PerformerUnit[] behaviours;
 
     public void ExecuteBehaviour()
     {
-        float random = UnityEngine.Random.value;
+        PerformerUnit[] availablePerformers = behaviours.Where(performer => performer.CheckConditions()).ToArray();
+        if(availablePerformers.Length == 0) return;
+
+        float range = availablePerformers.Sum(performer => performer.Probability);
+
+        float random = UnityEngine.Random.Range(0, range);
         float sum = 0;
         foreach (var behaviourUnit in behaviours)
         {
             sum += behaviourUnit.Probability;
             if (random < sum)
             {
-                behaviourUnit.Behaviour.ExecuteBehaviour();
+                behaviourUnit.ExecuteBehaviours();
                 return;
             }
         }
@@ -31,20 +35,11 @@ public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 }
 
 [Serializable]
-public class BehaviourUnit
+public class PerformerUnit
 {
-    [SerializeField] GameObject _behaviourContainer;
-
-    IBehaviour _behaviour;
-    public IBehaviour Behaviour => _behaviour;
-
-    public static void Initialize(BehaviourUnit[] units)
-    {
-        foreach (var unit in units)
-        {
-            unit._behaviour = unit._behaviourContainer.GetComponent<IBehaviour>();
-        }
-    }
+    [SerializeField] BehaviourPerformer behaviourPerformer;
+    public bool CheckConditions() => behaviourPerformer.CheckConditions();
+    public void ExecuteBehaviours() => behaviourPerformer.ExecuteBehaviours();
 
     [SerializeField] [Range(0, 1)] float _probability;
     public float Probability => _probability;

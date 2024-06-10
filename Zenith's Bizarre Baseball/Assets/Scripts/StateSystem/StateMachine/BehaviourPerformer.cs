@@ -11,6 +11,15 @@ public class BehaviourPerformer
 
     bool initialized = false;
 
+    public bool CheckConditions() => Condition.CheckAllConditions(condition);
+    public void ExecuteBehaviours()
+    {
+        foreach(IBehaviour behaviour in behaviours)
+        {
+            behaviour.ExecuteBehaviour();
+        }
+    }
+
     public bool Perform()
     {
         if(!initialized)
@@ -31,13 +40,11 @@ public class BehaviourPerformer
 
         if(Condition.CheckAllConditions(condition))
         {
-            foreach(IBehaviour behaviour in behaviours)
-            {
-                behaviour.ExecuteBehaviour();
-            }
+            ExecuteBehaviours();
+            return true;
         }
         
-        return Condition.CheckAllConditions(condition);
+        return false;
     }
 
     public static void Perform(BehaviourPerformer[] performers)

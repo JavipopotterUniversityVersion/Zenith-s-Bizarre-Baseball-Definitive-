@@ -17,10 +17,6 @@ public class EventCastCollidable : ICollidable
             {
                 if(eventCast.CheckConditions())
                 {
-                    foreach (string eventName in eventCast.EventsNames)
-                    {
-                        print(eventName);
-                    }
                     eventsNames.AddRange(eventCast.EventsNames);
                 }
             }

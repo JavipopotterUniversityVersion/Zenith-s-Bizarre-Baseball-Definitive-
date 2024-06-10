@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6727584215129309531}
   - component: {fileID: 1940452452030109433}
   m_Layer: 6
-  m_Name: Follow Target 0 m/s
+  m_Name: Follow Target 10 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,14 @@ MonoBehaviour:
     collidables:
     - {fileID: 6344792939951504676}
     - {fileID: 1833760796585876201}
-  OnStayCollidables: []
+  OnStayCollidables:
+  - layer:
+      serializedVersion: 2
+      m_Bits: 128
+    conditions: []
+    collidables:
+    - {fileID: 6344792939951504676}
+    - {fileID: 1833760796585876201}
   checkDelay: 0.1
   OnExitCollidables: []
 --- !u!58 &8148405121007802749
@@ -402,6 +409,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 
       objectReference: {fileID: 11400000, guid: 630292a2170674548b53f31d7765fd4d, type: 2}
+    - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: m_Name
+      value: Alive -> True
+      objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x
       value: 1.4375696

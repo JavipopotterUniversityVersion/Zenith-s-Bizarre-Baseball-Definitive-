@@ -28,6 +28,7 @@ public class Node : MonoBehaviour
     float _linearity = 0.5f;
 
     public static int extension = 10;
+    public static int largestBranch = 0;
 
     int extensionIndex = 0;
     public int ExtensionIndex => extensionIndex;
@@ -65,6 +66,7 @@ public class Node : MonoBehaviour
 
         nodeSettings.AddRange(generator.NodeSettings.ToList());
         extensionIndex = _generator.Extension - branchExtension;
+        if(extensionIndex > largestBranch) largestBranch = extensionIndex;
 
         for (int i = 0; i < _gates.Length; i++)
         {
@@ -260,8 +262,11 @@ public class NodeSetting
 
     public bool AppearedRequiredTimes => _timesAppeared >= _minNumberOfNodes;
 
-    [SerializeField] int minExtension;
-    public int MinExtension => minExtension;
+    [SerializeField] [Range(0,1)] float minExtension;
+    public float MinExtension => minExtension;
+
+    [SerializeField] [Range(0,1)] float maxExtension;
+    public float MaxExtension => maxExtension;
 
     public static GameObject RandomNodeSetting(List<NodeSetting> nodeSettings) => RandomNodeSetting(nodeSettings.ToArray());
 

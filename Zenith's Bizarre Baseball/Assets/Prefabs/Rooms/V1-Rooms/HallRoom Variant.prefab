@@ -9,19 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4564803278183485906, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
       propertyPath: m_Size.x
-      value: 34.352913
+      value: 53.90242
       objectReference: {fileID: 0}
     - target: {fileID: -4564803278183485906, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
       propertyPath: m_Size.y
-      value: 21.311567
+      value: 30.802994
       objectReference: {fileID: 0}
     - target: {fileID: -4564803278183485906, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
       propertyPath: m_Offset.x
-      value: -1.0014343
+      value: -0.009792328
       objectReference: {fileID: 0}
     - target: {fileID: -4564803278183485906, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
       propertyPath: m_Offset.y
-      value: 0.083477974
+      value: -0.27067947
       objectReference: {fileID: 0}
     - target: {fileID: 753396278818174012, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
       propertyPath: m_Tiles.Array.size
@@ -19871,6 +19871,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 7.61
       objectReference: {fileID: 0}
+    - target: {fileID: 2561442818860997515, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561442818860997515, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[0]
+      value: 
+      objectReference: {fileID: 3034086808841138174}
     - target: {fileID: 3642497419366862352, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
       propertyPath: size.x
       value: 14
@@ -19993,5 +20001,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8559031487484489052, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
-    - {fileID: 2561442818860997515, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
+--- !u!114 &3034086808841138174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5179752841415522089, guid: eb3bf537b610ddd4ab1a1998d5802652, type: 3}
+  m_PrefabInstance: {fileID: 7924382768594213079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

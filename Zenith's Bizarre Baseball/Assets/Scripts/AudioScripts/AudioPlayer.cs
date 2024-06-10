@@ -24,6 +24,8 @@ public class AudioPlayer : ScriptableObject
     private UnityEvent<AudioClip, float, float, bool> _onAudioPlay = new UnityEvent<AudioClip, float, float, bool>();
     public UnityEvent<AudioClip, float, float, bool> OnAudioPlay => _onAudioPlay;
 
+    public UnityEvent<float> onPitchSet = new UnityEvent<float>();
+
     private UnityEvent onAudioStop = new UnityEvent();
     public UnityEvent OnAudioStop => onAudioStop;
 
@@ -77,6 +79,8 @@ public class AudioPlayer : ScriptableObject
 
         _onAudioPlay?.Invoke(audioClip(), actualVolume, actualPitch, _loop);
     }
+
+    public void SetPitch(float pitch) => onPitchSet?.Invoke(pitch);
 
     public void Stop() => onAudioStop?.Invoke();
 

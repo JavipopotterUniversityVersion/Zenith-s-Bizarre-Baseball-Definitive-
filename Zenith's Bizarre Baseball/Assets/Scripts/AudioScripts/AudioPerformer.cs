@@ -48,6 +48,8 @@ public class AudioPerformer : MonoBehaviour
                     }
                 );
 
+                _audioPlayer[i].onPitchSet.AddListener((float pitch) => currentSource.pitch = pitch);
+
                 _audioPlayer[i].OnAudioStop.AddListener(() => currentSource.Stop());
             }
         }

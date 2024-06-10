@@ -18,10 +18,6 @@ public class BehaviourByTextInput : MonoBehaviour
 
     public void ExecuteEvents(string[] receivedEvents)
     {
-        foreach(string s in receivedEvents)
-        {
-            Debug.Log(s);
-        }
         int eventsFound = 0;
 
         int i = 0;

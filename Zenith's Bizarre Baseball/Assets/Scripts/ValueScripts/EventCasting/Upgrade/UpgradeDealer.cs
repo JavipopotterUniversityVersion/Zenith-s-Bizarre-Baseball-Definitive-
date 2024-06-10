@@ -21,7 +21,7 @@ public class UpgradeDealer : MonoBehaviour
             UpgradeData upgradeData = UpgradeData.GetRandomUpgrade(availableUpgrades);
             availableUpgrades.Remove(upgradeData);
 
-            _upgradeReceivers[i].SetUpgrade(upgradeData.Upgrade);
+            _upgradeReceivers[i].SetUpgrade(upgradeData.Upgrade.Upgrade);
         }
 
         ActivateReceivers(_numberOfUpgrades);
@@ -38,8 +38,8 @@ public class UpgradeDealer : MonoBehaviour
     [Serializable] 
     struct UpgradeData
     {
-        [SerializeField] Upgrade _upgrade;
-        public readonly Upgrade Upgrade => _upgrade;
+        [SerializeField] UpgradeInstance _upgrade;
+        public readonly UpgradeInstance Upgrade => _upgrade;
 
         [SerializeField] [Range(0, 1)] float _chance;
 
@@ -48,7 +48,7 @@ public class UpgradeDealer : MonoBehaviour
         public static UpgradeData GetRandomUpgrade(UpgradeData[] upgradeDatas)
         {
             List<UpgradeData> availableUpgrades = new List<UpgradeData>();
-            availableUpgrades.AddRange(upgradeDatas.Where(x => x.Upgrade.CanAppear));
+            availableUpgrades.AddRange(upgradeDatas.Where(x => x.Upgrade.Upgrade.CanAppear));
             
             float totalChance = availableUpgrades.Sum(x => x._chance);
 

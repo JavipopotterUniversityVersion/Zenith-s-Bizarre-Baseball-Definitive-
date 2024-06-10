@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d4a53f21593804e90a7a0640ee1062, type: 3}
+  m_Name: ClausEncounter
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: ea5e7f460e1ee7d45aee3481c8d71b1d, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 21300000, guid: 0f610f9abe68a0a489541c68dcc10f95, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 083eb7da49ec7464f947fe039142fdce, type: 2}
+            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
+            m_MethodName: SetSprite
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: -1230422262, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: b22d4438b65a829459d02b2f6aa5a9b1, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 4ff3e1f0b1d881d44b1f124bda5b11fc, type: 2}
+              m_ObjectArgumentAssemblyTypeName: String, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 00f98373a889ab14796a6118d8af25f7, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 9d4a3f26bdf7bb24e8a138a72aecf328, type: 2}
+              m_ObjectArgumentAssemblyTypeName: String, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: dcb3ea41eaaefca45b2d50a7efba5835, type: 2}
+            m_TargetAssemblyTypeName: Event, Assembly-CSharp
+            m_MethodName: Invoke
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 409aaa472e3fada498e4f324f24feb0c, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Zenith
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 91a6d05075e70324785acf26d671f953, type: 2}
+            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+            m_MethodName: SetValue
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
+            m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    lines:
+    - You! I've come for you.
+    _exit:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 00f98373a889ab14796a6118d8af25f7, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 4ff3e1f0b1d881d44b1f124bda5b11fc, type: 2}
+              m_ObjectArgumentAssemblyTypeName: String, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: e364f05afabddbc4dab465b6c7ad83ea, type: 2}
+            m_TargetAssemblyTypeName: Event, Assembly-CSharp
+            m_MethodName: Invoke
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: b22d4438b65a829459d02b2f6aa5a9b1, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 9d4a3f26bdf7bb24e8a138a72aecf328, type: 2}
+              m_ObjectArgumentAssemblyTypeName: String, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 409aaa472e3fada498e4f324f24feb0c, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Claus
+              m_BoolArgument: 0
+            m_CallState: 2
+    lines:
+    - Honestly I don't what the fuck are you talking about.
+    _exit:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: b22d4438b65a829459d02b2f6aa5a9b1, type: 2}
+            m_TargetAssemblyTypeName: String, Assembly-CSharp
+            m_MethodName: SetString
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 4ff3e1f0b1d881d44b1f124bda5b11fc, type: 2}
+              m_ObjectArgumentAssemblyTypeName: String, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+    lines: []
+    _exit:
+      condition:
+      - condition: {fileID: 11400000, guid: 9433d248a488ffa4e88bd06bedfe381a, type: 2}
+        negated: 0
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: e634e32f3b015be409a946f037673409, type: 2}
+            m_TargetAssemblyTypeName: UpgradeSetReference, Assembly-CSharp
+            m_MethodName: SetOptionSet
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 1247d661ac56cd549b310dad7ec2f6bf, type: 2}
+              m_ObjectArgumentAssemblyTypeName: UpgradeSet, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: I'll make you pay
+              m_BoolArgument: 0
+            m_CallState: 2
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  _stringProcessor:
+    _intDictionary:
+      list: []
+    _floatDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _processorDictionary:
+      list: []

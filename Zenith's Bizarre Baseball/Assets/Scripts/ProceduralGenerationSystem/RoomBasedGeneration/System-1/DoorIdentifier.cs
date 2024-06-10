@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class DoorIdentifier : MonoBehaviour
 {
-    private RoomAccess roomAccess;
+    [SerializeField] private RoomAccess roomAccess;
     private Node _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();
     [SerializeField] UnityEvent onFailIdentity = new UnityEvent();
@@ -19,7 +19,7 @@ public class DoorIdentifier : MonoBehaviour
     }
     private void CompareFlag() 
     {
-        roomAccess = PositionRoomAccess();
+        if(roomAccess == 0) roomAccess = PositionRoomAccess();
         if (_DoorRoom.Access.HasFlag(roomAccess))
         {
             onVerifyIdentity?.Invoke();

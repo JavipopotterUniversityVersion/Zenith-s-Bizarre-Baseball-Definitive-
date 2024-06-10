@@ -33,12 +33,26 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
     private bool CheckBox()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + (Vector3)offset, size, 0, layerMask);
+
+        if(colliders.Length > 0) 
+        {
+            _onOverlap.Invoke(colliders[0].transform);
+            _onOverlapDirection.Invoke((colliders[0].transform.position - transform.position).normalized);
+        }
+
         return colliders.Length >= minimunColliders;
     }
 
     private bool CheckCircle()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (Vector3)offset, size.x, layerMask);
+
+        if(colliders.Length > 0) 
+        {
+            _onOverlap.Invoke(colliders[0].transform);
+            _onOverlapDirection.Invoke((colliders[0].transform.position - transform.position).normalized);
+        }
+
         return colliders.Length >= minimunColliders;
     }
 

@@ -52,14 +52,22 @@ public class NodeGenerator : MonoBehaviour
         {
             while(setting.AppearedRequiredTimes == false)
             {
-                List<Node> _nodesWithMinExtension = _nodes.Where(n => n.ExtensionIndex >= setting.MinExtension).ToList();
+                List<Node> _nodesWithRequiredExtension = 
+                _nodes.Where(n => (float) n.ExtensionIndex / Node.largestBranch >= setting.MinExtension
+                && (float) n.ExtensionIndex / Node.largestBranch <= setting.MaxExtension).ToList();
 
-                Node randomNode = _nodesWithMinExtension[Random.Range(0, _nodesWithMinExtension.Count)];
+                if(_nodesWithRequiredExtension.Count == 0) 
+                {
+                    Debug.LogError("No nodes with the required extension");
+                    _nodesWithRequiredExtension = _nodes;
+                }
+
+                Node randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
 
                 int i = 0;
                 while(randomNode.TryPlaceNode(setting.NodePrefab) == false && i < 10)
                 {
-                    randomNode = _nodesWithMinExtension[Random.Range(0, _nodesWithMinExtension.Count)];
+                    randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
                     i++;
                 }
 

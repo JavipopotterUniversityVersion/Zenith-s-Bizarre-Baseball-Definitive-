@@ -10,6 +10,7 @@ public class SpeedReadable : Readable
 
     public override float Read()
     {
+        if(rb == null) return 0;
         return rb.velocity.magnitude;
     }
 }

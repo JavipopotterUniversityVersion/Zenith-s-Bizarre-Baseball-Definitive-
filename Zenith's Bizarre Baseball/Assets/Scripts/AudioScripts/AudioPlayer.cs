@@ -1,11 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
-//using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "NewSoundEffect", menuName = "Audio/New Sound Effect")]
@@ -18,17 +11,28 @@ public class AudioPlayer : ScriptableObject
     [SerializeField] private SoundClipOrder playOrder;
     [SerializeField] private bool _loop;
 
-    private UnityEvent<AudioClip, float, float, bool> _onAudioOnShotPlay = new UnityEvent<AudioClip, float, float, bool>();
-    public UnityEvent<AudioClip, float, float, bool> OnAudioOneShotPlay => _onAudioOnShotPlay;
+    #region Events
+    private UnityEvent<AudioClip> _onPlay = new UnityEvent<AudioClip>();
+    public UnityEvent<AudioClip> OnPlay => _onPlay;
 
-    private UnityEvent<AudioClip, float, float, bool> _onAudioPlay = new UnityEvent<AudioClip, float, float, bool>();
-    public UnityEvent<AudioClip, float, float, bool> OnAudioPlay => _onAudioPlay;
+    private UnityEvent<AudioClip> _onPlayOneShot = new UnityEvent<AudioClip>();
+    public UnityEvent<AudioClip> OnPlayOneShot => _onPlayOneShot;
 
-    public UnityEvent<float> onPitchSet = new UnityEvent<float>();
+    UnityEvent<float> _onPitchSet = new UnityEvent<float>();
+    public UnityEvent<float> OnPitchSet => _onPitchSet;
 
-    private UnityEvent onAudioStop = new UnityEvent();
-    public UnityEvent OnAudioStop => onAudioStop;
+    UnityEvent<float> _onVolumeSet = new UnityEvent<float>();
+    public UnityEvent<float> OnVolumeSet => _onVolumeSet;
 
+    private UnityEvent _onAudioStop = new UnityEvent();
+    public UnityEvent OnAudioStop => _onAudioStop;
+
+    private UnityEvent<float> _onFadeIn = new UnityEvent<float>();
+    public UnityEvent<float> OnFadeIn => _onFadeIn;
+
+    private UnityEvent<float> _onFadeOut = new UnityEvent<float>();
+    public UnityEvent<float> OnFadeOut => _onFadeOut;
+    #endregion
 
     private AudioClip audioClip()
     {
@@ -49,40 +53,37 @@ public class AudioPlayer : ScriptableObject
                 break;
 
         }
-
-
         return clip;
     }
 
     public void PlayMusic()
     {
-        if (clips.Length == 0)  //por si acaso falta una pista de audio
-        {
-            Debug.Log($"Falta el clip de audio {name}");
-        }
-
-        float actualVolume = Random.Range(volume.x, volume.y);
-        float actualPitch = Random.Range(pitch.x, pitch.y);
-
-        _onAudioOnShotPlay?.Invoke(audioClip(), actualVolume, actualPitch, _loop);
+        SetRandomPitchAndVolume();
+        _onPlay?.Invoke(audioClip());
     }
-
     public void Play()
+
     {
-        if (clips.Length == 0)  //por si acaso falta una pista de audio
-        {
-            Debug.Log($"Falta el clip de audio {name}");
-        }
+        SetRandomPitchAndVolume();
+        _onPlayOneShot?.Invoke(audioClip());
+    }
+    void SetRandomPitchAndVolume()
 
+    {
         float actualVolume = Random.Range(volume.x, volume.y);
-        float actualPitch = Random.Range(pitch.x, pitch.y);
+        SetVolume(actualVolume);
 
-        _onAudioPlay?.Invoke(audioClip(), actualVolume, actualPitch, _loop);
+        float actualPitch = Random.Range(pitch.x, pitch.y);
+        SetPitch(actualPitch);
     }
 
-    public void SetPitch(float pitch) => onPitchSet?.Invoke(pitch);
+    public void SetPitch(float pitch) => _onPitchSet?.Invoke(pitch);
+    public void SetVolume(float volume) => _onVolumeSet?.Invoke(volume);
 
-    public void Stop() => onAudioStop?.Invoke();
+    public void Stop() => _onAudioStop?.Invoke();
+
+    public void FadeOut(float time) => _onFadeOut?.Invoke(time);
+    public void FadeIn(float time) => _onFadeIn?.Invoke(time);
 
     enum SoundClipOrder
     {

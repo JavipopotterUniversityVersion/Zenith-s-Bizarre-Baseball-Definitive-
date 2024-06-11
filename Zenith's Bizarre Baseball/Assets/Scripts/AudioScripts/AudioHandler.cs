@@ -17,6 +17,9 @@ public class AudioHandler : MonoBehaviour
         _audioPlayer.OnAudioStop.AddListener(Stop);
         _audioPlayer.OnFadeIn.AddListener(FadeIn);
         _audioPlayer.OnFadeOut.AddListener(FadeOut);
+        _source.loop = _audioPlayer.Loop;
+        _source.volume = _audioPlayer.Volume;
+        _source.pitch = _audioPlayer.Pitch;
     }
     
     private void Awake()
@@ -36,7 +39,11 @@ public class AudioHandler : MonoBehaviour
     public void Pause() => _source.Pause();
     public void UnPause() => _source.UnPause();
 
-    public void FadeOut(float time) => StartCoroutine(FadeRoutine(time));
+    public void FadeOut(float time)
+    { 
+        StopAllCoroutines();
+        StartCoroutine(FadeRoutine(time));
+    }
     IEnumerator FadeRoutine(float duration)
     {
         float startVolume = _source.volume;
@@ -49,12 +56,16 @@ public class AudioHandler : MonoBehaviour
         _source.volume = startVolume;
     }
 
-    public void FadeIn(float time) => StartCoroutine(FadeInRoutine(time));
+    public void FadeIn(float time)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeInRoutine(time));
+    }
     IEnumerator FadeInRoutine(float duration)
     {
-        float startVolume = _source.volume;
+        float startVolume = _audioPlayer.Volume;
         _source.volume = 0;
-        _source.Play();
+        Play(_audioPlayer.audioClip());
         while (_source.volume < startVolume)
         {
             _source.volume += startVolume * Time.fixedDeltaTime / duration;

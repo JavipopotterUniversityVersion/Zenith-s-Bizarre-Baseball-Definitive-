@@ -6,10 +6,15 @@ public class AudioPlayer : ScriptableObject
 {
     public AudioClip[] clips;
     public Vector2 volume = new Vector2(1f, 1f);
+    public float Volume => Random.Range(volume.x, volume.y);
+
     public Vector2 pitch = new Vector2(1f, 1f);
+    public float Pitch => Random.Range(pitch.x, pitch.y);
+
     [SerializeField] int playIndex;
     [SerializeField] private SoundClipOrder playOrder;
     [SerializeField] private bool _loop;
+    public bool Loop => _loop;
 
     #region Events
     private UnityEvent<AudioClip> _onPlay = new UnityEvent<AudioClip>();
@@ -34,7 +39,7 @@ public class AudioPlayer : ScriptableObject
     public UnityEvent<float> OnFadeOut => _onFadeOut;
     #endregion
 
-    private AudioClip audioClip()
+    public AudioClip audioClip()
     {
         //utiliza la pista de audio actual
         var clip = clips[playIndex >= clips.Length ? 0 : playIndex];
@@ -68,13 +73,9 @@ public class AudioPlayer : ScriptableObject
         _onPlayOneShot?.Invoke(audioClip());
     }
     void SetRandomPitchAndVolume()
-
     {
-        float actualVolume = Random.Range(volume.x, volume.y);
-        SetVolume(actualVolume);
-
-        float actualPitch = Random.Range(pitch.x, pitch.y);
-        SetPitch(actualPitch);
+        SetVolume(Volume);
+        SetPitch(Pitch);
     }
 
     public void SetPitch(float pitch) => _onPitchSet?.Invoke(pitch);

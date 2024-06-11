@@ -5629,7 +5629,13 @@ MonoBehaviour:
     - {fileID: 6217774685930718499}
   OnStayCollidables: []
   checkDelay: 0.1
-  OnExitCollidables: []
+  OnExitCollidables:
+  - layer:
+      serializedVersion: 2
+      m_Bits: 640
+    conditions: []
+    collidables:
+    - {fileID: 3614075247153260928}
 --- !u!114 &6217774685930718499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5655,6 +5661,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Open
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: ece99f6e224f238479f86d15bd48ecb0, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 15a09230bd322d842bcb30fd72d9b652, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
   onCollideEventWithTransform:
@@ -5685,6 +5715,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 15a09230bd322d842bcb30fd72d9b652, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: ece99f6e224f238479f86d15bd48ecb0, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onCollideEventWithTransform:
@@ -8788,7 +8842,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6585451639945478048, guid: a71b130b3b8364344a66ea1c7bbe76cd, type: 3}
       propertyPath: m_Name
-      value: Alive -> True
+      value: Alive -> False
       objectReference: {fileID: 0}
     - target: {fileID: 9213680093490472116, guid: a71b130b3b8364344a66ea1c7bbe76cd, type: 3}
       propertyPath: m_RootOrder

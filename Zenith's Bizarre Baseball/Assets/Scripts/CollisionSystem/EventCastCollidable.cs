@@ -4,12 +4,28 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EventCastCollidable : ICollidable
+public class EventCastCollidable : ICollidable, IGameObjectProcessor
 {
     [SerializeField] EventCast[] eventCasts;
-    public override void OnCollide(Collider2D collider)
+    public override void OnCollide(Collider2D collider) => Process(collider.gameObject);
+
+    public void Process(GameObject gameObject)
     {
-        if(collider.TryGetComponent(out BehaviourByTextInput eventByTextReceiver))
+        EventCast.Cast(gameObject, eventCasts);
+    }
+}
+
+[Serializable] public struct EventCast
+{
+    [SerializeField] Condition[] conditions;
+    public readonly bool CheckConditions() => Condition.CheckAllConditions(conditions);
+
+    [SerializeField] string[] _eventsNames;
+    public readonly string[] EventsNames => _eventsNames;
+
+    public static void Cast(GameObject gameObject, EventCast[] eventCasts)
+    {
+        if(gameObject.TryGetComponent(out BehaviourByTextInput eventByTextReceiver))
         {
             List<string> eventsNames = new List<string>();
 
@@ -24,13 +40,4 @@ public class EventCastCollidable : ICollidable
             eventByTextReceiver.ExecuteEvents(eventsNames.ToArray());
         }
     }
-
-    [Serializable] struct EventCast
-    {
-        [SerializeField] ScriptableCondition[] conditions;
-        public readonly bool CheckConditions() => ScriptableCondition.CheckAllConditions(conditions);
-
-        [SerializeField] string[] _eventsNames;
-        public readonly string[] EventsNames => _eventsNames;
-    } 
-}
+} 

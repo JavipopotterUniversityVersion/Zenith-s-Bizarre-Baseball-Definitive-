@@ -57,7 +57,7 @@ public class Float : ScriptableICondition
 [Serializable]
 public class Processor
 {
-    static string[] operationTypes = new string[] {"!=", "==", ">", "<", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
+    static string[] operationTypes = new string[] {"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
     [SerializeField] bool _debug = false;
 
@@ -271,6 +271,10 @@ public class Processor
                 return value1 != 0 && value2 != 0 ? 1 : 0;
             case "||":
                 return value1 != 0 || value2 != 0 ? 1 : 0;
+            case "<=":
+                return value1 <= value2 ? 1 : 0;
+            case ">=":
+                return value1 >= value2 ? 1 : 0;
             default:
                 return value1;
         }

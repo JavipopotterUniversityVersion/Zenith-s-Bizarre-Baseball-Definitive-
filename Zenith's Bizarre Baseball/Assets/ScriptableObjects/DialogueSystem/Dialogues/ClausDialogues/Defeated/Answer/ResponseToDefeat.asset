@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1963600db2a2a408cea3fe56ebd5d1, type: 3}
+  m_Name: ResponseToDefeat
+  m_EditorClassIdentifier: 
+  _upgrades:
+  - _name: Pay for what you've done
+    _condition:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+    _icon: {fileID: 0}
+    _description: 
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _upgradeEvent:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _name: I wanna marry you
+    _condition:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+    _icon: {fileID: 0}
+    _description: 
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _upgradeEvent:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _name: Go Vegan (Vamos venga)
+    _condition:
+      operation: vegan >= 3
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list:
+        - Key: vegan
+          Value: {fileID: 11400000, guid: a4b97a1995ce16a418f0b45501f0a80f, type: 2}
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+    _icon: {fileID: 0}
+    _description: 
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _upgradeEvent:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _name: Pay me with meat
+    _condition:
+      operation: meat >= 3
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list:
+        - Key: meat
+          Value: {fileID: 11400000, guid: 440e19b5fb609d84d9043d6d455c63cf, type: 2}
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+    _icon: {fileID: 0}
+    _description: 
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _upgradeEvent:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _name: Pay my debt
+    _condition:
+      operation: money < 0
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list:
+        - Key: money
+          Value: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+    _icon: {fileID: 0}
+    _description: 
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _upgradeEvent:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _name: Let's scape from my debts together
+    _condition:
+      operation: money < 0
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list:
+        - Key: money
+          Value: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+    _icon: {fileID: 0}
+    _description: 
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _upgradeEvent:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []

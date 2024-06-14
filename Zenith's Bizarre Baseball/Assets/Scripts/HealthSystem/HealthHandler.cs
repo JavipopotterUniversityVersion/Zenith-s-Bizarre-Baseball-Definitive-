@@ -47,7 +47,6 @@ public class HealthHandler : Readable
     void SetRef() => onHealthChanged.AddListener(currentHealthReference.SetRawValue);
 
     public void ResetHealth() => CurrentHealth = maxHealth.Value;
-
     public void TakeDamage(float damage)
     {
         if(Condition.CheckAllConditions(getDamageConditions))

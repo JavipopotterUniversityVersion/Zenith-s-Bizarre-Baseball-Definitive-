@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Linq;
 
 public class RandomInstanceOnGridArea : MonoBehaviour, IBehaviour
 {
@@ -9,6 +10,8 @@ public class RandomInstanceOnGridArea : MonoBehaviour, IBehaviour
     [SerializeField] Vector2Int offset;
     [SerializeField] InstanceUnit[] _instances;
     [SerializeField] Color _gizmosColor;
+
+    List<Limit> limits = new List<Limit>();
 
     private void OnDrawGizmos() {
         Gizmos.color = _gizmosColor;
@@ -20,8 +23,16 @@ public class RandomInstanceOnGridArea : MonoBehaviour, IBehaviour
         Vector2Int randomPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y) + 
         new Vector2Int(Random.Range(-_size.x, _size.x), Random.Range(-_size.y, _size.y)) + offset;
 
+        while (limits.Any(limit => limit.Contains(randomPosition)))
+        {
+            randomPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y) + 
+            new Vector2Int(Random.Range(-_size.x, _size.x), Random.Range(-_size.y, _size.y)) + offset;
+        }
+
         Instantiate(InstanceUnit.GetInstance(_instances), (Vector3Int) randomPosition, Quaternion.identity);
     }
+
+    public void AddLimit(Limit limit) => limits.Add(limit);
 
     private void OnValidate() {
         name = "RandomInstanceOnGridArea";

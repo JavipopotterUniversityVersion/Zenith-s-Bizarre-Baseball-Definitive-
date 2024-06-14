@@ -17,8 +17,8 @@ public class EventCastCollidable : ICollidable, IGameObjectProcessor
 
 [Serializable] public struct EventCast
 {
-    [SerializeField] Condition[] conditions;
-    public readonly bool CheckConditions() => Condition.CheckAllConditions(conditions);
+    [SerializeField] ObjectProcessor condition;
+    public readonly bool CheckConditions() => condition.ResultBool(1);
 
     [SerializeField] string[] _eventsNames;
     public readonly string[] EventsNames => _eventsNames;

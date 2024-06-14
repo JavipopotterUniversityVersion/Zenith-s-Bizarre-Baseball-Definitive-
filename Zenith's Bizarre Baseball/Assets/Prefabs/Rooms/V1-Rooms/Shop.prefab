@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7800844650005222491}
   - component: {fileID: 1110339439028838910}
   - component: {fileID: 6495154591726933801}
+  - component: {fileID: 6313008952434036493}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Untagged
@@ -228,7 +229,13 @@ MonoBehaviour:
     - {fileID: 6495154591726933801}
   OnStayCollidables: []
   checkDelay: 0.1
-  OnExitCollidables: []
+  OnExitCollidables:
+  - layer:
+      serializedVersion: 2
+      m_Bits: 640
+    conditions: []
+    collidables:
+    - {fileID: 6313008952434036493}
 --- !u!114 &6495154591726933801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +250,73 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onCollideEvent:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 15a09230bd322d842bcb30fd72d9b652, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 60455299f11697c4eb4cfe8eca87fd11, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollideEventWithTransform:
+    m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6313008952434036493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778787587222257939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCollideEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 15a09230bd322d842bcb30fd72d9b652, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 60455299f11697c4eb4cfe8eca87fd11, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onCollideEventWithTransform:
     m_PersistentCalls:
       m_Calls: []
@@ -8208,6 +8281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof
       objectReference: {fileID: 0}
+    - target: {fileID: 9099827390906425358, guid: ebbe380d406e8a44597431f675712a6c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebbe380d406e8a44597431f675712a6c, type: 3}
 --- !u!4 &3234892375934761837 stripped
@@ -8232,11 +8309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 334573021082602170, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.3443985
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 334573021082602170, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6887817
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 334573021082602170, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8274,6 +8351,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Talking -> False
       objectReference: {fileID: 0}
+    - target: {fileID: 2376481652381230997, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126218608055124599, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -569771853, guid: 2f50d52a0b35ef343898816a950e93f5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
 --- !u!4 &7825055048959559157 stripped

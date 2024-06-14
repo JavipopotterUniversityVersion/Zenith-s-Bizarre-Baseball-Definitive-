@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d4a53f21593804e90a7a0640ee1062, type: 3}
+  m_Name: ClausDefeated-Dialogue
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+    lines:
+    - '<claus,zenith:default>
+
+      ST(Claus,clausAn,zenithAn)
+
+      <break>'
+    - Ugh<clausAn:Idle><t:0,1>...<t:0,025><clausAn:Talk> You've defeated me<clausAn:Idle>
+    - <clausAn:Talk>That makes you the strongest, I'll do anything you want<clausAn:Idle>
+    _exit:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+    lines: []
+    _exit:
+      condition:
+      - condition: {fileID: 11400000, guid: 02df6a34f19189645920b9c9e206bf66, type: 2}
+        negated: 0
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: e634e32f3b015be409a946f037673409, type: 2}
+            m_TargetAssemblyTypeName: UpgradeSetReference, Assembly-CSharp
+            m_MethodName: SetOptionSet
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 4c0bf6e2c459c4f449ed199fff28211b, type: 2}
+              m_ObjectArgumentAssemblyTypeName: UpgradeSet, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - _enter:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 2937c761de553274392081c879dcc1b9, type: 2}
+            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+            m_MethodName: SetValue
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    lines:
+    - <clausAn:Blop><zenithAn:Blop,Appear><zenith,claus:Yard><name:><break>
+    - <t:0,2>...............
+    - ...............
+    - ...............<t:0,025>
+    - "TALK(zenithAn,You've pressed letter \xF1?! that's amazing)"
+    - "<clausAn:Talk>Yeah, \xF1 is such a cool letter, I would pass the entire day
+      saying it \xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1<clausAn:Idle>"
+    - "<zenithAn:Talk>\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1<zenithAn:Idle>"
+    _exit:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  _stringProcessor:
+    _intDictionary:
+      list: []
+    _floatDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _stringFunctionDictionary:
+      list:
+      - Key: -ST
+        Value: {fileID: 11400000, guid: d1b993a6ed49140489c885334f3b216f, type: 2}
+      - Key: ST
+        Value: {fileID: 11400000, guid: 7f55c07fcd3da284c8a86fb64641adbe, type: 2}
+      - Key: TALK
+        Value: {fileID: 11400000, guid: b570df4e64a3e1f4c8d5ce47dc657108, type: 2}
+    _processorDictionary:
+      list: []

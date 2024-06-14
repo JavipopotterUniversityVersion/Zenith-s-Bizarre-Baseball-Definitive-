@@ -313,7 +313,7 @@ public class Limit
                _min.position.y < otherLimit.Max.position.y && _max.position.y > otherLimit.Min.position.y;
     }
 
-    public bool Contains(Vector3 position)
+    public bool Contains(Vector2 position)
     {
         return _min.position.x < position.x && _max.position.x > position.x &&
                _min.position.y < position.y && _max.position.y > position.y;

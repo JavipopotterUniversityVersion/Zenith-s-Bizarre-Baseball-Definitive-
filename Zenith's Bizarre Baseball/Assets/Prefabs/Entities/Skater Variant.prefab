@@ -197,10 +197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateAnimation: 
   onEnterPerformers:
-  - condition:
-    - conditionContainer: {fileID: 5498784014580691818}
-      negated: 0
-    behaviourContainers: []
+  - condition: []
+    behaviourContainers:
+    - {fileID: 5498784014580691818}
   onUpdatePerformers: []
   onExitPerformers:
   - condition: []
@@ -509,6 +508,8 @@ MonoBehaviour:
       list: []
     _stringDictionary:
       list: []
+    _boolDictionary:
+      list: []
     _conditionDictionary:
       list: []
     _readableDictionary:
@@ -540,6 +541,8 @@ MonoBehaviour:
     _functionDictionary:
       list: []
     _stringDictionary:
+      list: []
+    _boolDictionary:
       list: []
     _conditionDictionary:
       list: []
@@ -752,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f18867cddfc44ae47a5934494eaaa910, type: 2}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> False
+      value: Alive -> True
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x
@@ -773,6 +776,10 @@ PrefabInstance:
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429055678774840835, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9105301891046977518, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name

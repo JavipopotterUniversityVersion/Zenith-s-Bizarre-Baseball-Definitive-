@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -48,6 +49,7 @@ public class StringProcessor
     [SerializeField] SerializableDictionary<string, Int> _intDictionary = new SerializableDictionary<string, Int>();
     [SerializeField] SerializableDictionary<string, ProcessedFloat> _floatDictionary = new SerializableDictionary<string, ProcessedFloat>();
     [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
+    [SerializeField] SerializableDictionary<string, StringFunction> _stringFunctionDictionary = new SerializableDictionary<string, StringFunction>();
     [SerializeField] SerializableDictionary<string, Processor> _processorDictionary = new SerializableDictionary<string, Processor>();
 
     public string Process(string value)
@@ -81,6 +83,15 @@ public class StringProcessor
             if (value.Contains(item.Key))
             {
                 value = value.Replace(item.Key, item.Value.Result(0).ToString());
+            }
+        }
+
+        foreach (var item in _stringFunctionDictionary)
+        {
+            if (value.Contains(item.Key))
+            {
+                string input = value.Split(item.Key + "(")[1].Split(')')[0];
+                value = value.Replace(item.Key + "(" + input + ")", item.Value.Result(input));
             }
         }
 

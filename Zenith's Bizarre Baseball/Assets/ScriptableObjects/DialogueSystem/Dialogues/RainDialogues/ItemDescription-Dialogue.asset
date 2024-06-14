@@ -18,20 +18,20 @@ MonoBehaviour:
       _event:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 11400000, guid: 211283e9860d58d48af4603c960cb246, type: 2}
-            m_TargetAssemblyTypeName: Sprite, Assembly-CSharp
-            m_MethodName: SetSprite
-            m_Mode: 2
+          - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
+            m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+            m_MethodName: Disable
+            m_Mode: 1
             m_Arguments:
-              m_ObjectArgument: {fileID: 21300000, guid: de414d86ad8774a4db5d8e3db55f467b, type: 3}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
     lines:
-    - '[description]'
+    - <rainAn:Talk>[description]<rainAn:Idle>
     _exit:
       condition:
       - condition: {fileID: 11400000, guid: 285394dc778e4244b8eb22c584c33e37, type: 2}
@@ -77,5 +77,7 @@ MonoBehaviour:
       list:
       - Key: '[description]'
         Value: {fileID: 11400000, guid: f2d15813e3f8cf84c8fbc06bed967bbb, type: 2}
+    _stringFunctionDictionary:
+      list: []
     _processorDictionary:
       list: []

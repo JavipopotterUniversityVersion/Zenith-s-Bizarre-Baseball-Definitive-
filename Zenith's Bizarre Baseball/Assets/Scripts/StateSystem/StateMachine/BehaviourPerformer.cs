@@ -14,13 +14,15 @@ public class BehaviourPerformer
     public bool CheckConditions() => Condition.CheckAllConditions(condition);
     public void ExecuteBehaviours()
     {
+        Initialize();
+
         foreach(IBehaviour behaviour in behaviours)
         {
             behaviour.ExecuteBehaviour();
         }
     }
 
-    public bool Perform()
+    void Initialize()
     {
         if(!initialized)
         {
@@ -37,6 +39,11 @@ public class BehaviourPerformer
 
             initialized = true;
         }
+    }
+
+    public bool Perform()
+    {
+        Initialize();
 
         if(Condition.CheckAllConditions(condition))
         {
@@ -69,7 +76,14 @@ public class Condition
 
     public void Initialize()
     {
-        condition = conditionContainer.GetComponent<ICondition>();
+        if(conditionContainer.TryGetComponent(out ICondition cond))
+        {
+            condition = cond;
+        }
+        else
+        {
+            Debug.LogError("Womp Womp Condition container does not contain a condition component");
+        }
     }
 
     public static void InitializeAll(Condition[] conditions)

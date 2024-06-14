@@ -79,6 +79,9 @@ public class Processor
     [Header("String REFERENCES")]
     [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
 
+    [Header("BOOL REFERENCES")]
+    [SerializeField] SerializableDictionary<string, Bool> _boolDictionary = new SerializableDictionary<string, Bool>();
+
 
     float Calculate(float input, string operation)
     {
@@ -186,6 +189,7 @@ public class Processor
             return _functionDictionary[functionName].Result(functionInput);
         }
 
+        if(_boolDictionary.ContainsKey(value)) return _boolDictionary[value].Value ? 1 : 0;
         if(_stringDictionary.ContainsKey(value)) return StringToFloat(_stringDictionary[value].Value);
         if(_intDictionary.ContainsKey(value)) return _intDictionary[value].Value;
 

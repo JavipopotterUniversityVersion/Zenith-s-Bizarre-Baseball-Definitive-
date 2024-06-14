@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904c1a5f20ec3884a947583768731849, type: 3}
   m_Name: IndebtedNotification
   m_EditorClassIdentifier: 
-  _appearCondition: []
-  _icon: {fileID: 0}
-  _name: Indebted
-  _description: You owe money to the bank, you'll have to be agile in order to evade
-    debt collectors or pay your debt
-  _stringProcessor:
-    _intDictionary:
-      list: []
-    _floatDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _processorDictionary:
-      list: []
-  _upgradeEvent:
-    condition: []
-    _event:
-      m_PersistentCalls:
-        m_Calls: []
+  _upgrade:
+    _appearCondition: []
+    _icon: {fileID: 1485374218, guid: 374502fc6d0208d40a4d8983b42082de, type: 3}
+    _name: Indebted
+    _description: Now you owe money, pawnbrokers ay chase you, be careful
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _upgradeEvent:
+      condition: []
+      _event:
+        m_PersistentCalls:
+          m_Calls: []

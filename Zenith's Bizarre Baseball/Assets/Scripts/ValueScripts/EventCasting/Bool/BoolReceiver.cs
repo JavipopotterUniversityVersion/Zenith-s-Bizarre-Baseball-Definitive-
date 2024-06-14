@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class BoolReceiver : MonoBehaviour
 {
     [SerializeField] Bool _value;
+    [SerializeField] bool checkOnAwake = false;
 
     [SerializeField] UnityEvent _onTrue = new UnityEvent();
     [SerializeField] UnityEvent _onFalse = new UnityEvent();
@@ -13,6 +14,7 @@ public class BoolReceiver : MonoBehaviour
     private void Awake()
     {
         _value.OnValueChanged.AddListener(UpdateBool);
+        if (checkOnAwake) UpdateBool();
     }
 
     private void OnDestroy()

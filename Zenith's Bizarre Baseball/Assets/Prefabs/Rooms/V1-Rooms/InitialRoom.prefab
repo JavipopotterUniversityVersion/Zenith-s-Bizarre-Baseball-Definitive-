@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: {fileID: 11400000, guid: 62ce8544b1c262e4e9e12a087a7e2e93, type: 2}
+  checkOnAwake: 0
   _onTrue:
     m_PersistentCalls:
       m_Calls: []
@@ -305,7 +306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6585451639945478048, guid: a71b130b3b8364344a66ea1c7bbe76cd, type: 3}
       propertyPath: m_Name
-      value: Alive -> False
+      value: (Alive && (Inmortal == 0)) -> True
       objectReference: {fileID: 0}
     - target: {fileID: 9213680093490472116, guid: a71b130b3b8364344a66ea1c7bbe76cd, type: 3}
       propertyPath: m_RootOrder

@@ -156,12 +156,19 @@ MonoBehaviour:
   _extension: 20
   maxBranchExtension: 20
   _linearity: 0.5
+  onStartedGeneration:
+    m_PersistentCalls:
+      m_Calls: []
+  onFinishedGeneration:
+    m_PersistentCalls:
+      m_Calls: []
   _nodeSettings:
   - _nodePrefab: {fileID: 2778787587222257939, guid: a0150efe280823f43bdef00feeb9338c, type: 3}
     _probability: 0
     _minNumberOfNodes: 1
     _maxNumberOfNodes: 1
     minExtension: 2
+    maxExtension: 0
 --- !u!4 &1285878261
 Transform:
   m_ObjectHideFlags: 0

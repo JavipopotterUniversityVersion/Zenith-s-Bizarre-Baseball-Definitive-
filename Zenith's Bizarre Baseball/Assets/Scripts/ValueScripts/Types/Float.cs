@@ -144,7 +144,7 @@ public class Processor
         return Translate(value, input);
     }
 
-    public bool ResultBool(float input) => Result(input) != 0;
+    public bool ResultBool(float input = 1) => Result(input) != 0;
 
     string PlaceOperations(string value)
     {

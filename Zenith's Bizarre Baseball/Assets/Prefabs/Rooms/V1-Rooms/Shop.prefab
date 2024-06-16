@@ -144,12 +144,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gates:
   - _transform: {fileID: 7977689203217381303}
+    possibleNodes: []
     _access: 1
   - _transform: {fileID: 2778787589075842739}
+    possibleNodes: []
     _access: 2
   - _transform: {fileID: 1493451235333891246}
+    possibleNodes: []
     _access: 8
   - _transform: {fileID: 4918416491033256865}
+    possibleNodes: []
     _access: 4
   _contactFilter:
     useTriggers: 1
@@ -8349,7 +8353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 777376260853273852, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 2376481652381230997, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_IsActive

@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 7943310306014342313}
   - component: {fileID: 7083616533323948082}
   m_Layer: 6
-  m_Name: Talking -> False
+  m_Name: Talking -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3311,7 +3311,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventCasts:
-  - conditions: []
+  - condition:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list: []
     _eventsNames:
     - Homing
     - Player

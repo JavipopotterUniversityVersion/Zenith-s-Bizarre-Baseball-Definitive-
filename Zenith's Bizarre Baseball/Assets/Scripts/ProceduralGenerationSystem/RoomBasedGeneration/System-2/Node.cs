@@ -80,7 +80,10 @@ public class Node : MonoBehaviour
 
             if (gate.IsConnected || !Access.HasFlag(gate.Access)) continue;
 
-            GameObject nodePrefab = NodeSetting.RandomNodeSetting(nodeSettings);
+            List<NodeSetting> possibleNodes = nodeSettings;
+            possibleNodes.AddRange(gate.possibleNodes);
+
+            GameObject nodePrefab = NodeSetting.RandomNodeSetting(possibleNodes);
             if (nodePrefab == null)
             {
                 CloseNodes();
@@ -94,7 +97,9 @@ public class Node : MonoBehaviour
 
             while (!node.ConnectNodes(ref gate))
             {
-                Destroy(node.gameObject);
+                if(Application.isEditor) DestroyImmediate(node.gameObject, false);
+                else Destroy(node.gameObject);
+
                 node = Instantiate(NodeSetting.RandomNodeSetting(nodeSettings)).GetComponent<Node>();
                 node.Generator = _generator;
 
@@ -223,6 +228,8 @@ public class Gate
     [SerializeField] Transform _transform;
     public Transform Transform => _transform;
 
+    public NodeSetting[] possibleNodes;
+
     public bool IsConnected => _connectedGate != null;
 
     [SerializeField] Gate _connectedGate;
@@ -323,4 +330,7 @@ public class Limit
     {
         return new Vector3(UnityEngine.Random.Range(_min.position.x, _max.position.x), UnityEngine.Random.Range(_min.position.y, _max.position.y), 0);
     }
+
+    public Vector2 GetCenter() => (_min.position + _max.position) / 2;
+    public Vector2 GetSize() => new Vector2(Mathf.Abs(_max.position.x - _min.position.x), Mathf.Abs(_max.position.y - _min.position.y));
 }

@@ -28,6 +28,7 @@ public class NodeGenerator : MonoBehaviour
     [SerializeField] NodeSetting[] _nodeSettings;
     public NodeSetting[] NodeSettings => _nodeSettings;
 
+    [ContextMenu("Start Generation")]
     private void Start()
     {
         onStartedGeneration.Invoke();

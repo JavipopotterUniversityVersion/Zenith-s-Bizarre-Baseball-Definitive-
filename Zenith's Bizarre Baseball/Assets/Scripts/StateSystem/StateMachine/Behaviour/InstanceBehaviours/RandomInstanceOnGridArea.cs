@@ -11,11 +11,16 @@ public class RandomInstanceOnGridArea : MonoBehaviour, IBehaviour
     [SerializeField] InstanceUnit[] _instances;
     [SerializeField] Color _gizmosColor;
 
-    List<Limit> limits = new List<Limit>();
+    [SerializeField] List<Limit> limits = new List<Limit>();
 
     private void OnDrawGizmos() {
         Gizmos.color = _gizmosColor;
         Gizmos.DrawWireCube(transform.position + (Vector3Int) offset, new Vector3(_size.x * 2, _size.y * 2, 0));
+
+        foreach (Limit limit in limits)
+        {
+            Gizmos.DrawWireCube(limit.GetCenter(), limit.GetSize());
+        }
     }
 
     public void ExecuteBehaviour()

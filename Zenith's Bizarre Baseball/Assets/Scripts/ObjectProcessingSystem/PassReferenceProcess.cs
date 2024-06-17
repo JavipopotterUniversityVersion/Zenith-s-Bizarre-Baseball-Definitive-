@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PassReferenceProcess : MonoBehaviour, IGameObjectProcessor
 {
-    [SerializeField] IRef<Object>[] _references;
+    [SerializeField] SerializableDictionary<string, IRef<Object>> _references;
 
     public void Process(GameObject gameObject)
     {
-        if(gameObject.TryGetComponent(out GenericReference reference)) reference.SetReference(_references);
+        if(gameObject.TryGetComponent(out GenericReference reference)) reference.AddReferences(_references);
     }
 }

@@ -12,7 +12,15 @@ public class ImageToRoomTranslator : MonoBehaviour
     [SerializeField] TileData[] _tileDatas;
     [SerializeField] PrefabData[] _prefabDatas;
     [SerializeField] Vector2Int offset;
+    List<GameObject> _objects = new List<GameObject>();
 
+    [ContextMenu("Clear and Translate")]
+    public void ClearAndTranslate()
+    {
+        Clear();
+        Translate();
+    }
+    
     [ContextMenu("Translate")]
     public void Translate()
     {
@@ -36,7 +44,8 @@ public class ImageToRoomTranslator : MonoBehaviour
 
                         prefabData.prefabs[color].Process(obj);
                         obj.transform.SetPositionAndRotation(position, rotation);
-                        break;
+
+                        _objects.Add(obj);
                     }
                 }
 
@@ -45,7 +54,6 @@ public class ImageToRoomTranslator : MonoBehaviour
                     if (tileData.tiles.ContainsKey(color))
                     {
                         tileData.tilemap.SetTile(new Vector3Int(x + offset.x, y + offset.y, 0), tileData.tiles[color]);
-                        break;
                     }
                 }
             }
@@ -62,12 +70,15 @@ public class ImageToRoomTranslator : MonoBehaviour
 
         foreach (PrefabData prefabData in _prefabDatas)
         {
-            foreach (Transform child in prefabData.tilemap.transform)
+            foreach (GameObject obj in _objects)
             {
-                DestroyImmediate(child.gameObject, false);
+                DestroyImmediate(obj, false);
             }
         }
+
+        _objects.Clear();
     }
+
 
     [Serializable]
     class TileData

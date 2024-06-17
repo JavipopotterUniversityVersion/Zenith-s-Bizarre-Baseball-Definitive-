@@ -83,7 +83,11 @@ public class IRef<T> : ISerializationCallbackReceiver where T : class
 
     void ISerializationCallbackReceiver.OnBeforeSerialize() => OnValidate();
     void ISerializationCallbackReceiver.OnAfterDeserialize() { }
+
     public static T[] ToArray(IRef<T>[] refs) => refs.Select(r => r.I).ToArray();
+
     public static IRef<T>[] ToRef(T[] ts) => ts.Select(t => new IRef<T> { target = t as UnityEngine.Object }).ToArray();
+    public static IRef<T> ToRef(T t) => new IRef<T> { target = t as UnityEngine.Object };
+
     public void Set(T t) => target = t as UnityEngine.Object;
 }

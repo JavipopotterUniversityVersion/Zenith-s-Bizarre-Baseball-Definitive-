@@ -13,13 +13,18 @@ public class TileSeter : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        if(tilemap == null) tilemap = GetComponentInParent<GenericReference>().GetReferenceOfType<Tilemap>() as Tilemap;
+        if(tilemap == null) tilemap = GetComponentInParent<Tilemap>();
+        if(tilemap == null) return;
+
+        Gizmos.color = Color.red; 
         Vector3 fixedPos = tilemap.CellToWorld(tilemap.WorldToCell(transform.position)) + new Vector3(tilemap.cellSize.x / 2, tilemap.cellSize.y / 2, 0);
         Gizmos.DrawWireCube(fixedPos, new Vector3(size.x * tilemap.cellSize.x, size.y * tilemap.cellSize.y, 0));
+
     }
 
-    private void Awake()
-    {
+    private void Awake() {
+        if(tilemap == null) tilemap = GetComponentInParent<GenericReference>().GetReferenceOfType<Tilemap>() as Tilemap;
         if(tilemap == null) tilemap = GetComponentInParent<Tilemap>();
     }
 

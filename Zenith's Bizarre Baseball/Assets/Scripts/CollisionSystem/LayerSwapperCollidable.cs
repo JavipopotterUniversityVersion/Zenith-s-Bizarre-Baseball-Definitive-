@@ -27,4 +27,15 @@ public class SwapRelation
 public interface IGameObjectProcessor
 {
     public void Process(GameObject gameObject);
+
+    public static void Process(GameObject gameObject, IGameObjectProcessor[] processors)
+    {
+        foreach (IGameObjectProcessor processor in processors)
+        {
+            processor.Process(gameObject);
+        }
+    }
+
+    public static void Process(GameObject gameObject, IRef<IGameObjectProcessor>[] @ref) => Process(gameObject, ToArray(@ref));
+    public static IGameObjectProcessor[] ToArray(params IRef<IGameObjectProcessor>[] processors) => IRef<IGameObjectProcessor>.ToArray(processors);
 }

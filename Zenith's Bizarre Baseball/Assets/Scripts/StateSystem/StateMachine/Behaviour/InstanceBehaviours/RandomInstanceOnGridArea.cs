@@ -11,16 +11,11 @@ public class RandomInstanceOnGridArea : MonoBehaviour, IBehaviour
     [SerializeField] InstanceUnit[] _instances;
     [SerializeField] Color _gizmosColor;
 
-    [SerializeField] List<Limit> limits = new List<Limit>();
 
     private void OnDrawGizmos() {
         Gizmos.color = _gizmosColor;
         Gizmos.DrawWireCube(transform.position + (Vector3Int) offset, new Vector3(_size.x * 2, _size.y * 2, 0));
 
-        foreach (Limit limit in limits)
-        {
-            Gizmos.DrawWireCube(limit.GetCenter(), limit.GetSize());
-        }
     }
 
     public void ExecuteBehaviour()
@@ -28,16 +23,8 @@ public class RandomInstanceOnGridArea : MonoBehaviour, IBehaviour
         Vector2Int randomPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y) + 
         new Vector2Int(Random.Range(-_size.x, _size.x), Random.Range(-_size.y, _size.y)) + offset;
 
-        while (limits.Any(limit => limit.Contains(randomPosition)))
-        {
-            randomPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y) + 
-            new Vector2Int(Random.Range(-_size.x, _size.x), Random.Range(-_size.y, _size.y)) + offset;
-        }
-
         Instantiate(InstanceUnit.GetInstance(_instances), (Vector3Int) randomPosition, Quaternion.identity);
     }
-
-    public void AddLimit(Limit limit) => limits.Add(limit);
 
     private void OnValidate() {
         name = "RandomInstanceOnGridArea";

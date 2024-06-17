@@ -56,6 +56,7 @@ public class DoorIdentifier : MonoBehaviour
     }
 
     private void OnValidate() {
-        name = $"Door {PositionRoomAccess()}";
+        if(roomAccess == 0) name = $"Door {PositionRoomAccess()}";
+        else name = $"Door {roomAccess}";
     }
 }

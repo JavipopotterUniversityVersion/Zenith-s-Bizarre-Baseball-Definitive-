@@ -13,7 +13,10 @@ public class Node : MonoBehaviour
     public NodeGenerator Generator {set => _generator = value; get => _generator;}
     [SerializeField] Gate[] _gates;
     public Gate[] Gates => _gates;
-    [SerializeField] ContactFilter2D _contactFilter;
+
+    [SerializeField] bool ignoreRoomExtension = false;
+    public bool IgnoreRoomExtension => ignoreRoomExtension;
+
     [SerializeField] List<NodeSetting> nodeSettings = new List<NodeSetting>();
     [SerializeField] RoomAccess _access;
     public RoomAccess Access
@@ -37,6 +40,15 @@ public class Node : MonoBehaviour
 
     private void Awake() {
         name = names[UnityEngine.Random.Range(0, names.Length)];
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        foreach(Limit limit in _limits)
+        {
+            Gizmos.DrawWireCube(limit.GetCenter(), limit.GetSize());
+        }
     }
 
     public void SetAccess(RoomAccess access) => Access = access;
@@ -72,8 +84,15 @@ public class Node : MonoBehaviour
         {
             if(extension <= 0 || branchExtension <= 0)
             {
-                CloseNodes();
-                return;
+                if(ignoreRoomExtension)
+                {
+                    nodeSettings.RemoveAll(setting => setting.NodePrefab.GetComponent<Node>().IgnoreRoomExtension);
+                }
+                else
+                {
+                    CloseNodes();
+                    return;
+                }
             }
             
             Gate gate = _gates[i];

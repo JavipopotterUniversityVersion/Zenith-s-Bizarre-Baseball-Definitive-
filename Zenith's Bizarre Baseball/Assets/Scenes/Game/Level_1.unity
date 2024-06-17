@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2587836921054010357, guid: e57fb21858f5e6d49b8452b183fb7dda, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6941931271441472555, guid: e57fb21858f5e6d49b8452b183fb7dda, type: 3}
       propertyPath: m_RootOrder
@@ -437,8 +437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialNode: {fileID: 2789767310084747559, guid: 404d785381458c040a15111b9fe99b4f, type: 3}
-  _extension: 7
-  maxBranchExtension: 7
+  _extension: 15
+  maxBranchExtension: 15
   _linearity: 0.25
   onStartedGeneration:
     m_PersistentCalls:
@@ -494,6 +494,12 @@ MonoBehaviour:
     _minNumberOfNodes: 1
     _maxNumberOfNodes: 1
     minExtension: 0.8
+    maxExtension: 1
+  - _nodePrefab: {fileID: 3739556050154482644, guid: a390cd4f473b2d444934f934f64ed4a8, type: 3}
+    _probability: 0
+    _minNumberOfNodes: 2
+    _maxNumberOfNodes: 2
+    minExtension: 0.5
     maxExtension: 1
 --- !u!4 &1215249690
 Transform:

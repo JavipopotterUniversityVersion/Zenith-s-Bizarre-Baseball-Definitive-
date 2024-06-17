@@ -51,7 +51,8 @@ public class NodeGenerator : MonoBehaviour
     {
         foreach(NodeSetting setting in _nodeSettings)
         {
-            while(setting.AppearedRequiredTimes == false)
+            int i = 0;
+            while(setting.AppearedRequiredTimes == false && i <= 10)
             {
                 List<Node> _nodesWithRequiredExtension = 
                 _nodes.Where(n => (float) n.ExtensionIndex / Node.largestBranch >= setting.MinExtension
@@ -65,7 +66,6 @@ public class NodeGenerator : MonoBehaviour
 
                 Node randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
 
-                int i = 0;
                 while(randomNode.TryPlaceNode(setting.NodePrefab) == false && i < 10)
                 {
                     randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];

@@ -1240,20 +1240,7 @@ MonoBehaviour:
   - _transform: {fileID: 8503083949297812199}
     possibleNodes: []
     _access: 4
-  _contactFilter:
-    useTriggers: 1
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 1024
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
+  ignoreRoomExtension: 0
   nodeSettings:
   - _nodePrefab: {fileID: 7461771651339379633, guid: 80e678bca875a184689a635a596a0719, type: 3}
     _probability: 0.198
@@ -9586,7 +9573,7 @@ Transform:
   m_GameObject: {fileID: 2683449423719826047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.7385, y: 3.4318, z: 0.2632137}
-  m_LocalScale: {x: 62.867573, y: 61.525543, z: 1}
+  m_LocalScale: {x: 68.9783, y: 67.50583, z: 1.0972}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2683449423978748891}
@@ -12784,12 +12771,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instances:
   - _instance: {fileID: 1038751506564599325, guid: c2c0cb8cdedb5ad49b6e53d4757ed2c3, type: 3}
+    _appearCondition:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list: []
     _probability: 0.524
   - _instance: {fileID: 1673892643184387185, guid: c252dd4eb7ac8e84081ad03d177e18d3, type: 3}
+    _appearCondition:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list: []
     _probability: 0.563
   - _instance: {fileID: 2141156293980522762, guid: 3e667b9d10f2f144696258193aaf7682, type: 3}
+    _appearCondition:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list: []
     _probability: 0.04
   - _instance: {fileID: 1703469006630031075, guid: 0fd6cee922ed81a4ba4ad9fc4ed6a6e2, type: 3}
+    _appearCondition:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list: []
     _probability: 0.04
   _positions:
   - {x: 21.83, y: -7.2}
@@ -13386,7 +13457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7003275180283974279
 Transform:
   m_ObjectHideFlags: 0

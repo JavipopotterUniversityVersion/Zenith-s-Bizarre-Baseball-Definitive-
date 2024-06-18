@@ -82,6 +82,9 @@ public class Processor
     [Header("BOOL REFERENCES")]
     [SerializeField] SerializableDictionary<string, Bool> _boolDictionary = new SerializableDictionary<string, Bool>();
 
+    [Header("EVENT REFERENCES")]
+    [SerializeField] SerializableDictionary<string, UnityEvent> _eventDictionary = new SerializableDictionary<string, UnityEvent>();
+
 
     float Calculate(float input, string operation)
     {
@@ -189,6 +192,15 @@ public class Processor
             return _functionDictionary[functionName].Result(functionInput);
         }
 
+        if(SearchEvent(value, out string eventName))
+        {
+            float eventInput = Translate(value.Split(" ")[1], input);
+            bool success = eventInput != 0 ? true : false;
+            if(success) _eventDictionary[eventName].Invoke();
+
+            return eventInput;
+        }
+
         if(_boolDictionary.ContainsKey(value)) return _boolDictionary[value].Value ? 1 : 0;
         if(_stringDictionary.ContainsKey(value)) return StringToFloat(_stringDictionary[value].Value);
         if(_intDictionary.ContainsKey(value)) return _intDictionary[value].Value;
@@ -202,6 +214,22 @@ public class Processor
     bool SearchFunction(string value, out string key)
     {
         foreach(var function in _functionDictionary)
+        {
+            if(value.Contains(function.Key))
+            {
+                key = function.Key;
+                return true;
+            }
+        }
+
+        key = "";
+
+        return false;
+    }
+
+    bool SearchEvent(string value, out string key)
+    {
+        foreach(var function in _eventDictionary)
         {
             if(value.Contains(function.Key))
             {

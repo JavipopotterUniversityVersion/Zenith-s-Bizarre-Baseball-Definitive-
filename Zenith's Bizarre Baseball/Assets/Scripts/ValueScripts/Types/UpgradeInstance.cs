@@ -39,6 +39,6 @@ public class Upgrade
     public string Description => _stringProcessor.Process(_description);
     [SerializeField] StringProcessor _stringProcessor;
 
-    [SerializeField] CondEventVector _upgradeEvent = new CondEventVector();
-    public CondEventVector UpgradeEvent => _upgradeEvent;
+    [SerializeField] Processor _upgrade;
+    public void ApplyUpgrade() => _upgrade.Result(1);
 }

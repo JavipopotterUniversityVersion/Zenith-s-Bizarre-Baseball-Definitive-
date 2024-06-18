@@ -17,19 +17,24 @@ public class TriggerHandler : MonoBehaviour
     [SerializeField] CollidableGroup[] OnExitCollidables;
     public CollidableGroup[] OnExitCollidablesProp() => OnExitCollidables;
 
+    bool canCollide = true;
+    public void SetCanCollide(bool value) => canCollide = value;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        CheckCollidables(OnEnterCollidables, collision);
+        if(canCollide) CheckCollidables(OnEnterCollidables, collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        CheckCollidables(OnExitCollidables, collision);
+        if(canCollide) CheckCollidables(OnExitCollidables, collision);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(!canCollide) return;
+
         timer += Time.deltaTime;
 
         if(timer >= checkDelay)

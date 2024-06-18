@@ -22,7 +22,7 @@ public class BehaviourPerformer
         }
     }
 
-    void Initialize()
+    public void Initialize()
     {
         if(!initialized)
         {

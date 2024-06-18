@@ -21,6 +21,16 @@ public class OrbitalMovement : MonoBehaviour, IBehaviour
         targetHandler = GetComponentInParent<TargetHandler>();
     }
 
+    public void SetOrbitRadius(float radius)
+    {
+        orbit_radius = radius;
+    }
+
+    public void SetMultiplier(float multiplier)
+    {
+        this.multiplier = multiplier;
+    }
+
     public void ExecuteBehaviour()
     {
         //Describe an orbit around the target

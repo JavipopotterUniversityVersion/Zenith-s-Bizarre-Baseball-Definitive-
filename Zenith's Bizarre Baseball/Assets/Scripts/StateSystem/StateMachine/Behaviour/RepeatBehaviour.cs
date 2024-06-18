@@ -2,16 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatBehaviour : MonoBehaviour, IBehaviour
+public class RepeatBehaviour : MonoBehaviour, IBehaviour, ICondition
 {
     [SerializeField] private int _minNumberOfIterations;
     [SerializeField] private int _maxNumberOfIterations;
     private int _numberOfIterations;
     [SerializeField] BehaviourIteration[] _behavioursToRepeat;
+    bool finished = false;
+
     public void ExecuteBehaviour()
     {
         StartCoroutine(Repeat());
     }
+
+    public bool CheckCondition()
+    {
+        if(finished)
+        {
+            finished = false;
+            return true;
+        }
+
+        return false;
+    }
+
     private IEnumerator Repeat()
     {
         _numberOfIterations = Random.Range(_minNumberOfIterations, _maxNumberOfIterations + 1);
@@ -24,6 +38,8 @@ public class RepeatBehaviour : MonoBehaviour, IBehaviour
                 yield return new WaitForSeconds(_waitTime);
             }
         }
+
+        finished = true;
     }
     private void OnValidate()
     {

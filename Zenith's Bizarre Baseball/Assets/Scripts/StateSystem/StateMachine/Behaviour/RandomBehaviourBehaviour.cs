@@ -8,6 +8,13 @@ public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] PerformerUnit[] behaviours;
 
+    private void Awake() {
+        foreach (var behaviour in behaviours)
+        {
+            behaviour.Initialize();
+        }
+    }
+
     public void ExecuteBehaviour()
     {
         PerformerUnit[] availablePerformers = behaviours.Where(performer => performer.CheckConditions()).ToArray();
@@ -40,6 +47,8 @@ public class PerformerUnit
     [SerializeField] BehaviourPerformer behaviourPerformer;
     public bool CheckConditions() => behaviourPerformer.CheckConditions();
     public void ExecuteBehaviours() => behaviourPerformer.ExecuteBehaviours();
+
+    public void Initialize() => behaviourPerformer.Initialize();
 
     [SerializeField] [Range(0, 1)] float _probability;
     public float Probability => _probability;

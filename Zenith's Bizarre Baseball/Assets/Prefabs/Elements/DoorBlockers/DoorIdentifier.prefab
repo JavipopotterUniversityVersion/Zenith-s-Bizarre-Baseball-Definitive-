@@ -51,6 +51,7 @@ MonoBehaviour:
   tilemapToPaste: {fileID: 0}
   referenceName: Walls
   isRemover: 1
+  tileDatas: []
 --- !u!1839735485 &3552427489253270438
 Tilemap:
   m_ObjectHideFlags: 0
@@ -289,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6732093459677803818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 169.65652, y: 46.766575, z: -0.022398531}
+  m_LocalPosition: {x: 169.65652, y: 48.07, z: -0.022398531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -338,7 +339,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+  onFailIdentity:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6732093459984188930}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -348,24 +352,9 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2537921574863271436}
-        m_TargetAssemblyTypeName: TilemapPaster, Assembly-CSharp
-        m_MethodName: PasteTilemap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onFailIdentity:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5014796101601426549}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -428,6 +417,7 @@ MonoBehaviour:
   tilemapToPaste: {fileID: 0}
   referenceName: Floor
   isRemover: 0
+  tileDatas: []
 --- !u!1839735485 &7870013921245033294
 Tilemap:
   m_ObjectHideFlags: 0

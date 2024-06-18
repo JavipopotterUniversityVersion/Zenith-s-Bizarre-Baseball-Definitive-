@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class DoorIdentifier : MonoBehaviour
 {
     [SerializeField] private RoomAccess roomAccess;
+    public RoomAccess RoomAccess => roomAccess;
+
     private Node _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();
     [SerializeField] UnityEvent onFailIdentity = new UnityEvent();
@@ -29,6 +31,13 @@ public class DoorIdentifier : MonoBehaviour
             onFailIdentity?.Invoke();
         }
     }
+
+    public RoomAccess SetPositionAccess()
+    {
+        roomAccess = PositionRoomAccess();
+        return roomAccess;
+    }
+
     private RoomAccess PositionRoomAccess()
     {
         if (Math.Abs(transform.localPosition.x) > Math.Abs(transform.localPosition.y))

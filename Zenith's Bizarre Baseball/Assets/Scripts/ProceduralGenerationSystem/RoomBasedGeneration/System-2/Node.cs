@@ -51,6 +51,19 @@ public class Node : MonoBehaviour
         }
     }
 
+    private void OnValidate() {
+        if(_gates.Length == 0)
+        {
+            DoorIdentifier[] doors = GetComponentsInChildren<DoorIdentifier>();
+            _gates = new Gate[doors.Length];
+
+            for (int i = 0; i < doors.Length; i++)
+            {
+                _gates[i] = new Gate(doors[i].transform, doors[i].SetPositionAccess());
+            }
+        }
+    }
+
     public void SetAccess(RoomAccess access) => Access = access;
     RoomAccess ReturnRandomAccess(RoomAccess accessValue)
     {
@@ -260,6 +273,12 @@ public class Gate
 
     [SerializeField] RoomAccess _access;
     public RoomAccess Access => _access;
+
+    public Gate(Transform transform, RoomAccess access)
+    {
+        _transform = transform;
+        _access = access;
+    }
 }
 
 [Serializable]

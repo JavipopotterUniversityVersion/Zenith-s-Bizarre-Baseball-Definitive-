@@ -114,6 +114,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8991710411502416516}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7223186473664219379}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7223186473664219379
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +189,7 @@ MonoBehaviour:
   tilemapToPaste: {fileID: 0}
   referenceName: Floor
   isRemover: 0
+  tileDatas: []
 --- !u!1839735485 &6081897374392745407
 Tilemap:
   m_ObjectHideFlags: 0
@@ -315,6 +340,7 @@ MonoBehaviour:
   tilemapToPaste: {fileID: 0}
   referenceName: Walls
   isRemover: 1
+  tileDatas: []
 --- !u!1839735485 &584372272441666903
 Tilemap:
   m_ObjectHideFlags: 0

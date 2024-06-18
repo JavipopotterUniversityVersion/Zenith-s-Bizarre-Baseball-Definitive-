@@ -495,12 +495,6 @@ MonoBehaviour:
     _maxNumberOfNodes: 1
     minExtension: 0.8
     maxExtension: 1
-  - _nodePrefab: {fileID: 843854879166228198, guid: 7c43aaecd9a6a2b4883da3714f95706b, type: 3}
-    _probability: 0
-    _minNumberOfNodes: 2
-    _maxNumberOfNodes: 12
-    minExtension: 0.8
-    maxExtension: 1
 --- !u!4 &1215249690
 Transform:
   m_ObjectHideFlags: 0
@@ -526,6 +520,10 @@ PrefabInstance:
     - target: {fileID: 51937227078463146, guid: b98d5c95b554c0f4da255ecdc1cd948c, type: 3}
       propertyPath: m_Name
       value: AudioPerformer
+      objectReference: {fileID: 0}
+    - target: {fileID: 51937227078463146, guid: b98d5c95b554c0f4da255ecdc1cd948c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8863031848404026816, guid: b98d5c95b554c0f4da255ecdc1cd948c, type: 3}
       propertyPath: m_RootOrder

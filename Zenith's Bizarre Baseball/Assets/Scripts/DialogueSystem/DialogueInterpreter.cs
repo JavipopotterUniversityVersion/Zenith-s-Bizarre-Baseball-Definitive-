@@ -106,11 +106,12 @@ public class DialogueInterpreter : MonoBehaviour
                             break;
                         }
 
-                        if(SearchSpriteSet(input) || SearchStringSet(input) || SearchFloatSet(input) || SearchSound(input) || SearchVoice(input))
-                        {
-                            _dialogueText.text = _dialogueText.text.Replace($"<{input}>", "");
-                            i--;
-                        }
+                        bool found = SearchSpriteSet(input) || SearchStringSet(input) || SearchFloatSet(input) || SearchSound(input) || SearchVoice(input);
+
+                        if(!found) Debug.LogWarning($"Input {input} not found, did you pretend to ignore it?");
+
+                        _dialogueText.text = _dialogueText.text.Replace($"<{input}>", "");
+                        i--;
 
                         continue;
                     }

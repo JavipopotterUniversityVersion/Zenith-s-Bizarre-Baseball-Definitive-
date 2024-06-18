@@ -50,10 +50,12 @@ MonoBehaviour:
       _processorDictionary:
         list: []
     _upgrade:
-      operation: upgrade (money > 0)
+      operation: upgrade (debt == 0)
       _debug: 0
       _floatDictionary:
-        list: []
+        list:
+        - Key: debt
+          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
       _intDictionary:
         list:
         - Key: money

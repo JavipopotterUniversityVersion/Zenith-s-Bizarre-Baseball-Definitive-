@@ -134,7 +134,7 @@ public class Processor
         }
     }
 
-    public float Result(float input) => ResultOf(operation, input);
+    public float Result(float input = 1) => ResultOf(operation, input);
 
     public float ResultOf(string operation, float input)
     {

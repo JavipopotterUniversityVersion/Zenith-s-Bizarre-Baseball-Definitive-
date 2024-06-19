@@ -20,7 +20,7 @@ public class Int : ScriptableObject
         set => _value = value;
     }
 
-    [SerializeField] int _lastValue;
+    int _lastValue;
     public int LastValue => _lastValue;
 
     public void SetValue(int value)

@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 4632925911705474596}
   - component: {fileID: 6739269690494090328}
   m_Layer: 7
-  m_Name: (Alive && (Inmortal == 0)) -> False
+  m_Name: (Alive && (Inmortal == 0)) -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2993,7 +2993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].collidables.Array.size
@@ -3015,6 +3015,10 @@ PrefabInstance:
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[6]
       value: 
       objectReference: {fileID: 9045091982083728435}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[7]
+      value: 
+      objectReference: {fileID: 4205841943944079921}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].collidables.Array.data[0]
       value: 
@@ -3250,6 +3254,19 @@ MonoBehaviour:
         list: []
     _eventsNames:
     - Enemy
+--- !u!114 &4205841943944079921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279055166213524790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d41fc962c2aeb4baee5b6330411b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleOffsets: []
 --- !u!114 &9045091982083728435
 MonoBehaviour:
   m_ObjectHideFlags: 0

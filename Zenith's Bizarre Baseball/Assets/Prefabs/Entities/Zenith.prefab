@@ -3018,7 +3018,7 @@ PrefabInstance:
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[7]
       value: 
-      objectReference: {fileID: 4205841943944079921}
+      objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].collidables.Array.data[0]
       value: 
@@ -3254,19 +3254,6 @@ MonoBehaviour:
         list: []
     _eventsNames:
     - Enemy
---- !u!114 &4205841943944079921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6279055166213524790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d41fc962c2aeb4baee5b6330411b84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angleOffsets: []
 --- !u!114 &9045091982083728435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3297,6 +3284,51 @@ MonoBehaviour:
   onCollideEventWithTransform:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3434602039706951586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279055166213524790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d41fc962c2aeb4baee5b6330411b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleOffsets: []
+--- !u!114 &1326976980393099694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279055166213524790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddcd74ce2f04204694b0e676dd94a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _string: {fileID: 11400000, guid: b8d646fed69b8b54f8437641bb18291d, type: 2}
+  _stringEvents:
+  - key: 
+    negated: 1
+    _performer: []
+    onKeyFound:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3434602039706951586}
+          m_TargetAssemblyTypeName: DuplicateCollidable, Assembly-CSharp
+          m_MethodName: SetAngleOffsets
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8773570730079476140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7620146048408973199, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}

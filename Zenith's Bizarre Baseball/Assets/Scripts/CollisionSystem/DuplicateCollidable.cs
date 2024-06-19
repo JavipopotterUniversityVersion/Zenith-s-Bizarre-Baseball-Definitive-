@@ -1,10 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class DuplicateCollidable : ICollidable
 {
     [SerializeField] float[] angleOffsets;
+
+    public void SetAngleOffsets(float[] angleOffsets)
+    {
+        this.angleOffsets = angleOffsets;
+    }
+
+    public void SetAngleOffsets(string angleOffsets)
+    {
+        this.angleOffsets = angleOffsets.Split(',').Select(float.Parse).ToArray();
+    }
 
     public override void OnCollide(Collider2D collider)
     {

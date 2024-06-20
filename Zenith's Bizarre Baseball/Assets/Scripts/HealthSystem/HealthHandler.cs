@@ -16,7 +16,6 @@ public class HealthHandler : Readable
     public UnityEvent OnDie => onDie;
 
     [SerializeField] Float maxHealth;
-    [SerializeField] Float currentHealthReference;
     [SerializeField] float _currentHealth = 12;
     public float CurrentHealth
     {
@@ -35,16 +34,7 @@ public class HealthHandler : Readable
     private void Awake()
     {
         Condition.InitializeAll(getDamageConditions);
-        if(currentHealthReference != null)
-        {
-            _currentHealth = currentHealthReference.Value;
-            currentHealthReference.OnValueChanged.AddListener(GetRef);
-            SetRef();
-        }
     }
-
-    void GetRef() => _currentHealth = CurrentHealth;
-    void SetRef() => onHealthChanged.AddListener(currentHealthReference.SetRawValue);
 
     public void ResetHealth() => CurrentHealth = maxHealth.Value;
     public void TakeDamage(float damage)

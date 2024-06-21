@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 7943310306014342313}
   - component: {fileID: 7083616533323948082}
   m_Layer: 6
-  m_Name: ShopTalking -> True
+  m_Name: ShopTalking -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   velocity: 40
   rotation: 0
   _instancePoint: {fileID: 5194980972613417138}
+  _instanceProcessors: []
 --- !u!1 &4271847382812293973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,7 +1598,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   maxHealth: {fileID: 11400000, guid: 091957f8c8ec6eb458eb93f8881ae488, type: 2}
-  currentHealthReference: {fileID: 0}
   _currentHealth: 12
 --- !u!61 &8165690288997096640
 BoxCollider2D:

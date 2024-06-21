@@ -52,6 +52,13 @@ public class Float : ScriptableICondition
     public override bool CheckCondition() => Value != 0;
     public float GetRawValue() => _value;
     public void SetRawValue(float value) => _value = value;
+
+    [ContextMenu("Remove Listeners")]
+    public void RemoveListeners()
+    {
+        onRead.RemoveAllListeners();
+        onValueChanged.RemoveAllListeners();
+    }
 }
 
 [Serializable]

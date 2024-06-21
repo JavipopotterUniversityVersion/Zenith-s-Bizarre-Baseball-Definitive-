@@ -33,6 +33,7 @@ public class HealthHandler : Readable
 
     private void Awake()
     {
+        ResetHealth();
         Condition.InitializeAll(getDamageConditions);
     }
 
@@ -45,4 +46,6 @@ public class HealthHandler : Readable
             onGetDamage.Invoke();
         }
     }
+
+    public void SetHealthRaw(float health) => _currentHealth = health;
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class DeactiveColliderProcess : MonoBehaviour, IGameObjectProcessor
 {
@@ -8,13 +9,13 @@ public class DeactiveColliderProcess : MonoBehaviour, IGameObjectProcessor
 
     public void Process(GameObject gameObject)
     {
-        StartCoroutine(DeactiveCollider(gameObject.GetComponent<Collider2D>()));
+        StartCoroutine(DeactiveCollider(gameObject.GetComponentsInChildren<Collider2D>()));
     }
 
-    IEnumerator DeactiveCollider(Collider2D collider)
+    IEnumerator DeactiveCollider(Collider2D[] colliders)
     {
-        collider.enabled = false;
+        colliders.ToList().ForEach(collider => collider.enabled = false);
         yield return new WaitForSeconds(_deactivateDuration);
-        collider.enabled = true;
+        colliders.ToList().ForEach(collider => collider.enabled = true);
     }
 }

@@ -32,14 +32,14 @@ public class FloatReceiver : MonoBehaviour
 public struct ObjectFloatEvent
 {
     [SerializeField] ObjectProcessor _processor;
-    [SerializeField] UnityEvent _event;
+    [SerializeField] UnityEvent<float> _event;
 
     public readonly void Subscribe(UnityAction action) => _processor.Subscribe(action);
     public readonly void Unsubscribe(UnityAction action) => _processor.Unsubscribe(action);
 
     public readonly void Invoke(float input)
     {
-        if(_processor.ResultBool(input)) _event.Invoke();
+        if(_processor.ResultBool(input)) _event.Invoke(input);
     }
 }
 

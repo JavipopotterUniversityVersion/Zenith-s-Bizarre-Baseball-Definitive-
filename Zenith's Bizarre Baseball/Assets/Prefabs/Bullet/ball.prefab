@@ -217,9 +217,9 @@ GameObject:
   - component: {fileID: 8388297358626018487}
   - component: {fileID: 1124958039221683131}
   - component: {fileID: 8291645428300976557}
-  - component: {fileID: 6396808531325661269}
   - component: {fileID: 7810316521211265474}
   - component: {fileID: 5045280726711929364}
+  - component: {fileID: 6396808531325661269}
   m_Layer: 8
   m_Name: ball
   m_TagString: Untagged
@@ -552,67 +552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
---- !u!114 &6396808531325661269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5989457719749168020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddcd74ce2f04204694b0e676dd94a78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _string: {fileID: 11400000, guid: 7d89049624398824292cdb1d18e8b5ed, type: 2}
-  _stringEvents:
-  - key: Enemy
-    negated: 0
-    _performer: []
-    onKeyFound:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 398158811696512985}
-          m_TargetAssemblyTypeName: SearchTargetBehaviour, Assembly-CSharp
-          m_MethodName: SetTargetSearchable
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - key: Player
-    negated: 0
-    _performer:
-    - condition: []
-      behaviourContainers: []
-    onKeyFound:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 398158811696512985}
-          m_TargetAssemblyTypeName: SearchTargetBehaviour, Assembly-CSharp
-          m_MethodName: SetTargetSearchable
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - key: Homing
-    negated: 0
-    _performer:
-    - condition: []
-      behaviourContainers:
-      - {fileID: 8789798541779980387}
-    onKeyFound:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &7810316521211265474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,6 +613,67 @@ MonoBehaviour:
         list: []
     _eventsNames:
     - ball
+--- !u!114 &6396808531325661269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989457719749168020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddcd74ce2f04204694b0e676dd94a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _string: {fileID: 11400000, guid: 7d89049624398824292cdb1d18e8b5ed, type: 2}
+  _stringEvents:
+  - key: Enemy
+    negated: 0
+    _performer: []
+    onKeyFound:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 398158811696512985}
+          m_TargetAssemblyTypeName: SearchTargetBehaviour, Assembly-CSharp
+          m_MethodName: SetTargetSearchable
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - key: Player
+    negated: 0
+    _performer:
+    - condition: []
+      behaviourContainers: []
+    onKeyFound:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 398158811696512985}
+          m_TargetAssemblyTypeName: SearchTargetBehaviour, Assembly-CSharp
+          m_MethodName: SetTargetSearchable
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - key: Homing
+    negated: 0
+    _performer:
+    - condition: []
+      behaviourContainers:
+      - {fileID: 8789798541779980387}
+    onKeyFound:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &5989457720575547792
 GameObject:
   m_ObjectHideFlags: 0

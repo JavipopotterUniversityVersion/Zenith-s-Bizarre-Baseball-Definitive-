@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 public class ImageToRoomTranslator : MonoBehaviour
@@ -32,17 +33,17 @@ public class ImageToRoomTranslator : MonoBehaviour
 
                 foreach (PrefabData prefabData in _prefabDatas)
                 {
-                    if (prefabData.prefabs.ContainsKey(color))
+                    if (prefabData.prefabSettings.ContainsKey(color))
                     {
                         Vector3 position = prefabData.tilemap.CellToWorld(new Vector3Int(x + offset.x, y + offset.y, 0));
                         position += prefabData.tilemap.cellSize / 2;
-                        position += (Vector3)prefabData.prefabs[color].offset;
+                        position += (Vector3)prefabData.prefabSettings[color].offset;
 
-                        Quaternion rotation = Quaternion.Euler(0, 0, prefabData.prefabs[color].rotation);
+                        Quaternion rotation = Quaternion.Euler(0, 0, prefabData.prefabSettings[color].rotation);
 
-                        GameObject obj = PrefabUtility.InstantiatePrefab(prefabData.prefabs[color].Prefab, prefabData.tilemap.transform) as GameObject;
+                        GameObject obj = PrefabUtility.InstantiatePrefab(prefabData.Prefab, prefabData.tilemap.transform) as GameObject;
 
-                        prefabData.prefabs[color].Process(obj);
+                        prefabData.prefabSettings[color].Process(obj);
                         obj.transform.SetPositionAndRotation(position, rotation);
 
                         _objects.Add(obj);
@@ -51,9 +52,12 @@ public class ImageToRoomTranslator : MonoBehaviour
 
                 foreach (TileData tileData in _tileDatas)
                 {
-                    if (tileData.tiles.ContainsKey(color))
+                    foreach (TileSettings tileSetting in tileData.tileSettings)
                     {
-                        tileData.tilemap.SetTile(new Vector3Int(x + offset.x, y + offset.y, 0), tileData.tiles[color]);
+                        if (tileSetting.ContainsColor(color))
+                        {
+                            tileData.tilemap.SetTile(new Vector3Int(x + offset.x, y + offset.y, 0), tileSetting.tile);
+                        }
                     }
                 }
             }
@@ -84,22 +88,30 @@ public class ImageToRoomTranslator : MonoBehaviour
     class TileData
     {
         public Tilemap tilemap;
-        public SerializableDictionary<Color, TileBase> tiles;
+        public TileSettings[] tileSettings;
+    }
+
+    [Serializable]
+    class TileSettings
+    {
+        public TileBase tile;
+        public Color[] colorKeys;
+        public bool ContainsColor(Color color) => colorKeys.Contains(color);
     }
 
     [Serializable]
     class PrefabData
     {
         public Tilemap tilemap;
-        public SerializableDictionary<Color, PrefabInstance> prefabs;
+        [SerializeField] GameObject _prefab;
+        public GameObject Prefab => _prefab;
+        [FormerlySerializedAs("prefabs")]
+        public SerializableDictionary<Color, PrefabInstance> prefabSettings;
     }
 
     [Serializable]
     class PrefabInstance
     {
-        [SerializeField] GameObject _prefab;
-        public GameObject Prefab => _prefab;
-
         public Vector2 offset;
         public float rotation;
 

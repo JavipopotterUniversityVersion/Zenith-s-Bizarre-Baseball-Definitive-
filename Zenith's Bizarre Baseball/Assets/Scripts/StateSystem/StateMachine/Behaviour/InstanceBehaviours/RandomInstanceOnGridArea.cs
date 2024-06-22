@@ -23,7 +23,7 @@ public class RandomInstanceOnGridArea : MonoBehaviour, IBehaviour
         Vector2Int randomPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y) + 
         new Vector2Int(Random.Range(-_size.x, _size.x), Random.Range(-_size.y, _size.y)) + offset;
 
-        Instantiate(InstanceUnit.GetInstance(_instances), (Vector3Int) randomPosition, Quaternion.identity);
+        Instantiate(InstanceUnit.GetRandomInstance(_instances), (Vector3Int) randomPosition, Quaternion.identity);
     }
 
     private void OnValidate() {

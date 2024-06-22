@@ -11,7 +11,7 @@ public class RandomInstanceOnFixedPositions : MonoBehaviour, IBehaviour
     {
         foreach (Vector2 position in _positions)
         {
-            Instantiate(InstanceUnit.GetInstance(_instances), position + (Vector2)transform.position, Quaternion.identity);
+            Instantiate(InstanceUnit.GetRandomInstance(_instances), position + (Vector2)transform.position, Quaternion.identity);
         }
     }
 

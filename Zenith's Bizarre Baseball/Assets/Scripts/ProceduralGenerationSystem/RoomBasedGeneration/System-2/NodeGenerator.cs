@@ -66,7 +66,7 @@ public class NodeGenerator : MonoBehaviour
 
                 Node randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
 
-                while(randomNode.TryPlaceNode(setting.NodePrefab) == false && i < 10)
+                while(randomNode.TryPlaceNode(setting.NodePrefab.gameObject) == false && i < 10)
                 {
                     randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
                     i++;

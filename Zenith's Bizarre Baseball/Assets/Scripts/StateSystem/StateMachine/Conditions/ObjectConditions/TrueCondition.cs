@@ -9,11 +9,12 @@ public class TrueCondition : MonoBehaviour, ICondition
     public UnityEvent OnValueChange => onValueChange;
 
     [SerializeField] bool value = true;
+    [SerializeField] bool onValidate = false;
 
     public bool CheckCondition() => value;
 
     private void OnValidate() {
-        name = value ? "True" : "False";
+        if(onValidate) name = value ? "True" : "False";
     }
 
     public void SetValue(bool newValue)

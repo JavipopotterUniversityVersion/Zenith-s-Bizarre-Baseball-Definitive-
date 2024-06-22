@@ -4525,7 +4525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
       propertyPath: nodeSettings.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
       propertyPath: _gates.Array.data[0]._access
@@ -4562,15 +4562,19 @@ PrefabInstance:
     - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
       propertyPath: nodeSettings.Array.data[0]._nodePrefab
       value: 
-      objectReference: {fileID: 5797520917697802343}
+      objectReference: {fileID: 5735252800040922119, guid: e4f687a27dac25b4db9d3d16740c9964, type: 3}
     - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
       propertyPath: nodeSettings.Array.data[1]._nodePrefab
       value: 
-      objectReference: {fileID: 6055076595647861388, guid: 78a0a104a3f8ad242af30d6358485bbd, type: 3}
+      objectReference: {fileID: 867453591700589283, guid: 95dd4171f42f0804085ec772df6e0717, type: 3}
     - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
       propertyPath: nodeSettings.Array.data[2]._nodePrefab
       value: 
-      objectReference: {fileID: 5735252800040922119, guid: e4f687a27dac25b4db9d3d16740c9964, type: 3}
+      objectReference: {fileID: 867453591700589283, guid: 95dd4171f42f0804085ec772df6e0717, type: 3}
+    - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
+      propertyPath: nodeSettings.Array.data[3]._nodePrefab
+      value: 
+      objectReference: {fileID: 867453591700589283, guid: 95dd4171f42f0804085ec772df6e0717, type: 3}
     - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
       propertyPath: nodeSettings.Array.data[0]._probability
       value: 0.535
@@ -4581,6 +4585,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
       propertyPath: nodeSettings.Array.data[2]._probability
+      value: 0.535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217707272231716145, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
+      propertyPath: nodeSettings.Array.data[3]._probability
       value: 0.535
       objectReference: {fileID: 0}
     - target: {fileID: 1221028616983484591, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
@@ -14734,11 +14742,6 @@ Tilemap:
 --- !u!1839735485 &5797520917658744058 stripped
 Tilemap:
   m_CorrespondingSourceObject: {fileID: 3282659942484507111, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
-  m_PrefabInstance: {fileID: 9077769611474324765}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5797520917697802343 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3282659942406126970, guid: b23438f98a9c7b345a9336e3abffa53d, type: 3}
   m_PrefabInstance: {fileID: 9077769611474324765}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9077769612659757869

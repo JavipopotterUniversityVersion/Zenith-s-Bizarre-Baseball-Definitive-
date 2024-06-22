@@ -1412,7 +1412,7 @@ GameObject:
   - component: {fileID: 4632925911705474596}
   - component: {fileID: 6739269690494090328}
   m_Layer: 7
-  m_Name: (Alive && (Inmortal == 0)) -> False
+  m_Name: (Alive && (Inmortal == 0)) -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3196,6 +3196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+  onValidate: 0
 --- !u!1 &9213680095221807662
 GameObject:
   m_ObjectHideFlags: 0

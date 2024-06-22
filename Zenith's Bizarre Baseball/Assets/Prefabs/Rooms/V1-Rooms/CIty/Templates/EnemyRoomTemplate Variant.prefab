@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 2371712954945749586}
   - component: {fileID: 4920093615240156631}
   m_Layer: 0
-  m_Name: False
+  m_Name: IsOnBattle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+  onValidate: 0
 --- !u!1 &5178049187106051663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,6 +3266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  onValidate: 0
 --- !u!1 &7224060954195374651
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,6 +3382,10 @@ PrefabInstance:
     - target: {fileID: 313962949, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369160826, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
+      propertyPath: m_Name
+      value: HasEntered
       objectReference: {fileID: 0}
     - target: {fileID: 319495447371948932, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size

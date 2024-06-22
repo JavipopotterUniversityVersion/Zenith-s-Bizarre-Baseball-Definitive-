@@ -87,6 +87,7 @@ public class ImageToRoomTranslator : MonoBehaviour
     [Serializable]
     class TileData
     {
+        [SerializeField] string name = "";
         public Tilemap tilemap;
         public TileSettings[] tileSettings;
     }

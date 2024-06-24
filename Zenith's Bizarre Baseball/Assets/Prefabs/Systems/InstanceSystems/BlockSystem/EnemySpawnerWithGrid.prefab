@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 5803148838844554365}
   - component: {fileID: 5803148838844554362}
   m_Layer: 0
-  m_Name: Repeat RandomInstanceOnBlocks 5 times
+  m_Name: Repeat RandomInstanceOnBlocks1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,12 +444,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede26244fe005dc4cb09e1fb46317afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minNumberOfIterations: 5
-  _maxNumberOfIterations: 5
+  _processor:
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readableDictionary:
+      list: []
   _behavioursToRepeat:
   - _behaviourContainer: {fileID: 5803148838713585083}
-    _mintime: 0.25
-    _maxtime: 0.5
+    _waitTime:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list: []
 --- !u!1 &5803148838924789422
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +537,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToWait: 1
+  _timeProcessor:
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readableDictionary:
+      list: []
 --- !u!1 &5803148838991585117
 GameObject:
   m_ObjectHideFlags: 0

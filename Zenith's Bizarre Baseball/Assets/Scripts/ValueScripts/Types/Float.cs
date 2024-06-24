@@ -65,6 +65,7 @@ public class Float : ScriptableICondition
 public class Processor
 {
     static string[] operationTypes = new string[] {"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
+    static string[] functionTypes = new string[] {"-", "!"};
     public string operation = "input";
     [SerializeField] bool _debug = false;
 
@@ -101,20 +102,25 @@ public class Processor
         int i = operationTypes.Length - 1;
         while(i >= 0 && !foundOperation)
         {
+            if(operation.Contains(operationTypes[i]) == false) { i--; continue; }
+
             string[] operations = operation.Split(operationTypes[i], 2);
 
             if(_debug)Debug.Log($"Trying to operate with {operationTypes[i]} in {operation}");
 
-            if(operations.Length == 2)
+            if(operations[0] != "")
             {
                 if(_debug)Debug.Log(operations[0] + $"[{operationTypes[i]}]" + operations[1]);
                 foundOperation = true;
                 result = Operate(Translate(operations[0], input), Translate(operations[1], input), operationTypes[i]);
             }
+            else if(ContainsOperations(operations[1]) == false)
+            {
+                if(operationTypes[i] == "-") result = -Translate(operations[1], input);
+            }
+
             i--;
         }
-
-        if(!foundOperation) result = Translate(operation, input);
 
         return result;
     }
@@ -142,6 +148,7 @@ public class Processor
     }
 
     public float Result(float input = 1) => ResultOf(operation, input);
+    public int ResultInt(float input = 1) => (int) ResultOf(operation, input);
 
     public float ResultOf(string operation, float input)
     {
@@ -164,17 +171,10 @@ public class Processor
             {
                 string key = function.Key + " <= " + item.Key;
 
-                if(value.Contains(key))
-                {
-                    value = value.Replace(key, function.Value.Translate(item.Value.Value).ToString());
-                    Debug.Log("Replaced " + key + " with " + function.Value.Translate(item.Value.Value));
-                }
+                if(value.Contains(key)) value = value.Replace(key, function.Value.Translate(item.Value.Value).ToString());
             }
 
-            if(value.Contains(item.Key))
-            {
-                value = value.Replace(item.Key, item.Value.Value);
-            }
+            if(value.Contains(item.Key)) value = value.Replace(item.Key, item.Value.Value);
         }
         return value;
     }

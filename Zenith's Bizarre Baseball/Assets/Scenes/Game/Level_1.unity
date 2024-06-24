@@ -378,6 +378,12 @@ MonoBehaviour:
     _maxNumberOfNodes: 1
     minExtension: 0.7
     maxExtension: 1
+  - _nodePrefab: {fileID: 8451228445192323349, guid: e54a5c3406cdc834c9101f2d67613a9a, type: 3}
+    _probability: 0
+    _minNumberOfNodes: 2
+    _maxNumberOfNodes: 2
+    minExtension: 0.5
+    maxExtension: 1
 --- !u!4 &1215249690
 Transform:
   m_ObjectHideFlags: 0
@@ -406,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 51937227078463146, guid: b98d5c95b554c0f4da255ecdc1cd948c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8863031848404026816, guid: b98d5c95b554c0f4da255ecdc1cd948c, type: 3}
       propertyPath: m_RootOrder

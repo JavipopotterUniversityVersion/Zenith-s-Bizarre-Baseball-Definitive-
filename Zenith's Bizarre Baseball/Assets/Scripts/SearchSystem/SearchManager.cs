@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Linq;
 
 public class SearchManager : MonoBehaviour
 {
@@ -63,5 +64,10 @@ public class SearchManager : MonoBehaviour
     public Transform GetClosestSearchable(Transform transform, SearchableType searchableType)
     {
         return GetClosestSearchable(transform.position, searchableType);
+    }
+
+    public T[] GetAllSearchables<T>(SearchableType searchableType)
+    {
+        return searchables.Where(searchable => searchable.SearchableType == searchableType).Select(searchable => searchable.GetComponent<T>()).ToArray();
     }
 }

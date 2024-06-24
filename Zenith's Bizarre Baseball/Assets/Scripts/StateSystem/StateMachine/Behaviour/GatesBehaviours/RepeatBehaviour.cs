@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class RepeatBehaviour : MonoBehaviour, IBehaviour, ICondition
 {
-    [SerializeField] private int _minNumberOfIterations;
-    [SerializeField] private int _maxNumberOfIterations;
-    private int _numberOfIterations;
+    [SerializeField] ObjectProcessor _processor;
     [SerializeField] BehaviourIteration[] _behavioursToRepeat;
     bool finished = false;
 
@@ -28,13 +26,13 @@ public class RepeatBehaviour : MonoBehaviour, IBehaviour, ICondition
 
     private IEnumerator Repeat()
     {
-        _numberOfIterations = Random.Range(_minNumberOfIterations, _maxNumberOfIterations + 1);
+        int _numberOfIterations = _processor.ResultInt(1);
         for(int i = 0; i < _numberOfIterations; i++)
         {
             foreach (BehaviourIteration iteration in _behavioursToRepeat)
             {
                 iteration.BehaviourContainer.GetComponent<IBehaviour>().ExecuteBehaviour();
-                float _waitTime = Random.Range(iteration.MinTime, iteration.MaxTime);
+                float _waitTime = iteration.waitTime;
                 yield return new WaitForSeconds(_waitTime);
             }
         }
@@ -44,9 +42,7 @@ public class RepeatBehaviour : MonoBehaviour, IBehaviour, ICondition
     private void OnValidate()
     {
         if(_behavioursToRepeat.Length > 0)
-            name = "Repeat " + _behavioursToRepeat[0].BehaviourContainer.name 
-            + (_minNumberOfIterations == _maxNumberOfIterations ? $" {_minNumberOfIterations} times" 
-            : $" {_minNumberOfIterations}-{_maxNumberOfIterations} times");
+            name = "Repeat " + _behavioursToRepeat[0].BehaviourContainer.name + $"{_processor.ResultInt(1)}";
     }
 }
 [System.Serializable]
@@ -55,9 +51,6 @@ public class BehaviourIteration
     [SerializeField] private GameObject _behaviourContainer;
     public GameObject BehaviourContainer => _behaviourContainer;
     
-    [SerializeField] private float _mintime;
-    public float MinTime => _mintime;
-
-    [SerializeField] private float _maxtime;
-    public float MaxTime => _maxtime;
+    [SerializeField] ObjectProcessor _waitTime;
+    public float waitTime => _waitTime.Result();
 }

@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class AnimationSpeedSeter : StateMachineBehaviour
 {
     [SerializeField] Float _speed;
+    [SerializeField] Processor _speedProcessor;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.speed = _speed.Value;
+        animator.speed = _speedProcessor.Result(_speed.Value);
     }
 
 

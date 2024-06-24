@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 391464389733345900}
   - component: {fileID: 6974011922982202017}
   m_Layer: 7
-  m_Name: Repeat Instantiate Coin 6 times
+  m_Name: Repeat Instantiate Coin1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,12 +161,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede26244fe005dc4cb09e1fb46317afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minNumberOfIterations: 6
-  _maxNumberOfIterations: 6
+  _processor:
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readableDictionary:
+      list: []
   _behavioursToRepeat:
   - _behaviourContainer: {fileID: 1741294922326910826}
-    _mintime: 0.025
-    _maxtime: 0.025
+    _waitTime:
+      operation: input
+      _debug: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readableDictionary:
+        list: []
 --- !u!1 &388188130123360742
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +631,7 @@ GameObject:
   - component: {fileID: 2258687500351722171}
   - component: {fileID: 1954841073811052114}
   m_Layer: 7
-  m_Name: CoinOnDash -> True
+  m_Name: CoinOnDash -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1576,6 +1618,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToWait: 0.2
+  _timeProcessor:
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readableDictionary:
+      list: []
 --- !u!1 &7740919681925210772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,7 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 
+  stateAnimation: Dash
   onEnterPerformers:
   - condition: []
     behaviourContainers:
@@ -1914,6 +1979,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToWait: 0.2
+  _timeProcessor:
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readableDictionary:
+      list: []
 --- !u!1 &8990301393201263198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2152,6 @@ GameObject:
   - component: {fileID: 5614244263016356776}
   - component: {fileID: 9026117230706812331}
   - component: {fileID: 298788939721975811}
-  - component: {fileID: 7321666543582957320}
   m_Layer: 7
   m_Name: Zenith
   m_TagString: Untagged
@@ -2322,7 +2409,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
         m_TargetAssemblyTypeName: Float, Assembly-CSharp
-        m_MethodName: SetRawValue
+        m_MethodName: SetValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2494,58 +2581,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7321666543582957320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9213680093490472124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
-  _floatEvents:
-  - _processor:
-      operation: 1
-      _debug: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readableDictionary:
-        list: []
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5188573643474554802}
-          m_TargetAssemblyTypeName: HealthHandler, Assembly-CSharp
-          m_MethodName: SetHealthRaw
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &9213680093549052804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,7 +3358,7 @@ PrefabInstance:
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].collidables.Array.data[0]
       value: 
-      objectReference: {fileID: 6324668914637683589}
+      objectReference: {fileID: 3976737161250918712}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].collidables.Array.data[1]
       value: 
@@ -3466,6 +3501,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1011428584843827806, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_PrefabInstance: {fileID: 1153429947300558371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2253844333111070768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1100722292288742931, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+  m_PrefabInstance: {fileID: 1153429947300558371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3976737161250918712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253844333111070768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackForce: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
+  objectProcessor:
+    operation: input * 4
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readableDictionary:
+      list: []
 --- !u!1 &3374402690705299672 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4527673655227395835, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
@@ -3639,7 +3715,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_PrefabInstance: {fileID: 1153429947300558371}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2253844333111070768}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}

@@ -24,6 +24,7 @@ public class TargetHandler : MonoBehaviour
     private void OnEnable() => SetTarget(null);
 
     public void SetTarget(Transform target) => Target = target;
+    public Transform GetTarget() => Target;
 
     public Vector2 GetTargetDirection()
     {

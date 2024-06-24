@@ -13,12 +13,13 @@ public class InstantiateBehaviour : MonoBehaviour, IBehaviour
             _instancePoint = transform;
     }
 
+    public void SetInstancePoint(Transform transform) => _instancePoint = transform;
+
     public void ExecuteBehaviour()
     {
         Quaternion addRotation = Quaternion.Euler(0,0,rotation);
         GameObject bullet = Instantiate(prefab, _instancePoint.position, Quaternion.identity * addRotation * transform.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * velocity;
+        if(bullet.TryGetComponent(out Rigidbody2D rb)) rb.velocity = transform.up * velocity;
 
         foreach (IRef<IGameObjectProcessor> processor in _instanceProcessors)
         {

@@ -7,6 +7,7 @@ public class State : MonoBehaviour, IBehaviour
 {
     Animator animationPlayer;
     [SerializeField] string stateAnimation = "";
+    public string StateAnimation => stateAnimation;
 
     [Header("PERFORMERS")]
 

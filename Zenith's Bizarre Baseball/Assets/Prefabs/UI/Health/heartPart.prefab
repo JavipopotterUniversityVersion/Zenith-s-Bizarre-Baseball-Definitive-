@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7365489096995381248}
   - component: {fileID: 2150778287747073726}
   m_Layer: 5
-  m_Name: part
+  m_Name: heartPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,12 +91,13 @@ MonoBehaviour:
         list: []
       _stringDictionary:
         list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list:
-        - Key: index
-          Value: {fileID: 4971441975559186186}
+      _readablesDictionary: []
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -127,12 +128,16 @@ MonoBehaviour:
         list: []
       _stringDictionary:
         list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list:
-        - Key: index
-          Value: {fileID: 4971441975559186186}
+      _readablesDictionary:
+      - Key: index
+        Value:
+          target: {fileID: 4971441975559186186}
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -182,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: {fileID: 11400000, guid: 62ce8544b1c262e4e9e12a087a7e2e93, type: 2}
+  checkOnAwake: 0
   _onTrue:
     m_PersistentCalls:
       m_Calls: []

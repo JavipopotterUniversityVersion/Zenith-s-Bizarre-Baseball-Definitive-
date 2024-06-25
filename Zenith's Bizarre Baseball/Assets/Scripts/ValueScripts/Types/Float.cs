@@ -64,8 +64,8 @@ public class Float : ScriptableICondition
 [Serializable]
 public class Processor
 {
+    [SerializeField] string name = "";
     static string[] operationTypes = new string[] {"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
-    static string[] functionTypes = new string[] {"-", "!"};
     public string operation = "input";
     [SerializeField] bool _debug = false;
 
@@ -152,6 +152,7 @@ public class Processor
 
     public float ResultOf(string operation, float input)
     {
+        name = UnityEngine.Random.Range(0,999999).ToString();
         if(operation == "" || operation == "input") return input;
 
         string value = operation;
@@ -179,7 +180,7 @@ public class Processor
         return value;
     }
 
-    public virtual float Translate(string value, float input)
+    public float Translate(string value, float input)
     {
         value = value.Trim();
 
@@ -211,11 +212,22 @@ public class Processor
         if(_boolDictionary.ContainsKey(value)) return _boolDictionary[value].Value ? 1 : 0;
         if(_stringDictionary.ContainsKey(value)) return StringToFloat(_stringDictionary[value].Value);
         if(_intDictionary.ContainsKey(value)) return _intDictionary[value].Value;
+        if(AdditionalOperations(out float newValue, value))
+        {
+            if(_debug) Debug.Log("The input " + value + " has been found, returning " + newValue);
+            return newValue;
+        }
 
         if(value == "input") return input;
 
         if(float.TryParse(value, out float result)) return result;
         else return StringToFloat(value);
+    }
+
+    public virtual bool AdditionalOperations(out float value, string inputValue)
+    {
+        value = 0;
+        return false;
     }
 
     bool SearchFunction(string value, out string key)
@@ -328,7 +340,7 @@ public class Processor
             result += Convert.ToInt32(c).ToString();
         }
 
-        Debug.Log(value + " is " + result + " we are in the processor:" + operation);
+        if(_debug) Debug.Log(value + " is " + result + " we are in the processor:" + operation + "my name is" + name);
 
         return float.Parse(result);
     }
@@ -353,32 +365,56 @@ public class Processor
 [Serializable]
 public class ObjectProcessor : Processor
 {
-    public override float Translate(string value, float input)
+    public override bool AdditionalOperations(out float returnValue, string value)
     {
+        returnValue = 0;
         value = value.Trim();
 
         if(_conditionDictionary.ContainsKey(value))
         {
-            return Condition.Value(_conditionDictionary[value]);
+            returnValue = Condition.Value(_conditionDictionary[value]);
+            return true;
         }
 
-        if(_readableDictionary.ContainsKey(value))
+        if(ReadableRef.GetReference(_readablesDictionary, value, out IReadable readable))
         {
-            return _readableDictionary[value].Read();
+            returnValue = readable.Read();
+            return true;
         }
 
-        return base.Translate(value, input);
+
+        return false;
     }
 
     [Header("CONDITION REFERENCES")]
     [SerializeField] SerializableDictionary<string, Condition[]> _conditionDictionary = new SerializableDictionary<string, Condition[]>();
-    [SerializeField] SerializableDictionary<string, Readable> _readableDictionary = new SerializableDictionary<string, Readable>();
+    [SerializeField] ReadableRef[] _readablesDictionary;
+
+    [Serializable]
+    class ReadableRef
+    {
+        public string Key;
+        public IRef<IReadable> Value;
+
+        public static bool GetReference(ReadableRef[] readables, string key, out IReadable readable)
+        {
+            int i = 0;
+            readable = null;
+
+            while(i < readables.Length && readable == null)
+            {
+                if(readables[i].Key == key) readable = readables[i].Value.I;
+                i++;
+            }
+
+            return readable != null;
+        }
+    }
 }
 
-[Serializable]
-public abstract class Readable : MonoBehaviour
+public interface IReadable
 {
-    public abstract float Read();
+    public float Read();
 }
 
 // [Serializable]

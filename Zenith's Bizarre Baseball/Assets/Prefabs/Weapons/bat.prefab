@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBackForce: {fileID: 0}
   objectProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -111,8 +112,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &1517834348628145000
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: {fileID: 0}
   _processor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -510,8 +511,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!61 &5357634515182928792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -747,6 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.1
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -767,5 +768,4 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []

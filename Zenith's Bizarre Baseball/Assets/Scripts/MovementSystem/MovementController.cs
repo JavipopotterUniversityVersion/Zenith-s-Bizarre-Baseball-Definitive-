@@ -24,7 +24,7 @@ public class MovementController : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponentInParent<Rigidbody2D>();
     }
 
     public void Move(Vector2 direction)

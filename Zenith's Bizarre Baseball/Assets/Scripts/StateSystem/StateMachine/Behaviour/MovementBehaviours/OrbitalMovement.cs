@@ -7,6 +7,7 @@ public class OrbitalMovement : MonoBehaviour, IBehaviour
     MovementController movementController;
     TargetHandler targetHandler;
     [SerializeField] float orbit_radius = 5f;
+    [SerializeField] ObjectProcessor _radiusProcessor;
 
     [Range(0, 1)]
     [SerializeField] float adjustFactor = 0.5f;
@@ -38,9 +39,9 @@ public class OrbitalMovement : MonoBehaviour, IBehaviour
         Vector2 perpendicular = new Vector2(-direction.y, direction.x).normalized;
         Vector2 finalDirection;
 
-        if(Vector2.Distance(targetHandler.Target.position, transform.position) < orbit_radius + 0.5f)
+        if(Vector2.Distance(targetHandler.Target.position, transform.position) < _radiusProcessor.Result(orbit_radius) + 0.5f)
             finalDirection = Vector2.Lerp(perpendicular, -direction, Time.deltaTime * adjustFactor * 100).normalized;
-        else if(Vector2.Distance(targetHandler.Target.position, transform.position) > orbit_radius - 0.5f)
+        else if(Vector2.Distance(targetHandler.Target.position, transform.position) > _radiusProcessor.Result(orbit_radius) - 0.5f)
             finalDirection = Vector2.Lerp(perpendicular, direction, Time.deltaTime * adjustFactor * 100).normalized;
         else
             finalDirection = perpendicular;

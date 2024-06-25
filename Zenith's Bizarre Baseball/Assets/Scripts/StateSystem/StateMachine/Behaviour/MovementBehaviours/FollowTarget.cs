@@ -6,7 +6,8 @@ public class FollowTarget : MonoBehaviour, IBehaviour
 {
     TargetHandler targetHandler;
     MovementController movementController;
-    [SerializeField]float multiplier = 1;
+    [SerializeField] float multiplier = 1;
+    [SerializeField] ObjectProcessor _multiplierProcessor;
     [Range(0, 1)]
     [SerializeField] float weight = 1f;
     [SerializeField] bool instant = false;
@@ -25,7 +26,7 @@ public class FollowTarget : MonoBehaviour, IBehaviour
         if(instant) fixedDirection = direction;
         else fixedDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, direction, Time.deltaTime * weight * 100).normalized;
 
-        movementController.Move(fixedDirection * multiplier);
+        movementController.Move(fixedDirection * _multiplierProcessor.Result(multiplier));
     }
 
     private void OnValidate() {

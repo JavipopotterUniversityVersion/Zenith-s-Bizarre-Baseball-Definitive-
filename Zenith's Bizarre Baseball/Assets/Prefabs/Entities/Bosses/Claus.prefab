@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 2
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -66,8 +67,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &544612887040838988
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 3
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -238,8 +239,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &857243632017503930
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +780,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbit_radius: 35
+  _radiusProcessor:
+    name: 
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   adjustFactor: 1
   weight: 1
   multiplier: 6
@@ -1028,6 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.5
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1048,8 +1072,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &3663897107361165751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.2
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1495,8 +1519,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &5194980972421234649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 1
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -2355,8 +2379,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &5993755194123203074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,6 +2426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 1
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -2423,8 +2447,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &6110841783483246015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,6 +2643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 2
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -2640,8 +2664,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &6257639084410301034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,6 +2754,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 7
+  _multiplierProcessor:
+    name: 
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   weight: 0.503
   instant: 0
 --- !u!1 &6268539816614536670
@@ -2951,7 +2997,7 @@ GameObject:
   - component: {fileID: 3220595456842131328}
   - component: {fileID: 5611442770513146003}
   m_Layer: 0
-  m_Name: (speed > 80) -> False
+  m_Name: (0) -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2985,7 +3031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
-    operation: speed > 80
+    name: 
+    operation: 0
     _debug: 0
     _floatDictionary:
       list: []
@@ -3005,10 +3052,8 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list:
-      - Key: speed
-        Value: {fileID: 4760505005113239751}
+    _readablesDictionary: []
+  onValidate: 0
 --- !u!1 &7301746548142788933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,6 +3158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.5
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -3133,8 +3179,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &7669922322619729328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,6 +3543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventCasts:
   - condition:
+      name: 
       operation: input
       _debug: 0
       _floatDictionary:
@@ -3518,8 +3564,7 @@ MonoBehaviour:
         list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list: []
+      _readablesDictionary: []
     _eventsNames:
     - Homing
     - Player

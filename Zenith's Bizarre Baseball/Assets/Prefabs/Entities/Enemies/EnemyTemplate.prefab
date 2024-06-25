@@ -133,77 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!1 &1026699691798594450
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6992887636603044788}
-  - component: {fileID: 2283429489634765682}
-  m_Layer: 0
-  m_Name: (this != that) -> False
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6992887636603044788
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026699691798594450}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8429055678774840835}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2283429489634765682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026699691798594450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3b1cd865b0fdeb43904b14ad26210da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _processor:
-    operation: this != that
-    _debug: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-    _conditionDictionary:
-      list: []
-    _readableDictionary:
-      list:
-      - Key: this
-        Value: {fileID: 1474702477339964965}
-      - Key: that
-        Value: {fileID: 7427144168791566673}
 --- !u!1 &1068394134132807886
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 1
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -270,8 +200,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &1721488371980263032
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +494,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8429055678774840835}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4538045134684217438
 MonoBehaviour:
@@ -721,7 +650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8429055678774840835}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1548539394882890907
 MonoBehaviour:
@@ -820,9 +749,6 @@ GameObject:
   - component: {fileID: 5787853478089107213}
   - component: {fileID: 6393544093694453593}
   - component: {fileID: 6076078568189783563}
-  - component: {fileID: 7427144168791566673}
-  - component: {fileID: 1474702477339964965}
-  - component: {fileID: 936525706919538692}
   m_Layer: 0
   m_Name: AllieDamager
   m_TagString: Untagged
@@ -842,7 +768,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6992887636603044788}
   - {fileID: 6408356035778233344}
   - {fileID: 1520507041218535061}
   m_Father: {fileID: 900547913111903316}
@@ -865,14 +790,6 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 64
     conditions: []
-    collidables:
-    - {fileID: 936525706919538692}
-  - layer:
-      serializedVersion: 2
-      m_Bits: 64
-    conditions:
-    - conditionContainer: {fileID: 1026699691798594450}
-      negated: 0
     collidables:
     - {fileID: 6393544093694453593}
     - {fileID: 6076078568189783563}
@@ -909,6 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: {fileID: 11400000, guid: 443efb36bab353f41861bb9b89fa9823, type: 2}
   _processor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -929,8 +847,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!114 &6076078568189783563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBackForce: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
   objectProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -965,64 +883,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
---- !u!114 &7427144168791566673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5698828899886641214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2bb07b0cf7856b4f9a7356160831c15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _instance: {fileID: 9105301891046977518}
---- !u!114 &1474702477339964965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5698828899886641214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2bb07b0cf7856b4f9a7356160831c15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _instance: {fileID: 9105301891046977518}
---- !u!114 &936525706919538692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5698828899886641214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onCollideEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onCollideEventWithTransform:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7427144168791566673}
-        m_TargetAssemblyTypeName: InstanceIDReadable, Assembly-CSharp
-        m_MethodName: SetInstance
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _readablesDictionary: []
 --- !u!1 &5816661432930846551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.1
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1159,8 +1021,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &6229899301648358351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.2
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1316,8 +1178,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &8273857798203723048
 GameObject:
   m_ObjectHideFlags: 0

@@ -165,6 +165,7 @@ MonoBehaviour:
   _value: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
   _floatEvents:
   - _processor:
+      name: 
       operation: input >= ((index + 1) * 4)
       _debug: 0
       _floatDictionary:
@@ -181,12 +182,11 @@ MonoBehaviour:
         list: []
       _boolDictionary:
         list: []
+      _eventDictionary:
+        list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list:
-        - Key: index
-          Value: {fileID: 4853732673844166544}
+      _readablesDictionary: []
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -203,6 +203,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   - _processor:
+      name: 
       operation: input < ((index + 1) * 4)
       _debug: 0
       _floatDictionary:
@@ -219,12 +220,14 @@ MonoBehaviour:
         list: []
       _boolDictionary:
         list: []
+      _eventDictionary:
+        list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list:
-        - Key: index
-          Value: {fileID: 4853732673844166544}
+      _readablesDictionary:
+      - Key: index
+        Value:
+          target: {fileID: 4853732673844166544}
     _event:
       m_PersistentCalls:
         m_Calls:
@@ -399,12 +402,32 @@ PrefabInstance:
       value: (index + pIndex * 4) >= input
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Key
+      value: index
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Key
@@ -417,11 +440,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Value
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value
       value: 
+      objectReference: {fileID: 2945539639634197332}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
+      value: 
+      objectReference: {fileID: 4897773166150829945}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
       objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 2945539639634197332}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
 --- !u!224 &2945539639719317566 stripped
@@ -429,6 +468,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3451681664080212045, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
   m_PrefabInstance: {fileID: 506231223861354611}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4897773166150829945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4971441975559186186, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+  m_PrefabInstance: {fileID: 506231223861354611}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce757e2e7b4119548bb5813026696049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1773932424687541181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -545,12 +595,32 @@ PrefabInstance:
       value: (index + pIndex * 4) >= input
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Key
+      value: index
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Key
@@ -563,11 +633,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Value
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value
       value: 
+      objectReference: {fileID: 2945539639634197332}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
+      value: 
+      objectReference: {fileID: 4897773166150829945}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
       objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 2945539639634197332}
     - target: {fileID: 4796949457616599926, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -691,12 +777,32 @@ PrefabInstance:
       value: (index + pIndex * 4) >= input
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Key
+      value: index
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Key
@@ -709,11 +815,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Value
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value
       value: 
+      objectReference: {fileID: 2945539639634197332}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
+      value: 
+      objectReference: {fileID: 4897773166150829945}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
       objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 2945539639634197332}
     - target: {fileID: 4796949457616599926, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -853,12 +975,32 @@ PrefabInstance:
       value: (index + pIndex * 4) >= input
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Key
+      value: index
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Key
+      value: pIndex
       objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Key
@@ -871,11 +1013,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readableDictionary.list.Array.data[1].Value
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value
       value: 
+      objectReference: {fileID: 2945539639634197332}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
+      value: 
+      objectReference: {fileID: 4897773166150829945}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
       objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 4853732673844166544}
+    - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+      propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
+      value: 
+      objectReference: {fileID: 2945539639634197332}
     - target: {fileID: 4796949457616599926, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: m_Sprite
       value: 

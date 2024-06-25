@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeCondition : MonoBehaviour, ICondition
+public class TimeCondition : MonoBehaviour, ICondition, IReadable
 {
     [SerializeField] float timeToWait;
     [SerializeField] ObjectProcessor _timeProcessor;
     float timePassed;
 
     float waitTime;
+
+    public float Read() => timePassed;
 
     private void Awake() {
         waitTime = _timeProcessor.Result(timeToWait);

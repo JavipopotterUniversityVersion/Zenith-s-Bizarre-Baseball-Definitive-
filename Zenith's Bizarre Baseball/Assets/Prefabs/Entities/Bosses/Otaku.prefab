@@ -83,6 +83,93 @@ Transform:
   m_Father: {fileID: 1767507152891050246}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &768020182560076072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4940988556001876392}
+  - component: {fileID: 5428568280616631277}
+  - component: {fileID: 7018197809156229377}
+  - component: {fileID: 286096344589208251}
+  m_Layer: 0
+  m_Name: Instantiate shuriken
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4940988556001876392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768020182560076072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4032559577486371553}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5428568280616631277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768020182560076072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d5a7a541accee48b22275e8c48c93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8913451013342580221, guid: dc509a7fb20d8df4989d52cbc45c1416, type: 3}
+  velocity: 45
+  rotation: 0
+  _instancePoint: {fileID: 0}
+  _instanceProcessors:
+  - target: {fileID: 7018197809156229377}
+  - target: {fileID: 286096344589208251}
+--- !u!114 &7018197809156229377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768020182560076072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d41fc962c2aeb4baee5b6330411b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleOffsets:
+  - 90
+  - -90
+  - 45
+  - -45
+  - 135
+  - -135
+  - 180
+--- !u!114 &286096344589208251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768020182560076072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2ab95e7ab3cd14bac4314f72bfdbe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToAdd:
+  - {fileID: 4808144657794524803, guid: 90445a33b9570994c9f58ddc03be87c4, type: 3}
 --- !u!1 &883317429173632216
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
+    name: 812504
     operation: 4
     _debug: 0
     _floatDictionary:
@@ -386,11 +474,11 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
   _behavioursToRepeat:
   - _behaviourContainer: {fileID: 478182649449674842}
     _waitTime:
+      name: 
       operation: 0,1
       _debug: 0
       _floatDictionary:
@@ -411,8 +499,7 @@ MonoBehaviour:
         list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list: []
+      _readablesDictionary: []
 --- !u!1 &2262287036745771229
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
+    name: 673961
     operation: 20
     _debug: 0
     _floatDictionary:
@@ -524,11 +612,11 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
   _behavioursToRepeat:
   - _behaviourContainer: {fileID: 3272650325721370032}
     _waitTime:
+      name: 
       operation: 0,15
       _debug: 0
       _floatDictionary:
@@ -549,8 +637,7 @@ MonoBehaviour:
         list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list: []
+      _readablesDictionary: []
 --- !u!1 &2427099418941829421
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +700,76 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2659252273518398647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5385918037966702934}
+  - component: {fileID: 7664565368844729104}
+  m_Layer: 0
+  m_Name: Delay Behaviour 0,5s
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5385918037966702934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2659252273518398647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4032559577486371553}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7664565368844729104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2659252273518398647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6292ba624ff3e7a47af87843bad39cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayTime:
+    name: 420558
+    operation: 0,5
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
+  behaviours:
+  - target: {fileID: 614960597026203835}
+  - target: {fileID: 5428568280616631277}
 --- !u!1 &2677973756913230746
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
+    name: 
     operation: right (left (0 Random 1 > 0.5) == 0) + 1
     _debug: 0
     _floatDictionary:
@@ -710,8 +868,8 @@ MonoBehaviour:
               m_CallState: 2
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
+  onValidate: 0
 --- !u!1 &2918416194996407144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,8 +1194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _possibleReplacements:
-  - _instance: {fileID: 1673892643184387185, guid: c252dd4eb7ac8e84081ad03d177e18d3, type: 3}
+  - _instance: {fileID: 6091344656688087645, guid: c42ed4382f7e29d49978998a49c16c8c, type: 3}
     _appearCondition:
+      name: 
       operation: 
       _debug: 0
       _floatDictionary:
@@ -1058,10 +1217,9 @@ MonoBehaviour:
         list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list: []
+      _readablesDictionary: []
     _processors: []
-    _probability: 0.23
+    _probability: 1
 --- !u!1 &3601255335903648381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delayTime:
+    name: 714314
     operation: 0,5
     _debug: 0
     _floatDictionary:
@@ -1286,8 +1445,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
   behaviours:
   - target: {fileID: 1761406347751697172}
 --- !u!1 &4096076324347677486
@@ -1336,6 +1494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 4.15
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1356,8 +1515,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &4138752129406775605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1562,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _behaviourContainers:
+  - {fileID: 3239017539482986082}
+  - {fileID: 6003652093901094806}
   - {fileID: 8622770093443182034}
 --- !u!1 &4453790863443703431
 GameObject:
@@ -1484,6 +1644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 1
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1504,8 +1665,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &4611718463451275705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +2032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 
+  stateAnimation: Run
   onEnterPerformers:
   - condition: []
     behaviourContainers:
@@ -1884,6 +2044,7 @@ MonoBehaviour:
     behaviourContainers:
     - {fileID: 8710863691128565148}
     - {fileID: 6650359924391803075}
+    - {fileID: 8339413752608161091}
   onExitPerformers:
   - condition: []
     behaviourContainers:
@@ -1939,6 +2100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.5
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1959,8 +2121,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &6471403429227757207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2354,8 @@ Transform:
   m_Children:
   - {fileID: 2108110591096583538}
   - {fileID: 2479895136996162339}
+  - {fileID: 4940988556001876392}
+  - {fileID: 5385918037966702934}
   m_Father: {fileID: 487967689025419678}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2214,7 +2377,7 @@ MonoBehaviour:
     behaviourContainers:
     - {fileID: 8007192016831801688}
     - {fileID: 7323266719356059955}
-    - {fileID: 3133657278453994840}
+    - {fileID: 2659252273518398647}
   onUpdatePerformers: []
   onExitPerformers: []
   nextStates:
@@ -2703,6 +2866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 1
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -2723,8 +2887,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &8622770093443182034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,6 +2989,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbit_radius: 15
+  _radiusProcessor:
+    name: 
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   adjustFactor: 0.5
   weight: 1
   multiplier: 7

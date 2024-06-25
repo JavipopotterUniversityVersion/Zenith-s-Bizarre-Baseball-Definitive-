@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthHandler : Readable
+public class HealthHandler : MonoBehaviour, IReadable
 {
     [SerializeField] UnityEvent<float> onHealthChanged = new UnityEvent<float>();
     public UnityEvent<float> OnHealthChanged => onHealthChanged;
@@ -29,7 +29,7 @@ public class HealthHandler : Readable
         }
     }
 
-    public override float Read() => CurrentHealth;
+    public float Read() => CurrentHealth;
 
     private void Awake()
     {

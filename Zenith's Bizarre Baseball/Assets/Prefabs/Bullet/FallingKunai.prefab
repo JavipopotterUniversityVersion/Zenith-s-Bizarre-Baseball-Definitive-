@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
   _processor:
+    name: 
     operation: 4
     _debug: 0
     _floatDictionary:
@@ -90,8 +91,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!58 &3403570486242183795
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -236,8 +236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotation: 0
   _processor:
+    name: 
     operation: -30 Random 30
-    _debug: 1
+    _debug: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -256,8 +257,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &3403570486447678424
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +331,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -2413806693520163455, guid: 2513b07ef03087f4c97534b77ce1b946, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.3254902}
+  m_Sprite: {fileID: 1997488598, guid: f8c1ed32f962d0743a83398c709008c5, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.39607844}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -628,6 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.5
   _timeProcessor:
+    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -648,8 +649,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &8381907712503188204
 GameObject:
   m_ObjectHideFlags: 0

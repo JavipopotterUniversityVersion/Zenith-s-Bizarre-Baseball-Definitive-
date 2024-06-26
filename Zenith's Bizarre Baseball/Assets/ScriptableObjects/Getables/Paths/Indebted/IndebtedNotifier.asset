@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IndebtedNotifier
   m_EditorClassIdentifier: 
   _processor:
-    operation: (money < 0) && ((last_money * money) < 0)
+    operation: (money < 0) && (last_money >= 0)
     _debug: 0
     _floatDictionary:
       list: []
@@ -32,6 +32,8 @@ MonoBehaviour:
     _stringDictionary:
       list: []
     _boolDictionary:
+      list: []
+    _eventDictionary:
       list: []
   _onTrue:
     m_PersistentCalls:

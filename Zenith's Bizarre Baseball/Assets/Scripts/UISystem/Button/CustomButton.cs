@@ -18,9 +18,15 @@ public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler
         _button = GetComponent<Button>();
     }
 
-    public void OnSelect(BaseEventData eventData) => onSelect.Invoke();
+    public void OnSelect(BaseEventData eventData)
+    {  
+        onSelect.Invoke();
+    }
 
-    public void OnDeselect(BaseEventData eventData) => onDeselect.Invoke();
+    public void OnDeselect(BaseEventData eventData)
+    {
+        onDeselect.Invoke();
+    }
 
     private void OnMouseEnter() => _button.Select();
 }

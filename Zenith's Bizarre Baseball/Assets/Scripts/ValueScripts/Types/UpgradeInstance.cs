@@ -40,5 +40,5 @@ public class Upgrade
     [SerializeField] StringProcessor _stringProcessor;
 
     [SerializeField] Processor _upgrade;
-    public void ApplyUpgrade() => _upgrade.Result(1);
+    public bool ApplyUpgrade() => _upgrade.ResultBool(1);
 }

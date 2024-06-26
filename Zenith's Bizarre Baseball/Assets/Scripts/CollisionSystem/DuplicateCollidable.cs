@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class DuplicateCollidable : ICollidable
+public class DuplicateCollidable : ICollidable, IGameObjectProcessor
 {
     [SerializeField] float[] angleOffsets;
+    [SerializeField] float initialDistance;
+    [SerializeField] IRef<IGameObjectProcessor>[] _processors;
 
     public void SetAngleOffsets(float[] angleOffsets)
     {
@@ -22,10 +24,19 @@ public class DuplicateCollidable : ICollidable
         List<Collider2D> colliders = new List<Collider2D>();
         foreach (var angleOffset in angleOffsets)
         {
-            colliders.Add(Duplicate(collider, angleOffset));
+            colliders.Add(Duplicate(collider.gameObject, angleOffset).GetComponent<Collider2D>());
         }
 
         StartCoroutine(DeactivateCollider(colliders));
+    }
+
+    public void Process(GameObject gameObject)
+    {
+        foreach (var angleOffset in angleOffsets)
+        {
+            Duplicate(gameObject, angleOffset);
+        }
+        IGameObjectProcessor.Process(gameObject, _processors);
     }
 
     IEnumerator DeactivateCollider(List<Collider2D> colliders)
@@ -43,20 +54,20 @@ public class DuplicateCollidable : ICollidable
         }
     }
 
-    private Collider2D Duplicate(Collider2D collider, float angleOffset)
+    private Rigidbody2D Duplicate(GameObject gameObject, float angleOffset)
     {
-        Rigidbody2D rb = Instantiate(collider.gameObject, collider.transform.position, collider.transform.rotation).GetComponent<Rigidbody2D>();
+        GameObject clone = Instantiate(gameObject.gameObject, gameObject.transform.position, gameObject.transform.rotation);
+        Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
 
         if(rb != null)
         {
             float angle = Mathf.Deg2Rad * (transform.eulerAngles.z + angleOffset + 90);
             Vector2 relativeDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-
-            print(relativeDirection);
-
-            rb.velocity = relativeDirection.normalized * collider.attachedRigidbody.velocity.magnitude;
+            rb.transform.position += (Vector3) relativeDirection * initialDistance;
+            rb.velocity = relativeDirection.normalized * rb.velocity.magnitude;
         }
 
-        return rb.GetComponent<Collider2D>();
+        IGameObjectProcessor.Process(clone, _processors);
+        return rb;
     }
 }

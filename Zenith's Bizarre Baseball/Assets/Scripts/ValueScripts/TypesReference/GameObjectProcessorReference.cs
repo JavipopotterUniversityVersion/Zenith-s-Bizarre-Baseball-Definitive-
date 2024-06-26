@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameObjectProcessorReference : MonoBehaviour
 {
@@ -20,5 +21,11 @@ public class GameObjectProcessorReference : MonoBehaviour
         {
             Process(gameObject);
         }
+    }
+
+    public void ProcessRandom(GameObject[] gameObjects)
+    {
+        GameObject randomObject = gameObjects[Random.Range(0, gameObjects.Length)];
+        Process(randomObject);
     }
 }

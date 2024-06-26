@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4808144656963904461}
   - component: {fileID: 4808144656963904462}
   m_Layer: 0
-  m_Name: 'Orbit: 1,591549 r/s'
+  m_Name: 'Orbit: 0,127324 r/s'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6867d8b0c708d345b906c013419c56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbit_radius: 5
+  orbit_radius: 25
   _radiusProcessor:
-    name: 
-    operation: time * 7
+    operation: input
     _debug: 0
     _floatDictionary:
       list: []
@@ -67,10 +66,38 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readablesDictionary: []
-  adjustFactor: 0.5
+    _readablesDictionary:
+    - Key: time
+      Value:
+        target: {fileID: 4808144657958178086}
+  adjustFactor: 1
   weight: 1
-  multiplier: 50
+  multiplier: 20
+  _multiplierProcessor:
+    operation: input
+    _debug: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary:
+    - Key: time
+      Value:
+        target: {fileID: 4808144657958178086}
 --- !u!1 &4808144657629562469
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,17 +146,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateAnimation: 
-  onEnterPerformers: []
+  onEnterPerformers:
+  - condition: []
+    behaviourContainers:
+    - {fileID: 8768945965053144954}
   onUpdatePerformers:
   - condition: []
     behaviourContainers:
     - {fileID: 4808144656963904460}
   onExitPerformers: []
-  nextStates:
-  - conditions:
-    - conditionContainer: {fileID: 4808144657958178085}
-      negated: 0
-    stateContainer: {fileID: 4808144657985509211}
+  nextStates: []
 --- !u!1 &4808144657794524803
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +167,7 @@ GameObject:
   - component: {fileID: 4808144657794524814}
   - component: {fileID: 4808144657794524813}
   - component: {fileID: 4808144657794524812}
+  - component: {fileID: 8748109624066156108}
   m_Layer: 0
   m_Name: OrbiterByTime
   m_TagString: Untagged
@@ -161,7 +188,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4808144657629562471}
-  - {fileID: 4808144657985509189}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,50 +228,19 @@ MonoBehaviour:
   onStopMoving:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &4808144657878013020
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4808144657878013022}
-  - component: {fileID: 4808144657878013021}
-  m_Layer: 0
-  m_Name: Destroy this gameobject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4808144657878013022
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4808144657878013020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4808144657985509189}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4808144657878013021
+--- !u!114 &8748109624066156108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4808144657878013020}
+  m_GameObject: {fileID: 4808144657794524803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b157a9edc19794d8b30f95a7a0a255, type: 3}
+  m_Script: {fileID: 11500000, guid: d970daccadc0e2c41984c169ef2b1d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 0}
 --- !u!1 &4808144657958178085
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +252,7 @@ GameObject:
   - component: {fileID: 4808144657958178087}
   - component: {fileID: 4808144657958178086}
   m_Layer: 0
-  m_Name: Wait 2s
+  m_Name: Wait 4s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,9 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da4b90bc677b294eac913160882da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 2
+  timeToWait: 4
   _timeProcessor:
-    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -314,59 +308,6 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
---- !u!1 &4808144657985509211
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4808144657985509189}
-  - component: {fileID: 4808144657985509188}
-  m_Layer: 0
-  m_Name: End
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4808144657985509189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4808144657985509211}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4808144657878013022}
-  m_Father: {fileID: 4808144657794524814}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4808144657985509188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4808144657985509211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateAnimation: 
-  onEnterPerformers:
-  - condition: []
-    behaviourContainers:
-    - {fileID: 4808144657878013020}
-  onUpdatePerformers: []
-  onExitPerformers: []
-  nextStates: []
 --- !u!1 &8768945965053144954
 GameObject:
   m_ObjectHideFlags: 0

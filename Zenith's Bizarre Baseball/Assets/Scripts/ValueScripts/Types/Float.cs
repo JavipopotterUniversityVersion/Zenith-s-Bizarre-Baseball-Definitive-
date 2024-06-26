@@ -64,7 +64,7 @@ public class Float : ScriptableICondition
 [Serializable]
 public class Processor
 {
-    [SerializeField] string name = "";
+    string name = "";
     static string[] operationTypes = new string[] {"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
     [SerializeField] bool _debug = false;
@@ -340,7 +340,7 @@ public class Processor
             result += Convert.ToInt32(c).ToString();
         }
 
-        if(_debug) Debug.Log(value + " is " + result + " we are in the processor:" + operation + "my name is" + name);
+        if(_debug) Debug.Log(value + " is " + result + " we are in the processor:" + operation + "my name is " + name);
 
         return float.Parse(result);
     }

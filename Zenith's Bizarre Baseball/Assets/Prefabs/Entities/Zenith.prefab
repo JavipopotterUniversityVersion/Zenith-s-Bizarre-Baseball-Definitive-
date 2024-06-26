@@ -1042,7 +1042,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
-    name: 
     operation: vegan > 2
     _debug: 0
     _floatDictionary:
@@ -1254,7 +1253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
-    name: 
     operation: Alive && (Inmortal == 0)
     _debug: 0
     _floatDictionary:
@@ -1386,7 +1384,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.2
   _timeProcessor:
-    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -1624,7 +1621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
-    name: 
     operation: money < 0
     _debug: 0
     _floatDictionary:
@@ -1740,7 +1736,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToWait: 0.2
   _timeProcessor:
-    name: 
     operation: input
     _debug: 0
     _floatDictionary:
@@ -3280,7 +3275,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBackForce: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
   objectProcessor:
-    name: 
     operation: input * 4
     _debug: 0
     _floatDictionary:
@@ -3331,7 +3325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventCasts:
   - condition:
-      name: 
       operation: Domino
       _debug: 0
       _floatDictionary:
@@ -3403,7 +3396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventCasts:
   - condition:
-      name: 
       operation: input
       _debug: 0
       _floatDictionary:
@@ -3440,6 +3432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleOffsets: []
+  initialDistance: 0
+  _processors: []
 --- !u!114 &9045091982083728435
 MonoBehaviour:
   m_ObjectHideFlags: 0

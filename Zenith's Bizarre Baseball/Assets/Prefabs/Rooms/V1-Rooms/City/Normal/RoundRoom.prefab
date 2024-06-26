@@ -1819,12 +1819,6 @@ MonoBehaviour:
     _maxNumberOfNodes: 0
     minExtension: 0
     maxExtension: 0
-  - _nodePrefab: {fileID: 5797520917697802343, guid: d378d07912f5912418a130d7690616a3, type: 3}
-    _probability: 0.238
-    _minNumberOfNodes: 0
-    _maxNumberOfNodes: 0
-    minExtension: 0
-    maxExtension: 0
   _access: 0
   _limits:
   - _min: {fileID: 867453592171689229}
@@ -30665,7 +30659,7 @@ PrefabInstance:
     - target: {fileID: 313962949, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3447360195849109771}
+      objectReference: {fileID: 3447360195849109773}
     - target: {fileID: 313962949, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -30684,7 +30678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 313962949, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 313962949, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -30696,7 +30690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 313962949, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.Behaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 313962949, guid: ec4f366ae0919a14a80b3c18318ef83d, type: 3}
       propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -47377,17 +47371,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5803148837568144971, guid: 033d373fed168484ea0abada524babaf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5803148837568144973, guid: 033d373fed168484ea0abada524babaf, type: 3}
       propertyPath: m_Name
       value: EnemySpawnerWithGrid
       objectReference: {fileID: 0}
     - target: {fileID: 5803148837568144973, guid: 033d373fed168484ea0abada524babaf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5803148838844554364, guid: 033d373fed168484ea0abada524babaf, type: 3}
       propertyPath: m_Name
-      value: Repeat RandomInstanceOnBlocks1
+      value: Repeat RandomInstanceOnBlocks 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 033d373fed168484ea0abada524babaf, type: 3}
@@ -47396,13 +47394,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5803148838713585080, guid: 033d373fed168484ea0abada524babaf, type: 3}
   m_PrefabInstance: {fileID: 9178220361535203142}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3447360195849109771 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5803148837568144973, guid: 033d373fed168484ea0abada524babaf, type: 3}
-  m_PrefabInstance: {fileID: 9178220361535203142}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3447360195849109772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5803148837568144970, guid: 033d373fed168484ea0abada524babaf, type: 3}
   m_PrefabInstance: {fileID: 9178220361535203142}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3447360195849109773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5803148837568144971, guid: 033d373fed168484ea0abada524babaf, type: 3}
+  m_PrefabInstance: {fileID: 9178220361535203142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd6c89df896d9d4db52844020ecc3e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

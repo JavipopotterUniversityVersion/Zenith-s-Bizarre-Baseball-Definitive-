@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 5803148838844554365}
   - component: {fileID: 5803148838844554362}
   m_Layer: 0
-  m_Name: Repeat RandomInstanceOnBlocks1
+  m_Name: Repeat RandomInstanceOnBlocks 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
-    operation: input
+    operation: 6
     _debug: 0
     _floatDictionary:
       list: []
@@ -465,12 +465,11 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
   _behavioursToRepeat:
   - _behaviourContainer: {fileID: 5803148838713585083}
     _waitTime:
-      operation: input
+      operation: 0,1
       _debug: 0
       _floatDictionary:
         list: []
@@ -490,8 +489,7 @@ MonoBehaviour:
         list: []
       _conditionDictionary:
         list: []
-      _readableDictionary:
-        list: []
+      _readablesDictionary: []
 --- !u!1 &5803148838924789422
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,8 +556,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!1 &5803148838991585117
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,7 +42,7 @@ public class RepeatBehaviour : MonoBehaviour, IBehaviour, ICondition
     private void OnValidate()
     {
         if(_behavioursToRepeat.Length > 0)
-            name = "Repeat " + _behavioursToRepeat[0].BehaviourContainer.name + $"{_processor.ResultInt(1)}";
+            name = "Repeat " + _behavioursToRepeat[0].BehaviourContainer.name + $" {_processor.ResultInt(1)}";
     }
 }
 [System.Serializable]

@@ -5,7 +5,7 @@ using UnityEngine;
 public class FadeInTime : MonoBehaviour
 {
     [SerializeField] Curve _fadeCurve;
-    [SerializeField] Float _fadeDuration;
+    [SerializeField] ObjectProcessor _fadeDuration;
     SpriteRenderer sr;
     float _fadeTime = 0;
 
@@ -18,7 +18,7 @@ public class FadeInTime : MonoBehaviour
     private void Update() 
     {
         _fadeTime += Time.deltaTime;
-        float t = _fadeTime / _fadeDuration.Value;
+        float t = _fadeTime / _fadeDuration.Result();
         float curveValue = _fadeCurve.Value.Evaluate(t);
         sr.color = _gradient.Evaluate(curveValue);
     }

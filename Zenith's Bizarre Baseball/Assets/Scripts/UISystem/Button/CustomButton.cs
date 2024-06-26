@@ -22,5 +22,5 @@ public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnDeselect(BaseEventData eventData) => onDeselect.Invoke();
 
-    private void OnMouseOver() => _button.Select();
+    private void OnMouseEnter() => _button.Select();
 }

@@ -63,18 +63,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8648949803061886931}
-        m_TargetAssemblyTypeName: TilemapPaster, Assembly-CSharp
-        m_MethodName: PasteTilemap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 4064689521732646017}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -189,7 +177,7 @@ Tilemap:
   m_TileColorArray: []
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.80566037, g: 1, b: 0.8571676, a: 0.7254902}
   m_Origin: {x: 0, y: 0, z: 0}
   m_Size: {x: 0, y: 0, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -263,7 +251,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1741289923
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
   m_MaxChunkCount: 16
@@ -294,7 +282,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8195778744224518577}
-  - component: {fileID: 8648949803061886931}
   - component: {fileID: 584372272441666903}
   - component: {fileID: 1355519900857347334}
   - component: {fileID: 7510897605676997206}
@@ -330,22 +317,6 @@ Transform:
   m_Father: {fileID: 7223186473358228442}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8648949803061886931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8991710411502416516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e02b90031f9864da44b6373629660e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilemapToCopy: {fileID: 584372272441666903}
-  tilemapToPaste: {fileID: 0}
-  referenceName: Walls
-  isRemover: 1
 --- !u!1839735485 &584372272441666903
 Tilemap:
   m_ObjectHideFlags: 0

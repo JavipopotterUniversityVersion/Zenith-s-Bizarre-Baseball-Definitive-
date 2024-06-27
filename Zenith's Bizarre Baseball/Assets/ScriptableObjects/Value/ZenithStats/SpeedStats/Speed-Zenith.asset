@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 15
   _readProcessor:
-    operation: input
+    operation: input * (_multiplier + 1)
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
-      list: []
+      list:
+      - Key: _multiplier
+        Value: {fileID: 11400000, guid: 97fb755770921464f94717d4a5db6ead, type: 2}
     _intDictionary:
       list: []
     _curveDictionary:
@@ -27,6 +30,10 @@ MonoBehaviour:
     _functionDictionary:
       list: []
     _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
       list: []
   onRead:
     m_PersistentCalls:

@@ -6,6 +6,7 @@ using System.Linq;
 public class DelayedBehaviour : MonoBehaviour, IBehaviour, ICondition
 {
     [SerializeField] ObjectProcessor _delayTime;
+    [SerializeField] string _behaviourName;
 
     [SerializeField] IRef<IBehaviour>[] behaviours;
     bool finished = false;
@@ -30,6 +31,6 @@ public class DelayedBehaviour : MonoBehaviour, IBehaviour, ICondition
     }
 
     private void OnValidate() {
-        name = $"Delay Behaviour {_delayTime.Result()}s";
+        name = $"Delay {_behaviourName} {_delayTime.Result()}s";
     }
 }

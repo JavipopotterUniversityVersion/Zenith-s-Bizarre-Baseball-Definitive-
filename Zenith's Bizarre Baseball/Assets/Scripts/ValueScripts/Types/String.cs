@@ -32,6 +32,8 @@ public class String : ScriptableObject
     {
         _onStringCall.Invoke();
     }
+
+    public void AddString(string value) => _value += value;
 }
 
 [Serializable]
@@ -42,6 +44,7 @@ public struct ProcessedFloat
     public Processor processor;
     public readonly float Value => processor.Result(value.Value);
 }
+
 
 [Serializable]
 public class StringProcessor

@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using MyBox;
 
 public class UpgradeDealer : MonoBehaviour
 {
     [SerializeField] UpgradeData[] _upgradeDatas;
-    [SerializeField] int _numberOfUpgrades;
+    [SerializeField] ObjectProcessor _numberOfUpgrades;
 
     UpgradeReceiver[] _upgradeReceivers;
 
@@ -16,7 +17,7 @@ public class UpgradeDealer : MonoBehaviour
         _upgradeReceivers = GetComponentsInChildren<UpgradeReceiver>();
 
         List<UpgradeData> availableUpgrades = _upgradeDatas.ToList();
-        for (int i = 0; i < _numberOfUpgrades; i++)
+        for (int i = 0; i < _numberOfUpgrades.Result(); i++)
         {
             UpgradeData upgradeData = UpgradeData.GetRandomUpgrade(availableUpgrades);
             availableUpgrades.Remove(upgradeData);
@@ -24,10 +25,10 @@ public class UpgradeDealer : MonoBehaviour
             _upgradeReceivers[i].SetUpgrade(upgradeData.Upgrade.Upgrade);
         }
 
-        ActivateReceivers(_numberOfUpgrades);
+        ActivateReceivers(_numberOfUpgrades.Result());
     }
 
-    void ActivateReceivers(int index)
+    void ActivateReceivers(float index)
     {
         for(int i = 0; i < _upgradeReceivers.Length; i++)
         {

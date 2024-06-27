@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
+using MyBox;
+using UnityEditor.Compilation;
 
 [CreateAssetMenu(fileName = "Float", menuName = "Value/Float")]
 public class Float : ScriptableICondition
@@ -61,39 +62,44 @@ public class Float : ScriptableICondition
     }
 }
 
+
+
 [Serializable]
 public class Processor
 {
-    string name = "";
+    string _name = "";
     static string[] operationTypes = new string[] {"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
     [SerializeField] bool _debug = false;
+    [SerializeField] protected bool _showReferences;
 
-    [Header("FLOAT REFERENCES")]
+    #region references
+
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary = new SerializableDictionary<string, Float>();
 
-    [Header("INT REFERENCES")]
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, Int> _intDictionary = new SerializableDictionary<string, Int>();
 
-    [Header("CURVE REFERENCES")]
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, Curve> _curveDictionary = new SerializableDictionary<string, Curve>();
 
-    [Header("OPERATION REFERENCES")]
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, String> _operationDictionary = new SerializableDictionary<string, String>();
 
-    [Header("FUNCTION REFERENCES")]
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, Function> _functionDictionary = new SerializableDictionary<string, Function>();
 
-    [Header("String REFERENCES")]
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
 
-    [Header("BOOL REFERENCES")]
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, Bool> _boolDictionary = new SerializableDictionary<string, Bool>();
 
-    [Header("EVENT REFERENCES")]
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, UnityEvent> _eventDictionary = new SerializableDictionary<string, UnityEvent>();
-
-
+    #endregion
+    #region methods
     float Calculate(float input, string operation)
     {
         float result = 0;
@@ -152,7 +158,7 @@ public class Processor
 
     public float ResultOf(string operation, float input)
     {
-        name = UnityEngine.Random.Range(0,999999).ToString();
+        _name = UnityEngine.Random.Range(0,999999).ToString();
         if(operation == "" || operation == "input") return input;
 
         string value = operation;
@@ -340,7 +346,7 @@ public class Processor
             result += Convert.ToInt32(c).ToString();
         }
 
-        if(_debug) Debug.Log(value + " is " + result + " we are in the processor:" + operation + "my name is " + name);
+        if(_debug) Debug.Log(value + " is " + result + " we are in the processor:" + operation + "my name is " + _name);
 
         return float.Parse(result);
     }
@@ -360,6 +366,7 @@ public class Processor
             item.Value.OnValueChanged.RemoveListener(action);
         }
     }
+    #endregion
 }
 
 [Serializable]
@@ -386,8 +393,10 @@ public class ObjectProcessor : Processor
         return false;
     }
 
-    [Header("CONDITION REFERENCES")]
+    
+    [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, Condition[]> _conditionDictionary = new SerializableDictionary<string, Condition[]>();
+
     [SerializeField] ReadableRef[] _readablesDictionary;
 
     [Serializable]
@@ -416,76 +425,3 @@ public interface IReadable
 {
     public float Read();
 }
-
-// [Serializable]
-// public class Modifier
-// {
-//     public enum ModifierType
-//     {
-//         Add,
-//         Subtract,
-//         Multiply,
-//         Divide
-//     }
-
-//     [SerializeField] ModifierType _type;
-//     [SerializeField] Float _value;
-
-//     [Header("EXTRA MODIFIERS")]
-//     [SerializeField] Modifier[] _extraModifiers;
-
-//     [Header("CURVE MODIFIERS")]
-//     [SerializeField] CurveModifier[] _curve;
-
-//     public float Modify(float value)
-//     {
-//         switch (_type)
-//         {
-//             case ModifierType.Add:
-//                 return value + CurveModifier.Modify(Modify(value, _extraModifiers), _curve);
-//             case ModifierType.Subtract:
-//                 return value - CurveModifier.Modify(Modify(value, _extraModifiers), _curve);
-//             case ModifierType.Multiply:
-//                 return value * CurveModifier.Modify(Modify(value, _extraModifiers), _curve);
-//             case ModifierType.Divide:
-//                 return value / CurveModifier.Modify(Modify(value, _extraModifiers), _curve);
-//             default:
-//                 return value;
-//         }
-//     }
-
-//     public static float Modify(float value, Modifier[] modifiers)
-//     {
-//         foreach (var modifier in modifiers)
-//         {
-//             value = modifier.Modify(value);
-//         }
-//         return value;
-//     }
-// }
-
-// [Serializable] public class CurveModifier
-// {
-//     [Header("CURVE")]
-//     public Curve Curve;
-//     [SerializeField] float _yMultiplier = 1;
-
-//     [Header("RELATED VALUE")]
-//     [SerializeField] Float _value;
-//     [SerializeField] Modifier[] _modifiers;
-//     [SerializeField] float _maxValue = 10;
-
-//     public float Modify(float value)
-//     {
-//         return value * Curve.Evaluate(Modifier.Modify(_value.Value, _modifiers) / _maxValue) * _yMultiplier;
-//     }
-
-//     public static float Modify(float value, CurveModifier[] modifiers)
-//     {
-//         foreach (var modifier in modifiers)
-//         {
-//             value = modifier.Modify(value);
-//         }
-//         return value;
-//     }
-// }

@@ -13,9 +13,29 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   _value: 1
-  _readModifiers: []
-  _setModifiers: []
-  _addModifiers: []
-  _subtractModifiers: []
-  _multiplyModifiers: []
-  _divideModifiers: []
+  _readProcessor:
+    operation: input
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+  onRead:
+    m_PersistentCalls:
+      m_Calls: []
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []

@@ -26,18 +26,15 @@ public class Upgrade
 {
     [SerializeField] string _name;
     public string Name => _name;
-    [FormerlySerializedAs("_condition")]
-    [SerializeField] Processor _condition;
-    public bool CanAppear => _condition.Result(1) != 0;
-
     [SerializeField] UnityEngine.Sprite _icon;
     public UnityEngine.Sprite Icon => _icon;
-
-
     [TextArea(3, 10)]
     [SerializeField] string _description;
     public string Description => _stringProcessor.Process(_description);
     [SerializeField] StringProcessor _stringProcessor;
+
+    [SerializeField] Processor _condition;
+    public bool CanAppear => _condition.Result(1) != 0;
 
     [SerializeField] Processor _upgrade;
     public bool ApplyUpgrade() => _upgrade.ResultBool(1);

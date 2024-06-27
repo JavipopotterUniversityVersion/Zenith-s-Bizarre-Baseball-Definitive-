@@ -31,27 +31,11 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     lines:
-    - '<name:Rain><rain:default>
-
-      Hi sis how you doing?'
-    - C'mon buy anything you want
+    - <name:Rain><rain:default><break>
+    - TALK(rainAn,Hi sis how you doing?)
+    - TALK(rainAn,C'mon buy anything you want)
     _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 20b0b1786d3c11d4d84a123eb16fde5f, type: 2}
-        negated: 0
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
-  - _enter:
       condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
-    lines: []
-    _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 285394dc778e4244b8eb22c584c33e37, type: 2}
-        negated: 0
       _event:
         m_PersistentCalls:
           m_Calls: []
@@ -90,6 +74,8 @@ MonoBehaviour:
     _stringDictionary:
       list: []
     _stringFunctionDictionary:
-      list: []
+      list:
+      - Key: TALK
+        Value: {fileID: 11400000, guid: b570df4e64a3e1f4c8d5ce47dc657108, type: 2}
     _processorDictionary:
       list: []

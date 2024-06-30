@@ -29,8 +29,8 @@ public class ChangeSizeBehaviour : MonoBehaviour, IBehaviour
         }
 
         timer += Time.deltaTime;
-
     }
+    
     private void OnValidate()
     {
         name = "Change object size";

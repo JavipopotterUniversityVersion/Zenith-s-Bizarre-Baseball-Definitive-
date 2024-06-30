@@ -3132,6 +3132,10 @@ PrefabInstance:
       propertyPath: _counterMultiplier
       value: 
       objectReference: {fileID: 11400000, guid: 813e1e6ff1e1bc547876558dfe7df2bd, type: 2}
+    - target: {fileID: 1517834348628145000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.size
       value: 4
@@ -3304,8 +3308,145 @@ PrefabInstance:
       propertyPath: knockBackForce
       value: 
       objectReference: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 8113540993698504853, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2468002376565681864}
+    - target: {fileID: 8113540993698504853, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516073803650040037, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2468002376565681864}
+    - target: {fileID: 8516073803650040037, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5357634515182928792, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+--- !u!1 &365249109796865355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517834348628145000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+  m_PrefabInstance: {fileID: 1153429947300558371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2468002376565681864
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365249109796865355}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 1}
+    oldSize: {x: 4.1875, y: 3.25}
+    newSize: {x: 4.1875, y: 3.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &2441039821755451410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365249109796865355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0f57910532ed24cb2e04e26d4c1993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size:
+    operation: size
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list:
+      - Key: size
+        Value: {fileID: 11400000, guid: ad7a1df6d560cb34d86f0006a9f07b07, type: 2}
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
+--- !u!114 &6161242598915341061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365249109796865355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {fileID: 11400000, guid: ad7a1df6d560cb34d86f0006a9f07b07, type: 2}
+  _floatEvents:
+  - _condition:
+      operation: 
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2441039821755451410}
+          m_TargetAssemblyTypeName: SetSizeProcess, Assembly-CSharp
+          m_MethodName: Process
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 365249109796865355}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &997577020190341318 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}

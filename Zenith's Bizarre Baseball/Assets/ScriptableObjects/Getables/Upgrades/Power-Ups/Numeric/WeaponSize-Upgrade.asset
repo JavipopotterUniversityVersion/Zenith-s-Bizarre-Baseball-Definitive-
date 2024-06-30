@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904c1a5f20ec3884a947583768731849, type: 3}
+  m_Name: WeaponSize-Upgrade
+  m_EditorClassIdentifier: 
+  _upgrade:
+    _name: Bun
+    _icon: {fileID: 21300000, guid: 6a922ef882cfde847bc360bf3016b654, type: 3}
+    _description: Increase your weapon size a 10%
+    _stringProcessor:
+      _intDictionary:
+        list: []
+      _floatDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
+        list: []
+    _condition:
+      operation: input
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+    _upgrade:
+      operation: input
+      _debug: 0
+      _showReferences: 1
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list:
+        - Key: Apply
+          Value:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 11400000, guid: ad7a1df6d560cb34d86f0006a9f07b07, type: 2}
+                m_TargetAssemblyTypeName: Float, Assembly-CSharp
+                m_MethodName: AddValue
+                m_Mode: 4
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0.1
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2

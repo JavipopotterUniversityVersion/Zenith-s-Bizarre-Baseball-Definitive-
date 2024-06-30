@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TileBlockHandler : MonoBehaviour
+public class TileBlockHandler : MonoBehaviour, IBehaviour
 {
     [SerializeField] string referenceName = "Walls";
 
@@ -20,4 +20,6 @@ public class TileBlockHandler : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
+    public void ExecuteBehaviour() => SetTiles();
 }

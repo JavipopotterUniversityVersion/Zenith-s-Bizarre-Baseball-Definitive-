@@ -4,7 +4,7 @@ using MyBox;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Identifiable", menuName = "Identification/Identifiable")]
-public class Identifiable : ScriptableObject
+public class Identifiable : ScriptableObject, IReadable
 {
     [SerializeField] Identifiable[] ascendants;
     [SerializeField][DisplayInspector()] Identifiable[] descendants;
@@ -28,4 +28,6 @@ public class Identifiable : ScriptableObject
         }
         return false;
     }
+
+    public float Read() => GetInstanceID();
 }

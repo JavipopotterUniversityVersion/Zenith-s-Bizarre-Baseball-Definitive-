@@ -5,7 +5,7 @@ using System.Linq;
 
 public class DamageAllSearchablesBehaviour : MonoBehaviour, IBehaviour
 {
-    [SerializeField] private float damage = 1;
+    [SerializeField] private ObjectProcessor damage;
     [SerializeField] private Identifiable searchableType;
     List<HealthHandler> healthHandlers;
 
@@ -14,6 +14,5 @@ public class DamageAllSearchablesBehaviour : MonoBehaviour, IBehaviour
         healthHandlers = SearchManager.Instance.GetAllSearchables<HealthHandler>(searchableType).ToList();
     }
 
-    public void ExecuteBehaviour() => healthHandlers.ForEach(h => h.TakeDamage(damage));
-    public void SetDamage(float damage) => this.damage = damage;
+    public void ExecuteBehaviour() => healthHandlers.ForEach(h => h.TakeDamage(damage.Result()));
 }

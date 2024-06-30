@@ -10,17 +10,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 904c1a5f20ec3884a947583768731849, type: 3}
-  m_Name: BallDivision-Upgrade
+  m_Name: BallRebound-Upgrade
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Strawberry Cake
-    _icon: {fileID: 21300000, guid: b426c85ad9038ba4bada1a218990e9e3, type: 3}
-    _description: Duplicates balls when bat
+    _name: Fried Egg
+    _icon: {fileID: 21300000, guid: f7601e69219e4ea42986fd494085f686, type: 3}
+    _description: Balls bounce [cols] times before destroying
     _stringProcessor:
       _intDictionary:
         list: []
       _floatDictionary:
-        list: []
+        list:
+        - Key: '[cols]'
+          Value:
+            value: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
+            processor:
+              operation: cols + 1
+              _debug: 0
+              _showReferences: 0
+              _floatDictionary:
+                list: []
+              _intDictionary:
+                list:
+                - Key: cols
+                  Value: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
+              _curveDictionary:
+                list: []
+              _operationDictionary:
+                list: []
+              _functionDictionary:
+                list: []
+              _stringDictionary:
+                list: []
+              _boolDictionary:
+                list: []
+              _eventDictionary:
+                list: []
       _stringDictionary:
         list: []
       _stringFunctionDictionary:
@@ -71,15 +96,15 @@ MonoBehaviour:
           Value:
             m_PersistentCalls:
               m_Calls:
-              - m_Target: {fileID: 11400000, guid: 05f61bfff7f58404293fd18b839fcf72, type: 2}
-                m_TargetAssemblyTypeName: Float, Assembly-CSharp
+              - m_Target: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
+                m_TargetAssemblyTypeName: Int, Assembly-CSharp
                 m_MethodName: AddValue
-                m_Mode: 4
+                m_Mode: 3
                 m_Arguments:
                   m_ObjectArgument: {fileID: 0}
                   m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 1
+                  m_IntArgument: 1
+                  m_FloatArgument: 0
                   m_StringArgument: 
                   m_BoolArgument: 0
                 m_CallState: 2

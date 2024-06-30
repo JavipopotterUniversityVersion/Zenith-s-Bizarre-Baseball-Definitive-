@@ -17,4 +17,6 @@ public class ProcessorCondition : MonoBehaviour, ICondition, IBehaviour
             name = "(" + _processor.operation + ")" + " -> " + _processor.ResultBool(1).ToString();
         }
     }
+
+    public void SetProcessor(ObjectProcessor processor) => _processor = processor;
 }

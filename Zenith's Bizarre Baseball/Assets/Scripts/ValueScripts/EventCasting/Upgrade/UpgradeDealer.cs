@@ -23,6 +23,7 @@ public class UpgradeDealer : MonoBehaviour
             availableUpgrades.Remove(upgradeData);
 
             _upgradeReceivers[i].SetUpgrade(upgradeData.Upgrade.Upgrade);
+            _upgradeReceivers[i].SetCost(upgradeData.Cost);
         }
 
         ActivateReceivers(_numberOfUpgrades.Result());
@@ -43,6 +44,8 @@ public class UpgradeDealer : MonoBehaviour
         public readonly UpgradeInstance Upgrade => _upgrade;
 
         [SerializeField] [Range(0, 1)] float _chance;
+        [SerializeField] ObjectProcessor _cost;
+        public readonly ObjectProcessor Cost => _cost;
 
         public static UpgradeData GetRandomUpgrade(List<UpgradeData> upgradeDatas) => GetRandomUpgrade(upgradeDatas.ToArray());
 

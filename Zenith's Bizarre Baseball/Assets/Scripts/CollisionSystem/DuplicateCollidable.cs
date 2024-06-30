@@ -9,6 +9,19 @@ public class DuplicateCollidable : ICollidable, IGameObjectProcessor
     [SerializeField] float initialDistance;
     [SerializeField] IRef<IGameObjectProcessor>[] _processors;
 
+    public void SetAngles(float numberOfAngles)
+    {
+        List<float> newAngleOffsets = new List<float>();
+        float angle = 360f / (numberOfAngles + 1);
+
+        for (int i = 0; i < numberOfAngles; i++)
+        {
+            newAngleOffsets.Add(angle * (i + 1));
+        }
+
+        angleOffsets = newAngleOffsets.ToArray();
+    }
+
     public void SetAngleOffsets(float[] angleOffsets)
     {
         this.angleOffsets = angleOffsets;
@@ -26,6 +39,10 @@ public class DuplicateCollidable : ICollidable, IGameObjectProcessor
         {
             colliders.Add(Duplicate(collider.gameObject, angleOffset).GetComponent<Collider2D>());
         }
+
+        float angle = Mathf.Deg2Rad * (transform.eulerAngles.z + 90);
+        Vector2 relativeDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        collider.transform.position += (Vector3) relativeDirection * initialDistance;
 
         StartCoroutine(DeactivateCollider(colliders));
     }
@@ -64,7 +81,7 @@ public class DuplicateCollidable : ICollidable, IGameObjectProcessor
             float angle = Mathf.Deg2Rad * (transform.eulerAngles.z + angleOffset + 90);
             Vector2 relativeDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             rb.transform.position += (Vector3) relativeDirection * initialDistance;
-            rb.velocity = relativeDirection.normalized * rb.velocity.magnitude;
+            rb.velocity = relativeDirection.normalized * gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
         }
 
         IGameObjectProcessor.Process(clone, _processors);

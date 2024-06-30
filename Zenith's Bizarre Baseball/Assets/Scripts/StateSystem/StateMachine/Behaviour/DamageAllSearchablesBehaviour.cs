@@ -6,7 +6,7 @@ using System.Linq;
 public class DamageAllSearchablesBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] private float damage = 1;
-    [SerializeField] private SearchableType searchableType;
+    [SerializeField] private Identifiable searchableType;
     List<HealthHandler> healthHandlers;
 
     private void Awake() 

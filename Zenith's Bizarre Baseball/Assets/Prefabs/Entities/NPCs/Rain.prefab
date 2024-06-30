@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 884065834706555412}
   - component: {fileID: 862076959025148249}
   m_Layer: 0
-  m_Name: ShopTalking -> False
+  m_Name: ShopTalking -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,12 +663,178 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upgradeDatas:
-  - _upgrade: {fileID: 11400000, guid: ff7996154dfabc1489b65b6429821a53, type: 2}
-    _chance: 0
-  - _upgrade: {fileID: 11400000, guid: 124f7942584733e4b9db07b95d72d1d0, type: 2}
+  - _upgrade: {fileID: 11400000, guid: c848a0d5ac32ef74d976633f7d580167, type: 2}
+    _chance: 0.197
+    _cost:
+      operation: Pay (broken == 0)
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list:
+        - Key: broken
+          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list:
+        - Key: Pay
+          Value:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+                m_TargetAssemblyTypeName: Int, Assembly-CSharp
+                m_MethodName: SubtractValue
+                m_Mode: 3
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 10
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+  - _upgrade: {fileID: 11400000, guid: 809da6417391da54baa49b1b7a58335f, type: 2}
     _chance: 0.619
-  - _upgrade: {fileID: 11400000, guid: e3096f26d4c62114b8a3f8c3573438b5, type: 2}
+    _cost:
+      operation: Pay (broken == 0)
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list:
+        - Key: broken
+          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list:
+        - Key: Pay
+          Value:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+                m_TargetAssemblyTypeName: Int, Assembly-CSharp
+                m_MethodName: SubtractValue
+                m_Mode: 3
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 10
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+  - _upgrade: {fileID: 11400000, guid: 819858ea479597140b592755e43c2ffc, type: 2}
     _chance: 0.448
+    _cost:
+      operation: Pay (broken == 0)
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list:
+        - Key: broken
+          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list:
+        - Key: Pay
+          Value:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+                m_TargetAssemblyTypeName: Int, Assembly-CSharp
+                m_MethodName: SubtractValue
+                m_Mode: 3
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 10
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+  - _upgrade: {fileID: 11400000, guid: 4290fa9c81831684498e44bdb0b55fe4, type: 2}
+    _chance: 0.061
+    _cost:
+      operation: Pay (broken == 0)
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list:
+        - Key: broken
+          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list:
+        - Key: Pay
+          Value:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+                m_TargetAssemblyTypeName: Int, Assembly-CSharp
+                m_MethodName: SubtractValue
+                m_Mode: 3
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 10
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
   _numberOfUpgrades:
     operation: 3
     _debug: 0

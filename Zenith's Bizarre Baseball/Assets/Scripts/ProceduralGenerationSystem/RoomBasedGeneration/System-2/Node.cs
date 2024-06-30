@@ -182,6 +182,7 @@ public class Node : MonoBehaviour
         else
         {
             node.SetAccess(GetOppositeAccess(gate.Access));
+            _generator.Nodes.Add(node);
         }
 
         return result;

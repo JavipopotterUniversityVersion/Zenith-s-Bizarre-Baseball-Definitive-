@@ -99,6 +99,7 @@ MonoBehaviour:
     _appearCondition:
       operation: 
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -558,6 +559,7 @@ MonoBehaviour:
   _processor:
     operation: 4
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -582,6 +584,7 @@ MonoBehaviour:
     _waitTime:
       operation: 0,1
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -694,6 +697,7 @@ MonoBehaviour:
   _processor:
     operation: 20
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -718,6 +722,7 @@ MonoBehaviour:
     _waitTime:
       operation: 0,15
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -783,7 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _found: 0
-  _targetSearchableType: 0
+  _targetSearchableType: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
   _onTargetFound:
     m_PersistentCalls:
       m_Calls:
@@ -810,7 +815,7 @@ GameObject:
   - component: {fileID: 5385918037966702934}
   - component: {fileID: 7664565368844729104}
   m_Layer: 0
-  m_Name: Delay Behaviour 1s
+  m_Name: Delay  1s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,6 +851,7 @@ MonoBehaviour:
   _delayTime:
     operation: 1
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -865,6 +871,7 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+  _behaviourName: 
   behaviours:
   - target: {fileID: 614960597026203835}
   - target: {fileID: 5428568280616631277}
@@ -915,6 +922,7 @@ MonoBehaviour:
   _processor:
     operation: right (left (0 Random 1 > 0.5) == 0) + 1
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -1121,7 +1129,7 @@ GameObject:
   - component: {fileID: 303308297769294187}
   - component: {fileID: 4679536516450751862}
   m_Layer: 0
-  m_Name: Delay Behaviour 2,5s
+  m_Name: Delay  2,5s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,6 +1166,7 @@ MonoBehaviour:
   _delayTime:
     operation: 2,5
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -1177,6 +1186,7 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+  _behaviourName: 
   behaviours:
   - target: {fileID: 2749883884076777464}
 --- !u!1 &3214512643993592448
@@ -1398,6 +1408,7 @@ MonoBehaviour:
     _appearCondition:
       operation: 
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -1482,6 +1493,7 @@ MonoBehaviour:
   _timeProcessor:
     operation: input
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -1804,7 +1816,7 @@ GameObject:
   - component: {fileID: 68026472807343542}
   - component: {fileID: 6552948624495790590}
   m_Layer: 6
-  m_Name: Delay Behaviour 0,5s
+  m_Name: Delay  0,5s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1840,6 +1852,7 @@ MonoBehaviour:
   _delayTime:
     operation: 0,5
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -1859,6 +1872,7 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+  _behaviourName: 
   behaviours:
   - target: {fileID: 1761406347751697172}
 --- !u!1 &4096076324347677486
@@ -1909,6 +1923,7 @@ MonoBehaviour:
   _timeProcessor:
     operation: input
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2050,6 +2065,7 @@ MonoBehaviour:
   _processor:
     operation: 0 Random 360
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2084,6 +2100,7 @@ MonoBehaviour:
   _x:
     operation: -15 Random 15
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2106,6 +2123,7 @@ MonoBehaviour:
   _y:
     operation: -15 Random 15
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2172,6 +2190,7 @@ MonoBehaviour:
   _processor:
     operation: 8
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2196,6 +2215,7 @@ MonoBehaviour:
     _waitTime:
       operation: 0,05
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -2296,6 +2316,7 @@ MonoBehaviour:
   _timeProcessor:
     operation: input
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2422,6 +2443,7 @@ MonoBehaviour:
   _processor:
     operation: 20
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2446,6 +2468,7 @@ MonoBehaviour:
     _waitTime:
       operation: (0,2) / (time+0,5)
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -2479,7 +2502,7 @@ GameObject:
   - component: {fileID: 8226010917801539363}
   - component: {fileID: 1950352992602631258}
   m_Layer: 0
-  m_Name: Delay Behaviour 4,15s
+  m_Name: Delay  4,15s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2516,6 +2539,7 @@ MonoBehaviour:
   _delayTime:
     operation: 4,15
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2535,6 +2559,7 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+  _behaviourName: 
   behaviours:
   - target: {fileID: 852495330895591349}
 --- !u!1 &4998874920978037611
@@ -2796,7 +2821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e5894b0f464ca4384f0c1091c42b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchableType: 1
+  identifiableType: {fileID: 11400000, guid: b2773c4c5a644e0488162436b497d49a, type: 2}
 --- !u!1 &6003652093901094806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,6 +2939,7 @@ MonoBehaviour:
   _processor:
     operation: 20
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -2938,6 +2964,7 @@ MonoBehaviour:
     _waitTime:
       operation: 0,05
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -3005,6 +3032,7 @@ MonoBehaviour:
   _timeProcessor:
     operation: input
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -3134,7 +3162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _found: 0
-  _targetSearchableType: 0
+  _targetSearchableType: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
   _onTargetFound:
     m_PersistentCalls:
       m_Calls:
@@ -3497,6 +3525,7 @@ MonoBehaviour:
   _processor:
     operation: 20
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -3521,6 +3550,7 @@ MonoBehaviour:
     _waitTime:
       operation: 0
       _debug: 0
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -3732,7 +3762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _found: 0
-  _targetSearchableType: 0
+  _targetSearchableType: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
   _onTargetFound:
     m_PersistentCalls:
       m_Calls:
@@ -3978,6 +4008,7 @@ MonoBehaviour:
   _timeProcessor:
     operation: input
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -4101,6 +4132,7 @@ MonoBehaviour:
   _radiusProcessor:
     operation: input
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -4126,6 +4158,7 @@ MonoBehaviour:
   _multiplierProcessor:
     operation: input
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:

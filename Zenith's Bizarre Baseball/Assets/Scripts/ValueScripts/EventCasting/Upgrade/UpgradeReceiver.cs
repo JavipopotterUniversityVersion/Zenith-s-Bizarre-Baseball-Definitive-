@@ -10,6 +10,7 @@ public class UpgradeReceiver : MonoBehaviour
     [SerializeField] UnityEvent<string> _onReceiveName = new UnityEvent<string>();
     [SerializeField] UnityEvent<string> _onReceiveDescription = new UnityEvent<string>();
     [SerializeField] UnityEvent<UnityEngine.Sprite> _onReceiveIcon = new UnityEvent<UnityEngine.Sprite>();
+    [SerializeField] UnityEvent<ObjectProcessor> _onReceiveCost = new UnityEvent<ObjectProcessor>();
 
     [Header("RESULT EVENT")][Space(3)]
     [SerializeField] TrueFalseEvents _eventByUpgradeResult;
@@ -20,6 +21,8 @@ public class UpgradeReceiver : MonoBehaviour
         _upgrade = upgrade;
         UpdateData();
     }
+
+    public void SetCost(ObjectProcessor cost) => _onReceiveCost.Invoke(cost);
 
     public void UpdateData()
     {

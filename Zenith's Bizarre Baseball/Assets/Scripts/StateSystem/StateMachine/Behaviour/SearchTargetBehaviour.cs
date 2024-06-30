@@ -7,7 +7,7 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
 {
     [SerializeField] bool _found = false;
     TargetHandler _targetHandler;
-    [SerializeField] SearchableType _targetSearchableType;
+    [SerializeField] Identifiable _targetSearchableType;
     [SerializeField] UnityEvent<Transform> _onTargetFound = new UnityEvent<Transform>();
 
     private void Awake() {
@@ -27,9 +27,9 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
 
     public bool CheckCondition() => _found;
 
-    public void SetTargetSearchable(string type)
+    public void SetTargetSearchable(Identifiable type)
     {
-        _targetSearchableType = (SearchableType) System.Enum.Parse(typeof(SearchableType), type);
+        _targetSearchableType = type;
         _found = false;
     }
 

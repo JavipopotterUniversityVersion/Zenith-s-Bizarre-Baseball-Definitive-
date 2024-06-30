@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class FloatReceiver : MonoBehaviour
 {
@@ -31,15 +32,16 @@ public class FloatReceiver : MonoBehaviour
 [Serializable]
 public struct ObjectFloatEvent
 {
-    [SerializeField] ObjectProcessor _processor;
+    [FormerlySerializedAs("_processor")]
+    [SerializeField] ObjectProcessor _condition;
     [SerializeField] UnityEvent<float> _event;
 
-    public readonly void Subscribe(UnityAction action) => _processor.Subscribe(action);
-    public readonly void Unsubscribe(UnityAction action) => _processor.Unsubscribe(action);
+    public readonly void Subscribe(UnityAction action) => _condition.Subscribe(action);
+    public readonly void Unsubscribe(UnityAction action) => _condition.Unsubscribe(action);
 
     public readonly void Invoke(float input)
     {
-        if(_processor.ResultBool(input)) _event.Invoke(input);
+        if(_condition.ResultBool(input)) _event.Invoke(input);
     }
 }
 

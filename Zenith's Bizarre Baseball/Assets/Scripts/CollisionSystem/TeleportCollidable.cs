@@ -14,7 +14,7 @@ public class TeleportCollidable : ICollidable, IBehaviour, IGameObjectProcessor
 
     public override void OnCollide(Collider2D collider)
     {
-        if(targetTransform == null) targetTransform = collider.transform;
+        targetTransform = collider.transform;
         targetTransform.position = teleportPoint.position;
     }
 

@@ -8,6 +8,7 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
     [SerializeField] bool _found = false;
     TargetHandler _targetHandler;
     [SerializeField] Identifiable _targetSearchableType;
+    [SerializeField] int _searchableIndex = 0;
     [SerializeField] UnityEvent<Transform> _onTargetFound = new UnityEvent<Transform>();
 
     private void Awake() {
@@ -18,7 +19,7 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
     {
         if (_found) return;
 
-        Transform target = SearchManager.Instance.GetClosestSearchable(transform.position, _targetSearchableType);
+        Transform target = SearchManager.Instance.GetClosestSearchable(transform.position, _targetSearchableType, _searchableIndex);
         _onTargetFound.Invoke(target);
 
         _targetHandler.SetTarget(target);

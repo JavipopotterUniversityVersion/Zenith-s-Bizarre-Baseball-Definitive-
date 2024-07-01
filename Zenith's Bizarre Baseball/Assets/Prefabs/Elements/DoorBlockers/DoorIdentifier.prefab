@@ -29,11 +29,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5014796101601426549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.035003662, y: -1.5618362, z: -0.52519864}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 13449931920371832}
+  m_Father: {fileID: 2878672728922494767}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &3552427489253270438
@@ -234,21 +234,9 @@ MonoBehaviour:
   onVerifyIdentity:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8939417359256450313}
-        m_TargetAssemblyTypeName: TileBlockHandler, Assembly-CSharp
-        m_MethodName: SetTiles
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 906927097946386195}
-        m_TargetAssemblyTypeName: TileBlockHandler, Assembly-CSharp
-        m_MethodName: SetTiles
+      - m_Target: {fileID: 3047318507980236269}
+        m_TargetAssemblyTypeName: RandomBehaviourBehaviour, Assembly-CSharp
+        m_MethodName: ExecuteBehaviour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -258,13 +246,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7358963637580133166}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onFailIdentity:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3047318507980236269}
-        m_TargetAssemblyTypeName: RandomBehaviourBehaviour, Assembly-CSharp
-        m_MethodName: ExecuteBehaviour
-        m_Mode: 1
+      - m_Target: {fileID: 7358963637580133166}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -302,11 +302,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6732093459984188930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.035003662, y: -1.5618362, z: -0.52519864}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 13449931920371832}
+  m_Father: {fileID: 2878672728922494767}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &7870013921245033294
@@ -463,8 +463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6732093459984188931}
-  - {fileID: 5255027721402851136}
+  - {fileID: 2878672728922494767}
   m_Father: {fileID: 6732093459677803819}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -487,3 +486,36 @@ MonoBehaviour:
       - {fileID: 6732093459984188930}
       - {fileID: 5014796101601426549}
     _probability: 1
+--- !u!1 &7520127032907884506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2878672728922494767}
+  m_Layer: 0
+  m_Name: Set1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2878672728922494767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7520127032907884506}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.035003662, y: -0.56183624, z: -0.52519864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6732093459984188931}
+  - {fileID: 5255027721402851136}
+  m_Father: {fileID: 13449931920371832}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

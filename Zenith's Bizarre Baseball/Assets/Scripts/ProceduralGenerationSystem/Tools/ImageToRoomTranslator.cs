@@ -41,12 +41,14 @@ public class ImageToRoomTranslator : MonoBehaviour
 
                         Quaternion rotation = Quaternion.Euler(0, 0, prefabData.prefabSettings[color].rotation);
 
-                        GameObject obj = PrefabUtility.InstantiatePrefab(prefabData.Prefab, prefabData.tilemap.transform) as GameObject;
+                        #if UNITY_EDITOR
+                            GameObject obj = PrefabUtility.InstantiatePrefab(prefabData.Prefab, prefabData.tilemap.transform) as GameObject;
 
-                        prefabData.prefabSettings[color].Process(obj);
-                        obj.transform.SetPositionAndRotation(position, rotation);
+                            prefabData.prefabSettings[color].Process(obj);
+                            obj.transform.SetPositionAndRotation(position, rotation);
 
-                        _objects.Add(obj);
+                            _objects.Add(obj);
+                        #endif
                     }
                 }
 

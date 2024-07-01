@@ -40,23 +40,16 @@ public class SearchManager : MonoBehaviour
         searchables.Remove(searchable);
     }
 
-    public Transform GetClosestSearchable(Vector3 position, Identifiable searchableType)
+    public Transform GetClosestSearchable(Vector3 position, Identifiable searchableType, int index = 0)
     {
         Transform closest = null;
-        float closestDistance = Mathf.Infinity;
 
-        foreach (Searchable searchable in searchables)
-        {
-            if (searchable.IdentifiableType.DerivesFrom(searchableType))
-            {
-                float distance = Vector3.Distance(position, searchable.transform.position);
-                if (distance < closestDistance)
-                {
-                    closest = searchable.transform;
-                    closestDistance = distance;
-                }
-            }
-        }
+        List<Searchable> searchablesofType = searchables.Where(searchable => searchable.IdentifiableType.DerivesFrom(searchableType)).ToList();
+
+        searchablesofType.Sort((a, b) => Vector3.Distance(a.transform.position, position).CompareTo(Vector3.Distance(b.transform.position, position)));
+
+        if(index >= searchablesofType.Count) closest = searchablesofType[searchablesofType.Count - 1].transform;
+        else closest = searchablesofType[index].transform;
 
         return closest;
     }

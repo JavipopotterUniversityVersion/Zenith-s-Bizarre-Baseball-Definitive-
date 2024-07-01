@@ -8,10 +8,10 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     [SerializeField] AnimationCurve curve;
 
     [SerializeField]
-    float duration = 1f;
+    ObjectProcessor duration;
 
     [SerializeField]
-    float height = 1f;
+    ObjectProcessor height;
     
 
     [SerializeField] bool _random = true;
@@ -23,6 +23,11 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     [Header("Inner Range")]
     [SerializeField] Vector2 innerRangeX;
     [SerializeField] Vector2 innerRangeY;
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, (Vector3)rangeX);
+    }
 
     private void Awake() {
         movementController = GetComponentInParent<MovementController>();
@@ -59,6 +64,8 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     IEnumerator Curve(Vector2 start, Vector2 end)
     {
         float timePassed = 0;
+        float duration = this.duration.Result();
+        float height = this.height.Result();
 
         while (timePassed < duration)
         {

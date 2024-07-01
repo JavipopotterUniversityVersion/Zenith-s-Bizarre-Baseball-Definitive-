@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59904bcb77b256e40bed43c9ec9e98e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counterMultiplier: {fileID: 0}
+  _speedAdder: {fileID: 0}
 --- !u!1 &1100722292288742931
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +377,6 @@ GameObject:
   - component: {fileID: 1149129183314528725}
   - component: {fileID: 5357634515182928792}
   - component: {fileID: 893114879862665561}
-  - component: {fileID: 6933584744045371388}
   - component: {fileID: 7685649373682293575}
   - component: {fileID: 5011197823153750842}
   m_Layer: 11
@@ -464,7 +463,7 @@ MonoBehaviour:
     collidables:
     - {fileID: 893114879862665561}
     - {fileID: 7685649373682293575}
-    - {fileID: 6933584744045371388}
+    - {fileID: 0}
     - {fileID: 1450764734986493869}
     - {fileID: 5011197823153750842}
   - layer:
@@ -557,19 +556,6 @@ MonoBehaviour:
     ToLayer:
       serializedVersion: 2
       m_Bits: 64
---- !u!114 &6933584744045371388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125766025389325077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6486ba464b4528644bd71513d07bca2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: -987043204, guid: e51a746591eb3ea44a7e9ea4344e658c, type: 3}
 --- !u!114 &7685649373682293575
 MonoBehaviour:
   m_ObjectHideFlags: 0

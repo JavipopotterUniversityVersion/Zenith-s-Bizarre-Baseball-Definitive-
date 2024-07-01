@@ -16,6 +16,7 @@ MonoBehaviour:
   _readProcessor:
     operation: input + level * 4
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -32,9 +33,12 @@ MonoBehaviour:
       list: []
     _boolDictionary:
       list: []
+    _eventDictionary:
+      list: []
   onRead:
     m_PersistentCalls:
       m_Calls: []
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  _originalValue: 12

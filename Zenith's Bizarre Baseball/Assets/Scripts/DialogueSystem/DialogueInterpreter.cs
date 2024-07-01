@@ -42,11 +42,13 @@ public class DialogueInterpreter : MonoBehaviour
 
     private void Awake() {
         _dialogueCaster.OnDialogueCast.AddListener(StartDialogue);
+        _dialogueCaster.onStopDialogue.AddListener(StopDialogue);
         _nextLineInput.action.Enable();
     }
 
     private void OnDestroy() {
         _dialogueCaster.OnDialogueCast.RemoveListener(StartDialogue);
+        _dialogueCaster.onStopDialogue.RemoveListener(StopDialogue);
         _nextLineInput.action.Disable();
     }
 
@@ -62,6 +64,12 @@ public class DialogueInterpreter : MonoBehaviour
         onDialogueStart.Invoke();
 
         StartCoroutine(InterpretDialogue(dialogue));
+    }
+
+    public void StopDialogue()
+    {
+        StopAllCoroutines();
+        _dialogueCanvas.SetActive(false);
     }
 
     IEnumerator InterpretDialogue(Dialogue dialogue)

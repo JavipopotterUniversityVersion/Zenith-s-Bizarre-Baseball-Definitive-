@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4008301836978529914}
   m_Father: {fileID: 6771811944007720905}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &564334472977271095
 MonoBehaviour:
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 4208670162537470077}
   - component: {fileID: 5792648437613496633}
   m_Layer: 6
-  m_Name: ArcMovementBehaviour 1s
+  m_Name: ArcMovementBehaviour ObjectProcessors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,8 +375,52 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  duration: 1
-  height: 5
+  duration:
+    operation: 1
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
+  height:
+    operation: 5
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _random: 0
   rangeX: {x: -2, y: 2}
   rangeY: {x: -2, y: 2}
@@ -428,11 +472,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instances:
   - Prefab: {fileID: 944416524606552591, guid: f7a3e8752fae87142b369a3d65fc2df5, type: 3}
-    numberRange: {x: 3, y: 6}
+    numberRange: {x: 1, y: 1}
     Probability: 1
     processor: []
   _angleRange: {x: 0, y: 180}
-  _force: {x: 5, y: 50}
+  _force: {x: 0, y: 0}
   _angularForce: {x: -60, y: 60}
 --- !u!1 &1710039038440991596
 GameObject:
@@ -445,7 +489,7 @@ GameObject:
   - component: {fileID: 7806777374282978421}
   - component: {fileID: 2881396240339288325}
   m_Layer: 6
-  m_Name: Repeat Instance Explosion of GymWeight 1
+  m_Name: Repeat Instance Explosion of GymWeight 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _processor:
-    operation: input
+    operation: 20
     _debug: 0
     _showReferences: 0
     _floatDictionary:
@@ -505,9 +549,9 @@ MonoBehaviour:
   _behavioursToRepeat:
   - _behaviourContainer: {fileID: 1686058756188813604}
     _waitTime:
-      operation: input
+      operation: 0,05
       _debug: 0
-      _showReferences: 0
+      _showReferences: 1
       _floatDictionary:
         list: []
       _intDictionary:
@@ -643,7 +687,7 @@ Transform:
   - {fileID: 4593969312312104416}
   - {fileID: 1186980784089162749}
   m_Father: {fileID: 6771811944007720905}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8995647113784556488
 MonoBehaviour:
@@ -989,6 +1033,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4313636c7671d4a4dac7c755ed145fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3404426549634388078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425847299168645745}
+  - component: {fileID: 3646980522980034027}
+  m_Layer: 0
+  m_Name: StartDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425847299168645745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404426549634388078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7604420630886019161}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3646980522980034027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404426549634388078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef76340760308e242bfc6008bf3a8626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnExecuteBehaviour:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
+        m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
+        m_MethodName: CastDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 69fc83cdc7a4d774fa737d31455077f6, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3536064131911432461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,14 +1196,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateAnimation: Initial
-  onEnterPerformers: []
+  onEnterPerformers:
+  - condition: []
+    behaviourContainers:
+    - {fileID: 3404426549634388078}
   onUpdatePerformers: []
   onExitPerformers: []
   nextStates:
   - conditions:
     - conditionContainer: {fileID: 6492292075108171172}
       negated: 0
-    stateContainer: {fileID: 1032438253987613775}
+    stateContainer: {fileID: 5911208901233518429}
 --- !u!1 &3928102214372414470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1218,7 @@ GameObject:
   - component: {fileID: 5854725495704484453}
   - component: {fileID: 4119903621272605252}
   m_Layer: 6
-  m_Name: At least 5 of Enemy
+  m_Name: At least 2 of Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1151,7 +1257,7 @@ MonoBehaviour:
   size: {x: 144.7, y: 0}
   offset: {x: 0, y: 1.58}
   _thingToDetectName: Enemy
-  minimunColliders: 5
+  minimunColliders: 2
   _gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   overlapType: 1
   _onOverlap:
@@ -1466,6 +1572,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 445868200971330040}
+  - {fileID: 7604420630886019161}
   - {fileID: 1954509633892524003}
   - {fileID: 5304032818459570406}
   m_Father: {fileID: 1238760659078180067}
@@ -2062,6 +2169,51 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+--- !u!1 &5831521069501841362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4646614488795173819}
+  - component: {fileID: 129878973262799288}
+  m_Layer: 6
+  m_Name: Talking -> True
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4646614488795173819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831521069501841362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7604420630886019161}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &129878973262799288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831521069501841362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f479ab40b867d44894b8d2d1746e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: {fileID: 11400000, guid: 91a6d05075e70324785acf26d671f953, type: 2}
 --- !u!1 &5854847053342691073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2277,136 @@ MonoBehaviour:
     - conditionContainer: {fileID: 4442715106855077531}
       negated: 0
     stateContainer: {fileID: 1104755810423949517}
+--- !u!1 &5911208901233518429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7604420630886019161}
+  - component: {fileID: 1020610235351416141}
+  m_Layer: 6
+  m_Name: TalkingState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7604420630886019161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5911208901233518429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1425847299168645745}
+  - {fileID: 4646614488795173819}
+  - {fileID: 8294893841462218242}
+  m_Father: {fileID: 6771811944007720905}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1020610235351416141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5911208901233518429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateAnimation: 
+  onEnterPerformers:
+  - condition: []
+    behaviourContainers:
+    - {fileID: 3404426549634388078}
+  onUpdatePerformers: []
+  onExitPerformers: []
+  nextStates:
+  - conditions:
+    - conditionContainer: {fileID: 5831521069501841362}
+      negated: 1
+    stateContainer: {fileID: 1032438253987613775}
+--- !u!1 &6204706219212652095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8294893841462218242}
+  - component: {fileID: 3397105183802032311}
+  m_Layer: 6
+  m_Name: StopTalking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8294893841462218242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204706219212652095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7604420630886019161}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3397105183802032311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204706219212652095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef76340760308e242bfc6008bf3a8626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnExecuteBehaviour:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 91a6d05075e70324785acf26d671f953, type: 2}
+        m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+        m_MethodName: SetValue
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
+        m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
+        m_MethodName: StopDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6492292075108171172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,32 +2699,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _instances:
-  - _instance: {fileID: 1038751506564599325, guid: c2c0cb8cdedb5ad49b6e53d4757ed2c3, type: 3}
-    _appearCondition:
-      operation: 
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _processors: []
-    _probability: 0.408
   - _instance: {fileID: 1673892643184387185, guid: c252dd4eb7ac8e84081ad03d177e18d3, type: 3}
     _appearCondition:
       operation: 
@@ -2470,16 +2726,9 @@ MonoBehaviour:
     _processors: []
     _probability: 0.572
   _positions:
-  - {x: 3.18, y: 0.85}
-  - {x: -3.27, y: 0.91}
-  - {x: -2.65, y: 2.91}
-  - {x: 2.42, y: 3}
-  - {x: 1.32, y: 4.31}
-  - {x: -1.04, y: 4.31}
-  - {x: -1.04, y: -2.2}
-  - {x: 1.23, y: -2.19}
-  - {x: 2.56, y: -1.34}
-  - {x: -2.43, y: -1.34}
+  - {x: 2.21, y: -1.07}
+  - {x: -2.46, y: -0.99}
+  - {x: -0.04, y: 5.13}
 --- !u!1 &7895284737440914621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2776,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateAnimation: GetDamage
-  onEnterPerformers: []
+  onEnterPerformers:
+  - condition:
+    - conditionContainer: {fileID: 5831521069501841362}
+      negated: 0
+    behaviourContainers:
+    - {fileID: 6204706219212652095}
   onUpdatePerformers: []
   onExitPerformers:
   - condition: []

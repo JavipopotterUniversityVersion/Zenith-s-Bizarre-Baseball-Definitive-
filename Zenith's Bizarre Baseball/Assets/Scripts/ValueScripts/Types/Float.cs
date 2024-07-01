@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using MyBox;
-using UnityEditor.Compilation;
 
 [CreateAssetMenu(fileName = "Float", menuName = "Value/Float")]
 public class Float : ScriptableICondition
@@ -40,6 +39,8 @@ public class Float : ScriptableICondition
     [SerializeField] UnityEvent onValueChanged = new UnityEvent();
     public UnityEvent OnValueChanged => onValueChanged;
 
+    [SerializeField] float _originalValue;
+
     public void SetValue(float value) => Value = value;
 
     public void AddValue(float value) => SetValue(_value + value);
@@ -60,6 +61,8 @@ public class Float : ScriptableICondition
         onRead.RemoveAllListeners();
         onValueChanged.RemoveAllListeners();
     }
+
+    public void ResetValue() => SetRawValue(_originalValue);
 }
 
 

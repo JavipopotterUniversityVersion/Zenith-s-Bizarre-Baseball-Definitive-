@@ -7,6 +7,7 @@ using UnityEngine;
 public class SaveSet : ScriptableObject
 {
     [SerializeField] string _path;
+    public string Path => Application.persistentDataPath + "/" + _path; 
     [SerializeField] SerializableDictionary<string, Float> _floatData;
     [SerializeField] SerializableDictionary<string, Int> _intData;
     [SerializeField] SerializableDictionary<string, Bool> _boolData;
@@ -14,7 +15,7 @@ public class SaveSet : ScriptableObject
     [ContextMenu("Write")]
     public void Write()
     {
-        StreamWriter writer = new StreamWriter(_path);
+        StreamWriter writer = new StreamWriter(Path);
 
         writer.WriteLine("Floats:");
 
@@ -40,10 +41,30 @@ public class SaveSet : ScriptableObject
         writer.Close();
     }
 
+    [ContextMenu("ResetValues")]
+    public void ResetValues()
+    {
+        foreach (KeyValuePair<string, Float> pair in _floatData)
+        {
+            pair.Value.ResetValue();
+        }
+
+        foreach (KeyValuePair<string, Int> pair in _intData)
+        {
+            pair.Value.ResetValue();
+        }
+
+        foreach (KeyValuePair<string, Bool> pair in _boolData)
+        {
+            pair.Value.ResetValue();
+        }
+    }
+
     [ContextMenu("Read")]
     public void Read()
     {
-        StreamReader reader = new StreamReader(_path);
+         string path = Application.persistentDataPath + "/" + _path;
+        StreamReader reader = new StreamReader(path);
         int readType = 0;
 
         while (!reader.EndOfStream)

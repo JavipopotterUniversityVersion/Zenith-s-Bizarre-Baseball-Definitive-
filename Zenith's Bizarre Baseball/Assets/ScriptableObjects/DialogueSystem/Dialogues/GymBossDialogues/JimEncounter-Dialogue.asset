@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6d4a53f21593804e90a7a0640ee1062, type: 3}
-  m_Name: GymBossEncounter-Dialogue
+  m_Name: JimEncounter-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
   - _enter:
@@ -30,24 +30,37 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
+            m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
     lines:
-    - ST(Jim, jimAn, zenithAn)<break>
-    - Who are you? Why is it there a girl in my gym?<jimAn, Idle>
-    - ST(Zenith, zenithAn, jimAn)<break>
-    - I have to go to the subway, I'm seeking for revenge <zenithAn,Idle>
+    - <zenith:default><jim:default><break>
+    - 'ST(Jim, jimAn, zenithAn)Who are you? Why is it there a girl in my gym?<jimAn:
+      Idle>'
+    - ST(Zenith, zenithAn, jimAn)I have to go to the subway, I'm seeking for revenge
+      <zenithAn:Idle>
     - TALK(zenithAn, Would you let me pass please?)
-    - ST(Jim, jimAn. zenithAn)<break>
+    - ST(Jim, jimAn, zenithAn)<break>
     - No, I hate women, they are all b*tches <jimAn:Idle>
     - ST(Zenith, zenithAn, jimAn)<break>
     - 'You meant bitches?
 
-      <zenithAn,Idle>'
-    - ST(Jim, jimAn. zenithAn)<break>
+      <zenithAn:Idle>'
+    - ST(Jim, jimAn, zenithAn)<break>
     - Yeah, now I'll kick you ass <jimAn:Idle>
     - ST(Zenith, zenithAn, jimAn)<break>
     - 'Try it!
 
-      <zenithAn,Idle>'
+      <zenithAn:Idle>'
     _exit:
       condition: []
       _event:
@@ -60,6 +73,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Bool, Assembly-CSharp
         m_MethodName: SetValue
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+        m_MethodName: Enable
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

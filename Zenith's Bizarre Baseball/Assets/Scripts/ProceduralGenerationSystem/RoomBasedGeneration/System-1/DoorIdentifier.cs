@@ -57,5 +57,5 @@ public class DoorIdentifier : MonoBehaviour
         name = name = $"Door {SetPositionAccess()}";
     }
 
-    // private void OnDrawGizmos() => OnValidate();
+    private void OnDrawGizmos() => OnValidate();
 }

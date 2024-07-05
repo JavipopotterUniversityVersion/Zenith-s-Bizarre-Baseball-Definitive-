@@ -30,6 +30,7 @@ public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
             if (random < sum)
             {
                 behaviourUnit.ExecuteBehaviours();
+                if(behaviourUnit.autoRemove) behaviours = behaviours.Where(performer => performer != behaviourUnit).ToArray();
                 return;
             }
         }
@@ -49,6 +50,8 @@ public class PerformerUnit
     public void ExecuteBehaviours() => behaviourPerformer.ExecuteBehaviours();
 
     public void Initialize() => behaviourPerformer.Initialize();
+
+    public bool autoRemove = false;
 
     [SerializeField] [Range(0, 1)] float _probability;
     public float Probability => _probability;

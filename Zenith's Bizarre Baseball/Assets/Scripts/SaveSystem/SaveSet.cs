@@ -41,25 +41,6 @@ public class SaveSet : ScriptableObject
         writer.Close();
     }
 
-    [ContextMenu("ResetValues")]
-    public void ResetValues()
-    {
-        foreach (KeyValuePair<string, Float> pair in _floatData)
-        {
-            pair.Value.ResetValue();
-        }
-
-        foreach (KeyValuePair<string, Int> pair in _intData)
-        {
-            pair.Value.ResetValue();
-        }
-
-        foreach (KeyValuePair<string, Bool> pair in _boolData)
-        {
-            pair.Value.ResetValue();
-        }
-    }
-
     [ContextMenu("Read")]
     public void Read()
     {

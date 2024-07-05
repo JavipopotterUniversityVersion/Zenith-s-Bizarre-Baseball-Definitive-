@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class DataCreator : MonoBehaviour
 {
-    [SerializeField] SaveSet _saveSet;
+    [SerializeField] SaveSet[] _saveSets;
 
     private void Awake()
     {
-        if(!File.Exists(_saveSet.Path))
+        foreach (SaveSet saveSet in _saveSets)
         {
-            File.Create(_saveSet.Path).Close();
-            _saveSet.Write();
+            if(!File.Exists(saveSet.Path)) File.Create(saveSet.Path).Close();
         }
     }
 }

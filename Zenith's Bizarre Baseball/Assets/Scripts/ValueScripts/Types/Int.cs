@@ -39,7 +39,4 @@ public class Int : ScriptableObject
     public void MultiplyValue(int value) => SetValue(Value * value);
 
     public void DivideValue(int value) => SetValue(Value / value);
-
-    [SerializeField] int _originalValue;
-    public void ResetValue() => SetValue(_originalValue);
 }

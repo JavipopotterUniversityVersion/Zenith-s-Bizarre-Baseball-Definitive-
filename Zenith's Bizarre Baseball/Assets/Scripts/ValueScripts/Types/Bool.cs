@@ -21,9 +21,8 @@ public class Bool : ScriptableICondition
         }
     }
 
+    public void SetRawValue(bool value) => _value = value;
+
     public void ToggleValue() => SetValue(!_value);
     public override bool CheckCondition() => _value;
-
-    [SerializeField] bool _originalValue;
-    public void ResetValue() => SetValue(_originalValue);
 }

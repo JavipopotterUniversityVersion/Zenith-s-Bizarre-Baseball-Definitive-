@@ -92,7 +92,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1186564855222229745}
   - component: {fileID: 1074928676087079311}
-  - component: {fileID: 5127061476200529038}
   m_Layer: 7
   m_Name: PlayerActivator
   m_TagString: Untagged
@@ -155,50 +154,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5127061476200529038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742199370375760148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43f8e7a462951246bcf8bdce7875c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: 73910c9f43c301e438ad22805bcd5d1d, type: 2}
-  checkOnAwake: 1
-  _onTrue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5278784841838669180}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: set_layer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5278784841838669180}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: set_layer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9022,17 +8977,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9213680093490472116, guid: a71b130b3b8364344a66ea1c7bbe76cd, type: 3}
   m_PrefabInstance: {fileID: 3936027202395883968}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5278784841838669180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9213680093490472124, guid: a71b130b3b8364344a66ea1c7bbe76cd, type: 3}
-  m_PrefabInstance: {fileID: 3936027202395883968}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9123756145793926770 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5188573643474554802, guid: a71b130b3b8364344a66ea1c7bbe76cd, type: 3}
   m_PrefabInstance: {fileID: 3936027202395883968}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5278784841838669180}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a5e8a2da1fb42047a87f5ec3fd39724, type: 3}

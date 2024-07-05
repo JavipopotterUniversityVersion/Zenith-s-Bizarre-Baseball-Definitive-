@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5989457719749168021}
   - component: {fileID: 1455145129851851031}
   - component: {fileID: -8071011525051105728}
-  - component: {fileID: 3544201081046175498}
   - component: {fileID: 755721579564077804}
   - component: {fileID: 8388297358626018487}
   - component: {fileID: 1124958039221683131}
@@ -83,12 +82,6 @@ MonoBehaviour:
     - {fileID: 1455145129851851031}
     - {fileID: -8071011525051105728}
     - {fileID: 755721579564077804}
-  - layer:
-      serializedVersion: 2
-      m_Bits: 256
-    conditions: []
-    collidables:
-    - {fileID: 3544201081046175498}
   - layer:
       serializedVersion: 2
       m_Bits: 1024
@@ -185,19 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollisions: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
   _targetGameObject: {fileID: 5989457719749168020}
---- !u!114 &3544201081046175498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5989457719749168020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80f6ad3e1783cd49b0d7dca271b06a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deflectMultiplier: {fileID: 11400000, guid: a72dd6ea6c6900e4f95556a0f1a243d0, type: 2}
 --- !u!114 &755721579564077804
 MonoBehaviour:
   m_ObjectHideFlags: 0

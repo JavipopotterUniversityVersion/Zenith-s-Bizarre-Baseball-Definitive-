@@ -11,6 +11,7 @@ public class DoorIdentifier : MonoBehaviour
     private Node _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();
     [SerializeField] UnityEvent onFailIdentity = new UnityEvent();
+    [SerializeField] UnityEvent onIdentifyIdentity = new UnityEvent();
 
     private void Awake() => StartCoroutine(Check());
 
@@ -31,6 +32,7 @@ public class DoorIdentifier : MonoBehaviour
         {
             onFailIdentity?.Invoke();
         }
+        onIdentifyIdentity?.Invoke();
     }
 
     public RoomAccess SetPositionAccess()

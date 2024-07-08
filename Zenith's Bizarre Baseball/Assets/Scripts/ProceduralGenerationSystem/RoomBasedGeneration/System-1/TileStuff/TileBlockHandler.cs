@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class TileBlockHandler : MonoBehaviour, IBehaviour
 {
     [SerializeField] string referenceName = "Walls";
+    [SerializeField] UnityEvent onSetTiles = new UnityEvent();
 
     [ContextMenu("Set Tiles")]
     public void SetTiles()
@@ -18,7 +20,7 @@ public class TileBlockHandler : MonoBehaviour, IBehaviour
             tileBlock.SetTile(targetTilemap);
         }
 
-        gameObject.SetActive(false);
+        onSetTiles?.Invoke();
     }
 
     public void ExecuteBehaviour() => SetTiles();

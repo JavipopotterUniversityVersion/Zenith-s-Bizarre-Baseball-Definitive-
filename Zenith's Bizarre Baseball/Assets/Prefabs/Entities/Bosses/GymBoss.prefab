@@ -2180,7 +2180,7 @@ GameObject:
   - component: {fileID: 4646614488795173819}
   - component: {fileID: 129878973262799288}
   m_Layer: 6
-  m_Name: Talking -> True
+  m_Name: Talking -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2965,6 +2965,7 @@ MonoBehaviour:
       condition: []
       behaviourContainers:
       - {fileID: 3536064131911432461}
+    autoRemove: 0
     _probability: 0.451
   - behaviourPerformer:
       condition:
@@ -2972,7 +2973,9 @@ MonoBehaviour:
         negated: 1
       behaviourContainers:
       - {fileID: 1458475210508138036}
+    autoRemove: 0
     _probability: 0.451
+  _onValidate: 1
 --- !u!1 &8537463195993231155
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,52 +52,7 @@ MonoBehaviour:
       - {fileID: 7115725565900899963}
     autoRemove: 0
     _probability: 0
---- !u!1 &3606725316269078738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3606725316269078740}
-  - component: {fileID: 3606725316269078739}
-  m_Layer: 0
-  m_Name: HasEntered
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3606725316269078740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3606725316269078738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8722741229161952718}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3606725316269078739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3606725316269078738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2554618654cb54a84308023a57b680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 0
-  onValidate: 0
+  _onValidate: 1
 --- !u!1 &7115725565900899963
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +220,7 @@ Transform:
   m_Children:
   - {fileID: 8138876615318724264}
   m_Father: {fileID: 8722741229161952718}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8722741229161952692
 GameObject:
@@ -276,15 +231,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8722741229161952718}
+  - component: {fileID: 279104986373667599}
+  - component: {fileID: 3606725315177313645}
   - component: {fileID: 8722741229161952719}
   - component: {fileID: 8722741229161952688}
   - component: {fileID: 8722741229161952689}
   - component: {fileID: 8722741229161952690}
-  - component: {fileID: 279104986373667599}
-  - component: {fileID: 3606725315177313644}
-  - component: {fileID: 3606725315177313645}
   - component: {fileID: 3453700912683645278}
   - component: {fileID: 3918900209354958636}
+  - component: {fileID: 3606725315177313644}
   m_Layer: 0
   m_Name: RoomEntryCollider
   m_TagString: Untagged
@@ -304,11 +259,74 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3606725316269078740}
   - {fileID: 9139440655675555330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279104986373667599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722741229161952692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterCollidables:
+  - layer:
+      serializedVersion: 2
+      m_Bits: 640
+    conditions: []
+    collidables:
+    - {fileID: 3606725315177313645}
+  OnStayCollidables: []
+  checkDelay: 0.01
+  OnExitCollidables: []
+--- !u!114 &3606725315177313645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722741229161952692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCollideEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 279104986373667599}
+        m_TargetAssemblyTypeName: TriggerHandler, Assembly-CSharp
+        m_MethodName: SetCanCollide
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1320505005780713729}
+        m_TargetAssemblyTypeName: RepeatBehaviour, Assembly-CSharp
+        m_MethodName: ExecuteBehaviour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollideEventWithTransform:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1839735485 &8722741229161952719
 Tilemap:
   m_ObjectHideFlags: 0
@@ -508,93 +526,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &279104986373667599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722741229161952692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterCollidables:
-  - layer:
-      serializedVersion: 2
-      m_Bits: 640
-    conditions:
-    - conditionContainer: {fileID: 3606725316269078738}
-      negated: 1
-    collidables:
-    - {fileID: 3606725315177313645}
-  OnStayCollidables: []
-  checkDelay: 0.01
-  OnExitCollidables: []
---- !u!95 &3606725315177313644
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722741229161952692}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8da42845e0a1d004583f10b1050a03f4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3606725315177313645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722741229161952692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onCollideEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3606725316269078739}
-        m_TargetAssemblyTypeName: TrueCondition, Assembly-CSharp
-        m_MethodName: SetValue
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Open
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1320505005780713729}
-        m_TargetAssemblyTypeName: RepeatBehaviour, Assembly-CSharp
-        m_MethodName: ExecuteBehaviour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onCollideEventWithTransform:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!50 &3453700912683645278
 Rigidbody2D:
   serializedVersion: 4
@@ -640,3 +571,24 @@ CompositeCollider2D:
     m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!95 &3606725315177313644
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722741229161952692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8da42845e0a1d004583f10b1050a03f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

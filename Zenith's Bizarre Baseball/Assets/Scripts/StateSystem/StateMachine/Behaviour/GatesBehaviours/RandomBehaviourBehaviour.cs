@@ -7,6 +7,7 @@ using System.Linq;
 public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] PerformerUnit[] behaviours;
+    [SerializeField] bool _onValidate = true;
 
     private void Awake() {
         foreach (var behaviour in behaviours)
@@ -38,7 +39,7 @@ public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 
     private void OnValidate() 
     {
-        name = "RandomBehaviour";
+        if(_onValidate) name = "RandomBehaviour";
     }
 }
 

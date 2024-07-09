@@ -6,7 +6,7 @@ public class ChildLiberator : MonoBehaviour
 {
     public void LiberateChildren()
     {
-        foreach (LiberableChild child in transform) 
+        foreach (LiberableChild child in GetComponentsInChildren<LiberableChild>(true)) 
         {
             child.transform.SetParent(null);
         }

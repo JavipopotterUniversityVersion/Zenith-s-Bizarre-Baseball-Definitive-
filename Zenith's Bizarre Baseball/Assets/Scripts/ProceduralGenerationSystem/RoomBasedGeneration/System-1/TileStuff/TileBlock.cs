@@ -12,9 +12,9 @@ public class TileBlock : MonoBehaviour
         thisMap = GetComponentInParent<Tilemap>();
     }
 
-    public void SetTile(Tilemap targeTileMap)
+    public void SetTile(Tilemap targetTileMap)
     {
         TileBase tile = thisMap.GetTile(thisMap.WorldToCell(transform.position));
-        targeTileMap.SetTile(targeTileMap.WorldToCell(transform.position), tile);
+        targetTileMap.SetTile(targetTileMap.WorldToCell(transform.position), tile);
     }
 }

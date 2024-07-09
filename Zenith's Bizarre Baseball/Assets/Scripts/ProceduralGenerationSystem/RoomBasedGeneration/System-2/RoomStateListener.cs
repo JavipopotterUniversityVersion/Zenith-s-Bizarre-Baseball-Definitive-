@@ -29,7 +29,8 @@ public class RoomStateListener : MonoBehaviour
         }
     }
 
-    private void OnDestroy() {
-        _roomStateHandler.OnStateChange.RemoveListener(OnStateChange);
-    }
+    private void OnDisable() => UnSubscribe();
+    private void OnDestroy() => UnSubscribe();
+
+    void UnSubscribe() => _roomStateHandler.OnStateChange.RemoveListener(OnStateChange);
 }

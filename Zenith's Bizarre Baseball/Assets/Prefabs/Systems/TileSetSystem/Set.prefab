@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7309261113942278496}
   - component: {fileID: 7499449789347244353}
   - component: {fileID: 5981424107550420649}
+  - component: {fileID: 4802150613374736901}
   m_Layer: 0
   m_Name: Set
   m_TagString: Untagged
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7076b8c8d82e665478839a12b732fe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceName: Floor
+  referenceName: Walls
   onSetTiles:
     m_PersistentCalls:
       m_Calls:
@@ -189,3 +190,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotation: 0
+--- !u!114 &4802150613374736901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4903775323968860779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191d275d060e17440b9ca119bf64a190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -97,6 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d7983e6688cfff4c85470cab78e6655, type: 3}
+--- !u!1 &1746400921543218245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1141351524744223432, guid: 2d7983e6688cfff4c85470cab78e6655, type: 3}
+  m_PrefabInstance: {fileID: 1723351747147419277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2101540790719399972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +109,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6732093459677803816, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732093459677803816, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732093459677803816, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1746400921543218245}
+    - target: {fileID: 6732093459677803816, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732093459677803816, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732093459677803816, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732093459677803816, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
+      propertyPath: onFailIdentity.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6732093459677803818, guid: 4a57871763f0db3429acda69fa6d9a1e, type: 3}
       propertyPath: m_Name
       value: Door East

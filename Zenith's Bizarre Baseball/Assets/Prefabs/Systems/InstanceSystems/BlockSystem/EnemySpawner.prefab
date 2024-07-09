@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5803148837568144973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.070007324, y: -0.80000305, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -98,8 +98,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  size: {x: 31.6, y: 15.18}
-  offset: {x: 15.1, y: 15.82}
+  size: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
   _thingToDetectName: Enemy
   minimunColliders: 1
   _gizmosColor: {r: 1, g: 0.9646237, b: 0, a: 1}
@@ -886,7 +886,8 @@ PrefabInstance:
       propertyPath: globalInstanceUnits.Array.data[1]._probability
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8069366331141747794, guid: e0db630dd2040c344b3c19bb024b9467, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0db630dd2040c344b3c19bb024b9467, type: 3}
 --- !u!4 &5803148838713585080 stripped
 Transform:

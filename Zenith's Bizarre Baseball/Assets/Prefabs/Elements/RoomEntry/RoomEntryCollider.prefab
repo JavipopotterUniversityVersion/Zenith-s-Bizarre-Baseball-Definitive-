@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 3453700912683645278}
   - component: {fileID: 3918900209354958636}
   - component: {fileID: 3606725315177313644}
+  - component: {fileID: 4563130799506178647}
   m_Layer: 0
   m_Name: RoomEntryCollider
   m_TagString: Untagged
@@ -427,7 +428,7 @@ Tilemap:
     m_Data: {r: 2.51281e-40, g: 2.51281e-40, b: 2.51281e-40, a: 2.51281e-40}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.21276498, g: 1, b: 0, a: 0.05490196}
+  m_Color: {r: 0, g: 0.07060099, b: 1, a: 0.35686275}
   m_Origin: {x: -8, y: -8, z: 0}
   m_Size: {x: 30, y: 30, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -472,7 +473,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8722741229161952692}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -592,3 +593,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4563130799506178647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722741229161952692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c574685ccfd6dc540bc9355363de3f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8722741229161952689}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -25,7 +25,7 @@ public class RandomBehaviourBehaviour : MonoBehaviour, IBehaviour
 
         float random = UnityEngine.Random.Range(0, range);
         float sum = 0;
-        foreach (var behaviourUnit in behaviours)
+        foreach (var behaviourUnit in availablePerformers)
         {
             sum += behaviourUnit.Probability;
             if (random < sum)

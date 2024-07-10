@@ -12,6 +12,9 @@ public class HealthHandler : MonoBehaviour, IReadable
     [SerializeField] UnityEvent onGetDamage = new UnityEvent();
     public UnityEvent OnGetDamage => onGetDamage;
 
+    [SerializeField] UnityEvent onHeal = new UnityEvent();
+    public UnityEvent OnHeal => onHeal;
+
     [SerializeField] UnityEvent onDie = new UnityEvent();
     public UnityEvent OnDie => onDie;
 
@@ -45,6 +48,12 @@ public class HealthHandler : MonoBehaviour, IReadable
             CurrentHealth -= damage;
             onGetDamage.Invoke();
         }
+    }
+
+    public void Heal(float healAmount)
+    {
+        CurrentHealth += healAmount;
+        onHeal.Invoke();
     }
 
     public void SetHealthRaw(float health) => _currentHealth = health;

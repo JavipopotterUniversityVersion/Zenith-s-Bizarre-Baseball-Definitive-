@@ -232,6 +232,7 @@ Transform:
   m_Children:
   - {fileID: 703600330841915691}
   - {fileID: 2390616059320285381}
+  - {fileID: 2028639609240376012}
   - {fileID: 7707534808988800171}
   m_Father: {fileID: 7254718051959695927}
   m_RootOrder: 3
@@ -253,6 +254,11 @@ MonoBehaviour:
   - condition: []
     behaviourContainers:
     - {fileID: 8956377895392651561}
+  - condition:
+    - conditionContainer: {fileID: 8512183325306080627}
+      negated: 0
+    behaviourContainers:
+    - {fileID: 1908276553198357756}
   onUpdatePerformers:
   - condition:
     - conditionContainer: {fileID: 5817634499013108898}
@@ -261,6 +267,56 @@ MonoBehaviour:
     - {fileID: 531863811667847930}
   onExitPerformers: []
   nextStates: []
+--- !u!1 &1908276553198357756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028639609240376012}
+  - component: {fileID: 3515503406193231601}
+  m_Layer: 6
+  m_Name: Instantiate Heal-Collectable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028639609240376012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908276553198357756}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5292148239440567782}
+  m_Father: {fileID: 5886324783935629439}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3515503406193231601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908276553198357756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d5a7a541accee48b22275e8c48c93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4897507842077734141, guid: 6be35a7ccfe0c50459551ee786005430, type: 3}
+  velocity: 0
+  rotation: 0
+  _instancePoint: {fileID: 0}
+  _instanceProcessors: []
 --- !u!1 &2332517096679130889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1086,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5886324783935629439}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4336268249422297388
 MonoBehaviour:
@@ -1123,7 +1179,7 @@ GameObject:
   - component: {fileID: 1047468505978225355}
   - component: {fileID: 9006712423488389070}
   m_Layer: 0
-  m_Name: Alive -> True
+  m_Name: Alive -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1324,6 +1380,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthThreshold: 0
+--- !u!1 &8512183325306080627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5292148239440567782}
+  - component: {fileID: 1873749095303714361}
+  m_Layer: 6
+  m_Name: DropProbability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5292148239440567782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512183325306080627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2028639609240376012}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1873749095303714361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512183325306080627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b1cd865b0fdeb43904b14ad26210da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _processor:
+    operation: (0 Random 1) < (f (health/maxHealth))
+    _debug: 0
+    _showReferences: 1
+    _floatDictionary:
+      list:
+      - Key: health
+        Value: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
+      - Key: maxHealth
+        Value: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list:
+      - Key: f
+        Value: {fileID: 11400000, guid: 228419a5d8f6d264f82c78aa72598485, type: 2}
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
+  onValidate: 0
 --- !u!1 &8956377895392651561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1617,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   onDie:
     m_PersistentCalls:
       m_Calls:

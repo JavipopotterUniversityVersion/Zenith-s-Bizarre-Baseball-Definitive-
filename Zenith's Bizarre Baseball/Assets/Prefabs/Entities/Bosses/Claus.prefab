@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 7943310306014342313}
   - component: {fileID: 7083616533323948082}
   m_Layer: 6
-  m_Name: ShopTalking -> True
+  m_Name: Talking -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1720,6 +1720,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -3252,17 +3255,21 @@ MonoBehaviour:
       condition: []
       behaviourContainers:
       - {fileID: 2648457596609904681}
+    autoRemove: 0
     _probability: 0.6
   - behaviourPerformer:
       condition: []
       behaviourContainers:
       - {fileID: 5194980973512869039}
+    autoRemove: 0
     _probability: 0.4
   - behaviourPerformer:
       condition: []
       behaviourContainers:
       - {fileID: 2004654587219193347}
+    autoRemove: 0
     _probability: 0.1
+  _onValidate: 1
 --- !u!1 &8198379996920671352
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,10 +8,10 @@ public class RandomSprite : MonoBehaviour
 {
     [SerializeField] SpriteChance[] _sprites;
 
-    private void Awake() => SetRandonSprite();
+    private void Awake() => SetRandomSprite();
 
     [ContextMenu("Set Random Sprite")]
-    public void SetRandonSprite()
+    public void SetRandomSprite()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = SpriteChance.GetRandomSprite(_sprites);

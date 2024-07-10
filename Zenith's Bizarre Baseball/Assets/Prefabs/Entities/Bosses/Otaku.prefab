@@ -2714,6 +2714,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   onDie:
     m_PersistentCalls:
       m_Calls: []
@@ -4080,12 +4083,15 @@ MonoBehaviour:
       condition: []
       behaviourContainers:
       - {fileID: 6003652093901094806}
+    autoRemove: 0
     _probability: 0.5
   - behaviourPerformer:
       condition: []
       behaviourContainers:
       - {fileID: 6383448108689753359}
+    autoRemove: 0
     _probability: 0.5
+  _onValidate: 1
 --- !u!1 &8710863691128565148
 GameObject:
   m_ObjectHideFlags: 0

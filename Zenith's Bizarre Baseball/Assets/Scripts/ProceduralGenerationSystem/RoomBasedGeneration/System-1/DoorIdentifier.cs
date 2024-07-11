@@ -23,13 +23,11 @@ public class DoorIdentifier : MonoBehaviour
 
     private IEnumerator Check() {
         yield return null;
-        SetPositionAccess();
         _DoorRoom = GetComponentInParent<Node>();
         _DoorRoom.Generator.OnFinishedGeneration.AddListener(CompareFlag);
     }
     private void CompareFlag() 
     {
-        if(roomAccess == 0) roomAccess = PositionRoomAccess();
         if (_DoorRoom.Access.HasFlag(roomAccess))
         {
             onVerifyIdentity?.Invoke();
@@ -39,25 +37,5 @@ public class DoorIdentifier : MonoBehaviour
             onFailIdentity?.Invoke();
         }
         onIdentifyIdentity?.Invoke();
-    }
-
-    public RoomAccess SetPositionAccess()
-    {
-        roomAccess = PositionRoomAccess();
-        return roomAccess;
-    }
-
-    private RoomAccess PositionRoomAccess()
-    {
-        if(transform.up.y > transform.up.x)
-        {
-            if(transform.up.y > 0) return RoomAccess.East;
-            else return RoomAccess.North;
-        }
-        else
-        {
-            if(transform.up.x > 0) return RoomAccess.South;
-            else return RoomAccess.West;
-        }
     }
 }

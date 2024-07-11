@@ -59,7 +59,7 @@ public class Node : MonoBehaviour
 
             for (int i = 0; i < doors.Length; i++)
             {
-                _gates[i] = new Gate(doors[i].transform, doors[i].SetPositionAccess());
+                _gates[i] = new Gate(doors[i].transform, doors[i].RoomAccess);
             }
         }
     }

@@ -5,6 +5,10 @@ using UnityEngine.Tilemaps;
 using System.Linq;
 using MyBox;
 using UnityEditor.Overlays;
+using Unity.VisualScripting.Dependencies.Sqlite;
+using Unity.VisualScripting;
+
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -14,6 +18,7 @@ using UnityEditor;
 [CustomEditor(typeof(RoomDoorEditor))]
 public class RoomDoorEditorEditor : Editor
 {
+    RoomDoorData roomDoor;
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -23,17 +28,30 @@ public class RoomDoorEditorEditor : Editor
 
         Undo.RecordObject(roomDoorEditor, "Undo Room Door Editor");
 
-        if(GUILayout.Button("Create Door"))
+        EditorGUILayout.BeginHorizontal();
+        foreach(RoomAccess access in Enum.GetValues(typeof(RoomAccess)))
         {
-            Create("Door", roomDoorEditor.transform, out GameObject doorObject);
-            RoomDoorData roomDoorData = doorObject.GetComponent<RoomDoorData>();
-            roomDoorData.SetData(roomDoorEditor.TargetMap);
-            roomDoorEditor.roomDoorData.Add(roomDoorData);
+            if(access != RoomAccess.None && GUILayout.Button("Add " + access.ToString() + " Door"))
+            {
+                Create("Door", roomDoorEditor.transform, out GameObject doorObject);
+                RoomDoorData roomDoorData = doorObject.GetComponent<RoomDoorData>();
+                roomDoorData.SetData(roomDoorEditor.TargetMap, access);
+                roomDoorData.name = access.ToString();
+                roomDoorEditor.roomDoorData.Add(roomDoorData);
+            }
         }
+        EditorGUILayout.EndHorizontal();
 
         if(GUILayout.Button("Show All")) ShowAll();
 
-        foreach(RoomDoorData roomDoor in roomDoorEditor.roomDoorData)
+        if(roomDoor == null)
+        {
+            if(roomDoorEditor.roomDoorData.Count > 0)roomDoor = roomDoorEditor.roomDoorData[roomDoorEditor.roomDoorData.Count - 1];
+            if(roomDoor == null) return;
+        }
+
+        EditorGUILayout.BeginHorizontal();
+        
         {
             EditorGUILayout.BeginVertical("box");
             GUI.skin.label.fontSize = 15;
@@ -42,14 +60,14 @@ public class RoomDoorEditorEditor : Editor
 
             EditorGUILayout.BeginHorizontal();
 
-            EditorGUILayout.BeginVertical("box", GUILayout.Width(10), GUILayout.Height(10));
-            if(GUILayout.Button("^", GUILayout.Width(83))) roomDoor.transform.position += Vector3.up * 2f;
-            EditorGUILayout.BeginHorizontal();
-            if(GUILayout.Button("<", GUILayout.Width(40))) roomDoor.transform.position += Vector3.left * 2f;
-            if(GUILayout.Button(">", GUILayout.Width(40))) roomDoor.transform.position += Vector3.right * 2f;
-            EditorGUILayout.EndHorizontal();
-            if(GUILayout.Button("v", GUILayout.Width(83))) roomDoor.transform.position += Vector3.down * 2f;
-            EditorGUILayout.EndVertical();
+            // EditorGUILayout.BeginVertical("box", GUILayout.Width(10), GUILayout.Height(10));
+            // if(GUILayout.Button("^", GUILayout.Width(83))) roomDoor.transform.position += Vector3.up * 2f;
+            // EditorGUILayout.BeginHorizontal();
+            // if(GUILayout.Button("<", GUILayout.Width(40))) roomDoor.transform.position += Vector3.left * 2f;
+            // if(GUILayout.Button(">", GUILayout.Width(40))) roomDoor.transform.position += Vector3.right * 2f;
+            // EditorGUILayout.EndHorizontal();
+            // if(GUILayout.Button("v", GUILayout.Width(83))) roomDoor.transform.position += Vector3.down * 2f;
+            // EditorGUILayout.EndVertical();
 
 
             EditorGUI.BeginChangeCheck();
@@ -59,6 +77,92 @@ public class RoomDoorEditorEditor : Editor
                 roomDoor.DoorIdentifier.SetRoomAccess(access);
                 roomDoor.DoorIdentifier.name = access.ToString();
             }
+            EditorGUILayout.EndHorizontal();
+
+            {
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Success Sets");
+                if(GUILayout.Button("Add Set"))
+                {
+                    Create("Set", roomDoor.transform, out GameObject setObject);
+                    roomDoor.AddSuccessSet(setObject);
+                }
+                EditorGUILayout.EndHorizontal();
+
+                foreach(DoorSetData doorSet in roomDoor.successSets)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    doorSet.DoorSet.map = EditorGUILayout.ObjectField(doorSet.DoorSet.map, typeof(Tilemap), true) as Tilemap;
+                    doorSet.setChance = EditorGUILayout.Slider(doorSet.setChance, 0, 1);
+                    if(GUILayout.Button("Select", GUILayout.Width(70)))
+                    {
+                        ActivateOnly(roomDoor);
+                        ActivateOnlySet(doorSet, roomDoor);
+                    }
+                    if(GUILayout.Button("Remove"))
+                    {
+                        DestroyImmediate(doorSet.DoorSet.gameObject, false);
+                        roomDoor.RemoveSuccessSet(doorSet);
+                        break;
+                    }
+                    EditorGUILayout.EndHorizontal();
+                }
+            }
+
+            EditorGUILayout.Space(40);
+            
+            {
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Failure Sets");
+                if(GUILayout.Button("Add Set"))
+                {
+                    Create("Set", roomDoor.transform, out GameObject setObject);
+                    roomDoor.AddFailureSet(setObject);
+                }
+                EditorGUILayout.EndHorizontal();
+                foreach(DoorSetData doorSet in roomDoor.failureSets)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    doorSet.DoorSet.map = EditorGUILayout.ObjectField(doorSet.DoorSet.map, typeof(Tilemap), true) as Tilemap;
+                    doorSet.setChance = EditorGUILayout.Slider(doorSet.setChance, 0, 1);
+                    if(GUILayout.Button("Select", GUILayout.Width(70)))
+                    {
+                        ActivateOnly(roomDoor);
+                        ActivateOnlySet(doorSet, roomDoor);
+                    }
+                    if(GUILayout.Button("Remove"))
+                    {
+                        DestroyImmediate(doorSet.DoorSet.gameObject, false);
+                        roomDoor.RemoveFailureSet(doorSet);
+                        break;
+                    }
+                    EditorGUILayout.EndHorizontal();
+                }
+            }
+
+            EditorGUILayout.EndVertical();
+        }
+        
+        EditorGUILayout.BeginVertical("box", GUILayout.Width(100));
+        //Door Movement
+        {
+            EditorGUILayout.BeginVertical("box", GUILayout.Width(10), GUILayout.Height(10));
+            if(GUILayout.Button("^", GUILayout.Width(83))) roomDoor.transform.position += Vector3.up * 2f;
+            EditorGUILayout.BeginHorizontal();
+            if(GUILayout.Button("<", GUILayout.Width(40))) roomDoor.transform.position += Vector3.left * 2f;
+            if(GUILayout.Button(">", GUILayout.Width(40))) roomDoor.transform.position += Vector3.right * 2f;
+            EditorGUILayout.EndHorizontal();
+            if(GUILayout.Button("v", GUILayout.Width(83))) roomDoor.transform.position += Vector3.down * 2f;
+            EditorGUILayout.EndVertical();
+        }
+
+        //Door Tabs
+        foreach(RoomDoorData d in roomDoorEditor.roomDoorData)
+        {
+            EditorGUILayout.BeginHorizontal();
+            if(roomDoor == d) GUI.backgroundColor = Color.gray;
+            else GUI.backgroundColor = Color.white;
+            if(GUILayout.Button(d.name, GUILayout.Width(100), GUILayout.MinWidth(10))) roomDoor = d;
 
             GUI.backgroundColor = Color.red;
             if(GUILayout.Button("x", GUILayout.Width(20)))
@@ -69,67 +173,11 @@ public class RoomDoorEditorEditor : Editor
             }
             GUI.backgroundColor = Color.white;
             EditorGUILayout.EndHorizontal();
-
-            EditorGUILayout.Space(20);
-
-
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Success Sets");
-            if(GUILayout.Button("Add Set"))
-            {
-                Create("Set", roomDoor.transform, out GameObject setObject);
-                roomDoor.AddSuccessSet(setObject);
-            }
-
-            EditorGUILayout.EndHorizontal();
-            foreach(DoorSetData doorSet in roomDoor.successSets)
-            {
-                EditorGUILayout.BeginHorizontal();
-                doorSet.DoorSet.map = EditorGUILayout.ObjectField(doorSet.DoorSet.map, typeof(Tilemap), true) as Tilemap;
-                doorSet.setChance = EditorGUILayout.Slider(doorSet.setChance, 0, 1);
-                if(GUILayout.Button("Select", GUILayout.Width(70)))
-                {
-                    ActivateOnly(roomDoor);
-                    ActivateOnlySet(doorSet, roomDoor);
-                }
-                if(GUILayout.Button("Remove"))
-                {
-                    DestroyImmediate(doorSet.DoorSet.gameObject, false);
-                    roomDoor.RemoveSuccessSet(doorSet);
-                    break;
-                }
-                EditorGUILayout.EndHorizontal();
-            }
-            EditorGUILayout.Space(30);
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Failure Sets");
-            if(GUILayout.Button("Add Set"))
-            {
-                Create("Set", roomDoor.transform, out GameObject setObject);
-                roomDoor.AddFailureSet(setObject);
-            }
-            EditorGUILayout.EndHorizontal();
-            foreach(DoorSetData doorSet in roomDoor.failureSets)
-            {
-                EditorGUILayout.BeginHorizontal();
-                doorSet.DoorSet.map = EditorGUILayout.ObjectField(doorSet.DoorSet.map, typeof(Tilemap), true) as Tilemap;
-                doorSet.setChance = EditorGUILayout.Slider(doorSet.setChance, 0, 1);
-                if(GUILayout.Button("Select", GUILayout.Width(70)))
-                {
-                    ActivateOnly(roomDoor);
-                    ActivateOnlySet(doorSet, roomDoor);
-                }
-                if(GUILayout.Button("Remove"))
-                {
-                    DestroyImmediate(doorSet.DoorSet.gameObject, false);
-                    roomDoor.RemoveFailureSet(doorSet);
-                    break;
-                }
-                EditorGUILayout.EndHorizontal();
-            }
-
-            EditorGUILayout.EndVertical();
         }
+        
+
+        EditorGUILayout.EndVertical();
+        EditorGUILayout.EndHorizontal();
     }
 
     void ActivateOnly(RoomDoorData roomDoorData)

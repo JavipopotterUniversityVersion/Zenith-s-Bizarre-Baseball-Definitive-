@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class DoorSet : MonoBehaviour
@@ -8,8 +9,20 @@ public class DoorSet : MonoBehaviour
     [HideInInspector] public Tilemap map;
     [HideInInspector] Color _ownColor;
     [SerializeField] Gradient gradient;
+    [SerializeField] UnityEvent onSet = new UnityEvent();
+    [SerializeField] UnityEvent<Color> onColorItSelf = new UnityEvent<Color>();
 
-    public void ColorItSelf() => map.color = _ownColor;
+    public void ColorItSelf()
+    {
+        map.color = _ownColor;
+        onColorItSelf?.Invoke(_ownColor);
+    }
+
+    public void ResetColor()
+    {
+        map.color = Color.white;
+        onColorItSelf?.Invoke(Color.white);
+    }
 
     public void Initialize()
     {
@@ -34,5 +47,7 @@ public class DoorSet : MonoBehaviour
                 targetMap.SetTile(targetMap.WorldToCell(place), map.GetTile(localPlace));
             }
         }
+
+        onSet?.Invoke();
     }
 }

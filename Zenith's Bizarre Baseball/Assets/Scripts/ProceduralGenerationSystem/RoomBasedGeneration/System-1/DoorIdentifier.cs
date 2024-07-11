@@ -9,6 +9,7 @@ public class DoorIdentifier : MonoBehaviour
     public RoomAccess RoomAccess => roomAccess;
 
     public void SetRoomAccess(RoomAccess roomAccess) => this.roomAccess = roomAccess;
+    bool conected = false;
 
     private Node _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();
@@ -28,7 +29,7 @@ public class DoorIdentifier : MonoBehaviour
     }
     private void CompareFlag() 
     {
-        if (_DoorRoom.Access.HasFlag(roomAccess))
+        if (conected)
         {
             onVerifyIdentity?.Invoke();
         }

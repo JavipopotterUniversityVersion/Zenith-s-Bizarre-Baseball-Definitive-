@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7189183556067101645}
   - component: {fileID: -6082166392112616042}
   - component: {fileID: -2772926361038529217}
+  - component: {fileID: 3297024862475552736}
+  - component: {fileID: 2711174826747974092}
   m_Layer: 0
   m_Name: Set
   m_TagString: Untagged
@@ -77,6 +79,36 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
+  onSet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3297024862475552736}
+        m_TargetAssemblyTypeName: ChildLiberator, Assembly-CSharp
+        m_MethodName: LiberateChildren
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onColorItSelf:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2711174826747974092}
+        m_TargetAssemblyTypeName: ChildColorer, Assembly-CSharp
+        m_MethodName: ColorChildren
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1839735485 &7189183556067101645
 Tilemap:
   m_ObjectHideFlags: 0
@@ -176,3 +208,28 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &3297024862475552736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474527725404317962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6841ab412ae436f458b9820c989bf650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideChildren: 1
+--- !u!114 &2711174826747974092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474527725404317962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12d32e7bd628864f8aa136bd2c71dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

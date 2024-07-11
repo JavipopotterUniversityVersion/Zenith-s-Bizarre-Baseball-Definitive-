@@ -34,13 +34,13 @@ public class RoomDoorData : MonoBehaviour
         _targetMap = targetMap;
     }
 
-    public void AddSuccessSet(GameObject targetObject, Gradient gradient)
+    public void AddSuccessSet(GameObject targetObject)
     {
-        successSets.Add(new DoorSetData(targetObject,gradient));
+        successSets.Add(new DoorSetData(targetObject));
     }
-    public void AddFailureSet(GameObject targetObject, Gradient gradient)
+    public void AddFailureSet(GameObject targetObject)
     {
-        failureSets.Add(new DoorSetData(targetObject,gradient));
+        failureSets.Add(new DoorSetData(targetObject));
     }
 
     public void RemoveSuccessSet(DoorSetData doorSet) => successSets.Remove(doorSet);

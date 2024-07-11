@@ -78,7 +78,7 @@ public class RoomDoorEditorEditor : Editor
             if(GUILayout.Button("Add Set"))
             {
                 Create("Set", roomDoor.transform, out GameObject setObject);
-                roomDoor.AddSuccessSet(setObject, gradient);
+                roomDoor.AddSuccessSet(setObject);
             }
 
             EditorGUILayout.EndHorizontal();
@@ -106,7 +106,7 @@ public class RoomDoorEditorEditor : Editor
             if(GUILayout.Button("Add Set"))
             {
                 Create("Set", roomDoor.transform, out GameObject setObject);
-                roomDoor.AddFailureSet(setObject, gradient);
+                roomDoor.AddFailureSet(setObject);
             }
             EditorGUILayout.EndHorizontal();
             foreach(DoorSetData doorSet in roomDoor.failureSets)
@@ -141,8 +141,6 @@ public class RoomDoorEditorEditor : Editor
             else SceneVisibilityManager.instance.Hide(roomDoor.DoorIdentifier.gameObject, true);
         }
     }
-
-    Gradient gradient => ((RoomDoorEditor)target).gradient;
 
     void ActivateOnlySet(DoorSetData doorSetData, RoomDoorData roomDoorData)
     {
@@ -184,7 +182,6 @@ public class RoomDoorEditorEditor : Editor
 
 public class RoomDoorEditor : MonoBehaviour
 {
-    public Gradient gradient;
     [SerializeField] Tilemap _targetMap;
     public Tilemap TargetMap => _targetMap;
 
@@ -199,11 +196,10 @@ public class DoorSetData
 
     [Range(0,1)] public float setChance;
     
-    public DoorSetData(GameObject target, Gradient gradient)
+    public DoorSetData(GameObject target)
     {
         _doorSet = target.GetComponent<DoorSet>();
         _doorSet.Initialize();
-        _doorSet.ownColor = gradient.Evaluate(UnityEngine.Random.Range(0, 1f));
     }
 
     public static bool GetRandomDoorSet(List<DoorSetData> doorSetDatas, out DoorSet doorSet)

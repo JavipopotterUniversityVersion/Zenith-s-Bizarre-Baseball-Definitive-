@@ -6,15 +6,17 @@ using UnityEngine.Tilemaps;
 public class DoorSet : MonoBehaviour
 {
     [HideInInspector] public Tilemap map;
-    [HideInInspector] public Color ownColor;
+    [HideInInspector] Color _ownColor;
+    [SerializeField] Gradient gradient;
 
-    public void ColorItSelf() => map.color = ownColor;
+    public void ColorItSelf() => map.color = _ownColor;
 
     public void Initialize()
     {
+        _ownColor = gradient.Evaluate(Random.Range(0, 1f));
         map = GetComponent<Tilemap>();
     }
-    
+
     public void Set(Tilemap targetMap)
     {
         if (map == null) 

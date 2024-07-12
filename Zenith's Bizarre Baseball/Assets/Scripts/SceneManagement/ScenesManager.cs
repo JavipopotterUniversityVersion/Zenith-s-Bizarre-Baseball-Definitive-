@@ -11,4 +11,6 @@ public class ScenesManager : ScriptableObject
     public void LoadScene(String sceneName) => SceneManager.LoadScene(sceneName.Value);
     public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     public void Quit() => Application.Quit();
+
+    public static void ReloadSceneStatic() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }

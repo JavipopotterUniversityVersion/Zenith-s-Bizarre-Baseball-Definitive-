@@ -13,7 +13,7 @@ public class UpgradeInstance : ScriptableObject
     UnityEvent onSetUpgrade = new UnityEvent();
     public UnityEvent OnSetUpgrade => onSetUpgrade;
 
-    public void SetUpgrade(UpgradeInstance upgrade) => SetUpgrade(upgrade.Upgrade);
+    public void CopyUpgrade(UpgradeInstance upgrade) => SetUpgrade(upgrade.Upgrade);
     public void SetUpgrade(Upgrade upgrade)
     {
         _upgrade = upgrade;

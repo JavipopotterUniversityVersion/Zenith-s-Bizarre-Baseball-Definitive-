@@ -116,13 +116,14 @@ public class Node : MonoBehaviour
             List<NodeSetting> possibleNodes = nodeSettings;
             // possibleNodes.AddRange(gate.possibleNodes);
 
-            GameObject nodePrefab = NodeSetting.RandomNodeSetting(possibleNodes);
-            if (nodePrefab == null)
+            NodeSetting setting = NodeSetting.RandomNodeSetting(possibleNodes);
+            if (setting == null)
             {
                 CloseNodes();
                 return;
             }
 
+            GameObject nodePrefab = setting.NodePrefab;
             Node node = Instantiate(nodePrefab).GetComponent<Node>();
             node.Generator = _generator;
 
@@ -133,7 +134,8 @@ public class Node : MonoBehaviour
                 if(Application.isEditor) DestroyImmediate(node.gameObject, false);
                 else Destroy(node.gameObject);
 
-                node = Instantiate(NodeSetting.RandomNodeSetting(nodeSettings)).GetComponent<Node>();
+                setting = NodeSetting.RandomNodeSetting(possibleNodes);
+                node = Instantiate(setting.NodePrefab.GetComponent<Node>());
                 node.Generator = _generator;
 
                 j++;
@@ -149,6 +151,8 @@ public class Node : MonoBehaviour
             if (j > 10) continue;
 
             _generator.Nodes.Add(node);
+            setting.TimesAppeared++;
+
             node.SetAccess(ReturnRandomAccess(GetOppositeAccess(gate.RoomAccess)));
             extension--;
 
@@ -284,9 +288,9 @@ public class NodeSetting
     [SerializeField] [Range(0,1)] float maxExtension;
     public float MaxExtension => maxExtension;
 
-    public static GameObject RandomNodeSetting(List<NodeSetting> nodeSettings) => RandomNodeSetting(nodeSettings.ToArray());
+    public static NodeSetting RandomNodeSetting(List<NodeSetting> nodeSettings) => RandomNodeSetting(nodeSettings.ToArray());
 
-    public static GameObject RandomNodeSetting(NodeSetting[] nodeSettings)
+    public static NodeSetting RandomNodeSetting(NodeSetting[] nodeSettings)
     {
         if(nodeSettings.Length == 0) return null;
 
@@ -305,8 +309,7 @@ public class NodeSetting
             if(setting._maxNumberOfNodes > 0 && setting.TimesAppeared >= setting.MaxNumberOfNodes) continue;
             if(randomValue <= currentProbability)
             {
-                setting._timesAppeared++;
-                return setting._nodePrefab;
+                return setting;
             }
         }
 
@@ -330,6 +333,18 @@ public class Limit
         _min = min;
         _max = max;
         this.color = color;
+    }
+
+    public void SetLimits(Transform min, Transform max)
+    {
+        _min = min;
+        _max = max;
+    }
+
+    public void CopyLimits(Limit otherLimit)
+    {
+        _min.localPosition = otherLimit.Min.localPosition;
+        _max.localPosition = otherLimit.Max.localPosition;
     }
 
     public bool Overlaps(Limit otherLimit)

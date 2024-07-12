@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.Events;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class NodeGenerator : MonoBehaviour
 {
@@ -51,8 +52,8 @@ public class NodeGenerator : MonoBehaviour
     {
         foreach(NodeSetting setting in _nodeSettings)
         {
-            int i = 0;
-            while(setting.AppearedRequiredTimes == false && i <= 10)
+            int a = 0;
+            while(setting.AppearedRequiredTimes == false && a <= 10)
             {
                 List<Node> _nodesWithRequiredExtension = 
                 _nodes.Where(n => (float) n.ExtensionIndex / Node.largestBranch >= setting.MinExtension
@@ -65,6 +66,7 @@ public class NodeGenerator : MonoBehaviour
                 }
 
                 Node randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
+                int i = 0;
 
                 while(randomNode.TryPlaceNode(setting.NodePrefab.gameObject) == false && i < 10)
                 {
@@ -72,9 +74,18 @@ public class NodeGenerator : MonoBehaviour
                     i++;
                 }
 
+
                 if(i >= 10) Debug.LogError("Could not place the required node " + setting.NodePrefab.name);
                 else setting.TimesAppeared++;
+
+                a++;
             }
+        }
+
+        if(_nodes.Count < Extension)
+        {
+            ScenesManager.ReloadSceneStatic();
+            return null;
         }
 
         return Task.CompletedTask;

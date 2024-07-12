@@ -1218,6 +1218,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: ignoreRoomExtension
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: _doors.Array.data[0]
       value: 
       objectReference: {fileID: 7119956471596984701}
@@ -1277,6 +1281,10 @@ PrefabInstance:
       propertyPath: _doors.Array.data[14]
       value: 
       objectReference: {fileID: 3724901261431082266}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: nodeSettings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: _limits.Array.data[0]._max
       value: 
@@ -1413,6 +1421,22 @@ PrefabInstance:
       propertyPath: _gates.Array.data[4]._transform
       value: 
       objectReference: {fileID: 3555222961555850989}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: nodeSettings.Array.data[0]._nodePrefab
+      value: 
+      objectReference: {fileID: 4180233374035736351, guid: b432fd3bbe86d3b4c8f5708d7c20ae27, type: 3}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: nodeSettings.Array.data[1]._nodePrefab
+      value: 
+      objectReference: {fileID: 6466039774404321964, guid: 131980dfe031f2943911a4df7c9e34d3, type: 3}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: nodeSettings.Array.data[0]._probability
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: nodeSettings.Array.data[1]._probability
+      value: 0.267
+      objectReference: {fileID: 0}
     - target: {fileID: 2440556980454786424, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: m_RootOrder
       value: 3

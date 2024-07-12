@@ -11,6 +11,7 @@ public class DoorSet : MonoBehaviour
     [SerializeField] Gradient gradient;
     [SerializeField] UnityEvent onSet = new UnityEvent();
     [SerializeField] UnityEvent<Color> onColorItSelf = new UnityEvent<Color>();
+    [SerializeField] TileBase nullTile;
 
     public void ColorItSelf()
     {
@@ -44,7 +45,10 @@ public class DoorSet : MonoBehaviour
             Vector3 place = map.CellToWorld(localPlace);
             if (map.HasTile(localPlace)) 
             {
-                targetMap.SetTile(targetMap.WorldToCell(place), map.GetTile(localPlace));
+                TileBase tile = map.GetTile(localPlace);
+                if (tile == nullTile) tile = null;
+
+                targetMap.SetTile(targetMap.WorldToCell(place), tile);
             }
         }
 

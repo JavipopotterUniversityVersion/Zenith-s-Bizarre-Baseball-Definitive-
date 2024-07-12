@@ -53,9 +53,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.038446426}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8139744
 --- !u!95 &2387468373571430684
 Animator:
   serializedVersion: 5
@@ -203,7 +203,7 @@ MonoBehaviour:
   OnEnterCollidables:
   - layer:
       serializedVersion: 2
-      m_Bits: 128
+      m_Bits: 640
     conditions: []
     collidables:
     - {fileID: 2387468373571430685}
@@ -397,6 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2387468374121130091}
   - component: {fileID: 2387468374121130090}
+  - component: {fileID: 2344662870091606317}
   m_Layer: 0
   m_Name: OnCollect
   m_TagString: Untagged
@@ -450,6 +451,45 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UpgradeReceiver, Assembly-CSharp
         m_MethodName: GetUpgrade
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2344662870091606317}
+        m_TargetAssemblyTypeName: UpgradeClassContainer, Assembly-CSharp
+        m_MethodName: CallUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2344662870091606317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387468374121130088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c3dc559c81d5c4d9e96fde465a58d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onCallUpgrade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 777f44766303449418caefbc6ffdc5d7, type: 2}
+        m_TargetAssemblyTypeName: UpgradeInstance, Assembly-CSharp
+        m_MethodName: SetUpgrade
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -681,6 +721,21 @@ MonoBehaviour:
   _onReceiveCost:
     m_PersistentCalls:
       m_Calls: []
+  _onReceiveUpgrade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2344662870091606317}
+        m_TargetAssemblyTypeName: UpgradeClassContainer, Assembly-CSharp
+        m_MethodName: SetUpgrade
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _eventByUpgradeResult:
     _success:
       m_PersistentCalls:

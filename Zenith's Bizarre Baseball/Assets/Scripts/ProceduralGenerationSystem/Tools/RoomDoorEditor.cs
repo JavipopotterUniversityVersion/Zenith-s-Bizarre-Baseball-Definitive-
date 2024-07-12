@@ -45,6 +45,8 @@ public class RoomDoorEditorEditor : Editor
         }
         EditorGUILayout.EndHorizontal();
 
+        if(GUILayout.Button("Select Main Map")) Select(roomDoorEditor.TargetMap.gameObject);
+
         if(GUILayout.Button("Show All")) ShowAll();
 
         if(selectedDoor == null)
@@ -260,8 +262,8 @@ public class RoomDoorEditorEditor : Editor
             GUI.skin.label.alignment = TextAnchor.MiddleLeft;
             EditorGUILayout.BeginHorizontal();
             
-            if(GUILayout.Button("Select Min")) Selection.activeGameObject = selectedLimit.Min.gameObject;
-            if(GUILayout.Button("Select Max")) Selection.activeGameObject = selectedLimit.Max.gameObject;
+            if(GUILayout.Button("Select Min")) Select(selectedLimit.Min.gameObject);
+            if(GUILayout.Button("Select Max")) Select(selectedLimit.Max.gameObject);
 
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.EndVertical();
@@ -317,7 +319,13 @@ public class RoomDoorEditorEditor : Editor
             else doorSet.DoorSet.ColorItSelf();
         }
 
-        Selection.activeGameObject = doorSetData.DoorSet.gameObject;
+        Select(doorSetData.DoorSet.gameObject);
+    }
+
+    void Select(GameObject objectToSelect)
+    {
+        ActiveEditorTracker.sharedTracker.isLocked = true;
+        Selection.activeGameObject = objectToSelect;
     }
 
     void ShowAll()

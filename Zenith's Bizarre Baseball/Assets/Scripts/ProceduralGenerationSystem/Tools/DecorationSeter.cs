@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Unity.VisualScripting;
+using System.Threading.Tasks;
 
 
 public class DecorationSeter : MonoBehaviour
@@ -15,10 +16,13 @@ public class DecorationSeter : MonoBehaviour
     Tilemap tilemap;
     [SerializeField] List<Limit> decorationLimits = new List<Limit>();
     [SerializeField] Tile extensionTile;
+    [SerializeField] int margin;
+    LimitInstance limitHelper;
 
     private void Start() 
     {
         tilemap = TilemapSingleton.Instance.map;
+        limitHelper = GetComponentInChildren<LimitInstance>();
         nodeGenerator = GetComponent<NodeGenerator>();
         nodeGenerator.OnFinishedGeneration.AddListener(() => StartCoroutine(PutDecoration()));
     }
@@ -26,22 +30,51 @@ public class DecorationSeter : MonoBehaviour
     IEnumerator PutDecoration()
     {
         yield return new WaitForSeconds(0.1f);
-        Decorate();
-    }
 
-    void Decorate()
-    {
+        int i = 0;
+        
         ExtendBounds();
+        List<Vector2> positions = new List<Vector2>();
+
         foreach(var bounds in tilemap.cellBounds.allPositionsWithin)
         {
             Vector2 worldPosition = tilemap.CellToWorld(bounds);
-            if(HasAnAdjacentTile(bounds, 5))
+            if(HasAnAdjacentTile(bounds, margin))
             {
-                if(GetCorrectObject(worldPosition, out GameObject returnedObject))
-                {
-                    decorationLimits.Add(returnedObject.GetComponent<LimitInstance>().InstanceLimit);
-                }
+                AddPositionByOriginDistance(worldPosition, positions);
             }
+            i++;
+        }
+
+        PlaceDecoration(positions);
+    }
+
+    void AddPositionByOriginDistance(Vector2 position, List<Vector2> positions)
+    {
+        for(int i = 0; i < positions.Count; i++)
+        {
+            if(position.magnitude < positions[i].magnitude)
+            {
+                positions.Insert(i, position);
+                return;
+            }
+        }
+
+        positions.Add(position);
+    }
+
+    async void PlaceDecoration(List<Vector2> positions)
+    {
+        int half = positions.Count / 2;
+        for(int i = 0; i < positions.Count; i++)
+        {
+            Vector2 pos = positions[i];
+            if(GetCorrectObject(pos, out GameObject returnedObject))
+            {
+                decorationLimits.Add(returnedObject.GetComponent<LimitInstance>().Limit);
+            }
+            
+            if(i > half) await Task.Delay(1);
         }
     }
 
@@ -50,8 +83,8 @@ public class DecorationSeter : MonoBehaviour
         Vector3Int min = tilemap.cellBounds.min;
         Vector3Int max = tilemap.cellBounds.max;
 
-        tilemap.SetTile(new Vector3Int(min.x - 5, min.y - 5, 0), extensionTile);
-        tilemap.SetTile(new Vector3Int(max.x + 5, max.y + 5, 0), extensionTile);
+        tilemap.SetTile(new Vector3Int(min.x - margin, min.y - margin, 0), extensionTile);
+        tilemap.SetTile(new Vector3Int(max.x + margin, max.y + margin, 0), extensionTile);
     }
 
 
@@ -82,7 +115,7 @@ public class DecorationSeter : MonoBehaviour
         return false;
     }
 
-    bool CanBePlaced(DecorationData decoration, Vector3Int position, ref GameObject returnedObject)
+    bool CanBePlaced(DecorationData decoration, Vector3Int position)
     {
         Vector2Int size = decoration.size;
 
@@ -94,16 +127,11 @@ public class DecorationSeter : MonoBehaviour
             }
         }
 
-        GameObject deco = Instantiate(decoration.gameObject, tilemap.CellToWorld(position), Quaternion.identity);
-        Limit limit = deco.GetComponent<LimitInstance>().InstanceLimit;
+        LimitInstance decoLimit = decoration.gameObject.GetComponent<LimitInstance>();
+        limitHelper.Limit.CopyLimits(decoLimit.Limit);
+        limitHelper.transform.position = tilemap.CellToWorld(position);
 
-        returnedObject = deco;
-
-        if(Limit.OverlapsInclusive(limit, decorationLimits.ToArray()))
-        {
-            Destroy(deco);
-            return false;
-        }
+        if(Limit.OverlapsInclusive(limitHelper.Limit, decorationLimits.ToArray())) return false;
 
         return true;
     }
@@ -112,14 +140,17 @@ public class DecorationSeter : MonoBehaviour
     {
         DecorationData selectedDecoration = possibleDecorations[UnityEngine.Random.Range(0, possibleDecorations.Length)];
 
-        GameObject obj = null;
-
         int numberOfTries = 0;
-        while(numberOfTries < 3 && CanBePlaced(selectedDecoration, tilemap.WorldToCell(position), ref obj) == false) numberOfTries++;
+        while(numberOfTries < 3 && CanBePlaced(selectedDecoration, tilemap.WorldToCell(position)) == false) numberOfTries++;
 
-        returnedObject = obj;
+        if(numberOfTries < 3)
+        {
+            returnedObject = Instantiate(selectedDecoration.gameObject, position, Quaternion.identity);
+            return true;
+        }
 
-        return numberOfTries < 3;
+        returnedObject = null;
+        return false;
     }
 
     [Serializable]

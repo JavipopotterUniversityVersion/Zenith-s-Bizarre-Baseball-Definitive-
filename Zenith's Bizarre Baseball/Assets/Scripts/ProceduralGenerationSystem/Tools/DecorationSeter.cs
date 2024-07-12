@@ -11,74 +11,121 @@ using Unity.VisualScripting;
 public class DecorationSeter : MonoBehaviour
 {
     [SerializeField] DecorationData[] possibleDecorations;
+    NodeGenerator nodeGenerator;
     Tilemap tilemap;
-    Node room;
     [SerializeField] List<Limit> decorationLimits = new List<Limit>();
+    [SerializeField] Tile extensionTile;
 
     private void Start() 
     {
-        tilemap = GetComponent<GenericReference>().GetReference("Walls") as Tilemap;
-        room = GetComponent<Node>();
-        room.Generator.OnFinishedGeneration.AddListener(() => StartCoroutine(PutDecoration()));
+        tilemap = TilemapSingleton.Instance.map;
+        nodeGenerator = GetComponent<NodeGenerator>();
+        nodeGenerator.OnFinishedGeneration.AddListener(() => StartCoroutine(PutDecoration()));
     }
 
     IEnumerator PutDecoration()
     {
-        yield return new WaitForSeconds(0.01f);
-        Put();
+        yield return new WaitForSeconds(0.1f);
+        Decorate();
     }
 
-    void Put()
+    void Decorate()
     {
-        tilemap.CompressBounds();
+        ExtendBounds();
         foreach(var bounds in tilemap.cellBounds.allPositionsWithin)
         {
             Vector2 worldPosition = tilemap.CellToWorld(bounds);
-            if(Limit.Contains(worldPosition, room.Limits))
+            if(HasAnAdjacentTile(bounds, 5))
             {
-                if(!tilemap.HasTile(bounds))
+                if(GetCorrectObject(worldPosition, out GameObject returnedObject))
                 {
-                    if(GetCorrectObject(worldPosition, out GameObject returnedObject))
-                    {
-                        decorationLimits.Add(returnedObject.GetComponent<LimitInstance>().InstanceLimit);
-                    }
+                    decorationLimits.Add(returnedObject.GetComponent<LimitInstance>().InstanceLimit);
                 }
             }
         }
     }
 
-    public bool GetCorrectObject(Vector2 position, out GameObject returnedObject)
+    void ExtendBounds()
     {
-        GameObject deco = Instantiate(possibleDecorations[UnityEngine.Random.Range(0, possibleDecorations.Length)].gameObject, position, 
-        Quaternion.identity);
+        Vector3Int min = tilemap.cellBounds.min;
+        Vector3Int max = tilemap.cellBounds.max;
 
-        Limit limit = deco.GetComponent<LimitInstance>().InstanceLimit;
+        tilemap.SetTile(new Vector3Int(min.x - 5, min.y - 5, 0), extensionTile);
+        tilemap.SetTile(new Vector3Int(max.x + 5, max.y + 5, 0), extensionTile);
+    }
 
-        int numberOfTries = 0;
-        while(numberOfTries < 3 && Limit.OverlapsInclusive(limit, decorationLimits.ToArray()))
+
+    bool HasAnAdjacentTile(Vector3Int position, int distance = 1)
+    {
+        if(tilemap.HasTile(position)) return false;
+
+        Vector3Int[] directions = new Vector3Int[]
         {
-            Destroy(deco);
+            Vector3Int.up,
+            Vector3Int.down,
+            Vector3Int.left,
+            Vector3Int.right,
+            new Vector3Int(1, 1, 0),
+            new Vector3Int(-1, -1, 0),
+            new Vector3Int(1, -1, 0),
+            new Vector3Int(-1, 1, 0)
+        };
 
-            deco = Instantiate(possibleDecorations[UnityEngine.Random.Range(0, possibleDecorations.Length)].gameObject, position, 
-            Quaternion.identity);
-
-            numberOfTries++;
+        foreach(Vector3Int direction in directions)
+        {
+            for(int i = 1; i <= distance; i++)
+            {
+                if(tilemap.HasTile(position + direction * i)) return true;
+            }
         }
+
+        return false;
+    }
+
+    bool CanBePlaced(DecorationData decoration, Vector3Int position, ref GameObject returnedObject)
+    {
+        Vector2Int size = decoration.size;
+
+        for(int x = 0; x < size.x; x++)
+        {
+            for(int y = 0; y < size.y; y++)
+            {
+                if(tilemap.HasTile(position + new Vector3Int(x, y, 0) * 2)) return false;
+            }
+        }
+
+        GameObject deco = Instantiate(decoration.gameObject, tilemap.CellToWorld(position), Quaternion.identity);
+        Limit limit = deco.GetComponent<LimitInstance>().InstanceLimit;
 
         returnedObject = deco;
 
-        if(numberOfTries >= 3)
+        if(Limit.OverlapsInclusive(limit, decorationLimits.ToArray()))
         {
             Destroy(deco);
             return false;
         }
-        
+
         return true;
+    }
+
+    public bool GetCorrectObject(Vector2 position, out GameObject returnedObject)
+    {
+        DecorationData selectedDecoration = possibleDecorations[UnityEngine.Random.Range(0, possibleDecorations.Length)];
+
+        GameObject obj = null;
+
+        int numberOfTries = 0;
+        while(numberOfTries < 3 && CanBePlaced(selectedDecoration, tilemap.WorldToCell(position), ref obj) == false) numberOfTries++;
+
+        returnedObject = obj;
+
+        return numberOfTries < 3;
     }
 
     [Serializable]
     class DecorationData
     {
         public GameObject gameObject;
+        public Vector2Int size;
     }
 }

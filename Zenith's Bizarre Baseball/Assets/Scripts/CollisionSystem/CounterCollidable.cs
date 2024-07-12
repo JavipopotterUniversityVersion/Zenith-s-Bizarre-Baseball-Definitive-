@@ -11,7 +11,12 @@ public class CounterCollidable : ICollidable
     {
         if (collider.TryGetComponent(out Rigidbody2D rigidbody))
         {
-            rigidbody.velocity =  (rigidbody.velocity.magnitude + _speedAdder.Value) * (collider.transform.position - transform.position).normalized;
+            float force;
+
+            if(rigidbody.velocity.magnitude < _speedAdder.Value) force = _speedAdder.Value;
+            else force = rigidbody.velocity.magnitude + (_speedAdder.Value * 0.5f);
+
+            rigidbody.velocity = force * (collider.transform.position - transform.position).normalized;
         }
     }
 }

@@ -40,6 +40,7 @@ public class Float : ScriptableICondition
     public UnityEvent OnValueChanged => onValueChanged;
 
     public void SetValue(float value) => Value = value;
+    public void SetValue(Float value) => Value = value.Value;
 
     public void AddValue(float value) => SetValue(_value + value);
 

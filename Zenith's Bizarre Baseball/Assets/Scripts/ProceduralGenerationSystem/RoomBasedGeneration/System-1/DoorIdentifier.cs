@@ -9,7 +9,9 @@ public class DoorIdentifier : MonoBehaviour
     public RoomAccess RoomAccess => roomAccess;
 
     public void SetRoomAccess(RoomAccess roomAccess) => this.roomAccess = roomAccess;
-    bool conected = false;
+    
+    public bool conected => connectedDoor != null;
+    public DoorIdentifier connectedDoor;
 
     private Node _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();

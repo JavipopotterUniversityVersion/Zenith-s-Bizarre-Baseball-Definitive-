@@ -11,8 +11,8 @@ public class Node : MonoBehaviour
 {
     NodeGenerator _generator;
     public NodeGenerator Generator {set => _generator = value; get => _generator;}
-    [SerializeField] Gate[] _gates;
-    public Gate[] Gates => _gates;
+    [SerializeField] DoorIdentifier[] _doors;
+    public DoorIdentifier[] Doors => _doors;
 
     [SerializeField] bool ignoreRoomExtension = false;
     public bool IgnoreRoomExtension => ignoreRoomExtension;
@@ -36,6 +36,11 @@ public class Node : MonoBehaviour
     int extensionIndex = 0;
     public int ExtensionIndex => extensionIndex;
 
+    [SerializeField] List<Limit> _limits = new List<Limit>();
+    public List<Limit> LimitsList => _limits;
+
+    public Limit[] Limits => _limits.ToArray();
+
     string[] names = new string[] {"Pepe", "Juan", "Pedro", "Luis", "Carlos", "Jorge", "Ricardo", "Miguel", "Alberto", "Fernando", "Rob", "John", "Mike", "Steve", "Tom", "Jerry", "Rick", "Morty", "Beth", "Summer", "Jerry", "Birdperson", "Tammy", "Squanchy", "Unity", "Mr. Poopybutthole", "Noob Noob", "Scary Terry", "Abradolf Lincler", "Pencilvester", "Photography Raptor", "Crocubot", "Gearhead", "Million Ants", "Trunk People", "Gazorpazorpfield", "Ants in my Eyes Johnson", "Reverse Giraffe", "Hamurai", "Amish Cyborg", "Purge Planet Ruler", "Cromulon", "Gromflomite", "Plutonian", "Zigerion", "Meeseeks", "Cronenberg", "Fart", "Giant Head", "Giant Testicle Monster", "Giant Arm", "Giant Cat", "Giant Beetle", "Giant Spider"};
 
     private void Awake() {
@@ -44,24 +49,19 @@ public class Node : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.magenta;
         foreach(Limit limit in _limits)
         {
+            Gizmos.color = limit.color;
+
+            if(limit.Min.position.x > limit.Max.position.x) limit.Min.position = new Vector2(limit.Max.position.x, limit.Min.position.y);
+            else if(limit.Min.position.y > limit.Max.position.y) limit.Min.position = new Vector2(limit.Min.position.x, limit.Max.position.y);
+
             Gizmos.DrawWireCube(limit.GetCenter(), limit.GetSize());
         }
     }
 
     private void OnValidate() {
-        if(_gates.Length == 0)
-        {
-            DoorIdentifier[] doors = GetComponentsInChildren<DoorIdentifier>();
-            _gates = new Gate[doors.Length];
-
-            for (int i = 0; i < doors.Length; i++)
-            {
-                _gates[i] = new Gate(doors[i].transform, doors[i].RoomAccess);
-            }
-        }
+        _doors = GetComponentsInChildren<DoorIdentifier>();
     }
 
     public void SetAccess(RoomAccess access) => Access = access;
@@ -93,7 +93,10 @@ public class Node : MonoBehaviour
         extensionIndex = _generator.Extension - branchExtension;
         if(extensionIndex > largestBranch) largestBranch = extensionIndex;
 
-        for (int i = 0; i < _gates.Length; i++)
+        List<DoorIdentifier> posibleDoors = _doors.Where(door => !door.conected && Access.HasFlag(door.RoomAccess)).ToList();
+        
+
+        for (int i = 0; i < posibleDoors.Count; i++)
         {
             if(extension <= 0 || branchExtension <= 0)
             {
@@ -108,12 +111,10 @@ public class Node : MonoBehaviour
                 }
             }
             
-            Gate gate = _gates[i];
-
-            if (gate.IsConnected || !Access.HasFlag(gate.Access)) continue;
+            DoorIdentifier gate = posibleDoors[i];
 
             List<NodeSetting> possibleNodes = nodeSettings;
-            possibleNodes.AddRange(gate.possibleNodes);
+            // possibleNodes.AddRange(gate.possibleNodes);
 
             GameObject nodePrefab = NodeSetting.RandomNodeSetting(possibleNodes);
             if (nodePrefab == null)
@@ -140,7 +141,7 @@ public class Node : MonoBehaviour
                 if (j > 10)
                 {
                     Destroy(node.gameObject);
-                    CloseAccess(gate.Access);
+                    CloseAccess(gate.RoomAccess);
                     break;
                 }
             }
@@ -148,7 +149,7 @@ public class Node : MonoBehaviour
             if (j > 10) continue;
 
             _generator.Nodes.Add(node);
-            node.SetAccess(ReturnRandomAccess(GetOppositeAccess(gate.Access)));
+            node.SetAccess(ReturnRandomAccess(GetOppositeAccess(gate.RoomAccess)));
             extension--;
 
             await Task.Delay(100/(branchExtension+1));
@@ -158,15 +159,15 @@ public class Node : MonoBehaviour
 
     void CloseNodes()
     {
-        foreach(Gate gate in _gates)
+        foreach(DoorIdentifier gate in _doors)
         {
-            if(!gate.IsConnected) CloseAccess(gate.Access);
+            if(!gate.conected) CloseAccess(gate.RoomAccess);
         }
     }
 
     public bool TryPlaceNode(GameObject nodePrefab)
     {
-        Gate gate = OpenFirstAvailableGate();
+        DoorIdentifier gate = OpenFirstAvailableGate();
         if(gate == null) return false;
 
         Node node = Instantiate(nodePrefab).GetComponent<Node>();
@@ -177,29 +178,29 @@ public class Node : MonoBehaviour
         if(!result)
         {
             Destroy(node.gameObject);
-            CloseAccess(gate.Access);
+            CloseAccess(gate.RoomAccess);
         }
         else
         {
-            node.SetAccess(GetOppositeAccess(gate.Access));
+            node.SetAccess(GetOppositeAccess(gate.RoomAccess));
             _generator.Nodes.Add(node);
         }
 
         return result;
     }
 
-    Gate OpenFirstAvailableGate()
+    DoorIdentifier OpenFirstAvailableGate()
     {
-        Gate gate = null;
+        DoorIdentifier gate = null;
 
         int i = 0;
-        while(i < _gates.Length && gate == null)
+        while(i < _doors.Length && gate == null)
         {
-            Gate gateToCheck = _gates[i];
-            if (!gateToCheck.IsConnected)
+            DoorIdentifier gateToCheck = _doors[i];
+            if (!gateToCheck.conected)
             { 
                 gate = gateToCheck;
-                OpenAccess(gate.Access);
+                OpenAccess(gate.RoomAccess);
             }
 
             i++;
@@ -216,19 +217,15 @@ public class Node : MonoBehaviour
         return !_generator.CheckIntersecctions(this);
     }
 
-
-    [SerializeField] Limit[] _limits;
-    public Limit[] Limits => _limits;
-
-    public bool ConnectNodes(ref Gate gate)
+    public bool ConnectNodes(ref DoorIdentifier gate)
     {
-        foreach(Gate g in _gates)
+        foreach(DoorIdentifier g in _doors)
         {
-            if(GetOppositeAccess(g.Access) == gate.Access)
+            if(GetOppositeAccess(g.RoomAccess) == gate.RoomAccess)
             {
-                g.ConnectedGate = gate;
-                gate.ConnectedGate = g;
-                Vector3 nodePosition = gate.Transform.position + (transform.position - g.Transform.position);
+                g.connectedDoor = gate;
+                gate.connectedDoor = g;
+                Vector3 nodePosition = gate.transform.position + (transform.position - g.transform.position);
                 transform.position = nodePosition;
                 break;
             }
@@ -252,33 +249,6 @@ public class Node : MonoBehaviour
             default:
                 return RoomAccess.None;
         }
-    }
-}
-
-[Serializable]
-public class Gate
-{
-    [SerializeField] Transform _transform;
-    public Transform Transform => _transform;
-
-    public NodeSetting[] possibleNodes;
-
-    public bool IsConnected => _connectedGate != null;
-
-    [SerializeField] Gate _connectedGate;
-    public Gate ConnectedGate
-    {
-        get => _connectedGate;
-        set => _connectedGate = value;
-    }
-
-    [SerializeField] RoomAccess _access;
-    public RoomAccess Access => _access;
-
-    public Gate(Transform transform, RoomAccess access)
-    {
-        _transform = transform;
-        _access = access;
     }
 }
 
@@ -353,16 +323,31 @@ public class Limit
     [SerializeField] Transform _max;
     public Transform Max => _max;
 
+    public Color color = Color.magenta;
+
+    public Limit(Transform min, Transform max, Color color)
+    {
+        _min = min;
+        _max = max;
+        this.color = color;
+    }
+
     public bool Overlaps(Limit otherLimit)
     {
         return _min.position.x < otherLimit.Max.position.x && _max.position.x > otherLimit.Min.position.x &&
                _min.position.y < otherLimit.Max.position.y && _max.position.y > otherLimit.Min.position.y;
     }
 
-    public bool Contains(Vector2 position)
+    public bool OverlapsInclusive(Limit otherLimit)
     {
-        return _min.position.x < position.x && _max.position.x > position.x &&
-               _min.position.y < position.y && _max.position.y > position.y;
+        return _min.position.x <= otherLimit.Max.position.x && _max.position.x >= otherLimit.Min.position.x &&
+               _min.position.y <= otherLimit.Max.position.y && _max.position.y >= otherLimit.Min.position.y;
+    }
+
+    public bool Contains(Vector2 position, float margin = 0)
+    {
+        return _min.position.x - margin < position.x && _max.position.x + margin > position.x &&
+               _min.position.y - margin < position.y && _max.position.y + margin > position.y;
     }
 
     public Vector3 RandomPosition()
@@ -372,4 +357,41 @@ public class Limit
 
     public Vector2 GetCenter() => (_min.position + _max.position) / 2;
     public Vector2 GetSize() => new Vector2(Mathf.Abs(_max.position.x - _min.position.x), Mathf.Abs(_max.position.y - _min.position.y));
+
+    public static bool Contains(Vector2 position, Limit[] limits, float margin = 0)
+    {
+        foreach(Limit limit in limits)
+        {
+            if(limit.Contains(position, margin)) return true;
+        }
+        return false;
+    }
+
+    public static bool Overlaps(Limit limit, Limit[] limits)
+    {
+        bool value = false;
+        int i = 0;
+
+        while(i < limits.Length && value == false)
+        {
+            value = limit.Overlaps(limits[i]);
+            i++;
+        }
+
+        return value;
+    }
+
+    public static bool OverlapsInclusive(Limit limit, Limit[] limits)
+    {
+        bool value = false;
+        int i = 0;
+
+        while(i < limits.Length && value == false)
+        {
+            value = limit.OverlapsInclusive(limits[i]);
+            i++;
+        }
+
+        return value;
+    }
 }

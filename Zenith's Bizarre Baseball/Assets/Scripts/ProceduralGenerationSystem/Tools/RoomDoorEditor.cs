@@ -19,6 +19,9 @@ using UnityEditor;
 public class RoomDoorEditorEditor : Editor
 {
     RoomDoorData selectedDoor;
+    Limit selectedLimit;
+    string limitName = "Limit";
+
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -208,6 +211,92 @@ public class RoomDoorEditorEditor : Editor
 
         EditorGUILayout.EndVertical();
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginVertical("box");
+        Node node = roomDoorEditor.GetComponentInParent<Node>();
+
+        EditorGUI.BeginChangeCheck();
+
+        if(GUILayout.Button("Create Limit"))
+        {
+            if(roomDoorEditor.limitsContainer == null)
+            {
+                roomDoorEditor.limitsContainer = new GameObject();
+                roomDoorEditor.limitsContainer.transform.parent = node.transform;
+                roomDoorEditor.limitsContainer.transform.position = node.transform.position;
+                roomDoorEditor.limitsContainer.name = "Limits";
+            }
+
+            Create("Limit", roomDoorEditor.limitsContainer.transform, out GameObject limitObject);
+            Create("min", limitObject.transform, out GameObject minObject);
+            Create("max", limitObject.transform, out GameObject maxObject);
+
+            Gradient gradient = new Gradient();
+
+            gradient.SetKeys(new GradientColorKey[] {new GradientColorKey(Color.magenta, 1.0f), new GradientColorKey(Color.cyan, 0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(1.0f, 1.0f) });
+
+            gradient.mode = GradientMode.Blend;
+            Color color = gradient.Evaluate(UnityEngine.Random.value);
+            node.LimitsList.Add(new Limit(minObject.transform, maxObject.transform, color));
+        }
+
+
+        {
+            if(selectedLimit == null)
+            {
+                if(node.LimitsList.Count > 0) selectedLimit = node.LimitsList[node.LimitsList.Count - 1];
+                if(selectedLimit == null)
+                {
+                    EditorGUILayout.EndVertical();
+                    return;
+                }
+            }
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.BeginVertical("box");
+            GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+            GUILayout.Label(limitName);
+            GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+            EditorGUILayout.BeginHorizontal();
+            
+            if(GUILayout.Button("Select Min")) Selection.activeGameObject = selectedLimit.Min.gameObject;
+            if(GUILayout.Button("Select Max")) Selection.activeGameObject = selectedLimit.Max.gameObject;
+
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.EndVertical();
+        }
+
+        {
+            EditorGUILayout.BeginVertical("box", GUILayout.Width(100));
+            for(int i = 0; i < node.LimitsList.Count; i++)
+            {
+                EditorGUILayout.BeginHorizontal();
+                if(selectedLimit == node.LimitsList[i])
+                {
+                    GUI.backgroundColor = Color.gray;
+                    limitName = "Limit " + i;
+                }
+                else GUI.backgroundColor = Color.white;
+                if(GUILayout.Button("Limit " + i, GUILayout.Width(100), GUILayout.MinWidth(10))) selectedLimit = node.LimitsList[i];
+                GUI.backgroundColor = Color.red;
+                if(GUILayout.Button("x", GUILayout.Width(20)))
+                {
+                    GameObject objectToDestroy = node.LimitsList[i].Min.transform.parent.gameObject;
+                    DestroyImmediate(objectToDestroy, false);
+                    node.LimitsList.Remove(node.LimitsList[i]);
+                    break;
+                }
+                GUI.backgroundColor = Color.white;
+                EditorGUILayout.EndHorizontal();
+            }
+            EditorGUILayout.EndVertical();
+        }
+
+        if(EditorGUI.EndChangeCheck()) EditorUtility.SetDirty(node);
+
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.EndVertical();
     }
 
     void ActivateOnly(RoomDoorData roomDoorData)
@@ -263,6 +352,7 @@ public class RoomDoorEditor : MonoBehaviour
     [SerializeField] Tilemap _targetMap;
     public Tilemap TargetMap => _targetMap;
 
+    public GameObject limitsContainer;
     public List<RoomDoorData> roomDoorData;
 }
 

@@ -234,8 +234,7 @@ public class Node : MonoBehaviour
         {
             if(GetOppositeAccess(g.RoomAccess) == gate.RoomAccess)
             {
-                g.connectedDoor = gate;
-                gate.connectedDoor = g;
+                g.ConnectedDoor = gate;
                 Vector3 nodePosition = gate.transform.position + (transform.position - g.transform.position);
                 transform.position = nodePosition;
                 found = true;
@@ -247,7 +246,7 @@ public class Node : MonoBehaviour
 
         if(!CanPlaceNode())
         {
-            gate.connectedDoor = null;
+            gate.ConnectedDoor = null;
             return false;
         }
         else return true;

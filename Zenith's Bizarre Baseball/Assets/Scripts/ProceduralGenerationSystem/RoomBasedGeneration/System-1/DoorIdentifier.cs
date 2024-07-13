@@ -10,8 +10,25 @@ public class DoorIdentifier : MonoBehaviour
 
     public void SetRoomAccess(RoomAccess roomAccess) => this.roomAccess = roomAccess;
     
-    public bool conected => connectedDoor != null;
-    public DoorIdentifier connectedDoor;
+    public bool conected => _connectedDoor != null;
+
+    DoorIdentifier _connectedDoor;
+    public DoorIdentifier ConnectedDoor
+    {
+        get => _connectedDoor;
+        set
+        {
+            if(value != _connectedDoor)
+            {
+                if(_connectedDoor != null) _connectedDoor.SetConnectedDoor(null);
+                if(value != null) value.SetConnectedDoor(this);
+            }
+
+            _connectedDoor = value;
+        }
+    }
+
+    public void SetConnectedDoor(DoorIdentifier door) => _connectedDoor = door;
 
     private Node _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();

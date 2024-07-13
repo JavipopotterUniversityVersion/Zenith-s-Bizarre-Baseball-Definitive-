@@ -180,18 +180,29 @@ public class Node : MonoBehaviour
 
     public bool TryPlaceNode(GameObject nodePrefab)
     {
-        DoorIdentifier gate = OpenFirstAvailableGate();
-        if(gate == null) return false;
+        DoorIdentifier[] _doors = GetAvailableGates();
+        if(_doors.Length == 0) return false;
 
         Node node = Instantiate(nodePrefab).GetComponent<Node>();
         node.Generator = _generator;
 
-        bool result = node.ConnectNodes(ref gate);
+        int i = 0;
+        bool result = false;
+
+        DoorIdentifier gate = _doors[i];
+
+        while(i < _doors.Length && !result)
+        {
+            gate = _doors[i];
+            OpenAccess(gate.RoomAccess);
+            result = node.ConnectNodes(ref gate);
+            i++;
+        }
+
 
         if(!result)
         {
-            node.gameObject.SetActive(false);
-            Generator.unusedNodes.Add(node.gameObject);
+            DumpNode(node);
             CloseAccess(gate.RoomAccess);
         }
         else
@@ -203,24 +214,9 @@ public class Node : MonoBehaviour
         return result;
     }
 
-    DoorIdentifier OpenFirstAvailableGate()
+    DoorIdentifier[] GetAvailableGates()
     {
-        DoorIdentifier gate = null;
-
-        int i = 0;
-        while(i < _doors.Length && gate == null)
-        {
-            DoorIdentifier gateToCheck = _doors[i];
-            if (!gateToCheck.conected)
-            { 
-                gate = gateToCheck;
-                OpenAccess(gate.RoomAccess);
-            }
-
-            i++;
-        }
-
-        return gate;
+        return _doors.Where(door => !door.conected).ToArray();
     }
    
     void CloseAccess(RoomAccess access) => Access &= ~access;
@@ -233,6 +229,7 @@ public class Node : MonoBehaviour
 
     public bool ConnectNodes(ref DoorIdentifier gate)
     {
+        bool found = false;
         foreach(DoorIdentifier g in _doors)
         {
             if(GetOppositeAccess(g.RoomAccess) == gate.RoomAccess)
@@ -241,11 +238,19 @@ public class Node : MonoBehaviour
                 gate.connectedDoor = g;
                 Vector3 nodePosition = gate.transform.position + (transform.position - g.transform.position);
                 transform.position = nodePosition;
+                found = true;
                 break;
             }
         }
 
-        return CanPlaceNode();
+        if(!found) return false;
+
+        if(!CanPlaceNode())
+        {
+            gate.connectedDoor = null;
+            return false;
+        }
+        else return true;
     }
 
     RoomAccess GetOppositeAccess(RoomAccess access)

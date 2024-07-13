@@ -65,6 +65,7 @@ public class DecorationSeter : MonoBehaviour
 
     async void PlaceDecoration(List<Vector2> positions)
     {
+        int half = positions.Count / 2;
         for(int i = 0; i < positions.Count; i++)
         {
             Vector2 pos = positions[i];
@@ -73,7 +74,15 @@ public class DecorationSeter : MonoBehaviour
                 decorationLimits.Add(returnedObject.GetComponent<LimitInstance>().Limit);
             }
             
-            if(i % 8 == 0) await Task.Delay(1);
+            if(i < half)
+            {
+                if(i % 16 == 0) await Task.Delay(1);
+            }
+            else if(i < half * 2)
+            {
+                if(i % 8 == 0) await Task.Delay(1);
+            }
+
         }
     }
 

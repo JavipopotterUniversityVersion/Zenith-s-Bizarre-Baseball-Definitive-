@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine.Events;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using Unity.Mathematics;
 
 public class NodeGenerator : MonoBehaviour
 {
@@ -59,12 +60,14 @@ public class NodeGenerator : MonoBehaviour
     {
         foreach(NodeSetting setting in _nodeSettings)
         {
-            int a = 0;
-            while(setting.AppearedRequiredTimes == false && a <= 10)
+            bool failed = false;
+            while(setting.AppearedRequiredTimes == false && !failed)
             {
                 List<Node> _nodesWithRequiredExtension = 
                 _nodes.Where(n => (float) n.ExtensionIndex / Node.largestBranch >= setting.MinExtension
                 && (float) n.ExtensionIndex / Node.largestBranch <= setting.MaxExtension).ToList();
+
+                Shuffle(_nodesWithRequiredExtension);
 
                 if(_nodesWithRequiredExtension.Count == 0) 
                 {
@@ -72,26 +75,38 @@ public class NodeGenerator : MonoBehaviour
                     _nodesWithRequiredExtension = _nodes;
                 }
 
-                Node randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
                 int i = 0;
 
-                while(randomNode.TryPlaceNode(setting.NodePrefab.gameObject) == false && i < 10)
+                while(i < _nodesWithRequiredExtension.Count && _nodesWithRequiredExtension[i].TryPlaceNode(setting.NodePrefab) == false) i++;
+
+                if(i == _nodesWithRequiredExtension.Count) 
                 {
-                    randomNode = _nodesWithRequiredExtension[Random.Range(0, _nodesWithRequiredExtension.Count)];
-                    i++;
+                    failed = true;
+                    _nodes.Clear();
+                    Debug.LogWarning("Failed to place " + setting.NodePrefab.name + " in any node");
                 }
-
-
-                if(i >= 10) Debug.LogWarning("Could not place the required node " + setting.NodePrefab.name + " at required extension " + setting.MinExtension + " - " + setting.MaxExtension);
-                else setting.TimesAppeared++;
-
-                a++;
+                else
+                {
+                    setting.TimesAppeared++;
+                }
             }
         }
 
         if(!(_nodes.Count < Extension)) DumpNodes();
 
         return Task.CompletedTask;
+    }
+
+    public void Shuffle<T>(IList<T> list)  
+    {  
+        int n = list.Count;  
+        while (n > 1) {  
+            n--;  
+            int k = UnityEngine.Random.Range(0, n + 1);
+            T value = list[k];  
+            list[k] = list[n];  
+            list[n] = value;  
+        }  
     }
 
     async void DumpNodes()

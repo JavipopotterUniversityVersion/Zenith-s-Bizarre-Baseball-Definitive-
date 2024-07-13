@@ -9,7 +9,8 @@ public class MapPaster : MonoBehaviour
     private void Start() 
     {
         Tilemap tilemap = GetComponent<GenericReference>().GetReference("Walls") as Tilemap;
-        GetComponent<Node>().Generator.OnFinishedGeneration.AddListener(() => StartCoroutine(PasteOnMap(tilemap)));
+        Node node = GetComponent<Node>();
+        if(node.Generator != null) node.Generator.OnFinishedGeneration.AddListener(() => StartCoroutine(PasteOnMap(tilemap)));
     }
 
     IEnumerator PasteOnMap(Tilemap tilemap)

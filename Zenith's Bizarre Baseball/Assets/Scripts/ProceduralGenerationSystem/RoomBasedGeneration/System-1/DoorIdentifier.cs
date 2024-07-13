@@ -44,7 +44,10 @@ public class DoorIdentifier : MonoBehaviour
     private IEnumerator Check() {
         yield return null;
         _DoorRoom = GetComponentInParent<Node>();
-        _DoorRoom.Generator.OnFinishedGeneration.AddListener(CompareFlag);
+        if(_DoorRoom.Generator != null)
+        {
+            _DoorRoom.Generator.OnFinishedGeneration.AddListener(CompareFlag);
+        }
     }
     private void CompareFlag() 
     {

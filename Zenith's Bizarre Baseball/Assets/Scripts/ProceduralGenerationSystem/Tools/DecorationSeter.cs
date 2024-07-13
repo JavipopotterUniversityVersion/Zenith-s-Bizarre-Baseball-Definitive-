@@ -146,7 +146,7 @@ public class DecorationSeter : MonoBehaviour
 
     public bool GetCorrectObject(Vector2 position, out GameObject returnedObject)
     {
-        DecorationData selectedDecoration = possibleDecorations[UnityEngine.Random.Range(0, possibleDecorations.Length)];
+        DecorationData selectedDecoration = DecorationData.GetRandomDecoration(possibleDecorations);
 
         int numberOfTries = 0;
         while(numberOfTries < 3 && CanBePlaced(selectedDecoration, tilemap.WorldToCell(position)) == false) numberOfTries++;
@@ -166,5 +166,23 @@ public class DecorationSeter : MonoBehaviour
     {
         public GameObject gameObject;
         public Vector2Int size;
+        [SerializeField] [Range(0, 1)] float probability;
+
+        public static DecorationData GetRandomDecoration(DecorationData[] decorations)
+        {
+            if(decorations.Length == 0) Debug.LogError("No decorations to choose from");
+
+            float sum = decorations.Sum(d => d.probability);
+            float random = UnityEngine.Random.Range(0, sum);
+            float current = 0;
+
+            foreach(DecorationData decoration in decorations)
+            {
+                current += decoration.probability;
+                if(random < current) return decoration;
+            }
+
+            return decorations[0];
+        }
     }
 }

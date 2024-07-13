@@ -81,7 +81,7 @@ public class Node : MonoBehaviour
     public async Task GenerateNodesTask(float linearity, NodeGenerator generator, int branchExtension)
     {
         GenerateNodes(linearity, generator, branchExtension);
-        await Task.Delay(8000);
+        await Task.Delay(80);
     }
 
     public async void GenerateNodes(float linearity, NodeGenerator generator, int branchExtension)
@@ -132,7 +132,10 @@ public class Node : MonoBehaviour
             while (!node.ConnectNodes(ref gate))
             {
                 if(Application.isEditor) DestroyImmediate(node.gameObject, false);
-                else Destroy(node.gameObject);
+                else
+                {
+                    DumpNode(node);
+                }
 
                 setting = NodeSetting.RandomNodeSetting(possibleNodes);
                 node = Instantiate(setting.NodePrefab.GetComponent<Node>());
@@ -142,7 +145,7 @@ public class Node : MonoBehaviour
 
                 if (j > 10)
                 {
-                    Destroy(node.gameObject);
+                    DumpNode(node);
                     CloseAccess(gate.RoomAccess);
                     break;
                 }
@@ -156,9 +159,15 @@ public class Node : MonoBehaviour
             node.SetAccess(ReturnRandomAccess(GetOppositeAccess(gate.RoomAccess)));
             extension--;
 
-            await Task.Delay(100/(branchExtension+1));
+            await Task.Delay(1/(branchExtension+1));
             node.GenerateNodes(_linearity, _generator, branchExtension - 1);
         }
+    }
+
+    void DumpNode(Node node)
+    {
+        node.gameObject.SetActive(false);
+        Generator.unusedNodes.Add(node.gameObject);
     }
 
     void CloseNodes()
@@ -181,7 +190,8 @@ public class Node : MonoBehaviour
 
         if(!result)
         {
-            Destroy(node.gameObject);
+            node.gameObject.SetActive(false);
+            Generator.unusedNodes.Add(node.gameObject);
             CloseAccess(gate.RoomAccess);
         }
         else

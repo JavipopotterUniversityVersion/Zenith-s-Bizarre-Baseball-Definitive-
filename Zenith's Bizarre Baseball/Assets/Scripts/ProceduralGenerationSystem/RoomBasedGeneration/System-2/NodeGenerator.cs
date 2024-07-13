@@ -29,6 +29,8 @@ public class NodeGenerator : MonoBehaviour
     [SerializeField] NodeSetting[] _nodeSettings;
     public NodeSetting[] NodeSettings => _nodeSettings;
 
+    public List<GameObject> unusedNodes = new List<GameObject>();
+
     [ContextMenu("Start Generation")]
     private void Start()
     {
@@ -44,8 +46,13 @@ public class NodeGenerator : MonoBehaviour
     {
         await _currentNode.GenerateNodesTask(_linearity, this, maxBranchExtension);
         await PlaceRequiredNodes();
-        await Task.Delay(1000);
-        OnFinishedGeneration?.Invoke();
+
+        if(_nodes.Count < Extension) ScenesManager.ReloadSceneStatic();
+        else
+        {
+            await Task.Delay(100);
+            OnFinishedGeneration?.Invoke();
+        }   
     }
 
     Task PlaceRequiredNodes()
@@ -61,7 +68,7 @@ public class NodeGenerator : MonoBehaviour
 
                 if(_nodesWithRequiredExtension.Count == 0) 
                 {
-                    Debug.LogError("No nodes with the required extension");
+                    Debug.LogWarning("No nodes with the required extension");
                     _nodesWithRequiredExtension = _nodes;
                 }
 
@@ -75,20 +82,25 @@ public class NodeGenerator : MonoBehaviour
                 }
 
 
-                if(i >= 10) Debug.LogError("Could not place the required node " + setting.NodePrefab.name);
+                if(i >= 10) Debug.LogWarning("Could not place the required node " + setting.NodePrefab.name + " at required extension " + setting.MinExtension + " - " + setting.MaxExtension);
                 else setting.TimesAppeared++;
 
                 a++;
             }
         }
 
-        if(_nodes.Count < Extension)
-        {
-            ScenesManager.ReloadSceneStatic();
-            return null;
-        }
+        if(!(_nodes.Count < Extension)) DumpNodes();
 
         return Task.CompletedTask;
+    }
+
+    async void DumpNodes()
+    {
+        await Task.Delay(1000);
+        foreach(GameObject node in unusedNodes)
+        {
+            Destroy(node);
+        }
     }
 
 

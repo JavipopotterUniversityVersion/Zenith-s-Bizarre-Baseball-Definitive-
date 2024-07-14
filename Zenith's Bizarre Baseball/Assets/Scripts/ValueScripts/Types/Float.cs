@@ -68,7 +68,7 @@ public class Float : ScriptableICondition
 public class Processor
 {
     string _name = "";
-    static string[] operationTypes = new string[] {"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
+    static string[] operationTypes = new string[] {"nR" ,"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
     [SerializeField] bool _debug = false;
     [SerializeField] protected bool _showReferences;
@@ -332,6 +332,9 @@ public class Processor
                 return value1 <= value2 ? 1 : 0;
             case ">=":
                 return value1 >= value2 ? 1 : 0;
+            case "nR":
+                if(UnityEngine.Random.value < 0.5f) return value1 * value2;
+                else return value1 * -value2;
             default:
                 return value1;
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -20,8 +21,11 @@ public class TargetHandler : MonoBehaviour
         }
     }
 
-    private void Awake() => SetTarget(null);
-    private void OnEnable() => SetTarget(null);
+    private void Awake()
+    { 
+        if (_target == null) SetTarget(null);
+    }
+    private void OnEnable() => Awake();
 
     public void SetTarget(Transform target) => Target = target;
     public Transform GetTarget() => Target;

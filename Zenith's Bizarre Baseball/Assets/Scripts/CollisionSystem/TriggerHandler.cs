@@ -23,12 +23,12 @@ public class TriggerHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(canCollide) CheckCollidables(OnEnterCollidables, collision);
+        if(canCollide) CollidableGroup.CheckCollidables(OnEnterCollidables, collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(canCollide) CheckCollidables(OnExitCollidables, collision);
+        if(canCollide) CollidableGroup.CheckCollidables(OnExitCollidables, collision);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -40,21 +40,7 @@ public class TriggerHandler : MonoBehaviour
         if(timer >= checkDelay)
         {
             timer = 0;
-            CheckCollidables(OnStayCollidables, collision);
-        }
-    }
-
-    void CheckCollidables(CollidableGroup[] collidables, Collider2D collision)
-    {
-        foreach (var collidableGroup in collidables)
-        {
-            if(collidableGroup.Layer == (collidableGroup.Layer | (1 << collision.gameObject.layer)) && collidableGroup.CheckConditions())
-            {
-                foreach (var collidable in collidableGroup.Collidables)
-                {
-                    collidable.OnCollide(collision);
-                }
-            }
+            CollidableGroup.CheckCollidables(OnStayCollidables, collision);
         }
     }
 
@@ -97,4 +83,18 @@ public class CollidableGroup
 
     [SerializeField] ICollidable[] collidables;
     public ICollidable[] Collidables => collidables;
+
+    public static void CheckCollidables(CollidableGroup[] collidables, Collider2D collision)
+    {
+        foreach (var collidableGroup in collidables)
+        {
+            if(collidableGroup.Layer == (collidableGroup.Layer | (1 << collision.gameObject.layer)) && collidableGroup.CheckConditions())
+            {
+                foreach (var collidable in collidableGroup.Collidables)
+                {
+                    collidable.OnCollide(collision);
+                }
+            }
+        }
+    }
 }

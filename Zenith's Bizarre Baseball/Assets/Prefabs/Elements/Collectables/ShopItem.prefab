@@ -376,7 +376,19 @@ MonoBehaviour:
         m_CallState: 2
   _onReceiveUpgrade:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5769103821879522208}
+        m_TargetAssemblyTypeName: UpgradeClassContainer, Assembly-CSharp
+        m_MethodName: SetUpgrade
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _eventByUpgradeResult:
     _success:
       m_PersistentCalls:
@@ -879,6 +891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2006518184520351044}
   - component: {fileID: 7563585095400747077}
+  - component: {fileID: 5769103821879522208}
   m_Layer: 0
   m_Name: Get
   m_TagString: Untagged
@@ -921,6 +934,45 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UpgradeReceiver, Assembly-CSharp
         m_MethodName: GetUpgrade
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5769103821879522208}
+        m_TargetAssemblyTypeName: UpgradeClassContainer, Assembly-CSharp
+        m_MethodName: CallUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5769103821879522208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879619096392808200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c3dc559c81d5c4d9e96fde465a58d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onCallUpgrade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 777f44766303449418caefbc6ffdc5d7, type: 2}
+        m_TargetAssemblyTypeName: UpgradeInstance, Assembly-CSharp
+        m_MethodName: SetUpgrade
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

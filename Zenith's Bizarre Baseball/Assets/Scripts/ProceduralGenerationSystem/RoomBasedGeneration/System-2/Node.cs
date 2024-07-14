@@ -304,9 +304,11 @@ public class NodeSetting
 
     public static NodeSetting RandomNodeSetting(List<NodeSetting> nodeSettings) => RandomNodeSetting(nodeSettings.ToArray());
 
-    public static NodeSetting RandomNodeSetting(NodeSetting[] nodeSettings)
+    public static NodeSetting RandomNodeSetting(NodeSetting[] receivedNodeSettings)
     {
-        if(nodeSettings.Length == 0) return null;
+        if(receivedNodeSettings.Length == 0) return null;
+
+        NodeSetting[] nodeSettings = receivedNodeSettings.Where(setting => setting._maxNumberOfNodes == 0 || setting.TimesAppeared < setting.MaxNumberOfNodes).ToArray();
 
         float totalProbability = 0;
         foreach(NodeSetting setting in nodeSettings)
@@ -320,11 +322,7 @@ public class NodeSetting
         foreach(NodeSetting setting in nodeSettings)
         {
             currentProbability += setting.Probability;
-            if(setting._maxNumberOfNodes > 0 && setting.TimesAppeared >= setting.MaxNumberOfNodes) continue;
-            if(randomValue <= currentProbability)
-            {
-                return setting;
-            }
+            if(randomValue <= currentProbability) return setting;
         }
 
         return null;

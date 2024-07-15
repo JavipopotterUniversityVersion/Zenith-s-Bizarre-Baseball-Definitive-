@@ -71,7 +71,10 @@ public class StateHandler : MonoBehaviour
     public void ReturnToLastState() => CurrentState = lastState;
     public void FullReturnToLastState() => ChangeState(lastState);
 
-    public void PlayCurrentStateAnimation() => CurrentState.PlayStateAnimation();
+    public void PlayCurrentStateAnimation()
+    {
+        if(CurrentState != null) CurrentState.PlayStateAnimation();
+    }
     public void StopHandler(float time) => StartCoroutine(StopRoutine(time));
     IEnumerator StopRoutine(float time)
     {

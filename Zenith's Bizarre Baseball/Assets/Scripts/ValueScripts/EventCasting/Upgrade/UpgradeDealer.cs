@@ -23,7 +23,6 @@ public class UpgradeDealer : MonoBehaviour
             availableUpgrades.Remove(upgradeData);
 
             _upgradeReceivers[i].SetUpgrade(upgradeData.Upgrade.Upgrade);
-            _upgradeReceivers[i].SetCost(upgradeData.Cost);
         }
 
         ActivateReceivers(_numberOfUpgrades.Result());
@@ -36,36 +35,34 @@ public class UpgradeDealer : MonoBehaviour
             _upgradeReceivers[i].gameObject.SetActive(i < index);
         }
     }
+}
 
-    [Serializable] 
-    struct UpgradeData
+[Serializable] 
+public class UpgradeData
+{
+    [SerializeField] UpgradeInstance _upgrade;
+    public UpgradeInstance Upgrade => _upgrade;
+
+    [SerializeField] [Range(0, 1)] float _chance;
+
+    public static UpgradeData GetRandomUpgrade(List<UpgradeData> upgradeDatas) => GetRandomUpgrade(upgradeDatas.ToArray());
+
+    public static UpgradeData GetRandomUpgrade(UpgradeData[] upgradeDatas)
     {
-        [SerializeField] UpgradeInstance _upgrade;
-        public readonly UpgradeInstance Upgrade => _upgrade;
+        List<UpgradeData> availableUpgrades = new List<UpgradeData>();
+        availableUpgrades.AddRange(upgradeDatas.Where(x => x.Upgrade.Upgrade.CanAppear));
+        
+        float totalChance = availableUpgrades.Sum(x => x._chance);
 
-        [SerializeField] [Range(0, 1)] float _chance;
-        [SerializeField] ObjectProcessor _cost;
-        public readonly ObjectProcessor Cost => _cost;
+        float randomValue = UnityEngine.Random.Range(0, totalChance);
 
-        public static UpgradeData GetRandomUpgrade(List<UpgradeData> upgradeDatas) => GetRandomUpgrade(upgradeDatas.ToArray());
-
-        public static UpgradeData GetRandomUpgrade(UpgradeData[] upgradeDatas)
+        float currentChance = 0;
+        foreach (UpgradeData upgradeData in availableUpgrades)
         {
-            List<UpgradeData> availableUpgrades = new List<UpgradeData>();
-            availableUpgrades.AddRange(upgradeDatas.Where(x => x.Upgrade.Upgrade.CanAppear));
-            
-            float totalChance = availableUpgrades.Sum(x => x._chance);
-
-            float randomValue = UnityEngine.Random.Range(0, totalChance);
-
-            float currentChance = 0;
-            foreach (UpgradeData upgradeData in availableUpgrades)
-            {
-                currentChance += upgradeData._chance;
-                if (randomValue <= currentChance) return upgradeData;
-            }
-
-            return availableUpgrades[0];
+            currentChance += upgradeData._chance;
+            if (randomValue <= currentChance) return upgradeData;
         }
+
+        return availableUpgrades[0];
     }
 }

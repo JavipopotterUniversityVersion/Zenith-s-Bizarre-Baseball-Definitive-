@@ -12,11 +12,20 @@ public class RaycastHandler : MonoBehaviour
 
     [SerializeField] CollidableGroup[] OnExitCollidables;
     public CollidableGroup[] OnExitCollidablesProp() => OnExitCollidables;
+    
+    bool _drawing;
+    public bool Drawing => _drawing;
 
     bool _checking;
     public bool Checking => _checking;
 
-    public void SetChecking(bool value) => _checking = value;
+    public void SetChecking(bool value)
+    {
+        _checking = value;
+        if(value) _drawing = false;
+    }
+
+    public void SetDrawing(bool value) => _drawing = value;
 
     [SerializeField] float raycastDistance = Mathf.Infinity;
     RaycastHit2D _lastHit;
@@ -26,6 +35,8 @@ public class RaycastHandler : MonoBehaviour
 
     private void FixedUpdate() 
     {
+        if(_drawing) _lastHit = Physics2D.Raycast(transform.position, transform.up, raycastDistance, _targetLayers);
+
         if(_checking)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, raycastDistance, _targetLayers);

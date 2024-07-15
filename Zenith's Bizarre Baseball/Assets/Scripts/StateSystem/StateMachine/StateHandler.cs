@@ -28,6 +28,13 @@ public class StateHandler : MonoBehaviour
         CurrentState.OnStateEnter();
     }
 
+    public void Restart()
+    {
+        CurrentState.OnStateExit();
+        CurrentState = initialState;
+        CurrentState.OnStateEnter();
+    }
+
     private void Update() {
         CurrentState.OnStateUpdate();
 

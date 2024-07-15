@@ -7,6 +7,8 @@ public class RoomStateCondition : MonoBehaviour, ICondition
     [SerializeField] private StateOfRoom _stateOfRoom;
     RoomStateHandler _roomStateHandler;
 
+    private void Awake() => _roomStateHandler = GetComponentInParent<RoomStateHandler>();
+
     public bool CheckCondition() => IsState(_stateOfRoom);
     bool IsState(StateOfRoom state) => _roomStateHandler.StateOfRoom == state;
 

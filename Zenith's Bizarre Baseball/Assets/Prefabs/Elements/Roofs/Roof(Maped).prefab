@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 7713482716928870100}
   - component: {fileID: 7713482716928870101}
   - component: {fileID: 8568204493447432934}
-  - component: {fileID: 8026778770040558740}
   - component: {fileID: 4413780845622044343}
   m_Layer: 0
   m_Name: Roof(Maped)
@@ -1533,7 +1532,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -1577,7 +1576,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 9
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.59375, y: 0.59375, z: 0}
   m_MaxChunkCount: 16
@@ -1685,7 +1684,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2308944558005569036}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1698,132 +1697,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!66 &8026778770040558740
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2308944558005569036}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 2308944558005569032}
-    m_ColliderPaths:
-    - - X: -160937504
-        Y: 98437504
-      - X: -160937504
-        Y: 20937500
-      - X: -160937501
-        Y: 20937498
-      - X: -160937504
-        Y: 20937498
-      - X: -160937504
-        Y: 937500
-      - X: -160937500
-        Y: 937497
-      - X: -160937504
-        Y: 937497
-      - X: -160937504
-        Y: -19062500
-      - X: -160937501
-        Y: -19062502
-      - X: -160937504
-        Y: -19062502
-      - X: -160937504
-        Y: -39062500
-      - X: -160937499
-        Y: -39062504
-      - X: -160937504
-        Y: -39062504
-      - X: -160937504
-        Y: -59062500
-      - X: -158437504
-        Y: -60937500
-      - X: 179062496
-        Y: -60937500
-      - X: 180937504
-        Y: -58437500
-      - X: 180937504
-        Y: -39062500
-      - X: 180468752
-        Y: -39062500
-      - X: 180937504
-        Y: -38437500
-      - X: 180937504
-        Y: -19062500
-      - X: 180468752
-        Y: -19062500
-      - X: 180937504
-        Y: -18437500
-      - X: 180937504
-        Y: 937500
-      - X: 180468752
-        Y: 937500
-      - X: 180937504
-        Y: 1562500
-      - X: 180937504
-        Y: 20937500
-      - X: 180468752
-        Y: 20937500
-      - X: 180937504
-        Y: 21562500
-      - X: 180937504
-        Y: 40937500
-      - X: 180468752
-        Y: 40937500
-      - X: 180937504
-        Y: 41562500
-      - X: 180937504
-        Y: 60937500
-      - X: 180468752
-        Y: 60937500
-      - X: 180937504
-        Y: 61562500
-      - X: 180937504
-        Y: 99062496
-      - X: 178437504
-        Y: 100937504
-      - X: -159062496
-        Y: 100937504
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 17.906237, y: -6.09375}
-      - {x: 18.09375, y: -5.843742}
-      - {x: 18.093721, y: -3.90625}
-      - {x: 18.046917, y: -3.906195}
-      - {x: 18.09375, y: -3.8437417}
-      - {x: 18.093721, y: -1.90625}
-      - {x: 18.046917, y: -1.9061948}
-      - {x: 18.09375, y: -1.8437417}
-      - {x: 18.093721, y: 0.09375}
-      - {x: 18.046917, y: 0.0938053}
-      - {x: 18.09375, y: 0.15625851}
-      - {x: 18.093721, y: 2.09375}
-      - {x: 18.046917, y: 2.0938053}
-      - {x: 18.09375, y: 2.1562583}
-      - {x: 18.093721, y: 4.09375}
-      - {x: 18.046917, y: 4.0938053}
-      - {x: 18.09375, y: 4.1562586}
-      - {x: 18.093721, y: 6.09375}
-      - {x: 18.046917, y: 6.0938053}
-      - {x: 18.09375, y: 6.1562586}
-      - {x: 18.093739, y: 9.906258}
-      - {x: 17.843742, y: 10.093751}
-      - {x: -15.906258, y: 10.09374}
-      - {x: -16.09375, y: 9.843741}
-      - {x: -16.093739, y: -5.906258}
-      - {x: -15.843742, y: -6.09375}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
 --- !u!114 &4413780845622044343
 MonoBehaviour:
   m_ObjectHideFlags: 0

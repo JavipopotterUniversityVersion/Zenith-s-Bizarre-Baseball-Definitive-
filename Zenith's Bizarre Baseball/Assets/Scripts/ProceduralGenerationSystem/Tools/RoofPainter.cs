@@ -19,7 +19,7 @@ public class RoofPainter : MonoBehaviour
 
     public IEnumerator Paint()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         foreach (var bounds in _tilemapToCopyFrom.cellBounds.allPositionsWithin) 
         {
             Vector3Int localPlace = new Vector3Int(bounds.x, bounds.y, bounds.z);

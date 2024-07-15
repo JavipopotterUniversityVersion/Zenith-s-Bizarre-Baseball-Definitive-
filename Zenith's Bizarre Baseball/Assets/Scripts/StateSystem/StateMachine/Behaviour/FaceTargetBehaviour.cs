@@ -24,6 +24,8 @@ public class FaceTargetBehaviour : MonoBehaviour, IBehaviour
             {
                 if(direction < 0) onFaceLeft.Invoke();
                 else onFaceRight.Invoke();
+
+                lastDirection = direction;
             }
         }
     }

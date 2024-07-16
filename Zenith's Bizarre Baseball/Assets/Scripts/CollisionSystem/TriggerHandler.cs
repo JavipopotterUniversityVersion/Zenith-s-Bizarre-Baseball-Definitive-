@@ -62,6 +62,9 @@ public class TriggerHandler : MonoBehaviour
 [Serializable]
 public class CollidableGroup
 {
+    [SerializeField] Identifiable[] _targets;
+    public Identifiable[] Targets => _targets;
+
     [SerializeField] LayerMask layer;
     public LayerMask Layer => layer;
 
@@ -79,6 +82,18 @@ public class CollidableGroup
         return Condition.CheckAllConditions(conditions);
     }
 
+    public bool CheckIdentifiables(Collider2D collider)
+    {
+        if(Targets.Length == 0 || collider.TryGetComponent(out Searchable type) == false) return true;
+        
+        foreach (Identifiable target in Targets)
+        {
+            if(type.IdentifiableType.DerivesFrom(target)) return true;
+        }
+
+        return false;
+    }
+
     public void SetLayer(LayerMask layer) => this.layer = layer;
 
     [SerializeField] ICollidable[] collidables;
@@ -88,7 +103,8 @@ public class CollidableGroup
     {
         foreach (var collidableGroup in collidables)
         {
-            if(collidableGroup.Layer == (collidableGroup.Layer | (1 << collision.gameObject.layer)) && collidableGroup.CheckConditions())
+            if(collidableGroup.Layer == (collidableGroup.Layer | (1 << collision.gameObject.layer)) && collidableGroup.CheckConditions() 
+            && collidableGroup.CheckIdentifiables(collision))
             {
                 foreach (var collidable in collidableGroup.Collidables)
                 {

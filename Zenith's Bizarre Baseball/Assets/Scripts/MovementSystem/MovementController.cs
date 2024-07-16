@@ -39,4 +39,11 @@ public class MovementController : MonoBehaviour
         if(_ignoreSpeed) rb.velocity = rb.velocity.magnitude * direction.normalized;
         else rb.velocity = direction * Speed;
     }
+
+    public void MoveForward() => SetVelocity(transform.up);
+    void SetVelocity(Vector2 direction)
+    { 
+        rb.velocity = direction * Speed;
+        print(rb.velocity);
+    }
 }

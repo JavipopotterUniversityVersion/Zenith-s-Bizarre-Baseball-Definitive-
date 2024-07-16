@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyCollidable : ICollidable
 {
-    [SerializeField] Int maxCollisions;
+    [SerializeField] ObjectProcessor maxCollisions;
     int requiredCollisions = 1;
     [SerializeField] GameObject _targetGameObject;
 
@@ -13,7 +13,9 @@ public class DestroyCollidable : ICollidable
         if (_targetGameObject == null) _targetGameObject = gameObject;
     }
 
-    private void Start() => requiredCollisions = maxCollisions.Value;
+    private void Start() => requiredCollisions = (int)maxCollisions.Result();
+    public void SetMaxCollisions(string value) => maxCollisions.SetFormula(value);
+    public void SetMaxCollisions(int value) => maxCollisions.SetFormula(value.ToString());
 
     public override void OnCollide(Collider2D collision)
     {

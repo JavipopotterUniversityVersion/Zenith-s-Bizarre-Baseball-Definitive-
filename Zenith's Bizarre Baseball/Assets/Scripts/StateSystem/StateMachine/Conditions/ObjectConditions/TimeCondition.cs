@@ -30,4 +30,5 @@ public class TimeCondition : MonoBehaviour, ICondition, IReadable
 
     private void OnValidate() => gameObject.name = $"Wait {timeToWait}s";
     public void SetTime(float newTime) => timeToWait = newTime;
+    public void RestartTimer() => timePassed = 0;
 }

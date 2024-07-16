@@ -57,4 +57,5 @@ public class HealthHandler : MonoBehaviour, IReadable
     }
 
     public void SetHealthRaw(float health) => _currentHealth = health;
+    public float GetMaxHealth() => maxHealth.Value;
 }

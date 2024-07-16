@@ -654,9 +654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
+  Damage: {fileID: 11400000, guid: 3584606edf24f0943a42f05b3cd84637, type: 2}
   _processor:
-    operation: 1
+    operation: input
     _debug: 0
     _showReferences: 0
     _floatDictionary:
@@ -1649,6 +1649,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: efe477ee2e98d684aa2f21f268a3a10b, type: 2}
+    - target: {fileID: 5005186224162426725, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6322319794928954216, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1664,7 +1668,7 @@ PrefabInstance:
     - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: maxHealth
       value: 
-      objectReference: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
+      objectReference: {fileID: 11400000, guid: 3e591022a3b64e243b1782f69c0a62aa, type: 2}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
       value: Alive -> False

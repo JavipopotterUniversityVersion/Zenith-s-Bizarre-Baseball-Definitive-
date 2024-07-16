@@ -17,5 +17,5 @@ public class DamageCollidable : ICollidable
     }
 
     public float GetMultiplier() => multiplier;
-    public void SetMultiplier(float newDamage) => multiplier = newDamage;
+    public void SetDamage(string newDamage) => _processor.SetFormula(newDamage);
 }

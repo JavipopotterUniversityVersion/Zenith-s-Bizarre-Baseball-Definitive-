@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DamageChangerCollidable : ICollidable
 {
-    [SerializeField] Float _multiplier;
+    [SerializeField] Float _value;
 
     public override void OnCollide(Collider2D collider)
     {
         if (collider.TryGetComponent(out DamageCollidable damageable))
         {
-            damageable.SetMultiplier(_multiplier.Value);
+            damageable.SetDamage(_value.Value.ToString());
         }
     }
 }

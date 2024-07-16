@@ -131,6 +131,8 @@ public class Processor
         return result;
     }
 
+    public void SetFormula(string formula) => operation = formula;
+
     void Replace(ref string value, int startPoint, float input)
     {
         if(value.Contains("(") == false) return;

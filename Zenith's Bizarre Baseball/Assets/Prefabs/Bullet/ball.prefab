@@ -72,7 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []
@@ -82,7 +83,8 @@ MonoBehaviour:
     - {fileID: 1455145129851851031}
     - {fileID: -8071011525051105728}
     - {fileID: 755721579564077804}
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 1024
     conditions: []
@@ -176,7 +178,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3831f54528bef4db2447ea7d9d2e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCollisions: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
+  maxCollisions:
+    operation: 1
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _targetGameObject: {fileID: 5989457719749168020}
 --- !u!114 &755721579564077804
 MonoBehaviour:

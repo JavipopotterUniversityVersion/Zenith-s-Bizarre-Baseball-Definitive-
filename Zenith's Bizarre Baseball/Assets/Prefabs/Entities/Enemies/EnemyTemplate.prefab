@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: Death
+  stateAnimation: 
   onEnterPerformers:
   - condition: []
     behaviourContainers:
@@ -514,6 +514,8 @@ MonoBehaviour:
     - {fileID: 2886809272073464442}
   nextStates:
   - conditions:
+    - conditionContainer: {fileID: 5817634499013108898}
+      negated: 0
     - conditionContainer: {fileID: 8428363580889678693}
       negated: 0
     stateContainer: {fileID: 1721488371980263032}

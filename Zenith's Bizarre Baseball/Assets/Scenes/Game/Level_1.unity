@@ -179,10 +179,6 @@ PrefabInstance:
       value: Global Light 2D
       objectReference: {fileID: 0}
     - target: {fileID: 4739850982252610507, guid: f908354d968129d478b17942d25a7033, type: 3}
-      propertyPath: m_Intensity
-      value: 1.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 4739850982252610507, guid: f908354d968129d478b17942d25a7033, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -442,7 +438,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialNode: {fileID: 994346716027744227, guid: 1a05ca481995cc543a69bd16d9fcfb1a, type: 3}
   _extension: 15
-  maxBranchExtension: 15
   _linearity: 0.25
   onStartedGeneration:
     m_PersistentCalls:
@@ -491,26 +486,26 @@ MonoBehaviour:
     _probability: 0
     _minNumberOfNodes: 3
     _maxNumberOfNodes: 0
-    minExtension: 0.3
+    minExtension: 0.25
     maxExtension: 1
   - _nodePrefab: {fileID: 755210232940294868, guid: 0fc5850e2f0cf694fbe4e90a808ffd4d, type: 3}
     _probability: 0
     _minNumberOfNodes: 1
     _maxNumberOfNodes: 0
-    minExtension: 0.5
+    minExtension: 0.8
     maxExtension: 1
   - _nodePrefab: {fileID: 690605738245838085, guid: 7297c2e4feb8fee49ac8de6fe532d3c4, type: 3}
     _probability: 0
     _minNumberOfNodes: 1
     _maxNumberOfNodes: 0
-    minExtension: 0.344
-    maxExtension: 1
+    minExtension: 0.2
+    maxExtension: 0.7
   - _nodePrefab: {fileID: 839493702511153168, guid: c18bf0edece2d864c9901aeb0597bb7c, type: 3}
     _probability: 0.819
     _minNumberOfNodes: 0
     _maxNumberOfNodes: 1
-    minExtension: 0.2
-    maxExtension: 1
+    minExtension: 0.1
+    maxExtension: 0.3
   unusedNodes: []
 --- !u!4 &1215249690
 Transform:

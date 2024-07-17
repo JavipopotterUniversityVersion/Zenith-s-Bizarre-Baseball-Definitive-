@@ -336,6 +336,9 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  onFadeComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3364277119746609210
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []

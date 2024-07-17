@@ -612,7 +612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []
@@ -620,7 +621,8 @@ MonoBehaviour:
     - {fileID: 8816325009179709343}
     - {fileID: 7661238094035007569}
   OnStayCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []

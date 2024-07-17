@@ -15,8 +15,6 @@ public class NodeGenerator : MonoBehaviour
     [SerializeField] int _extension;
     public int Extension => _extension;
 
-    [SerializeField] int maxBranchExtension;
-
     [SerializeField][Range(0, 1)] float _linearity = 0.5f;
 
     List<Node> _nodes = new List<Node>();
@@ -45,7 +43,7 @@ public class NodeGenerator : MonoBehaviour
 
     async void GenerateNode(Node _currentNode)
     {
-        await _currentNode.GenerateNodesTask(_linearity, this, maxBranchExtension);
+        await _currentNode.GenerateNodesTask(_linearity, this, Extension);
         await PlaceRequiredNodes();
 
         if(_nodes.Count < Extension) ScenesManager.ReloadSceneStatic();
@@ -67,7 +65,7 @@ public class NodeGenerator : MonoBehaviour
                 _nodes.Where(n => (float) n.ExtensionIndex / Node.largestBranch >= setting.MinExtension
                 && (float) n.ExtensionIndex / Node.largestBranch <= setting.MaxExtension).ToList();
 
-                Shuffle(_nodesWithRequiredExtension);
+                Shuffle(ref _nodesWithRequiredExtension);
 
                 if(_nodesWithRequiredExtension.Count == 0) 
                 {
@@ -97,7 +95,7 @@ public class NodeGenerator : MonoBehaviour
         return Task.CompletedTask;
     }
 
-    public void Shuffle<T>(IList<T> list)  
+    public void Shuffle<T>(ref List<T> list)  
     {  
         int n = list.Count;  
         while (n > 1) {  

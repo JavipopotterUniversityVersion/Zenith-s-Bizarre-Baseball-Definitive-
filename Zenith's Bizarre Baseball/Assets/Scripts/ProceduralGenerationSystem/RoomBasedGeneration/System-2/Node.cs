@@ -42,6 +42,7 @@ public class Node : MonoBehaviour
     public Limit[] Limits => _limits.ToArray();
 
     string[] names = new string[] {"Pepe", "Juan", "Pedro", "Luis", "Carlos", "Jorge", "Ricardo", "Miguel", "Alberto", "Fernando", "Rob", "John", "Mike", "Steve", "Tom", "Jerry", "Rick", "Morty", "Beth", "Summer", "Jerry", "Birdperson", "Tammy", "Squanchy", "Unity", "Mr. Poopybutthole", "Noob Noob", "Scary Terry", "Abradolf Lincler", "Pencilvester", "Photography Raptor", "Crocubot", "Gearhead", "Million Ants", "Trunk People", "Gazorpazorpfield", "Ants in my Eyes Johnson", "Reverse Giraffe", "Hamurai", "Amish Cyborg", "Purge Planet Ruler", "Cromulon", "Gromflomite", "Plutonian", "Zigerion", "Meeseeks", "Cronenberg", "Fart", "Giant Head", "Giant Testicle Monster", "Giant Arm", "Giant Cat", "Giant Beetle", "Giant Spider"};
+    [SerializeField] bool _affectsExtension = true;
 
     private void Awake() {
         name = names[UnityEngine.Random.Range(0, names.Length)];
@@ -157,7 +158,7 @@ public class Node : MonoBehaviour
             setting.TimesAppeared++;
 
             node.SetAccess(ReturnRandomAccess(GetOppositeAccess(gate.RoomAccess)));
-            extension--;
+            if(_affectsExtension) extension--;
 
             await Task.Delay(1/(branchExtension+1));
             node.GenerateNodes(_linearity, _generator, branchExtension - 1);

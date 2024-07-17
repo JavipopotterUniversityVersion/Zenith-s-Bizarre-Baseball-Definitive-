@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8802157118331676381}
   - component: {fileID: 2684908091112442565}
   m_Layer: 6
-  m_Name: Follow Target 80 m/s
+  m_Name: Follow Target 60 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,7 +559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []
@@ -567,14 +568,16 @@ MonoBehaviour:
     - {fileID: 3704148149017740488}
     - {fileID: 2552424484786582278}
     - {fileID: 1230512786538292441}
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 3072
     conditions: []
     collidables:
     - {fileID: 1230512786538292441}
   OnStayCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []
@@ -667,7 +670,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3831f54528bef4db2447ea7d9d2e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCollisions: {fileID: 11400000, guid: 71b40ee7e92fd7a4781c9acefb41fff2, type: 2}
+  maxCollisions:
+    operation: input
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _targetGameObject: {fileID: 6091344656688087645}
 --- !u!1 &5470305811099086016
 GameObject:

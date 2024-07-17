@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 2676976702895114760}
   - component: {fileID: 8231560987143674900}
   - component: {fileID: 4572459267592316477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,13 +272,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []
     collidables:
     - {fileID: 2676976702895114760}
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 1024
     conditions: []
@@ -303,6 +305,7 @@ MonoBehaviour:
   _processor:
     operation: 4
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -321,8 +324,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!114 &8231560987143674900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +337,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3831f54528bef4db2447ea7d9d2e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCollisions: {fileID: 11400000, guid: 71b40ee7e92fd7a4781c9acefb41fff2, type: 2}
+  maxCollisions:
+    operation: input
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _targetGameObject: {fileID: 8913451013342580221}
 --- !u!58 &4572459267592316477
 CircleCollider2D:
@@ -363,7 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5351243197468128854}
   - component: {fileID: 8519505587084152619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shuriken
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6500333976326291475}
   - component: {fileID: 6293982405336796274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: trailRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8834501007058053323}
   - component: {fileID: 619015551367222761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 9055942138057674209}
   - component: {fileID: 3313931590376438650}
   - component: {fileID: 8856216530324811110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,13 +298,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 128
     conditions: []
     collidables:
     - {fileID: 3313931590376438650}
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 1024
     conditions: []
@@ -329,6 +331,7 @@ MonoBehaviour:
   _processor:
     operation: 4
     _debug: 0
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -347,8 +350,7 @@ MonoBehaviour:
       list: []
     _conditionDictionary:
       list: []
-    _readableDictionary:
-      list: []
+    _readablesDictionary: []
 --- !u!114 &8856216530324811110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +363,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3831f54528bef4db2447ea7d9d2e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCollisions: {fileID: 11400000, guid: 71b40ee7e92fd7a4781c9acefb41fff2, type: 2}
+  maxCollisions:
+    operation: input
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _targetGameObject: {fileID: 8316190699825085583}
 --- !u!1 &8316190699825085583
 GameObject:
@@ -373,7 +397,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4798748474240288548}
   - component: {fileID: 9142489936610541145}
-  m_Layer: 0
+  - component: {fileID: 6256846029796901499}
+  m_Layer: 8
   m_Name: KunaiBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,3 +444,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &6256846029796901499
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316190699825085583}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.9691992}
+  serializedVersion: 2
+  m_Radius: 1.212307

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FadeInTime : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class FadeInTime : MonoBehaviour
     float _fadeTime = 0;
 
     [SerializeField] Gradient _gradient;
+    [SerializeField] UnityEvent onFadeComplete;
+    bool _isFading = true;
 
     private void Awake() {
         sr = GetComponent<SpriteRenderer>();
@@ -21,5 +24,11 @@ public class FadeInTime : MonoBehaviour
         float t = _fadeTime / _fadeDuration.Result();
         float curveValue = _fadeCurve.Value.Evaluate(t);
         sr.color = _gradient.Evaluate(curveValue);
+
+        if(t >= 1 && _isFading)
+        {
+            _isFading = false;
+            onFadeComplete.Invoke();
+        }
     }
 }

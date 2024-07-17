@@ -10,6 +10,8 @@ public class ReplaceProcess : MonoBehaviour, IGameObjectProcessor
 
     public void Process(GameObject gameObject)
     {
+        if(gameObject == null) return;
+
         GameObject replacementObject = InstanceUnit.GetRandomInstance(_possibleReplacements);
         Instantiate(replacementObject, gameObject.transform.position, gameObject.transform.rotation);
         onReplacedObject.Invoke(gameObject);

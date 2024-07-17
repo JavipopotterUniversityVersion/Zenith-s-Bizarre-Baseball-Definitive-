@@ -338,7 +338,7 @@ MonoBehaviour:
   pointer: {fileID: 2833200041630343265}
   rotationSpeed: 1e+9
   _offset:
-    operation: -time + 0,5
+    operation: (-time + 0,5) * 2
     _debug: 0
     _showReferences: 0
     _floatDictionary:
@@ -922,7 +922,7 @@ MonoBehaviour:
   pointer: {fileID: 2833200041630343265}
   rotationSpeed: 1e+9
   _offset:
-    operation: time - 0,5
+    operation: (time - 0,5) * 2
     _debug: 0
     _showReferences: 0
     _floatDictionary:
@@ -1672,7 +1672,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3e591022a3b64e243b1782f69c0a62aa, type: 2}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> True
+      value: Alive -> False
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x

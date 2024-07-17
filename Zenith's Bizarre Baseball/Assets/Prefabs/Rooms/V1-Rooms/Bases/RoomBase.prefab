@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7807954339080225250}
   - component: {fileID: 7156022258197053786}
   - component: {fileID: 6502896491677400398}
+  - component: {fileID: 671143851497796307}
   m_Layer: 0
   m_Name: RoomBase
   m_TagString: Untagged
@@ -56,6 +57,7 @@ MonoBehaviour:
   nodeSettings: []
   _access: 0
   _limits: []
+  _affectsExtension: 1
 --- !u!114 &7807954339080225250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6799d454296d945bbc7be08eedf08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &671143851497796307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761307942398434526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2554618654cb54a84308023a57b680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+  onValidate: 0
 --- !u!1 &5070372483945940650
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +132,7 @@ GameObject:
   - component: {fileID: 9026741604457729464}
   - component: {fileID: 7454446164594336739}
   - component: {fileID: 4833836648059839877}
+  - component: {fileID: 8198890746191979522}
   m_Layer: 15
   m_Name: MiniMapGFX
   m_TagString: Untagged
@@ -397,16 +414,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 640
     conditions: []
     collidables:
     - {fileID: 7454446164594336739}
+    - {fileID: 8198890746191979522}
   OnStayCollidables: []
   checkDelay: 0.1
   OnExitCollidables:
-  - layer:
+  - _targets: []
+    layer:
       serializedVersion: 2
       m_Bits: 640
     conditions: []
@@ -440,6 +460,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTilemap: {fileID: 0}
   _color: {r: 0.76792455, g: 0.8282014, b: 1, a: 1}
+--- !u!114 &8198890746191979522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070372483945940650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCollideEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 671143851497796307}
+        m_TargetAssemblyTypeName: TrueCondition, Assembly-CSharp
+        m_MethodName: SetValue
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onCollideEventWithTransform:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2460399372619061034
 PrefabInstance:
   m_ObjectHideFlags: 0

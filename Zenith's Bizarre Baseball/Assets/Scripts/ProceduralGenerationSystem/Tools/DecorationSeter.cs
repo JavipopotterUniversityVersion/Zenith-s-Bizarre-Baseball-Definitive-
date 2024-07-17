@@ -27,6 +27,24 @@ public class DecorationSeter : MonoBehaviour
         nodeGenerator.OnFinishedGeneration.AddListener(() => StartCoroutine(PutDecoration()));
     }
 
+    public Node GetNearestNode(Vector2 position)
+    {
+        Node nearestNode = null;
+        float nearestDistance = Mathf.Infinity;
+
+        foreach(Node node in nodeGenerator.Nodes)
+        {
+            float distance = Vector2.Distance(node.transform.position, position);
+            if(distance < nearestDistance)
+            {
+                nearestNode = node;
+                nearestDistance = distance;
+            }
+        }
+
+        return nearestNode;
+    }
+
     IEnumerator PutDecoration()
     {
         yield return new WaitForSeconds(0.1f);
@@ -71,6 +89,16 @@ public class DecorationSeter : MonoBehaviour
             Vector2 pos = positions[i];
             if(GetCorrectObject(pos, out GameObject returnedObject))
             {
+                if(GetNearestNode(pos).TryGetComponent(out TrueCondition discovered))
+                {
+                    returnedObject.SetActive(false);
+                    discovered.OnValueChange.AddListener(() => returnedObject.SetActive(discovered.CheckCondition()));
+                }
+                else
+                {
+                    Debug.LogWarning("Javi hermano, por qué este nodo no tiene condición de descubrimiento? espabila que la vida te va a comer " + GetNearestNode(pos).name);
+                }
+
                 decorationLimits.Add(returnedObject.GetComponent<LimitInstance>().Limit);
             }
             

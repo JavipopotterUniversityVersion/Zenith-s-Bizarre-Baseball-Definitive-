@@ -30,9 +30,7 @@ public class StateHandler : MonoBehaviour
 
     public void Restart()
     {
-        CurrentState.OnStateExit();
         CurrentState = initialState;
-        CurrentState.OnStateEnter();
     }
 
     private void Update() {

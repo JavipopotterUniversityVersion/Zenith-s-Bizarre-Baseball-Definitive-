@@ -943,6 +943,7 @@ MonoBehaviour:
   onEnterPerformers:
   - condition: []
     behaviourContainers:
+    - {fileID: 4644298822381668211}
     - {fileID: 3059314975804737604}
   - condition: []
     behaviourContainers:
@@ -955,6 +956,7 @@ MonoBehaviour:
   - condition: []
     behaviourContainers:
     - {fileID: 1504920774068866939}
+    - {fileID: 6475387201174357320}
   nextStates:
   - conditions:
     - conditionContainer: {fileID: 6752218225842119447}
@@ -1364,22 +1366,10 @@ MonoBehaviour:
   OnExecuteBehaviour:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9205241804605070876}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2323,22 +2313,10 @@ MonoBehaviour:
   OnExecuteBehaviour:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9205241804605070876}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3363,23 +3341,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044213965290949985, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Size.x
-      value: 1.6156731
+      value: 2.044199
       objectReference: {fileID: 0}
     - target: {fileID: 7044213965290949985, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Size.y
-      value: 3.6300583
+      value: 3.7524948
       objectReference: {fileID: 0}
     - target: {fileID: 7044213965290949985, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Offset.x
-      value: -0.03926277
+      value: -0.008654594
       objectReference: {fileID: 0}
     - target: {fileID: 7044213965290949985, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Offset.y
-      value: 1.7829018
+      value: 1.84412
       objectReference: {fileID: 0}
     - target: {fileID: 7044213965290949985, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7371025767402147326, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Sprite
@@ -3423,5 +3401,10 @@ Transform:
 --- !u!1 &8396103258338090523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7708322581336624486, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+  m_PrefabInstance: {fileID: 2197059397997089661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &9205241804605070876 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7044213965290949985, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
   m_PrefabInstance: {fileID: 2197059397997089661}
   m_PrefabAsset: {fileID: 0}

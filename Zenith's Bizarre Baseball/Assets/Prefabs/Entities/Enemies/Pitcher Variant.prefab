@@ -54,9 +54,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2695467357216705393}
-  - component: {fileID: 2596994673999315304}
+  - component: {fileID: 5667877258916577942}
   m_Layer: 6
-  m_Name: Wait 1s to 2s
+  m_Name: Wait 0,5s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ Transform:
   m_Father: {fileID: 1550163411605861269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2596994673999315304
+--- !u!114 &5667877258916577942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,11 +86,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 3946569714416635803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 912ac8752512cd64c8a519131add756a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da4b90bc677b294eac913160882da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 1
-  maxTime: 2
+  timeToWait: 0.5
+  _timeProcessor:
+    operation: 0,75 Random 1,25
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
 --- !u!1 &4137765006858228517
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +124,7 @@ GameObject:
   - component: {fileID: 5497509309226277328}
   - component: {fileID: 3330538026412246761}
   m_Layer: 6
-  m_Name: Wait 0,9s
+  m_Name: Wait 0,75s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da4b90bc677b294eac913160882da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 0.9
+  timeToWait: 0.75
   _timeProcessor:
     operation: input
     _debug: 0
@@ -170,7 +192,7 @@ GameObject:
   - component: {fileID: 5884395465072872092}
   - component: {fileID: 6179973686374666884}
   m_Layer: 6
-  m_Name: 'Look Target: 999999 rad/s'
+  m_Name: 'Look Target: Instant'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,9 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointer: {fileID: 141578270343350157}
-  rotationSpeed: 999999
+  rotationSpeed: 1e+9
   _offset:
-    operation: input
+    operation: 0
     _debug: 0
     _showReferences: 0
     _floatDictionary:
@@ -228,7 +250,7 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
-  instant: 0
+  instant: 1
 --- !u!1 &6678037137314095653
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +489,7 @@ GameObject:
   - component: {fileID: 3063072573441554623}
   - component: {fileID: 8902687742766919718}
   m_Layer: 6
-  m_Name: Move Away -12 m/s
+  m_Name: Move Away -6 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> False
+      value: Alive -> True
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x

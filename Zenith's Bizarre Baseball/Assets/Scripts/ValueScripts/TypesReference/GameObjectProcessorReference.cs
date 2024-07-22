@@ -25,7 +25,11 @@ public class GameObjectProcessorReference : MonoBehaviour
 
     public void ProcessRandom(GameObject[] gameObjects)
     {
-        GameObject randomObject = gameObjects[Random.Range(0, gameObjects.Length)];
+        if(gameObjects.Length == 0) return;
+
+        int randomValue = Random.Range(0, gameObjects.Length);
+        GameObject randomObject = gameObjects[randomValue];
+
         Process(randomObject);
     }
 }

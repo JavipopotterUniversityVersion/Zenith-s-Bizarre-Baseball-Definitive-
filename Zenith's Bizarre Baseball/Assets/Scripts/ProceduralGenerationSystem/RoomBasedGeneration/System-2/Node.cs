@@ -85,6 +85,18 @@ public class Node : MonoBehaviour
         await Task.Delay(80);
     }
 
+    void Shuffle<T>(ref List<T> list)  
+    {  
+        int n = list.Count;  
+        while (n > 1) {  
+            n--;  
+            int k = UnityEngine.Random.Range(0, n + 1);
+            T value = list[k];  
+            list[k] = list[n];  
+            list[n] = value;  
+        }  
+    }
+
     public async void GenerateNodes(float linearity, NodeGenerator generator, int branchExtension)
     {
         _generator = generator;
@@ -95,8 +107,8 @@ public class Node : MonoBehaviour
         if(extensionIndex > largestBranch) largestBranch = extensionIndex;
 
         List<DoorIdentifier> posibleDoors = _doors.Where(door => !door.conected && Access.HasFlag(door.RoomAccess)).ToList();
+        Shuffle(ref posibleDoors);
         
-
         for (int i = 0; i < posibleDoors.Count; i++)
         {
             if(extension <= 0 || branchExtension <= 0)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141351524744223414}
   - component: {fileID: 6893760626853368942}
+  - component: {fileID: 4081468951770885697}
   m_Layer: 0
   m_Name: ExitBlocker
   m_TagString: Untagged
@@ -95,6 +96,36 @@ MonoBehaviour:
       - m_Target: {fileID: 2193810610233391410}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4081468951770885697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141351524744223432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9839f4ef302cb48aada12d95d3b157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDoorIsOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDoorIsClosed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1141351524744223432}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -508,15 +539,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -580,15 +611,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6967593261164203877, guid: c2ffd4bf280499b479e9ac31b9bfa3e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

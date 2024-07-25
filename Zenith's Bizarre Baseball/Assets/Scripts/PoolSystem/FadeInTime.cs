@@ -11,8 +11,12 @@ public class FadeInTime : MonoBehaviour
     float _fadeTime = 0;
 
     [SerializeField] Gradient _gradient;
+
     [SerializeField] UnityEvent onFadeComplete;
     bool _isFading = true;
+
+    [SerializeField] bool _loop;
+
 
     private void Awake() {
         sr = GetComponent<SpriteRenderer>();
@@ -29,6 +33,12 @@ public class FadeInTime : MonoBehaviour
         {
             _isFading = false;
             onFadeComplete.Invoke();
+
+            if(_loop)
+            {
+                _fadeTime = 0;
+                _isFading = true;
+            }
         }
     }
 }

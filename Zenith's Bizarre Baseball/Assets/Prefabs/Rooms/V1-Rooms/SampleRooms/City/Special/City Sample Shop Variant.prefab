@@ -784,27 +784,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 777376260853273852, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 1048238451900825897, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 3982803743363320116, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 7558752228141526508, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 9057912844813102036, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 9177704368191675905, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
@@ -21164,6 +21164,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: OnExitCollidables.Array.data[0].layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: OnExitCollidables.Array.data[0]._targets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0]._targets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: OnExitCollidables.Array.data[0]._targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
+    - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0]._targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
 --- !u!1001 &5039503743948839597

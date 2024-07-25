@@ -8,9 +8,10 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
     [SerializeField] bool _found = false;
     TargetHandler _targetHandler;
     [SerializeField] Identifiable _targetSearchableType;
-    [SerializeField] int _searchableIndex = 0;
+    [SerializeField] ObjectProcessor _searchableIndex;
     [SerializeField] UnityEvent<Transform> _onTargetFound = new UnityEvent<Transform>();
     [SerializeField] bool _setTargetAsTarget = true;
+    [SerializeField] bool _onValidate = true;
 
     private void Awake() {
         _targetHandler = GetComponentInParent<TargetHandler>();
@@ -20,7 +21,7 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
     {
         if (_found) return;
 
-        Transform target = SearchManager.Instance.GetClosestSearchable(transform.position, _targetSearchableType, _searchableIndex);
+        Transform target = SearchManager.Instance.GetClosestSearchable(transform.position, _targetSearchableType, (int)_searchableIndex.Result(0));
 
         _onTargetFound.Invoke(target);
 
@@ -37,6 +38,6 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
     }
 
     private void OnValidate() {
-        gameObject.name = $"SearchTarget";
+        if(_onValidate) gameObject.name = $"SearchTarget";
     }
 }

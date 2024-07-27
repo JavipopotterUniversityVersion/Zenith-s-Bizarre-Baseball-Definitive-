@@ -784,27 +784,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 777376260853273852, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 1048238451900825897, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 3982803743363320116, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 7558752228141526508, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 9057912844813102036, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 9177704368191675905, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
@@ -21164,13 +21164,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ea7065606633064b837ce08189a3ea6, type: 2}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioChannel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 15a09230bd322d842bcb30fd72d9b652, type: 2}
+    - target: {fileID: 4413780845622044343, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: AudioPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
       propertyPath: OnExitCollidables.Array.data[0].layer.m_Bits
-      value: 4294967295
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].layer.m_Bits
-      value: 4294967295
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 6546534806882338999, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
       propertyPath: OnExitCollidables.Array.data[0]._targets.Array.size
@@ -21188,6 +21220,38 @@ PrefabInstance:
       propertyPath: OnEnterCollidables.Array.data[0]._targets.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ea7065606633064b837ce08189a3ea6, type: 2}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioChannel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 60455299f11697c4eb4cfe8eca87fd11, type: 2}
+    - target: {fileID: 7713482716928870101, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
+      propertyPath: onCollideEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: AudioPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c0c44c02436554ba0e299db3eaa5a8, type: 3}
 --- !u!1001 &5039503743948839597

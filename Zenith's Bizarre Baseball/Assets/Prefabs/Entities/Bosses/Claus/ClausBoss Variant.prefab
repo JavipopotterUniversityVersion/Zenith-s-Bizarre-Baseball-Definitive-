@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 8646162924624002183}
   - component: {fileID: 3440508037370182556}
   m_Layer: 6
-  m_Name: Wait 4s
+  m_Name: Wait 2s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,9 +428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da4b90bc677b294eac913160882da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 4
+  timeToWait: 2
   _timeProcessor:
-    operation: 4
+    operation: input
     _debug: 0
     _showReferences: 0
     _floatDictionary:
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5989457719749168020, guid: f65779bc6cc65424fa600f93720d5d4a, type: 3}
-  velocity: 10
+  velocity: 20
   rotation: 0
   _instancePoint: {fileID: 2858819809236846501}
   _instanceProcessors: []
@@ -922,7 +922,13 @@ MonoBehaviour:
       behaviourContainers:
       - {fileID: 6378401176251758774}
     autoRemove: 0
-    _probability: 1
+    _probability: 0.571
+  - behaviourPerformer:
+      condition: []
+      behaviourContainers:
+      - {fileID: 7953088598777922156}
+    autoRemove: 0
+    _probability: 0.601
   _onValidate: 1
 --- !u!1 &4621569711658809710
 GameObject:
@@ -1606,7 +1612,7 @@ MonoBehaviour:
   - conditions:
     - conditionContainer: {fileID: 2295181003864600823}
       negated: 0
-    stateContainer: {fileID: 5082276351806910850}
+    stateContainer: {fileID: 7953088598777922156}
 --- !u!1 &7953088598777922156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,7 +1971,7 @@ PrefabInstance:
       objectReference: {fileID: 5510758849158611440}
     - target: {fileID: 5457969179495792480, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 6545810886281651447, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_RootOrder

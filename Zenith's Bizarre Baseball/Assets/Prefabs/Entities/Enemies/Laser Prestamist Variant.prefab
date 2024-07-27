@@ -1386,7 +1386,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _found: 0
   _targetSearchableType: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
-  _searchableIndex: 0
+  _searchableIndex:
+    operation: input
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _onTargetFound:
     m_PersistentCalls:
       m_Calls:
@@ -1403,6 +1425,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _setTargetAsTarget: 0
+  _onValidate: 1
 --- !u!1 &8436255764575388429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,7 +1695,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3e591022a3b64e243b1782f69c0a62aa, type: 2}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> False
+      value: Alive -> True
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CircularInstanceBehaviour : MonoBehaviour, IBehaviour, IReadable
 {
@@ -43,11 +44,15 @@ public class CircularInstanceBehaviour : MonoBehaviour, IBehaviour, IReadable
 
         for (int i = 0; i < numberOfInstances; i++)
         {
-            GameObject instance = Instantiate(InstanceUnit.GetRandomInstance(_instances), _center.position, Quaternion.identity);
+            InstanceUnit instanceUnit = InstanceUnit.GetRandomUnit(_instances);
+            
+            GameObject instance = Instantiate(instanceUnit.Instance, _center.position, Quaternion.identity);
+            instanceUnit.Processors.ToList().ForEach(processor => processor.Process(instance));
             
             Vector2 randomPosition = positions[Random.Range(0, positions.Count)];
             positions.Remove(randomPosition);
             instance.transform.position = randomPosition;
+
 
             _instanceCount++;
 

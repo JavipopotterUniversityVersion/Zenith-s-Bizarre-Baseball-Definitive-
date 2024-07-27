@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
 {
+    enum ArcAreaType { Square, Circle }
     MovementController movementController;
     [SerializeField] AnimationCurve curve;
 
@@ -13,16 +15,13 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     [SerializeField]
     ObjectProcessor height;
     
-
     [SerializeField] bool _random = true;
 
     [Header("Outer Range")]
     [SerializeField] Vector2 rangeX;
     [SerializeField] Vector2 rangeY;
 
-    [Header("Inner Range")]
-    [SerializeField] Vector2 innerRangeX;
-    [SerializeField] Vector2 innerRangeY;
+    [SerializeField] ArcAreaType areaType = ArcAreaType.Square;
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
@@ -37,8 +36,24 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     {
         Vector2 start = movementController.transform.position;
 
-        Vector2 end = new Vector2(Random.Range(Random.Range(innerRangeX.x, rangeX.x), Random.Range(innerRangeX.y, rangeX.y)), 
-        Random.Range(Random.Range(innerRangeY.x, rangeY.x), Random.Range(innerRangeY.y, rangeY.y)));
+        float x;
+        float y;
+
+        if(areaType == ArcAreaType.Circle)
+        {
+            float angle = Random.Range(0, 360);
+            float radius = Random.Range(rangeX.x, rangeX.y);
+
+            x = radius * Mathf.Cos(angle * Mathf.Deg2Rad);
+            y = radius * Mathf.Sin(angle * Mathf.Deg2Rad);
+        }
+        else
+        {
+            x = Random.Range(rangeX.x, rangeX.y);
+            y = Random.Range(rangeY.x, rangeY.y);
+        }
+
+        Vector2 end = new Vector2(x, y);
 
 
         if(!_random)

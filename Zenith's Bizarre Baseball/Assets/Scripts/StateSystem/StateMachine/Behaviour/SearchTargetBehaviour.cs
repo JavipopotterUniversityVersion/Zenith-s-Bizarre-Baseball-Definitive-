@@ -21,7 +21,8 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
     {
         if (_found) return;
 
-        Transform target = SearchManager.Instance.GetClosestSearchable(transform.position, _targetSearchableType, (int)_searchableIndex.Result(0));
+        int index = (int)_searchableIndex.Result();
+        Transform target = SearchManager.Instance.GetClosestSearchable(transform.position, _targetSearchableType, index);
 
         _onTargetFound.Invoke(target);
 

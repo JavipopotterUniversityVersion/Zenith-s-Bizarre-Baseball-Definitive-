@@ -16,6 +16,12 @@ public class GameObjectRegisterProcess : MonoBehaviour, IGameObjectProcessor
     public void Remove(GameObject gameObject) => _gameObjects.Remove(gameObject);
     GameObject[] GetGameObjects() => _gameObjects.ToArray();
 
+    public void DestroyObjects()
+    {
+        foreach (var gameObject in GetGameObjects()) Destroy(gameObject);
+        RemoveAll();
+    }
+
     [SerializeField] UnityEvent<GameObject[]> _onObjectCast = new UnityEvent<GameObject[]>();
     public void CastObjects() => _onObjectCast.Invoke(GetGameObjects());
 }

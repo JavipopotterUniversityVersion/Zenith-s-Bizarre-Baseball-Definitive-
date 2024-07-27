@@ -18,4 +18,5 @@ public class CameraEffects : ScriptableObject
     public void Shake(float shakeValue) => shakeEvent.Invoke(shakeValue);
     public void HitStop(float hitStopValue) => onHitStop.Invoke(hitStopValue);
     public void DramaticHitStop(AnimationCurve curve, float duration) => onDramaticHitStop.Invoke(curve, duration);
+    public void SetTimeScale(float timeScale) => Time.timeScale = timeScale;
 }

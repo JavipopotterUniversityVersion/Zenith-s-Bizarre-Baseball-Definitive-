@@ -32,6 +32,11 @@ public class DialogueInterpreter : MonoBehaviour
     DialogueOptionReceiver[] dialogueOptionReceivers;
 
     Character _lastCharacter;
+    Character LastCharacter
+    {
+        get => _lastCharacter;
+        set => _lastCharacter = value;
+    }
 
     bool _next = false;
     bool next
@@ -233,7 +238,7 @@ public class DialogueInterpreter : MonoBehaviour
 
         if(input.Contains(":") == false) 
         {
-            name = _lastCharacter.CurrentCharacter.name;
+            name = LastCharacter.CurrentCharacter.name;
             commands = input.Split('/');
         }
         else
@@ -249,9 +254,11 @@ public class DialogueInterpreter : MonoBehaviour
             foreach(string command in commands) InterpretCommand(command, character);
 
             _nameText.text = characterData.name;
+            _nameText.color = characterData.NameColor;
+            _dialogueText.color = characterData.DialogueColor;
             _charWriteSound = characterData.voice;
 
-            _lastCharacter = character;
+            LastCharacter = character;
             return true;
         }
         return false;
@@ -262,12 +269,11 @@ public class DialogueInterpreter : MonoBehaviour
         command = command.Trim();
         string[] commandParts = command.Split('_');
         commandParts[0] = commandParts[0].ToLower();
-        print("Interpreting command: " + command);
 
         switch(commandParts[0])
         {
             case "an":
-                character.SetAnimation(commandParts[1]);
+                for(int i = 1; i < commandParts.Length; i++) character.SetAnimation(commandParts[i]);
                 break;
             case "icon":
                 character.SetSprite(commandParts[1]);
@@ -281,7 +287,7 @@ public class DialogueInterpreter : MonoBehaviour
                 _lastCharacter = _characters.First(c => c.Occupied);
                 break;
             default:
-                Debug.LogWarning($"Command {commandParts[0]} not found");
+                character.SetSprite(commandParts[0]);
                 break;
         }
     }
@@ -299,6 +305,12 @@ public class CharacterData
     public AudioPlayer voice;
     [SerializeField] SerializableDictionary<string, UnityEngine.Sprite> spriteSheet;
     public bool selected;
+
+    [SerializeField] Color _nameColor = Color.white;
+    public Color NameColor => _nameColor;
+
+    [SerializeField] Color _dialogueColor = Color.white;
+    public Color DialogueColor => _dialogueColor;
 
     public UnityEngine.Sprite GetSprite(string name) => spriteSheet[name.ToLower()];
 

@@ -13,17 +13,36 @@ MonoBehaviour:
   m_Name: AnneAskBattle-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - _enter:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
-    lines: []
-    _exit:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
+  - interventionCondition:
+      operation: input
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+    lines:
+    - '<Zenith: an_Idle / default / xpos_-300>
+
+      <Anne: an_Talk / default /
+      xpos_300>
+
+      <break>'
+    - Hola <am>
+    exitConditions: []
+  options: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -38,4 +57,3 @@ MonoBehaviour:
       list: []
     _processorDictionary:
       list: []
-  options: []

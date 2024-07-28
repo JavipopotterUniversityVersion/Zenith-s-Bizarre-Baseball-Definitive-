@@ -34,14 +34,15 @@ MonoBehaviour:
       _eventDictionary:
         list: []
     lines:
-    - '<Zenith: an_Idle / icon_default>
+    - '<Zenith: an_Idle / icon_default / xpos_-300>
 
-      <Claus: an_Talk / xpos_0_1>
+      <Claus: an_Talk / xpos_300
+      / xpos_0_1>
 
       <break>'
     - Hey Zenith, How are you doing? <an_Idle>
     - '<Zenith: an_Talk / xpos_-450_1><break>'
-    - I've been better, I'm feeling kind of <Zenith:disable>
+    - I've been better, I'm feeling kind of bad <an_Idle>
     exitConditions: []
   options:
   - optionText: I like potatoes
@@ -112,7 +113,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - optionText: I like tomatoes
-    buttonIcon: {fileID: 21300000, guid: beec21b4adf13f14083cb1a279004e5a, type: 3}
+    buttonIcon: {fileID: 21300000, guid: 1db6e4747823b3e408a516f49432fdfb, type: 3}
     appearCondition:
       operation: 
       _debug: 0

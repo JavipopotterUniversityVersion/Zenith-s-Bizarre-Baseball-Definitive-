@@ -10,7 +10,10 @@ using System.Linq;
 public class DialogueInterpreter : MonoBehaviour
 {
     [SerializeField] GameObject _dialogueCanvas;
+
+    [SerializeField] TextMeshProUGUI _nameText;
     [SerializeField] TextMeshProUGUI _dialogueText;
+
     [SerializeField] Float _timeBetweenCharacters;
     [SerializeField] DialogueCaster _dialogueCaster;
     [SerializeField] AudioPlayer _charWriteSound;
@@ -20,12 +23,15 @@ public class DialogueInterpreter : MonoBehaviour
     [SerializeField] UnityEvent onDialogueEnd = new UnityEvent();
 
     [SerializeField] InputActionReference _nextLineInput;
-    [SerializeField] SerializableDictionary<string, String> _stringDictionary;
-    [SerializeField] SerializableDictionary<string, Sprite> _spriteDictionary;
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary;
     [SerializeField] SerializableDictionary<string, AudioPlayer> _audioDictionary;
 
+    [SerializeField] Character[] _characters;
+    [SerializeField] CharacterData[] _characterDatas;
+
     DialogueOptionReceiver[] dialogueOptionReceivers;
+
+    Character _lastCharacter;
 
     bool _next = false;
     bool next
@@ -71,6 +77,8 @@ public class DialogueInterpreter : MonoBehaviour
         StopAllCoroutines();
 
         DeactivateOptions();
+        ClearAllCharacters();
+        
         _dialogueCanvas.SetActive(true);
         onDialogueStart.Invoke();
 
@@ -114,7 +122,7 @@ public class DialogueInterpreter : MonoBehaviour
                             break;
                         }
 
-                        bool found = SearchSpriteSet(input) || SearchStringSet(input) || SearchFloatSet(input) || SearchSound(input) || SearchVoice(input);
+                        bool found = SearchCharacter(input) || SearchFloatSet(input) || SearchSound(input) || SearchVoice(input);
 
                         if(!found) Debug.LogWarning($"Input {input} not found, did you pretend to ignore it?");
 
@@ -175,45 +183,6 @@ public class DialogueInterpreter : MonoBehaviour
         _next = true;
     }
 
-    bool SearchSpriteSet(string input)
-    {
-        bool found = false;
-
-        string[] keys = input.Split(":")[0].Split(",").Select(x => x.Trim()).ToArray();
-        string value = input.Split(":")[1].Trim();
-
-        foreach(string key in keys)
-        {
-            if(_spriteDictionary.ContainsKey(key))
-            {
-                _spriteDictionary[key].SetSprite(value);
-                found = true;
-            }
-        }
-
-        return found;
-    }
-
-    bool SearchStringSet(string input)
-    {
-        string key = input.Split(":")[0].Trim();
-        string[] values = input.Split(":")[1].Split(",").Select(x => x.Trim()).ToArray();
-
-        if(values.Length == 0) 
-        {
-            _stringDictionary[key].SetString("");
-            return true;
-        }
-
-        if(_stringDictionary.ContainsKey(key))
-        {
-            values.ToList().ForEach(x => _stringDictionary[key].SetString(x));
-            return true;
-        }
-
-        return false;
-    }
-
     bool SearchFloatSet(string input)
     {
         string key = input.Split(":")[0].Trim();
@@ -253,5 +222,92 @@ public class DialogueInterpreter : MonoBehaviour
             }
         }
         return false;
+    }
+
+    bool SearchCharacter(string input)
+    {
+        string name;
+        string[] commands;
+
+        if(input.Contains(":") == false) 
+        {
+            name = _lastCharacter.CurrentCharacter.name;
+            commands = input.Split('/');
+        }
+        else
+        {
+            name = input.Split(":")[0].Trim();
+            commands = input.Split(":")[1].Trim().Split('/');
+        }
+
+        if(CharacterData.SearchCharacter(_characterDatas, name, out CharacterData characterData))
+        {
+            Character character = Character.SetFirstFreeCharacter(_characters, characterData);
+
+            foreach(string command in commands) InterpretCommand(command, character);
+
+            _nameText.text = characterData.name;
+            _charWriteSound = characterData.voice;
+
+            _lastCharacter = character;
+            return true;
+        }
+        return false;
+    }
+
+    public void InterpretCommand(string command, Character character)
+    {
+        command = command.Trim();
+        string[] commandParts = command.Split('_');
+        commandParts[0] = commandParts[0].ToLower();
+        print("Interpreting command: " + command);
+
+        switch(commandParts[0])
+        {
+            case "an":
+                character.SetAnimation(commandParts[1]);
+                break;
+            case "icon":
+                character.SetSprite(commandParts[1]);
+                break;
+            case "xpos":
+                float y = commandParts.Length == 3 ? float.Parse(commandParts[2]) : 0;
+                character.SetRectX(float.Parse(commandParts[1]), y);
+                break;
+            case "disable":
+                character.DisableCharacter();
+                _lastCharacter = _characters.First(c => c.Occupied);
+                break;
+            default:
+                Debug.LogWarning($"Command {commandParts[0]} not found");
+                break;
+        }
+    }
+
+    void ClearAllCharacters()
+    {
+        foreach(Character character in _characters) character.DisableCharacter();
+    }
+}
+
+[System.Serializable]
+public class CharacterData
+{
+    public string name;
+    public AudioPlayer voice;
+    [SerializeField] SerializableDictionary<string, UnityEngine.Sprite> spriteSheet;
+    public bool selected;
+
+    public UnityEngine.Sprite GetSprite(string name) => spriteSheet[name.ToLower()];
+
+    public static bool SearchCharacter(CharacterData[] characters, string name, out CharacterData character)
+    {
+        int i = 0;
+        while(i < characters.Length && characters[i].name != name) i++;
+        
+        if(characters[i].name == name) character = characters[i];
+        else character = new CharacterData();
+
+        return characters[i].name == name;
     }
 }

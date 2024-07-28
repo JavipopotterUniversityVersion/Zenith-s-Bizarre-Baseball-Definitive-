@@ -11,14 +11,28 @@ public class Dialogue : ScriptableObject, IDialogue
     [SerializeField] Intervention[] dialogueLines;
     public Intervention[] DialogueLines => dialogueLines;
 
+    [SerializeField] DialogueOption[] options;
+    public DialogueOption[] Options => options;
+
+    [Space(10)]
     [SerializeField] UnityEvent onDialogueEnd = new UnityEvent();
     public UnityEvent OnDialogueEnd => onDialogueEnd;
 
     [SerializeField] StringProcessor _stringProcessor;
     public StringProcessor StringProcessor => _stringProcessor;
+}
 
-    [SerializeField] DialogueOption[] options;
-    public DialogueOption[] Options => options;
+
+[CustomEditor(typeof(Dialogue))]
+public class DialogueCustomEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        Dialogue dialogue = (Dialogue)target;
+        GUILayout.Label(":3");
+    }
 }
 
 [Serializable]

@@ -13,33 +13,37 @@ MonoBehaviour:
   m_Name: Debug-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - _enter:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
+  - interventionCondition:
+      operation: input
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
     lines:
-    - '<clausAn:Talk,Appear>
+    - '<Zenith: an_Idle / icon_default>
 
-      <zenithAn:Fade>
-
-      <claus,zenith:default>
-
-      <name:Claus>
+      <Claus: an_Talk / xpos_0_1>
 
       <break>'
-    - 'Hello Zenith, how is it to write dialogues with this?
-
-      <clausAn:Idle>'
-    - '<zenithAn:Talk, Appear><clausAn:Fade> <break> '
-    - ShortCuts would be great, this way of writing is kind of tedius <zenithAn:Idle>
-    - <clausAn:Talk><clausAn:Appear><zenithAn:Fade><break>
-    - Yeah this is so lame!!!! <clausAn:Idle>
-    _exit:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
+    - Hey Zenith, How are you doing? <an_Idle>
+    - '<Zenith: an_Talk / xpos_-450_1><break>'
+    - I've been better, I'm feeling kind of <Zenith:disable>
+    exitConditions: []
+  options: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -49,6 +53,8 @@ MonoBehaviour:
     _floatDictionary:
       list: []
     _stringDictionary:
+      list: []
+    _stringFunctionDictionary:
       list: []
     _processorDictionary:
       list: []

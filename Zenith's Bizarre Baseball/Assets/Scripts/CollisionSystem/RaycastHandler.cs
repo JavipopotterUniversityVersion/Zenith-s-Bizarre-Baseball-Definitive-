@@ -13,10 +13,10 @@ public class RaycastHandler : MonoBehaviour
     [SerializeField] CollidableGroup[] OnExitCollidables;
     public CollidableGroup[] OnExitCollidablesProp() => OnExitCollidables;
     
-    bool _drawing;
+    [SerializeField] bool _drawing;
     public bool Drawing => _drawing;
 
-    bool _checking;
+    [SerializeField] bool _checking;
     public bool Checking => _checking;
 
     public void SetChecking(bool value)

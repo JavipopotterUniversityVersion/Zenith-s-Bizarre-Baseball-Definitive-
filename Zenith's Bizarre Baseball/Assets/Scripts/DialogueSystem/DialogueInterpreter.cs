@@ -17,8 +17,6 @@ public class DialogueInterpreter : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] UnityEvent onDialogueStart = new UnityEvent();
-    [SerializeField] UnityEvent onInterventionStart = new UnityEvent();
-    [SerializeField] UnityEvent onInterventionEnd = new UnityEvent();
     [SerializeField] UnityEvent onDialogueEnd = new UnityEvent();
 
     [SerializeField] InputActionReference _nextLineInput;
@@ -26,6 +24,8 @@ public class DialogueInterpreter : MonoBehaviour
     [SerializeField] SerializableDictionary<string, Sprite> _spriteDictionary;
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary;
     [SerializeField] SerializableDictionary<string, AudioPlayer> _audioDictionary;
+
+    DialogueOptionReceiver[] dialogueOptionReceivers;
 
     bool _next = false;
     bool next
@@ -41,6 +41,7 @@ public class DialogueInterpreter : MonoBehaviour
 
 
     private void Awake() {
+        dialogueOptionReceivers = GetComponentsInChildren<DialogueOptionReceiver>();
         _dialogueCaster.OnDialogueCast.AddListener(StartDialogue);
         _dialogueCaster.onStopDialogue.AddListener(StopDialogue);
         _nextLineInput.action.Enable();
@@ -57,14 +58,7 @@ public class DialogueInterpreter : MonoBehaviour
         StartDialogue(dialogueReference.Value);
     }
 
-    public void StartDialogue(Dialogue dialogue)
-    {
-        StopAllCoroutines();
-        _dialogueCanvas.SetActive(true);
-        onDialogueStart.Invoke();
-
-        StartCoroutine(InterpretDialogue(dialogue));
-    }
+    public void StartDialogue(Dialogue dialogue) => StartDialogue(dialogue as IDialogue);
 
     public void StopDialogue()
     {
@@ -72,27 +66,33 @@ public class DialogueInterpreter : MonoBehaviour
         _dialogueCanvas.SetActive(false);
     }
 
-    IEnumerator InterpretDialogue(Dialogue dialogue)
+    public void StartDialogue(IDialogue dialogue)
+    {
+        StopAllCoroutines();
+
+        DeactivateOptions();
+        _dialogueCanvas.SetActive(true);
+        onDialogueStart.Invoke();
+
+        StartCoroutine(InterpretDialogue(dialogue));
+    }
+
+    IEnumerator InterpretDialogue(IDialogue dialogue)
     {
         yield return new WaitForEndOfFrame();
         _nextLineInput.action.performed += Next;
         
         foreach (Intervention intervention in dialogue.DialogueLines)
         {
-            if(intervention.Enter.CheckCondition() == false) continue;
-            onInterventionStart.Invoke();
-            intervention.Enter.Invoke();
+            if(intervention.CanEnter == false) continue;
 
             if(intervention.lines.Length == 0)
             {
-                intervention.Exit.Invoke();
-                onInterventionEnd.Invoke();
-
-                if(intervention.Exit.IsEmpty())
+                if(intervention.noExitConditions == true)
                 {
                     while(!Input.GetButtonDown("NextLine")) yield return null;
                 }
-                else while(!intervention.Exit.CheckCondition()) yield return new WaitForEndOfFrame();
+                else while(!intervention.canExitIntervention) yield return new WaitForEndOfFrame();
             }
 
             foreach (string dialogueLine in intervention.Lines)
@@ -132,15 +132,12 @@ public class DialogueInterpreter : MonoBehaviour
                     if(!skip) yield return new WaitForSecondsRealtime(_timeBetweenCharacters.Value);
                 }
 
-                intervention.Exit.Invoke();
-                onInterventionEnd.Invoke();
-
-                if(intervention.Exit.IsEmpty())
+                if(intervention.noExitConditions == true)
                 {
                     while(!next) yield return null;
                     yield return new WaitForEndOfFrame();
                 }
-                else while(!intervention.Exit.CheckCondition()) yield return new WaitForEndOfFrame();
+                else while(!intervention.canExitIntervention) yield return new WaitForEndOfFrame();
             }
         }
 
@@ -149,6 +146,28 @@ public class DialogueInterpreter : MonoBehaviour
         _dialogueCanvas.SetActive(false);
 
         _nextLineInput.action.performed -= Next;
+
+        SetOptions(dialogue.Options);
+    }
+
+    void SetOptions(DialogueOption[] options)
+    {
+        if(options.Length == 0) return;
+
+        int receiverIndex = 0;
+        for(int i = 0; i < options.Length; i++)
+        {
+            if(options[i].appearCondition.ResultBool())
+            {
+                dialogueOptionReceivers[receiverIndex].ReceiveOption(options[i], this);
+                receiverIndex++;
+            }
+        }
+    }
+
+    public void DeactivateOptions()
+    {
+        foreach(DialogueOptionReceiver receiver in dialogueOptionReceivers) receiver.gameObject.SetActive(false);
     }
 
     void Next(InputAction.CallbackContext context)

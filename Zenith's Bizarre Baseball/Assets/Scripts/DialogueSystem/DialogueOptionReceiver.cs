@@ -20,6 +20,7 @@ public class DialogueOptionReceiver : MonoBehaviour
         Button button = GetComponent<Button>();
         button.onClick.RemoveAllListeners();
 
+        if(transform.GetSiblingIndex() == 0) button.Select();
         GetComponent<Button>().onClick.AddListener(() => interpreter.StartDialogue(option.dialogue));
     }
 }

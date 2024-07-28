@@ -41,14 +41,14 @@ public class DialogueClass : IDialogue
     [SerializeField] Intervention[] _dialogueLines;
     public Intervention[] DialogueLines => _dialogueLines;
 
-    [SerializeField] UnityEvent _onDialogueEnd = new UnityEvent();
-    public UnityEvent OnDialogueEnd => _onDialogueEnd;
-
+    [SerializeField] DialogueOption[] _options;
+    public DialogueOption[] Options => _options;
+    
     [SerializeField] StringProcessor _stringProcessor;
     public StringProcessor StringProcessor => _stringProcessor;
 
-    [SerializeField] DialogueOption[] _options;
-    public DialogueOption[] Options => _options;
+    [SerializeField] UnityEvent _onDialogueEnd = new UnityEvent();
+    public UnityEvent OnDialogueEnd => _onDialogueEnd;
 }
 
 public interface IDialogue

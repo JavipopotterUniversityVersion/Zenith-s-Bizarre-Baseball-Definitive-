@@ -43,7 +43,141 @@ MonoBehaviour:
     - '<Zenith: an_Talk / xpos_-450_1><break>'
     - I've been better, I'm feeling kind of <Zenith:disable>
     exitConditions: []
-  options: []
+  options:
+  - optionText: I like potatoes
+    buttonIcon: {fileID: 21300000, guid: 1db6e4747823b3e408a516f49432fdfb, type: 3}
+    appearCondition:
+      operation: 
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+    dialogue:
+      _dialogueLines:
+      - interventionCondition:
+          operation: 
+          _debug: 0
+          _showReferences: 0
+          _floatDictionary:
+            list: []
+          _intDictionary:
+            list: []
+          _curveDictionary:
+            list: []
+          _operationDictionary:
+            list: []
+          _functionDictionary:
+            list: []
+          _stringDictionary:
+            list: []
+          _boolDictionary:
+            list: []
+          _eventDictionary:
+            list: []
+        lines:
+        - '<Zenith: an_Idle / icon_default>
+
+          <Claus: an_Talk / xpos_0_1>
+
+          <break>'
+        - Oh yeah I like potatoes
+        exitConditions: []
+      _options: []
+      _stringProcessor:
+        _intDictionary:
+          list: []
+        _floatDictionary:
+          list: []
+        _stringDictionary:
+          list: []
+        _stringFunctionDictionary:
+          list: []
+        _processorDictionary:
+          list: []
+      _onDialogueEnd:
+        m_PersistentCalls:
+          m_Calls: []
+  - optionText: I like tomatoes
+    buttonIcon: {fileID: 21300000, guid: beec21b4adf13f14083cb1a279004e5a, type: 3}
+    appearCondition:
+      operation: 
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+    dialogue:
+      _dialogueLines:
+      - interventionCondition:
+          operation: 
+          _debug: 0
+          _showReferences: 0
+          _floatDictionary:
+            list: []
+          _intDictionary:
+            list: []
+          _curveDictionary:
+            list: []
+          _operationDictionary:
+            list: []
+          _functionDictionary:
+            list: []
+          _stringDictionary:
+            list: []
+          _boolDictionary:
+            list: []
+          _eventDictionary:
+            list: []
+        lines:
+        - '<Zenith: an_Idle / icon_default>
+
+          <Claus: an_Talk / xpos_0_1>
+
+          <break>'
+        - Oh yeah i like tomatoes
+        exitConditions: []
+      _options: []
+      _stringProcessor:
+        _intDictionary:
+          list: []
+        _floatDictionary:
+          list: []
+        _stringDictionary:
+          list: []
+        _stringFunctionDictionary:
+          list: []
+        _processorDictionary:
+          list: []
+      _onDialogueEnd:
+        m_PersistentCalls:
+          m_Calls: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []

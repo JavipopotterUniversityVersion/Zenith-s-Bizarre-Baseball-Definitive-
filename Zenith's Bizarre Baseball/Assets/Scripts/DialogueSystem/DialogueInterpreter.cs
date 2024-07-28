@@ -26,9 +26,9 @@ public class DialogueInterpreter : MonoBehaviour
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary;
     [SerializeField] SerializableDictionary<string, AudioPlayer> _audioDictionary;
 
-    [SerializeField] Character[] _characters;
     [SerializeField] CharacterData[] _characterDatas;
 
+    Character[] _characters;
     DialogueOptionReceiver[] dialogueOptionReceivers;
 
     Character _lastCharacter;
@@ -47,7 +47,8 @@ public class DialogueInterpreter : MonoBehaviour
 
 
     private void Awake() {
-        dialogueOptionReceivers = GetComponentsInChildren<DialogueOptionReceiver>();
+        _characters = GetComponentsInChildren<Character>(true);
+        dialogueOptionReceivers = GetComponentsInChildren<DialogueOptionReceiver>(true);
         _dialogueCaster.OnDialogueCast.AddListener(StartDialogue);
         _dialogueCaster.onStopDialogue.AddListener(StopDialogue);
         _nextLineInput.action.Enable();
@@ -151,16 +152,15 @@ public class DialogueInterpreter : MonoBehaviour
 
         dialogue.OnDialogueEnd.Invoke();
         onDialogueEnd.Invoke();
-        _dialogueCanvas.SetActive(false);
 
         _nextLineInput.action.performed -= Next;
 
-        SetOptions(dialogue.Options);
+        if(!SetOptions(dialogue.Options)) _dialogueCanvas.SetActive(false);
     }
 
-    void SetOptions(DialogueOption[] options)
+    bool SetOptions(DialogueOption[] options)
     {
-        if(options.Length == 0) return;
+        if(options.Length == 0) return false;
 
         int receiverIndex = 0;
         for(int i = 0; i < options.Length; i++)
@@ -171,6 +171,8 @@ public class DialogueInterpreter : MonoBehaviour
                 receiverIndex++;
             }
         }
+
+        return true;
     }
 
     public void DeactivateOptions()

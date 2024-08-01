@@ -367,6 +367,7 @@ MonoBehaviour:
   _timeBetweenCharacters: {fileID: 11400000, guid: 426da5c90e65e6b4cb814adb15189924, type: 2}
   _dialogueCaster: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
   _charWriteSound: {fileID: 11400000, guid: 71874734b17e22c4bbf3bbb5de7d4e8f, type: 2}
+  _backgroundSprite: {fileID: 0}
   onDialogueStart:
     m_PersistentCalls:
       m_Calls:
@@ -382,9 +383,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _nextLineInput: {fileID: 3598227520334549392, guid: deef3044fee5aa849acf6111d62b3998, type: 3}
   _floatDictionary:
     list:
@@ -411,6 +436,26 @@ MonoBehaviour:
     selected: 0
     _nameColor: {r: 1, g: 0.20188677, b: 0.20188677, a: 1}
     _dialogueColor: {r: 1, g: 0.6264151, b: 0.6264151, a: 1}
+  - name: Rain
+    voice: {fileID: 11400000, guid: 71874734b17e22c4bbf3bbb5de7d4e8f, type: 2}
+    spriteSheet:
+      list:
+      - Key: default
+        Value: {fileID: -569771853, guid: 2f50d52a0b35ef343898816a950e93f5, type: 3}
+      - Key: worry
+        Value: {fileID: 1739636575, guid: 2f50d52a0b35ef343898816a950e93f5, type: 3}
+    selected: 0
+    _nameColor: {r: 0.19999999, g: 1, b: 0.2011219, a: 1}
+    _dialogueColor: {r: 0.627451, g: 1, b: 0.64757925, a: 1}
+  - name: Jim
+    voice: {fileID: 11400000, guid: 71874734b17e22c4bbf3bbb5de7d4e8f, type: 2}
+    spriteSheet:
+      list:
+      - Key: default
+        Value: {fileID: 2078545783, guid: cb813f7bd4b7ffb41a5cc00363237f93, type: 3}
+    selected: 0
+    _nameColor: {r: 1, g: 1, b: 1, a: 1}
+    _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &4620592408120661293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +634,6 @@ GameObject:
   - component: {fileID: 2159395855305537372}
   - component: {fileID: 2159395855305537374}
   - component: {fileID: 2159395855305537375}
-  - component: {fileID: 4749293698184267701}
   m_Layer: 5
   m_Name: DialoguePanel
   m_TagString: Untagged
@@ -658,50 +702,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1.57
---- !u!114 &4749293698184267701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2159395855305537373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43f8e7a462951246bcf8bdce7875c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: cb8c3203bbdec524180893dda147f8ef, type: 2}
-  checkOnAwake: 0
-  _onTrue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2159395855305537373}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2159395855305537373}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2159395855719075774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackGround
       objectReference: {fileID: 0}
+    - target: {fileID: 6132252801792839447, guid: 72b2affdba9573f438d17def2ebcb951, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fd5fe0643f39d6842ae1305b95ba069a, type: 2}
     - target: {fileID: 7719810673065453959, guid: 72b2affdba9573f438d17def2ebcb951, type: 3}
       propertyPath: _animation
       value: 
@@ -1444,8 +1448,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 3253533965353493677, guid: 72b2affdba9573f438d17def2ebcb951, type: 3}
-    - {fileID: 6132252801792839447, guid: 72b2affdba9573f438d17def2ebcb951, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 72b2affdba9573f438d17def2ebcb951, type: 3}
+--- !u!95 &1438495943567387059 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6132252801792839447, guid: 72b2affdba9573f438d17def2ebcb951, type: 3}
+  m_PrefabInstance: {fileID: 5110656620953413284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7063817898579880356 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2660233119408017152, guid: 72b2affdba9573f438d17def2ebcb951, type: 3}
@@ -1477,7 +1485,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1995646326705997690
+--- !u!114 &4018190586347943077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1486,10 +1494,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8773972828567746039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5009b831ada6f164d8870ec18d6bdda4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1200d8805ae30fd409c1ce6a44db259d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animation: {fileID: 11400000, guid: 0bb8c8d247e1a8540b777ee773145524, type: 2}
+  _sprite: {fileID: 11400000, guid: 6921edba7563af340bfa700da8762a0f, type: 2}
+  _updateOnSpriteSet: 0
+  _onSpriteSet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1438495943567387059}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FadeBlack
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5817445847389223655
 PrefabInstance:
   m_ObjectHideFlags: 0

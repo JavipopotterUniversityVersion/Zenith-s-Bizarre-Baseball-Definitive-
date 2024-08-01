@@ -18,6 +18,8 @@ public class DialogueInterpreter : MonoBehaviour
     [SerializeField] DialogueCaster _dialogueCaster;
     [SerializeField] AudioPlayer _charWriteSound;
 
+    [SerializeField] Sprite _backgroundSprite;
+
     [Header("Events")]
     [SerializeField] UnityEvent onDialogueStart = new UnityEvent();
     [SerializeField] UnityEvent onDialogueEnd = new UnityEvent();
@@ -99,6 +101,8 @@ public class DialogueInterpreter : MonoBehaviour
         foreach (Intervention intervention in dialogue.DialogueLines)
         {
             if(intervention.CanEnter == false) continue;
+
+            _backgroundSprite.SetSprite(intervention.backgroundSprite);
 
             if(intervention.lines.Length == 0)
             {

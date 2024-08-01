@@ -13,59 +13,29 @@ MonoBehaviour:
   m_Name: JimEncounter-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - _enter:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 11400000, guid: 91a6d05075e70324785acf26d671f953, type: 2}
-            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
-            m_MethodName: SetValue
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-          - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
-            m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
-            m_MethodName: Disable
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-    lines:
-    - <zenith:default><jim:default><break>
-    - 'ST(Jim, jimAn, zenithAn)Who are you? Why is it there a girl in my gym?<jimAn:
-      Idle>'
-    - ST(Zenith, zenithAn, jimAn)I have to go to the subway, I'm seeking for revenge
-      <zenithAn:Idle>
-    - TALK(zenithAn, Would you let me pass please?)
-    - ST(Jim, jimAn, zenithAn)<break>
-    - No, I hate women, they are all b*tches <jimAn:Idle>
-    - ST(Zenith, zenithAn, jimAn)<break>
-    - 'You meant bitches?
-
-      <zenithAn:Idle>'
-    - ST(Jim, jimAn, zenithAn)<break>
-    - Yeah, now I'll kick you ass <jimAn:Idle>
-    - ST(Zenith, zenithAn, jimAn)<break>
-    - 'Try it!
-
-      <zenithAn:Idle>'
-    _exit:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
+  - interventionCondition:
+      operation: input
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+    lines: []
+    exitConditions: []
+  options: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:

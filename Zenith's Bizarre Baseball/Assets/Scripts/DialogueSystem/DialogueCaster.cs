@@ -13,5 +13,6 @@ public class DialogueCaster : ScriptableObject
     public UnityEvent OnStopDialogue => onStopDialogue;
 
     public void CastDialogue(Dialogue dialogue) => onDialogueCast.Invoke(dialogue);
+    public void CastDialogue(DialogueReference dialogueReference) => onDialogueCast.Invoke(dialogueReference.Value);
     public void StopDialogue() => onStopDialogue.Invoke();
 }

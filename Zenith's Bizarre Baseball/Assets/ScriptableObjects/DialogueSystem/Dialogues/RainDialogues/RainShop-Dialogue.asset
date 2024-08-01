@@ -13,32 +13,32 @@ MonoBehaviour:
   m_Name: RainShop-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - _enter:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: -944628639613478452, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
-            m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
-            m_MethodName: Disable
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+  - interventionCondition:
+      operation: input
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
     lines:
-    - <name:Rain><rain:default><break>
-    - TALK(rainAn,Hi sis how you doing?)
-    - TALK(rainAn,C'mon buy anything you want)
-    _exit:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
+    - '<Rain: default / an_Talk>'
+    - Hi sis how you doing? <an_Idle>
+    - <an_Talk>C'mon buy anything you want <an_Idle>
+    exitConditions: []
+  options: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:

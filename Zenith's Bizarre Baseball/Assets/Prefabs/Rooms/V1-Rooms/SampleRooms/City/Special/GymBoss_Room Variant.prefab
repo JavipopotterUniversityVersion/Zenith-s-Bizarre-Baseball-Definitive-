@@ -746,13 +746,13 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 25bd1856bbfde66439f032da33f5c1c2, type: 2}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: cdb300068c6086042b41c21f089c9a49, type: 2}
-          m_ObjectArgumentAssemblyTypeName: String, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level_2
           m_BoolArgument: 0
         m_CallState: 2
   onCollideEventWithTransform:
@@ -64984,7 +64984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479520501818461720, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 4142729888667663494, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
       propertyPath: m_Enabled

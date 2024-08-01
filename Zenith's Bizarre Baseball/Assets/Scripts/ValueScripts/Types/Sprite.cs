@@ -13,4 +13,9 @@ public class Sprite : ScriptableObject
     public UnityEvent OnSpriteSet => _onSpriteSet;
 
     [SerializeField] SerializableDictionary<string, UnityEngine.Sprite> _spriteDictionary;
+    public void SetSprite(UnityEngine.Sprite _sprite)
+    {
+        _value = _sprite;
+        _onSpriteSet.Invoke();
+    }
 }

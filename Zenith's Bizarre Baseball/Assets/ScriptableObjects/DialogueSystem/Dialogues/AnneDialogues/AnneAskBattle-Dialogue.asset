@@ -34,13 +34,16 @@ MonoBehaviour:
       _eventDictionary:
         list: []
     lines:
-    - '<Zenith: an_Idle / default / xpos_-300>
+    - '<Zenith: an_Talk / default / xpos_-300>
 
-      <Anne: an_Talk / default /
-      xpos_300>
+      <Anne: an_Idle_Fade / default
+      / xpos_300>
+
+      <Zenith: an_Appear>
 
       <break>'
-    - Hola <am>
+    - Anne? What are you doing here? <an_Idle>
+    - '<an_Fade><Anne: an_Appear_Talk>'
     exitConditions: []
   options: []
   onDialogueEnd:

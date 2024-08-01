@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using MyBox;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEditor;
 
 [CreateAssetMenu(fileName = "Dialogue", menuName = "DialogueSystem/Dialogue")]
 public class Dialogue : ScriptableObject, IDialogue
@@ -22,19 +20,6 @@ public class Dialogue : ScriptableObject, IDialogue
     public StringProcessor StringProcessor => _stringProcessor;
 }
 
-
-[CustomEditor(typeof(Dialogue))]
-public class DialogueCustomEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        Dialogue dialogue = (Dialogue)target;
-        GUILayout.Label(":3");
-    }
-}
-
 [Serializable]
 public class DialogueClass : IDialogue
 {
@@ -43,7 +28,7 @@ public class DialogueClass : IDialogue
 
     [SerializeField] DialogueOption[] _options;
     public DialogueOption[] Options => _options;
-    
+
     [SerializeField] StringProcessor _stringProcessor;
     public StringProcessor StringProcessor => _stringProcessor;
 
@@ -62,6 +47,9 @@ public interface IDialogue
 [Serializable]
 public class Intervention
 {
+    public bool background;
+    [ConditionalField(nameof(background), false)] public UnityEngine.Sprite backgroundSprite;
+
     [SerializeField] Processor interventionCondition;
     public bool CanEnter => interventionCondition.ResultBool();
 

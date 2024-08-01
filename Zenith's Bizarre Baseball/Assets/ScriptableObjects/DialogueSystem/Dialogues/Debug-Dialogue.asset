@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Debug-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - interventionCondition:
+  - background: 0
+    backgroundSprite: {fileID: 0}
+    interventionCondition:
       operation: input
       _debug: 0
       _showReferences: 0
@@ -69,7 +71,9 @@ MonoBehaviour:
         list: []
     dialogue:
       _dialogueLines:
-      - interventionCondition:
+      - background: 0
+        backgroundSprite: {fileID: 0}
+        interventionCondition:
           operation: 
           _debug: 0
           _showReferences: 0
@@ -136,7 +140,9 @@ MonoBehaviour:
         list: []
     dialogue:
       _dialogueLines:
-      - interventionCondition:
+      - background: 0
+        backgroundSprite: {fileID: 0}
+        interventionCondition:
           operation: 
           _debug: 0
           _showReferences: 0

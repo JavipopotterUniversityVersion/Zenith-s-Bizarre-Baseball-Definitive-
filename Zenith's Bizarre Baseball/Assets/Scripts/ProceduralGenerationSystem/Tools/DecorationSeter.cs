@@ -13,7 +13,9 @@ public class DecorationSeter : MonoBehaviour
 {
     [SerializeField] DecorationData[] possibleDecorations;
     NodeGenerator nodeGenerator;
+
     Tilemap tilemap;
+
     [SerializeField] List<Limit> decorationLimits = new List<Limit>();
     [SerializeField] Tile extensionTile;
     [SerializeField] int margin;
@@ -66,6 +68,8 @@ public class DecorationSeter : MonoBehaviour
 
         PlaceDecoration(positions);
     }
+
+    void OnDestroy() => StopAllCoroutines();
 
     void AddPositionByOriginDistance(Vector2 position, List<Vector2> positions)
     {

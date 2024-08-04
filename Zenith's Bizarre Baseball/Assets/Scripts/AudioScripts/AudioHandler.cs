@@ -29,11 +29,14 @@ public class AudioHandler : MonoBehaviour
 
     public void Play(AudioClip clip)
     {
-        if(_source.clip != clip) _source.clip = clip;
+        if(clip != null && _source.clip != clip) _source.clip = clip;
         _source.Play();
     }
 
-    public void PlayOneShot(AudioClip clip) => _source.PlayOneShot(clip);
+    public void PlayOneShot(AudioClip clip)
+    {
+        if(clip != null) _source.PlayOneShot(clip);
+    }
 
     public void Stop() => _source.Stop();
     public void Pause() => _source.Pause();

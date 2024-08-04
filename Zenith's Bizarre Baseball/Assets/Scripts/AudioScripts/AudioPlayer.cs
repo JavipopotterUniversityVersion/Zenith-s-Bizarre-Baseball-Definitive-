@@ -41,6 +41,8 @@ public class AudioPlayer : ScriptableObject
 
     public AudioClip audioClip()
     {
+        if (clips.Length == 0) return null;
+        
         //utiliza la pista de audio actual
         var clip = clips[playIndex >= clips.Length ? 0 : playIndex];
 

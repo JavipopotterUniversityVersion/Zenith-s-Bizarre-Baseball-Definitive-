@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class SpriteReceiver : MonoBehaviour
 {
-    Image _image;
+    [SerializeField] Image _image;
     [SerializeField] Sprite _sprite;
     [SerializeField] bool _updateOnSpriteSet = true;
 
@@ -14,7 +14,7 @@ public class SpriteReceiver : MonoBehaviour
 
     private void Awake()
     {
-        _image = GetComponent<Image>();
+        if(_image == null) _image = GetComponent<Image>();
          _sprite.OnSpriteSet.AddListener(OnSpriteSet);
     }
 

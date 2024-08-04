@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerClickHandler
 {
     Button _button;
 
@@ -28,5 +28,13 @@ public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler
         onDeselect.Invoke();
     }
 
-    private void OnMouseEnter() => _button.Select();
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _button.Select();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        _button.onClick.Invoke();
+    }
 }

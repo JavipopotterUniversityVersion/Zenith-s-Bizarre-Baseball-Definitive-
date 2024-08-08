@@ -10,31 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
-  m_Name: Knockback-Zenith
+  m_Name: Global_Boost
   m_EditorClassIdentifier: 
-  _value: 15
+  _value: 0
   _readProcessor:
-    operation: '[value] * g (boost/100)'
+    operation: input
     _debug: 0
-    _showReferences: 1
+    _showReferences: 0
     _floatDictionary:
-      list:
-      - Key: boost
-        Value: {fileID: 11400000, guid: 940f91319b2677f4885b9f62b8f976e2, type: 2}
+      list: []
     _intDictionary:
-      list:
-      - Key: level
-        Value: {fileID: 11400000, guid: f122d159d82432247952692ce75b2b53, type: 2}
+      list: []
     _curveDictionary:
-      list:
-      - Key: f
-        Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
-      - Key: g
-        Value: {fileID: 11400000, guid: 53a31b157f4f8d94cb92053037a29507, type: 2}
+      list: []
     _operationDictionary:
-      list:
-      - Key: '[value]'
-        Value: {fileID: 11400000, guid: f7b710cc109857849968b2be0c6663b1, type: 2}
+      list: []
     _functionDictionary:
       list: []
     _stringDictionary:
@@ -48,4 +38,16 @@ MonoBehaviour:
       m_Calls: []
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: ad7a1df6d560cb34d86f0006a9f07b07, type: 2}
+        m_TargetAssemblyTypeName: Float, Assembly-CSharp
+        m_MethodName: Refresh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

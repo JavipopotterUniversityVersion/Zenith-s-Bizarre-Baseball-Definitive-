@@ -794,6 +794,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Talking -> False
       objectReference: {fileID: 0}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition.operation
+      value: owes == 0 || money != 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition._showReferences
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition._intDictionary.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition._floatDictionary.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition._intDictionary.list.Array.data[0].Key
+      value: money
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition._floatDictionary.list.Array.data[0].Key
+      value: owes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition._intDictionary.list.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+    - target: {fileID: 6561782669723981425, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
+      propertyPath: _purchaseCondition._floatDictionary.list.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
     - target: {fileID: 7558752228141526508, guid: a08168eefc6972043940e02a29e04f5c, type: 3}
       propertyPath: m_Name
       value: Talking -> False

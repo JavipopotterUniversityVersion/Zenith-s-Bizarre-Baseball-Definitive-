@@ -14,17 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 15
   _readProcessor:
-    operation: input * (_multiplier + 1)
+    operation: input * (_multiplier + 1) * g (boost/100)
     _debug: 0
-    _showReferences: 0
+    _showReferences: 1
     _floatDictionary:
       list:
       - Key: _multiplier
         Value: {fileID: 11400000, guid: 97fb755770921464f94717d4a5db6ead, type: 2}
+      - Key: boost
+        Value: {fileID: 11400000, guid: 940f91319b2677f4885b9f62b8f976e2, type: 2}
     _intDictionary:
       list: []
     _curveDictionary:
-      list: []
+      list:
+      - Key: g
+        Value: {fileID: 11400000, guid: 5f8ba4f32d8a7bb4392f5d8042bf96a2, type: 2}
     _operationDictionary:
       list: []
     _functionDictionary:
@@ -41,4 +45,3 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  _originalValue: 15

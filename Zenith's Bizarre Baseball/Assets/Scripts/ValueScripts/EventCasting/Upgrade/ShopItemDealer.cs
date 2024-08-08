@@ -7,10 +7,15 @@ using MyBox;
 
 public class ShopItemDealer : MonoBehaviour
 {
-    [SerializeField] ShopItemData[] _upgradeDatas;
     [SerializeField] ObjectProcessor _numberOfItems;
+    [SerializeField] ShopItemData[] _upgradeDatas;
+    [SerializeField] ObjectProcessor _costProcessor;
+    [Space(20)]
+    [SerializeField] Int _moneyType;
+    [SerializeField] ObjectProcessor _purchaseCondition;
 
     ShopItemReceiver[] _itemReceivers;
+    [SerializeField] string _costIcon = "<sprite=\"UpgradeOrbs\" index=0>";
 
     private void Start() 
     {
@@ -22,7 +27,13 @@ public class ShopItemDealer : MonoBehaviour
             ShopItemData upgradeData = ShopItemData.GetRandomItem(availableUpgrades);
             availableUpgrades.Remove(upgradeData);
 
-            _itemReceivers[i].SetItem(upgradeData.Upgrade.Upgrade, upgradeData.Cost, upgradeData.CostName);
+            float cost = _costProcessor.Result(upgradeData.Cost);
+
+            _itemReceivers[i].SetItem(upgradeData.Upgrade.Upgrade,
+             _purchaseCondition, cost + _costIcon, () => 
+            {
+                _moneyType.SubtractValue((int) cost);
+            });
         }
 
         ActivateReceivers(_numberOfItems.Result());
@@ -39,11 +50,8 @@ public class ShopItemDealer : MonoBehaviour
     [Serializable] 
     class ShopItemData : UpgradeData
     {
-        [SerializeField] ObjectProcessor _cost;
-        public ObjectProcessor Cost => _cost;
-
-        [SerializeField] string _costName;
-        public string CostName => _costName;
+        [SerializeField] float _cost;
+        public float Cost => _cost;
 
         public static ShopItemData GetRandomItem(List<ShopItemData> upgradeDatas) => GetRandomUpgrade(upgradeDatas.ToArray()) as ShopItemData;
     }

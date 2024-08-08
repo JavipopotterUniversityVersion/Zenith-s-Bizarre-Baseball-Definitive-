@@ -6,6 +6,20 @@ public class ObjectPooler : MonoBehaviour
 {
     [SerializeField] PoolObject[] poolObjects;
     public Dictionary<GameObject, Queue<GameObject>> poolDictionary = new Dictionary<GameObject, Queue<GameObject>>();
+    public static ObjectPooler Instance;
+
+    void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start() {
         foreach (PoolObject poolObject in poolObjects)
@@ -13,7 +27,7 @@ public class ObjectPooler : MonoBehaviour
             Queue<GameObject> objectPool = new Queue<GameObject>();
             for (int i = 0; i < poolObject.size; i++)
             {
-                GameObject obj = Instantiate(poolObject.prefab);
+                GameObject obj = Instantiate(poolObject.prefab, transform);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }

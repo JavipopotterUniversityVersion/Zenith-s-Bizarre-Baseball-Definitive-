@@ -60,6 +60,8 @@ public class Float : ScriptableICondition
         onRead.RemoveAllListeners();
         onValueChanged.RemoveAllListeners();
     }
+
+    public void Refresh() => onValueChanged.Invoke();
 }
 
 

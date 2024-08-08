@@ -662,315 +662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b74f6407cf329f4ebe51a1e806ed9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgradeDatas:
-  - _upgrade: {fileID: 11400000, guid: 4290fa9c81831684498e44bdb0b55fe4, type: 2}
-    _chance: 0.5
-    _cost:
-      operation: Pay (noMoney == 0)
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list:
-        - Key: noMoney
-          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Pay
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: SubtractValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 15
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _costName: 15 <sprite="UpgradeOrbs" index=0>
-  - _upgrade: {fileID: 11400000, guid: 7f945bde086c2964da52ea6eee7f8e6d, type: 2}
-    _chance: 0.5
-    _cost:
-      operation: Pay (noMoney == 0)
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list:
-        - Key: noMoney
-          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Pay
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: SubtractValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 15
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _costName: 15 <sprite="UpgradeOrbs" index=0>
-  - _upgrade: {fileID: 11400000, guid: c848a0d5ac32ef74d976633f7d580167, type: 2}
-    _chance: 0.5
-    _cost:
-      operation: Pay (noMoney == 0)
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list:
-        - Key: noMoney
-          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Pay
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: SubtractValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 15
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _costName: 15 <sprite="UpgradeOrbs" index=0>
-  - _upgrade: {fileID: 11400000, guid: c648434b0fbff334eaa8fc2c5ee7a0d7, type: 2}
-    _chance: 0.5
-    _cost:
-      operation: Pay (noMoney == 0)
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list:
-        - Key: noMoney
-          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Pay
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: SubtractValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 15
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _costName: 15 <sprite="UpgradeOrbs" index=0>
-  - _upgrade: {fileID: 11400000, guid: acda93b0a75705e40b8327191299318b, type: 2}
-    _chance: 0.5
-    _cost:
-      operation: Pay (noMoney == 0)
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list:
-        - Key: noMoney
-          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Pay
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: SubtractValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 15
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _costName: 15 <sprite="UpgradeOrbs" index=0>
-  - _upgrade: {fileID: 11400000, guid: 809da6417391da54baa49b1b7a58335f, type: 2}
-    _chance: 0.5
-    _cost:
-      operation: Pay (noMoney == 0)
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list:
-        - Key: noMoney
-          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Pay
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: SubtractValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 15
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _costName: 15 <sprite="UpgradeOrbs" index=0>
-  - _upgrade: {fileID: 11400000, guid: 49c2b228e3e31594a9f3e0a95da1d9a1, type: 2}
-    _chance: 0.5
-    _cost:
-      operation: Pay (noMoney == 0)
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list:
-        - Key: noMoney
-          Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Pay
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: SubtractValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 15
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _costName: 15 <sprite="UpgradeOrbs" index=0>
   _numberOfItems:
     operation: 3
     _debug: 0
@@ -994,6 +685,80 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+  _upgradeDatas:
+  - _upgrade: {fileID: 11400000, guid: 4290fa9c81831684498e44bdb0b55fe4, type: 2}
+    _chance: 0.5
+    _cost: 10
+  - _upgrade: {fileID: 11400000, guid: 7f945bde086c2964da52ea6eee7f8e6d, type: 2}
+    _chance: 0.5
+    _cost: 15
+  - _upgrade: {fileID: 11400000, guid: c848a0d5ac32ef74d976633f7d580167, type: 2}
+    _chance: 0.5
+    _cost: 5
+  - _upgrade: {fileID: 11400000, guid: c648434b0fbff334eaa8fc2c5ee7a0d7, type: 2}
+    _chance: 0.5
+    _cost: 13
+  - _upgrade: {fileID: 11400000, guid: acda93b0a75705e40b8327191299318b, type: 2}
+    _chance: 0.5
+    _cost: 5
+  - _upgrade: {fileID: 11400000, guid: 809da6417391da54baa49b1b7a58335f, type: 2}
+    _chance: 0.5
+    _cost: 5
+  - _upgrade: {fileID: 11400000, guid: 49c2b228e3e31594a9f3e0a95da1d9a1, type: 2}
+    _chance: 0.5
+    _cost: 5
+  _costProcessor:
+    operation: input
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
+  _moneyType: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+  _purchaseCondition:
+    operation: owes == 0 && money != 0
+    _debug: 0
+    _showReferences: 1
+    _floatDictionary:
+      list:
+      - Key: owes
+        Value: {fileID: 11400000, guid: 09089eeef4c442f48ba938dbb3dde7d9, type: 2}
+    _intDictionary:
+      list:
+      - Key: money
+        Value: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
+  _costIcon: <sprite="UpgradeOrbs" index=0>
 --- !u!1 &7839893114008806976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1282,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 324660530753079004, guid: 1679acdcc713c3e44b9e70af4fe29fb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 799956570796227484, guid: 1679acdcc713c3e44b9e70af4fe29fb2, type: 3}
+      propertyPath: _processor._showReferences
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

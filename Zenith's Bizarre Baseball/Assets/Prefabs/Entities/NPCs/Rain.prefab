@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 884065834706555412}
   - component: {fileID: 862076959025148249}
   m_Layer: 0
-  m_Name: Talking -> False
+  m_Name: Talking -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,6 +707,15 @@ MonoBehaviour:
   - _upgrade: {fileID: 11400000, guid: 49c2b228e3e31594a9f3e0a95da1d9a1, type: 2}
     _chance: 0.5
     _cost: 5
+  - _upgrade: {fileID: 11400000, guid: 5f4afa843c4a0b440940cd0fab931510, type: 2}
+    _chance: 0.5
+    _cost: 12
+  - _upgrade: {fileID: 11400000, guid: 544ac696d2235984d9dc1a0f5d1db21c, type: 2}
+    _chance: 0.5
+    _cost: 8
+  - _upgrade: {fileID: 11400000, guid: 3ec5558e0e7c5b84b866051b130472a3, type: 2}
+    _chance: 0.5
+    _cost: 10
   _costProcessor:
     operation: input
     _debug: 0

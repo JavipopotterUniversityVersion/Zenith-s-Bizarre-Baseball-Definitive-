@@ -7,6 +7,11 @@ public class Searchable : MonoBehaviour
     [SerializeField] private Identifiable identifiableType;
     public Identifiable IdentifiableType => identifiableType;
 
+    public void SetIdentifiableType(Identifiable identifiable)
+    {
+        identifiableType = identifiable;
+    }
+
     private void Awake() {
         if(SearchManager.Instance == null) Instantiate(new GameObject ("SearchManager")).AddComponent<SearchManager>();
     }

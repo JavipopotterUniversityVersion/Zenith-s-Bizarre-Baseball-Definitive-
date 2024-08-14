@@ -349,6 +349,18 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6589054982123308312}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1427250485452790238
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1427250486312356859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1195,6 +1207,10 @@ PrefabInstance:
       value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 5242078201466858103, guid: 4ed4f9f4e40987e4badef32a353ee659, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242078201466858103, guid: 4ed4f9f4e40987e4badef32a353ee659, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
@@ -1513,6 +1529,10 @@ PrefabInstance:
     - target: {fileID: 5242078201466858103, guid: 4ed4f9f4e40987e4badef32a353ee659, type: 3}
       propertyPath: m_Transition
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242078201466858103, guid: 4ed4f9f4e40987e4badef32a353ee659, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5242078201466858103, guid: 4ed4f9f4e40987e4badef32a353ee659, type: 3}
       propertyPath: m_Navigation.m_Mode

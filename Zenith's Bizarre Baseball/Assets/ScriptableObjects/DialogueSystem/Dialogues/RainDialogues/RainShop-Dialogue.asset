@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: RainShop-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - interventionCondition:
+  - background: 1
+    backgroundSprite: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
+    interventionCondition:
       operation: input
       _debug: 0
       _showReferences: 0
@@ -34,7 +36,7 @@ MonoBehaviour:
       _eventDictionary:
         list: []
     lines:
-    - '<Rain: default / an_Talk>'
+    - '<Rain: default / an_Talk> <break>'
     - Hi sis how you doing? <an_Idle>
     - <an_Talk>C'mon buy anything you want <an_Idle>
     exitConditions: []

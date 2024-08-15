@@ -13,6 +13,8 @@ public class Dialogue : ScriptableObject, IDialogue
     public DialogueOption[] Options => options;
 
     [Space(10)]
+    [SerializeField] UnityEvent onDialogueStart = new UnityEvent();
+    public UnityEvent OnDialogueStart => onDialogueStart;
     [SerializeField] UnityEvent onDialogueEnd = new UnityEvent();
     public UnityEvent OnDialogueEnd => onDialogueEnd;
 
@@ -32,6 +34,9 @@ public class DialogueClass : IDialogue
     [SerializeField] StringProcessor _stringProcessor;
     public StringProcessor StringProcessor => _stringProcessor;
 
+
+    [SerializeField] UnityEvent _onDialogueStart = new UnityEvent();
+    public UnityEvent OnDialogueStart => _onDialogueStart;
     [SerializeField] UnityEvent _onDialogueEnd = new UnityEvent();
     public UnityEvent OnDialogueEnd => _onDialogueEnd;
 }
@@ -39,6 +44,7 @@ public class DialogueClass : IDialogue
 public interface IDialogue
 {
     Intervention[] DialogueLines { get; }
+    UnityEvent OnDialogueStart { get; }
     UnityEvent OnDialogueEnd { get; }
     StringProcessor StringProcessor { get; }
     DialogueOption[] Options { get; }

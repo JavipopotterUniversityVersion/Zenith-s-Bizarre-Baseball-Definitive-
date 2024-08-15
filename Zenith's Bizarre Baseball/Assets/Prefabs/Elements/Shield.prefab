@@ -732,7 +732,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 27a6859e42280dd4b82037b67185eac6, type: 2}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.size
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1]._targets.Array.data[0]
@@ -773,19 +773,19 @@ PrefabInstance:
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[5]
       value: 
-      objectReference: {fileID: 5439919267205080639}
+      objectReference: {fileID: 6681859856287200324}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[6]
       value: 
-      objectReference: {fileID: 6681859856287200324}
+      objectReference: {fileID: 6200672282428860791}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[7]
       value: 
-      objectReference: {fileID: 6200672282428860791}
+      objectReference: {fileID: 7301534929170052262}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[8]
       value: 
-      objectReference: {fileID: 7301534929170052262}
+      objectReference: {fileID: 6801291953330350353}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[9]
       value: 
@@ -813,7 +813,7 @@ PrefabInstance:
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[5]
       value: 
-      objectReference: {fileID: 5439919267205080639}
+      objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[6]
       value: 
@@ -1115,36 +1115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identifiableType: {fileID: 11400000, guid: 18fbdf6ef00ba744dba4f1a7872cd7ca, type: 2}
---- !u!114 &5439919267205080639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4215054747336043025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onCollideEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6955059283159244769}
-        m_TargetAssemblyTypeName: TriggerHandler, Assembly-CSharp
-        m_MethodName: SetCanCollide
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onCollideEventWithTransform:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6200672282428860791
 MonoBehaviour:
   m_ObjectHideFlags: 0

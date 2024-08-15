@@ -185,7 +185,8 @@ GameObject:
   - component: {fileID: 3970451502589695763}
   - component: {fileID: 1696013051837551539}
   - component: {fileID: 5054645233090369209}
-  m_Layer: 6
+  - component: {fileID: -1620165184735773806}
+  m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,6 +298,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1620165184735773806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585403057286811627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e5894b0f464ca4384f0c1091c42b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifiableType: {fileID: 11400000, guid: b2773c4c5a644e0488162436b497d49a, type: 2}
 --- !u!1 &1879759232183670929
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9160041902980529428}
   - component: {fileID: 5420285635556158001}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9013472709722373244}
   - component: {fileID: 3205202910406246312}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Instantiate Instant-Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3560437884347570306}
   - component: {fileID: 3695944588650828346}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Destroy this gameobject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

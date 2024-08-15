@@ -97,6 +97,8 @@ public class DialogueInterpreter : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         _nextLineInput.action.performed += Next;
+
+        dialogue.OnDialogueStart.Invoke();
         
         foreach (Intervention intervention in dialogue.DialogueLines)
         {
@@ -132,7 +134,7 @@ public class DialogueInterpreter : MonoBehaviour
                             break;
                         }
 
-                        bool found = SearchCharacter(input) || SearchFloatSet(input) || SearchSound(input) || SearchVoice(input);
+                        bool found = SearchShortcut(_dialogueText, input, ref i) || SearchCharacter(input) || SearchFloatSet(input) || SearchSound(input) || SearchVoice(input);
 
                         if(!found) Debug.LogWarning($"Input {input} not found, did you pretend to ignore it?");
 
@@ -160,11 +162,14 @@ public class DialogueInterpreter : MonoBehaviour
         }
 
         dialogue.OnDialogueEnd.Invoke();
-        onDialogueEnd.Invoke();
 
         _nextLineInput.action.performed -= Next;
 
-        if(!SetOptions(dialogue.Options)) _dialogueCanvas.SetActive(false);
+        if(!SetOptions(dialogue.Options))
+        {
+            _dialogueCanvas.SetActive(false);
+            onDialogueEnd.Invoke();
+        }
     }
 
     bool SetOptions(DialogueOption[] options)
@@ -232,6 +237,24 @@ public class DialogueInterpreter : MonoBehaviour
                 return true;
             }
         }
+        return false;
+    }
+
+    bool SearchShortcut(TextMeshProUGUI text, string input, ref int i)
+    {
+        if(CharacterData.SearchCharacter(_characterDatas, input, out CharacterData characterData))
+        {
+            string fadeLast = "";
+            if(LastCharacter != null)
+            {
+                if(LastCharacter.name != input) fadeLast = $"<{LastCharacter.CurrentCharacter.name}:an_Fade>";
+            }
+
+            text.text = fadeLast + $"<{input}:an_Talk_Appear / default>" + text.text.Split($"<{input}>")[1] + $"<{input}:an_Idle>";
+            i = 0;
+            return true;
+        }
+
         return false;
     }
 
@@ -321,8 +344,7 @@ public class CharacterData
     public static bool SearchCharacter(CharacterData[] characters, string name, out CharacterData character)
     {
         int i = 0;
-        while(i < characters.Length && characters[i].name != name) i++;
-        
+        while(i < characters.Length - 1 && characters[i].name != name) i++;
         if(characters[i].name == name) character = characters[i];
         else character = new CharacterData();
 

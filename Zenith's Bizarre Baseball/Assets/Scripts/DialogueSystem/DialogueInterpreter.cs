@@ -245,9 +245,12 @@ public class DialogueInterpreter : MonoBehaviour
         if(CharacterData.SearchCharacter(_characterDatas, input, out CharacterData characterData))
         {
             string fadeLast = "";
-            if(LastCharacter != null)
+            if(LastCharacter != null && LastCharacter.CurrentCharacter != null)
             {
-                if(LastCharacter.name != input) fadeLast = $"<{LastCharacter.CurrentCharacter.name}:an_Fade>";
+                if(LastCharacter.CurrentCharacter.name != input)
+                {
+                    fadeLast = $"<{LastCharacter.CurrentCharacter.name}:an_Fade>";
+                }
             }
 
             text.text = fadeLast + $"<{input}:an_Talk_Appear / default>" + text.text.Split($"<{input}>")[1] + $"<{input}:an_Idle>";

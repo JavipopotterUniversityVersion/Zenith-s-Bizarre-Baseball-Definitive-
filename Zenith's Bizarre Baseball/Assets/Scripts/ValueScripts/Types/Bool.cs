@@ -21,6 +21,8 @@ public class Bool : ScriptableICondition
         }
     }
 
+    public void RefreshValue() => onValueChanged.Invoke();
+
     public void SetRawValue(bool value) => _value = value;
 
     public void ToggleValue() => SetValue(!_value);

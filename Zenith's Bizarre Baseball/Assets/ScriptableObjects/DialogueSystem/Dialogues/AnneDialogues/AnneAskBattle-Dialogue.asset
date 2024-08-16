@@ -36,26 +36,13 @@ MonoBehaviour:
       _eventDictionary:
         list: []
     lines:
-    - '<Zenith: an_Talk / default / xpos_-300>
-
-      <Anne: an_Idle_Fade / default
-      / xpos_300>
-
-      <Zenith: an_Appear>
-
-      <break>'
-    - Anne? What are you doing here? <an_Idle>
-    - '<an_Fade><Anne: an_Appear_Talk><break>'
-    - Hey Zenith, didn't expect to meet you here, welcome to mi fight club<an_Idle>
-    - '<an_Fade><Zenith: an_Talk_Appear><break>'
-    - Fight club? <an_Idle>
-    - '<an_Fade><Anne: an_Appear_Talk><break>'
-    - Yep, here people challenge me to show their abilities, as you may guessed I
-      always win<an_Idle>
-    - <an_Talk>I've got a great idea!<an_Idle>
-    - <an_Talk>Why don't you try to defeat me? I promise you'll get a great reward
-      for it<an_Idle>
-    - <an_Talk>What do you think?<an_Idle>
+    - <Zenith>Anne? What are you doing here?
+    - <Anne>Hey Zenith, didn't expect to meet you here, welcome to my fight club
+    - <Zenith>Fight club?
+    - <Anne>Yep, here people challenge me to show their abilities, as you may guessed
+      I always win
+    - <Anne>Why don't you try to defeat me? I promise you'll get a great reward for
+    - <Anne>What do you think?
     exitConditions: []
   options:
   - optionText: I'll beat the shit out of you
@@ -81,31 +68,7 @@ MonoBehaviour:
       _eventDictionary:
         list: []
     dialogue:
-      _dialogueLines:
-      - background: 1
-        backgroundSprite: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
-        interventionCondition:
-          operation: 
-          _debug: 0
-          _showReferences: 0
-          _floatDictionary:
-            list: []
-          _intDictionary:
-            list: []
-          _curveDictionary:
-            list: []
-          _operationDictionary:
-            list: []
-          _functionDictionary:
-            list: []
-          _stringDictionary:
-            list: []
-          _boolDictionary:
-            list: []
-          _eventDictionary:
-            list: []
-        lines: []
-        exitConditions: []
+      _dialogueLines: []
       _options: []
       _stringProcessor:
         _intDictionary:
@@ -118,6 +81,9 @@ MonoBehaviour:
           list: []
         _processorDictionary:
           list: []
+      _onDialogueStart:
+        m_PersistentCalls:
+          m_Calls: []
       _onDialogueEnd:
         m_PersistentCalls:
           m_Calls:
@@ -125,6 +91,18 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: Bool, Assembly-CSharp
             m_MethodName: SetValue
             m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: dff745af01c78544e8de659b2a8a6abd, type: 2}
+            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+            m_MethodName: RefreshValue
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -156,31 +134,7 @@ MonoBehaviour:
       _eventDictionary:
         list: []
     dialogue:
-      _dialogueLines:
-      - background: 1
-        backgroundSprite: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
-        interventionCondition:
-          operation: 
-          _debug: 0
-          _showReferences: 0
-          _floatDictionary:
-            list: []
-          _intDictionary:
-            list: []
-          _curveDictionary:
-            list: []
-          _operationDictionary:
-            list: []
-          _functionDictionary:
-            list: []
-          _stringDictionary:
-            list: []
-          _boolDictionary:
-            list: []
-          _eventDictionary:
-            list: []
-        lines: []
-        exitConditions: []
+      _dialogueLines: []
       _options: []
       _stringProcessor:
         _intDictionary:
@@ -193,6 +147,9 @@ MonoBehaviour:
           list: []
         _processorDictionary:
           list: []
+      _onDialogueStart:
+        m_PersistentCalls:
+          m_Calls: []
       _onDialogueEnd:
         m_PersistentCalls:
           m_Calls:
@@ -208,6 +165,21 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: dff745af01c78544e8de659b2a8a6abd, type: 2}
+            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+            m_MethodName: RefreshValue
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  onDialogueStart:
+    m_PersistentCalls:
+      m_Calls: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []

@@ -17,6 +17,8 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
         _targetHandler = GetComponentInParent<TargetHandler>();
     }
 
+    public void SetFound(bool found) => _found = found;
+
     public void ExecuteBehaviour()
     {
         if (_found) return;
@@ -24,10 +26,10 @@ public class SearchTargetBehaviour : MonoBehaviour, IBehaviour, ICondition
         int index = (int)_searchableIndex.Result();
         Transform target = SearchManager.Instance.GetClosestSearchable(transform.position, _targetSearchableType, index);
 
-        _onTargetFound.Invoke(target);
-
         if(_setTargetAsTarget) _targetHandler.SetTarget(target);
         _found = true;
+
+        _onTargetFound.Invoke(target);
     }
 
     public bool CheckCondition() => _found;

@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 2906330236015424576}
   - component: {fileID: 1698475035525480149}
   m_Layer: 7
-  m_Name: PhantomImage -> False
+  m_Name: PhantomImage -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 6129616908563179949}
   - component: {fileID: 4064202359018212874}
   m_Layer: 0
-  m_Name: NearBoost -> False
+  m_Name: NearBoost -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1033,7 +1033,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.6}
-  m_Size: {x: 6.75, y: 4.82}
+  m_Size: {x: 10, y: 4.82}
   m_Direction: 0
 --- !u!114 &650705787000896305
 MonoBehaviour:
@@ -1048,7 +1048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterCollidables:
-  - _targets: []
+  - _targets:
+    - {fileID: 11400000, guid: 64ca952bc185a1f41a7b07019be8aeec, type: 2}
     layer:
       serializedVersion: 2
       m_Bits: 256
@@ -1463,7 +1464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4747542751405623574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -21.9, z: 0}
+  m_LocalPosition: {x: 0, y: -70.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

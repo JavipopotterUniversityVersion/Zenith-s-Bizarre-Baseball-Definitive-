@@ -19,8 +19,8 @@ GameObject:
   - component: {fileID: 1124958039221683131}
   - component: {fileID: 8291645428300976557}
   - component: {fileID: 7810316521211265474}
-  - component: {fileID: 5045280726711929364}
   - component: {fileID: 1831453127944099602}
+  - component: {fileID: 8439233761578178865}
   m_Layer: 8
   m_Name: ball
   m_TagString: Untagged
@@ -79,7 +79,6 @@ MonoBehaviour:
       m_Bits: 128
     conditions: []
     collidables:
-    - {fileID: 5045280726711929364}
     - {fileID: 5989457719749168021}
     - {fileID: 1455145129851851031}
     - {fileID: -8071011525051105728}
@@ -381,44 +380,6 @@ MonoBehaviour:
   onStopMoving:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5045280726711929364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5989457719749168020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e799c9305860646850b41d81e8b67a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventCasts:
-  - condition:
-      operation: input
-      _debug: 0
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _eventsNames:
-    - ball
 --- !u!114 &1831453127944099602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +394,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifiableType: {fileID: 11400000, guid: 64ca952bc185a1f41a7b07019be8aeec, type: 2}
   identifiableChangeEvents: []
+--- !u!114 &8439233761578178865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989457719749168020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12c2007d41577e42a279e1bbef3754d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reduction:
+    operation: input
+    _debug: 0
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
 --- !u!1 &5989457720575547792
 GameObject:
   m_ObjectHideFlags: 0

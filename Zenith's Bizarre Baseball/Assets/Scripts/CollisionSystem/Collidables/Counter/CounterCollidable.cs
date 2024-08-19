@@ -9,14 +9,14 @@ public class CounterCollidable : ICollidable
 
     public override void OnCollide(Collider2D collider)
     {
-        if (collider.TryGetComponent(out Rigidbody2D rigidbody))
+        if (collider.TryGetComponent(out Rigidbody2D rigidbody) && collider.TryGetComponent(out Knockable knockable))
         {
             float force;
 
             if(rigidbody.velocity.magnitude < _speedAdder.Value) force = _speedAdder.Value;
             else force = rigidbody.velocity.magnitude + (_speedAdder.Value * 0.5f);
 
-            rigidbody.velocity = force * (collider.transform.position - transform.position).normalized;
+            knockable.Knock(force * (collider.transform.position - transform.position).normalized);
         }
     }
 }

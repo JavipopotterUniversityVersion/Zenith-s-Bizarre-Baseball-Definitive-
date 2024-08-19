@@ -13,6 +13,7 @@ public class InstantiateBehaviour : MonoBehaviour, IBehaviour
     }
 
     public void SetInstancePoint(Transform transform) => _instancePoint = transform;
+    public void SetPrefab(GameObject prefab) => this.prefab = prefab;
 
     public void ExecuteBehaviour()
     {

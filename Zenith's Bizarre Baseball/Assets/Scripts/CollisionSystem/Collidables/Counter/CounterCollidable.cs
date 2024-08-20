@@ -13,7 +13,7 @@ public class CounterCollidable : ICollidable
         {
             float force;
 
-            if(rigidbody.velocity.magnitude < _speedAdder.Value) force = _speedAdder.Value;
+            if(rigidbody.velocity.magnitude < _speedAdder.Value * knockable.Reduction) force = _speedAdder.Value;
             else force = rigidbody.velocity.magnitude + (_speedAdder.Value * 0.5f);
 
             knockable.Knock(force * (collider.transform.position - transform.position).normalized);

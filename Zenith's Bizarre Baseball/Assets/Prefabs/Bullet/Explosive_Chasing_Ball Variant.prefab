@@ -820,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
     - target: {fileID: 8439233761578178865, guid: f65779bc6cc65424fa600f93720d5d4a, type: 3}
       propertyPath: _reduction.operation
-      value: 0,5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f65779bc6cc65424fa600f93720d5d4a, type: 3}
@@ -829,7 +829,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5989457719749168020, guid: f65779bc6cc65424fa600f93720d5d4a, type: 3}
   m_PrefabInstance: {fileID: 3410640483691303392}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2030274506
+--- !u!114 &7289399107258206353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -838,10 +838,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8956484706382273140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4398bbed438fc5419fe25a0eec9f5e8, type: 3}
+  m_Script: {fileID: 11500000, guid: cfb5e7a94f065304c94e708e83256537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onDestroy:
+  _onDisable:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 781462624}

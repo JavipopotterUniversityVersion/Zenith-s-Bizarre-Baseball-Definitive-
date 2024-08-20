@@ -6,6 +6,8 @@ using UnityEngine;
 public class Knockable : MonoBehaviour
 {
     [SerializeField] ObjectProcessor _reduction;
+    public float Reduction => _reduction.Result();
+
     Rigidbody2D rb;
 
     private void Awake() => rb = GetComponent<Rigidbody2D>();

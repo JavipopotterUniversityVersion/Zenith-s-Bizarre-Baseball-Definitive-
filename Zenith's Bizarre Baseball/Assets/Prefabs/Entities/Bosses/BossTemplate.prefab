@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 1436159477975006221}
   - component: {fileID: 8984359197871727945}
   - component: {fileID: 7779052164593259741}
+  - component: {fileID: 693362933366019752}
   m_Layer: 6
   m_Name: BossTemplate
   m_TagString: Untagged
@@ -735,6 +736,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
+--- !u!114 &693362933366019752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493045378026512799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ef572e127859d479d76d3b76ef75ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _events:
+    list: []
 --- !u!1 &2634026488683775650
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,7 +72,6 @@ public class Searchable : MonoBehaviour
             if(result) 
             {
                 OnChange.Invoke();
-                Debug.Log(identifiable.name + " is " + changeType + " " + _identifiableToCompare.name);
             }
         }
     }

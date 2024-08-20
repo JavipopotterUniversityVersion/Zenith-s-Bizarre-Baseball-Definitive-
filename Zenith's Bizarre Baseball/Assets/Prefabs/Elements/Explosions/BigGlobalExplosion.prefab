@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 781657428116983793}
   - component: {fileID: 1899959979849736661}
   - component: {fileID: 310848002635637784}
+  - component: {fileID: -4384305035923543742}
   m_Layer: 0
   m_Name: BigGlobalExplosion
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
     conditions: []
     collidables:
     - {fileID: 310848002635637784}
+    - {fileID: -4384305035923543742}
   OnStayCollidables: []
   checkDelay: 0.1
   OnExitCollidables: []
@@ -125,6 +127,20 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+--- !u!114 &-4384305035923543742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487385150798248562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a19c9425974f2f4ab24892dc8a7429b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _messages:
+  - {fileID: 11400000, guid: 4312b59ebafbc234d8ba7f37de251847, type: 2}
 --- !u!1 &4969795786871229627
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,80 +13,226 @@ MonoBehaviour:
   m_Name: ClausDefeated-Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - _enter:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
+  - background: 1
+    backgroundSprite: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
+    interventionCondition:
+      operation: input
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
     lines:
-    - '<claus,zenith:default>
-
-      ST(Claus,clausAn,zenithAn)
-
-      <break>'
-    - Ugh<clausAn:Idle><t:0,1>...<t:0,025><clausAn:Talk> You've defeated me<clausAn:Idle>
-    - <clausAn:Talk>That makes you the strongest, I'll do anything you want<clausAn:Idle>
-    _exit:
-      condition: []
-      _event:
+    - <Zenith:default><break>
+    - <Claus> You've won, I'll do anything you want
+    exitConditions: []
+  options:
+  - optionText: Let's get married
+    buttonIcon: {fileID: 21300000, guid: 1db6e4747823b3e408a516f49432fdfb, type: 3}
+    appearCondition:
+      operation: 
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+    dialogue:
+      _dialogueLines:
+      - background: 1
+        backgroundSprite: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
+        interventionCondition:
+          operation: 
+          _debug: 0
+          _showReferences: 0
+          _floatDictionary:
+            list: []
+          _intDictionary:
+            list: []
+          _curveDictionary:
+            list: []
+          _operationDictionary:
+            list: []
+          _functionDictionary:
+            list: []
+          _stringDictionary:
+            list: []
+          _boolDictionary:
+            list: []
+          _eventDictionary:
+            list: []
+        lines:
+        - <Zenith> Would you marry me?
+        exitConditions: []
+      _options: []
+      _stringProcessor:
+        _intDictionary:
+          list: []
+        _floatDictionary:
+          list: []
+        _stringDictionary:
+          list: []
+        _stringFunctionDictionary:
+          list: []
+        _processorDictionary:
+          list: []
+      _onDialogueStart:
         m_PersistentCalls:
           m_Calls: []
-  - _enter:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls: []
-    lines: []
-    _exit:
-      condition:
-      - condition: {fileID: 11400000, guid: 02df6a34f19189645920b9c9e206bf66, type: 2}
-        negated: 0
-      _event:
+      _onDialogueEnd:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 11400000, guid: e634e32f3b015be409a946f037673409, type: 2}
-            m_TargetAssemblyTypeName: UpgradeSetReference, Assembly-CSharp
-            m_MethodName: SetOptionSet
+          - m_Target: {fileID: 11400000, guid: b2c1d270b1e7d57499bd7e88aeb298e5, type: 2}
+            m_TargetAssemblyTypeName: DialogueReference, Assembly-CSharp
+            m_MethodName: SetDialogue
             m_Mode: 2
             m_Arguments:
-              m_ObjectArgument: {fileID: 11400000, guid: 4c0bf6e2c459c4f449ed199fff28211b, type: 2}
-              m_ObjectArgumentAssemblyTypeName: UpgradeSet, Assembly-CSharp
+              m_ObjectArgument: {fileID: 11400000, guid: 91e26239322dd1b4197e116b0fc638eb, type: 2}
+              m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  - _enter:
-      condition: []
-      _event:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 11400000, guid: 2937c761de553274392081c879dcc1b9, type: 2}
-            m_TargetAssemblyTypeName: Bool, Assembly-CSharp
-            m_MethodName: SetValue
-            m_Mode: 6
+          - m_Target: {fileID: 11400000, guid: 25bd1856bbfde66439f032da33f5c1c2, type: 2}
+            m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+            m_MethodName: LoadScene
+            m_Mode: 5
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
+              m_StringArgument: Ending
+              m_BoolArgument: 0
             m_CallState: 2
-    lines:
-    - <clausAn:Blop><zenithAn:Blop,Appear><zenith,claus:default><name:><break>
-    - <t:0,2>...............
-    - ...............
-    - ...............<t:0,025>
-    - "TALK(zenithAn,You've pressed letter \xF1?! that's amazing)"
-    - "<clausAn:Talk>Yeah, \xF1 is such a cool letter, I would pass the entire day
-      saying it \xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1<clausAn:Idle>"
-    - "<zenithAn:Talk>\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1\xF1<zenithAn:Idle>"
-    _exit:
-      condition: []
-      _event:
+  - optionText: Pay for what you did
+    buttonIcon: {fileID: 21300000, guid: 1db6e4747823b3e408a516f49432fdfb, type: 3}
+    appearCondition:
+      operation: 
+      _debug: 0
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+    dialogue:
+      _dialogueLines:
+      - background: 1
+        backgroundSprite: {fileID: -514634115, guid: 1cf2ee55446bb2c44b4cf01143380fbe, type: 3}
+        interventionCondition:
+          operation: 
+          _debug: 0
+          _showReferences: 0
+          _floatDictionary:
+            list: []
+          _intDictionary:
+            list: []
+          _curveDictionary:
+            list: []
+          _operationDictionary:
+            list: []
+          _functionDictionary:
+            list: []
+          _stringDictionary:
+            list: []
+          _boolDictionary:
+            list: []
+          _eventDictionary:
+            list: []
+        lines:
+        - <Zenith:default><Claus:default><break>
+        - <Zenith>You broke my Nintendo
+        - <Claus>Really? I'm so sorry, what can I do?
+        - <Zenith>Do you have animal crossing?
+        - <Claus>OMG it's my favourite game
+        - <Zenith>3 million bells should do it
+        - <Claus>That's too much!! I won't be able to pay my mort
+        - <Zenith>Then you are not invited to my birthday party
+        - <Claus> NOOOOOOOOOOO, I'll pay, please don't do that
+        exitConditions: []
+      _options: []
+      _stringProcessor:
+        _intDictionary:
+          list: []
+        _floatDictionary:
+          list: []
+        _stringDictionary:
+          list: []
+        _stringFunctionDictionary:
+          list: []
+        _processorDictionary:
+          list: []
+      _onDialogueStart:
         m_PersistentCalls:
           m_Calls: []
+      _onDialogueEnd:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: b2c1d270b1e7d57499bd7e88aeb298e5, type: 2}
+            m_TargetAssemblyTypeName: DialogueReference, Assembly-CSharp
+            m_MethodName: SetDialogue
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: faa4abe6d63d6ec499c720b5e69bd7fb, type: 2}
+              m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 11400000, guid: 25bd1856bbfde66439f032da33f5c1c2, type: 2}
+            m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+            m_MethodName: LoadScene
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Ending
+              m_BoolArgument: 0
+            m_CallState: 2
+  onDialogueStart:
+    m_PersistentCalls:
+      m_Calls: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []

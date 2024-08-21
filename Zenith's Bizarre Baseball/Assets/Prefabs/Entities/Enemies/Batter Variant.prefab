@@ -319,7 +319,6 @@ MonoBehaviour:
   timeToWait: 0.2
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -447,7 +446,6 @@ MonoBehaviour:
   rotationSpeed: 1e+12
   _offset:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -624,7 +622,6 @@ MonoBehaviour:
   timeToWait: 0.75
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -814,6 +811,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 
       objectReference: {fileID: 11400000, guid: bfa66a81991d7814ea77e940f2d30895, type: 2}
+    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _maxHealth.operation
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
       value: Alive -> True
@@ -911,21 +912,53 @@ PrefabInstance:
       propertyPath: _hasMaxSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _speedAdder.operation
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1517834348628145000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].layer.m_Bits
-      value: 128
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[0]
+      value: 
+      objectReference: {fileID: 1253765400}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[1]
+      value: 
+      objectReference: {fileID: 1253765399}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[2]
+      value: 
+      objectReference: {fileID: 3181074462759253890}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[3]
+      value: 
+      objectReference: {fileID: 5397951715876658588}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[4]
+      value: 
+      objectReference: {fileID: 3775054194525346166}
+    - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[5]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[0]
@@ -950,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[5]
       value: 
-      objectReference: {fileID: 7334904467743753697}
+      objectReference: {fileID: 0}
     - target: {fileID: 4231587373565220098, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.11
@@ -1057,6 +1090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5357634515182928792, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+    - {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
 --- !u!114 &3181074462759253890 stripped
 MonoBehaviour:
@@ -1089,17 +1123,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d932d277b447c5b4c83c296157962507, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7334904467743753697 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
-  m_PrefabInstance: {fileID: 2324289648819472091}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7450053381467946446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b01206d394e97f4e98465819bc0fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7450053381467946446 stripped

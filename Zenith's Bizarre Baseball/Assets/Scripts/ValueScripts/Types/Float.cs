@@ -72,7 +72,7 @@ public class Processor
     string _name = "";
     static string[] operationTypes = new string[] {"nR" ,"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
-    [SerializeField] bool _debug = false;
+    bool _debug = false;
     [SerializeField] protected bool _showReferences;
 
     #region references
@@ -404,6 +404,7 @@ public class ObjectProcessor : Processor
     [ConditionalField(nameof(_showReferences))]
     [SerializeField] SerializableDictionary<string, Condition[]> _conditionDictionary = new SerializableDictionary<string, Condition[]>();
 
+    [ConditionalField(nameof(_showReferences))] 
     [SerializeField] ReadableRef[] _readablesDictionary;
 
     [Serializable]

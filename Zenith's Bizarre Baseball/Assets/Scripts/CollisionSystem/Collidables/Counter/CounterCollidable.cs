@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class CounterCollidable : ICollidable
 {
-    [SerializeField] Float _speedAdder;
+    [SerializeField] ObjectProcessor _speedAdder;
+    public float SpeedAdder => _speedAdder.Result();
 
     [SerializeField] bool _hasMaxSpeed = false;
-    
+
     [ConditionalField(nameof(_hasMaxSpeed), false)] 
     [SerializeField] float _maxSpeed = 0;
 
@@ -19,8 +20,8 @@ public class CounterCollidable : ICollidable
         {
             float force;
 
-            if(rigidbody.velocity.magnitude < _speedAdder.Value * knockable.Reduction) force = _speedAdder.Value;
-            else force = rigidbody.velocity.magnitude + (_speedAdder.Value * 0.5f);
+            if(rigidbody.velocity.magnitude < SpeedAdder * knockable.Reduction) force = SpeedAdder;
+            else force = rigidbody.velocity.magnitude + (SpeedAdder * 0.5f);
 
             force = _hasMaxSpeed ? Mathf.Min(force, _maxSpeed) : force;
             knockable.Knock(force * (collider.transform.position - transform.position).normalized);

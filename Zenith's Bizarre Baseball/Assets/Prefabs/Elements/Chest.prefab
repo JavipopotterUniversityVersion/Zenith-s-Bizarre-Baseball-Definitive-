@@ -152,7 +152,6 @@ MonoBehaviour:
   timeToWait: 1
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -249,7 +248,28 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
-  maxHealth: {fileID: 11400000, guid: 9982a363e70291d4e854f86e88c9f882, type: 2}
+  _maxHealth:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _currentHealth: 12
 --- !u!61 &1696013051837551539
 BoxCollider2D:
@@ -1095,7 +1115,6 @@ MonoBehaviour:
   timeToWait: 0.5
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

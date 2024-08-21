@@ -131,7 +131,6 @@ MonoBehaviour:
   timeToWait: 0.1
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -429,7 +428,6 @@ MonoBehaviour:
   timeToWait: 0.15
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -581,7 +579,28 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
-  maxHealth: {fileID: 0}
+  _maxHealth:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _currentHealth: 12
 --- !u!95 &8640299427396863195
 Animator:
@@ -642,7 +661,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: {fileID: 0}
+  _speed:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -702,7 +742,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _reduction:
     operation: 0,1
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -890,7 +929,6 @@ MonoBehaviour:
   timeToWait: 0.2
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1252,7 +1290,6 @@ MonoBehaviour:
   timeToWait: 0.5
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

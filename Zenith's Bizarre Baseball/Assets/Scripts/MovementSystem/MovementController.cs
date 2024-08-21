@@ -8,8 +8,8 @@ public class MovementController : MonoBehaviour
     Rigidbody2D rb;
     public Rigidbody2D Rb => rb;
 
-    [SerializeField] Float _speed;
-    public float Speed => _speed.Value;
+    [SerializeField] ObjectProcessor _speed;
+    public float Speed => _speed.Result();
 
     [SerializeField] bool _ignoreSpeed = false;
 

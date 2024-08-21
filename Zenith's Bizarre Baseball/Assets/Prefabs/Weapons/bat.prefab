@@ -44,7 +44,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59904bcb77b256e40bed43c9ec9e98e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedAdder: {fileID: 0}
+  _speedAdder:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _hasMaxSpeed: 0
   _maxSpeed: 0
 --- !u!1 &1100722292288742931
@@ -91,10 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: {fileID: 0}
-  objectProcessor:
+  _knockBackForce:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -518,10 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 0}
-  _processor:
+  _damage:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -587,7 +604,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b01206d394e97f4e98465819bc0fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: {fileID: 0}
+  _newDamage:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
 --- !u!1 &5904972792013980989
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +777,6 @@ MonoBehaviour:
   timeToWait: 0.1
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

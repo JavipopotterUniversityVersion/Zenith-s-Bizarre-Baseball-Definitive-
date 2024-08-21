@@ -92,7 +92,6 @@ MonoBehaviour:
   timeToWait: 0.5
   _timeProcessor:
     operation: 0,75 Random 1,25
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -160,7 +159,6 @@ MonoBehaviour:
   timeToWait: 0.75
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -229,7 +227,6 @@ MonoBehaviour:
   rotationSpeed: 1e+9
   _offset:
     operation: 0
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -419,7 +416,6 @@ MonoBehaviour:
   _targetSearchableType: {fileID: 11400000, guid: c756fb681e5026f42be7b1a15e4f48ae, type: 2}
   _searchableIndex:
     operation: 0 Random 3
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -613,7 +609,6 @@ MonoBehaviour:
   multiplier: -1
   _multiplierProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -718,6 +713,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 
       objectReference: {fileID: 11400000, guid: 5c444eb9316fa0e418f1f8ad41307a62, type: 2}
+    - target: {fileID: -2983886410244225649, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _speed.operation
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 12215767774205197, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: nextStates.Array.data[0].stateContainer
       value: 
@@ -846,9 +845,13 @@ PrefabInstance:
       propertyPath: _currentHealth
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _maxHealth.operation
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> False
+      value: Alive -> True
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x

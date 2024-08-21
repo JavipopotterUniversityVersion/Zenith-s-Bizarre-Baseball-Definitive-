@@ -81,7 +81,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
+  _speed:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -153,7 +174,6 @@ MonoBehaviour:
   _targetSearchableType: {fileID: 11400000, guid: 6343d588eb230674999b20daa2477134, type: 2}
   _searchableIndex:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -510,7 +530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _processor:
     operation: vegan > 2
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1066,7 +1085,6 @@ MonoBehaviour:
   _floatEvents:
   - _condition:
       operation: 1
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -1129,7 +1147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _angularForce:
     operation: 9000
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1192,7 +1209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collisionsToDestroy:
     operation: value
-    _debug: 0
     _showReferences: 1
     _floatDictionary:
       list: []
@@ -1261,7 +1277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size:
     operation: size
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list:
@@ -1300,7 +1315,6 @@ MonoBehaviour:
   _floatEvents:
   - _condition:
       operation: 
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -1375,10 +1389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
-  objectProcessor:
-    operation: input * 4
-    _debug: 0
+  _knockBackForce:
+    operation: input
     _showReferences: 0
     _floatDictionary:
       list: []

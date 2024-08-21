@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class KnockBackCollidable : ICollidable
 {
-    [SerializeField] Float knockBackForce;
-    [SerializeField] ObjectProcessor objectProcessor;
+    [SerializeField] ObjectProcessor _knockBackForce;
+    public float KnockBackForce => _knockBackForce.Result();
 
     public override void OnCollide(Collider2D collider)
     {
         if (collider.TryGetComponent(out Knockable knockable))
         {
-            knockable.Knock(knockBackForce.Value * objectProcessor.Result() * (collider.transform.position - transform.position).normalized);
+            knockable.Knock(KnockBackForce * (collider.transform.position - transform.position).normalized);
         }
     }
 }

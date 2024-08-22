@@ -133,8 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage:
-    operation: 4
+  Damage: {fileID: 11400000, guid: 87f53f28d2c3d7148ade2f30d06cedbd, type: 2}
+  _processor:
+    operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -167,8 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _knockBackForce:
-    operation: 25
+  knockBackForce: {fileID: 11400000, guid: ab40e705357bee44987e2c44bd5d9060, type: 2}
+  objectProcessor:
+    operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -203,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollisions:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -236,28 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed:
-    operation: input
-    _showReferences: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-    _conditionDictionary:
-      list: []
-    _readablesDictionary: []
+  _speed: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -296,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _reduction:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -579,6 +564,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration:
     operation: 0,5 Random 1
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -601,6 +587,7 @@ MonoBehaviour:
     _readablesDictionary: []
   height:
     operation: 1 Random 10
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

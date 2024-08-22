@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delayTime:
     operation: 0,2
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -234,8 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage:
-    operation: input
+  Damage: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
+  _processor:
+    operation: 4
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -401,6 +404,7 @@ MonoBehaviour:
   _rotation: 0
   _processor:
     operation: -30 Random 30
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -639,8 +643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage:
+  Damage: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
+  _processor:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -895,6 +901,7 @@ MonoBehaviour:
   timeToWait: 0.5
   _timeProcessor:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class DamageCollidable : ICollidable
 {
-    [SerializeField] ObjectProcessor _damage;
-    public float Damage => _damage.Result();
+    [SerializeField] Float Damage;
+    [SerializeField] ObjectProcessor _processor;
+    float multiplier = 1;
 
     public override void OnCollide(Collider2D collider)
     {
         if (collider.TryGetComponent(out HealthHandler health))
         {
-            health.TakeDamage(Damage);
+            health.TakeDamage(_processor.Result(Damage.Value) * multiplier);
         }
     }
 
-    public void SetDamage(string newDamage) => _damage.SetFormula(newDamage);
+    public float GetMultiplier() => multiplier;
+    public void SetDamage(string newDamage) => _processor.SetFormula(newDamage);
 }

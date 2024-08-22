@@ -105,6 +105,7 @@ MonoBehaviour:
   timeToWait: 0.5
   _timeProcessor:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -221,6 +222,7 @@ MonoBehaviour:
   timeToWait: 1
   _timeProcessor:
     operation: 2 Random 3
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -368,29 +370,9 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 
       objectReference: {fileID: 11400000, guid: bf38413233af8754f9e85aec1fb5454a, type: 2}
-    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
-      propertyPath: _maxHealth.operation
-      value: 16 - ((money / 10) * 4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
-      propertyPath: _maxHealth._showReferences
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
-      propertyPath: _maxHealth._intDictionary.list.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
-      propertyPath: _maxHealth._intDictionary.list.Array.data[0].Key
-      value: money
-      objectReference: {fileID: 0}
-    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
-      propertyPath: _maxHealth._intDictionary.list.Array.data[0].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> True
+      value: Alive -> False
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x

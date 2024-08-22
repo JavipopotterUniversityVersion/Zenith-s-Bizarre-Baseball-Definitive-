@@ -18,16 +18,14 @@ public class HealthHandler : MonoBehaviour, IReadable
     [SerializeField] UnityEvent onDie = new UnityEvent();
     public UnityEvent OnDie => onDie;
 
-    [SerializeField] ObjectProcessor _maxHealth;
-    public float MaxHealth => _maxHealth.Result();
-
+    [SerializeField] Float maxHealth;
     [SerializeField] float _currentHealth = 12;
     public float CurrentHealth
     {
         get => _currentHealth;
         set
         {
-            _currentHealth = Mathf.Clamp(value, 0, MaxHealth);
+            _currentHealth = Mathf.Clamp(value, 0, maxHealth.Value);
             onHealthChanged.Invoke(_currentHealth);
 
             if(_currentHealth == 0) onDie.Invoke();
@@ -42,7 +40,7 @@ public class HealthHandler : MonoBehaviour, IReadable
         Condition.InitializeAll(getDamageConditions);
     }
 
-    public void ResetHealth() => CurrentHealth = MaxHealth;
+    public void ResetHealth() => CurrentHealth = maxHealth.Value;
     public void TakeDamage(float damage)
     {
         if(Condition.CheckAllConditions(getDamageConditions))
@@ -59,5 +57,5 @@ public class HealthHandler : MonoBehaviour, IReadable
     }
 
     public void SetHealthRaw(float health) => _currentHealth = health;
-    public float GetMaxHealth() => MaxHealth;
+    public float GetMaxHealth() => maxHealth.Value;
 }

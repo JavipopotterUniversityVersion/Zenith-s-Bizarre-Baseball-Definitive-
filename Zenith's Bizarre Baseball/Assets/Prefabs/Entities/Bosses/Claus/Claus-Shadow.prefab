@@ -324,28 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed:
-    operation: input
-    _showReferences: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-    _conditionDictionary:
-      list: []
-    _readablesDictionary: []
+  _speed: {fileID: 11400000, guid: 466c5406019372a41ab1f065cd7ba60b, type: 2}
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -570,6 +549,7 @@ MonoBehaviour:
   _targetSearchableType: {fileID: 11400000, guid: c756fb681e5026f42be7b1a15e4f48ae, type: 2}
   _searchableIndex:
     operation: 4 Random 8
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -742,6 +722,7 @@ MonoBehaviour:
   _fadeCurve: {fileID: 11400000, guid: 92b23c1d5f596bc40ae5aaa6081f6a98, type: 2}
   _fadeDuration:
     operation: 0,5
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -877,6 +858,7 @@ MonoBehaviour:
   rotationSpeed: 100000000
   _offset:
     operation: 0
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

@@ -877,6 +877,7 @@ MonoBehaviour:
   timeToWait: 0.33
   _timeProcessor:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -944,6 +945,7 @@ MonoBehaviour:
   timeToWait: 0.5
   _timeProcessor:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1011,6 +1013,7 @@ MonoBehaviour:
   timeToWait: 1
   _timeProcessor:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1731,28 +1734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed:
-    operation: input
-    _showReferences: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-    _conditionDictionary:
-      list: []
-    _readablesDictionary: []
+  _speed: {fileID: 11400000, guid: f478a4b71a47d1e44a9f7e31f58c50fa, type: 2}
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:

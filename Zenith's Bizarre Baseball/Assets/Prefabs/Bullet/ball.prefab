@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage:
-    operation: 4
+  Damage: {fileID: 11400000, guid: 87ffc2cacad610045a2978bdcb092341, type: 2}
+  _processor:
+    operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -140,8 +142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _knockBackForce:
-    operation: 15
+  knockBackForce: {fileID: 11400000, guid: 123fe53dd7e4e1c43b6d9805a59e8360, type: 2}
+  objectProcessor:
+    operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -176,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollisions:
     operation: 1
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -364,28 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed:
-    operation: input
-    _showReferences: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-    _conditionDictionary:
-      list: []
-    _readablesDictionary: []
+  _speed: {fileID: 0}
   _ignoreSpeed: 1
   onStartMoving:
     m_PersistentCalls:
@@ -424,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _reduction:
     operation: 2
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

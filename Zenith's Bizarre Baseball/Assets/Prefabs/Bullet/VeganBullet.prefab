@@ -276,6 +276,7 @@ MonoBehaviour:
   timeToWait: 0
   _timeProcessor:
     operation: duration
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list:
@@ -398,6 +399,7 @@ MonoBehaviour:
   _fadeCurve: {fileID: 11400000, guid: 92b23c1d5f596bc40ae5aaa6081f6a98, type: 2}
   _fadeDuration:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -542,28 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed:
-    operation: input
-    _showReferences: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-    _conditionDictionary:
-      list: []
-    _readablesDictionary: []
+  _speed: {fileID: 11400000, guid: 3a87de7deee6a2240a9c9bddb01fad96, type: 2}
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -612,8 +593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage:
+  Damage: {fileID: 11400000, guid: 0af3ed2cff3c5ca42af99f4e12708d7b, type: 2}
+  _processor:
     operation: input
+    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -648,6 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollisions:
     operation: collisions
+    _debug: 0
     _showReferences: 1
     _floatDictionary:
       list: []

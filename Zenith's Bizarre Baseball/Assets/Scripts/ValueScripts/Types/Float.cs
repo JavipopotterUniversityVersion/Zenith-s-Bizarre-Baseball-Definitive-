@@ -72,7 +72,7 @@ public class Processor
     string _name = "";
     static string[] operationTypes = new string[] {"nR" ,"!=", "==", ">", "<", "<=", ">=", "&&", "||", "Random", "^", "*", "/", "%", "+", "-" };
     public string operation = "input";
-    [SerializeField] bool _debug = false;
+    bool _debug = false;
     [SerializeField] protected bool _showReferences;
 
     #region references

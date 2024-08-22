@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 884065834706555412}
   - component: {fileID: 862076959025148249}
   m_Layer: 0
-  m_Name: Talking -> False
+  m_Name: Talking -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,7 +664,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _numberOfItems:
     operation: 3
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -706,7 +705,6 @@ MonoBehaviour:
     _cost: 10
   _costProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -730,7 +728,6 @@ MonoBehaviour:
   _moneyType: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
   _purchaseCondition:
     operation: owes == 0
-    _debug: 0
     _showReferences: 1
     _floatDictionary:
       list:

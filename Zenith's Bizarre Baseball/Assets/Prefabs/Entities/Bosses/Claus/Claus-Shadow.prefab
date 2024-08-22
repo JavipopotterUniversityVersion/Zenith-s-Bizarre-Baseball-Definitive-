@@ -324,7 +324,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: {fileID: 11400000, guid: 466c5406019372a41ab1f065cd7ba60b, type: 2}
+  _movementSpeed:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -549,7 +570,6 @@ MonoBehaviour:
   _targetSearchableType: {fileID: 11400000, guid: c756fb681e5026f42be7b1a15e4f48ae, type: 2}
   _searchableIndex:
     operation: 4 Random 8
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -722,7 +742,6 @@ MonoBehaviour:
   _fadeCurve: {fileID: 11400000, guid: 92b23c1d5f596bc40ae5aaa6081f6a98, type: 2}
   _fadeDuration:
     operation: 0,5
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -858,7 +877,6 @@ MonoBehaviour:
   rotationSpeed: 100000000
   _offset:
     operation: 0
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1046,6 +1064,10 @@ PrefabInstance:
       propertyPath: _speedAdder
       value: 
       objectReference: {fileID: 11400000, guid: a88e34b6a0fa34543a24049ea96e5ac5, type: 2}
+    - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _speedToAdd.operation
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1517834348628145000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1082,6 +1104,10 @@ PrefabInstance:
       propertyPath: knockBackForce
       value: 
       objectReference: {fileID: 11400000, guid: caa0961e6ec14d94da9b804aa04710f4, type: 2}
+    - target: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: objectProcessor.operation
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5357634515182928792, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: m_Size.y
       value: 4.4778285

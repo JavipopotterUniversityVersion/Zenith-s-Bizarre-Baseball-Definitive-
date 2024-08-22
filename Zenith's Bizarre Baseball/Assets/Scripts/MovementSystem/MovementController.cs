@@ -8,8 +8,8 @@ public class MovementController : MonoBehaviour
     Rigidbody2D rb;
     public Rigidbody2D Rb => rb;
 
-    [SerializeField] Float _speed;
-    public float Speed => _speed.Value;
+    [SerializeField] ObjectProcessor _movementSpeed;
+    public float Speed => _movementSpeed.Result();
 
     [SerializeField] bool _ignoreSpeed = false;
 
@@ -44,6 +44,5 @@ public class MovementController : MonoBehaviour
     void SetVelocity(Vector2 direction)
     { 
         rb.velocity = direction * Speed;
-        print(rb.velocity);
     }
 }

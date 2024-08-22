@@ -47,7 +47,6 @@ MonoBehaviour:
   multiplier: 1
   _multiplierProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -176,10 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 27a28e124f0cdc942b953aa8a3ab346d, type: 2}
   _processor:
-    operation: input
-    _debug: 0
+    operation: 4
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -212,10 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: {fileID: 11400000, guid: d6892de8e7da27540a9c287c310a9d2f, type: 2}
   objectProcessor:
-    operation: input
-    _debug: 0
+    operation: 15
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -295,6 +290,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 
       objectReference: {fileID: 11400000, guid: 61f6817f8dcf1224f9b3a14df5937bca, type: 2}
+    - target: {fileID: -2983886410244225649, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _movementSpeed.operation
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 12215767774205197, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onExitPerformers.Array.size
       value: 1
@@ -447,6 +446,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 
       objectReference: {fileID: 11400000, guid: 630292a2170674548b53f31d7765fd4d, type: 2}
+    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _maxHealth.operation
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 6737603376757315239, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_RootOrder
       value: 3

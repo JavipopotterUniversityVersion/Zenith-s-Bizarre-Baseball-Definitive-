@@ -1075,7 +1075,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedProcessor:
     operation: input * 0,7
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1712,7 +1711,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _processor:
     operation: vegan > 2
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1924,7 +1922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _processor:
     operation: Alive && (Inmortal == 0)
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -2056,7 +2053,6 @@ MonoBehaviour:
   timeToWait: 0.15
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -2336,7 +2332,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _processor:
     operation: money < 0
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -2452,7 +2447,6 @@ MonoBehaviour:
   timeToWait: 0.2
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -2848,7 +2842,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: {fileID: 11400000, guid: c7bf86f399da80e49b70e62a777e2b72, type: 2}
+  _movementSpeed:
+    operation: s
+    _showReferences: 0
+    _floatDictionary:
+      list:
+      - Key: s
+        Value: {fileID: 11400000, guid: c7bf86f399da80e49b70e62a777e2b72, type: 2}
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -3064,8 +3081,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  maxHealth: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
-  _currentHealth: 12
+  _maxHealth:
+    operation: max
+    _showReferences: 0
+    _floatDictionary:
+      list:
+      - Key: max
+        Value: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
 --- !u!61 &5086686710499477413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3160,7 +3199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _reduction:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -3922,6 +3960,26 @@ PrefabInstance:
       propertyPath: Damage
       value: 
       objectReference: {fileID: 11400000, guid: 443efb36bab353f41861bb9b89fa9823, type: 2}
+    - target: {fileID: 1149129183314528725, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _processor.operation
+      value: dmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149129183314528725, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _processor._showReferences
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149129183314528725, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _processor._floatDictionary.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149129183314528725, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _processor._floatDictionary.list.Array.data[0].Key
+      value: dmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149129183314528725, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _processor._floatDictionary.list.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 443efb36bab353f41861bb9b89fa9823, type: 2}
     - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: _speedAdder
       value: 
@@ -3930,13 +3988,33 @@ PrefabInstance:
       propertyPath: _counterMultiplier
       value: 
       objectReference: {fileID: 11400000, guid: 813e1e6ff1e1bc547876558dfe7df2bd, type: 2}
+    - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _speedToAdd.operation
+      value: counter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _speedToAdd._showReferences
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _speedToAdd._floatDictionary.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _speedToAdd._floatDictionary.list.Array.data[0].Key
+      value: counter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450764734986493869, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _speedToAdd._floatDictionary.list.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 813e1e6ff1e1bc547876558dfe7df2bd, type: 2}
     - target: {fileID: 1517834348628145000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].layer.m_Bits
@@ -4029,7 +4107,7 @@ PrefabInstance:
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].collidables.Array.data[0]
       value: 
-      objectReference: {fileID: 3976737161250918712}
+      objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].collidables.Array.data[1]
       value: 
@@ -4046,6 +4124,26 @@ PrefabInstance:
       propertyPath: _multiplier
       value: 
       objectReference: {fileID: 11400000, guid: 155831a20a539464ab903bad39081c07, type: 2}
+    - target: {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _newDamage.operation
+      value: dmg * 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _newDamage._showReferences
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _newDamage._floatDictionary.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _newDamage._floatDictionary.list.Array.data[0].Key
+      value: dmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011197823153750842, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: _newDamage._floatDictionary.list.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 443efb36bab353f41861bb9b89fa9823, type: 2}
     - target: {fileID: 5125766025389325077, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: m_Name
       value: bat
@@ -4056,8 +4154,24 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
     - target: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: objectProcessor.operation
-      value: input * 2
+      value: k
       objectReference: {fileID: 0}
+    - target: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: objectProcessor._showReferences
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: objectProcessor._floatDictionary.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: objectProcessor._floatDictionary.list.Array.data[0].Key
+      value: k
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
+      propertyPath: objectProcessor._floatDictionary.list.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
     - target: {fileID: 5357634515182928792, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: m_Size.y
       value: 3.635991
@@ -4218,7 +4332,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size:
     operation: size
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list:
@@ -4257,7 +4370,6 @@ MonoBehaviour:
   _floatEvents:
   - _condition:
       operation: 
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -4320,47 +4432,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1011428584843827806, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_PrefabInstance: {fileID: 1153429947300558371}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2253844333111070768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1100722292288742931, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
-  m_PrefabInstance: {fileID: 1153429947300558371}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3976737161250918712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2253844333111070768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockBackForce: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
-  objectProcessor:
-    operation: input * 4
-    _debug: 0
-    _showReferences: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-    _conditionDictionary:
-      list: []
-    _readablesDictionary: []
 --- !u!1 &3374402690705299672 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4527673655227395835, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
@@ -4401,8 +4472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collisionsToDestroy:
     operation: value
-    _debug: 0
-    _showReferences: 1
+    _showReferences: 0
     _floatDictionary:
       list: []
     _intDictionary:
@@ -4467,7 +4537,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _angularForce:
     operation: 9000
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -4517,7 +4586,6 @@ MonoBehaviour:
   _floatEvents:
   - _condition:
       operation: 1
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -4588,7 +4656,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5171384386339900838, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_PrefabInstance: {fileID: 1153429947300558371}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2253844333111070768}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}

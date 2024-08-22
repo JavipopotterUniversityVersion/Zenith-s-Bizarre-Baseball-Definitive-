@@ -100,7 +100,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79079017c81e97e4192ea694f2d6350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: {fileID: 11400000, guid: b48a8b2c4e086bb419517704be45d456, type: 2}
+  _movementSpeed:
+    operation: 30
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _ignoreSpeed: 0
   onStartMoving:
     m_PersistentCalls:
@@ -505,7 +526,6 @@ MonoBehaviour:
   _targetSearchableType: {fileID: 11400000, guid: b2773c4c5a644e0488162436b497d49a, type: 2}
   _searchableIndex:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -742,7 +762,7 @@ GameObject:
   - component: {fileID: 3283360016902407955}
   - component: {fileID: 8283782616334854923}
   m_Layer: 6
-  m_Name: Follow Target 90 m/s
+  m_Name: Follow Target 2 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,7 +798,6 @@ MonoBehaviour:
   multiplier: 2
   _multiplierProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -905,13 +924,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 443efb36bab353f41861bb9b89fa9823, type: 2}
   _processor:
-    operation: input * 3
-    _debug: 0
+    operation: dmg * 3
     _showReferences: 0
     _floatDictionary:
-      list: []
+      list:
+      - Key: dmg
+        Value: {fileID: 11400000, guid: 443efb36bab353f41861bb9b89fa9823, type: 2}
     _intDictionary:
       list: []
     _curveDictionary:
@@ -941,10 +960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: {fileID: 11400000, guid: 3176faa45a292ec4b8b50ed6eba0ce39, type: 2}
   objectProcessor:
-    operation: input
-    _debug: 0
+    operation: 15
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -979,7 +996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollisions:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1107,7 +1123,6 @@ MonoBehaviour:
   timeToWait: 0.2
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

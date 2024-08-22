@@ -117,10 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 963521c26bfadff43a281630c368df20, type: 2}
   _processor:
-    operation: input
-    _debug: 0
+    operation: 8
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -223,7 +221,7 @@ GameObject:
   - component: {fileID: 66719096083757258}
   - component: {fileID: 4095571280425168679}
   m_Layer: 6
-  m_Name: Follow Target 12 m/s
+  m_Name: Follow Target 1 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +257,6 @@ MonoBehaviour:
   multiplier: 1
   _multiplierProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -410,6 +407,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 
       objectReference: {fileID: 11400000, guid: d41331b8c94f7134b8feac8172dc5192, type: 2}
+    - target: {fileID: -2983886410244225649, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _movementSpeed.operation
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 12215767774205197, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onExitPerformers.Array.size
       value: 1

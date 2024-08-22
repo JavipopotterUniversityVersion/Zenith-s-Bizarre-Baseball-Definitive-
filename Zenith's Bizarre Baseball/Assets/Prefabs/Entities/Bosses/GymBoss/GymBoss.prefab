@@ -110,7 +110,6 @@ MonoBehaviour:
   timeToWait: 0.7
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -257,7 +256,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration:
     operation: 1
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -280,7 +278,6 @@ MonoBehaviour:
     _readablesDictionary: []
   height:
     operation: 5
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -404,7 +401,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _processor:
     operation: 20
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -429,7 +425,6 @@ MonoBehaviour:
   - _behaviourContainer: {fileID: 1686058756188813604}
     _waitTime:
       operation: 0,05
-      _debug: 0
       _showReferences: 1
       _floatDictionary:
         list: []
@@ -515,7 +510,7 @@ GameObject:
   - component: {fileID: 1947773480725941496}
   - component: {fileID: 7224093548200097453}
   m_Layer: 6
-  m_Name: Follow Target 60 m/s
+  m_Name: Follow Target 3 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +546,6 @@ MonoBehaviour:
   multiplier: 3
   _multiplierProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -620,7 +614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _processor:
     operation: right (left (0 Random 1 > 0.5) == 0) + 1
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -896,7 +889,6 @@ MonoBehaviour:
   timeToWait: 0.2
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1074,7 +1066,6 @@ MonoBehaviour:
   timeToWait: 1
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1142,7 +1133,6 @@ MonoBehaviour:
   timeToWait: 0.2
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1311,10 +1301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: a6f6a73bb6a92b64095c04a38f1df6eb, type: 2}
   _processor:
-    operation: input
-    _debug: 0
+    operation: 4
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1383,7 +1371,6 @@ MonoBehaviour:
   - _instance: {fileID: 1673892643184387185, guid: c252dd4eb7ac8e84081ad03d177e18d3, type: 3}
     _appearCondition:
       operation: 
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -1527,7 +1514,7 @@ GameObject:
   - component: {fileID: 1183498699202919521}
   - component: {fileID: 815496388491067265}
   m_Layer: 6
-  m_Name: 'Orbit: 1,591549 r/s'
+  m_Name: 'Orbit: 0,07957747 r/s'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1564,7 +1551,6 @@ MonoBehaviour:
   orbit_radius: 10
   _radiusProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1590,7 +1576,6 @@ MonoBehaviour:
   multiplier: 5
   _multiplierProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -1623,6 +1608,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 20348183a65acc24ab06b0796f65a52d, type: 2}
     - target: {fileID: 674535551356668399, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: _maxHealth.operation
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 674535551356668399, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: getDamageConditions.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1634,6 +1623,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 
       objectReference: {fileID: 11400000, guid: e9e7fe0ca5e9c0d44a8b9f6b2604a21f, type: 2}
+    - target: {fileID: 2363344609748444984, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: _movementSpeed.operation
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2493045378026512799, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Name
       value: GymBoss
@@ -1656,7 +1649,7 @@ PrefabInstance:
       objectReference: {fileID: 5347493036482116997}
     - target: {fileID: 5457969179495792480, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 6545810886281651447, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_RootOrder

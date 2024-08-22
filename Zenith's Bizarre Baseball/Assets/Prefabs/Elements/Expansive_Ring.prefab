@@ -107,7 +107,6 @@ MonoBehaviour:
   _onExitCollidables: []
   _radius:
     operation: time * 50
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -353,15 +352,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 450d740f666655c4a92858e158c479bf, type: 2}
   _processor:
-    operation: input
-    _debug: 0
-    _showReferences: 0
+    operation: 2 - (money / 10)
+    _showReferences: 1
     _floatDictionary:
       list: []
     _intDictionary:
-      list: []
+      list:
+      - Key: money
+        Value: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
     _curveDictionary:
       list: []
     _operationDictionary:
@@ -480,7 +479,6 @@ MonoBehaviour:
   timeToWait: 3
   _timeProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []

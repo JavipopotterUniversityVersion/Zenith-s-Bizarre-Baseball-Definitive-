@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 3682164095186300298}
   - component: {fileID: 7817283926380462482}
   m_Layer: 6
-  m_Name: Follow Target 30 m/s
+  m_Name: Follow Target 1 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,6 @@ MonoBehaviour:
   multiplier: 1
   _multiplierProcessor:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -457,10 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 2005bbccdd861674d887db0b9e2aea5d, type: 2}
   _processor:
-    operation: input
-    _debug: 0
+    operation: 4
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -493,10 +490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d41a7181b28444ba8e1e3be3adcc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackForce: {fileID: 11400000, guid: c7e3e9ef3ad9ac840b08d84e46e11ce8, type: 2}
   objectProcessor:
-    operation: input
-    _debug: 0
+    operation: 50
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -576,6 +571,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 
       objectReference: {fileID: 11400000, guid: 466c5406019372a41ab1f065cd7ba60b, type: 2}
+    - target: {fileID: -2983886410244225649, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _movementSpeed.operation
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 12215767774205197, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onExitPerformers.Array.size
       value: 0
@@ -732,6 +731,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 
       objectReference: {fileID: 11400000, guid: f18867cddfc44ae47a5934494eaaa910, type: 2}
+    - target: {fileID: 6501343607761391206, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: _maxHealth.operation
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6737603376757315239, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_RootOrder
       value: 4

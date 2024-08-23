@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6401397260674429045}
   - component: {fileID: 6907338299669186943}
+  - component: {fileID: 3056840825535027933}
+  - component: {fileID: 2461509812024298133}
+  - component: {fileID: 655301954159432997}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -57,6 +60,85 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.2472852, y: 0.62099874}
+  m_EdgeRadius: 0
+--- !u!114 &3056840825535027933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68808065000804827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterCollidables: []
+  OnStayCollidables: []
+  checkDelay: 0.1
+  OnExitCollidables:
+  - _targets: []
+    layer:
+      serializedVersion: 2
+      m_Bits: 1024
+    conditions: []
+    collidables:
+    - {fileID: 2461509812024298133}
+--- !u!114 &2461509812024298133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68808065000804827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCollideEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9213680093490472120}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: RecallLastDirection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollideEventWithTransform:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!61 &655301954159432997
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68808065000804827}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.014240444, y: 0.32278258}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4082247, y: 0.7911407}
   m_EdgeRadius: 0
 --- !u!1 &80102998968306158
 GameObject:
@@ -336,7 +418,7 @@ GameObject:
   - component: {fileID: 2906330236015424576}
   - component: {fileID: 1698475035525480149}
   m_Layer: 7
-  m_Name: PhantomImage -> True
+  m_Name: PhantomImage -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,7 +903,7 @@ GameObject:
   - component: {fileID: 6129616908563179949}
   - component: {fileID: 4064202359018212874}
   m_Layer: 0
-  m_Name: NearBoost -> True
+  m_Name: NearBoost -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2877,6 +2959,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: TrueCondition, Assembly-CSharp
         m_MethodName: SetValue
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 9213680093490472120}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: UpdateDirection
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

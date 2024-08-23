@@ -22,6 +22,8 @@ public class MovementController : MonoBehaviour
     [SerializeField] UnityEvent onStopMoving = new UnityEvent();
     public UnityEvent OnStopMoving => onStopMoving;
 
+    Vector2 _lastDirection = Vector2.zero;
+
     private void Awake()
     {
         rb = GetComponentInParent<Rigidbody2D>();
@@ -38,7 +40,11 @@ public class MovementController : MonoBehaviour
 
         if(_ignoreSpeed) rb.velocity = rb.velocity.magnitude * direction.normalized;
         else rb.velocity = direction * Speed;
+
+        _lastDirection = direction;
     }
+
+    public void RecallLastDirection() => rb.velocity = _lastDirection * Speed;
 
     public void MoveForward() => SetVelocity(transform.up);
     void SetVelocity(Vector2 direction)

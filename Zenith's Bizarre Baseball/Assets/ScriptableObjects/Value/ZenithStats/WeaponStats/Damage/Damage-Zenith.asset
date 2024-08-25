@@ -14,15 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 4
   _readProcessor:
-    operation: '[value] * (2 / (1+ (0 Random 1) > crit)) * g (boost/100)'
-    _debug: 0
+    operation: '[value] * g (boost/100)'
     _showReferences: 1
     _floatDictionary:
       list:
       - Key: level
         Value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
-      - Key: crit
-        Value: {fileID: 11400000, guid: 99e1565022875804586e19b14d6c9c5c, type: 2}
       - Key: boost
         Value: {fileID: 11400000, guid: 940f91319b2677f4885b9f62b8f976e2, type: 2}
     _intDictionary:

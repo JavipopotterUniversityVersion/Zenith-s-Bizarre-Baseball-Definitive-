@@ -1932,6 +1932,7 @@ GameObject:
   - component: {fileID: 1216975764004113604}
   - component: {fileID: 2608538317206084462}
   - component: {fileID: 6747895142137685955}
+  - component: {fileID: 8961621500089273037}
   m_Layer: 6
   m_Name: EnemyTemplate
   m_TagString: Untagged
@@ -2068,7 +2069,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.1
+          m_FloatArgument: 0.05
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2312,6 +2313,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _events:
     list: []
+--- !u!114 &8961621500089273037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105301891046977518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff67240a5785504494c10d6042b63db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weight: 0.75
+  _radius: 0
 --- !u!1 &9183437732459076444
 GameObject:
   m_ObjectHideFlags: 0

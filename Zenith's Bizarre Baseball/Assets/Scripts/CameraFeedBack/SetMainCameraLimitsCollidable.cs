@@ -8,6 +8,6 @@ public class SetMainCameraLimitsCollidable : ICollidable
     [SerializeField] EdgeCollider2D _collider;
     public override void OnCollide(Collider2D collider)
     {
-        MainVirtualCamera.Instance.VirtualCamera.GetComponent<CinemachineConfiner>().m_BoundingShape2D = _collider;
+        // MainVirtualCamera.Instance.VirtualCamera.GetComponent<CinemachineConfiner>().m_BoundingShape2D = _collider;
     }
 }

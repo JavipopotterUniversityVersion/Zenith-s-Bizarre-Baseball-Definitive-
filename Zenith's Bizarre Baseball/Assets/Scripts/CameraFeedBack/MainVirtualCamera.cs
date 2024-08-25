@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class MainVirtualCamera : MonoBehaviour
 {
-    public static MainVirtualCamera Instance { get; private set; }
+    static MainVirtualCamera _instance;
+    public static MainVirtualCamera Instance => _instance;
+    public CinemachineTargetGroup TargetGroup;
     
-    CinemachineVirtualCamera _virtualCamera;
-    public CinemachineVirtualCamera VirtualCamera => _virtualCamera;
-
-    private void Awake() {
-        Instance = this;
-        _virtualCamera = GetComponent<CinemachineVirtualCamera>();
+    private void Awake() 
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

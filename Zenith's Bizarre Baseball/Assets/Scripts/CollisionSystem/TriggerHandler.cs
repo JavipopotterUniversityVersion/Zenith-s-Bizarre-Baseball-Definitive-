@@ -84,11 +84,15 @@ public class CollidableGroup
 
     public bool CheckIdentifiables(Collider2D collider)
     {
-        if(Targets.Length == 0 || collider.TryGetComponent(out Searchable type) == false) return true;
-        
-        foreach (Identifiable target in Targets)
+        if(Targets.Length == 0) return true;
+
+        Searchable type = collider.GetComponent<Searchable>();
+        if(type != null)
         {
-            if(type.IdentifiableType.DerivesFrom(target)) return true;
+            foreach (Identifiable target in Targets)
+            {
+                if(type.IdentifiableType.DerivesFrom(target)) return true;
+            }
         }
 
         return false;

@@ -41,4 +41,10 @@ public class FadeInTime : MonoBehaviour
             }
         }
     }
+
+    public void Reset()
+    {
+        _fadeTime = 0;
+        _isFading = true;
+    }
 }

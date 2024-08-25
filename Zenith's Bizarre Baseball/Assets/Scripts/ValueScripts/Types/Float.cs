@@ -386,6 +386,7 @@ public class ObjectProcessor : Processor
 
         if(_conditionDictionary.ContainsKey(value))
         {
+            Condition.InitializeAll(_conditionDictionary[value]);
             returnValue = Condition.Value(_conditionDictionary[value]);
             return true;
         }

@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 3063072573441554623}
   - component: {fileID: 8902687742766919718}
   m_Layer: 6
-  m_Name: Move Away -1 m/s
+  m_Name: Move Away -6 m/s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,6 +833,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1cc28b76bd34862479877bbde8ec6589, type: 2}
+    - target: {fileID: 6282271776041278724, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.18
+      objectReference: {fileID: 0}
     - target: {fileID: 6322319794928954216, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -851,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> True
+      value: Alive -> False
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x
@@ -875,7 +879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7254718051959695927, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8048230017073773547, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_RootOrder

@@ -5,9 +5,11 @@ using UnityEngine;
 public class PoolBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] GameObject _prefab;
+    [SerializeField] bool _alignRotation = true;
     
     public void ExecuteBehaviour()
     {
-        ObjectPooler.Instance.SpawnFromPool(transform.position, transform.rotation, _prefab);
+        GameObject obj = ObjectPooler.Instance.SpawnFromPool(transform.position, Quaternion.identity, _prefab);
+        if(_alignRotation) obj.transform.rotation = transform.rotation;
     }
 }

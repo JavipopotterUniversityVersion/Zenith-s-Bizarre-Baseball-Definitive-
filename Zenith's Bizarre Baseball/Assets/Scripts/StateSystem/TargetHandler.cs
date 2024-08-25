@@ -22,9 +22,10 @@ public class TargetHandler : MonoBehaviour
     }
 
     private void Awake()
-    { 
-        if (_target == null) SetTarget(null);
+    {
+        if(_target == null) _target = FindFirstObjectByType<InputManager>().transform;
     }
+
     private void OnEnable() => Awake();
 
     public void SetTarget(Transform target) => Target = target;

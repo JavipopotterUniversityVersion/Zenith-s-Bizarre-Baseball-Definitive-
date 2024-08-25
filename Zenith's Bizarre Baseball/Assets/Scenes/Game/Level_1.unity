@@ -236,6 +236,10 @@ PrefabInstance:
       value: Global Light 2D
       objectReference: {fileID: 0}
     - target: {fileID: 4739850982252610507, guid: f908354d968129d478b17942d25a7033, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739850982252610507, guid: f908354d968129d478b17942d25a7033, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -581,7 +585,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215249688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7393491be29ba7d4faec09afb27a34a5, type: 3}
   m_Name: 
@@ -589,12 +593,6 @@ MonoBehaviour:
   possibleDecorations:
   - gameObject: {fileID: 6280118008355876925, guid: ab6385ff68f0e7c448e8af54a3ac5216, type: 3}
     size: {x: 1, y: 2}
-    probability: 1
-  - gameObject: {fileID: 5871691545799828468, guid: c0586d3a49cc90646b7ce3360df9d9f5, type: 3}
-    size: {x: 1, y: 4}
-    probability: 1
-  - gameObject: {fileID: 25098789536098793, guid: cfc6b3bbb4fc886478015b827481f856, type: 3}
-    size: {x: 2, y: 4}
     probability: 1
   decorationLimits: []
   extensionTile: {fileID: 11400000, guid: da73840fbcd92b54694ae7e92093b32f, type: 2}

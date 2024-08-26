@@ -248,7 +248,11 @@ MonoBehaviour:
     layer:
       serializedVersion: 2
       m_Bits: 128
-    conditions: []
+    conditions:
+    - conditionContainer: {fileID: 6106352121556033207}
+      negated: 1
+    - conditionContainer: {fileID: 6207017570940080848}
+      negated: 1
     collidables:
     - {fileID: 6344792939951504676}
     - {fileID: 1833760796585876201}
@@ -5603,7 +5607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907081693421196295, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Name
-      value: Alive -> False
+      value: Alive -> True
       objectReference: {fileID: 0}
     - target: {fileID: 7008777069481554732, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_Size.x
@@ -5643,6 +5647,16 @@ Transform:
 --- !u!4 &4937036498992358137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3797948079461663498, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+  m_PrefabInstance: {fileID: 8085902167428522483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6106352121556033207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2632630822853656388, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
+  m_PrefabInstance: {fileID: 8085902167428522483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6207017570940080848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2744139912530801443, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
   m_PrefabInstance: {fileID: 8085902167428522483}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8777811787816919598 stripped

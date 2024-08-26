@@ -7,23 +7,18 @@ using UnityEngine;
 public class CounterCollidable : ICollidable
 {
     [SerializeField] ObjectProcessor _speedToAdd;
-
-    [SerializeField] bool _hasMaxSpeed = false;
-    
-    [ConditionalField(nameof(_hasMaxSpeed), false)] 
-    [SerializeField] float _maxSpeed = 0;
+    [SerializeField] AnimationCurve _speedCurve;
 
     public override void OnCollide(Collider2D collider)
     {
-        if (collider.TryGetComponent(out Rigidbody2D rigidbody) && collider.TryGetComponent(out Knockable knockable))
+        if (collider.TryGetComponent(out Rigidbody2D rb) && collider.TryGetComponent(out Knockable knockable))
         {
-            float force;
+            float force = _speedToAdd.Result();
 
-            if(rigidbody.velocity.magnitude < _speedToAdd.Result() * knockable.Reduction) force = _speedToAdd.Result();
-            else force = rigidbody.velocity.magnitude + (_speedToAdd.Result() * 0.5f);
+            float rbSpeed = rb.velocity.magnitude;
+            force = force * _speedCurve.Evaluate(rbSpeed/force) * knockable.Reduction;
 
-            force = _hasMaxSpeed ? Mathf.Min(force, _maxSpeed) : force;
-            knockable.Knock(force * (collider.transform.position - transform.position).normalized);
+            rb.velocity = (rbSpeed + force) * (collider.transform.position - transform.position).normalized;
         }
     }
 }

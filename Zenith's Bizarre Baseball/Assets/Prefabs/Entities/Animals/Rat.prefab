@@ -191,6 +191,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3253433919476304897}
   - component: {fileID: 3951595317259105203}
+  - component: {fileID: 1339721171094717199}
+  - component: {fileID: 1168837053412695842}
   m_Layer: 0
   m_Name: sr
   m_TagString: Untagged
@@ -265,6 +267,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &1339721171094717199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414825871410792544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7df305f4b4eb7418b8717d7cd16357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onBecameInvisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4999913454388196963}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1168837053412695842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414825871410792544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5293afc7ff566a49832df013be59490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onBecameVisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4999913454388196963}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &2422048496164792300
 GameObject:
   m_ObjectHideFlags: 0

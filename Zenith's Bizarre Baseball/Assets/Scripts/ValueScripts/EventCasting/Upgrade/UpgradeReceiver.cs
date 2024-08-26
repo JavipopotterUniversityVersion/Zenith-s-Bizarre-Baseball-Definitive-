@@ -12,8 +12,6 @@ public class UpgradeReceiver : MonoBehaviour
     [SerializeField] UnityEvent<UnityEngine.Sprite> _onReceiveIcon = new UnityEvent<UnityEngine.Sprite>();
     [SerializeField] UnityEvent<Upgrade> _onReceiveUpgrade = new UnityEvent<Upgrade>();
 
-    [Header("RESULT EVENT")][Space(3)]
-    [SerializeField] TrueFalseEvents _eventByUpgradeResult;
     Upgrade _upgrade;
 
     public void SetUpgrade(Upgrade upgrade)
@@ -32,7 +30,7 @@ public class UpgradeReceiver : MonoBehaviour
 
     public void GetUpgrade() 
     {
-       _eventByUpgradeResult.Invoke(_upgrade.ApplyUpgrade());
+       _upgrade.ApplyUpgrade();
     }
 
     [Serializable]

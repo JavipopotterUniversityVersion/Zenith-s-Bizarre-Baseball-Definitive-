@@ -11,6 +11,34 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 16.059343
       objectReference: {fileID: 0}
+    - target: {fileID: 759940314993564205, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameVisible.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759940314993564205, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameVisible.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 759940314993564205, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameVisible.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5966843741875476866}
+    - target: {fileID: 759940314993564205, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameVisible.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 759940314993564205, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameVisible.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 759940314993564205, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameVisible.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759940314993564205, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameVisible.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Idle
+      objectReference: {fileID: 0}
     - target: {fileID: 934943610668530616, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -87,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2413806693520163455, guid: 2513b07ef03087f4c97534b77ce1b946, type: 3}
+    - target: {fileID: 8969732423510403820, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+      propertyPath: _onBecameInvisible.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
 --- !u!1 &1201349007326373076 stripped
@@ -125,3 +157,8 @@ MonoBehaviour:
   - sprite: {fileID: -954296777, guid: 6efd633fe1197144d941293212127022, type: 3}
     color: {r: 0.33154273, g: 1, b: 0, a: 1}
     intensity: 1
+--- !u!95 &5966843741875476866 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6557285825697942996, guid: f5067c634592878459d2d5a07bb3cffe, type: 3}
+  m_PrefabInstance: {fileID: 706595041953322070}
+  m_PrefabAsset: {fileID: 0}

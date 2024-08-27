@@ -13,57 +13,80 @@ MonoBehaviour:
   m_Name: DefaultValues
   m_EditorClassIdentifier: 
   _floatSets:
-  - _float: {fileID: 11400000, guid: 05f61bfff7f58404293fd18b839fcf72, type: 2}
+  - _name: BallDivisions
+    _float: {fileID: 11400000, guid: 05f61bfff7f58404293fd18b839fcf72, type: 2}
     _value: 0
-  - _float: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
+  - _name: CurrentHealth-Zenith
+    _float: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
     _value: 12
-  - _float: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
+  - _name: MaxHealth-Zenith
+    _float: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
     _value: 12
-  - _float: {fileID: 11400000, guid: b8fd32c9be43dcf4ea95282dbe83c605, type: 2}
+  - _name: MoneyDamage
+    _float: {fileID: 11400000, guid: b8fd32c9be43dcf4ea95282dbe83c605, type: 2}
     _value: 0
-  - _float: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
-    _value: 0
-  - _float: {fileID: 11400000, guid: 940f91319b2677f4885b9f62b8f976e2, type: 2}
-    _value: 0
-  - _float: {fileID: 11400000, guid: 97fb755770921464f94717d4a5db6ead, type: 2}
+  - _name: Global_Boost
+    _float: {fileID: 11400000, guid: 940f91319b2677f4885b9f62b8f976e2, type: 2}
     _value: 0
   _intSets:
-  - _int: {fileID: 11400000, guid: f122d159d82432247952692ce75b2b53, type: 2}
+  - _name: KnockbackLevel
+    _int: {fileID: 11400000, guid: f122d159d82432247952692ce75b2b53, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: e6d17d59a65070d43ac14678b4e4016a, type: 2}
+  - _name: HealthLevel
+    _int: {fileID: 11400000, guid: e6d17d59a65070d43ac14678b4e4016a, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: 69ae5130b627dd84487f31c4707e4ab7, type: 2}
+  - _name: CriticChanceLevel
+    _int: {fileID: 11400000, guid: 69ae5130b627dd84487f31c4707e4ab7, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: 76b9ec63737575646b67598646767eb5, type: 2}
+  - _name: DashLevel
+    _int: {fileID: 11400000, guid: 76b9ec63737575646b67598646767eb5, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: 440e19b5fb609d84d9043d6d455c63cf, type: 2}
+  - _name: MeatLevel
+    _int: {fileID: 11400000, guid: 440e19b5fb609d84d9043d6d455c63cf, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: a4b97a1995ce16a418f0b45501f0a80f, type: 2}
+  - _name: VeganLevel
+    _int: {fileID: 11400000, guid: a4b97a1995ce16a418f0b45501f0a80f, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: fed9c75ea3fd4d34dac207e3d7d31935, type: 2}
+  - _name: CurrentSceneLevel
+    _int: {fileID: 11400000, guid: fed9c75ea3fd4d34dac207e3d7d31935, type: 2}
     _value: 1
-  - _int: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
+  - _name: Money
+    _int: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
+  - _name: CollisionsToDestroy-Ball
+    _int: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
     _value: 1
-  - _int: {fileID: 11400000, guid: a5a922e3b70800b41aa29d32eb481dfe, type: 2}
+  - _name: Keys
+    _int: {fileID: 11400000, guid: a5a922e3b70800b41aa29d32eb481dfe, type: 2}
     _value: 0
-  - _int: {fileID: 11400000, guid: 92024b17cc6adcb4f9efac1312a069f9, type: 2}
+  - _name: DamageLevel
+    _int: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
+    _value: 0
+  - _name: SpeedLevel
+    _int: {fileID: 11400000, guid: fbad8f8350050c94fa79c363272aad32, type: 2}
     _value: 0
   _boolSets:
-  - _bool: {fileID: 11400000, guid: 422c1d2a738cd0a4d9e6ee6e7b3352c9, type: 2}
+  - _name: Alive
+    _bool: {fileID: 11400000, guid: 422c1d2a738cd0a4d9e6ee6e7b3352c9, type: 2}
     _value: 1
-  - _bool: {fileID: 11400000, guid: 91a6d05075e70324785acf26d671f953, type: 2}
+  - _name: Talking
+    _bool: {fileID: 11400000, guid: 91a6d05075e70324785acf26d671f953, type: 2}
     _value: 0
-  - _bool: {fileID: 11400000, guid: b83395465fe0e0741abfed4c09caddbd, type: 2}
+  - _name: CanLaunchCoin
+    _bool: {fileID: 11400000, guid: b83395465fe0e0741abfed4c09caddbd, type: 2}
     _value: 0
-  - _bool: {fileID: 11400000, guid: 71558816f733dfc4ea70e18b63c6b5e7, type: 2}
+  - _name: NearBoost
+    _bool: {fileID: 11400000, guid: 71558816f733dfc4ea70e18b63c6b5e7, type: 2}
     _value: 0
-  - _bool: {fileID: 11400000, guid: 6a81a7203df1eaf44aedce3fd99f7475, type: 2}
+  - _name: BulletSlower
+    _bool: {fileID: 11400000, guid: 6a81a7203df1eaf44aedce3fd99f7475, type: 2}
     _value: 0
-  - _bool: {fileID: 11400000, guid: 82f4be779a9c5794198ab500414ef09a, type: 2}
+  - _name: Shield
+    _bool: {fileID: 11400000, guid: 82f4be779a9c5794198ab500414ef09a, type: 2}
     _value: 0
-  - _bool: {fileID: 11400000, guid: a7b3efbfc30f6984ba643a6c00869988, type: 2}
+  - _name: PhantomImage
+    _bool: {fileID: 11400000, guid: a7b3efbfc30f6984ba643a6c00869988, type: 2}
     _value: 0
-  - _bool: {fileID: 11400000, guid: d140604bafa1aac4da689db40f385489, type: 2}
+  - _name: Wall_Damage
+    _bool: {fileID: 11400000, guid: d140604bafa1aac4da689db40f385489, type: 2}
     _value: 0

@@ -40,13 +40,3 @@ public class Int : ScriptableObject
 
     public void DivideValue(int value) => SetValue(Value / value);
 }
-
-public interface INumber
-{
-    int Value { get; set; }
-    void SetValue<T>(T value);
-    void AddValue(int value);
-    void SubtractValue(int value);
-    void MultiplyValue(int value);
-    void DivideValue(int value);
-}

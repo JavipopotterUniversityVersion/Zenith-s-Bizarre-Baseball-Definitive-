@@ -18,25 +18,37 @@ public class DataSeter : ScriptableObject
         foreach (var set in _boolSets) set.Set();
     }
 
-    [Serializable] class FloatSet
+    [Serializable] class FloatSet : ISerializationCallbackReceiver
     {
+        [SerializeField] string _name;
         [SerializeField] Float _float;
         [SerializeField] float _value;
 
         public void Set() => _float.SetRawValue(_value);
+
+        public void OnBeforeSerialize() => _name = _float.name;
+        public void OnAfterDeserialize() {}
     }
-    [Serializable] class IntSet
+    [Serializable] class IntSet : ISerializationCallbackReceiver
     {
+        [SerializeField] string _name;
         [SerializeField] Int _int;
         [SerializeField] int _value;
 
         public void Set() => _int.Value = _value;
+
+        public void OnBeforeSerialize() => _name = _int.name;
+        public void OnAfterDeserialize() {}
     }
-    [Serializable] class BoolSet
+    [Serializable] class BoolSet : ISerializationCallbackReceiver
     {
+        [SerializeField] string _name;
         [SerializeField] Bool _bool;
         [SerializeField] bool _value;
 
         public void Set() => _bool.SetRawValue(_value);
+
+        public void OnBeforeSerialize() => _name = _bool.name;
+        public void OnAfterDeserialize() {}
     }
 }

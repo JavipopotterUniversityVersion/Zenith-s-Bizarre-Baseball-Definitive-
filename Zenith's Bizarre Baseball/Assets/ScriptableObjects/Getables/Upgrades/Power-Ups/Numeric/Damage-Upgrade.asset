@@ -29,7 +29,6 @@ MonoBehaviour:
         list: []
     _condition:
       operation: input
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -49,8 +48,7 @@ MonoBehaviour:
         list: []
     _upgrade:
       operation: Apply 1
-      _debug: 0
-      _showReferences: 0
+      _showReferences: 1
       _floatDictionary:
         list: []
       _intDictionary:
@@ -72,13 +70,13 @@ MonoBehaviour:
             m_PersistentCalls:
               m_Calls:
               - m_Target: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
-                m_TargetAssemblyTypeName: Float, Assembly-CSharp
+                m_TargetAssemblyTypeName: Int, Assembly-CSharp
                 m_MethodName: AddValue
-                m_Mode: 4
+                m_Mode: 3
                 m_Arguments:
                   m_ObjectArgument: {fileID: 0}
                   m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
+                  m_IntArgument: 1
                   m_FloatArgument: 1
                   m_StringArgument: 
                   m_BoolArgument: 0

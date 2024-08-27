@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 2906330236015424576}
   - component: {fileID: 1698475035525480149}
   m_Layer: 7
-  m_Name: PhantomImage -> False
+  m_Name: PhantomImage -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 6129616908563179949}
   - component: {fileID: 4064202359018212874}
   m_Layer: 0
-  m_Name: NearBoost -> False
+  m_Name: NearBoost -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8310,6 +8310,7 @@ GameObject:
   - component: {fileID: 298788939721975811}
   - component: {fileID: 3184836003714547777}
   - component: {fileID: 2005671772857894690}
+  - component: {fileID: 5050870207325349130}
   m_Layer: 7
   m_Name: Zenith
   m_TagString: Untagged
@@ -8879,6 +8880,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _events:
     list: []
+--- !u!114 &5050870207325349130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213680093490472124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {fileID: 11400000, guid: e0d94e5d2d85c20428952ecc8e30b7bc, type: 2}
+  _floatEvents:
+  - _condition:
+      operation: 
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5188573643474554802}
+          m_TargetAssemblyTypeName: HealthHandler, Assembly-CSharp
+          m_MethodName: Heal
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &9213680093549052804
 GameObject:
   m_ObjectHideFlags: 0

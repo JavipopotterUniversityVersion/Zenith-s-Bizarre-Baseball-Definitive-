@@ -9,6 +9,12 @@ public class TargetGroupRegister : MonoBehaviour
 
     private void OnEnable() 
     {
+        StartCoroutine(AddMember());
+    }
+
+    IEnumerator AddMember()
+    {
+        yield return new WaitForEndOfFrame();
         MainVirtualCamera.Instance.TargetGroup.AddMember(this.transform, _weight, _radius);
     }
 

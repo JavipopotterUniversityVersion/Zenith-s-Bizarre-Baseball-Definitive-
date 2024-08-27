@@ -1553,13 +1553,21 @@ PrefabInstance:
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: nodeSettings.Array.data[1]._nodePrefab
       value: 
-      objectReference: {fileID: 2605847724626918093}
+      objectReference: {fileID: 5455551534934603710, guid: 64a814144451748468cb4774e6fcc835, type: 3}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: nodeSettings.Array.data[2]._nodePrefab
+      value: 
+      objectReference: {fileID: 5455551534934603710, guid: 64a814144451748468cb4774e6fcc835, type: 3}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: nodeSettings.Array.data[0]._probability
       value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: nodeSettings.Array.data[1]._probability
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: nodeSettings.Array.data[2]._probability
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
@@ -14763,11 +14771,6 @@ PrefabInstance:
 --- !u!4 &2586934544026003574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2440556980454786424, guid: 010466b03e1ae71439c914e861445706, type: 3}
-  m_PrefabInstance: {fileID: 159942547827911950}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2605847724626918093 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2743235695390054339, guid: 010466b03e1ae71439c914e861445706, type: 3}
   m_PrefabInstance: {fileID: 159942547827911950}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4658619635140983704 stripped

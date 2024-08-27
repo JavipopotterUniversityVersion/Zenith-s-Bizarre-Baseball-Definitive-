@@ -19,6 +19,7 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
 
     [SerializeField] UnityEvent<Transform> _onOverlap = new UnityEvent<Transform>();
     [SerializeField] UnityEvent<Vector2> _onOverlapDirection = new UnityEvent<Vector2>();
+    [SerializeField] bool debug = true;
  
     public bool CheckCondition()
     {
@@ -58,6 +59,7 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
 
     private void OnDrawGizmos()
     {
+        if(!debug) return;
         Gizmos.color = _gizmosColor;
         
         if(overlapType == OverlapType.Box)

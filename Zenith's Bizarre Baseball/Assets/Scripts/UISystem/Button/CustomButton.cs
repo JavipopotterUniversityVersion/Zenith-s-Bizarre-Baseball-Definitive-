@@ -35,6 +35,6 @@ public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPo
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        _button.onClick.Invoke();
+        // _button.onClick.Invoke();
     }
 }

@@ -380,6 +380,7 @@ MonoBehaviour:
   _onOverlapDirection:
     m_PersistentCalls:
       m_Calls: []
+  debug: 1
 --- !u!1 &2905960470083794072
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +449,7 @@ MonoBehaviour:
       list: []
     _readablesDictionary: []
   weight: 1
-  instant: 0
+  instant: 1
 --- !u!1 &3768311379708005936
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +669,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateAnimation: Move
-  onEnterPerformers: []
+  onEnterPerformers:
+  - condition: []
+    behaviourContainers:
+    - {fileID: 2905960470083794072}
   onUpdatePerformers:
   - condition: []
     behaviourContainers:
@@ -980,6 +984,7 @@ MonoBehaviour:
   _onOverlapDirection:
     m_PersistentCalls:
       m_Calls: []
+  debug: 1
 --- !u!1 &8781252819202426602
 GameObject:
   m_ObjectHideFlags: 0

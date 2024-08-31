@@ -48,6 +48,8 @@ public class BehaviourByTextInput : MonoBehaviour
 
     public void Search(string input) => ExecuteEvents(GetEvents(input));
 
+    public void ExecuteEvent(string input) => ExecuteEvents(new string[] { input });
+
     private void OnDestroy() {
         _string.OnStringCall.RemoveListener(() => Search(_string.Value));
     }

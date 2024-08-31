@@ -16,6 +16,9 @@ public class AudioPlayer : ScriptableObject
     [SerializeField] private bool _loop;
     public bool Loop => _loop;
 
+    [SerializeField] int _simultaneousSounds = 3;
+    public int SimultaneousSounds => _simultaneousSounds;
+
     #region Events
     private UnityEvent<AudioClip> _onPlay = new UnityEvent<AudioClip>();
     public UnityEvent<AudioClip> OnPlay => _onPlay;

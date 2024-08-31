@@ -8,7 +8,7 @@ public class PoolBehaviour : MonoBehaviour, IBehaviour
     [SerializeField] bool _alignRotation = true;
     bool disabled = false;
     
-    private void Awake() {
+    private void Start() {
         if(ObjectPooler.Instance == null)
         {
             disabled = true;

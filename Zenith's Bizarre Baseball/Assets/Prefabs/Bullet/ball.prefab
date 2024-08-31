@@ -425,7 +425,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identifiableType: {fileID: 11400000, guid: 64ca952bc185a1f41a7b07019be8aeec, type: 2}
-  identifiableChangeEvents: []
+  identifiableChangeEvents:
+  - _identifiableToCompare: {fileID: 11400000, guid: 18fbdf6ef00ba744dba4f1a7872cd7ca, type: 2}
+    changeType: 2
+    _onChange:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: db508b66647d68840a97547ee5dd3d21, type: 2}
+          m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8439233761578178865
 MonoBehaviour:
   m_ObjectHideFlags: 0

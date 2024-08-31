@@ -9,6 +9,9 @@ public class HealthHandler : MonoBehaviour, IReadable
     public UnityEvent<float> OnHealthChanged => onHealthChanged;
 
     [SerializeField] Condition[] getDamageConditions;
+    [SerializeField] UnityEvent onFailedDamage;
+    public UnityEvent OnFailedDamage => onFailedDamage;
+
     [SerializeField] UnityEvent onGetDamage = new UnityEvent();
     public UnityEvent OnGetDamage => onGetDamage;
 
@@ -41,12 +44,16 @@ public class HealthHandler : MonoBehaviour, IReadable
     }
 
     public void ResetHealth() => CurrentHealth = _maxHealth.Result();
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool ignoreConditions = false)
     {
-        if(Condition.CheckAllConditions(getDamageConditions))
+        if(ignoreConditions || Condition.CheckAllConditions(getDamageConditions))
         {
             CurrentHealth -= damage;
             onGetDamage.Invoke();
+        }
+        else
+        {
+            onFailedDamage.Invoke();
         }
     }
 

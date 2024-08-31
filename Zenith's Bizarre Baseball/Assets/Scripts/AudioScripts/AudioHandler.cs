@@ -6,6 +6,8 @@ public class AudioHandler : MonoBehaviour
 {
     AudioSource _source;
     AudioPlayer _audioPlayer;
+    [SerializeField] int _simultaneousSounds;
+    int simultaneousCount = 0;
 
     public void SetAudioPlayer(AudioPlayer audioPlayer)
     {
@@ -20,6 +22,7 @@ public class AudioHandler : MonoBehaviour
         _source.loop = _audioPlayer.Loop;
         _source.volume = _audioPlayer.Volume;
         _source.pitch = _audioPlayer.Pitch;
+        _simultaneousSounds = _audioPlayer.SimultaneousSounds;
     }
     
     private void Awake()
@@ -35,7 +38,16 @@ public class AudioHandler : MonoBehaviour
 
     public void PlayOneShot(AudioClip clip)
     {
-        if(clip != null) _source.PlayOneShot(clip);
+        if(clip != null && simultaneousCount < _simultaneousSounds) 
+            StartCoroutine(PlayOneShotRoutine(clip));
+    }
+
+    IEnumerator PlayOneShotRoutine(AudioClip clip)
+    {
+        simultaneousCount++;
+        _source.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length);
+        simultaneousCount--;
     }
 
     public void Stop() => _source.Stop();

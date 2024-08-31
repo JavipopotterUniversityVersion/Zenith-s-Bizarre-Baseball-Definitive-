@@ -28850,6 +28850,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2663552668740715363}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onCollideEventWithTransform:
     m_PersistentCalls:
       m_Calls: []
@@ -28881,6 +28893,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3368827725367630559}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2663552668740715363}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -30016,6 +30040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df171834dc4fd844fba526470f75b7fe, type: 3}
+--- !u!61 &2663552668740715363 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 9016031179518200089, guid: df171834dc4fd844fba526470f75b7fe, type: 3}
+  m_PrefabInstance: {fileID: 6478911423883954810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3368827725367630559 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8586620025477304485, guid: df171834dc4fd844fba526470f75b7fe, type: 3}

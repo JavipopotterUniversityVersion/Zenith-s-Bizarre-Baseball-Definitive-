@@ -12,12 +12,8 @@ public class AddIdentificationCollidable : ICollidable
         {
             if(searchable.IdentifiableType.DerivesFrom(identifiableType) == false)
             {
-                collider.gameObject.AddComponent<Searchable>().SetIdentifiableType(identifiableType);
+                searchable.SetIdentifiableType(identifiableType);
             }
-        }
-        else
-        {
-            collider.gameObject.AddComponent<Searchable>().SetIdentifiableType(identifiableType);
         }
     }
 }

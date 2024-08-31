@@ -10,10 +10,9 @@ public class DamageAllSearchablesBehaviour : MonoBehaviour, IBehaviour
     List<HealthHandler> healthHandlers;
     [SerializeField] private bool ignoreConditions;
 
-    private void Awake() 
+    public void ExecuteBehaviour()
     {
         healthHandlers = SearchManager.Instance.GetAllSearchables<HealthHandler>(searchableType).ToList();
+        healthHandlers.ForEach(h => h.TakeDamage(damage.Result(), ignoreConditions));
     }
-
-    public void ExecuteBehaviour() => healthHandlers.ForEach(h => h.TakeDamage(damage.Result(), ignoreConditions));
 }

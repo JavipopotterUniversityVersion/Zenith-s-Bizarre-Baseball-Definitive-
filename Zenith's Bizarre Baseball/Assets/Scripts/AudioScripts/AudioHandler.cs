@@ -80,7 +80,7 @@ public class AudioHandler : MonoBehaviour
     }
     IEnumerator FadeInRoutine(float duration)
     {
-        float startVolume = _audioPlayer.LocalVolume;
+        float startVolume = _source.volume;
         _source.volume = 0;
         Play(_audioPlayer.audioClip());
         while (_source.volume < startVolume)

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class AudioPlayer : ScriptableObject
 {
     public AudioClip[] clips;
-    public Vector2 volume = new Vector2(1f, 1f);
-    public float Volume => Random.Range(volume.x, volume.y);
+    public float volume = 1;
+    public float Volume => volume;
 
     public Vector2 pitch = new Vector2(1f, 1f);
     public float Pitch => Random.Range(pitch.x, pitch.y);
@@ -15,6 +15,7 @@ public class AudioPlayer : ScriptableObject
     [SerializeField] private SoundClipOrder playOrder;
     [SerializeField] private bool _loop;
     public bool Loop => _loop;
+    public AudioType audioType = AudioType.SFX;
 
     [SerializeField] int _simultaneousSounds = 3;
     public int SimultaneousSounds => _simultaneousSounds;

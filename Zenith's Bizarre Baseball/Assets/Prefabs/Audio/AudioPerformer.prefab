@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8863031848404026816}
   - component: {fileID: 4125740727745150697}
+  - component: {fileID: 8836763462251744922}
+  - component: {fileID: 6460598131979951415}
   m_Layer: 0
   m_Name: AudioPerformer
   m_TagString: Untagged
@@ -44,3 +46,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc2bf8ae556e844f8ad214740286171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8836763462251744922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51937227078463146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {fileID: 11400000, guid: 3a79c1bdadb87b14fa81bb674d8f2ec3, type: 2}
+  _floatEvents:
+  - _condition:
+      operation: 
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125740727745150697}
+          m_TargetAssemblyTypeName: AudioPerformer, Assembly-CSharp
+          m_MethodName: SetMusicVolume
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6460598131979951415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51937227078463146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {fileID: 11400000, guid: fcd2ab6e1a33b0945ad33d8e53af3382, type: 2}
+  _floatEvents:
+  - _condition:
+      operation: 
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125740727745150697}
+          m_TargetAssemblyTypeName: AudioPerformer, Assembly-CSharp
+          m_MethodName: SetSFXVolume
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

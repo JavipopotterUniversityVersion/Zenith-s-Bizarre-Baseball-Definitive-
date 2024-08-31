@@ -30,7 +30,6 @@ MonoBehaviour:
         - Key: '[nextDmg]'
           Value:
             operation: moneyDamage + 1
-            _debug: 0
             _showReferences: 0
             _floatDictionary:
               list:
@@ -51,8 +50,7 @@ MonoBehaviour:
             _eventDictionary:
               list: []
     _condition:
-      operation: input
-      _debug: 0
+      operation: active == 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -67,12 +65,13 @@ MonoBehaviour:
       _stringDictionary:
         list: []
       _boolDictionary:
-        list: []
+        list:
+        - Key: active
+          Value: {fileID: 11400000, guid: 82f4be779a9c5794198ab500414ef09a, type: 2}
       _eventDictionary:
         list: []
     _upgrade:
       operation: Apply 1
-      _debug: 0
       _showReferences: 1
       _floatDictionary:
         list: []

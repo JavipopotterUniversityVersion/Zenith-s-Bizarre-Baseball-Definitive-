@@ -635,6 +635,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}
+--- !u!1 &2078933276842647308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6405064800984760780, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}
+  m_PrefabInstance: {fileID: 4916389607290953408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6841179890318876244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078933276842647308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {fileID: 11400000, guid: 644a64396c15ad04788afdfa984e7541, type: 2}
+  _floatEvents:
+  - _condition:
+      operation: 
+      _showReferences: 0
+      _floatDictionary:
+        list: []
+      _intDictionary:
+        list: []
+      _curveDictionary:
+        list: []
+      _operationDictionary:
+        list: []
+      _functionDictionary:
+        list: []
+      _stringDictionary:
+        list: []
+      _boolDictionary:
+        list: []
+      _eventDictionary:
+        list: []
+      _conditionDictionary:
+        list: []
+      _readablesDictionary: []
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2078933276842647310}
+          m_TargetAssemblyTypeName: UnityEngine.Camera, UnityEngine
+          m_MethodName: set_orthographicSize
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!20 &2078933276842647310 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6405064800984760782, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}
+  m_PrefabInstance: {fileID: 4916389607290953408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2078933276842647313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6405064800984760785, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class AudioPlayer : ScriptableObject
 {
     public AudioClip[] clips;
-    public float volume = 1;
-    public float Volume => volume;
+    [Range(0,1)] public float _localVolume = 1;
+    public float LocalVolume => _localVolume;
 
     public Vector2 pitch = new Vector2(1f, 1f);
     public float Pitch => Random.Range(pitch.x, pitch.y);
@@ -69,19 +69,12 @@ public class AudioPlayer : ScriptableObject
 
     public void PlayMusic()
     {
-        SetRandomPitchAndVolume();
         _onPlay?.Invoke(audioClip());
     }
     public void Play()
-
     {
-        SetRandomPitchAndVolume();
-        _onPlayOneShot?.Invoke(audioClip());
-    }
-    void SetRandomPitchAndVolume()
-    {
-        SetVolume(Volume);
         SetPitch(Pitch);
+        _onPlayOneShot?.Invoke(audioClip());
     }
 
     public void SetPitch(float pitch) => _onPitchSet?.Invoke(pitch);

@@ -8,6 +8,7 @@ public class AudioHandler : MonoBehaviour
     AudioPlayer _audioPlayer;
     [SerializeField] int _simultaneousSounds;
     int simultaneousCount = 0;
+    float _localVolume;
 
     public void SetAudioPlayer(AudioPlayer audioPlayer)
     {
@@ -20,7 +21,8 @@ public class AudioHandler : MonoBehaviour
         _audioPlayer.OnFadeIn.AddListener(FadeIn);
         _audioPlayer.OnFadeOut.AddListener(FadeOut);
         _source.loop = _audioPlayer.Loop;
-        _source.volume = _audioPlayer.Volume;
+        _localVolume = _audioPlayer.LocalVolume;
+        _source.volume = _localVolume;
         _source.pitch = _audioPlayer.Pitch;
         _simultaneousSounds = _audioPlayer.SimultaneousSounds;
     }
@@ -78,7 +80,7 @@ public class AudioHandler : MonoBehaviour
     }
     IEnumerator FadeInRoutine(float duration)
     {
-        float startVolume = _audioPlayer.Volume;
+        float startVolume = _audioPlayer.LocalVolume;
         _source.volume = 0;
         Play(_audioPlayer.audioClip());
         while (_source.volume < startVolume)
@@ -89,7 +91,10 @@ public class AudioHandler : MonoBehaviour
         _source.volume = startVolume;
     }
 
-    public void SetVolume(float volume) => _source.volume = volume;
+    public void SetVolume(float volume)
+    {
+        _source.volume = volume * _localVolume;
+    }
     public void SetPitch(float pitch) => _source.pitch = pitch;
 
     private void OnDestroy() {

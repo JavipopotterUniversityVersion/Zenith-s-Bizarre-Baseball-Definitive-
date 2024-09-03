@@ -10,15 +10,15 @@ public class EventByNearestDoor : MonoBehaviour
     [SerializeField] UnityEvent OnDoorIsClosed = new UnityEvent();
 
     DoorIdentifier nearestDoor;
-    Node room;
+    RoomNode room;
 
     private void Start() {
-        room = GetComponentInParent<Node>();
+        room = GetComponentInParent<RoomNode>();
         room.Generator.OnFinishedGeneration.AddListener(EvaluateDoorState);
     }
 
     void EvaluateDoorState() {
-        Node room = GetComponentInParent<Node>();
+        RoomNode room = GetComponentInParent<RoomNode>();
         nearestDoor = room.Doors.OrderBy(d => Vector3.Distance(d.transform.position, transform.position)).First();
 
         nearestDoor.OnVerifyIdentity.AddListener(OnDoorIsOpened.Invoke);

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[RequireComponent(typeof(Node))]
+[RequireComponent(typeof(RoomNode))]
 public class MapPaster : MonoBehaviour
 {
     private void Start() 
     {
         Tilemap tilemap = GetComponent<GenericReference>().GetReference("Walls") as Tilemap;
-        Node node = GetComponent<Node>();
+        RoomNode node = GetComponent<RoomNode>();
         if(node.Generator != null) node.Generator.OnFinishedGeneration.AddListener(() => StartCoroutine(PasteOnMap(tilemap)));
     }
 

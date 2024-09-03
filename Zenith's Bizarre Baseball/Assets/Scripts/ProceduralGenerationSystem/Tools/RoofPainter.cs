@@ -8,11 +8,11 @@ public class RoofPainter : MonoBehaviour
     Tilemap _tilemapToPaint;
     [SerializeField] Tilemap _tilemapToCopyFrom;
     [SerializeField] TileBase _roofTile;
-    Node _node;
+    RoomNode _node;
 
     private void Start() 
     {
-        _node = GetComponentInParent<Node>();
+        _node = GetComponentInParent<RoomNode>();
         _tilemapToPaint = GetComponent<Tilemap>();
         _node.Generator.OnFinishedGeneration.AddListener(() => StartCoroutine(Paint()));
     }

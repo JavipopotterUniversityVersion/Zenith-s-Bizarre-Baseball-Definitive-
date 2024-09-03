@@ -30,7 +30,7 @@ public class DoorIdentifier : MonoBehaviour
 
     public void SetConnectedDoor(DoorIdentifier door) => _connectedDoor = door;
 
-    private Node _DoorRoom;
+    private RoomNode _DoorRoom;
     [SerializeField] UnityEvent onVerifyIdentity = new UnityEvent();
     public UnityEvent OnVerifyIdentity => onVerifyIdentity;
 
@@ -43,7 +43,7 @@ public class DoorIdentifier : MonoBehaviour
 
     private IEnumerator Check() {
         yield return null;
-        _DoorRoom = GetComponentInParent<Node>();
+        _DoorRoom = GetComponentInParent<RoomNode>();
         if(_DoorRoom.Generator != null)
         {
             _DoorRoom.Generator.OnFinishedGeneration.AddListener(CompareFlag);

@@ -10,15 +10,15 @@ using Unity.Mathematics;
 
 public class NodeGenerator : MonoBehaviour
 {
-    [SerializeField] Node _initialNode;
+    [SerializeField] RoomNode _initialNode;
 
     [SerializeField] int _extension;
     public int Extension => _extension;
 
     [SerializeField][Range(0, 1)] float _linearity = 0.5f;
 
-    List<Node> _nodes = new List<Node>();
-    public List<Node> Nodes => _nodes;
+    List<RoomNode> _nodes = new List<RoomNode>();
+    public List<RoomNode> Nodes => _nodes;
 
     [SerializeField] UnityEvent onStartedGeneration = new UnityEvent();
 
@@ -34,14 +34,14 @@ public class NodeGenerator : MonoBehaviour
     private void Start()
     {
         onStartedGeneration.Invoke();
-        Node.extension = _extension;
-        Node _currentNode = Instantiate(_initialNode, Vector3.zero, Quaternion.identity);
+        RoomNode.extension = _extension;
+        RoomNode _currentNode = Instantiate(_initialNode, Vector3.zero, Quaternion.identity);
         Nodes.Add(_currentNode);
 
         GenerateNode(_currentNode);
     }
 
-    async void GenerateNode(Node _currentNode)
+    async void GenerateNode(RoomNode _currentNode)
     {
         await _currentNode.GenerateNodesTask(_linearity, this, Extension);
         await PlaceRequiredNodes();
@@ -61,9 +61,9 @@ public class NodeGenerator : MonoBehaviour
             bool failed = false;
             while(setting.AppearedRequiredTimes == false && !failed)
             {
-                List<Node> _nodesWithRequiredExtension = 
-                _nodes.Where(n => (float) n.ExtensionIndex / Node.largestBranch >= setting.MinExtension
-                && (float) n.ExtensionIndex / Node.largestBranch <= setting.MaxExtension).ToList();
+                List<RoomNode> _nodesWithRequiredExtension = 
+                _nodes.Where(n => (float) n.ExtensionIndex / RoomNode.largestBranch >= setting.MinExtension
+                && (float) n.ExtensionIndex / RoomNode.largestBranch <= setting.MaxExtension).ToList();
 
                 Shuffle(ref _nodesWithRequiredExtension);
 
@@ -117,7 +117,7 @@ public class NodeGenerator : MonoBehaviour
     }
 
 
-    public bool CheckIntersecctions(Node node)
+    public bool CheckIntersecctions(RoomNode node)
     {
         foreach (var n in _nodes)
         {

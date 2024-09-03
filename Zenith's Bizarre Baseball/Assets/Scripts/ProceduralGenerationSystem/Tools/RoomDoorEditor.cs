@@ -222,7 +222,7 @@ public class RoomDoorEditorEditor : Editor
     EditorGUILayout.EndHorizontal();
 
     EditorGUILayout.BeginVertical("box");
-    Node node = roomDoorEditor.GetComponentInParent<Node>();
+    RoomNode node = roomDoorEditor.GetComponentInParent<RoomNode>();
 
     EditorGUI.BeginChangeCheck();
 

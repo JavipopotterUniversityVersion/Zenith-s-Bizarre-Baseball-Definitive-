@@ -29,12 +29,12 @@ public class DecorationSeter : MonoBehaviour
         nodeGenerator.OnFinishedGeneration.AddListener(() => StartCoroutine(PutDecoration()));
     }
 
-    public Node GetNearestNode(Vector2 position)
+    public RoomNode GetNearestNode(Vector2 position)
     {
-        Node nearestNode = null;
+        RoomNode nearestNode = null;
         float nearestDistance = Mathf.Infinity;
 
-        foreach(Node node in nodeGenerator.Nodes)
+        foreach(RoomNode node in nodeGenerator.Nodes)
         {
             float distance = Vector2.Distance(node.transform.position, position);
             if(distance < nearestDistance)

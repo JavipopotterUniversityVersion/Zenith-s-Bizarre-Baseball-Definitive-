@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using System.Linq;
 
-public class Node : MonoBehaviour
+public class RoomNode : MonoBehaviour
 {
     NodeGenerator _generator;
     public NodeGenerator Generator {set => _generator = value; get => _generator;}
@@ -115,7 +115,7 @@ public class Node : MonoBehaviour
             {
                 if(ignoreRoomExtension)
                 {
-                    nodeSettings.RemoveAll(setting => setting.NodePrefab.GetComponent<Node>().IgnoreRoomExtension);
+                    nodeSettings.RemoveAll(setting => setting.NodePrefab.GetComponent<RoomNode>().IgnoreRoomExtension);
                 }
                 else
                 {
@@ -137,7 +137,7 @@ public class Node : MonoBehaviour
             }
 
             GameObject nodePrefab = setting.NodePrefab;
-            Node node = Instantiate(nodePrefab).GetComponent<Node>();
+            RoomNode node = Instantiate(nodePrefab).GetComponent<RoomNode>();
             node.Generator = _generator;
 
             int j = 0;
@@ -151,7 +151,7 @@ public class Node : MonoBehaviour
                 }
 
                 setting = NodeSetting.RandomNodeSetting(possibleNodes);
-                node = Instantiate(setting.NodePrefab.GetComponent<Node>());
+                node = Instantiate(setting.NodePrefab.GetComponent<RoomNode>());
                 node.Generator = _generator;
 
                 j++;
@@ -177,7 +177,7 @@ public class Node : MonoBehaviour
         }
     }
 
-    void DumpNode(Node node)
+    void DumpNode(RoomNode node)
     {
         node.gameObject.SetActive(false);
         Generator.unusedNodes.Add(node.gameObject);
@@ -196,7 +196,7 @@ public class Node : MonoBehaviour
         DoorIdentifier[] _doors = GetAvailableGates();
         if(_doors.Length == 0) return false;
 
-        Node node = Instantiate(nodePrefab).GetComponent<Node>();
+        RoomNode node = Instantiate(nodePrefab).GetComponent<RoomNode>();
         node.Generator = _generator;
 
         int i = 0;

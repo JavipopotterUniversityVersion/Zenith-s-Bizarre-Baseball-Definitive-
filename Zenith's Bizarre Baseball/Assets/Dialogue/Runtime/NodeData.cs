@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using MyBox;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ public class NodeData
     public string GUID;
     public Vector2 Position;
     public List<NodeData> LinkedNodes = new List<NodeData>();
-    public virtual string TranslateText() => "";
+    public virtual string TranslateText() => LinkedNodes.Count > 0 ? LinkedNodes[0].TranslateText() : "";
 }
 
 [Serializable]
@@ -20,11 +21,15 @@ public class DialogueNodeData : NodeData
     public CharacterData Speaker;
     public string Emotion;
     public string[] DialogueLines;
-    public string[] lines;
 
     public override string TranslateText()
     {
-        string value = $"<{Speaker.CharacterName}><{Emotion}> {DialogueLines.ForEach(x => x + "@line@")}";
+        string value = $"<{Speaker.CharacterName}><{Emotion}>";
+
+        for(int i = 0; i < DialogueLines.Length; i++)
+        {
+            value += "<an:Talk>" + DialogueLines[i] + "<an:Idle>" + "@line";
+        }
 
         if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
         
@@ -39,7 +44,7 @@ public class BackgroundNodeData : NodeData
 
     public override string TranslateText()
     {
-        string value = $"<background:{Background.name}>";
+        string value = $"<BACKGROUND:{Background.name}>";
 
         if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
         
@@ -54,7 +59,7 @@ public class LabelNodeData : NodeData
 
     public override string TranslateText()
     {
-        string value = $"<label:{Label}>";
+        string value = $"<LABEL:{Label}>";
 
         if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
         
@@ -69,7 +74,7 @@ public class LabelJumpNodeData : NodeData
 
     public override string TranslateText()
     {
-        string value = $"<goto:{Label}>";
+        string value = $"<GOTO:{Label}>";
 
         if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
         
@@ -86,7 +91,7 @@ public class ConditionalNodeData : NodeData
     {
         string value = "";
 
-        for(int i = 0; i < Conditions.Length; i++) value += $"<if:{Conditions[i]}>" + LinkedNodes[i].TranslateText() + $"<endif>";
+        for(int i = 0; i < Conditions.Length; i++) value += $"<IF:{Conditions[i]}>" + LinkedNodes[i].TranslateText() + $"<ENDIF>";
 
         return value;
     }
@@ -99,7 +104,14 @@ public class ChoiceNodeData : NodeData
 
     public override string TranslateText()
     {
-        string value = $"<choice:{Choices.ForEach(x => x.ToString() + ",").Where(x => x != Choices.Last())}{Choices.Last()}>";
+        string value = $"<CHOICE:";
+
+        for(int i = 0; i < Choices.Count; i++) 
+        {
+            value += Choices[i].ToString() + (i < Choices.Count - 1 ? ",," : "");
+        }
+
+        value += ">";
 
         for(int i = 0; i < LinkedNodes.Count; i++) value += $"<label:{Choices[i].ChoiceText}>" + LinkedNodes[i].TranslateText();
 

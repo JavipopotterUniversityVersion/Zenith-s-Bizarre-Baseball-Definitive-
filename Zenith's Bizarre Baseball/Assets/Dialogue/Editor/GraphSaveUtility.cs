@@ -120,9 +120,18 @@ public class GraphSaveUtility
                         Position = dialogueNode.GetPosition().position,
                     });
                 break;
+
+                default:
+                    dialogueContainer.DialogueNodeData.Add(new NodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        Position = dialogueNode.GetPosition().position
+                    });
+                break;
             }
         }
 
+        dialogueContainer.LinkNodes();
         AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Dialogue/Resources/{fileName}.asset");
         AssetDatabase.SaveAssets();
     }

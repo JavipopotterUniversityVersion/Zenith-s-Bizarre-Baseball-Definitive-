@@ -4,6 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using System.Linq;
 using UnityEditor.UIElements;
+using UnityEditor;
 
 public class DialogueGraphView : GraphView
 {
@@ -75,9 +76,30 @@ public class DialogueGraphView : GraphView
         expressionField.value = expression;
         dialogueNode.mainContainer.Add(expressionField);
 
+        var characterPreview = new Image();
+        characterPreview.style.maxWidth = 200;
+        characterPreview.style.maxHeight = 200;
+        dialogueNode.mainContainer.Add(characterPreview);
+
+        if(character != null)
+        {
+            expressionField.choices = character.ExpressionKeys.ToList();
+            expressionField.value = expressionField.choices[0];
+            characterPreview.image = character.GetExpression(expressionField.value);
+        }
+
+        if(characterField.value != null) characterPreview.image = (characterField.value as CharacterData).GetExpression(expressionField.value);
+
         characterField.RegisterValueChangedCallback(evt =>
         {
             expressionField.choices = (evt.newValue as CharacterData).ExpressionKeys.ToList();
+            expressionField.value = expressionField.choices[0];
+            characterPreview.image = (evt.newValue as CharacterData).GetExpression(expressionField.value);
+        });
+
+        expressionField.RegisterValueChangedCallback(evt =>
+        {
+            characterPreview.image = (characterField.value as CharacterData).GetExpression(evt.newValue);
         });
 
         var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
@@ -104,7 +126,11 @@ public class DialogueGraphView : GraphView
     private void AddDialogueLine(DialogueNode node, string line = "")
     {
         var textField = new TextField(string.Empty);
+        textField.multiline = true;
+        textField.style.maxWidth = 200;
         textField.value = line;
+        var deleteButton = new Button(() => node.mainContainer.Remove(textField)){ text = "X" };
+        textField.Add(deleteButton);
         node.mainContainer.Add(textField);
     }
 
@@ -381,4 +407,5 @@ public class DialogueGraphView : GraphView
         node.RefreshPorts();
         node.RefreshExpandedState();
     }
+
 }

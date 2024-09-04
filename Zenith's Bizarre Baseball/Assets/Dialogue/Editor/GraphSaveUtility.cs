@@ -24,7 +24,7 @@ public class GraphSaveUtility
         };
     }
 
-    public void SaveGraph(string fileName)
+    public void SaveGraph(DialogueContainer container)
     {
         if(!Edges.Any()) return;
 
@@ -132,13 +132,15 @@ public class GraphSaveUtility
         }
 
         dialogueContainer.LinkNodes();
-        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Dialogue/Resources/{fileName}.asset");
+        string path = "New Dialogue";
+        if(container != null) path = container.name;
+        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Dialogue/Resources/{path}.asset");
         AssetDatabase.SaveAssets();
     }
 
-    public void LoadGraph(string fileName)
+    public void LoadGraph(DialogueContainer container)
     {
-        _containerCache = Resources.Load<DialogueContainer>(fileName);
+        _containerCache = Resources.Load<DialogueContainer>(container.name);
 
         if (_containerCache == null)
         {

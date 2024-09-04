@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEditor.Callbacks;
 
 [Serializable]
 public class DialogueContainer : ScriptableObject
@@ -23,6 +25,17 @@ public class DialogueContainer : ScriptableObject
         }
 
         translation = DialogueNodeData[0].TranslateText();
-        
+    }
+
+    [OnOpenAsset]
+    public static bool OnOpenAsset(int instanceID, int line)
+    {
+        DialogueContainer project = EditorUtility.InstanceIDToObject(instanceID) as DialogueContainer;
+        if (project != null)
+        {
+            DialogueGraph.OpenAndLoadGraphWindow(project);
+            return true;
+        }
+        return false;
     }
 }

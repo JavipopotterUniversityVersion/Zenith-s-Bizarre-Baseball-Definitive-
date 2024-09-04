@@ -6,13 +6,22 @@ using UnityEditor.Experimental.GraphView;
 public class DialogueGraph : EditorWindow
 {
     private DialogueGraphView _graphView;
-    private string _fileName = "New Narrative";
+    public DialogueContainer container;
 
     [MenuItem("Graph/Dialogue Graph")]
     public static void OpenDialogueGraphWindow()
     {
         var window = GetWindow<DialogueGraph>();
         window.titleContent = new GUIContent("Dialogue Graph");
+    }
+
+    public static void OpenAndLoadGraphWindow(DialogueContainer container)
+    {
+        var window = GetWindow<DialogueGraph>();
+        window.titleContent = new GUIContent("Dialogue Graph");
+        window.container = container;
+
+        window.RequestDataOperation(false);
     }
 
     private void OnEnable()
@@ -47,14 +56,7 @@ public class DialogueGraph : EditorWindow
     {
         var toolbar = new UnityEditor.UIElements.Toolbar();
 
-        var fileNameTextField = new TextField("File Name");
-        fileNameTextField.SetValueWithoutNotify(_fileName);
-        fileNameTextField.MarkDirtyRepaint();
-        fileNameTextField.RegisterValueChangedCallback(evt => { _fileName = evt.newValue; });
-        toolbar.Add(fileNameTextField);
-
         toolbar.Add(new Button(() => RequestDataOperation(true)) { text = "Save Data" });
-        toolbar.Add(new Button(() => RequestDataOperation(false)) { text = "Load Data" });
 
         var nodeCreateButton = new Button(() => { _graphView.GenerateDialogueNode("Dialogue"); });
         nodeCreateButton.text = "Create Node";
@@ -92,7 +94,7 @@ public class DialogueGraph : EditorWindow
 
     private void RequestDataOperation(bool save)
     {
-        if (string.IsNullOrEmpty(_fileName))
+        if (container == null)
         {
             EditorUtility.DisplayDialog("Invalid file name!", "Please enter a valid file name.", "OK");
             return;
@@ -102,11 +104,11 @@ public class DialogueGraph : EditorWindow
 
         if (save)
         {
-            saveUtility.SaveGraph(_fileName);
+            saveUtility.SaveGraph(container);
         }
         else
         {
-            saveUtility.LoadGraph(_fileName);
+            saveUtility.LoadGraph(container);
         }
     }
 

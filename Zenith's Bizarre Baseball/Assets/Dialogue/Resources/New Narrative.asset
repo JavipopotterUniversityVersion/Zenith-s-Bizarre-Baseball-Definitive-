@@ -13,25 +13,126 @@ MonoBehaviour:
   m_Name: New Narrative
   m_EditorClassIdentifier: 
   NodeLinks:
-  - BaseNodeGuid: 0f13b4e7-6533-4237-afb2-30759465ace3
+  - BaseNodeGuid: e4bc62cc-5969-4be7-a79e-061028d66962
+    BasePortIndex: 0
     PortName: Next
-    TargetNodeGuid: 90be1225-7507-423e-87ad-119c05ffd0ba
-  - BaseNodeGuid: 90be1225-7507-423e-87ad-119c05ffd0ba
+    TargetNodeGuid: 242727bb-6334-4e5e-85dd-fd6fa4cc9ef0
+  - BaseNodeGuid: 242727bb-6334-4e5e-85dd-fd6fa4cc9ef0
+    BasePortIndex: 0
     PortName: Output
-    TargetNodeGuid: ef0252a7-17f6-4417-b285-51f06f73c152
-  - BaseNodeGuid: ef0252a7-17f6-4417-b285-51f06f73c152
+    TargetNodeGuid: fe7c2250-7c48-4113-9c05-7e71f2f02aa7
+  - BaseNodeGuid: fe7c2250-7c48-4113-9c05-7e71f2f02aa7
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 6f7b3537-3cee-4112-9f3c-b2af0572dd91
+  - BaseNodeGuid: 6f7b3537-3cee-4112-9f3c-b2af0572dd91
+    BasePortIndex: 0
     PortName: Output
-    TargetNodeGuid: e2fa63ac-2415-4cd8-b288-3d4e0c046bf7
+    TargetNodeGuid: c514d10d-4f99-4528-99ef-e513b9e77370
+  - BaseNodeGuid: c514d10d-4f99-4528-99ef-e513b9e77370
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: ce0c2a74-2eb0-43ad-93ef-632d8f0ea0aa
+  - BaseNodeGuid: ce0c2a74-2eb0-43ad-93ef-632d8f0ea0aa
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 29f4e1cd-4181-44b5-859e-08a69297c540
+  - BaseNodeGuid: 29f4e1cd-4181-44b5-859e-08a69297c540
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 9124baaf-1125-4695-98a1-47c81fc27e84
+  - BaseNodeGuid: 29f4e1cd-4181-44b5-859e-08a69297c540
+    BasePortIndex: 1
+    PortName: out
+    TargetNodeGuid: 9fed861b-9a23-4df8-ae3f-2e6ab54bee5b
   DialogueNodeData:
-  - Guid: 0f13b4e7-6533-4237-afb2-30759465ace3
-    DialogueText: BANANA
-    Position: {x: 100, y: 200}
-  - Guid: 90be1225-7507-423e-87ad-119c05ffd0ba
-    DialogueText: Dialogue Node
-    Position: {x: 260.8, y: 108}
-  - Guid: ef0252a7-17f6-4417-b285-51f06f73c152
-    DialogueText: Dialogue Node
-    Position: {x: 344, y: 209.59999}
-  - Guid: e2fa63ac-2415-4cd8-b288-3d4e0c046bf7
-    DialogueText: Dialogue Node
-    Position: {x: 432.8, y: 317.6}
+  - rid: 4972787716880597142
+  - rid: 4972787716880597143
+  - rid: 4972787716880597144
+  - rid: 4972787716880597145
+  - rid: 4972787716880597146
+  - rid: 4972787716880597147
+  - rid: 4972787716880597148
+  - rid: 4972787716880597149
+  - rid: 4972787716880597150
+  references:
+    version: 2
+    RefIds:
+    - rid: 4972787716880597142
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: e4bc62cc-5969-4be7-a79e-061028d66962
+        Position: {x: 100, y: 200}
+        LinkedNodes: []
+    - rid: 4972787716880597143
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: fe7c2250-7c48-4113-9c05-7e71f2f02aa7
+        Position: {x: 424.8, y: 220}
+        LinkedNodes: []
+        Choices:
+        - ChoiceText: pis
+          Value: caca
+    - rid: 4972787716880597144
+      type: {class: BackgroundNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 6f7b3537-3cee-4112-9f3c-b2af0572dd91
+        Position: {x: 305.6, y: 8.800001}
+        LinkedNodes: []
+        Background: {fileID: 2800000, guid: f5bb7de9f109a1b4bbca1e7719522e5a, type: 3}
+    - rid: 4972787716880597145
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: c514d10d-4f99-4528-99ef-e513b9e77370
+        Position: {x: 629.6, y: -58.399998}
+        LinkedNodes: []
+        Speaker: {fileID: 0}
+        Emotion: 
+        DialogueLines: []
+        lines: []
+    - rid: 4972787716880597146
+      type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ce0c2a74-2eb0-43ad-93ef-632d8f0ea0aa
+        Position: {x: 856, y: -118.399994}
+        LinkedNodes: []
+        Label: mec
+    - rid: 4972787716880597147
+      type: {class: ConditionalNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 29f4e1cd-4181-44b5-859e-08a69297c540
+        Position: {x: 1092.8, y: -99.2}
+        LinkedNodes: []
+        Conditions:
+        - su
+        - non
+    - rid: 4972787716880597148
+      type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 9124baaf-1125-4695-98a1-47c81fc27e84
+        Position: {x: 1382.4, y: -147.2}
+        LinkedNodes: []
+        Label: mec
+    - rid: 4972787716880597149
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 9fed861b-9a23-4df8-ae3f-2e6ab54bee5b
+        Position: {x: 1394.4, y: -28.8}
+        LinkedNodes: []
+        Speaker: {fileID: 0}
+        Emotion: 
+        DialogueLines: []
+        lines: []
+    - rid: 4972787716880597150
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 242727bb-6334-4e5e-85dd-fd6fa4cc9ef0
+        Position: {x: 224.8, y: 186.4}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: sad
+        DialogueLines:
+        - aaaa
+        - aaaa
+        - FWASF
+        lines: []

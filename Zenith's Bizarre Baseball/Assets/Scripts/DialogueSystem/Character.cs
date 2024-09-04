@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
-    CharacterData _currentCharacter;
-    public CharacterData CurrentCharacter
+    CharData _currentCharacter;
+    public CharData CurrentCharacter
     {
         get => _currentCharacter;
         set
@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<Image>();
     }
 
-    public static Character SetFirstFreeCharacter(Character[] characters, CharacterData characterData)
+    public static Character SetFirstFreeCharacter(Character[] characters, CharData characterData)
     {
         int i = 0;
         while(i < characters.Length && characters[i].Occupied)

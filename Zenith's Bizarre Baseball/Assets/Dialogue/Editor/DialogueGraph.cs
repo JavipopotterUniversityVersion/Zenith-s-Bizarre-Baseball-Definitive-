@@ -19,6 +19,7 @@ public class DialogueGraph : EditorWindow
     {
         ConstructGraphView();
         GenerateToolBar();
+        CreateMinimap();
     }
 
     private void OnDisable()
@@ -50,11 +51,38 @@ public class DialogueGraph : EditorWindow
         toolbar.Add(new Button(() => RequestDataOperation(true)) { text = "Save Data" });
         toolbar.Add(new Button(() => RequestDataOperation(false)) { text = "Load Data" });
 
-        var nodeCreateButton = new Button(() => { _graphView.CreateNode("Dialogue Node"); });
+        var nodeCreateButton = new Button(() => { _graphView.GenerateDialogueNode("Dialogue"); });
         nodeCreateButton.text = "Create Node";
-
         toolbar.Add(nodeCreateButton);
+
+        var choiceCreateButton = new Button(() => { _graphView.GenerateChoiceNode("Choice"); });
+        choiceCreateButton.text = "Create Choice";
+        toolbar.Add(choiceCreateButton);
+
+        var labelCreateButton = new Button(() => { _graphView.GenerateLabelNode("Label"); });
+        labelCreateButton.text = "Create Label";
+        toolbar.Add(labelCreateButton);
+
+        var labelJumpCreateButton = new Button(() => { _graphView.GenerateLabelJumpNode("Goto"); });
+        labelJumpCreateButton.text = "Create Label Jump";
+        toolbar.Add(labelJumpCreateButton);
+
+        var backgroundCreateButton = new Button(() => { _graphView.GenerateBackgroundNode("Background"); });
+        backgroundCreateButton.text = "Create Background";
+        toolbar.Add(backgroundCreateButton);
+
+        var conditionalCreateButton = new Button(() => { _graphView.GenerateConditionalNode("Conditional"); });
+        conditionalCreateButton.text = "Create Conditional";
+        toolbar.Add(conditionalCreateButton);
+
         rootVisualElement.Add(toolbar);
+    }
+
+    private void CreateMinimap()
+    {
+        var miniMap = new MiniMap() { anchored = true };
+        miniMap.SetPosition(new Rect(10, 30, 200, 140));
+        _graphView.Add(miniMap);
     }
 
     private void RequestDataOperation(bool save)

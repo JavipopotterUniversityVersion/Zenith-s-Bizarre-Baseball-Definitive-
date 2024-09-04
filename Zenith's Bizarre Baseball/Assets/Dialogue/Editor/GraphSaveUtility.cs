@@ -5,6 +5,8 @@ using UnityEditor.Experimental.GraphView;
 using System.Linq;
 using UnityEditor;
 using UnityEngine.UIElements;
+using UnityEditor.UIElements;
+using UnityEngine.UI;
 
 public class GraphSaveUtility
 {
@@ -38,6 +40,7 @@ public class GraphSaveUtility
             dialogueContainer.NodeLinks.Add(new NodeLinkData
             {
                 BaseNodeGuid = outputNode.GUID,
+                BasePortIndex = outputNode.outputContainer.IndexOf(connectedPorts[i].output),
                 PortName = connectedPorts[i].output.portName,
                 TargetNodeGuid = inputNode.GUID
             });
@@ -46,19 +49,78 @@ public class GraphSaveUtility
         DialogueNode entryNode = Nodes.Find(x => x.EntryPoint);
         dialogueContainer.DialogueNodeData.Add(new NodeData
         {
-            Guid = entryNode.GUID,
-            DialogueText = entryNode.DialogueText,
+            GUID = entryNode.GUID,
             Position = entryNode.GetPosition().position
         });
 
         foreach (DialogueNode dialogueNode in Nodes.Where(node => !node.EntryPoint))
         {
-            dialogueContainer.DialogueNodeData.Add(new NodeData
+            switch(dialogueNode.NodeType)
             {
-                Guid = dialogueNode.GUID,
-                DialogueText = dialogueNode.DialogueText,
-                Position = dialogueNode.GetPosition().position
-            });
+                case NodeType.Choice:
+                    List<ChoicePair> tempChoices = new List<ChoicePair>();
+                    foreach(Port choicePort in dialogueNode.outputContainer.Children())
+                    {
+                        TextField choiceText = (TextField)choicePort.contentContainer[2];
+                        TextField choiceValue = (TextField)choicePort.contentContainer[3];
+                        tempChoices.Add(new ChoicePair { ChoiceText = choiceText.value, Value = choiceValue.value });
+                    }
+
+                    dialogueContainer.DialogueNodeData.Add(new ChoiceNodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        Position = dialogueNode.GetPosition().position,
+                        Choices = tempChoices,
+                    });
+                break;
+
+                case NodeType.Dialogue:
+                    dialogueContainer.DialogueNodeData.Add(new DialogueNodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        DialogueLines = dialogueNode.mainContainer.Children().Where(x => x is TextField).Cast<TextField>().Select(x => x.value).ToArray(),
+                        Speaker = dialogueNode.mainContainer.Q<ObjectField>().value as CharacterData,
+                        Emotion = dialogueNode.mainContainer.Q<DropdownField>().value,
+                        Position = dialogueNode.GetPosition().position,
+                    });
+                break;
+
+                case NodeType.Label:
+                    dialogueContainer.DialogueNodeData.Add(new LabelNodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        Label = dialogueNode.mainContainer.Q<TextField>().value,
+                        Position = dialogueNode.GetPosition().position,
+                    });
+                break;
+
+                case NodeType.LabelJump:
+                    dialogueContainer.DialogueNodeData.Add(new LabelJumpNodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        Label = dialogueNode.inputContainer.Q<TextField>().value,
+                        Position = dialogueNode.GetPosition().position,
+                    });
+                break;
+
+                case NodeType.Background:
+                    dialogueContainer.DialogueNodeData.Add(new BackgroundNodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        Background = dialogueNode.mainContainer.Q<ObjectField>().value as Texture2D,
+                        Position = dialogueNode.GetPosition().position,
+                    });
+                break;
+
+                case NodeType.Conditional:
+                    dialogueContainer.DialogueNodeData.Add(new ConditionalNodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        Conditions = dialogueNode.outputContainer.Children().Select(x => x.Q<TextField>().value).ToArray(),
+                        Position = dialogueNode.GetPosition().position,
+                    });
+                break;
+            }
         }
 
         AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Dialogue/Resources/{fileName}.asset");
@@ -82,7 +144,7 @@ public class GraphSaveUtility
 
     private void ClearGraph()
     {
-        Nodes.Find(x => x.EntryPoint).GUID = _containerCache.DialogueNodeData[0].Guid;
+        Nodes.Find(x => x.EntryPoint).GUID = _containerCache.DialogueNodeData[0].GUID;
 
         foreach (var node in Nodes)
         {
@@ -99,36 +161,56 @@ public class GraphSaveUtility
     {
         foreach (var nodeData in _containerCache.DialogueNodeData)
         {
-            if(nodeData.Guid == _containerCache.DialogueNodeData[0].Guid) continue;
-            var tempNode = _targetGraphView.CreateDialogueNode(nodeData.DialogueText);
-            tempNode.GUID = nodeData.Guid;
-            _targetGraphView.AddElement(tempNode);
-            tempNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            if(nodeData.GUID == _containerCache.DialogueNodeData[0].GUID) continue;
+            if(nodeData is ChoiceNodeData choiceData)
+            {
+                var generatedNode = _targetGraphView.GenerateChoiceNode("Choice", choiceData.Choices);
+                generatedNode.GUID = nodeData.GUID;
+                generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            }
+            else if(nodeData is DialogueNodeData dialogueData)
+            {
+                var generatedNode = _targetGraphView.GenerateDialogueNode("Dialogue", 
+                dialogueData.DialogueLines, dialogueData.Speaker, dialogueData.Emotion);
+                generatedNode.GUID = nodeData.GUID;
+                generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            }
+            else if(nodeData is LabelNodeData labelData)
+            {
+                var generatedNode = _targetGraphView.GenerateLabelNode("Label", labelData.Label);
+                generatedNode.GUID = nodeData.GUID;
+                generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            }
+            else if(nodeData is LabelJumpNodeData labelJumpData)
+            {
+                var generatedNode = _targetGraphView.GenerateLabelJumpNode("Goto", labelJumpData.Label);
+                generatedNode.GUID = nodeData.GUID;
+                generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            }
+            else if(nodeData is BackgroundNodeData backgroundData)
+            {
+                var generatedNode = _targetGraphView.GenerateBackgroundNode("Background", backgroundData.Background);
+                generatedNode.GUID = nodeData.GUID;
+                generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            }
+            else if(nodeData is ConditionalNodeData conditionalData)
+            {
+                var generatedNode = _targetGraphView.GenerateConditionalNode("Conditional", conditionalData.Conditions);
+                generatedNode.GUID = nodeData.GUID;
+                generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            }
         }
     }
-
     private void ConnectNodes()
     {
-        for (int i = 0; i < Nodes.Count; i++)
+        foreach(NodeLinkData linkData in _containerCache.NodeLinks)
         {
-            NodeLinkData connection = null;
-            int a = 0;
+            var baseNode = Nodes.First(x => x.GUID == linkData.BaseNodeGuid);
+            var targetNode = Nodes.First(x => x.GUID == linkData.TargetNodeGuid);
 
-            while(a < _containerCache.NodeLinks.Count && connection == null)
-            {
-                if (_containerCache.NodeLinks[a].BaseNodeGuid == Nodes[i].GUID) connection = _containerCache.NodeLinks[a];
-                a++;
-            }
-
-            if (connection == null) continue;
-
-            var targetNodeGuid = connection.TargetNodeGuid;
-            var targetNode = Nodes.First(x => x.GUID == targetNodeGuid);
-
-            LinkNodes(Nodes[i].outputContainer[0].Q<Port>() , (Port)targetNode.inputContainer[0]);
+            LinkNodes((Port)baseNode.outputContainer[linkData.BasePortIndex], (Port)targetNode.inputContainer[0]);
         }
     }
-
     private void LinkNodes(Port output, Port input)
     {
         var tempEdge = new Edge

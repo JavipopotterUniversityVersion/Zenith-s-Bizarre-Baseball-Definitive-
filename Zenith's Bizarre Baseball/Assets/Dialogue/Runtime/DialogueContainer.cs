@@ -7,5 +7,5 @@ using UnityEngine;
 public class DialogueContainer : ScriptableObject
 {
     public List<NodeLinkData> NodeLinks = new List<NodeLinkData>();
-    public List<NodeData> DialogueNodeData = new List<NodeData>();
+    [SerializeReference] public List<NodeData> DialogueNodeData = new List<NodeData>();
 }

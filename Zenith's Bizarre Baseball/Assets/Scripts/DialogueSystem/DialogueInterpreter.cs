@@ -28,7 +28,7 @@ public class DialogueInterpreter : MonoBehaviour
     [SerializeField] SerializableDictionary<string, Float> _floatDictionary;
     [SerializeField] SerializableDictionary<string, AudioPlayer> _audioDictionary;
 
-    [SerializeField] CharacterData[] _characterDatas;
+    [SerializeField] CharData[] _characterDatas;
 
     Character[] _characters;
     DialogueOptionReceiver[] dialogueOptionReceivers;
@@ -242,7 +242,7 @@ public class DialogueInterpreter : MonoBehaviour
 
     bool SearchShortcut(TextMeshProUGUI text, string input, ref int i)
     {
-        if(CharacterData.SearchCharacter(_characterDatas, input, out CharacterData characterData))
+        if(CharData.SearchCharacter(_characterDatas, input, out CharData characterData))
         {
             string fadeLast = "";
             if(LastCharacter != null && LastCharacter.CurrentCharacter != null)
@@ -277,7 +277,7 @@ public class DialogueInterpreter : MonoBehaviour
             commands = input.Split(":")[1].Trim().Split('/');
         }
 
-        if(CharacterData.SearchCharacter(_characterDatas, name, out CharacterData characterData))
+        if(CharData.SearchCharacter(_characterDatas, name, out CharData characterData))
         {
             Character character = Character.SetFirstFreeCharacter(_characters, characterData);
 
@@ -329,7 +329,7 @@ public class DialogueInterpreter : MonoBehaviour
 }
 
 [System.Serializable]
-public class CharacterData
+public class CharData
 {
     public string name;
     public AudioPlayer voice;
@@ -344,12 +344,12 @@ public class CharacterData
 
     public UnityEngine.Sprite GetSprite(string name) => spriteSheet[name.ToLower()];
 
-    public static bool SearchCharacter(CharacterData[] characters, string name, out CharacterData character)
+    public static bool SearchCharacter(CharData[] characters, string name, out CharData character)
     {
         int i = 0;
         while(i < characters.Length - 1 && characters[i].name != name) i++;
         if(characters[i].name == name) character = characters[i];
-        else character = new CharacterData();
+        else character = new CharData();
 
         return characters[i].name == name;
     }

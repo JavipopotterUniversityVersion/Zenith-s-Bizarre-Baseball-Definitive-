@@ -12,7 +12,10 @@ public class NodeData
     public string GUID;
     public Vector2 Position;
     public List<NodeData> LinkedNodes = new List<NodeData>();
-    public virtual string TranslateText() => LinkedNodes.Count > 0 ? LinkedNodes[0].TranslateText() : "";
+    public virtual string TranslateText() 
+    {
+        return LinkedNodes.Count > 0 ? LinkedNodes[0].TranslateText() : "bazinga";
+    }
 }
 
 [Serializable]
@@ -20,22 +23,29 @@ public class DialogueNodeData : NodeData
 {
     public CharacterData Speaker;
     public string Emotion;
+    public CharacterIndex characterIndex;
     public string[] DialogueLines;
 
     public override string TranslateText()
     {
-        string value = $"<{Speaker.CharacterName}><{Emotion}>";
+        string value = $"<CHARACTER:{Speaker.CharacterName}as{characterIndex}><EMOTION:{Emotion}>";
 
         for(int i = 0; i < DialogueLines.Length; i++)
         {
-            value += "<an:Talk>" + DialogueLines[i] + "<an:Idle>" + "@line";
+            value += "<ANIMATION:Talk>" + DialogueLines[i] + "<ANIMATION:Idle>" + "@";
         }
 
+        if(LinkedNodes[0].GetType() == typeof(ChoiceNodeData)) value = value.Substring(0, value.Length - 1);
+        else if(LinkedNodes[0].GetType() == typeof(LabelJumpNodeData)) value = value.Substring(0, value.Length - 1);
+
         if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
+        else value += "@<END>";
         
         return value;
     }
 }
+
+public enum CharacterIndex {First, Second}
 
 [Serializable]
 public class BackgroundNodeData : NodeData
@@ -74,7 +84,7 @@ public class LabelJumpNodeData : NodeData
 
     public override string TranslateText()
     {
-        string value = $"<GOTO:{Label}>";
+        string value = $"<GOTO:{Label}>@";
 
         if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
         
@@ -111,9 +121,9 @@ public class ChoiceNodeData : NodeData
             value += Choices[i].ToString() + (i < Choices.Count - 1 ? ",," : "");
         }
 
-        value += ">";
+        value += ">@";
 
-        for(int i = 0; i < LinkedNodes.Count; i++) value += $"<label:{Choices[i].ChoiceText}>" + LinkedNodes[i].TranslateText();
+        for(int i = 0; i < LinkedNodes.Count; i++) value += $"<OPTION:{Choices[i].ChoiceText}>" + LinkedNodes[i].TranslateText();
 
         return value;
     }

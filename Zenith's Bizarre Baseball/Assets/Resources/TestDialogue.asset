@@ -1,0 +1,495 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: a9f1018b-eefe-49c5-83f4-cf2ad12eae4d
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: dfadb132-ca21-46d1-9cc8-84ac1d3113f7
+  - BaseNodeGuid: dfadb132-ca21-46d1-9cc8-84ac1d3113f7
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 8861fead-057e-4df3-b14d-844aa51161dc
+  - BaseNodeGuid: 8861fead-057e-4df3-b14d-844aa51161dc
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: afec44c9-335e-41e8-ae98-17b56db3e6fa
+  - BaseNodeGuid: afec44c9-335e-41e8-ae98-17b56db3e6fa
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
+  - BaseNodeGuid: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+  - BaseNodeGuid: 43072b3b-9b72-43e0-b491-37cca66e527c
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: da42802a-510e-4b37-9869-00c454d7fdb6
+  - BaseNodeGuid: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 5c04c53b-1422-474a-a731-73b68d02c81d
+  - BaseNodeGuid: 5c04c53b-1422-474a-a731-73b68d02c81d
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+  - BaseNodeGuid: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+  - BaseNodeGuid: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+  - BaseNodeGuid: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+    BasePortIndex: 1
+    PortName: out
+    TargetNodeGuid: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+  - BaseNodeGuid: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+    BasePortIndex: 1
+    PortName: out
+    TargetNodeGuid: 74410615-3696-42b6-8570-e14d0664805c
+  - BaseNodeGuid: 74410615-3696-42b6-8570-e14d0664805c
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 43072b3b-9b72-43e0-b491-37cca66e527c
+  - BaseNodeGuid: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+  DialogueNodeData:
+  - rid: 4972787806043898224
+  - rid: 4972787806043898225
+  - rid: 4972787806043898226
+  - rid: 4972787806043898227
+  - rid: 4972787806043898228
+  - rid: 4972787806043898229
+  - rid: 4972787806043898230
+  - rid: 4972787806043898231
+  - rid: 4972787806043898232
+  - rid: 4972787806043898233
+  - rid: 4972787806043898234
+  - rid: 4972787806043898235
+  - rid: 4972787806043898236
+  - rid: 4972787806043898237
+  - rid: 4972787806043898238
+  _translationPreview: "<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Una
+    hamburguesa!<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>NO
+    soy una hamburguesa<ANIMATION:Idle>@<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Ahora
+    s\xED uwu<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>mierdaa<ANIMATION:Idle>@<CHOICE:Suicidarse/1,,No
+    suicidarse a\xFAn/1>@<OPTION:Suicidarse><LABEL:suicidio><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>*se
+    suicida*<ANIMATION:Idle>@<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Dang<ANIMATION:Idle>@<IF:Suicidio
+    again><GOTO:suicidio><ENDIF><IF:no suicidio again><GOTO:no suicidio><ENDIF><OPTION:No
+    suicidarse a\xFAn><LABEL:no suicidio><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>ya?
+    si no? guay<ANIMATION:Idle>@<GOTO:suicidio>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 4972787806043898224
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: a9f1018b-eefe-49c5-83f4-cf2ad12eae4d
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: dfadb132-ca21-46d1-9cc8-84ac1d3113f7
+          Position: {x: 279.2, y: -166.40001}
+          LinkedNodes:
+          - GUID: 8861fead-057e-4df3-b14d-844aa51161dc
+            Position: {x: 589.6, y: -166.40001}
+            LinkedNodes:
+            - GUID: afec44c9-335e-41e8-ae98-17b56db3e6fa
+              Position: {x: 932.8, y: -166.40001}
+              LinkedNodes:
+              - GUID: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
+                Position: {x: 1234.4, y: -187.2}
+                LinkedNodes:
+                - GUID: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+                  Position: {x: 1442.4, y: -153.6}
+                  LinkedNodes:
+                  - GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
+                    Position: {x: 1816.8, y: -372.8}
+                    LinkedNodes:
+                    - GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+                      Position: {x: 1991.2, y: -505.59998}
+                      LinkedNodes:
+                      - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+                        Position: {x: 2245.6, y: -577.6}
+                        LinkedNodes:
+                        - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+                          Position: {x: 2927.2, y: -505.59998}
+                          LinkedNodes:
+                          - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+                            Position: {x: 3325.6, y: -601.6}
+                            LinkedNodes: []
+                          - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+                            Position: {x: 3325.6, y: -404.8}
+                            LinkedNodes: []
+                  - GUID: 74410615-3696-42b6-8570-e14d0664805c
+                    Position: {x: 1804, y: -15.199999}
+                    LinkedNodes:
+                    - GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+                      Position: {x: 2012, y: -120}
+                      LinkedNodes:
+                      - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+                        Position: {x: 2245.6, y: -136.8}
+                        LinkedNodes: []
+    - rid: 4972787806043898225
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 8861fead-057e-4df3-b14d-844aa51161dc
+        Position: {x: 589.6, y: -166.40001}
+        LinkedNodes:
+        - GUID: afec44c9-335e-41e8-ae98-17b56db3e6fa
+          Position: {x: 932.8, y: -166.40001}
+          LinkedNodes:
+          - GUID: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
+            Position: {x: 1234.4, y: -187.2}
+            LinkedNodes:
+            - GUID: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+              Position: {x: 1442.4, y: -153.6}
+              LinkedNodes:
+              - GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
+                Position: {x: 1816.8, y: -372.8}
+                LinkedNodes:
+                - GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+                  Position: {x: 1991.2, y: -505.59998}
+                  LinkedNodes:
+                  - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+                    Position: {x: 2245.6, y: -577.6}
+                    LinkedNodes:
+                    - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+                      Position: {x: 2927.2, y: -505.59998}
+                      LinkedNodes:
+                      - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+                        Position: {x: 3325.6, y: -601.6}
+                        LinkedNodes: []
+                      - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+                        Position: {x: 3325.6, y: -404.8}
+                        LinkedNodes: []
+              - GUID: 74410615-3696-42b6-8570-e14d0664805c
+                Position: {x: 1804, y: -15.199999}
+                LinkedNodes:
+                - GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+                  Position: {x: 2012, y: -120}
+                  LinkedNodes:
+                  - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+                    Position: {x: 2245.6, y: -136.8}
+                    LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - NO soy una hamburguesa
+    - rid: 4972787806043898226
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: dfadb132-ca21-46d1-9cc8-84ac1d3113f7
+        Position: {x: 279.2, y: -166.40001}
+        LinkedNodes:
+        - GUID: 8861fead-057e-4df3-b14d-844aa51161dc
+          Position: {x: 589.6, y: -166.40001}
+          LinkedNodes:
+          - GUID: afec44c9-335e-41e8-ae98-17b56db3e6fa
+            Position: {x: 932.8, y: -166.40001}
+            LinkedNodes:
+            - GUID: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
+              Position: {x: 1234.4, y: -187.2}
+              LinkedNodes:
+              - GUID: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+                Position: {x: 1442.4, y: -153.6}
+                LinkedNodes:
+                - GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
+                  Position: {x: 1816.8, y: -372.8}
+                  LinkedNodes:
+                  - GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+                    Position: {x: 1991.2, y: -505.59998}
+                    LinkedNodes:
+                    - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+                      Position: {x: 2245.6, y: -577.6}
+                      LinkedNodes:
+                      - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+                        Position: {x: 2927.2, y: -505.59998}
+                        LinkedNodes:
+                        - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+                          Position: {x: 3325.6, y: -601.6}
+                          LinkedNodes: []
+                        - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+                          Position: {x: 3325.6, y: -404.8}
+                          LinkedNodes: []
+                - GUID: 74410615-3696-42b6-8570-e14d0664805c
+                  Position: {x: 1804, y: -15.199999}
+                  LinkedNodes:
+                  - GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+                    Position: {x: 2012, y: -120}
+                    LinkedNodes:
+                    - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+                      Position: {x: 2245.6, y: -136.8}
+                      LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Una hamburguesa!
+    - rid: 4972787806043898227
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: afec44c9-335e-41e8-ae98-17b56db3e6fa
+        Position: {x: 932.8, y: -166.40001}
+        LinkedNodes:
+        - GUID: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
+          Position: {x: 1234.4, y: -187.2}
+          LinkedNodes:
+          - GUID: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+            Position: {x: 1442.4, y: -153.6}
+            LinkedNodes:
+            - GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
+              Position: {x: 1816.8, y: -372.8}
+              LinkedNodes:
+              - GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+                Position: {x: 1991.2, y: -505.59998}
+                LinkedNodes:
+                - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+                  Position: {x: 2245.6, y: -577.6}
+                  LinkedNodes:
+                  - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+                    Position: {x: 2927.2, y: -505.59998}
+                    LinkedNodes:
+                    - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+                      Position: {x: 3325.6, y: -601.6}
+                      LinkedNodes: []
+                    - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+                      Position: {x: 3325.6, y: -404.8}
+                      LinkedNodes: []
+            - GUID: 74410615-3696-42b6-8570-e14d0664805c
+              Position: {x: 1804, y: -15.199999}
+              LinkedNodes:
+              - GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+                Position: {x: 2012, y: -120}
+                LinkedNodes:
+                - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+                  Position: {x: 2245.6, y: -136.8}
+                  LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "Ahora s\xED uwu"
+    - rid: 4972787806043898228
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
+        Position: {x: 1234.4, y: -187.2}
+        LinkedNodes:
+        - GUID: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+          Position: {x: 1442.4, y: -153.6}
+          LinkedNodes:
+          - GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
+            Position: {x: 1816.8, y: -372.8}
+            LinkedNodes:
+            - GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+              Position: {x: 1991.2, y: -505.59998}
+              LinkedNodes:
+              - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+                Position: {x: 2245.6, y: -577.6}
+                LinkedNodes:
+                - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+                  Position: {x: 2927.2, y: -505.59998}
+                  LinkedNodes:
+                  - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+                    Position: {x: 3325.6, y: -601.6}
+                    LinkedNodes: []
+                  - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+                    Position: {x: 3325.6, y: -404.8}
+                    LinkedNodes: []
+          - GUID: 74410615-3696-42b6-8570-e14d0664805c
+            Position: {x: 1804, y: -15.199999}
+            LinkedNodes:
+            - GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+              Position: {x: 2012, y: -120}
+              LinkedNodes:
+              - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+                Position: {x: 2245.6, y: -136.8}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - mierdaa
+    - rid: 4972787806043898229
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+        Position: {x: 1991.2, y: -505.59998}
+        LinkedNodes:
+        - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+          Position: {x: 2245.6, y: -577.6}
+          LinkedNodes:
+          - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+            Position: {x: 2927.2, y: -505.59998}
+            LinkedNodes:
+            - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+              Position: {x: 3325.6, y: -601.6}
+              LinkedNodes: []
+            - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+              Position: {x: 3325.6, y: -404.8}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - '*se suicida*'
+    - rid: 4972787806043898230
+      type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
+        Position: {x: 1816.8, y: -372.8}
+        LinkedNodes:
+        - GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+          Position: {x: 1991.2, y: -505.59998}
+          LinkedNodes:
+          - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+            Position: {x: 2245.6, y: -577.6}
+            LinkedNodes:
+            - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+              Position: {x: 2927.2, y: -505.59998}
+              LinkedNodes:
+              - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+                Position: {x: 3325.6, y: -601.6}
+                LinkedNodes: []
+              - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+                Position: {x: 3325.6, y: -404.8}
+                LinkedNodes: []
+        Label: suicidio
+    - rid: 4972787806043898231
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+        Position: {x: 2245.6, y: -577.6}
+        LinkedNodes:
+        - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+          Position: {x: 2927.2, y: -505.59998}
+          LinkedNodes:
+          - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+            Position: {x: 3325.6, y: -601.6}
+            LinkedNodes: []
+          - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+            Position: {x: 3325.6, y: -404.8}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Dang
+    - rid: 4972787806043898232
+      type: {class: ConditionalNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+        Position: {x: 2927.2, y: -505.59998}
+        LinkedNodes:
+        - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+          Position: {x: 3325.6, y: -601.6}
+          LinkedNodes: []
+        - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+          Position: {x: 3325.6, y: -404.8}
+          LinkedNodes: []
+        Conditions:
+        - Suicidio again
+        - no suicidio again
+    - rid: 4972787806043898233
+      type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+        Position: {x: 3325.6, y: -601.6}
+        LinkedNodes: []
+        Label: suicidio
+    - rid: 4972787806043898234
+      type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+        Position: {x: 3325.6, y: -404.8}
+        LinkedNodes: []
+        Label: no suicidio
+    - rid: 4972787806043898235
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+        Position: {x: 2012, y: -120}
+        LinkedNodes:
+        - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+          Position: {x: 2245.6, y: -136.8}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - ya? si no? guay
+    - rid: 4972787806043898236
+      type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 74410615-3696-42b6-8570-e14d0664805c
+        Position: {x: 1804, y: -15.199999}
+        LinkedNodes:
+        - GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+          Position: {x: 2012, y: -120}
+          LinkedNodes:
+          - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+            Position: {x: 2245.6, y: -136.8}
+            LinkedNodes: []
+        Label: no suicidio
+    - rid: 4972787806043898237
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 6b1e5107-9656-40e3-aee5-60c1bff2008d
+        Position: {x: 1442.4, y: -153.6}
+        LinkedNodes:
+        - GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
+          Position: {x: 1816.8, y: -372.8}
+          LinkedNodes:
+          - GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
+            Position: {x: 1991.2, y: -505.59998}
+            LinkedNodes:
+            - GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
+              Position: {x: 2245.6, y: -577.6}
+              LinkedNodes:
+              - GUID: 3564b0ac-282e-4056-b232-6a9e7f6565fa
+                Position: {x: 2927.2, y: -505.59998}
+                LinkedNodes:
+                - GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
+                  Position: {x: 3325.6, y: -601.6}
+                  LinkedNodes: []
+                - GUID: e1ae8cf4-6eb4-42c4-9f3a-85862c4fcff6
+                  Position: {x: 3325.6, y: -404.8}
+                  LinkedNodes: []
+        - GUID: 74410615-3696-42b6-8570-e14d0664805c
+          Position: {x: 1804, y: -15.199999}
+          LinkedNodes:
+          - GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
+            Position: {x: 2012, y: -120}
+            LinkedNodes:
+            - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+              Position: {x: 2245.6, y: -136.8}
+              LinkedNodes: []
+        Choices:
+        - ChoiceText: Suicidarse
+          Value: 1
+        - ChoiceText: "No suicidarse a\xFAn"
+          Value: 1
+    - rid: 4972787806043898238
+      type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: da42802a-510e-4b37-9869-00c454d7fdb6
+        Position: {x: 2245.6, y: -136.8}
+        LinkedNodes: []
+        Label: suicidio

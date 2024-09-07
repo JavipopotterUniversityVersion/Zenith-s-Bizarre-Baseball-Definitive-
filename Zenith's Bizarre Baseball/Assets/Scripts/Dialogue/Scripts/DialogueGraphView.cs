@@ -109,6 +109,9 @@ public class DialogueGraphView : GraphView
         if (lines != null) foreach (var line in lines) AddDialogueLine(dialogueNode, line);
         else AddDialogueLine(dialogueNode);
 
+        var characterindexField = new EnumField("", CharacterIndex.First);
+        dialogueNode.titleButtonContainer.Add(characterindexField);
+
         var button = new Button(() => { AddDialogueLine(dialogueNode); });
         button.text = "+";
         dialogueNode.titleButtonContainer.Add(button);

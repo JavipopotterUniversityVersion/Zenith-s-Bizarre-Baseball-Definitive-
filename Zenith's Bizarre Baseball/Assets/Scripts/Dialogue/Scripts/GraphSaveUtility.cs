@@ -24,11 +24,12 @@ public class GraphSaveUtility
         };
     }
 
-    public void SaveGraph(DialogueContainer container)
+    public void SaveGraph(DialogueContainer dialogueContainer)
     {
         if(!Edges.Any()) return;
 
-        var dialogueContainer = ScriptableObject.CreateInstance<DialogueContainer>();
+        dialogueContainer.NodeLinks.Clear();
+        dialogueContainer.DialogueNodeData.Clear();
 
         var connectedPorts = Edges.Where(x => x.input.node != null).ToArray();
 
@@ -81,6 +82,7 @@ public class GraphSaveUtility
                         DialogueLines = dialogueNode.mainContainer.Children().Where(x => x is TextField).Cast<TextField>().Select(x => x.value).ToArray(),
                         Speaker = dialogueNode.mainContainer.Q<ObjectField>().value as CharacterData,
                         Emotion = dialogueNode.mainContainer.Q<DropdownField>().value,
+                        characterIndex = (CharacterIndex)dialogueNode.titleButtonContainer.Q<EnumField>().value,
                         Position = dialogueNode.GetPosition().position,
                     });
                 break;
@@ -132,15 +134,12 @@ public class GraphSaveUtility
         }
 
         dialogueContainer.LinkNodes();
-        string path = "New Dialogue";
-        if(container != null) path = container.name;
-        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Dialogue/Resources/{path}.asset");
         AssetDatabase.SaveAssets();
     }
 
     public void LoadGraph(DialogueContainer container)
     {
-        _containerCache = Resources.Load<DialogueContainer>(container.name);
+        _containerCache = Resources.Load<DialogueContainer>($"Dialogues/{container.name}");
 
         if (_containerCache == null)
         {

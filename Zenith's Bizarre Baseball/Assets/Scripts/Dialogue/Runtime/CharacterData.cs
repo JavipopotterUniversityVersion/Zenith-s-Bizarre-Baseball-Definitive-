@@ -8,13 +8,19 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public string CharacterName;
-    public SerializableDictionary<string, UnityEngine.Sprite> CharacterExpressions;
-    public string[] ExpressionKeys => CharacterExpressions.Keys.ToArray();
+    public SerializableDictionary<string, UnityEngine.Sprite> Emotions;
+    public string[] ExpressionKeys => Emotions.Keys.ToArray();
     public AudioPlayer CharacterVoice;
+
+    public UnityEngine.Sprite GetEmotion(string key)
+    {
+        if(Emotions.ContainsKey(key)) return Emotions[key];
+        return Emotions[ExpressionKeys[0]];
+    }
 
     public Texture2D GetExpression(string key)
     {
-        if(CharacterExpressions.ContainsKey(key)) return AssetPreview.GetAssetPreview(CharacterExpressions[key]);
+        if(Emotions.ContainsKey(key)) return AssetPreview.GetAssetPreview(Emotions[key]);
         return null;
     }
 }
@@ -33,7 +39,7 @@ public class CharacterDataEditor : Editor
     {
         base.OnInspectorGUI();
 
-        if(_characterData.CharacterExpressions == null) _characterData.CharacterExpressions = new SerializableDictionary<string, UnityEngine.Sprite>();
+        if(_characterData.Emotions == null) _characterData.Emotions = new SerializableDictionary<string, UnityEngine.Sprite>();
 
         GUILayout.Space(10);
 

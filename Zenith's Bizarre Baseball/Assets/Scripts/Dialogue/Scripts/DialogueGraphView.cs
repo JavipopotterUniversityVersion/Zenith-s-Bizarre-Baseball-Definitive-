@@ -69,11 +69,12 @@ public class DialogueGraphView : GraphView
         characterField.value = character;
         dialogueNode.mainContainer.Add(characterField);
 
+        List<string> expressionKeys = characterField.value != null ? (characterField.value as CharacterData).ExpressionKeys.ToList() : new List<string>();
+
         var expressionField = new DropdownField()
         {
-            choices = characterField.value != null ? (characterField.value as CharacterData).ExpressionKeys.ToList() : new List<string>()
+            choices = expressionKeys
         };
-        expressionField.value = expression;
         dialogueNode.mainContainer.Add(expressionField);
 
         var characterPreview = new Image();
@@ -101,6 +102,12 @@ public class DialogueGraphView : GraphView
         {
             characterPreview.image = (characterField.value as CharacterData).GetExpression(evt.newValue);
         });
+
+        if(character != null)
+        {
+            expressionField.value = expression;
+            characterPreview.image = character.GetExpression(expression);
+        }
 
         var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
         inputPort.portName = "Input";

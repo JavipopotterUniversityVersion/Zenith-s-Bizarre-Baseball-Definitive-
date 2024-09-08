@@ -80,7 +80,7 @@ public class Interpreter : MonoBehaviour
 
                 _dialogueText.maxVisibleCharacters = charIndex;
 
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.02f);
             }
 
             if(WaitForOption) while(WaitForOption) yield return null;
@@ -228,6 +228,10 @@ public class Interpreter : MonoBehaviour
             return Data;
         }
 
-        public void PlayAnimation(string animation) => Animator.SetTrigger(animation);
+        public void PlayAnimation(string animation) 
+        {
+            Animator.ResetTrigger("Talk");
+            Animator.SetTrigger(animation);
+        }
     }
 }

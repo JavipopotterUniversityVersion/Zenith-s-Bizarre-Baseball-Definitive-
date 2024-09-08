@@ -62,31 +62,31 @@ MonoBehaviour:
     PortName: Next
     TargetNodeGuid: dfadb132-ca21-46d1-9cc8-84ac1d3113f7
   DialogueNodeData:
-  - rid: 4972787806043898419
-  - rid: 4972787806043898420
-  - rid: 4972787806043898421
-  - rid: 4972787806043898422
-  - rid: 4972787806043898423
-  - rid: 4972787806043898424
-  - rid: 4972787806043898425
-  - rid: 4972787806043898426
-  - rid: 4972787806043898427
-  - rid: 4972787806043898428
-  - rid: 4972787806043898429
-  - rid: 4972787806043898430
-  - rid: 4972787806043898431
+  - rid: 4972787807978520667
+  - rid: 4972787807978520668
+  - rid: 4972787807978520669
+  - rid: 4972787807978520670
+  - rid: 4972787807978520671
+  - rid: 4972787807978520672
+  - rid: 4972787807978520673
+  - rid: 4972787807978520674
+  - rid: 4972787807978520675
+  - rid: 4972787807978520676
+  - rid: 4972787807978520677
+  - rid: 4972787807978520678
+  - rid: 4972787807978520679
   _translationPreview: "<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Una
     hamburguesa!<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>NO
     soy una hamburguesa<ANIMATION:Idle>@<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Ahora
-    s\xED uwu<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:burguer><ANIMATION:Talk>mierdaa<ANIMATION:Idle><CHOICE:Suicidarse/1,,No
-    suicidarse a\xFAn/1>@<OPTION:Suicidarse><LABEL:suicidio><CHARACTER:ZenithasFirst><EMOTION:burguer><ANIMATION:Talk>*se
-    suicida*<ANIMATION:Idle>@<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Dang<ANIMATION:Idle>@<GOTO:suicidio><OPTION:No
-    suicidarse a\xFAn><LABEL:no suicidio><CHARACTER:ZenithasFirst><EMOTION:burguer><ANIMATION:Talk>ya?
-    si no? guay<ANIMATION:Idle>@<GOTO:suicidio>"
+    s\xED uwu<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:burguer><ANIMATION:Talk><ANIMATION:Blop>mierdaa<ANIMATION:Idle><CHOICE:Suicidarse/1,,No
+    suicidarse a\xFAn/1>@<OPTION:Suicidarse><LABEL:suicidio><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>*se
+    suicida*<ANIMATION:Idle>@<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Dang<ANIMATION:Idle><GOTO:no
+    suicidio>@<OPTION:No suicidarse a\xFAn><LABEL:no suicidio><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>ya?
+    si no? guay<ANIMATION:Idle><GOTO:suicidio>@"
   references:
     version: 2
     RefIds:
-    - rid: 4972787806043898419
+    - rid: 4972787807978520667
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: a9f1018b-eefe-49c5-83f4-cf2ad12eae4d
@@ -128,7 +128,7 @@ MonoBehaviour:
                       - GUID: da42802a-510e-4b37-9869-00c454d7fdb6
                         Position: {x: 2245.6, y: -136.8}
                         LinkedNodes: []
-    - rid: 4972787806043898420
+    - rid: 4972787807978520668
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 8861fead-057e-4df3-b14d-844aa51161dc
@@ -169,7 +169,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - NO soy una hamburguesa
-    - rid: 4972787806043898421
+    - rid: 4972787807978520669
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: dfadb132-ca21-46d1-9cc8-84ac1d3113f7
@@ -213,7 +213,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - Una hamburguesa!
-    - rid: 4972787806043898422
+    - rid: 4972787807978520670
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: afec44c9-335e-41e8-ae98-17b56db3e6fa
@@ -251,7 +251,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Ahora s\xED uwu"
-    - rid: 4972787806043898423
+    - rid: 4972787807978520671
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: bcefe615-39d8-4f70-89f5-bd93ef7f49d7
@@ -285,8 +285,8 @@ MonoBehaviour:
         Emotion: burguer
         characterIndex: 0
         DialogueLines:
-        - mierdaa
-    - rid: 4972787806043898424
+        - <ANIMATION:Blop>mierdaa
+    - rid: 4972787807978520672
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 47929247-85e6-4dab-b8bf-5904bcf8ae23
@@ -299,11 +299,11 @@ MonoBehaviour:
             Position: {x: 2507.2, y: -601.6}
             LinkedNodes: []
         Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: burguer
+        Emotion: default
         characterIndex: 0
         DialogueLines:
         - '*se suicida*'
-    - rid: 4972787806043898425
+    - rid: 4972787807978520673
       type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 5c04c53b-1422-474a-a731-73b68d02c81d
@@ -319,7 +319,7 @@ MonoBehaviour:
               Position: {x: 2507.2, y: -601.6}
               LinkedNodes: []
         Label: suicidio
-    - rid: 4972787806043898426
+    - rid: 4972787807978520674
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ff405bea-0dd6-404c-93e2-e6a4d9aa8474
@@ -333,7 +333,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - Dang
-    - rid: 4972787806043898427
+    - rid: 4972787807978520675
       type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 74410615-3696-42b6-8570-e14d0664805c
@@ -346,7 +346,7 @@ MonoBehaviour:
             Position: {x: 2245.6, y: -136.8}
             LinkedNodes: []
         Label: no suicidio
-    - rid: 4972787806043898428
+    - rid: 4972787807978520676
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 6b1e5107-9656-40e3-aee5-60c1bff2008d
@@ -378,21 +378,21 @@ MonoBehaviour:
           Value: 1
         - ChoiceText: "No suicidarse a\xFAn"
           Value: 1
-    - rid: 4972787806043898429
+    - rid: 4972787807978520677
       type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: da42802a-510e-4b37-9869-00c454d7fdb6
         Position: {x: 2245.6, y: -136.8}
         LinkedNodes: []
         Label: suicidio
-    - rid: 4972787806043898430
+    - rid: 4972787807978520678
       type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 67c860fa-a379-4742-ba0e-f86d1973dcd4
         Position: {x: 2507.2, y: -601.6}
         LinkedNodes: []
-        Label: suicidio
-    - rid: 4972787806043898431
+        Label: no suicidio
+    - rid: 4972787807978520679
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 43072b3b-9b72-43e0-b491-37cca66e527c
@@ -402,7 +402,7 @@ MonoBehaviour:
           Position: {x: 2245.6, y: -136.8}
           LinkedNodes: []
         Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: burguer
+        Emotion: default
         characterIndex: 0
         DialogueLines:
         - ya? si no? guay

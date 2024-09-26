@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BulletSlower_Upgrade
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Salmon Dish
+    _name: "Salm\xF3n"
     _icon: {fileID: 21300000, guid: b2d64700e2b324e48bc53a48a8b24af3, type: 3}
-    _description: Slows down balls when they are near you
+    _description: Realentiza las bolas al acercarse
     _stringProcessor:
       _intDictionary:
         list: []
@@ -25,34 +25,8 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-      _processorDictionary:
-        list:
-        - Key: '[nextDmg]'
-          Value:
-            operation: moneyDamage + 1
-            _debug: 0
-            _showReferences: 0
-            _floatDictionary:
-              list:
-              - Key: moneyDamage
-                Value: {fileID: 11400000, guid: b8fd32c9be43dcf4ea95282dbe83c605, type: 2}
-            _intDictionary:
-              list: []
-            _curveDictionary:
-              list: []
-            _operationDictionary:
-              list: []
-            _functionDictionary:
-              list: []
-            _stringDictionary:
-              list: []
-            _boolDictionary:
-              list: []
-            _eventDictionary:
-              list: []
     _condition:
       operation: slow == 0
-      _debug: 0
       _showReferences: 1
       _floatDictionary:
         list: []
@@ -74,7 +48,6 @@ MonoBehaviour:
         list: []
     _upgrade:
       operation: Apply 1
-      _debug: 0
       _showReferences: 1
       _floatDictionary:
         list: []

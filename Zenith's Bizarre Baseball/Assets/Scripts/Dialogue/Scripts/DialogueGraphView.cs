@@ -54,14 +54,14 @@ public class DialogueGraphView : GraphView
         return compatiblePorts;
     } 
 
-    public DialogueNode GenerateDialogueNode(string nodeName, string[] lines = null, CharacterData character = null, string expression = "")
+    public DialogueNode GenerateDialogueNode(string nodeName, string[] lines = null, CharacterData character = null, string expression = "", CharacterIndex characterIndex = CharacterIndex.First)
     {
-        DialogueNode node = CreateDialogueNode(nodeName, lines, character, expression);
+        DialogueNode node = CreateDialogueNode(nodeName, lines, character, expression, characterIndex);
         AddElement(node);
 
         return node;
     }
-    public DialogueNode CreateDialogueNode(string nodeName, string[] lines = null, CharacterData character = null, string expression = "")
+    public DialogueNode CreateDialogueNode(string nodeName, string[] lines = null, CharacterData character = null, string expression = "", CharacterIndex characterIndex = CharacterIndex.First)
     {
         var dialogueNode = new DialogueNode()
         {
@@ -125,7 +125,7 @@ public class DialogueGraphView : GraphView
         if (lines != null) foreach (var line in lines) AddDialogueLine(dialogueNode, line);
         else AddDialogueLine(dialogueNode);
 
-        var characterindexField = new EnumField("", CharacterIndex.First);
+        var characterindexField = new EnumField("", characterIndex);
         dialogueNode.titleButtonContainer.Add(characterindexField);
 
         var button = new Button(() => { AddDialogueLine(dialogueNode); });

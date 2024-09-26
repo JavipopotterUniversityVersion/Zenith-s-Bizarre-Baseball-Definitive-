@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BallRebound-Upgrade
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Fried Egg
+    _name: Huevo frito
     _icon: {fileID: 21300000, guid: f7601e69219e4ea42986fd494085f686, type: 3}
-    _description: Balls bounce [cols] times before destroying
+    _description: Las bolas golpeadas rebotan [cols] veces
     _stringProcessor:
       _intDictionary:
         list: []
@@ -26,7 +26,6 @@ MonoBehaviour:
             value: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
             processor:
               operation: cols + 1
-              _debug: 0
               _showReferences: 0
               _floatDictionary:
                 list: []
@@ -50,11 +49,8 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-      _processorDictionary:
-        list: []
     _condition:
       operation: input
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -74,7 +70,6 @@ MonoBehaviour:
         list: []
     _upgrade:
       operation: Apply 1
-      _debug: 0
       _showReferences: 1
       _floatDictionary:
         list: []

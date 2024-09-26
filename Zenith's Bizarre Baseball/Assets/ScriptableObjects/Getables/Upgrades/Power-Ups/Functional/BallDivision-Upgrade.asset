@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BallDivision-Upgrade
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Strawberry Cake
+    _name: Tarta de Fresa
     _icon: {fileID: 21300000, guid: b426c85ad9038ba4bada1a218990e9e3, type: 3}
-    _description: Duplicates balls when bat
+    _description: Duplica las bolas al batearlas
     _stringProcessor:
       _intDictionary:
         list: []
@@ -25,11 +25,8 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-      _processorDictionary:
-        list: []
     _condition:
       operation: input
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -49,7 +46,6 @@ MonoBehaviour:
         list: []
     _upgrade:
       operation: Apply 1
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []

@@ -14,7 +14,7 @@ public class NodeData
     [HideInInspector] public List<NodeData> LinkedNodes = new List<NodeData>();
     public virtual string TranslateText() 
     {
-        return LinkedNodes.Count > 0 ? LinkedNodes[0].TranslateText() : "bazinga";
+        return LinkedNodes.Count > 0 ? "<CHARACTER:NullasFirst>" + "<CHARACTER:NullasSecond>" + LinkedNodes[0].TranslateText() : "bazinga";
     }
 }
 

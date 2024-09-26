@@ -181,7 +181,7 @@ public class GraphSaveUtility
             else if(nodeData is DialogueNodeData dialogueData)
             {
                 var generatedNode = _targetGraphView.GenerateDialogueNode("Dialogue", 
-                dialogueData.DialogueLines, dialogueData.Speaker, dialogueData.Emotion);
+                dialogueData.DialogueLines, dialogueData.Speaker, dialogueData.Emotion, dialogueData.characterIndex);
                 generatedNode.GUID = nodeData.GUID;
                 generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
             }

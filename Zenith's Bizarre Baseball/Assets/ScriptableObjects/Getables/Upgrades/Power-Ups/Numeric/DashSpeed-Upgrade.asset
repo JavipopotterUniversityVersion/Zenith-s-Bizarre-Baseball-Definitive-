@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DashSpeed-Upgrade
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Burguer
+    _name: Hamburguesa
     _icon: {fileID: 21300000, guid: f5bb7de9f109a1b4bbca1e7719522e5a, type: 3}
-    _description: Increases Dash speed a little
+    _description: Aumenta la velocidad de sprint
     _stringProcessor:
       _intDictionary:
         list: []
@@ -25,11 +25,8 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-      _processorDictionary:
-        list: []
     _condition:
       operation: input
-      _debug: 0
       _showReferences: 0
       _floatDictionary:
         list: []
@@ -49,7 +46,6 @@ MonoBehaviour:
         list: []
     _upgrade:
       operation: Apply 1
-      _debug: 0
       _showReferences: 1
       _floatDictionary:
         list: []

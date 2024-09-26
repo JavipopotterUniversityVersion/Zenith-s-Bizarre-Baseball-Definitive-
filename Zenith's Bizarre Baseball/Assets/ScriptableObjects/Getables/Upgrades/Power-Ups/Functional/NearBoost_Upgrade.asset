@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: NearBoost_Upgrade
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Popcorn
+    _name: Palomitas
     _icon: {fileID: 21300000, guid: 2d6ee9a9476fac04097c67da27e25612, type: 3}
-    _description: Gives you a small boost to your stats for each time a ball almost
-      hits you, it resets each time you get hit
+    _description: "Te da un peque\xF1o aumento en todas las estad\xEDsticas cuando
+      las bolas pasan muy cerca, se pierde cada vez que recibes da\xF1o"
     _stringProcessor:
       _intDictionary:
         list: []
@@ -26,30 +26,6 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-      _processorDictionary:
-        list:
-        - Key: '[nextDmg]'
-          Value:
-            operation: moneyDamage + 1
-            _showReferences: 0
-            _floatDictionary:
-              list:
-              - Key: moneyDamage
-                Value: {fileID: 11400000, guid: b8fd32c9be43dcf4ea95282dbe83c605, type: 2}
-            _intDictionary:
-              list: []
-            _curveDictionary:
-              list: []
-            _operationDictionary:
-              list: []
-            _functionDictionary:
-              list: []
-            _stringDictionary:
-              list: []
-            _boolDictionary:
-              list: []
-            _eventDictionary:
-              list: []
     _condition:
       operation: active == 0
       _showReferences: 1

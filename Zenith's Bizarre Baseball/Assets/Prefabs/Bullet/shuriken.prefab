@@ -233,10 +233,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3541464353827561328}
-  - component: {fileID: 8464181785435126931}
   - component: {fileID: 2676976702895114760}
   - component: {fileID: 8231560987143674900}
-  - component: {fileID: 4572459267592316477}
   m_Layer: 8
   m_Name: collider
   m_TagString: Untagged
@@ -259,36 +257,6 @@ Transform:
   m_Father: {fileID: 5351243197468128854}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8464181785435126931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6978830880948645605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterCollidables:
-  - _targets: []
-    layer:
-      serializedVersion: 2
-      m_Bits: 128
-    conditions: []
-    collidables:
-    - {fileID: 2676976702895114760}
-  - _targets: []
-    layer:
-      serializedVersion: 2
-      m_Bits: 1024
-    conditions: []
-    collidables:
-    - {fileID: 8231560987143674900}
-  OnStayCollidables: []
-  checkDelay: 0.1
-  OnExitCollidables: []
 --- !u!114 &2676976702895114760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,10 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
   _processor:
     operation: 4
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -339,7 +305,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollisions:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -361,22 +326,6 @@ MonoBehaviour:
       list: []
     _readablesDictionary: []
   _targetGameObject: {fileID: 8913451013342580221}
---- !u!58 &4572459267592316477
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6978830880948645605}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &8913451013342580221
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +336,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5351243197468128854}
   - component: {fileID: 8519505587084152619}
+  - component: {fileID: 8206714124986024943}
+  - component: {fileID: 1035973003680796694}
+  - component: {fileID: 1199328593365848192}
   m_Layer: 8
   m_Name: shuriken
   m_TagString: Untagged
@@ -433,3 +385,63 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8206714124986024943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913451013342580221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e5894b0f464ca4384f0c1091c42b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifiableType: {fileID: 11400000, guid: 64ca952bc185a1f41a7b07019be8aeec, type: 2}
+  identifiableChangeEvents: []
+--- !u!114 &1035973003680796694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913451013342580221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterCollidables:
+  - _targets: []
+    layer:
+      serializedVersion: 2
+      m_Bits: 128
+    conditions: []
+    collidables:
+    - {fileID: 2676976702895114760}
+  - _targets: []
+    layer:
+      serializedVersion: 2
+      m_Bits: 1024
+    conditions: []
+    collidables:
+    - {fileID: 8231560987143674900}
+  OnStayCollidables: []
+  checkDelay: 0.1
+  OnExitCollidables: []
+--- !u!58 &1199328593365848192
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913451013342580221}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

@@ -53,7 +53,7 @@ public class StringProcessor
     [SerializeField] SerializableDictionary<string, ProcessedFloat> _floatDictionary = new SerializableDictionary<string, ProcessedFloat>();
     [SerializeField] SerializableDictionary<string, String> _stringDictionary = new SerializableDictionary<string, String>();
     [SerializeField] SerializableDictionary<string, StringFunction> _stringFunctionDictionary = new SerializableDictionary<string, StringFunction>();
-    [SerializeField] SerializableDictionary<string, Processor> _processorDictionary = new SerializableDictionary<string, Processor>();
+    SerializableDictionary<string, Processor> _processorDictionary = new SerializableDictionary<string, Processor>();
 
     public string Process(string value)
     {

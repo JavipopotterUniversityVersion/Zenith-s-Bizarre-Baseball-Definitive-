@@ -327,10 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6786148f28549aa5efb81fc10054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
   _processor:
     operation: 4
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -365,7 +363,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollisions:
     operation: input
-    _debug: 0
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -398,6 +395,7 @@ GameObject:
   - component: {fileID: 4798748474240288548}
   - component: {fileID: 9142489936610541145}
   - component: {fileID: 6256846029796901499}
+  - component: {fileID: 2311098936836301845}
   m_Layer: 8
   m_Name: KunaiBullet
   m_TagString: Untagged
@@ -460,3 +458,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.9691992}
   serializedVersion: 2
   m_Radius: 1.212307
+--- !u!114 &2311098936836301845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316190699825085583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e5894b0f464ca4384f0c1091c42b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifiableType: {fileID: 11400000, guid: 64ca952bc185a1f41a7b07019be8aeec, type: 2}
+  identifiableChangeEvents: []

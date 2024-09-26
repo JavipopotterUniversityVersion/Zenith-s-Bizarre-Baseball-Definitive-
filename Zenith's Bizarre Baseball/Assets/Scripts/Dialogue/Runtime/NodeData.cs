@@ -11,7 +11,7 @@ public class NodeData
 {
     public string GUID;
     public Vector2 Position;
-    public List<NodeData> LinkedNodes = new List<NodeData>();
+    [HideInInspector] public List<NodeData> LinkedNodes = new List<NodeData>();
     public virtual string TranslateText() 
     {
         return LinkedNodes.Count > 0 ? LinkedNodes[0].TranslateText() : "bazinga";

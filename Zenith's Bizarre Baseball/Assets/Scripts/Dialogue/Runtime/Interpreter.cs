@@ -157,6 +157,10 @@ public class Interpreter : MonoBehaviour
                     endDialogue = true;
                     break;
 
+                case "BREAK":
+                    _next = true;
+                    break;
+
                 default:
                     break;
             }

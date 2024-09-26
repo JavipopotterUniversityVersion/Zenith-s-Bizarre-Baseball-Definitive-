@@ -10,7 +10,7 @@ public class DialogueGraphView : GraphView
 {
     public readonly Vector2 DefaultNodeSize = new Vector2(150, 200);
 
-    public DialogueGraphView()
+    public DialogueGraphView(EditorWindow editorWindow)
     {
         styleSheets.Add(Resources.Load<StyleSheet>("DialogueGraph"));
         styleSheets.Add(Resources.Load<StyleSheet>("DialogueNode"));
@@ -26,6 +26,14 @@ public class DialogueGraphView : GraphView
         grid.StretchToParentSize();
 
         AddElement(GenerateEntryPointNode());
+        AddSearchWindow(editorWindow);
+    }
+
+    void AddSearchWindow(EditorWindow editorWindow)
+    {
+        var nodeSearchWindow = ScriptableObject.CreateInstance<NodeSearchWindow>();
+        nodeSearchWindow.Init(editorWindow, this);
+        nodeCreationRequest = context => SearchWindow.Open(new SearchWindowContext(context.screenMousePosition), nodeSearchWindow);
     }
 
     private Port GeneratePort(Node node, Direction portDirection, Port.Capacity capacity = Port.Capacity.Single)
@@ -96,6 +104,7 @@ public class DialogueGraphView : GraphView
             expressionField.choices = (evt.newValue as CharacterData).ExpressionKeys.ToList();
             expressionField.value = expressionField.choices[0];
             characterPreview.image = (evt.newValue as CharacterData).GetExpression(expressionField.value);
+            EditorUtility.SetDirty(characterField.value);
         });
 
         expressionField.RegisterValueChangedCallback(evt =>

@@ -43,7 +43,7 @@ public class DialogueGraph : EditorWindow
 
     private void ConstructGraphView()
     {
-        _graphView = new DialogueGraphView()
+        _graphView = new DialogueGraphView(this)
         {
             name = "Dialogue Graph"
         };
@@ -57,30 +57,6 @@ public class DialogueGraph : EditorWindow
         var toolbar = new UnityEditor.UIElements.Toolbar();
 
         toolbar.Add(new Button(() => RequestDataOperation(true)) { text = "Save Data" });
-
-        var nodeCreateButton = new Button(() => { _graphView.GenerateDialogueNode("Dialogue"); });
-        nodeCreateButton.text = "Create Node";
-        toolbar.Add(nodeCreateButton);
-
-        var choiceCreateButton = new Button(() => { _graphView.GenerateChoiceNode("Choice"); });
-        choiceCreateButton.text = "Create Choice";
-        toolbar.Add(choiceCreateButton);
-
-        var labelCreateButton = new Button(() => { _graphView.GenerateLabelNode("Label"); });
-        labelCreateButton.text = "Create Label";
-        toolbar.Add(labelCreateButton);
-
-        var labelJumpCreateButton = new Button(() => { _graphView.GenerateLabelJumpNode("Goto"); });
-        labelJumpCreateButton.text = "Create Label Jump";
-        toolbar.Add(labelJumpCreateButton);
-
-        var backgroundCreateButton = new Button(() => { _graphView.GenerateBackgroundNode("Background"); });
-        backgroundCreateButton.text = "Create Background";
-        toolbar.Add(backgroundCreateButton);
-
-        var conditionalCreateButton = new Button(() => { _graphView.GenerateConditionalNode("Conditional"); });
-        conditionalCreateButton.text = "Create Conditional";
-        toolbar.Add(conditionalCreateButton);
 
         rootVisualElement.Add(toolbar);
     }

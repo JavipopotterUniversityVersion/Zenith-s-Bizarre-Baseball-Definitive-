@@ -18,6 +18,7 @@ public class Interpreter : MonoBehaviour
     [SerializeField] InputActionReference _nextAction;
     [SerializeField] GameObject _canvas;
     [SerializeField] ObjectProcessor _processor;
+    [SerializeField] DialogueCaster _caster;
 
     Option[] _options;
     int lineIndex = 0;
@@ -40,8 +41,13 @@ public class Interpreter : MonoBehaviour
 
     private void Awake() 
     {
+        _caster.onStartDialogue.AddListener(InterpretDialogue);
         _options = GetComponentsInChildren<Option>(true);
         _options.ForEach(o => o.Initialize(this));
+    }
+
+    private void OnDestroy() {
+        _caster.onStartDialogue.RemoveListener(InterpretDialogue);
     }
 
     public void InterpretDialogue(DialogueContainer dialogue)

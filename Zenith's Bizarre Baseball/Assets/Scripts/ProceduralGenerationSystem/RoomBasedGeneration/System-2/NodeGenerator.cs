@@ -20,6 +20,10 @@ public class NodeGenerator : MonoBehaviour
     List<RoomNode> _nodes = new List<RoomNode>();
     public List<RoomNode> Nodes => _nodes;
 
+    [SerializeField] Bool EntropyValue;
+    int _visitedNodesCount = 0;
+    public int VisitedNodesCount { get => _visitedNodesCount; set => _visitedNodesCount = value; }
+
     [SerializeField] UnityEvent onStartedGeneration = new UnityEvent();
 
     [SerializeField] UnityEvent onFinishedGeneration = new UnityEvent();
@@ -39,6 +43,11 @@ public class NodeGenerator : MonoBehaviour
         Nodes.Add(_currentNode);
 
         GenerateNode(_currentNode);
+    }
+
+    private void OnDestroy() 
+    {
+        if(VisitedNodesCount < Nodes.Count) EntropyValue.SetValue(false);
     }
 
     async void GenerateNode(RoomNode _currentNode)

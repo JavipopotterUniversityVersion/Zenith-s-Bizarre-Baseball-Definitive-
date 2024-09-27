@@ -28,18 +28,20 @@ public class DialogueNodeData : NodeData
 
     public override string TranslateText()
     {
-        string value = $"<CHARACTER:{Speaker.CharacterName}as{characterIndex}><EMOTION:{Emotion}>";
+        string value = $"<CHARACTER:{Speaker.name}as{characterIndex}><EMOTION:{Emotion}>";
 
         for(int i = 0; i < DialogueLines.Length; i++)
         {
-            value += "<ANIMATION:Talk>" + DialogueLines[i] + "<ANIMATION:Idle>" + "@";
+            value += "<ANIMATION:Talk>" + DialogueLines[i] + "<ANIMATION:Idle>";
+            if(LinkedNodes.Count == 0 && i == DialogueLines.Length - 1) value += "<END>"; else value += "@";
         }
 
-        if(LinkedNodes[0].GetType() == typeof(ChoiceNodeData)) value = value.Substring(0, value.Length - 1);
-        else if(LinkedNodes[0].GetType() == typeof(LabelJumpNodeData)) value = value.Substring(0, value.Length - 1);
-
-        if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
-        else value += "@<END>";
+        if(LinkedNodes.Count > 0)
+        {
+            if(LinkedNodes[0].GetType() == typeof(ChoiceNodeData)) value = value.Substring(0, value.Length - 1);
+            else if(LinkedNodes[0].GetType() == typeof(LabelJumpNodeData)) value = value.Substring(0, value.Length - 1);
+            value += LinkedNodes[0].TranslateText();
+        }
         
         return value;
     }

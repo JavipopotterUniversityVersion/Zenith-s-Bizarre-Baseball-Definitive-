@@ -122,11 +122,18 @@ public class Interpreter : MonoBehaviour
 
             index--;
 
-            string commandType = command.Split(":")[0];
-            string commandValue = command.Split(":")[1];
+            string[] commandParts = command.Split(":");
+
+            string commandType = commandParts[0];
+            string commandValue = "";
+
+            if(commandParts.Length > 1) commandValue = commandParts[1];
 
             switch (commandType)
             {
+                case "NAME":
+                    _nameText.text = commandValue;
+                    break;
                 case "BACKGROUND":
                     _backgroundImage.sprite = Resources.Load<Texture2D>($"Backgrounds/{commandValue}").AsSprite();
                     break;

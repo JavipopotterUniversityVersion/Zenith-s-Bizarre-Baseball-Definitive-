@@ -88,7 +88,7 @@ public class DialogueGraphView : GraphView
         var characterPreview = new Image();
         characterPreview.style.maxWidth = 200;
         characterPreview.style.maxHeight = 200;
-        dialogueNode.mainContainer.Add(characterPreview);
+        // dialogueNode.mainContainer.Add(characterPreview);
 
         if(character != null)
         {
@@ -146,7 +146,7 @@ public class DialogueGraphView : GraphView
     {
         var textField = new TextField(string.Empty);
         textField.multiline = true;
-        textField.style.maxWidth = 200;
+        textField.style.width = 200;
         textField.value = line;
         var deleteButton = new Button(() => node.mainContainer.Remove(textField)){ text = "X" };
         textField.Add(deleteButton);
@@ -204,9 +204,10 @@ public class DialogueGraphView : GraphView
         generatedPort.portName = $"out";
 
         var textField = new TextField(string.Empty);
+        textField.multiline = true;
         textField.value = choice.ChoiceText;
         generatedPort.contentContainer.Add(textField);
-        textField.style.minWidth = 100;
+        textField.style.minWidth = 150;
 
         var valueField = new TextField(string.Empty);
         valueField.value = choice.Value;

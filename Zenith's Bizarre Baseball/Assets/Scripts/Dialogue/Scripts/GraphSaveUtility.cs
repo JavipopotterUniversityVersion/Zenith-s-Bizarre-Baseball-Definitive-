@@ -154,7 +154,7 @@ public class GraphSaveUtility
 
     private void ClearGraph()
     {
-        Nodes.Find(x => x.EntryPoint).GUID = _containerCache.DialogueNodeData[0].GUID;
+        if(_containerCache.DialogueNodeData.Count > 0) Nodes.Find(x => x.EntryPoint).GUID = _containerCache.DialogueNodeData[0].GUID;
 
         foreach (var node in Nodes)
         {

@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
 
 public class DialogueNode : Node
@@ -19,3 +17,4 @@ public enum NodeType
     Conditional,
     Background
 }
+#endif

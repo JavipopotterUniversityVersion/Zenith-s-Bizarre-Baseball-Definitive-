@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.Callbacks;
+#endif
 
 [Serializable] [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue/Dialogue Container")]
 public class DialogueContainer : ScriptableObject
@@ -44,6 +46,7 @@ public class DialogueContainer : ScriptableObject
         _translationPreview = DialogueNodeData[0].TranslateText();
     }
 
+#if UNITY_EDITOR
     [OnOpenAsset]
     public static bool OnOpenAsset(int instanceID, int line)
     {
@@ -55,4 +58,5 @@ public class DialogueContainer : ScriptableObject
         }
         return false;
     }
+#endif
 }

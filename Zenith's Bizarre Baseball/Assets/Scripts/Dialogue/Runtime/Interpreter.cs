@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Linq;
 using System;
-using UnityEngine.WSA;
 
 public class Interpreter : MonoBehaviour
 {
@@ -54,6 +53,11 @@ public class Interpreter : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(InterpretDialogueRoutine(dialogue));
+    }
+
+    public void InterpretDialogue(DialogueContainerReference containerReference)
+    {
+        InterpretDialogue(containerReference.Dialogue);
     }
 
     IEnumerator InterpretDialogueRoutine(DialogueContainer dialogue)

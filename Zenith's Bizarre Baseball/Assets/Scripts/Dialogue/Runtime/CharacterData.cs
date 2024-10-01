@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterData", menuName = "Dialogue/CharacterData")]
@@ -18,13 +20,16 @@ public class CharacterData : ScriptableObject
         return Emotions[ExpressionKeys[0]];
     }
 
+    #if UNITY_EDITOR
     public Texture2D GetExpression(string key)
     {
         if(Emotions.ContainsKey(key)) return AssetPreview.GetAssetPreview(Emotions[key]);
         return null;
     }
+    #endif
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(CharacterData))]
 public class CharacterDataEditor : Editor
 {
@@ -58,3 +63,4 @@ public class CharacterDataEditor : Editor
         GUILayout.EndVertical();
     }
 }
+#endif

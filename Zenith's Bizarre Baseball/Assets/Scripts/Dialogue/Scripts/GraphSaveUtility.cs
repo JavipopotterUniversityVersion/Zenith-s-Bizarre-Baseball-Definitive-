@@ -1,4 +1,4 @@
-using System.Collections;
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Experimental.GraphView;
@@ -6,7 +6,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
-using UnityEngine.UI;
 
 public class GraphSaveUtility
 {
@@ -234,3 +233,5 @@ public class GraphSaveUtility
         _targetGraphView.Add(tempEdge);
     }
 }
+
+#endif

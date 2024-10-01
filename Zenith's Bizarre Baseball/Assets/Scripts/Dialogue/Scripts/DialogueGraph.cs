@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
+
+#if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
 
 public class DialogueGraph : EditorWindow
@@ -105,3 +107,6 @@ public class DialogueGraph : EditorWindow
         return DragAndDropVisualMode.Rejected;
     }
 }
+
+
+#endif

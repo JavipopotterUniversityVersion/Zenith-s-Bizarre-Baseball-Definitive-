@@ -177,7 +177,9 @@ public class Interpreter : MonoBehaviour
                 case "BREAK":
                     _next = true;
                     break;
-
+                case "PROCESS":
+                    _processor.ResultOf(commandValue, 1);
+                    break;
                 default:
                     break;
             }

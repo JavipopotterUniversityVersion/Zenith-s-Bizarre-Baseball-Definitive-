@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: ClausDefeated
   m_EditorClassIdentifier: 
   NodeLinks:
-  - BaseNodeGuid: fa922f9f-911f-41e7-b8f7-f49d3b62732c
-    BasePortIndex: 0
-    PortName: Next
-    TargetNodeGuid: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
   - BaseNodeGuid: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
     BasePortIndex: 0
     PortName: Output
@@ -93,31 +89,40 @@ MonoBehaviour:
     BasePortIndex: 0
     PortName: Output
     TargetNodeGuid: 0dda042f-7568-4878-9583-fde8cf54bc42
+  - BaseNodeGuid: fa922f9f-911f-41e7-b8f7-f49d3b62732c
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 4d51e4ef-5d86-4385-b945-5024c68161ae
+  - BaseNodeGuid: 4d51e4ef-5d86-4385-b945-5024c68161ae
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
   DialogueNodeData:
-  - rid: 1149946283741413622
-  - rid: 1149946283741413623
-  - rid: 1149946283741413624
-  - rid: 1149946283741413625
-  - rid: 1149946283741413626
-  - rid: 1149946283741413627
-  - rid: 1149946283741413628
-  - rid: 1149946283741413629
-  - rid: 1149946283741413630
-  - rid: 1149946283741413631
-  - rid: 1149946283741413632
-  - rid: 1149946283741413633
-  - rid: 1149946283741413634
-  - rid: 1149946283741413635
-  - rid: 1149946283741413636
-  - rid: 1149946283741413637
-  - rid: 1149946283741413638
-  - rid: 1149946283741413639
-  - rid: 1149946283741413640
-  - rid: 1149946283741413641
-  - rid: 1149946283741413642
-  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>Ugh,
+  - rid: 1149946283741413694
+  - rid: 1149946283741413695
+  - rid: 1149946283741413696
+  - rid: 1149946283741413697
+  - rid: 1149946283741413698
+  - rid: 1149946283741413699
+  - rid: 1149946283741413700
+  - rid: 1149946283741413701
+  - rid: 1149946283741413702
+  - rid: 1149946283741413703
+  - rid: 1149946283741413704
+  - rid: 1149946283741413705
+  - rid: 1149946283741413706
+  - rid: 1149946283741413707
+  - rid: 1149946283741413708
+  - rid: 1149946283741413709
+  - rid: 1149946283741413710
+  - rid: 1149946283741413711
+  - rid: 1149946283741413712
+  - rid: 1149946283741413713
+  - rid: 1149946283741413714
+  - rid: 1149946283741413715
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk><BREAK><ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>Ugh,
     me has ganado...<ANIMATION:Idle>@<ANIMATION:Talk>Har\xE9 lo que quieras<ANIMATION:Idle><CHOICE:Me
-    has roto la Nintendo/1,,C\xE1sate conmigo/entropy,,Paga mi deuda/money < 0>@<OPTION:Me
+    has roto la Nintendo/1,,C\xE1sate conmigo/1,,Paga mi deuda/money < 0>@<OPTION:Me
     has roto la Nintendo><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Resulta
     que estoy endeudada<ANIMATION:Idle>@<ANIMATION:Talk>Pagar\xEDas mi deuda por
     m\xED porfa?<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>\xBFC\xF3mo?
@@ -144,73 +149,76 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1149946283741413622
+    - rid: 1149946283741413694
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: fa922f9f-911f-41e7-b8f7-f49d3b62732c
         Position: {x: 100, y: 200}
         LinkedNodes:
-        - GUID: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
-          Position: {x: 186.4, y: 206.40001}
+        - GUID: 4d51e4ef-5d86-4385-b945-5024c68161ae
+          Position: {x: 186.4, y: 371.19998}
           LinkedNodes:
-          - GUID: 9014b8aa-823b-448c-bd7c-d859b355f524
-            Position: {x: 400.80002, y: 206.40001}
+          - GUID: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
+            Position: {x: 186.4, y: 206.40001}
             LinkedNodes:
-            - GUID: 7641ec23-861e-4cc5-9cdd-a34cd8af3725
-              Position: {x: 811.2, y: 346.4}
+            - GUID: 9014b8aa-823b-448c-bd7c-d859b355f524
+              Position: {x: 400.80002, y: 206.40001}
               LinkedNodes:
-              - GUID: ed8c9cc2-2df4-4ba2-81a5-20c70230ba90
-                Position: {x: 1025.6, y: 346.4}
+              - GUID: 7641ec23-861e-4cc5-9cdd-a34cd8af3725
+                Position: {x: 811.2, y: 346.4}
                 LinkedNodes:
-                - GUID: ef910f31-820e-4d19-8bf6-aa37119d1fc3
-                  Position: {x: 1240, y: 346.4}
+                - GUID: ed8c9cc2-2df4-4ba2-81a5-20c70230ba90
+                  Position: {x: 1025.6, y: 346.4}
                   LinkedNodes:
-                  - GUID: 0a4f4b7c-05d5-4de7-b6de-7a2db64e81bb
-                    Position: {x: 1454.3999, y: 346.4}
+                  - GUID: ef910f31-820e-4d19-8bf6-aa37119d1fc3
+                    Position: {x: 1240, y: 346.4}
                     LinkedNodes:
-                    - GUID: e061aa46-26f2-471f-ba14-3bcf92e8dc22
-                      Position: {x: 1668.7999, y: 346.4}
+                    - GUID: 0a4f4b7c-05d5-4de7-b6de-7a2db64e81bb
+                      Position: {x: 1454.3999, y: 346.4}
                       LinkedNodes:
-                      - GUID: e4b93d1a-010b-4286-b42b-2bb1fb131c53
-                        Position: {x: 1883.2, y: 346.4}
-                        LinkedNodes: []
-            - GUID: fa462878-7abe-415d-9fc0-c35c550bd181
-              Position: {x: 811.2, y: 206.40001}
-              LinkedNodes:
-              - GUID: 4136f478-c198-490d-b1e7-185e64200085
-                Position: {x: 1025.6, y: 181.6}
+                      - GUID: e061aa46-26f2-471f-ba14-3bcf92e8dc22
+                        Position: {x: 1668.7999, y: 346.4}
+                        LinkedNodes:
+                        - GUID: e4b93d1a-010b-4286-b42b-2bb1fb131c53
+                          Position: {x: 1883.2, y: 346.4}
+                          LinkedNodes: []
+              - GUID: fa462878-7abe-415d-9fc0-c35c550bd181
+                Position: {x: 811.2, y: 206.40001}
                 LinkedNodes:
-                - GUID: d609ab0b-5e57-47aa-a920-eb7dad593207
-                  Position: {x: 1240, y: 204.8}
+                - GUID: 4136f478-c198-490d-b1e7-185e64200085
+                  Position: {x: 1025.6, y: 181.6}
                   LinkedNodes:
-                  - GUID: de41fcbc-16cf-45ed-a48d-4a67ae929208
-                    Position: {x: 1454.3999, y: 204.8}
+                  - GUID: d609ab0b-5e57-47aa-a920-eb7dad593207
+                    Position: {x: 1240, y: 204.8}
                     LinkedNodes:
-                    - GUID: c3a177b3-e003-4591-8580-884568bc71b7
-                      Position: {x: 1668.7999, y: 156.8}
+                    - GUID: de41fcbc-16cf-45ed-a48d-4a67ae929208
+                      Position: {x: 1454.3999, y: 204.8}
                       LinkedNodes:
-                      - GUID: 0dda042f-7568-4878-9583-fde8cf54bc42
-                        Position: {x: 1883.2, y: 180}
-                        LinkedNodes: []
-            - GUID: 71acbbba-070d-4e67-bed6-336a656fe4b1
-              Position: {x: 811.2, y: 40}
-              LinkedNodes:
-              - GUID: a4756b0d-e6da-4de1-997e-6c518b07dff2
-                Position: {x: 1025.6, y: -8.000001}
+                      - GUID: c3a177b3-e003-4591-8580-884568bc71b7
+                        Position: {x: 1668.7999, y: 156.8}
+                        LinkedNodes:
+                        - GUID: 0dda042f-7568-4878-9583-fde8cf54bc42
+                          Position: {x: 1883.2, y: 180}
+                          LinkedNodes: []
+              - GUID: 71acbbba-070d-4e67-bed6-336a656fe4b1
+                Position: {x: 811.2, y: 40}
                 LinkedNodes:
-                - GUID: 9475bce7-2642-4624-8105-8577feb0a35a
-                  Position: {x: 1240, y: 64.8}
+                - GUID: a4756b0d-e6da-4de1-997e-6c518b07dff2
+                  Position: {x: 1025.6, y: -8.000001}
                   LinkedNodes:
-                  - GUID: b3155d22-c730-496f-aaa8-748dd103ec98
-                    Position: {x: 1454.3999, y: 40}
+                  - GUID: 9475bce7-2642-4624-8105-8577feb0a35a
+                    Position: {x: 1240, y: 64.8}
                     LinkedNodes:
-                    - GUID: 88615ef0-a11a-49b7-a223-67bff5aed0fe
-                      Position: {x: 1668.7999, y: -8.000001}
+                    - GUID: b3155d22-c730-496f-aaa8-748dd103ec98
+                      Position: {x: 1454.3999, y: 40}
                       LinkedNodes:
-                      - GUID: 88d882b2-69fc-40a6-9cd1-1bb9561b43da
-                        Position: {x: 1883.2, y: 40}
-                        LinkedNodes: []
-    - rid: 1149946283741413623
+                      - GUID: 88615ef0-a11a-49b7-a223-67bff5aed0fe
+                        Position: {x: 1668.7999, y: -8.000001}
+                        LinkedNodes:
+                        - GUID: 88d882b2-69fc-40a6-9cd1-1bb9561b43da
+                          Position: {x: 1883.2, y: 40}
+                          LinkedNodes: []
+    - rid: 1149946283741413695
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
@@ -279,7 +287,7 @@ MonoBehaviour:
         DialogueLines:
         - Ugh, me has ganado...
         - "Har\xE9 lo que quieras"
-    - rid: 1149946283741413624
+    - rid: 1149946283741413696
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 9014b8aa-823b-448c-bd7c-d859b355f524
@@ -343,10 +351,10 @@ MonoBehaviour:
         - ChoiceText: Me has roto la Nintendo
           Value: 1
         - ChoiceText: "C\xE1sate conmigo"
-          Value: entropy
+          Value: 1
         - ChoiceText: Paga mi deuda
           Value: money < 0
-    - rid: 1149946283741413625
+    - rid: 1149946283741413697
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: fa462878-7abe-415d-9fc0-c35c550bd181
@@ -372,7 +380,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Me has molado, c\xE1sate conmigo"
-    - rid: 1149946283741413626
+    - rid: 1149946283741413698
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 71acbbba-070d-4e67-bed6-336a656fe4b1
@@ -399,7 +407,7 @@ MonoBehaviour:
         DialogueLines:
         - Me has roto la Nintendo
         - Por eso vine a tomar venganza
-    - rid: 1149946283741413627
+    - rid: 1149946283741413699
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7641ec23-861e-4cc5-9cdd-a34cd8af3725
@@ -426,7 +434,7 @@ MonoBehaviour:
         DialogueLines:
         - Resulta que estoy endeudada
         - "Pagar\xEDas mi deuda por m\xED porfa?"
-    - rid: 1149946283741413628
+    - rid: 1149946283741413700
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ed8c9cc2-2df4-4ba2-81a5-20c70230ba90
@@ -449,7 +457,7 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - "\xBFC\xF3mo? \xBFDe cu\xE1nto es tu deuda?"
-    - rid: 1149946283741413629
+    - rid: 1149946283741413701
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ef910f31-820e-4d19-8bf6-aa37119d1fc3
@@ -469,7 +477,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - De <REF:debt> euros
-    - rid: 1149946283741413630
+    - rid: 1149946283741413702
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 0a4f4b7c-05d5-4de7-b6de-7a2db64e81bb
@@ -488,7 +496,7 @@ MonoBehaviour:
         - "\xA1\xBFCOMO?!"
         - No tengo tanto dinero
         - "Tendr\xEDa que vender toda mi colecci\xF3n de sylvanian families"
-    - rid: 1149946283741413631
+    - rid: 1149946283741413703
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: e061aa46-26f2-471f-ba14-3bcf92e8dc22
@@ -502,7 +510,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - Ese no es mi problema
-    - rid: 1149946283741413632
+    - rid: 1149946283741413704
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: e4b93d1a-010b-4286-b42b-2bb1fb131c53
@@ -513,7 +521,7 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - NOOOOOO
-    - rid: 1149946283741413633
+    - rid: 1149946283741413705
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 4136f478-c198-490d-b1e7-185e64200085
@@ -537,7 +545,7 @@ MonoBehaviour:
         DialogueLines:
         - Ah, vale... espera...
         - "\xA1\xBFQU\xC9 ACABAS DE DECIR?!"
-    - rid: 1149946283741413634
+    - rid: 1149946283741413706
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: a4756b0d-e6da-4de1-997e-6c518b07dff2
@@ -562,7 +570,7 @@ MonoBehaviour:
         - "No jodas, \xBFen serio?"
         - "No ten\xEDa ni idea"
         - "\xBFC\xF3mo puedo compensarte?"
-    - rid: 1149946283741413635
+    - rid: 1149946283741413707
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: d609ab0b-5e57-47aa-a920-eb7dad593207
@@ -582,7 +590,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Me has molado, c\xE1sate conmigo"
-    - rid: 1149946283741413636
+    - rid: 1149946283741413708
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 9475bce7-2642-4624-8105-8577feb0a35a
@@ -602,7 +610,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "\xBFTienes el Animal Crossing?"
-    - rid: 1149946283741413637
+    - rid: 1149946283741413709
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: b3155d22-c730-496f-aaa8-748dd103ec98
@@ -620,7 +628,7 @@ MonoBehaviour:
         DialogueLines:
         - "S\xED, claro"
         - Es literalmente mi juego favorito
-    - rid: 1149946283741413638
+    - rid: 1149946283741413710
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: de41fcbc-16cf-45ed-a48d-4a67ae929208
@@ -637,7 +645,7 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - "Ya lo s\xE9, pero no entiendo"
-    - rid: 1149946283741413639
+    - rid: 1149946283741413711
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 88615ef0-a11a-49b7-a223-67bff5aed0fe
@@ -652,7 +660,7 @@ MonoBehaviour:
         DialogueLines:
         - Entonces paga mi hipoteca
         - Son 20 millones de bayas
-    - rid: 1149946283741413640
+    - rid: 1149946283741413712
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: c3a177b3-e003-4591-8580-884568bc71b7
@@ -668,7 +676,7 @@ MonoBehaviour:
         - "\xBFNo entiendes?"
         - "Espera, que te lo digo en ingl\xE9s"
         - Ai laik yu, marri mi
-    - rid: 1149946283741413641
+    - rid: 1149946283741413713
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 88d882b2-69fc-40a6-9cd1-1bb9561b43da
@@ -679,7 +687,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - NOOOOOO
-    - rid: 1149946283741413642
+    - rid: 1149946283741413714
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 0dda042f-7568-4878-9583-fde8cf54bc42
@@ -691,3 +699,74 @@ MonoBehaviour:
         DialogueLines:
         - "Est\xE1 bien, ahora s\xED"
         - Acepto
+    - rid: 1149946283741413715
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 4d51e4ef-5d86-4385-b945-5024c68161ae
+        Position: {x: 186.4, y: 371.19998}
+        LinkedNodes:
+        - GUID: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
+          Position: {x: 186.4, y: 206.40001}
+          LinkedNodes:
+          - GUID: 9014b8aa-823b-448c-bd7c-d859b355f524
+            Position: {x: 400.80002, y: 206.40001}
+            LinkedNodes:
+            - GUID: 7641ec23-861e-4cc5-9cdd-a34cd8af3725
+              Position: {x: 811.2, y: 346.4}
+              LinkedNodes:
+              - GUID: ed8c9cc2-2df4-4ba2-81a5-20c70230ba90
+                Position: {x: 1025.6, y: 346.4}
+                LinkedNodes:
+                - GUID: ef910f31-820e-4d19-8bf6-aa37119d1fc3
+                  Position: {x: 1240, y: 346.4}
+                  LinkedNodes:
+                  - GUID: 0a4f4b7c-05d5-4de7-b6de-7a2db64e81bb
+                    Position: {x: 1454.3999, y: 346.4}
+                    LinkedNodes:
+                    - GUID: e061aa46-26f2-471f-ba14-3bcf92e8dc22
+                      Position: {x: 1668.7999, y: 346.4}
+                      LinkedNodes:
+                      - GUID: e4b93d1a-010b-4286-b42b-2bb1fb131c53
+                        Position: {x: 1883.2, y: 346.4}
+                        LinkedNodes: []
+            - GUID: fa462878-7abe-415d-9fc0-c35c550bd181
+              Position: {x: 811.2, y: 206.40001}
+              LinkedNodes:
+              - GUID: 4136f478-c198-490d-b1e7-185e64200085
+                Position: {x: 1025.6, y: 181.6}
+                LinkedNodes:
+                - GUID: d609ab0b-5e57-47aa-a920-eb7dad593207
+                  Position: {x: 1240, y: 204.8}
+                  LinkedNodes:
+                  - GUID: de41fcbc-16cf-45ed-a48d-4a67ae929208
+                    Position: {x: 1454.3999, y: 204.8}
+                    LinkedNodes:
+                    - GUID: c3a177b3-e003-4591-8580-884568bc71b7
+                      Position: {x: 1668.7999, y: 156.8}
+                      LinkedNodes:
+                      - GUID: 0dda042f-7568-4878-9583-fde8cf54bc42
+                        Position: {x: 1883.2, y: 180}
+                        LinkedNodes: []
+            - GUID: 71acbbba-070d-4e67-bed6-336a656fe4b1
+              Position: {x: 811.2, y: 40}
+              LinkedNodes:
+              - GUID: a4756b0d-e6da-4de1-997e-6c518b07dff2
+                Position: {x: 1025.6, y: -8.000001}
+                LinkedNodes:
+                - GUID: 9475bce7-2642-4624-8105-8577feb0a35a
+                  Position: {x: 1240, y: 64.8}
+                  LinkedNodes:
+                  - GUID: b3155d22-c730-496f-aaa8-748dd103ec98
+                    Position: {x: 1454.3999, y: 40}
+                    LinkedNodes:
+                    - GUID: 88615ef0-a11a-49b7-a223-67bff5aed0fe
+                      Position: {x: 1668.7999, y: -8.000001}
+                      LinkedNodes:
+                      - GUID: 88d882b2-69fc-40a6-9cd1-1bb9561b43da
+                        Position: {x: 1883.2, y: 40}
+                        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - <BREAK>

@@ -125,7 +125,7 @@ public class ChoiceNodeData : NodeData
 
         value += ">@";
 
-        for(int i = 0; i < LinkedNodes.Count; i++) value += $"<OPTION:{Choices[i].ChoiceText}>" + LinkedNodes[i].TranslateText();
+        for(int i = 0; i < LinkedNodes.Count; i++) value += $"@<OPTION:{Choices[i].ChoiceText}>" + LinkedNodes[i].TranslateText();
 
         return value;
     }

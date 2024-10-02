@@ -12,9 +12,180 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
   m_Name: ClausEncounter
   m_EditorClassIdentifier: 
-  NodeLinks: []
-  DialogueNodeData: []
-  _translationPreview: 
+  NodeLinks:
+  - BaseNodeGuid: fa922f9f-911f-41e7-b8f7-f49d3b62732c
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 8d6b47da-02f2-4816-a4b4-d29166797974
+  - BaseNodeGuid: 8d6b47da-02f2-4816-a4b4-d29166797974
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
+  - BaseNodeGuid: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 52100164-14e9-4228-b20a-c3a93334df57
+  - BaseNodeGuid: 52100164-14e9-4228-b20a-c3a93334df57
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
+  - BaseNodeGuid: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 526a22c4-727f-4bc6-80fe-9ce860b29502
+  - BaseNodeGuid: 526a22c4-727f-4bc6-80fe-9ce860b29502
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+  DialogueNodeData:
+  - rid: 1149946283741413643
+  - rid: 1149946283741413644
+  - rid: 1149946283741413645
+  - rid: 1149946283741413646
+  - rid: 1149946283741413647
+  - rid: 1149946283741413648
+  - rid: 1149946283741413649
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>TUUUUUUU<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>\xBFYo?<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Pagar\xE1s
+    por lo que has hecho<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>Sinceramente
+    no s\xE9 de que co\xF1o me est\xE1s hablando<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Te
+    voy a dar una paliza<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>\xBFEh?\xBFMe
+    vas a dar una paliza?<ANIMATION:Idle>@<ANIMATION:Talk>Adelante, intent\xE1lo<ANIMATION:Idle><END>"
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1149946283741413643
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: fa922f9f-911f-41e7-b8f7-f49d3b62732c
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 8d6b47da-02f2-4816-a4b4-d29166797974
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes:
+            - GUID: 52100164-14e9-4228-b20a-c3a93334df57
+              Position: {x: 615.2, y: 200}
+              LinkedNodes:
+              - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
+                Position: {x: 829.60004, y: 200}
+                LinkedNodes:
+                - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
+                  Position: {x: 1044, y: 200}
+                  LinkedNodes:
+                  - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+                    Position: {x: 1258.3999, y: 200}
+                    LinkedNodes: []
+    - rid: 1149946283741413644
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 8d6b47da-02f2-4816-a4b4-d29166797974
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 52100164-14e9-4228-b20a-c3a93334df57
+            Position: {x: 615.2, y: 200}
+            LinkedNodes:
+            - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
+              Position: {x: 829.60004, y: 200}
+              LinkedNodes:
+              - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
+                Position: {x: 1044, y: 200}
+                LinkedNodes:
+                - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+                  Position: {x: 1258.3999, y: 200}
+                  LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - TUUUUUUU
+    - rid: 1149946283741413645
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 52100164-14e9-4228-b20a-c3a93334df57
+          Position: {x: 615.2, y: 200}
+          LinkedNodes:
+          - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
+            Position: {x: 829.60004, y: 200}
+            LinkedNodes:
+            - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
+              Position: {x: 1044, y: 200}
+              LinkedNodes:
+              - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+                Position: {x: 1258.3999, y: 200}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "\xBFYo?"
+    - rid: 1149946283741413646
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 52100164-14e9-4228-b20a-c3a93334df57
+        Position: {x: 615.2, y: 200}
+        LinkedNodes:
+        - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
+          Position: {x: 829.60004, y: 200}
+          LinkedNodes:
+          - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
+            Position: {x: 1044, y: 200}
+            LinkedNodes:
+            - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+              Position: {x: 1258.3999, y: 200}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "Pagar\xE1s por lo que has hecho"
+    - rid: 1149946283741413647
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
+        Position: {x: 829.60004, y: 200}
+        LinkedNodes:
+        - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
+          Position: {x: 1044, y: 200}
+          LinkedNodes:
+          - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+            Position: {x: 1258.3999, y: 200}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "Sinceramente no s\xE9 de que co\xF1o me est\xE1s hablando"
+    - rid: 1149946283741413648
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
+        Position: {x: 1044, y: 200}
+        LinkedNodes:
+        - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+          Position: {x: 1258.3999, y: 200}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Te voy a dar una paliza
+    - rid: 1149946283741413649
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+        Position: {x: 1258.3999, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "\xBFEh?\xBFMe vas a dar una paliza?"
+        - "Adelante, intent\xE1lo"

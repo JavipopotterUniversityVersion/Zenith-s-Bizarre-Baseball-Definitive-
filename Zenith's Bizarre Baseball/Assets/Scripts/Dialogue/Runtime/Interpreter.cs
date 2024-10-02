@@ -18,6 +18,7 @@ public class Interpreter : MonoBehaviour
     [SerializeField] InputActionReference _nextAction;
     [SerializeField] GameObject _canvas;
     [SerializeField] ObjectProcessor _processor;
+    [SerializeField] StringProcessor _stringRefs;
     [SerializeField] DialogueCaster _caster;
 
     Option[] _options;
@@ -184,8 +185,13 @@ public class Interpreter : MonoBehaviour
                 case "BREAK":
                     _next = true;
                     break;
+
                 case "PROCESS":
                     _processor.ResultOf(commandValue, 1);
+                    break;
+
+                case "REF":
+                    _dialogueText.text = _dialogueText.text.Replace($"<{command}>", _stringRefs.Process(commandValue));
                     break;
                 default:
                     break;

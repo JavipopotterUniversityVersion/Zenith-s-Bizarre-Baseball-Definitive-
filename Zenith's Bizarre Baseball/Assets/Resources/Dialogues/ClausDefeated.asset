@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
-  m_Name: ClausDefeated
+  m_Name: 
   m_EditorClassIdentifier: 
   NodeLinks:
   - BaseNodeGuid: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
@@ -98,31 +98,31 @@ MonoBehaviour:
     PortName: Output
     TargetNodeGuid: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
   DialogueNodeData:
-  - rid: 1149946283741413694
-  - rid: 1149946283741413695
-  - rid: 1149946283741413696
-  - rid: 1149946283741413697
-  - rid: 1149946283741413698
-  - rid: 1149946283741413699
-  - rid: 1149946283741413700
-  - rid: 1149946283741413701
-  - rid: 1149946283741413702
-  - rid: 1149946283741413703
-  - rid: 1149946283741413704
-  - rid: 1149946283741413705
-  - rid: 1149946283741413706
-  - rid: 1149946283741413707
-  - rid: 1149946283741413708
-  - rid: 1149946283741413709
-  - rid: 1149946283741413710
-  - rid: 1149946283741413711
-  - rid: 1149946283741413712
-  - rid: 1149946283741413713
-  - rid: 1149946283741413714
-  - rid: 1149946283741413715
+  - rid: 1149946283741413881
+  - rid: 1149946283741413882
+  - rid: 1149946283741413883
+  - rid: 1149946283741413884
+  - rid: 1149946283741413885
+  - rid: 1149946283741413886
+  - rid: 1149946283741413887
+  - rid: 1149946283741413888
+  - rid: 1149946283741413889
+  - rid: 1149946283741413890
+  - rid: 1149946283741413891
+  - rid: 1149946283741413892
+  - rid: 1149946283741413893
+  - rid: 1149946283741413894
+  - rid: 1149946283741413895
+  - rid: 1149946283741413896
+  - rid: 1149946283741413897
+  - rid: 1149946283741413898
+  - rid: 1149946283741413899
+  - rid: 1149946283741413900
+  - rid: 1149946283741413901
+  - rid: 1149946283741413902
   _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk><BREAK><ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>Ugh,
     me has ganado...<ANIMATION:Idle>@<ANIMATION:Talk>Har\xE9 lo que quieras<ANIMATION:Idle><CHOICE:Me
-    has roto la Nintendo/1,,C\xE1sate conmigo/1,,Paga mi deuda/money < 0>@<OPTION:Me
+    has roto la Nintendo/1,,C\xE1sate conmigo/1,,Paga mi deuda/money < 0>@@<OPTION:Me
     has roto la Nintendo><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Resulta
     que estoy endeudada<ANIMATION:Idle>@<ANIMATION:Talk>Pagar\xEDas mi deuda por
     m\xED porfa?<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>\xBFC\xF3mo?
@@ -130,7 +130,7 @@ MonoBehaviour:
     <REF:debt> euros<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>\xA1\xBFCOMO?!<ANIMATION:Idle>@<ANIMATION:Talk>No
     tengo tanto dinero<ANIMATION:Idle>@<ANIMATION:Talk>Tendr\xEDa que vender toda
     mi colecci\xF3n de sylvanian families<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Ese
-    no es mi problema<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>NOOOOOO<ANIMATION:Idle><END><OPTION:C\xE1sate
+    no es mi problema<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>NOOOOOO<ANIMATION:Idle><END>@<OPTION:C\xE1sate
     conmigo><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Me has molado,
     c\xE1sate conmigo<ANIMATION:Idle>@<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Ah,
     vale... espera...<ANIMATION:Idle>@<ANIMATION:Talk>\xA1\xBFQU\xC9 ACABAS DE DECIR?!<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Me
@@ -138,7 +138,7 @@ MonoBehaviour:
     lo s\xE9, pero no entiendo<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\xBFNo
     entiendes?<ANIMATION:Idle>@<ANIMATION:Talk>Espera, que te lo digo en ingl\xE9s<ANIMATION:Idle>@<ANIMATION:Talk>Ai
     laik yu, marri mi<ANIMATION:Idle>@<CHARACTER:ClausasFirst><EMOTION:default><ANIMATION:Talk>Est\xE1
-    bien, ahora s\xED<ANIMATION:Idle>@<ANIMATION:Talk>Acepto<ANIMATION:Idle><END><OPTION:Paga
+    bien, ahora s\xED<ANIMATION:Idle>@<ANIMATION:Talk>Acepto<ANIMATION:Idle><END>@<OPTION:Paga
     mi deuda><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Me has roto
     la Nintendo<ANIMATION:Idle>@<ANIMATION:Talk>Por eso vine a tomar venganza<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>No
     jodas, \xBFen serio?<ANIMATION:Idle>@<ANIMATION:Talk>No ten\xEDa ni idea<ANIMATION:Idle>@<ANIMATION:Talk>\xBFC\xF3mo
@@ -149,7 +149,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1149946283741413694
+    - rid: 1149946283741413881
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: fa922f9f-911f-41e7-b8f7-f49d3b62732c
@@ -218,7 +218,7 @@ MonoBehaviour:
                         - GUID: 88d882b2-69fc-40a6-9cd1-1bb9561b43da
                           Position: {x: 1883.2, y: 40}
                           LinkedNodes: []
-    - rid: 1149946283741413695
+    - rid: 1149946283741413882
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 116a3903-ceca-4c75-ab3d-2b1dfde37b30
@@ -287,7 +287,7 @@ MonoBehaviour:
         DialogueLines:
         - Ugh, me has ganado...
         - "Har\xE9 lo que quieras"
-    - rid: 1149946283741413696
+    - rid: 1149946283741413883
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 9014b8aa-823b-448c-bd7c-d859b355f524
@@ -354,7 +354,7 @@ MonoBehaviour:
           Value: 1
         - ChoiceText: Paga mi deuda
           Value: money < 0
-    - rid: 1149946283741413697
+    - rid: 1149946283741413884
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: fa462878-7abe-415d-9fc0-c35c550bd181
@@ -380,7 +380,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Me has molado, c\xE1sate conmigo"
-    - rid: 1149946283741413698
+    - rid: 1149946283741413885
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 71acbbba-070d-4e67-bed6-336a656fe4b1
@@ -407,7 +407,7 @@ MonoBehaviour:
         DialogueLines:
         - Me has roto la Nintendo
         - Por eso vine a tomar venganza
-    - rid: 1149946283741413699
+    - rid: 1149946283741413886
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7641ec23-861e-4cc5-9cdd-a34cd8af3725
@@ -434,7 +434,7 @@ MonoBehaviour:
         DialogueLines:
         - Resulta que estoy endeudada
         - "Pagar\xEDas mi deuda por m\xED porfa?"
-    - rid: 1149946283741413700
+    - rid: 1149946283741413887
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ed8c9cc2-2df4-4ba2-81a5-20c70230ba90
@@ -457,7 +457,7 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - "\xBFC\xF3mo? \xBFDe cu\xE1nto es tu deuda?"
-    - rid: 1149946283741413701
+    - rid: 1149946283741413888
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ef910f31-820e-4d19-8bf6-aa37119d1fc3
@@ -477,7 +477,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - De <REF:debt> euros
-    - rid: 1149946283741413702
+    - rid: 1149946283741413889
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 0a4f4b7c-05d5-4de7-b6de-7a2db64e81bb
@@ -496,7 +496,7 @@ MonoBehaviour:
         - "\xA1\xBFCOMO?!"
         - No tengo tanto dinero
         - "Tendr\xEDa que vender toda mi colecci\xF3n de sylvanian families"
-    - rid: 1149946283741413703
+    - rid: 1149946283741413890
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: e061aa46-26f2-471f-ba14-3bcf92e8dc22
@@ -510,7 +510,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - Ese no es mi problema
-    - rid: 1149946283741413704
+    - rid: 1149946283741413891
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: e4b93d1a-010b-4286-b42b-2bb1fb131c53
@@ -521,7 +521,7 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - NOOOOOO
-    - rid: 1149946283741413705
+    - rid: 1149946283741413892
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 4136f478-c198-490d-b1e7-185e64200085
@@ -545,7 +545,7 @@ MonoBehaviour:
         DialogueLines:
         - Ah, vale... espera...
         - "\xA1\xBFQU\xC9 ACABAS DE DECIR?!"
-    - rid: 1149946283741413706
+    - rid: 1149946283741413893
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: a4756b0d-e6da-4de1-997e-6c518b07dff2
@@ -570,7 +570,7 @@ MonoBehaviour:
         - "No jodas, \xBFen serio?"
         - "No ten\xEDa ni idea"
         - "\xBFC\xF3mo puedo compensarte?"
-    - rid: 1149946283741413707
+    - rid: 1149946283741413894
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: d609ab0b-5e57-47aa-a920-eb7dad593207
@@ -590,7 +590,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Me has molado, c\xE1sate conmigo"
-    - rid: 1149946283741413708
+    - rid: 1149946283741413895
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 9475bce7-2642-4624-8105-8577feb0a35a
@@ -610,7 +610,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "\xBFTienes el Animal Crossing?"
-    - rid: 1149946283741413709
+    - rid: 1149946283741413896
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: b3155d22-c730-496f-aaa8-748dd103ec98
@@ -628,7 +628,7 @@ MonoBehaviour:
         DialogueLines:
         - "S\xED, claro"
         - Es literalmente mi juego favorito
-    - rid: 1149946283741413710
+    - rid: 1149946283741413897
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: de41fcbc-16cf-45ed-a48d-4a67ae929208
@@ -645,7 +645,7 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - "Ya lo s\xE9, pero no entiendo"
-    - rid: 1149946283741413711
+    - rid: 1149946283741413898
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 88615ef0-a11a-49b7-a223-67bff5aed0fe
@@ -660,7 +660,7 @@ MonoBehaviour:
         DialogueLines:
         - Entonces paga mi hipoteca
         - Son 20 millones de bayas
-    - rid: 1149946283741413712
+    - rid: 1149946283741413899
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: c3a177b3-e003-4591-8580-884568bc71b7
@@ -676,7 +676,7 @@ MonoBehaviour:
         - "\xBFNo entiendes?"
         - "Espera, que te lo digo en ingl\xE9s"
         - Ai laik yu, marri mi
-    - rid: 1149946283741413713
+    - rid: 1149946283741413900
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 88d882b2-69fc-40a6-9cd1-1bb9561b43da
@@ -687,7 +687,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - NOOOOOO
-    - rid: 1149946283741413714
+    - rid: 1149946283741413901
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 0dda042f-7568-4878-9583-fde8cf54bc42
@@ -699,7 +699,7 @@ MonoBehaviour:
         DialogueLines:
         - "Est\xE1 bien, ahora s\xED"
         - Acepto
-    - rid: 1149946283741413715
+    - rid: 1149946283741413902
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 4d51e4ef-5d86-4385-b945-5024c68161ae

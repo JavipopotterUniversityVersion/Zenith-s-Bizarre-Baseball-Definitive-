@@ -28,6 +28,7 @@ public class GraphSaveUtility
         if(!Edges.Any()) return;
 
         DialogueContainer dialogueContainer = ScriptableObject.CreateInstance<DialogueContainer>();
+        dialogueContainer.name = container.name;
 
         dialogueContainer.NodeLinks.Clear();
         dialogueContainer.DialogueNodeData.Clear();
@@ -136,7 +137,7 @@ public class GraphSaveUtility
 
         dialogueContainer.LinkNodes();
 
-        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Resources/Dialogues/{container.name}.asset");
+        EditorUtility.CopySerialized(dialogueContainer, container);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }

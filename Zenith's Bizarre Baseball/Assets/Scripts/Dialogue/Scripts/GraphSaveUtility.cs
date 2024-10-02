@@ -23,9 +23,11 @@ public class GraphSaveUtility
         };
     }
 
-    public void SaveGraph(DialogueContainer dialogueContainer)
+    public void SaveGraph(DialogueContainer container)
     {
         if(!Edges.Any()) return;
+
+        DialogueContainer dialogueContainer = ScriptableObject.CreateInstance<DialogueContainer>();
 
         dialogueContainer.NodeLinks.Clear();
         dialogueContainer.DialogueNodeData.Clear();
@@ -133,7 +135,10 @@ public class GraphSaveUtility
         }
 
         dialogueContainer.LinkNodes();
+
+        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Resources/Dialogues/{container.name}.asset");
         AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
     }
 
     public void LoadGraph(DialogueContainer container)

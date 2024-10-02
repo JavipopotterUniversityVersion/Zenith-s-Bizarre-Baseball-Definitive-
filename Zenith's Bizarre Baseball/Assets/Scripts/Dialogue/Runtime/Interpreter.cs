@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Linq;
 using System;
+using UnityEngine.Events;
 
 public class Interpreter : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class Interpreter : MonoBehaviour
     }
     bool _next;
 
+    [SerializeField] UnityEvent onStartDialogue;
+    [SerializeField] UnityEvent onEndDialogue;
+
     private void Awake() 
     {
         _caster.onStartDialogue.AddListener(InterpretDialogue);
@@ -51,6 +55,7 @@ public class Interpreter : MonoBehaviour
 
     public void InterpretDialogue(DialogueContainer dialogue)
     {
+        onStartDialogue.Invoke();
         StopAllCoroutines();
         StartCoroutine(InterpretDialogueRoutine(dialogue));
     }
@@ -102,6 +107,8 @@ public class Interpreter : MonoBehaviour
         _nextAction.action.performed -= Next;
         _nextAction.action.Disable();
         _canvas.SetActive(false);
+
+        onEndDialogue.Invoke();
     }
 
     void Next(InputAction.CallbackContext context) => _next = true;

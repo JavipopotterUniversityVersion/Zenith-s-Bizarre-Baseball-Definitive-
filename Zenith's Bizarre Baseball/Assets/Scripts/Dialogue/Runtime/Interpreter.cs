@@ -16,6 +16,7 @@ public class Interpreter : MonoBehaviour
     [SerializeField] Image _backgroundImage;
     [SerializeField] CharacterRefs[] _characters = new CharacterRefs[2];
     [SerializeField] InputActionReference _nextAction;
+    [SerializeField] InputActionReference _skipAction;
     [SerializeField] GameObject _canvas;
     [SerializeField] ObjectProcessor _processor;
     [SerializeField] StringProcessor _stringRefs;
@@ -39,9 +40,11 @@ public class Interpreter : MonoBehaviour
         }
     }
     bool _next;
+    bool _skip;
 
     [SerializeField] UnityEvent onStartDialogue;
     [SerializeField] UnityEvent onEndDialogue;
+    [SerializeField] AudioPlayer _beepSound;
 
     private void Awake() 
     {
@@ -71,12 +74,18 @@ public class Interpreter : MonoBehaviour
         string translation = dialogue.Translation;
         string[] lines = translation.Split('@');
 
-        bool skip = false;
-        bool endDialogue = false;
+        lineIndex = 0;
+        _lastCharacterIndex = 0;
 
+        bool endDialogue = false;
         _canvas.SetActive(true);
+
+        _skip = false;
+
         _nextAction.action.Enable();
         _nextAction.action.performed += Next;
+        _skipAction.action.Enable();
+        _skipAction.action.performed += Skip;
 
         while (lineIndex < lines.Length && !endDialogue)
         {
@@ -91,28 +100,50 @@ public class Interpreter : MonoBehaviour
             {
                 CheckCommands(ref charIndex, ref endDialogue, ref lineIndex, lines);
 
-                if(CheckSkip(skip, line)) charIndex = line.Length;
-                else charIndex++;
+                if(CheckNext(_next))
+                {
+                    _dialogueText.maxVisibleCharacters = _dialogueText.text.Length;
+                    while(charIndex < _dialogueText.text.Length)
+                    {
+                        CheckCommands(ref charIndex, ref endDialogue, ref lineIndex, lines);
+                        charIndex++;
+                    }
+                    break;
+                }
+                else 
+                charIndex++;
+
+                _beepSound.Play();
 
                 _dialogueText.maxVisibleCharacters = charIndex;
 
-                yield return new WaitForSeconds(0.02f);
+                if(!_skip) yield return new WaitForSeconds(0.02f);
+                else yield return new WaitForEndOfFrame();
             }
 
             if(WaitForOption) while(WaitForOption) yield return null;
-            else while(!CheckNext(_next)) yield return null;
+            else while(!CheckNext(_next) && !_skip) yield return null;
 
             lineIndex++;
         }
 
         _nextAction.action.performed -= Next;
         _nextAction.action.Disable();
+        _skipAction.action.performed -= Next;
+        _skipAction.action.Disable();
+
         _canvas.SetActive(false);
 
         onEndDialogue.Invoke();
     }
 
     void Next(InputAction.CallbackContext context) => _next = true;
+    void Skip(InputAction.CallbackContext context)
+    {
+        _skip = true;
+        _next = false;
+    }
+
     bool CheckNext(bool next)
     {
         if (next)
@@ -154,6 +185,7 @@ public class Interpreter : MonoBehaviour
                     _lastCharacterIndex = (int)Enum.Parse(typeof(CharacterIndex), commandValue.Split("as")[1]);
                     CharacterData character = _currentCharacter.SetCharacter(commandValue.Split("as")[0]);
                     _nameText.text = character.CharacterName;
+                    _beepSound = character.Voice;
                     break;
 
                 case "EMOTION":
@@ -204,6 +236,8 @@ public class Interpreter : MonoBehaviour
         WaitForOption = true;
         int optionObjectIndex = 0;
 
+        if(_skip) _skip = false;
+
         for (int i = 0; i < options.Length; i++)
         {
             string option = options[i];
@@ -220,6 +254,9 @@ public class Interpreter : MonoBehaviour
                 optionObjectIndex++;
             }
         }
+
+        _options[0].GetComponent<CustomButton>().Select();
+
     }
 
     public void SelectOption(int index)
@@ -234,17 +271,6 @@ public class Interpreter : MonoBehaviour
         int lineToCheck = 0;
         while (lineToCheck < lines.Length && !lines[lineToCheck].Contains($"<LABEL:{commandValue}>")) lineToCheck++;
         nextLineIndex = lineToCheck - 1;
-    }
-
-    bool CheckSkip(bool skip, string line)
-    {
-        if (skip)
-        {
-            _dialogueText.text = line;
-            skip = false;
-        }
-
-        return skip;
     }
 
     [Serializable] class CharacterRefs

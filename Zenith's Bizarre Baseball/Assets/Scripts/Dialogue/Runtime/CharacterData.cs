@@ -12,7 +12,7 @@ public class CharacterData : ScriptableObject
     public string CharacterName;
     public SerializableDictionary<string, UnityEngine.Sprite> Emotions;
     public string[] ExpressionKeys => Emotions.Keys.ToArray();
-    public AudioPlayer CharacterVoice;
+    public AudioPlayer Voice;
 
     public UnityEngine.Sprite GetEmotion(string key)
     {

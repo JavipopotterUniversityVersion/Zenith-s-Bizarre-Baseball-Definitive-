@@ -31,16 +31,11 @@ public class DialogueGraph : EditorWindow
         ConstructGraphView();
         GenerateToolBar();
         CreateMinimap();
-
-        var window = GetWindow<DialogueGraph>();
-
-        DragAndDrop.AddDropHandler(DropHandler);
     }
 
     private void OnDisable()
     {
         rootVisualElement.Remove(_graphView);
-        DragAndDrop.RemoveDropHandler(DropHandler);
     }
 
     private void ConstructGraphView()
@@ -88,23 +83,6 @@ public class DialogueGraph : EditorWindow
         {
             saveUtility.LoadGraph(container);
         }
-    }
-
-    DragAndDropVisualMode DropHandler(int id, string path, bool perform)
-    {
-        if (DragAndDrop.objectReferences.Length > 1) return DragAndDropVisualMode.Rejected;
-
-        if (perform && DragAndDrop.objectReferences[0] is CharacterData)
-        {
-            _graphView.GenerateDialogueNode("Dialogue", null, (CharacterData) DragAndDrop.objectReferences[0]);
-            return DragAndDropVisualMode.Link;
-        }
-        else if(!perform)
-        {
-            return DragAndDropVisualMode.Move;
-        }
-
-        return DragAndDropVisualMode.Rejected;
     }
 }
 

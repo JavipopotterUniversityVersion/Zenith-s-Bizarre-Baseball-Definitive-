@@ -1,0 +1,313 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -V-ThirdLaw_Dialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 0baca6ef-f30a-47c4-b690-0ae3ecbab44b
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: b4549f57-445c-4429-a855-ea1ede9008ee
+  - BaseNodeGuid: b4549f57-445c-4429-a855-ea1ede9008ee
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: b37aa205-03eb-465c-88c7-f389bec881c6
+  - BaseNodeGuid: 0f6343d9-08d0-46d4-84ed-09435ec1a862
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: ca281a45-fa09-4615-a991-56aeb3329e0d
+  - BaseNodeGuid: b37aa205-03eb-465c-88c7-f389bec881c6
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: bc1a5584-5c9a-47b2-aed5-44640f296988
+  - BaseNodeGuid: bc1a5584-5c9a-47b2-aed5-44640f296988
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: b12ec4c5-d6e0-4237-b3d2-791a2bd05ca3
+  - BaseNodeGuid: b37aa205-03eb-465c-88c7-f389bec881c6
+    BasePortIndex: 1
+    PortName: out
+    TargetNodeGuid: 2c7131a5-788e-4adc-b137-69c727cac682
+  - BaseNodeGuid: 2c7131a5-788e-4adc-b137-69c727cac682
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 0f6343d9-08d0-46d4-84ed-09435ec1a862
+  - BaseNodeGuid: ca281a45-fa09-4615-a991-56aeb3329e0d
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: f37f46ff-b258-4738-adca-5c078db20d11
+  - BaseNodeGuid: b12ec4c5-d6e0-4237-b3d2-791a2bd05ca3
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+  - BaseNodeGuid: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 5002eb23-3282-4a21-9c3a-573104f82c7e
+  DialogueNodeData:
+  - rid: 1149946283741414151
+  - rid: 1149946283741414152
+  - rid: 1149946283741414153
+  - rid: 1149946283741414154
+  - rid: 1149946283741414155
+  - rid: 1149946283741414156
+  - rid: 1149946283741414157
+  - rid: 1149946283741414158
+  - rid: 1149946283741414159
+  - rid: 1149946283741414160
+  - rid: 1149946283741414161
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\"No
+    importa cu\xE1nto lo intentes, el fr\xEDo m\xE1s profundo siempre estar\xE1 fuera
+    de tu alcance, como si el invierno mismo guardara su secreto m\xE1s helado.\"<ANIMATION:Idle>@<ANIMATION:Talk>Ugh,
+    esto suena muy pretencioso<ANIMATION:Idle>@<ANIMATION:Talk>\xBFQu\xE9 significar\xE1?<ANIMATION:Idle><CHOICE:No
+    s\xE9, est\xE1 guapo/1,,Parece que habla sobre algo inalcanzable/1>@@<OPTION:No
+    s\xE9, est\xE1 guapo><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\xBFGuapo?<ANIMATION:Idle>@<ANIMATION:Talk>No
+    ayudas, piensa m\xE1s<ANIMATION:Idle><CHOICE:Parece que habla sobre algo inalcanzable./1>@@<OPTION:Parece
+    que habla sobre algo inalcanzable.><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Hmm...<ANIMATION:Idle><GOTO:NEXT>@@<OPTION:Parece
+    que habla sobre algo inalcanzable><LABEL:NEXT><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>No
+    no no, no creo<ANIMATION:Idle>@<ANIMATION:Talk>D\xE9jame pensar...<ANIMATION:Idle>@<ANIMATION:Talk>Ah,
+    \xA1ya s\xE9!<ANIMATION:Idle>@<ANIMATION:Talk>Parece que habla sobre algo inalcanzable<ANIMATION:Idle><CHOICE:\xA1Es
+    verdad!/1>@@<OPTION:\xA1Es verdad!><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\xBFHas
+    visto?<ANIMATION:Idle>@<ANIMATION:Talk>Se me dan especialmente bien los acertijos<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946283741414151
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 0baca6ef-f30a-47c4-b690-0ae3ecbab44b
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: b4549f57-445c-4429-a855-ea1ede9008ee
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: b37aa205-03eb-465c-88c7-f389bec881c6
+            Position: {x: 400.80002, y: 208.8}
+            LinkedNodes:
+            - GUID: bc1a5584-5c9a-47b2-aed5-44640f296988
+              Position: {x: 909.60004, y: 106.399994}
+              LinkedNodes:
+              - GUID: b12ec4c5-d6e0-4237-b3d2-791a2bd05ca3
+                Position: {x: 1124.7999, y: 106.399994}
+                LinkedNodes:
+                - GUID: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+                  Position: {x: 1636.7999, y: 109.600006}
+                  LinkedNodes:
+                  - GUID: 5002eb23-3282-4a21-9c3a-573104f82c7e
+                    Position: {x: 1851.2, y: 109.600006}
+                    LinkedNodes: []
+            - GUID: 2c7131a5-788e-4adc-b137-69c727cac682
+              Position: {x: 773.60004, y: 309.59998}
+              LinkedNodes:
+              - GUID: 0f6343d9-08d0-46d4-84ed-09435ec1a862
+                Position: {x: 909.60004, y: 271.19998}
+                LinkedNodes:
+                - GUID: ca281a45-fa09-4615-a991-56aeb3329e0d
+                  Position: {x: 1124, y: 271.19998}
+                  LinkedNodes:
+                  - GUID: f37f46ff-b258-4738-adca-5c078db20d11
+                    Position: {x: 1534.3999, y: 271.19998}
+                    LinkedNodes: []
+    - rid: 1149946283741414152
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: b4549f57-445c-4429-a855-ea1ede9008ee
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: b37aa205-03eb-465c-88c7-f389bec881c6
+          Position: {x: 400.80002, y: 208.8}
+          LinkedNodes:
+          - GUID: bc1a5584-5c9a-47b2-aed5-44640f296988
+            Position: {x: 909.60004, y: 106.399994}
+            LinkedNodes:
+            - GUID: b12ec4c5-d6e0-4237-b3d2-791a2bd05ca3
+              Position: {x: 1124.7999, y: 106.399994}
+              LinkedNodes:
+              - GUID: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+                Position: {x: 1636.7999, y: 109.600006}
+                LinkedNodes:
+                - GUID: 5002eb23-3282-4a21-9c3a-573104f82c7e
+                  Position: {x: 1851.2, y: 109.600006}
+                  LinkedNodes: []
+          - GUID: 2c7131a5-788e-4adc-b137-69c727cac682
+            Position: {x: 773.60004, y: 309.59998}
+            LinkedNodes:
+            - GUID: 0f6343d9-08d0-46d4-84ed-09435ec1a862
+              Position: {x: 909.60004, y: 271.19998}
+              LinkedNodes:
+              - GUID: ca281a45-fa09-4615-a991-56aeb3329e0d
+                Position: {x: 1124, y: 271.19998}
+                LinkedNodes:
+                - GUID: f37f46ff-b258-4738-adca-5c078db20d11
+                  Position: {x: 1534.3999, y: 271.19998}
+                  LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "\"No importa cu\xE1nto lo intentes, el fr\xEDo m\xE1s profundo siempre
+          estar\xE1 fuera de tu alcance, como si el invierno mismo guardara su secreto
+          m\xE1s helado.\""
+        - Ugh, esto suena muy pretencioso
+        - "\xBFQu\xE9 significar\xE1?"
+    - rid: 1149946283741414153
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 0f6343d9-08d0-46d4-84ed-09435ec1a862
+        Position: {x: 909.60004, y: 271.19998}
+        LinkedNodes:
+        - GUID: ca281a45-fa09-4615-a991-56aeb3329e0d
+          Position: {x: 1124, y: 271.19998}
+          LinkedNodes:
+          - GUID: f37f46ff-b258-4738-adca-5c078db20d11
+            Position: {x: 1534.3999, y: 271.19998}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - No no no, no creo
+        - "D\xE9jame pensar..."
+        - "Ah, \xA1ya s\xE9!"
+        - Parece que habla sobre algo inalcanzable
+    - rid: 1149946283741414154
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: b37aa205-03eb-465c-88c7-f389bec881c6
+        Position: {x: 400.80002, y: 208.8}
+        LinkedNodes:
+        - GUID: bc1a5584-5c9a-47b2-aed5-44640f296988
+          Position: {x: 909.60004, y: 106.399994}
+          LinkedNodes:
+          - GUID: b12ec4c5-d6e0-4237-b3d2-791a2bd05ca3
+            Position: {x: 1124.7999, y: 106.399994}
+            LinkedNodes:
+            - GUID: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+              Position: {x: 1636.7999, y: 109.600006}
+              LinkedNodes:
+              - GUID: 5002eb23-3282-4a21-9c3a-573104f82c7e
+                Position: {x: 1851.2, y: 109.600006}
+                LinkedNodes: []
+        - GUID: 2c7131a5-788e-4adc-b137-69c727cac682
+          Position: {x: 773.60004, y: 309.59998}
+          LinkedNodes:
+          - GUID: 0f6343d9-08d0-46d4-84ed-09435ec1a862
+            Position: {x: 909.60004, y: 271.19998}
+            LinkedNodes:
+            - GUID: ca281a45-fa09-4615-a991-56aeb3329e0d
+              Position: {x: 1124, y: 271.19998}
+              LinkedNodes:
+              - GUID: f37f46ff-b258-4738-adca-5c078db20d11
+                Position: {x: 1534.3999, y: 271.19998}
+                LinkedNodes: []
+        Choices:
+        - ChoiceText: "No s\xE9, est\xE1 guapo"
+          Value: 1
+        - ChoiceText: Parece que habla sobre algo inalcanzable
+          Value: 1
+    - rid: 1149946283741414155
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ca281a45-fa09-4615-a991-56aeb3329e0d
+        Position: {x: 1124, y: 271.19998}
+        LinkedNodes:
+        - GUID: f37f46ff-b258-4738-adca-5c078db20d11
+          Position: {x: 1534.3999, y: 271.19998}
+          LinkedNodes: []
+        Choices:
+        - ChoiceText: "\xA1Es verdad!"
+          Value: 1
+    - rid: 1149946283741414156
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: bc1a5584-5c9a-47b2-aed5-44640f296988
+        Position: {x: 909.60004, y: 106.399994}
+        LinkedNodes:
+        - GUID: b12ec4c5-d6e0-4237-b3d2-791a2bd05ca3
+          Position: {x: 1124.7999, y: 106.399994}
+          LinkedNodes:
+          - GUID: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+            Position: {x: 1636.7999, y: 109.600006}
+            LinkedNodes:
+            - GUID: 5002eb23-3282-4a21-9c3a-573104f82c7e
+              Position: {x: 1851.2, y: 109.600006}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "\xBFGuapo?"
+        - "No ayudas, piensa m\xE1s"
+    - rid: 1149946283741414157
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: b12ec4c5-d6e0-4237-b3d2-791a2bd05ca3
+        Position: {x: 1124.7999, y: 106.399994}
+        LinkedNodes:
+        - GUID: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+          Position: {x: 1636.7999, y: 109.600006}
+          LinkedNodes:
+          - GUID: 5002eb23-3282-4a21-9c3a-573104f82c7e
+            Position: {x: 1851.2, y: 109.600006}
+            LinkedNodes: []
+        Choices:
+        - ChoiceText: Parece que habla sobre algo inalcanzable.
+          Value: 1
+    - rid: 1149946283741414158
+      type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 2c7131a5-788e-4adc-b137-69c727cac682
+        Position: {x: 773.60004, y: 309.59998}
+        LinkedNodes:
+        - GUID: 0f6343d9-08d0-46d4-84ed-09435ec1a862
+          Position: {x: 909.60004, y: 271.19998}
+          LinkedNodes:
+          - GUID: ca281a45-fa09-4615-a991-56aeb3329e0d
+            Position: {x: 1124, y: 271.19998}
+            LinkedNodes:
+            - GUID: f37f46ff-b258-4738-adca-5c078db20d11
+              Position: {x: 1534.3999, y: 271.19998}
+              LinkedNodes: []
+        Label: NEXT
+    - rid: 1149946283741414159
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: f37f46ff-b258-4738-adca-5c078db20d11
+        Position: {x: 1534.3999, y: 271.19998}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "\xBFHas visto?"
+        - Se me dan especialmente bien los acertijos
+    - rid: 1149946283741414160
+      type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 5002eb23-3282-4a21-9c3a-573104f82c7e
+        Position: {x: 1851.2, y: 109.600006}
+        LinkedNodes: []
+        Label: NEXT
+    - rid: 1149946283741414161
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: d1d2d284-3cd3-4dd1-9c05-7697835d7dbb
+        Position: {x: 1636.7999, y: 109.600006}
+        LinkedNodes:
+        - GUID: 5002eb23-3282-4a21-9c3a-573104f82c7e
+          Position: {x: 1851.2, y: 109.600006}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Hmm...

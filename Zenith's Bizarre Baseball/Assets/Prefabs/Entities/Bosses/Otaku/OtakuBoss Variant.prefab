@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 6979654430644772070}
   - component: {fileID: 8926467439260065542}
   m_Layer: 6
-  m_Name: 'Orbit: 0,0742723 r/s'
+  m_Name: 'Orbit: 1,485446 r/s'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2763,10 +2763,12 @@ MonoBehaviour:
     behaviourContainers:
     - {fileID: 5985007820982919485}
     - {fileID: 6034611221211498791}
-    - {fileID: 4644298822381668211}
     - {fileID: 3502884778128047005}
   onUpdatePerformers: []
-  onExitPerformers: []
+  onExitPerformers:
+  - condition: []
+    behaviourContainers:
+    - {fileID: 4644298822381668211}
   nextStates:
   - conditions:
     - conditionContainer: {fileID: 5366568232795446078}
@@ -2991,6 +2993,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _keepRotation: 0
 --- !u!1 &6966926439834136879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,6 +3297,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _keepRotation: 1
 --- !u!114 &2481803515967425010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3355,7 +3359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8913451013342580221, guid: dc509a7fb20d8df4989d52cbc45c1416, type: 3}
-  velocity: 45
+  velocity: 35
   rotation: 0
   _instancePoint: {fileID: 3904660463925430712}
   _instanceProcessors:
@@ -3396,8 +3400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2ab95e7ab3cd14bac4314f72bfdbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToAdd:
-  - {fileID: 4808144657794524803, guid: 90445a33b9570994c9f58ddc03be87c4, type: 3}
+  objectsToAdd: []
 --- !u!1 &8888194608021699205
 GameObject:
   m_ObjectHideFlags: 0

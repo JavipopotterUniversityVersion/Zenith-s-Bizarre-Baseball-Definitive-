@@ -158,7 +158,10 @@ public class Interpreter : MonoBehaviour
     void CheckCommands(ref int index, ref bool endDialogue, 
     ref int nextLineIndex, string[] lines)
     {
-        if (_dialogueText.text[index] == '<')
+        if(index < 0) index = 0;
+        char currentChar = _dialogueText.text[index];
+
+        if (currentChar == '<')
         {
             string command = _dialogueText.text.Split("<")[1].Split(">")[0];
             _dialogueText.text = _dialogueText.text.Replace($"<{command}>", "");
@@ -215,7 +218,7 @@ public class Interpreter : MonoBehaviour
                     break;
 
                 case "BREAK":
-                    _next = true;
+                    print("BREAK");
                     break;
 
                 case "PROCESS":

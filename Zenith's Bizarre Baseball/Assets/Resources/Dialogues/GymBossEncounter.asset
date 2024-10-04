@@ -12,9 +12,193 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
   m_Name: GymBossEncounter
   m_EditorClassIdentifier: 
-  NodeLinks: []
-  DialogueNodeData: []
-  _translationPreview: 
+  NodeLinks:
+  - BaseNodeGuid: 3c0bc9ec-850a-41e6-8512-e3535a6205ce
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 69040d22-b6e6-46bd-8ed4-2fabfce64c95
+  - BaseNodeGuid: 69040d22-b6e6-46bd-8ed4-2fabfce64c95
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 335854b3-0510-49c5-a59a-253ce5982d02
+  - BaseNodeGuid: 335854b3-0510-49c5-a59a-253ce5982d02
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: c05cab6a-599e-4338-88c3-41a30be1a971
+  - BaseNodeGuid: c05cab6a-599e-4338-88c3-41a30be1a971
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+  - BaseNodeGuid: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: a8e9a827-2df4-4cce-b479-fd31e919695b
+  - BaseNodeGuid: 010e2d78-18fc-4677-a25f-15572a0040b8
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 3c0bc9ec-850a-41e6-8512-e3535a6205ce
+  DialogueNodeData:
+  - rid: 1149946330569506824
+  - rid: 1149946330569506825
+  - rid: 1149946330569506826
+  - rid: 1149946330569506827
+  - rid: 1149946330569506828
+  - rid: 1149946330569506829
+  - rid: 1149946330569506830
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:JimasSecond><EMOTION:default><ANIMATION:Talk>?<ANIMATION:Idle>@<ANIMATION:Talk>\xBFQui\xE9n
+    eres t\xFA?<ANIMATION:Idle>@<ANIMATION:Talk>\xBFEres una mujer?<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>S\xED,
+    bueno<ANIMATION:Idle>@<ANIMATION:Talk>Dir\xEDa m\xE1s bien que solo soy una chica<ANIMATION:Idle>@<ANIMATION:Talk>Necesito
+    ir a la boca del metro<ANIMATION:Idle>@<ANIMATION:Talk>Pero solo se puede acceder
+    por aqu\xED<ANIMATION:Idle>@<CHARACTER:JimasSecond><EMOTION:default><ANIMATION:Talk>Odio
+    a las mujeres<ANIMATION:Idle>@<ANIMATION:Talk>Son todas unas putas<ANIMATION:Idle>@<ANIMATION:Talk>Excepto
+    mi mam\xE1 y mi hermana<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Solo
+    te he pedido que me dejes pasar<ANIMATION:Idle>@<CHARACTER:JimasSecond><EMOTION:default><ANIMATION:Talk>\xBFVes?
+    Eres solo una interesada<ANIMATION:Idle>@<ANIMATION:Talk>Me quieres por mi dinero
+    y pertenencias<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Pues
+    nada, has escogido la violencia<ANIMATION:Idle><END>"
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1149946330569506824
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 010e2d78-18fc-4677-a25f-15572a0040b8
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 3c0bc9ec-850a-41e6-8512-e3535a6205ce
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 69040d22-b6e6-46bd-8ed4-2fabfce64c95
+            Position: {x: 615.2, y: 200}
+            LinkedNodes:
+            - GUID: 335854b3-0510-49c5-a59a-253ce5982d02
+              Position: {x: 829.60004, y: 200}
+              LinkedNodes:
+              - GUID: c05cab6a-599e-4338-88c3-41a30be1a971
+                Position: {x: 1044, y: 200}
+                LinkedNodes:
+                - GUID: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+                  Position: {x: 1258.3999, y: 200}
+                  LinkedNodes:
+                  - GUID: a8e9a827-2df4-4cce-b479-fd31e919695b
+                    Position: {x: 1472.7999, y: 200}
+                    LinkedNodes: []
+    - rid: 1149946330569506825
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 3c0bc9ec-850a-41e6-8512-e3535a6205ce
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 69040d22-b6e6-46bd-8ed4-2fabfce64c95
+          Position: {x: 615.2, y: 200}
+          LinkedNodes:
+          - GUID: 335854b3-0510-49c5-a59a-253ce5982d02
+            Position: {x: 829.60004, y: 200}
+            LinkedNodes:
+            - GUID: c05cab6a-599e-4338-88c3-41a30be1a971
+              Position: {x: 1044, y: 200}
+              LinkedNodes:
+              - GUID: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+                Position: {x: 1258.3999, y: 200}
+                LinkedNodes:
+                - GUID: a8e9a827-2df4-4cce-b479-fd31e919695b
+                  Position: {x: 1472.7999, y: 200}
+                  LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 09f5fbe2391fbf4469a6dbb1b5ed195b, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - '?'
+        - "\xBFQui\xE9n eres t\xFA?"
+        - "\xBFEres una mujer?"
+    - rid: 1149946330569506826
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 69040d22-b6e6-46bd-8ed4-2fabfce64c95
+        Position: {x: 615.2, y: 200}
+        LinkedNodes:
+        - GUID: 335854b3-0510-49c5-a59a-253ce5982d02
+          Position: {x: 829.60004, y: 200}
+          LinkedNodes:
+          - GUID: c05cab6a-599e-4338-88c3-41a30be1a971
+            Position: {x: 1044, y: 200}
+            LinkedNodes:
+            - GUID: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+              Position: {x: 1258.3999, y: 200}
+              LinkedNodes:
+              - GUID: a8e9a827-2df4-4cce-b479-fd31e919695b
+                Position: {x: 1472.7999, y: 200}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "S\xED, bueno"
+        - "Dir\xEDa m\xE1s bien que solo soy una chica"
+        - Necesito ir a la boca del metro
+        - "Pero solo se puede acceder por aqu\xED"
+    - rid: 1149946330569506827
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 335854b3-0510-49c5-a59a-253ce5982d02
+        Position: {x: 829.60004, y: 200}
+        LinkedNodes:
+        - GUID: c05cab6a-599e-4338-88c3-41a30be1a971
+          Position: {x: 1044, y: 200}
+          LinkedNodes:
+          - GUID: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+            Position: {x: 1258.3999, y: 200}
+            LinkedNodes:
+            - GUID: a8e9a827-2df4-4cce-b479-fd31e919695b
+              Position: {x: 1472.7999, y: 200}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 09f5fbe2391fbf4469a6dbb1b5ed195b, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - Odio a las mujeres
+        - Son todas unas putas
+        - "Excepto mi mam\xE1 y mi hermana"
+    - rid: 1149946330569506828
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: c05cab6a-599e-4338-88c3-41a30be1a971
+        Position: {x: 1044, y: 200}
+        LinkedNodes:
+        - GUID: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+          Position: {x: 1258.3999, y: 200}
+          LinkedNodes:
+          - GUID: a8e9a827-2df4-4cce-b479-fd31e919695b
+            Position: {x: 1472.7999, y: 200}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Solo te he pedido que me dejes pasar
+    - rid: 1149946330569506829
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: d619b2b0-c395-4a3f-88ef-07cbcf368fe5
+        Position: {x: 1258.3999, y: 200}
+        LinkedNodes:
+        - GUID: a8e9a827-2df4-4cce-b479-fd31e919695b
+          Position: {x: 1472.7999, y: 200}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 09f5fbe2391fbf4469a6dbb1b5ed195b, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "\xBFVes? Eres solo una interesada"
+        - Me quieres por mi dinero y pertenencias
+    - rid: 1149946330569506830
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: a8e9a827-2df4-4cce-b479-fd31e919695b
+        Position: {x: 1472.7999, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Pues nada, has escogido la violencia

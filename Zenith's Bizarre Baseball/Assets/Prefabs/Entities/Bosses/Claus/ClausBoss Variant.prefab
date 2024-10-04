@@ -3688,6 +3688,18 @@ PrefabInstance:
       propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: DialogueContainer, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3012783903812535641, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012783903812535641, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: e6a03eb307d425e45a1f6df69e060cb8, type: 2}
+    - target: {fileID: 3012783903812535641, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: DialogueContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4406790623273418257, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -3695,7 +3707,7 @@ PrefabInstance:
     - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: nextStates.Array.data[0].stateContainer
       value: 
-      objectReference: {fileID: 5082276351806910850}
+      objectReference: {fileID: 1935702694316726928}
     - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: onEnterPerformers.Array.data[0].behaviourContainers.Array.size
       value: 3
@@ -3801,6 +3813,11 @@ GameObject:
 --- !u!4 &1526268789450514948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5091720273899511675, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+  m_PrefabInstance: {fileID: 6018790405202115967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1935702694316726928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5286089772725053423, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
   m_PrefabInstance: {fileID: 6018790405202115967}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3097172347387110102 stripped

@@ -30,25 +30,26 @@ MonoBehaviour:
     PortName: out
     TargetNodeGuid: bf33b21a-fc33-4a90-9dd4-e7769f4eba70
   DialogueNodeData:
-  - rid: 1149946283741414231
-  - rid: 1149946283741414232
-  - rid: 1149946283741414233
-  - rid: 1149946283741414234
-  - rid: 1149946283741414235
-  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\"La
+  - rid: 1149946383194128535
+  - rid: 1149946383194128536
+  - rid: 1149946383194128537
+  - rid: 1149946383194128538
+  - rid: 1149946383194128539
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\"La
     calma entre dos fuegos siempre ser\xE1 la misma, sin importar qu\xE9 tan intensa
-    sea la llama de cada uno.\"<ANIMATION:Idle>@<ANIMATION:Talk>\xBFQu\xE9 mierda
-    se supone que significa esto?<ANIMATION:Idle>@<ANIMATION:Talk>Odio la sutileza<ANIMATION:Idle>@<ANIMATION:Talk>\xBFSabes
-    que puede querer decir?<ANIMATION:Idle><CHOICE:Claro (mentira)/1,,No (sin ofender)/1>@@<OPTION:Claro
-    (mentira)><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\xBFAcabas
-    de decir mentira entre par\xE9ntesis?<ANIMATION:Idle>@<ANIMATION:Talk>Vamos,
-    que t\xFA tampoco lo sabes \xBFno?<ANIMATION:Idle><END>@<OPTION:No (sin ofender)><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\xBFAcabas
-    de decir sin ofender entre par\xE9ntesis?<ANIMATION:Idle>@<ANIMATION:Talk>Eso
+    sea la llama de cada uno.\"<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>\xBFQu\xE9
+    mierda se supone que significa esto?<ANIMATION:Idle>@<ANIMATION:Talk>Odio la
+    sutileza<ANIMATION:Idle>@<ANIMATION:Talk><!:eye_closed>\xBFSabes que puede querer
+    decir?<ANIMATION:Idle><CHOICE:Claro (mentira)/1,,No (sin ofender)/1>@@<OPTION:Claro
+    (mentira)><CHARACTER:ZenithasFirst><!:annoyed><ANIMATION:Talk>\xBFAcabas de decir
+    mentira entre par\xE9ntesis?<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Vamos,
+    que t\xFA tampoco lo sabes \xBFno?<ANIMATION:Idle><END>@<OPTION:No (sin ofender)><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\xBFAcabas
+    de decir sin ofender entre par\xE9ntesis?<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>Eso
     me ofende bastante (ofensivo)<ANIMATION:Idle><END>"
   references:
     version: 2
     RefIds:
-    - rid: 1149946283741414231
+    - rid: 1149946383194128535
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 0baca6ef-f30a-47c4-b690-0ae3ecbab44b
@@ -66,7 +67,7 @@ MonoBehaviour:
             - GUID: bf33b21a-fc33-4a90-9dd4-e7769f4eba70
               Position: {x: 811.2, y: 268.8}
               LinkedNodes: []
-    - rid: 1149946283741414232
+    - rid: 1149946383194128536
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 4c27e5de-a88d-4606-a3c3-4277f82024da
@@ -87,10 +88,10 @@ MonoBehaviour:
         DialogueLines:
         - "\"La calma entre dos fuegos siempre ser\xE1 la misma, sin importar qu\xE9
           tan intensa sea la llama de cada uno.\""
-        - "\xBFQu\xE9 mierda se supone que significa esto?"
+        - "<!:annoyed>\xBFQu\xE9 mierda se supone que significa esto?"
         - Odio la sutileza
-        - "\xBFSabes que puede querer decir?"
-    - rid: 1149946283741414233
+        - "<!:eye_closed>\xBFSabes que puede querer decir?"
+    - rid: 1149946383194128537
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 26bc7013-ac35-4e14-be1a-63c45514b424
@@ -107,19 +108,19 @@ MonoBehaviour:
           Value: 1
         - ChoiceText: No (sin ofender)
           Value: 1
-    - rid: 1149946283741414234
+    - rid: 1149946383194128538
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: a25b5802-229b-4609-9c97-9ec35d5180fc
         Position: {x: 811.2, y: 104}
         LinkedNodes: []
         Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: default
+        Emotion: annoyed
         characterIndex: 0
         DialogueLines:
         - "\xBFAcabas de decir mentira entre par\xE9ntesis?"
-        - "Vamos, que t\xFA tampoco lo sabes \xBFno?"
-    - rid: 1149946283741414235
+        - "<!:confident>Vamos, que t\xFA tampoco lo sabes \xBFno?"
+    - rid: 1149946383194128539
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: bf33b21a-fc33-4a90-9dd4-e7769f4eba70
@@ -130,4 +131,4 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "\xBFAcabas de decir sin ofender entre par\xE9ntesis?"
-        - Eso me ofende bastante (ofensivo)
+        - <!:annoyed>Eso me ofende bastante (ofensivo)

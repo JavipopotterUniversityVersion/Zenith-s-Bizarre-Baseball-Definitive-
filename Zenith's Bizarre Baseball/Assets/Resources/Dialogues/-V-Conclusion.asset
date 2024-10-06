@@ -42,31 +42,31 @@ MonoBehaviour:
     PortName: out
     TargetNodeGuid: a6fbda61-a197-4ddb-ae1f-d683ada2f394
   DialogueNodeData:
-  - rid: 1149946283741414215
-  - rid: 1149946283741414216
-  - rid: 1149946283741414217
-  - rid: 1149946283741414218
-  - rid: 1149946283741414219
-  - rid: 1149946283741414220
-  - rid: 1149946283741414221
-  - rid: 1149946283741414222
-  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Estos
-    pilares dicen cosas muy raras<ANIMATION:Idle>@<ANIMATION:Talk>Quiz\xE1s Erwin
-    sepa que pueden significar<ANIMATION:Idle><CHOICE:\xBFErwin?/1>@@<OPTION:\xBFErwin?><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Ah,
-    s\xED<ANIMATION:Idle>@<ANIMATION:Talk>El es mi tutor legal<ANIMATION:Idle>@<ANIMATION:Talk>Y
-    mi cu\xF1ado<ANIMATION:Idle>@<ANIMATION:Talk>Es algo obsesivo y duerme muy poco<ANIMATION:Idle>@<ANIMATION:Talk>Pero
-    es majo, no te preocupes<ANIMATION:Idle>@<ANIMATION:Talk>Deber\xEDa volver a
-    casa, estoy muy cansada<ANIMATION:Idle>@<ANIMATION:Talk>Espera, \xBFC\xF3mo se
-    supone que voy a volver a casa?<ANIMATION:Idle><CHOICE:M\xE1tate/1>@@<OPTION:M\xE1tate><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>No
+  - rid: 1149946383194128550
+  - rid: 1149946383194128551
+  - rid: 1149946383194128552
+  - rid: 1149946383194128553
+  - rid: 1149946383194128554
+  - rid: 1149946383194128555
+  - rid: 1149946383194128556
+  - rid: 1149946383194128557
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Estos
+    pilares <!:eye_closed>dicen cosas muy raras<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Quiz\xE1s
+    Erwin sepa que pueden significar<ANIMATION:Idle><CHOICE:\xBFErwin?/1>@@<OPTION:\xBFErwin?><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Ah,
+    s\xED<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>El es mi tutor legal<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Y
+    mi cu\xF1ado<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>Es algo obsesivo y duerme
+    muy poco<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Pero es majo, no te preocupes<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>Deber\xEDa
+    volver a casa, estoy muy cansada<ANIMATION:Idle>@<ANIMATION:Talk><!:default>Espera,
+    \xBFC\xF3mo se supone que voy a volver a casa?<ANIMATION:Idle><CHOICE:M\xE1tate/1>@@<OPTION:M\xE1tate><CHARACTER:ZenithasFirst><!:eye_closed><ANIMATION:Talk>No
     creo que eso funcione<ANIMATION:Idle>@<ANIMATION:Talk>No tengo una forma suficientemente
-    edgy de morir<ANIMATION:Idle>@<ANIMATION:Talk>Solo tengo un bate lo cual ser\xEDa
-    bastante gr\xE1fico y desagradable...<ANIMATION:Idle><CHOICE:Destroy(Zenith.gameObject,
-    1);/1>@@<OPTION:Destroy(Zenith.gameObject, 1);><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\xBFEh?
+    edgy de morir<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Solo tengo un bate
+    lo cual ser\xEDa bastante gr\xE1fico y desagradable...<ANIMATION:Idle><CHOICE:Destroy(Zenith.gameObject,
+    1);/1>@@<OPTION:Destroy(Zenith.gameObject, 1);><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\xBFEh?
     Qu\xE9 has dicho<PROCESS:Restart 1><ANIMATION:Idle><END>"
   references:
     version: 2
     RefIds:
-    - rid: 1149946283741414215
+    - rid: 1149946383194128550
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ca30a07a-334d-48f3-9beb-142b95cce54f
@@ -93,7 +93,7 @@ MonoBehaviour:
                     - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
                       Position: {x: 2083.2, y: 200}
                       LinkedNodes: []
-    - rid: 1149946283741414216
+    - rid: 1149946383194128551
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 2b0cb3fb-6fb9-4bd6-9053-4b5d3d97e815
@@ -121,9 +121,9 @@ MonoBehaviour:
         Emotion: default
         characterIndex: 0
         DialogueLines:
-        - Estos pilares dicen cosas muy raras
-        - "Quiz\xE1s Erwin sepa que pueden significar"
-    - rid: 1149946283741414217
+        - Estos pilares <!:eye_closed>dicen cosas muy raras
+        - "<!:happy>Quiz\xE1s Erwin sepa que pueden significar"
+    - rid: 1149946383194128552
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7c969d1b-4421-4387-ae9b-7eca995a3694
@@ -147,7 +147,7 @@ MonoBehaviour:
         Choices:
         - ChoiceText: "\xBFErwin?"
           Value: 1
-    - rid: 1149946283741414218
+    - rid: 1149946383194128553
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7abe3409-252e-47b1-aa35-e60fd503b946
@@ -170,13 +170,13 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Ah, s\xED"
-        - El es mi tutor legal
-        - "Y mi cu\xF1ado"
-        - Es algo obsesivo y duerme muy poco
-        - Pero es majo, no te preocupes
-        - "Deber\xEDa volver a casa, estoy muy cansada"
-        - "Espera, \xBFC\xF3mo se supone que voy a volver a casa?"
-    - rid: 1149946283741414219
+        - <!:happy>El es mi tutor legal
+        - "<!:confident>Y mi cu\xF1ado"
+        - <!:annoyed>Es algo obsesivo y duerme muy poco
+        - <!:happy>Pero es majo, no te preocupes
+        - "<!:annoyed>Deber\xEDa volver a casa, estoy muy cansada"
+        - "<!:default>Espera, \xBFC\xF3mo se supone que voy a volver a casa?"
+    - rid: 1149946383194128554
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: dbfb43a1-6248-4193-8159-8e405cf990a0
@@ -194,7 +194,7 @@ MonoBehaviour:
         Choices:
         - ChoiceText: "M\xE1tate"
           Value: 1
-    - rid: 1149946283741414220
+    - rid: 1149946383194128555
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
@@ -207,13 +207,14 @@ MonoBehaviour:
             Position: {x: 2083.2, y: 200}
             LinkedNodes: []
         Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: default
+        Emotion: eye_closed
         characterIndex: 0
         DialogueLines:
         - No creo que eso funcione
         - No tengo una forma suficientemente edgy de morir
-        - "Solo tengo un bate lo cual ser\xEDa bastante gr\xE1fico y desagradable..."
-    - rid: 1149946283741414221
+        - "<!:confident>Solo tengo un bate lo cual ser\xEDa bastante gr\xE1fico y
+          desagradable..."
+    - rid: 1149946383194128556
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
@@ -225,7 +226,7 @@ MonoBehaviour:
         Choices:
         - ChoiceText: Destroy(Zenith.gameObject, 1);
           Value: 1
-    - rid: 1149946283741414222
+    - rid: 1149946383194128557
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394

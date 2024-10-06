@@ -28,7 +28,7 @@ public class DialogueNodeData : NodeData
 
     public override string TranslateText()
     {
-        string value = $"<CHARACTER:{Speaker.name}as{characterIndex}><EMOTION:{Emotion}>";
+        string value = $"<CHARACTER:{Speaker.name}as{characterIndex}><!:{Emotion}>";
 
         for(int i = 0; i < DialogueLines.Length; i++)
         {

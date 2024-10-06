@@ -18,17 +18,17 @@ MonoBehaviour:
     PortName: Next
     TargetNodeGuid: eba30160-a8db-42e5-9ae3-06dff754777f
   DialogueNodeData:
-  - rid: 1149946283741414069
-  - rid: 1149946283741414070
-  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>\"La
+  - rid: 1149946383194128540
+  - rid: 1149946383194128541
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\"La
     llama nunca se apaga, solo se transforma en humo o calor, pero su esencia sigue
-    viajando por el aire.\"<ANIMATION:Idle>@<ANIMATION:Talk>Meh, tiene bastante sentido<ANIMATION:Idle>@<ANIMATION:Talk>Aunque
-    no entiendo por qu\xE9 est\xE1 esto aqu\xED<ANIMATION:Idle>@<ANIMATION:Talk>\xBFEs
+    viajando por el aire.\"<ANIMATION:Idle>@<ANIMATION:Talk>Meh, tiene bastante sentido<ANIMATION:Idle>@<ANIMATION:Talk><!:eye_closed>Aunque
+    no entiendo por qu\xE9 est\xE1 esto aqu\xED<ANIMATION:Idle>@<ANIMATION:Talk><!:default>\xBFEs
     alg\xFAn tipo de adivinanza?<ANIMATION:Idle><END>"
   references:
     version: 2
     RefIds:
-    - rid: 1149946283741414069
+    - rid: 1149946383194128540
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 0baca6ef-f30a-47c4-b690-0ae3ecbab44b
@@ -37,7 +37,7 @@ MonoBehaviour:
         - GUID: eba30160-a8db-42e5-9ae3-06dff754777f
           Position: {x: 186.4, y: 200}
           LinkedNodes: []
-    - rid: 1149946283741414070
+    - rid: 1149946383194128541
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: eba30160-a8db-42e5-9ae3-06dff754777f
@@ -50,5 +50,5 @@ MonoBehaviour:
         - '"La llama nunca se apaga, solo se transforma en humo o calor, pero su
           esencia sigue viajando por el aire."'
         - Meh, tiene bastante sentido
-        - "Aunque no entiendo por qu\xE9 est\xE1 esto aqu\xED"
-        - "\xBFEs alg\xFAn tipo de adivinanza?"
+        - "<!:eye_closed>Aunque no entiendo por qu\xE9 est\xE1 esto aqu\xED"
+        - "<!:default>\xBFEs alg\xFAn tipo de adivinanza?"

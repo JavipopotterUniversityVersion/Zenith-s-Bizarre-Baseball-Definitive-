@@ -22,6 +22,9 @@ public class Interpreter : MonoBehaviour
     [SerializeField] StringProcessor _stringRefs;
     [SerializeField] DialogueCaster _caster;
 
+    [SerializeField] string _beforeOptionCommand;
+    [SerializeField] string _afterOptionCommand;
+
     Option[] _options;
     int lineIndex = 0;
 
@@ -155,8 +158,8 @@ public class Interpreter : MonoBehaviour
         return false;
     }
 
-    void CheckCommands(ref int index, ref bool endDialogue, 
-    ref int nextLineIndex, string[] lines)
+
+    void CheckCommands(ref int index, ref bool endDialogue, ref int nextLineIndex, string[] lines)
     {
         if(index < 0) index = 0;
         char currentChar = _dialogueText.text[index];
@@ -168,74 +171,105 @@ public class Interpreter : MonoBehaviour
 
             index--;
 
-            string[] commandParts = command.Split(":");
-
-            string commandType = commandParts[0];
-            string commandValue = "";
-
-            if(commandParts.Length > 1) commandValue = commandParts[1];
-
-            switch (commandType)
-            {
-                case "NAME":
-                    _nameText.text = commandValue;
-                    break;
-                case "BACKGROUND":
-                    _backgroundImage.sprite = Resources.Load<Texture2D>($"Backgrounds/{commandValue}").AsSprite();
-                    break;
-
-                case "CHARACTER":
-                    _lastCharacterIndex = (int)Enum.Parse(typeof(CharacterIndex), commandValue.Split("as")[1]);
-                    CharacterData character = _currentCharacter.SetCharacter(commandValue.Split("as")[0]);
-                    _nameText.text = character.CharacterName;
-                    _beepSound = character.Voice;
-                    break;
-
-                case "EMOTION":
-                    _currentCharacter.SetEmotion(commandValue);
-                    break;
-
-                case "ANIMATION":
-                    _currentCharacter.PlayAnimation(commandValue);
-                    break;
-
-                case "CHOICE":
-                    string[] options = commandValue.Split(",,");
-                    SetOptions(options, lines);
-                    break;
-
-                case "GOTO":
-                    CheckJump(lines, commandValue, ref nextLineIndex);
-                    break;
-
-                case "IF":
-                    string condition = commandValue;
-                    if(_processor.ResultOf(condition, 1) == 0) CheckJump(lines, "FALSE", ref nextLineIndex);
-                    break;
-
-                case "END":
-                    endDialogue = true;
-                    break;
-
-                case "BREAK":
-                    print("BREAK");
-                    break;
-
-                case "PROCESS":
-                    _processor.ResultOf(commandValue, 1);
-                    break;
-
-                case "REF":
-                    _dialogueText.text = _dialogueText.text.Replace($"<{command}>", _stringRefs.Process(commandValue));
-                    break;
-                default:
-                    break;
-            }
+            ExecuteCommand(command, ref endDialogue, ref nextLineIndex, lines);
         }
+    }
+
+    void ExecuteCommand(string input) => ExecuteCommand(input, ref _skip, ref lineIndex);
+
+    private void ExecuteCommand(string command, ref bool endDialogue, ref int nextLineIndex, string[] lines = null)
+    {
+        string[] commandParts = command.Split(":");
+
+        string commandType = commandParts[0];
+        string commandValue = "";
+
+        if (commandParts.Length > 1) commandValue = commandParts[1];
+        switch (commandType)
+        {
+            case "NAME":
+                _nameText.text = commandValue;
+                break;
+            case "BACKGROUND":
+                _backgroundImage.sprite = Resources.Load<Texture2D>($"Backgrounds/{commandValue}").AsSprite();
+                break;
+
+            case "CHARACTER":
+                _lastCharacterIndex = (int)Enum.Parse(typeof(CharacterIndex), commandValue.Split("as")[1]);
+                CharacterData character = _currentCharacter.SetCharacter(commandValue.Split("as")[0]);
+                _nameText.text = character.CharacterName;
+                _beepSound = character.Voice;
+                break;
+
+            case "!":
+                _currentCharacter.SetEmotion(commandValue);
+                break;
+
+            case "ANIMATION":
+                _currentCharacter.PlayAnimation(commandValue);
+                break;
+
+            case "CHOICE":
+                string[] options = commandValue.Split(",,");
+                SetOptions(options, lines);
+                break;
+
+            case "GOTO":
+                CheckJump(lines, commandValue, ref nextLineIndex);
+                break;
+
+            case "IF":
+                string condition = commandValue;
+                if (_processor.ResultOf(condition, 1) == 0) CheckJump(lines, "FALSE", ref nextLineIndex);
+                break;
+
+            case "END":
+                endDialogue = true;
+                break;
+
+            case "BREAK":
+                print("BREAK");
+                break;
+
+            case "PROCESS":
+                _processor.ResultOf(commandValue, 1);
+                break;
+
+            case "REF":
+                _dialogueText.text = _dialogueText.text.Replace($"<{command}>", _stringRefs.Process(commandValue));
+                break;
+
+            case "MOVE":
+                float targetX = float.Parse(commandValue.Split("/")[0]);
+                float time = float.Parse(commandValue.Split("/")[1]);
+                StartCoroutine(MoveCharacter(targetX, time));
+                break;
+            default:
+                break;
+        }
+    }
+
+    IEnumerator MoveCharacter(float targetX, float time)
+    {
+        float elapsedTime = 0;
+        RectTransform parent = _currentCharacter.Renderer.transform.parent.GetComponent<RectTransform>();
+        float startX = parent.anchoredPosition.x;
+
+        while(elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            float newX = Mathf.Lerp(startX, targetX, elapsedTime / time);
+            parent.anchoredPosition = new Vector2(newX, parent.anchoredPosition.y);
+            yield return null;
+        }
+
+        parent.anchoredPosition = new Vector2(targetX, parent.anchoredPosition.y);
     }
 
     void SetOptions(string[] options, string[] lines)
     {
+        // CheckCommands(ref lineIndex, ref _skip, ref lineIndex, lines);
+        ExecuteCommand(_beforeOptionCommand);
         WaitForOption = true;
         int optionObjectIndex = 0;
 
@@ -264,6 +298,7 @@ public class Interpreter : MonoBehaviour
 
     public void SelectOption(int index)
     {
+        ExecuteCommand(_afterOptionCommand);
         WaitForOption = false;
         lineIndex = index;
         _options.ForEach(o => o.gameObject.SetActive(false));

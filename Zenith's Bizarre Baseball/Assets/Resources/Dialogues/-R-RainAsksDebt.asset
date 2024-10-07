@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -R-RainAsksDebt
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 7467eb7e-e66d-4bc5-b347-9758fb6a4d00
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: da3a750e-9dfb-41b0-b71a-a0fb662b3888
+  - BaseNodeGuid: da3a750e-9dfb-41b0-b71a-a0fb662b3888
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: cc67aac9-aa8e-415b-90ad-b264b226c35a
+  DialogueNodeData:
+  - rid: 1149946383194128592
+  - rid: 1149946383194128593
+  - rid: 1149946383194128594
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:RainasSecond><!:worried><ANIMATION:Talk>Oye
+    hermanita, \xBFEst\xE1s endeudada?<ANIMATION:Idle>@<ANIMATION:Talk>S\xE9 que
+    eres fuerte pero Ten cuidado con los prestamistas por favor<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>No
+    te preocupes<ANIMATION:Idle>@<ANIMATION:Talk>Usar\xE9 mi poder para evadirlos<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946383194128592
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 7467eb7e-e66d-4bc5-b347-9758fb6a4d00
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: da3a750e-9dfb-41b0-b71a-a0fb662b3888
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: cc67aac9-aa8e-415b-90ad-b264b226c35a
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes: []
+    - rid: 1149946383194128593
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: da3a750e-9dfb-41b0-b71a-a0fb662b3888
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: cc67aac9-aa8e-415b-90ad-b264b226c35a
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: worried
+        characterIndex: 1
+        DialogueLines:
+        - "Oye hermanita, \xBFEst\xE1s endeudada?"
+        - "S\xE9 que eres fuerte pero Ten cuidado con los prestamistas por favor"
+    - rid: 1149946383194128594
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: cc67aac9-aa8e-415b-90ad-b264b226c35a
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: confident
+        characterIndex: 0
+        DialogueLines:
+        - No te preocupes
+        - "Usar\xE9 mi poder para evadirlos"

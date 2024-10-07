@@ -15,7 +15,6 @@ MonoBehaviour:
   _value: 0
   _readProcessor:
     operation: (RainAsk (money < 0) || money == 0) == 1
-    _debug: 0
     _showReferences: 1
     _floatDictionary:
       list: []
@@ -41,11 +40,11 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
               m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
-              m_MethodName: CastDialogue
+              m_MethodName: StartDialogue
               m_Mode: 2
               m_Arguments:
-                m_ObjectArgument: {fileID: 11400000, guid: e12ccd4328819954dab20a187c3c4fae, type: 2}
-                m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+                m_ObjectArgument: {fileID: 11400000, guid: c233436ead53181419c065e8b1de506b, type: 2}
+                m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
                 m_IntArgument: 0
                 m_FloatArgument: 0
                 m_StringArgument: 

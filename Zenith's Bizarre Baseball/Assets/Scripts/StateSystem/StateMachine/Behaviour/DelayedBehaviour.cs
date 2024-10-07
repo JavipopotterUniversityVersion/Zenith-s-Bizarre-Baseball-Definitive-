@@ -11,7 +11,11 @@ public class DelayedBehaviour : MonoBehaviour, IBehaviour, ICondition
     [SerializeField] IRef<IBehaviour>[] behaviours;
     bool finished = false;
 
-    public void ExecuteBehaviour() => StartCoroutine(DelayBehaviour());
+    public void ExecuteBehaviour() 
+    {
+        if(gameObject.activeInHierarchy) StartCoroutine(DelayBehaviour());
+    }
+
     public bool CheckCondition()
     {
         if(finished)

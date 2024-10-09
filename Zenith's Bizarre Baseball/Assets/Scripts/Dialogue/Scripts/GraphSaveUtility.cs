@@ -144,7 +144,7 @@ public class GraphSaveUtility
 
     public void LoadGraph(DialogueContainer container)
     {
-        _containerCache = Resources.Load<DialogueContainer>($"Dialogues/{container.name}");
+        _containerCache = container;
 
         if (_containerCache == null)
         {

@@ -1597,7 +1597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1773293679762541444
 Transform:
   m_ObjectHideFlags: 0
@@ -12272,83 +12272,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2802656517269783760, guid: 13c54353ec4f5f0489f3533d88964c93, type: 3}
   m_PrefabInstance: {fileID: 4744170350804192431}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4806871566091259023
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1195889407403778696}
-    m_Modifications:
-    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: a39ccb7a6bcfb9548a83b3cf424b9cb4, type: 2}
-    - target: {fileID: 1653850347922221368, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_Name
-      value: Change sr material to Sprites-Default
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3310884100878567036, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_Name
-      value: Change sr material to PixelOutline
-      objectReference: {fileID: 0}
-    - target: {fileID: 5029954968408849223, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: _targetSr
-      value: 
-      objectReference: {fileID: 1195889406064052659}
-    - target: {fileID: 8299579903742862855, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: _targetSr
-      value: 
-      objectReference: {fileID: 1195889406064052659}
-    - target: {fileID: 8960757074279198462, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
-      propertyPath: m_Name
-      value: TalkTemplate
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
 --- !u!1001 &4894795035911488965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39357,11 +39280,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1541bc2ea38a2e341ba80e4d6f54c7cb, type: 3}
---- !u!212 &1195889406064052659 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7283756127634940799, guid: 1541bc2ea38a2e341ba80e4d6f54c7cb, type: 3}
-  m_PrefabInstance: {fileID: 8470635996841028300}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1195889407403778696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7283756126853449796, guid: 1541bc2ea38a2e341ba80e4d6f54c7cb, type: 3}

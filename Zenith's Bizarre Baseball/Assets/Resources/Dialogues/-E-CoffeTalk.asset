@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -E-CoffeTalk
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: cbb20711-62b3-41c5-8314-933356ee5898
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: ca9655a3-9ac2-4e59-9e0b-b67a98049be1
+  DialogueNodeData:
+  - rid: 1149946448227074048
+  - rid: 1149946448227074049
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ErwinasSecond><!:default><ANIMATION:Talk>Bueno
+    Zenith, \xBFQuieres un caf\xE9?<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946448227074048
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: cbb20711-62b3-41c5-8314-933356ee5898
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: ca9655a3-9ac2-4e59-9e0b-b67a98049be1
+          Position: {x: 186.4, y: 200}
+          LinkedNodes: []
+    - rid: 1149946448227074049
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ca9655a3-9ac2-4e59-9e0b-b67a98049be1
+        Position: {x: 186.4, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "Bueno Zenith, \xBFQuieres un caf\xE9?"

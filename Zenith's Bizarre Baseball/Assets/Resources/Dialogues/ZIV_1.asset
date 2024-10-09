@@ -70,28 +70,28 @@ MonoBehaviour:
     PortName: out
     TargetNodeGuid: 439891e9-7a40-4ce3-8f74-cff56ee7ed52
   DialogueNodeData:
-  - rid: 1149946383194128504
-  - rid: 1149946383194128505
-  - rid: 1149946383194128506
-  - rid: 1149946383194128507
-  - rid: 1149946383194128508
-  - rid: 1149946383194128509
-  - rid: 1149946383194128510
-  - rid: 1149946383194128511
-  - rid: 1149946383194128512
-  - rid: 1149946383194128513
-  - rid: 1149946383194128514
-  - rid: 1149946383194128515
-  - rid: 1149946383194128516
-  - rid: 1149946383194128517
-  - rid: 1149946383194128518
+  - rid: 1149946401252180374
+  - rid: 1149946401252180375
+  - rid: 1149946401252180376
+  - rid: 1149946401252180377
+  - rid: 1149946401252180378
+  - rid: 1149946401252180379
+  - rid: 1149946401252180380
+  - rid: 1149946401252180381
+  - rid: 1149946401252180382
+  - rid: 1149946401252180383
+  - rid: 1149946401252180384
+  - rid: 1149946401252180385
+  - rid: 1149946401252180386
+  - rid: 1149946401252180387
+  - rid: 1149946401252180388
   _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Eh??<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>\xBFD\xF3nde
     estoy?<ANIMATION:Idle>@<ANIMATION:Talk>Espera...<ANIMATION:Idle>@<ANIMATION:Talk>...<ANIMATION:Idle>@<ANIMATION:Talk>\xBFQu\xE9
-    es esto?<ANIMATION:Idle><CHOICE:Hola/1>@@<OPTION:Hola><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>AAAAAA?!<ANIMATION:Idle>@<ANIMATION:Talk>Pero
-    si puedes hablar<ANIMATION:Idle>@<ANIMATION:Talk>\xBFQu\xE9 se supone que eres?<ANIMATION:Idle>@<ANIMATION:Talk>No
-    puedo concebir tu forma<ANIMATION:Idle><CHOICE:Soy Dios, a Zenith le cae un cami\xF3n/1,,Soy
-    una persona normal/1,,Me gustan los erizos/1>@@<OPTION:Soy Dios, a Zenith le
-    cae un cami\xF3n><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\xBFQU\xC9?!
+    es esto?<ANIMATION:Idle><CHOICE:Hola/1>@@<OPTION:Hola><CHARACTER:ZenithasFirst><!:surprised><ANIMATION:Talk>AAAAAA?!<ANIMATION:Idle>@<ANIMATION:Talk>Pero
+    si puedes hablar<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>\xBFQu\xE9 se supone
+    que eres?<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>No puedo concebir tu forma<ANIMATION:Idle><CHOICE:Soy
+    Dios, a Zenith le cae un cami\xF3n/1,,Soy una persona normal/1,,Me gustan los
+    erizos/1>@@<OPTION:Soy Dios, a Zenith le cae un cami\xF3n><CHARACTER:ZenithasFirst><!:surprised><ANIMATION:Talk>\xBFQU\xC9?!
     NOOOOOOOO!!!<ANIMATION:Idle>@<ANIMATION:Talk>...<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Ah,
     que me estabas vacilando<ANIMATION:Idle>@<ANIMATION:Talk>Jeje, en verdad ha sido
     gracioso, me caes bien<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Parece que ya
@@ -116,7 +116,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1149946383194128504
+    - rid: 1149946401252180374
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: fa922f9f-911f-41e7-b8f7-f49d3b62732c
@@ -164,7 +164,7 @@ MonoBehaviour:
                   - GUID: 3185e43f-e34b-4966-9f23-99facc85d173
                     Position: {x: 1324, y: 452.8}
                     LinkedNodes: []
-    - rid: 1149946383194128505
+    - rid: 1149946401252180375
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7fec5865-1529-4c28-a167-aca19975f7db
@@ -218,7 +218,7 @@ MonoBehaviour:
         - Espera...
         - ...
         - "\xBFQu\xE9 es esto?"
-    - rid: 1149946383194128506
+    - rid: 1149946401252180376
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 5c864aa5-7589-4bda-b928-9b56e27bd8bc
@@ -261,7 +261,7 @@ MonoBehaviour:
           Value: 1
         - ChoiceText: Me gustan los erizos
           Value: 1
-    - rid: 1149946383194128507
+    - rid: 1149946401252180377
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 26324497-d844-476c-bbbd-f18cc0f9a6ad
@@ -292,7 +292,7 @@ MonoBehaviour:
         - "<!:default>Uy, perd\xF3n no era mi intenci\xF3n atacarte"
         - "<!:happy>Bueno, no parece que quieras hacerme da\xF1o"
         - Soy Zenith, encantada
-    - rid: 1149946383194128508
+    - rid: 1149946401252180378
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: aca0785c-6cca-404d-a63b-af7e34d2bf6b
@@ -310,7 +310,7 @@ MonoBehaviour:
         - <!:happy>No parece que tengas intenciones hostiles
         - "Adem\xE1s te gustan los erizos"
         - Me llamo Zenith, encantada
-    - rid: 1149946383194128509
+    - rid: 1149946401252180379
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: a0a182b2-92dd-42b9-9348-7fba16662f3b
@@ -355,7 +355,7 @@ MonoBehaviour:
         Choices:
         - ChoiceText: Hola
           Value: 1
-    - rid: 1149946383194128510
+    - rid: 1149946401252180380
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7c223271-00cb-4494-8be0-f1772d244890
@@ -365,7 +365,7 @@ MonoBehaviour:
           Position: {x: 1324, y: -54.4}
           LinkedNodes: []
         Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: default
+        Emotion: surprised
         characterIndex: 0
         DialogueLines:
         - "\xBFQU\xC9?! NOOOOOOOO!!!"
@@ -373,7 +373,7 @@ MonoBehaviour:
         - <!:confident>Ah, que me estabas vacilando
         - Jeje, en verdad ha sido gracioso, me caes bien
         - <!:happy>Parece que ya lo sabes, pero soy Zenith, encantada
-    - rid: 1149946383194128511
+    - rid: 1149946401252180381
       type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 9a93b8e5-aee5-4387-8180-f91c69c1ffa0
@@ -392,21 +392,21 @@ MonoBehaviour:
               Position: {x: 2108.8, y: 251.2}
               LinkedNodes: []
         Label: NEXT
-    - rid: 1149946383194128512
+    - rid: 1149946401252180382
       type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 3185e43f-e34b-4966-9f23-99facc85d173
         Position: {x: 1324, y: 452.8}
         LinkedNodes: []
         Label: NEXT
-    - rid: 1149946383194128513
+    - rid: 1149946401252180383
       type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 56e723f5-1134-4131-abc9-efb5f004b7f1
         Position: {x: 1324, y: -54.4}
         LinkedNodes: []
         Label: NEXT
-    - rid: 1149946383194128514
+    - rid: 1149946401252180384
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7352c550-8508-4aa1-83f7-40e72ea1a5b4
@@ -427,7 +427,7 @@ MonoBehaviour:
         DialogueLines:
         - ...
         - "\xBFTienes alguna idea de d\xF3nde estamos?"
-    - rid: 1149946383194128515
+    - rid: 1149946401252180385
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: a6249949-cc79-4649-98e5-fb72a40ed9f7
@@ -444,7 +444,7 @@ MonoBehaviour:
           Value: 1
         - ChoiceText: En Murcia
           Value: 1
-    - rid: 1149946383194128516
+    - rid: 1149946401252180386
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 439891e9-7a40-4ce3-8f74-cff56ee7ed52
@@ -459,7 +459,7 @@ MonoBehaviour:
         - "<!:happy>Es broma \xBFno?"
         - "<!:confident>Asumo que t\xFA tampoco lo sabes"
         - <!:happy>Investiguemos la zona entonces
-    - rid: 1149946383194128517
+    - rid: 1149946401252180387
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: f8b2e291-aac3-4178-a902-0a059745c796
@@ -471,7 +471,7 @@ MonoBehaviour:
         DialogueLines:
         - Pues estamos en las mismas
         - "Deber\xEDamos investigar la zona"
-    - rid: 1149946383194128518
+    - rid: 1149946401252180388
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: bb0e7707-8c5d-41f1-a0fd-1abf9119e91e
@@ -511,10 +511,10 @@ MonoBehaviour:
               Position: {x: 1324, y: 452.8}
               LinkedNodes: []
         Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: default
+        Emotion: surprised
         characterIndex: 0
         DialogueLines:
         - AAAAAA?!
         - Pero si puedes hablar
-        - "\xBFQu\xE9 se supone que eres?"
-        - No puedo concebir tu forma
+        - "<!:annoyed>\xBFQu\xE9 se supone que eres?"
+        - <!:confident>No puedo concebir tu forma

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b1b997bd0fdde7448995c58b3cf52dd
+guid: 5e965bac6b05b624da2831cb529daca8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -20,7 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -45,9 +45,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,10 +67,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zenith_Emotions_0
+      name: Rain_0
       rect:
         serializedVersion: 2
-        x: 67
+        x: 0
         y: 0
-        width: 1649
-        height: 1583
+        width: 23
+        height: 57
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d55d7f197ea0384dbeb4433fc111055
-      internalID: 1886506368
+      spriteID: c5a61494bf6a55b40bd10dc4786ec168
+      internalID: 485184664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zenith_Emotions_1
+      name: Rain_1
       rect:
         serializedVersion: 2
-        x: 1847
+        x: 23
         y: 0
-        width: 1648
-        height: 1583
+        width: 24
+        height: 56
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,92 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e48baa7e83f96494b808b2aa63dd8d32
-      internalID: -1909571729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zenith_Emotions_2
-      rect:
-        serializedVersion: 2
-        x: 3630
-        y: 0
-        width: 1649
-        height: 1583
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8fbae43738841249b5476e25b8b75ec
-      internalID: -876798376
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zenith_Emotions_3
-      rect:
-        serializedVersion: 2
-        x: 5444
-        y: 0
-        width: 1649
-        height: 1583
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0b85c49b7de5ee49b2e0c8a1872209c
-      internalID: -1042966804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zenith_Emotions_4
-      rect:
-        serializedVersion: 2
-        x: 7193
-        y: 0
-        width: 1649
-        height: 1583
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 779f8735800bb6041979e2113a372d9a
-      internalID: 1690530461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zenith_Emotions_5
-      rect:
-        serializedVersion: 2
-        x: 8909
-        y: 0
-        width: 1544
-        height: 1583
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31f4b3dd40261dc4f869bd8cf486446b
-      internalID: -763639625
+      spriteID: 21e10be1d24b5e349945aa1f7adf1e40
+      internalID: -1765597763
       vertices: []
       indices: 
       edges: []
@@ -241,14 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Zenith_Emotions_0: 1886506368
-      Zenith_Emotions_1: -1909571729
-      Zenith_Emotions_2: -876798376
-      Zenith_Emotions_3: -1042966804
-      Zenith_Emotions_4: 1690530461
-      Zenith_Emotions_5: -432884504
-      Zenith_Emotions_6: -763639625
-      Zenith_Emotions_7: 636536758
+      Rain_0: 485184664
+      Rain_1: -1765597763
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

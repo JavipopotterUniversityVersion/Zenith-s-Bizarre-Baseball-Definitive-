@@ -599,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748090765973160130, guid: c5f98172c73bb55428ae0ae6d4c49a89, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7748090765973160130, guid: c5f98172c73bb55428ae0ae6d4c49a89, type: 3}
       propertyPath: m_LocalPosition.x
@@ -827,97 +827,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f98172c73bb55428ae0ae6d4c49a89, type: 3}
---- !u!1 &719440505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7748090765973160188, guid: c5f98172c73bb55428ae0ae6d4c49a89, type: 3}
-  m_PrefabInstance: {fileID: 719440504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &719440506 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7748090765973160191, guid: c5f98172c73bb55428ae0ae6d4c49a89, type: 3}
   m_PrefabInstance: {fileID: 719440504}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719440505}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35a2a084dd214f5409cb7f1f2da7d13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &719440511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719440505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: 8ca7058e6818d4449a07330610926941, type: 2}
-  _floatEvents:
-  - _condition:
-      operation: input == 1
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
-          m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
-          m_MethodName: StartDialogue
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 14911ef14cb0146458acd73c45ca6ad9, type: 2}
-            m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 11400000, guid: 6611088563278284bbf39ea424c3ce2a, type: 2}
-          m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-          m_MethodName: SetAutoRemove
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 11400000, guid: 6611088563278284bbf39ea424c3ce2a, type: 2}
-          m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-          m_MethodName: AddToFirst
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: a39ccb7a6bcfb9548a83b3cf424b9cb4, type: 2}
-            m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &741859229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -927,7 +847,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4739850982252610504, guid: f908354d968129d478b17942d25a7033, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4739850982252610504, guid: f908354d968129d478b17942d25a7033, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1595,7 +1515,7 @@ Transform:
   - {fileID: 420792352}
   - {fileID: 1313123891}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313123887
 GameObject:
@@ -1984,8 +1904,9 @@ GameObject:
   - component: {fileID: 1472336330}
   - component: {fileID: 1472336332}
   - component: {fileID: 1472336331}
+  - component: {fileID: 1472336334}
   m_Layer: 0
-  m_Name: Delay UnDazzle 1s
+  m_Name: Delay UnDazzle 1,25s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2004,7 +1925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delayTime:
-    operation: 1
+    operation: 1,25
     _showReferences: 0
     _floatDictionary:
       list: []
@@ -2055,15 +1976,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 8ca7058e6818d4449a07330610926941, type: 2}
-        m_TargetAssemblyTypeName: Float, Assembly-CSharp
-        m_MethodName: AddValue
-        m_Mode: 4
+      - m_Target: {fileID: 1472336334}
+        m_TargetAssemblyTypeName: DialogueSequencer, Assembly-CSharp
+        m_MethodName: GetNextDialogue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2131,8 +2052,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1472336334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472336329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f80c2911c7065f40a0648e297daad27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onGetDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
+        m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onNoMoreDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  _dialogueSequence: {fileID: 11400000, guid: fc01ca135f0c85249bd0b10ecc8398ca, type: 2}
 --- !u!1 &1601047048
 GameObject:
   m_ObjectHideFlags: 0

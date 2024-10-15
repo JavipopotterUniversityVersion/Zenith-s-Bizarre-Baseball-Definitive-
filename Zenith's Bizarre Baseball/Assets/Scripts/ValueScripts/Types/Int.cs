@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "Int", menuName = "Value/Int")]
-public class Int : ScriptableObject
+public class Int : ScriptableObject, ISaveable
 {
     [SerializeField] UnityEvent onValueChanged = new UnityEvent();
     public UnityEvent OnValueChanged => onValueChanged;
@@ -39,4 +40,8 @@ public class Int : ScriptableObject
     public void MultiplyValue(int value) => SetValue(Value * value);
 
     public void DivideValue(int value) => SetValue(Value / value);
+
+    string ISaveable.Key => name;
+    public float SaveValue() => _value;
+    public void LoadValue(float value) => _value = (int)value;
 }

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b1976f2635b654690e8fcfdceb0802, type: 3}
   m_Name: PersistentData
   m_EditorClassIdentifier: 
-  _path: SavedValues.txt
-  _floatData:
-    list: []
-  _intData:
-    list: []
-  _boolData:
-    list: []
+  _saveables:
+    list:
+    - Key: TimesInVoid
+      Value:
+        target: {fileID: 11400000, guid: 8ca7058e6818d4449a07330610926941, type: 2}
+    - Key: FirstRun
+      Value:
+        target: {fileID: 11400000, guid: d0db0b8113452c048866f27736346d90, type: 2}
+  _saveablesStack: []

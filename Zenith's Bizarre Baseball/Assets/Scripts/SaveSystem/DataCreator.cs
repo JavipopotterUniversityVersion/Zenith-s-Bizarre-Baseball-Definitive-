@@ -11,7 +11,6 @@ public class DataCreator : MonoBehaviour
     {
         foreach (SaveSet saveSet in _saveSets)
         {
-            if(!File.Exists(saveSet.Path)) File.Create(saveSet.Path).Close();
         }
     }
 }

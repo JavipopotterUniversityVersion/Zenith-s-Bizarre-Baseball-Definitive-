@@ -74,6 +74,8 @@ public class Interpreter : MonoBehaviour
 
     IEnumerator InterpretDialogueRoutine(DialogueContainer dialogue)
     {
+        dialogue.OnTriggerDialogue.Invoke();
+
         string translation = dialogue.Translation;
         string[] lines = translation.Split('@');
 
@@ -243,6 +245,10 @@ public class Interpreter : MonoBehaviour
                 float targetX = float.Parse(commandValue.Split("/")[0]);
                 float time = float.Parse(commandValue.Split("/")[1]);
                 StartCoroutine(MoveCharacter(targetX, time));
+                break;
+
+            case "EVENT":
+                Resources.Load<Event>("Events/" + commandValue).Invoke();
                 break;
             default:
                 break;

@@ -685,9 +685,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 334573021082602170}
     m_Modifications:
     - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6295952384492244448}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetNextDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueSequencer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
       propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: c09202d8919e29549b5725154c4f8da2, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1653850347922221368, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
       propertyPath: m_Name
       value: Change sr material to Sprite-Lit-Default
@@ -754,6 +778,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+--- !u!114 &39463906754251780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7518784381286040132, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+  m_PrefabInstance: {fileID: 7553700649528331840}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3461672537637049145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6403685931703000441, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+  m_PrefabInstance: {fileID: 7553700649528331840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6295952384492244448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461672537637049145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f80c2911c7065f40a0648e297daad27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onGetDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
+        m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onNoMoreDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 39463906754251780}
+        m_TargetAssemblyTypeName: State, Assembly-CSharp
+        m_MethodName: ExecuteBehaviour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _dialogueSequence: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
 --- !u!4 &5243659738214081590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}

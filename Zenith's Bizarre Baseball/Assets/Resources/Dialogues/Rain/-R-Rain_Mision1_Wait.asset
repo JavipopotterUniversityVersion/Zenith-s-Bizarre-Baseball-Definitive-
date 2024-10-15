@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -R-Rain_Mision1_Wait
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: 79d122f5-68c9-443d-a443-9b4065f3b871
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: adb82657-61ae-48f6-b285-fa116e0c522b
+  DialogueNodeData:
+  - rid: 1149946566728220710
+  - rid: 1149946566728220711
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:RainasSecond><!:happy><ANIMATION:Talk>Ya
+    sabes, habla conmigo cuando tengas los 50\u20AC<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946566728220710
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 79d122f5-68c9-443d-a443-9b4065f3b871
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: adb82657-61ae-48f6-b285-fa116e0c522b
+          Position: {x: 186.4, y: 200}
+          LinkedNodes: []
+    - rid: 1149946566728220711
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: adb82657-61ae-48f6-b285-fa116e0c522b
+        Position: {x: 186.4, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: happy
+        characterIndex: 1
+        DialogueLines:
+        - "Ya sabes, habla conmigo cuando tengas los 50\u20AC"

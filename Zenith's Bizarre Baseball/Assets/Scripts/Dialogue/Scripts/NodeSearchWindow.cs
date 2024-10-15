@@ -51,6 +51,11 @@ public class NodeSearchWindow : ScriptableObject, ISearchWindowProvider
                 level = 1,
                 userData = NodeType.Background,
             },
+            new SearchTreeEntry(new GUIContent("Event Node"))
+            {
+                level = 1,
+                userData = NodeType.Event,
+            }
         };
 
         return tree;
@@ -81,6 +86,9 @@ public class NodeSearchWindow : ScriptableObject, ISearchWindowProvider
                 break;
             case NodeType.Background:
                 node = _graphView.GenerateBackgroundNode("Background");
+                break;
+            case NodeType.Event:
+                node = _graphView.GenerateEventNode();
                 break;
             default:
                 node = _graphView.GenerateDialogueNode("Dialogue");

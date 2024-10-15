@@ -15,6 +15,7 @@ public enum NodeType
     Label,
     LabelJump,
     Conditional,
-    Background
+    Background,
+    Event
 }
 #endif

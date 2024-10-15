@@ -1,0 +1,426 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -R-Rain_Mision_1
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
+        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
+        m_MethodName: SetAutoRemove
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
+        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
+        m_MethodName: AddDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 145481f876d08c840ad30c79dc5ac736, type: 2}
+          m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeLinks:
+  - BaseNodeGuid: 79d122f5-68c9-443d-a443-9b4065f3b871
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 77370ea8-b8c2-4ff3-846d-3c012da726a7
+  - BaseNodeGuid: 77370ea8-b8c2-4ff3-846d-3c012da726a7
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 731678c5-6d60-4d07-84dd-56793ae3ff22
+  - BaseNodeGuid: 731678c5-6d60-4d07-84dd-56793ae3ff22
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 613348d5-3a67-447f-bcf8-2eff3c1f366d
+  - BaseNodeGuid: 613348d5-3a67-447f-bcf8-2eff3c1f366d
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: ddccf035-d8b5-43a4-a0e7-b7ed3a5916ef
+  - BaseNodeGuid: ddccf035-d8b5-43a4-a0e7-b7ed3a5916ef
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 617d55b5-db6e-4934-9371-254d0caa7696
+  - BaseNodeGuid: 617d55b5-db6e-4934-9371-254d0caa7696
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+  - BaseNodeGuid: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+  - BaseNodeGuid: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+    BasePortIndex: 1
+    PortName: out
+    TargetNodeGuid: cf5a8017-b41e-453a-8528-0c7e980f5843
+  - BaseNodeGuid: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+  - BaseNodeGuid: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 66024ba7-9742-4486-94bb-5f7b1944b22e
+  - BaseNodeGuid: cf5a8017-b41e-453a-8528-0c7e980f5843
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 604847a0-e5ea-44fa-b972-26211e7503ac
+  DialogueNodeData:
+  - rid: 1149946566728220696
+  - rid: 1149946566728220697
+  - rid: 1149946566728220698
+  - rid: 1149946566728220699
+  - rid: 1149946566728220700
+  - rid: 1149946566728220701
+  - rid: 1149946566728220702
+  - rid: 1149946566728220703
+  - rid: 1149946566728220704
+  - rid: 1149946566728220705
+  - rid: 1149946566728220706
+  - rid: 1149946566728220707
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:RainasSecond><!:default><ANIMATION:Talk>Las
+    leyes de la termodin\xE1mica<ANIMATION:Idle>@<ANIMATION:Talk>Es curiosa la estad\xEDstica
+    de intentos de suicidio entre sus fundadores<ANIMATION:Idle>@<ANIMATION:Talk>\xBFSer\xE1
+    que explorar ese campo de la ciencia te vuelve loco?<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:annoyed><ANIMATION:Talk>\xBFA
+    qu\xE9 quieres llegar?<ANIMATION:Idle>@<CHARACTER:RainasSecond><!:worried><ANIMATION:Talk>No
+    vayas a caer en la locura t\xFA tambi\xE9n \xBFeh?<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>No
+    te preocupes<ANIMATION:Idle>@<ANIMATION:Talk>Literalmente nac\xED de la locura<ANIMATION:Idle>@<CHARACTER:RainasSecond><!:confident><ANIMATION:Talk>Pap\xE1
+    era todo un personaje<ANIMATION:Idle>@<ANIMATION:Talk><!:worried>Una pena haberle
+    conocido en sus \xFAltimos d\xEDas<ANIMATION:Idle>@<ANIMATION:Talk>Ten\xEDa tantas
+    preguntas<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>En fin, tengo un favor que
+    pedirte<ANIMATION:Idle>@<ANIMATION:Talk>Me gustar\xEDa ampliar la tienda, pero
+    me falta dinero<ANIMATION:Idle>@<ANIMATION:Talk>\xBFCrees que podr\xEDas conseguirme
+    50\u20AC??<ANIMATION:Idle><CHOICE:Claro/1,,Claro que s\xED/1>@@<OPTION:Claro><CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>Claro<ANIMATION:Idle>@<LABEL:YES><CHARACTER:RainasSecond><!:happy><ANIMATION:Talk>Genial,
+    muchas gracias<ANIMATION:Idle>@<ANIMATION:Talk>Habla conmigo cuando tengas el
+    dinero<ANIMATION:Idle><END>@<OPTION:Claro que s\xED><CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>Claro
+    que s\xED<ANIMATION:Idle><GOTO:YES>@"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946566728220696
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 79d122f5-68c9-443d-a443-9b4065f3b871
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 77370ea8-b8c2-4ff3-846d-3c012da726a7
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: 731678c5-6d60-4d07-84dd-56793ae3ff22
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes:
+            - GUID: 613348d5-3a67-447f-bcf8-2eff3c1f366d
+              Position: {x: 615.2, y: 200}
+              LinkedNodes:
+              - GUID: ddccf035-d8b5-43a4-a0e7-b7ed3a5916ef
+                Position: {x: 829.60004, y: 200}
+                LinkedNodes:
+                - GUID: 617d55b5-db6e-4934-9371-254d0caa7696
+                  Position: {x: 1044, y: 200}
+                  LinkedNodes:
+                  - GUID: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+                    Position: {x: 1258.3999, y: 200}
+                    LinkedNodes:
+                    - GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+                      Position: {x: 1688.7999, y: 129.6}
+                      LinkedNodes:
+                      - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+                        Position: {x: 1903.2, y: 129.6}
+                        LinkedNodes:
+                        - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+                          Position: {x: 2039.2, y: 129.6}
+                          LinkedNodes: []
+                    - GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+                      Position: {x: 1688.7999, y: 269.59998}
+                      LinkedNodes:
+                      - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+                        Position: {x: 1903.2, y: 269.59998}
+                        LinkedNodes: []
+    - rid: 1149946566728220697
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 77370ea8-b8c2-4ff3-846d-3c012da726a7
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: 731678c5-6d60-4d07-84dd-56793ae3ff22
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 613348d5-3a67-447f-bcf8-2eff3c1f366d
+            Position: {x: 615.2, y: 200}
+            LinkedNodes:
+            - GUID: ddccf035-d8b5-43a4-a0e7-b7ed3a5916ef
+              Position: {x: 829.60004, y: 200}
+              LinkedNodes:
+              - GUID: 617d55b5-db6e-4934-9371-254d0caa7696
+                Position: {x: 1044, y: 200}
+                LinkedNodes:
+                - GUID: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+                  Position: {x: 1258.3999, y: 200}
+                  LinkedNodes:
+                  - GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+                    Position: {x: 1688.7999, y: 129.6}
+                    LinkedNodes:
+                    - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+                      Position: {x: 1903.2, y: 129.6}
+                      LinkedNodes:
+                      - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+                        Position: {x: 2039.2, y: 129.6}
+                        LinkedNodes: []
+                  - GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+                    Position: {x: 1688.7999, y: 269.59998}
+                    LinkedNodes:
+                    - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+                      Position: {x: 1903.2, y: 269.59998}
+                      LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "Las leyes de la termodin\xE1mica"
+        - "Es curiosa la estad\xEDstica de intentos de suicidio entre sus fundadores"
+        - "\xBFSer\xE1 que explorar ese campo de la ciencia te vuelve loco?"
+    - rid: 1149946566728220698
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 731678c5-6d60-4d07-84dd-56793ae3ff22
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 613348d5-3a67-447f-bcf8-2eff3c1f366d
+          Position: {x: 615.2, y: 200}
+          LinkedNodes:
+          - GUID: ddccf035-d8b5-43a4-a0e7-b7ed3a5916ef
+            Position: {x: 829.60004, y: 200}
+            LinkedNodes:
+            - GUID: 617d55b5-db6e-4934-9371-254d0caa7696
+              Position: {x: 1044, y: 200}
+              LinkedNodes:
+              - GUID: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+                Position: {x: 1258.3999, y: 200}
+                LinkedNodes:
+                - GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+                  Position: {x: 1688.7999, y: 129.6}
+                  LinkedNodes:
+                  - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+                    Position: {x: 1903.2, y: 129.6}
+                    LinkedNodes:
+                    - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+                      Position: {x: 2039.2, y: 129.6}
+                      LinkedNodes: []
+                - GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+                  Position: {x: 1688.7999, y: 269.59998}
+                  LinkedNodes:
+                  - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+                    Position: {x: 1903.2, y: 269.59998}
+                    LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: annoyed
+        characterIndex: 0
+        DialogueLines:
+        - "\xBFA qu\xE9 quieres llegar?"
+    - rid: 1149946566728220699
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 613348d5-3a67-447f-bcf8-2eff3c1f366d
+        Position: {x: 615.2, y: 200}
+        LinkedNodes:
+        - GUID: ddccf035-d8b5-43a4-a0e7-b7ed3a5916ef
+          Position: {x: 829.60004, y: 200}
+          LinkedNodes:
+          - GUID: 617d55b5-db6e-4934-9371-254d0caa7696
+            Position: {x: 1044, y: 200}
+            LinkedNodes:
+            - GUID: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+              Position: {x: 1258.3999, y: 200}
+              LinkedNodes:
+              - GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+                Position: {x: 1688.7999, y: 129.6}
+                LinkedNodes:
+                - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+                  Position: {x: 1903.2, y: 129.6}
+                  LinkedNodes:
+                  - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+                    Position: {x: 2039.2, y: 129.6}
+                    LinkedNodes: []
+              - GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+                Position: {x: 1688.7999, y: 269.59998}
+                LinkedNodes:
+                - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+                  Position: {x: 1903.2, y: 269.59998}
+                  LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: worried
+        characterIndex: 1
+        DialogueLines:
+        - "No vayas a caer en la locura t\xFA tambi\xE9n \xBFeh?"
+    - rid: 1149946566728220700
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ddccf035-d8b5-43a4-a0e7-b7ed3a5916ef
+        Position: {x: 829.60004, y: 200}
+        LinkedNodes:
+        - GUID: 617d55b5-db6e-4934-9371-254d0caa7696
+          Position: {x: 1044, y: 200}
+          LinkedNodes:
+          - GUID: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+            Position: {x: 1258.3999, y: 200}
+            LinkedNodes:
+            - GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+              Position: {x: 1688.7999, y: 129.6}
+              LinkedNodes:
+              - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+                Position: {x: 1903.2, y: 129.6}
+                LinkedNodes:
+                - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+                  Position: {x: 2039.2, y: 129.6}
+                  LinkedNodes: []
+            - GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+              Position: {x: 1688.7999, y: 269.59998}
+              LinkedNodes:
+              - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+                Position: {x: 1903.2, y: 269.59998}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: confident
+        characterIndex: 0
+        DialogueLines:
+        - No te preocupes
+        - "Literalmente nac\xED de la locura"
+    - rid: 1149946566728220701
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 617d55b5-db6e-4934-9371-254d0caa7696
+        Position: {x: 1044, y: 200}
+        LinkedNodes:
+        - GUID: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+          Position: {x: 1258.3999, y: 200}
+          LinkedNodes:
+          - GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+            Position: {x: 1688.7999, y: 129.6}
+            LinkedNodes:
+            - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+              Position: {x: 1903.2, y: 129.6}
+              LinkedNodes:
+              - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+                Position: {x: 2039.2, y: 129.6}
+                LinkedNodes: []
+          - GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+            Position: {x: 1688.7999, y: 269.59998}
+            LinkedNodes:
+            - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+              Position: {x: 1903.2, y: 269.59998}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: confident
+        characterIndex: 1
+        DialogueLines:
+        - "Pap\xE1 era todo un personaje"
+        - "<!:worried>Una pena haberle conocido en sus \xFAltimos d\xEDas"
+        - "Ten\xEDa tantas preguntas"
+        - <!:happy>En fin, tengo un favor que pedirte
+        - "Me gustar\xEDa ampliar la tienda, pero me falta dinero"
+        - "\xBFCrees que podr\xEDas conseguirme 50\u20AC??"
+    - rid: 1149946566728220702
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 99a47819-3ef4-4da9-a62c-eb5f5a153b33
+        Position: {x: 1258.3999, y: 200}
+        LinkedNodes:
+        - GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+          Position: {x: 1688.7999, y: 129.6}
+          LinkedNodes:
+          - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+            Position: {x: 1903.2, y: 129.6}
+            LinkedNodes:
+            - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+              Position: {x: 2039.2, y: 129.6}
+              LinkedNodes: []
+        - GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+          Position: {x: 1688.7999, y: 269.59998}
+          LinkedNodes:
+          - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+            Position: {x: 1903.2, y: 269.59998}
+            LinkedNodes: []
+        Choices:
+        - ChoiceText: Claro
+          Value: 1
+        - ChoiceText: "Claro que s\xED"
+          Value: 1
+    - rid: 1149946566728220703
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 119d8b78-d669-4c84-aba1-37b612e5a0bd
+        Position: {x: 1688.7999, y: 129.6}
+        LinkedNodes:
+        - GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+          Position: {x: 1903.2, y: 129.6}
+          LinkedNodes:
+          - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+            Position: {x: 2039.2, y: 129.6}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: confident
+        characterIndex: 0
+        DialogueLines:
+        - Claro
+    - rid: 1149946566728220704
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: cf5a8017-b41e-453a-8528-0c7e980f5843
+        Position: {x: 1688.7999, y: 269.59998}
+        LinkedNodes:
+        - GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+          Position: {x: 1903.2, y: 269.59998}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: confident
+        characterIndex: 0
+        DialogueLines:
+        - "Claro que s\xED"
+    - rid: 1149946566728220705
+      type: {class: LabelNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 2e2e8ec0-2c94-4dcb-b88b-8946a5b3984a
+        Position: {x: 1903.2, y: 129.6}
+        LinkedNodes:
+        - GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+          Position: {x: 2039.2, y: 129.6}
+          LinkedNodes: []
+        Label: YES
+    - rid: 1149946566728220706
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 66024ba7-9742-4486-94bb-5f7b1944b22e
+        Position: {x: 2039.2, y: 129.6}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: happy
+        characterIndex: 1
+        DialogueLines:
+        - Genial, muchas gracias
+        - Habla conmigo cuando tengas el dinero
+    - rid: 1149946566728220707
+      type: {class: LabelJumpNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 604847a0-e5ea-44fa-b972-26211e7503ac
+        Position: {x: 1903.2, y: 269.59998}
+        LinkedNodes: []
+        Label: YES

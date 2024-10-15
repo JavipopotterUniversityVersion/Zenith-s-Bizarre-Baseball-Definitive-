@@ -6,97 +6,64 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SaveSet", menuName = "SaveSystem/SaveSet")]
 public class SaveSet : ScriptableObject
 {
-    [SerializeField] string _path;
-    public string Path => Application.persistentDataPath + "/" + _path; 
-    [SerializeField] SerializableDictionary<string, Float> _floatData;
-    [SerializeField] SerializableDictionary<string, Int> _intData;
-    [SerializeField] SerializableDictionary<string, Bool> _boolData;
 
-    [ContextMenu("Write")]
-    public void Write()
+    [SerializeField] SerializableDictionary<string, IRef<ISaveable>> _saveables;
+
+    public void SaveFloat(Float saveable) => Save(saveable);
+    public void SaveInt(Int saveable) => Save(saveable);
+    public void SaveBool(Bool saveable) => Save(saveable);
+
+    public void Save(ISaveable saveable)
     {
-        StreamWriter writer = new StreamWriter(Path);
-
-        writer.WriteLine("Floats:");
-
-        foreach (KeyValuePair<string, Float> pair in _floatData)
+        if(_saveables.ContainsKey(saveable.Key))
         {
-            writer.WriteLine(pair.Key + " = " + pair.Value.GetRawValue());
+            string persistentDataPath = Application.persistentDataPath + Path.DirectorySeparatorChar + saveable.Key + ".save";
+
+            StreamWriter writer = new StreamWriter(persistentDataPath);
+            writer.Write(saveable.SaveValue());
+            writer.Close();
         }
-
-        writer.WriteLine("Ints:");
-
-        foreach (KeyValuePair<string, Int> pair in _intData)
+        else
         {
-            writer.WriteLine(pair.Key + " = " + pair.Value.Value);
+            Debug.LogWarning("Saveable not found in SaveSet");
         }
-
-        writer.WriteLine("Bools:");
-
-        foreach (KeyValuePair<string, Bool> pair in _boolData)
-        {
-            writer.WriteLine(pair.Key + " = " + pair.Value.Value);
-        }
-
-        writer.Close();
     }
 
-    [ContextMenu("Read")]
-    public void Read()
+    [ContextMenu("Load")]
+    public void Load()
     {
-         string path = Application.persistentDataPath + "/" + _path;
-        StreamReader reader = new StreamReader(path);
-        int readType = 0;
-
-        while (!reader.EndOfStream)
+        foreach(KeyValuePair<string, IRef<ISaveable>> saveable in _saveables)
         {
-            string line = reader.ReadLine();
+            string persistentDataPath = Application.persistentDataPath + Path.DirectorySeparatorChar + saveable.Key + ".save";
 
-            if(line == "Floats:") { readType = 0; continue; }
-            if(line == "Ints:") { readType = 1; continue; }
-            if(line == "Bools:") { readType = 2; continue; }
-
-            switch (readType)
+            if(File.Exists(persistentDataPath))
             {
-                case 0:
-                    ReadFloat(line);
-                    break;
-                case 1:
-                    ReadInt(line);
-                    break;
-                case 2:
-                    ReadBool(line);
-                    break;
+                StreamReader reader = new StreamReader(persistentDataPath);
+                saveable.Value.I.LoadValue(float.Parse(reader.ReadToEnd()));
+                reader.Close();
             }
         }
-
-        reader.Close();
     }
 
-    void ReadFloat(string line)
+    [SerializeField] IRef<ISaveable>[] _saveablesStack;
+
+
+    [ContextMenu("SaveInDictionary")]
+    public void SaveInDictionary()
     {
-        string[] parts = line.Split('=');
-        string key = parts[0].Trim();
-        float value = float.Parse(parts[1].Trim());
+        foreach (IRef<ISaveable> saveable in _saveablesStack)
+        {
+            if(!_saveables.ContainsKey(saveable.I.Key)) _saveables.Add(saveable.I.Key, saveable);
+            else Debug.LogWarning($"Saveable with key {saveable.I.Key} already exists in SaveSet");
+        }
 
-        _floatData[key].SetRawValue(value);
+        _saveablesStack = new IRef<ISaveable>[0];
     }
+}
 
-    void ReadInt(string line)
-    {
-        string[] parts = line.Split('=');
-        string key = parts[0].Trim();
-        int value = int.Parse(parts[1].Trim());
-
-        _intData[key].Value = value;
-    }
-
-    void ReadBool(string line)
-    {
-        string[] parts = line.Split('=');
-        string key = parts[0].Trim();
-        bool value = bool.Parse(parts[1].Trim());
-
-        _boolData[key].SetValue(value);
-    }
+public interface ISaveable
+{
+    string Key { get; }
+    float SaveValue();
+    void LoadValue(float value);
 }

@@ -145,3 +145,18 @@ public class ChoicePair
 
     public override string ToString() => $"{ChoiceText}/{Value}";
 }
+
+[Serializable]
+public class EventNodeData : NodeData
+{
+    public Event eventAsset;
+
+    public override string TranslateText()
+    {
+        string value = $"<EVENT:{eventAsset.name}>";
+
+        if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
+
+        return value;
+    }
+}

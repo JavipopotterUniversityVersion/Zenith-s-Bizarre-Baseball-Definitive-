@@ -125,6 +125,15 @@ public class GraphSaveUtility
                     });
                 break;
 
+                case NodeType.Event:
+                    dialogueContainer.DialogueNodeData.Add(new EventNodeData
+                    {
+                        GUID = dialogueNode.GUID,
+                        eventAsset = dialogueNode.mainContainer.Q<ObjectField>().value as Event,
+                        Position = dialogueNode.GetPosition().position,
+                    });
+                break;
+
                 default:
                     dialogueContainer.DialogueNodeData.Add(new NodeData
                     {
@@ -211,6 +220,12 @@ public class GraphSaveUtility
             else if(nodeData is ConditionalNodeData conditionalData)
             {
                 var generatedNode = _targetGraphView.GenerateConditionalNode("Conditional", conditionalData.Conditions);
+                generatedNode.GUID = nodeData.GUID;
+                generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
+            }
+            else if(nodeData is EventNodeData eventData)
+            {
+                var generatedNode = _targetGraphView.GenerateEventNode(eventData.eventAsset);
                 generatedNode.GUID = nodeData.GUID;
                 generatedNode.SetPosition(new Rect(nodeData.Position, _targetGraphView.DefaultNodeSize));
             }

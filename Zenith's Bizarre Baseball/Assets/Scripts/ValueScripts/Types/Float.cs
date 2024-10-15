@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using MyBox;
 
 [CreateAssetMenu(fileName = "Float", menuName = "Value/Float")]
-public class Float : ScriptableICondition
+public class Float : ScriptableICondition, ISaveable
 {
     [SerializeField] float _value;
     [SerializeField] Processor _readProcessor;
@@ -62,6 +62,10 @@ public class Float : ScriptableICondition
     }
 
     public void Refresh() => onValueChanged.Invoke();
+
+    string ISaveable.Key => name;
+    public float SaveValue() => _value;
+    public void LoadValue(float value) => _value = value;
 }
 
 

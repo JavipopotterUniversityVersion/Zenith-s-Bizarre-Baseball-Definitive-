@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Events;
+
 #if UNITY_EDITOR
 using UnityEditor.Callbacks;
 #endif
@@ -9,6 +11,9 @@ using UnityEditor.Callbacks;
 [Serializable] [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue/Dialogue Container")]
 public class DialogueContainer : ScriptableObject
 {
+    [SerializeField] UnityEvent onTriggerDialogue = new UnityEvent();
+    public UnityEvent OnTriggerDialogue => onTriggerDialogue;
+    
     public List<NodeLinkData> NodeLinks = new List<NodeLinkData>();
     [SerializeReference] public List<NodeData> DialogueNodeData = new List<NodeData>();
     public string Translation
@@ -45,6 +50,8 @@ public class DialogueContainer : ScriptableObject
 
         _translationPreview = DialogueNodeData[0].TranslateText();
     }
+
+    public string Key => name;
 
 #if UNITY_EDITOR
     [OnOpenAsset]

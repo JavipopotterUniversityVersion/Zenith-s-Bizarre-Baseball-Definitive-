@@ -9,42 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fd70d71862700439bd77ed131fb088, type: 3}
-  m_Name: TimesInVoid
+  m_Script: {fileID: 11500000, guid: 721cc5ac52977af4d87f910f627c37ed, type: 3}
+  m_Name: FirstRun
   m_EditorClassIdentifier: 
-  _value: 1
-  _readProcessor:
-    operation: input
-    _showReferences: 0
-    _floatDictionary:
-      list: []
-    _intDictionary:
-      list: []
-    _curveDictionary:
-      list: []
-    _operationDictionary:
-      list: []
-    _functionDictionary:
-      list: []
-    _stringDictionary:
-      list: []
-    _boolDictionary:
-      list: []
-    _eventDictionary:
-      list: []
-  onRead:
-    m_PersistentCalls:
-      m_Calls: []
+  _value: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: fe5ccb222f84f7448a4a24878ca773d8, type: 2}
         m_TargetAssemblyTypeName: SaveSet, Assembly-CSharp
-        m_MethodName: SaveFloat
+        m_MethodName: SaveBool
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000}
-          m_ObjectArgumentAssemblyTypeName: Float, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: Bool, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

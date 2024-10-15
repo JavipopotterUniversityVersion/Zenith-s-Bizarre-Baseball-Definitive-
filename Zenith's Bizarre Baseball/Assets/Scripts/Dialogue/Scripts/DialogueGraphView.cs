@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 #if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
@@ -155,6 +157,45 @@ public class DialogueGraphView : GraphView
         node.mainContainer.Add(textField);
     }
 
+    public DialogueNode GenerateEventNode(Event eventData = null) 
+    {
+        DialogueNode node = CreateEventNode(eventData);
+        AddElement(node);
+
+        return node;
+    }
+
+    public DialogueNode CreateEventNode(Event eventData)
+    {
+        var eventNode = new DialogueNode
+        {
+            title = "Event",
+            GUID = System.Guid.NewGuid().ToString(),
+            NodeType = NodeType.Event
+        };
+
+        var inputPort = GeneratePort(eventNode, Direction.Input, Port.Capacity.Single);
+        inputPort.portName = "Input";
+        eventNode.inputContainer.Add(inputPort);
+
+        var outputPort = GeneratePort(eventNode, Direction.Output);
+        outputPort.portName = "Output";
+        eventNode.outputContainer.Add(outputPort);
+
+        var eventField = new ObjectField()
+        {
+            objectType = typeof(Event),
+            allowSceneObjects = false
+        };
+        eventField.value = eventData;
+
+        eventNode.mainContainer.Add(eventField);
+
+        eventNode.RefreshExpandedState();
+        eventNode.RefreshPorts();
+
+        return eventNode;
+    }
 
     public DialogueNode GenerateChoiceNode(string nodeName)
     {

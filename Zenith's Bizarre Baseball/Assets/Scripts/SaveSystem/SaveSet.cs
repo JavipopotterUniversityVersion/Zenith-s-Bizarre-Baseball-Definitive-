@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SaveSet", menuName = "SaveSystem/SaveSet")]
 public class SaveSet : ScriptableObject
 {
-
     [SerializeField] SerializableDictionary<string, IRef<ISaveable>> _saveables;
+    [SerializeField] DialogueSequence[] _dialogueSequence;
 
     public void SaveFloat(Float saveable) => Save(saveable);
     public void SaveInt(Int saveable) => Save(saveable);
@@ -29,6 +29,17 @@ public class SaveSet : ScriptableObject
         }
     }
 
+    public void SaveDialogueSequences()
+    {
+        foreach (DialogueSequence sequence in _dialogueSequence)
+        {
+            string persistentDataPath = Application.persistentDataPath + Path.DirectorySeparatorChar + sequence.name + ".json";
+            StreamWriter writer = new StreamWriter(persistentDataPath);
+            writer.Write(JsonUtility.ToJson(sequence));
+            writer.Close();
+        }
+    }
+
     [ContextMenu("Load")]
     public void Load()
     {
@@ -42,6 +53,12 @@ public class SaveSet : ScriptableObject
                 saveable.Value.I.LoadValue(float.Parse(reader.ReadToEnd()));
                 reader.Close();
             }
+        }
+
+        foreach (DialogueSequence sequence in _dialogueSequence)
+        {
+            string persistentDataPath = Application.persistentDataPath + Path.DirectorySeparatorChar + sequence.name + ".json";
+            if (File.Exists(persistentDataPath)) JsonUtility.FromJsonOverwrite(File.ReadAllText(persistentDataPath), sequence);
         }
     }
 

@@ -14,35 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerDialogue:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: RemoveDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 145481f876d08c840ad30c79dc5ac736, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   NodeLinks:
   - BaseNodeGuid: b3cd5601-2c47-4aa3-b98c-3873c1362703
     BasePortIndex: 0
     PortName: Next
     TargetNodeGuid: 81bda1bb-1bea-4449-9b37-607c6fc1fd2c
   DialogueNodeData:
-  - rid: 1149946566728220712
-  - rid: 1149946566728220713
+  - rid: 1149946566728220790
+  - rid: 1149946566728220791
   _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:RainasSecond><!:happy><ANIMATION:Talk>Genial,
     muchas gracias hermanita<ANIMATION:Idle>@<ANIMATION:Talk>Ahora podr\xE9 ampliar
     la tienda<ANIMATION:Idle>@<ANIMATION:Talk>Espero que te sea de utilidad este
-    nuevo hueco<ANIMATION:Idle><END>"
+    nuevo hueco<ANIMATION:Idle>@<ANIMATION:Talk><!:default>Por cierto, \xBFHas visto
+    a Anne \xFAtlimamente?<ANIMATION:Idle>@<ANIMATION:Talk>El otro d\xEDa se vi\xF3
+    \"El Club de la Lucha\"<!:worried> y no la he visto desde entonces <ANIMATION:Idle>@<ANIMATION:Talk>Espero
+    que no est\xE9 haciendo nada raro<ANIMATION:Idle><END>"
   references:
     version: 2
     RefIds:
-    - rid: 1149946566728220712
+    - rid: 1149946566728220790
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: b3cd5601-2c47-4aa3-b98c-3873c1362703
@@ -51,7 +42,7 @@ MonoBehaviour:
         - GUID: 81bda1bb-1bea-4449-9b37-607c6fc1fd2c
           Position: {x: 186.4, y: 200}
           LinkedNodes: []
-    - rid: 1149946566728220713
+    - rid: 1149946566728220791
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 81bda1bb-1bea-4449-9b37-607c6fc1fd2c
@@ -64,3 +55,7 @@ MonoBehaviour:
         - Genial, muchas gracias hermanita
         - "Ahora podr\xE9 ampliar la tienda"
         - Espero que te sea de utilidad este nuevo hueco
+        - "<!:default>Por cierto, \xBFHas visto a Anne \xFAtlimamente?"
+        - "El otro d\xEDa se vi\xF3 \"El Club de la Lucha\"<!:worried> y no la he
+          visto desde entonces "
+        - "Espero que no est\xE9 haciendo nada raro"

@@ -29,6 +29,7 @@ public class SaveSet : ScriptableObject
         }
     }
 
+    [ContextMenu("SaveDialogueSequences")]
     public void SaveDialogueSequences()
     {
         foreach (DialogueSequence sequence in _dialogueSequence)

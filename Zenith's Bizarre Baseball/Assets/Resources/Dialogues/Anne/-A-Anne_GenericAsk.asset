@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -A-Anne_GenericAsk
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: 7635e5b9-8c00-4586-bc29-553fdbaca87d
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 44f9e9db-0240-4236-8735-0a7c0d1e3fb9
+  - BaseNodeGuid: 44f9e9db-0240-4236-8735-0a7c0d1e3fb9
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: cdb62fd8-3958-4637-98b7-c7273e8ec80d
+  - BaseNodeGuid: cdb62fd8-3958-4637-98b7-c7273e8ec80d
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 78f97f97-6ea0-4670-b8aa-c50337b8472b
+  - BaseNodeGuid: cdb62fd8-3958-4637-98b7-c7273e8ec80d
+    BasePortIndex: 1
+    PortName: out
+    TargetNodeGuid: d09a482e-612e-454c-b2ec-742855ce16a1
+  - BaseNodeGuid: 78f97f97-6ea0-4670-b8aa-c50337b8472b
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 41411d52-fdb2-4196-a078-156ba8a7c170
+  DialogueNodeData:
+  - rid: 1149946566728220784
+  - rid: 1149946566728220785
+  - rid: 1149946566728220786
+  - rid: 1149946566728220787
+  - rid: 1149946566728220788
+  - rid: 1149946566728220789
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Bueno,
+    entonces \xBFEchamos un combate?<ANIMATION:Idle><CHOICE:Vale, me apetece/1,,Nah,
+    otro d\xEDa/1>@@<OPTION:Vale, me apetece><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Vale,
+    me apetece<ANIMATION:Idle>@<EVENT:Anne_Battle_Trigger_Event>@<OPTION:Nah, otro
+    d\xEDa><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Nah, otro d\xEDa<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946566728220784
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 7635e5b9-8c00-4586-bc29-553fdbaca87d
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 44f9e9db-0240-4236-8735-0a7c0d1e3fb9
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: cdb62fd8-3958-4637-98b7-c7273e8ec80d
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes:
+            - GUID: 78f97f97-6ea0-4670-b8aa-c50337b8472b
+              Position: {x: 811.2, y: 129.6}
+              LinkedNodes:
+              - GUID: 41411d52-fdb2-4196-a078-156ba8a7c170
+                Position: {x: 1025.6, y: 129.6}
+                LinkedNodes: []
+            - GUID: d09a482e-612e-454c-b2ec-742855ce16a1
+              Position: {x: 811.2, y: 269.59998}
+              LinkedNodes: []
+    - rid: 1149946566728220785
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 44f9e9db-0240-4236-8735-0a7c0d1e3fb9
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: cdb62fd8-3958-4637-98b7-c7273e8ec80d
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 78f97f97-6ea0-4670-b8aa-c50337b8472b
+            Position: {x: 811.2, y: 129.6}
+            LinkedNodes:
+            - GUID: 41411d52-fdb2-4196-a078-156ba8a7c170
+              Position: {x: 1025.6, y: 129.6}
+              LinkedNodes: []
+          - GUID: d09a482e-612e-454c-b2ec-742855ce16a1
+            Position: {x: 811.2, y: 269.59998}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "Bueno, entonces \xBFEchamos un combate?"
+    - rid: 1149946566728220786
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: d09a482e-612e-454c-b2ec-742855ce16a1
+        Position: {x: 811.2, y: 269.59998}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "Nah, otro d\xEDa"
+    - rid: 1149946566728220787
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 78f97f97-6ea0-4670-b8aa-c50337b8472b
+        Position: {x: 811.2, y: 129.6}
+        LinkedNodes:
+        - GUID: 41411d52-fdb2-4196-a078-156ba8a7c170
+          Position: {x: 1025.6, y: 129.6}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Vale, me apetece
+    - rid: 1149946566728220788
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: cdb62fd8-3958-4637-98b7-c7273e8ec80d
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 78f97f97-6ea0-4670-b8aa-c50337b8472b
+          Position: {x: 811.2, y: 129.6}
+          LinkedNodes:
+          - GUID: 41411d52-fdb2-4196-a078-156ba8a7c170
+            Position: {x: 1025.6, y: 129.6}
+            LinkedNodes: []
+        - GUID: d09a482e-612e-454c-b2ec-742855ce16a1
+          Position: {x: 811.2, y: 269.59998}
+          LinkedNodes: []
+        Choices:
+        - ChoiceText: Vale, me apetece
+          Value: 1
+        - ChoiceText: "Nah, otro d\xEDa"
+          Value: 1
+    - rid: 1149946566728220789
+      type: {class: EventNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 41411d52-fdb2-4196-a078-156ba8a7c170
+        Position: {x: 1025.6, y: 129.6}
+        LinkedNodes: []
+        eventAsset: {fileID: 11400000, guid: faf5f314e3c9a8042b4a2b2ef67f64a1, type: 2}

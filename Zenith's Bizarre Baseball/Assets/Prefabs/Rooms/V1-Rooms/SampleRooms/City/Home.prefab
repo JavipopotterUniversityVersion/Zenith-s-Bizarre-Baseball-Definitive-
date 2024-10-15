@@ -320,6 +320,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetSr: {fileID: 2376782812447688094}
   _material: {fileID: 2100000, guid: 3fd2a0d8dddfc2a4f890927dc61f0bd2, type: 2}
+--- !u!1 &968454903394365482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6415413898917724785}
+  m_Layer: 0
+  m_Name: Conditions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6415413898917724785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968454903394365482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 648515774198853281}
+  m_Father: {fileID: 4270303741950916275}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1017183698864219243
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +361,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4270303741950916275}
-  - component: {fileID: 3236901023487351879}
+  - component: {fileID: 2814738952158771496}
+  - component: {fileID: 1402741104643424543}
   m_Layer: 0
   m_Name: NPCs Handler
   m_TagString: Untagged
@@ -349,12 +382,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1195889407403778696}
-  - {fileID: 8556956895186999925}
+  - {fileID: 6415413898917724785}
+  - {fileID: 499521370129135980}
   m_Father: {fileID: 8389225071936034968}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3236901023487351879
+--- !u!114 &2814738952158771496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,60 +396,98 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017183698864219243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
+  m_Script: {fileID: 11500000, guid: c574685ccfd6dc540bc9355363de3f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: 8ca7058e6818d4449a07330610926941, type: 2}
-  _floatEvents:
-  - _condition:
-      operation: input > 1
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1195889407403778699}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 3732140530539324973}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  _onAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1402741104643424543}
+        m_TargetAssemblyTypeName: ProcessorCondition, Assembly-CSharp
+        m_MethodName: ExecuteBehaviour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1402741104643424543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017183698864219243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b1cd865b0fdeb43904b14ad26210da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _processor:
+    operation: AR (AE (Erwin > 0) && hasD)
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list:
+      - Key: AE
+        Value:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1195889407403778699}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
+      - Key: AR
+        Value:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 3732140530539324973}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
+    _conditionDictionary:
+      list:
+      - Key: hasD
+        Value:
+        - conditionContainer: {fileID: 3015925674375294078}
+          negated: 0
+    _readablesDictionary:
+    - Key: Erwin
+      Value:
+        target: {fileID: 11400000, guid: 6611088563278284bbf39ea424c3ce2a, type: 2}
+  onValidate: 0
 --- !u!1 &1425894563319193467
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1040,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3015925674375294078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648515774198853281}
+  - component: {fileID: 6681603664421579156}
+  m_Layer: 0
+  m_Name: Erwin_Sequence has -E-FirstTalk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &648515774198853281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015925674375294078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6415413898917724785}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6681603664421579156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015925674375294078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce778036fa4c46c47a38fdb4163dd784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequenceToCheck: {fileID: 11400000, guid: 6611088563278284bbf39ea424c3ce2a, type: 2}
+  _dialogueToCheck: {fileID: 11400000, guid: a39ccb7a6bcfb9548a83b3cf424b9cb4, type: 2}
 --- !u!1 &3276799969851563746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8556956895186999925
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8894128398884372471}
-  m_Father: {fileID: 4270303741950916275}
+  m_Father: {fileID: 499521370129135980}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8467366464723919715
@@ -1909,6 +2026,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7837510318580898958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 499521370129135980}
+  m_Layer: 0
+  m_Name: NPCs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &499521370129135980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837510318580898958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1195889407403778696}
+  - {fileID: 8556956895186999925}
+  m_Father: {fileID: 4270303741950916275}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8032512110142658036
 GameObject:
   m_ObjectHideFlags: 0
@@ -39200,7 +39350,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4270303741950916275}
+    m_TransformParent: {fileID: 499521370129135980}
     m_Modifications:
     - target: {fileID: 7283756126853449796, guid: 1541bc2ea38a2e341ba80e4d6f54c7cb, type: 3}
       propertyPath: m_RootOrder
@@ -39253,6 +39403,10 @@ PrefabInstance:
     - target: {fileID: 7283756126853449799, guid: 1541bc2ea38a2e341ba80e4d6f54c7cb, type: 3}
       propertyPath: m_Name
       value: Erwin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283756126853449799, guid: 1541bc2ea38a2e341ba80e4d6f54c7cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8481716220552411632, guid: 1541bc2ea38a2e341ba80e4d6f54c7cb, type: 3}
       propertyPath: m_IsActive

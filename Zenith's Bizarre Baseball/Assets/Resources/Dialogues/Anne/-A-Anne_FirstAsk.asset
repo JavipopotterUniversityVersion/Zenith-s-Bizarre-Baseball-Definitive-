@@ -1,0 +1,405 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -A-Anne_FirstAsk
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: b3cd5601-2c47-4aa3-b98c-3873c1362703
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 476891f0-a5b2-4a05-aa68-ebbf84985717
+  - BaseNodeGuid: 476891f0-a5b2-4a05-aa68-ebbf84985717
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: ad425c07-c7df-457f-aee4-88e6a04d948f
+  - BaseNodeGuid: ad425c07-c7df-457f-aee4-88e6a04d948f
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 8278fc0a-1a0e-4561-b37c-143e9d37dd7d
+  - BaseNodeGuid: 8278fc0a-1a0e-4561-b37c-143e9d37dd7d
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: d9f90ccf-a3ca-4216-960e-b7b78d805520
+  - BaseNodeGuid: d9f90ccf-a3ca-4216-960e-b7b78d805520
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: ea049889-6e48-4e18-abbe-6598c5dd5c56
+  - BaseNodeGuid: ea049889-6e48-4e18-abbe-6598c5dd5c56
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+  - BaseNodeGuid: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+  - BaseNodeGuid: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+    BasePortIndex: 1
+    PortName: out
+    TargetNodeGuid: ea980444-49eb-4807-a45f-a5306183b4a8
+  - BaseNodeGuid: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 16612c65-7542-4646-8af7-bf8f07d440ca
+  - BaseNodeGuid: ea980444-49eb-4807-a45f-a5306183b4a8
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+  - BaseNodeGuid: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 6737c841-8b5d-47eb-b477-ac98839e50b6
+  DialogueNodeData:
+  - rid: 1149946566728220809
+  - rid: 1149946566728220810
+  - rid: 1149946566728220811
+  - rid: 1149946566728220812
+  - rid: 1149946566728220813
+  - rid: 1149946566728220814
+  - rid: 1149946566728220815
+  - rid: 1149946566728220816
+  - rid: 1149946566728220817
+  - rid: 1149946566728220818
+  - rid: 1149946566728220819
+  - rid: 1149946566728220820
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Hey
+    Zenith, tengo algo muy chulo que ense\xF1arte<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>\xBFHas
+    creado un club de la lucha?<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>\xBFEh?
+    \xBFC\xF3mo lo has sabido?<ANIMATION:Idle>@<ANIMATION:Talk>Se supone que es clandestino<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>Hay
+    un puto cartel enorme en la entrada<ANIMATION:Idle>@<ANIMATION:Talk>\xBFQu\xE9
+    se supone que tiene eso de clandestino?<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Pero
+    es que si no la gente no se entera<ANIMATION:Idle>@<ANIMATION:Talk>En fin, nadie
+    se ha apuntado a\xFAn...<ANIMATION:Idle>@<ANIMATION:Talk>\xA1Podr\xEDas ser la
+    primera!<ANIMATION:Idle>@<ANIMATION:Talk>Venga \xBFUn combate?<ANIMATION:Idle>@<ANIMATION:Talk>Te
+    recompensar\xE9 si me ganas<ANIMATION:Idle><CHOICE:Nah, hoy no/1,,Nah, ganar\xEDa/1>@@<OPTION:Nah,
+    hoy no><CHARACTER:ZenithasFirst><!:eye_closed><ANIMATION:Talk>Nah, mejor otro
+    d\xEDa<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Jol\xEDn,
+    bueno aqu\xED estoy si cambias de opini\xF3n<ANIMATION:Idle><END>@<OPTION:Nah,
+    ganar\xEDa><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\xBFUn combate
+    contra ti?<ANIMATION:Idle>@<ANIMATION:Talk>Nah, ganar\xEDa<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>\xBFEso
+    crees? \xBFEh?<ANIMATION:Idle>@<ANIMATION:Talk>\xA1Desmu\xE9stralo!<ANIMATION:Idle>@<EVENT:Anne_Battle_Trigger_Event><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946566728220809
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: b3cd5601-2c47-4aa3-b98c-3873c1362703
+        Position: {x: 100, y: 206.40001}
+        LinkedNodes:
+        - GUID: 476891f0-a5b2-4a05-aa68-ebbf84985717
+          Position: {x: 186.4, y: 192.8}
+          LinkedNodes:
+          - GUID: ad425c07-c7df-457f-aee4-88e6a04d948f
+            Position: {x: 400.80002, y: 192.8}
+            LinkedNodes:
+            - GUID: 8278fc0a-1a0e-4561-b37c-143e9d37dd7d
+              Position: {x: 615.2, y: 192.8}
+              LinkedNodes:
+              - GUID: d9f90ccf-a3ca-4216-960e-b7b78d805520
+                Position: {x: 829.60004, y: 192.8}
+                LinkedNodes:
+                - GUID: ea049889-6e48-4e18-abbe-6598c5dd5c56
+                  Position: {x: 1044, y: 192.8}
+                  LinkedNodes:
+                  - GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+                    Position: {x: 1258.3999, y: 192.8}
+                    LinkedNodes:
+                    - GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+                      Position: {x: 1668.7999, y: 52.8}
+                      LinkedNodes:
+                      - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+                        Position: {x: 1883.2, y: 52.8}
+                        LinkedNodes: []
+                    - GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+                      Position: {x: 1668.7999, y: 324}
+                      LinkedNodes:
+                      - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+                        Position: {x: 1883.2, y: 324}
+                        LinkedNodes:
+                        - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+                          Position: {x: 2097.5999, y: 324}
+                          LinkedNodes: []
+    - rid: 1149946566728220810
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 476891f0-a5b2-4a05-aa68-ebbf84985717
+        Position: {x: 186.4, y: 192.8}
+        LinkedNodes:
+        - GUID: ad425c07-c7df-457f-aee4-88e6a04d948f
+          Position: {x: 400.80002, y: 192.8}
+          LinkedNodes:
+          - GUID: 8278fc0a-1a0e-4561-b37c-143e9d37dd7d
+            Position: {x: 615.2, y: 192.8}
+            LinkedNodes:
+            - GUID: d9f90ccf-a3ca-4216-960e-b7b78d805520
+              Position: {x: 829.60004, y: 192.8}
+              LinkedNodes:
+              - GUID: ea049889-6e48-4e18-abbe-6598c5dd5c56
+                Position: {x: 1044, y: 192.8}
+                LinkedNodes:
+                - GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+                  Position: {x: 1258.3999, y: 192.8}
+                  LinkedNodes:
+                  - GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+                    Position: {x: 1668.7999, y: 52.8}
+                    LinkedNodes:
+                    - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+                      Position: {x: 1883.2, y: 52.8}
+                      LinkedNodes: []
+                  - GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+                    Position: {x: 1668.7999, y: 324}
+                    LinkedNodes:
+                    - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+                      Position: {x: 1883.2, y: 324}
+                      LinkedNodes:
+                      - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+                        Position: {x: 2097.5999, y: 324}
+                        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "Hey Zenith, tengo algo muy chulo que ense\xF1arte"
+    - rid: 1149946566728220811
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ad425c07-c7df-457f-aee4-88e6a04d948f
+        Position: {x: 400.80002, y: 192.8}
+        LinkedNodes:
+        - GUID: 8278fc0a-1a0e-4561-b37c-143e9d37dd7d
+          Position: {x: 615.2, y: 192.8}
+          LinkedNodes:
+          - GUID: d9f90ccf-a3ca-4216-960e-b7b78d805520
+            Position: {x: 829.60004, y: 192.8}
+            LinkedNodes:
+            - GUID: ea049889-6e48-4e18-abbe-6598c5dd5c56
+              Position: {x: 1044, y: 192.8}
+              LinkedNodes:
+              - GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+                Position: {x: 1258.3999, y: 192.8}
+                LinkedNodes:
+                - GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+                  Position: {x: 1668.7999, y: 52.8}
+                  LinkedNodes:
+                  - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+                    Position: {x: 1883.2, y: 52.8}
+                    LinkedNodes: []
+                - GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+                  Position: {x: 1668.7999, y: 324}
+                  LinkedNodes:
+                  - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+                    Position: {x: 1883.2, y: 324}
+                    LinkedNodes:
+                    - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+                      Position: {x: 2097.5999, y: 324}
+                      LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: confident
+        characterIndex: 0
+        DialogueLines:
+        - "\xBFHas creado un club de la lucha?"
+    - rid: 1149946566728220812
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 8278fc0a-1a0e-4561-b37c-143e9d37dd7d
+        Position: {x: 615.2, y: 192.8}
+        LinkedNodes:
+        - GUID: d9f90ccf-a3ca-4216-960e-b7b78d805520
+          Position: {x: 829.60004, y: 192.8}
+          LinkedNodes:
+          - GUID: ea049889-6e48-4e18-abbe-6598c5dd5c56
+            Position: {x: 1044, y: 192.8}
+            LinkedNodes:
+            - GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+              Position: {x: 1258.3999, y: 192.8}
+              LinkedNodes:
+              - GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+                Position: {x: 1668.7999, y: 52.8}
+                LinkedNodes:
+                - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+                  Position: {x: 1883.2, y: 52.8}
+                  LinkedNodes: []
+              - GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+                Position: {x: 1668.7999, y: 324}
+                LinkedNodes:
+                - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+                  Position: {x: 1883.2, y: 324}
+                  LinkedNodes:
+                  - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+                    Position: {x: 2097.5999, y: 324}
+                    LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "\xBFEh? \xBFC\xF3mo lo has sabido?"
+        - Se supone que es clandestino
+    - rid: 1149946566728220813
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: d9f90ccf-a3ca-4216-960e-b7b78d805520
+        Position: {x: 829.60004, y: 192.8}
+        LinkedNodes:
+        - GUID: ea049889-6e48-4e18-abbe-6598c5dd5c56
+          Position: {x: 1044, y: 192.8}
+          LinkedNodes:
+          - GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+            Position: {x: 1258.3999, y: 192.8}
+            LinkedNodes:
+            - GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+              Position: {x: 1668.7999, y: 52.8}
+              LinkedNodes:
+              - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+                Position: {x: 1883.2, y: 52.8}
+                LinkedNodes: []
+            - GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+              Position: {x: 1668.7999, y: 324}
+              LinkedNodes:
+              - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+                Position: {x: 1883.2, y: 324}
+                LinkedNodes:
+                - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+                  Position: {x: 2097.5999, y: 324}
+                  LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: confident
+        characterIndex: 0
+        DialogueLines:
+        - Hay un puto cartel enorme en la entrada
+        - "\xBFQu\xE9 se supone que tiene eso de clandestino?"
+    - rid: 1149946566728220814
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ea049889-6e48-4e18-abbe-6598c5dd5c56
+        Position: {x: 1044, y: 192.8}
+        LinkedNodes:
+        - GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+          Position: {x: 1258.3999, y: 192.8}
+          LinkedNodes:
+          - GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+            Position: {x: 1668.7999, y: 52.8}
+            LinkedNodes:
+            - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+              Position: {x: 1883.2, y: 52.8}
+              LinkedNodes: []
+          - GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+            Position: {x: 1668.7999, y: 324}
+            LinkedNodes:
+            - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+              Position: {x: 1883.2, y: 324}
+              LinkedNodes:
+              - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+                Position: {x: 2097.5999, y: 324}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - Pero es que si no la gente no se entera
+        - "En fin, nadie se ha apuntado a\xFAn..."
+        - "\xA1Podr\xEDas ser la primera!"
+        - "Venga \xBFUn combate?"
+        - "Te recompensar\xE9 si me ganas"
+    - rid: 1149946566728220815
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
+        Position: {x: 1258.3999, y: 192.8}
+        LinkedNodes:
+        - GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+          Position: {x: 1668.7999, y: 52.8}
+          LinkedNodes:
+          - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+            Position: {x: 1883.2, y: 52.8}
+            LinkedNodes: []
+        - GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+          Position: {x: 1668.7999, y: 324}
+          LinkedNodes:
+          - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+            Position: {x: 1883.2, y: 324}
+            LinkedNodes:
+            - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+              Position: {x: 2097.5999, y: 324}
+              LinkedNodes: []
+        Choices:
+        - ChoiceText: Nah, hoy no
+          Value: 1
+        - ChoiceText: "Nah, ganar\xEDa"
+          Value: 1
+    - rid: 1149946566728220816
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ea980444-49eb-4807-a45f-a5306183b4a8
+        Position: {x: 1668.7999, y: 324}
+        LinkedNodes:
+        - GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+          Position: {x: 1883.2, y: 324}
+          LinkedNodes:
+          - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+            Position: {x: 2097.5999, y: 324}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "\xBFUn combate contra ti?"
+        - "Nah, ganar\xEDa"
+    - rid: 1149946566728220817
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
+        Position: {x: 1668.7999, y: 52.8}
+        LinkedNodes:
+        - GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+          Position: {x: 1883.2, y: 52.8}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: eye_closed
+        characterIndex: 0
+        DialogueLines:
+        - "Nah, mejor otro d\xEDa"
+    - rid: 1149946566728220818
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
+        Position: {x: 1883.2, y: 52.8}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "Jol\xEDn, bueno aqu\xED estoy si cambias de opini\xF3n"
+    - rid: 1149946566728220819
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
+        Position: {x: 1883.2, y: 324}
+        LinkedNodes:
+        - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+          Position: {x: 2097.5999, y: 324}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "\xBFEso crees? \xBFEh?"
+        - "\xA1Desmu\xE9stralo!"
+    - rid: 1149946566728220820
+      type: {class: EventNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
+        Position: {x: 2097.5999, y: 324}
+        LinkedNodes: []
+        eventAsset: {fileID: 11400000, guid: faf5f314e3c9a8042b4a2b2ef67f64a1, type: 2}

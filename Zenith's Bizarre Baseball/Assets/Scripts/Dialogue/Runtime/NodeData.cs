@@ -156,6 +156,7 @@ public class EventNodeData : NodeData
         string value = $"<EVENT:{eventAsset.name}>";
 
         if(LinkedNodes.Count > 0) value += LinkedNodes[0].TranslateText();
+        else value += "<END>";
 
         return value;
     }

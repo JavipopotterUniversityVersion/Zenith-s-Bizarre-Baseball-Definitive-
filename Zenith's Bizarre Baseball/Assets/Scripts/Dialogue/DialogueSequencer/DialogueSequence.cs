@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DialogueSequence", menuName = "Dialogue/DialogueSequence")]
-public class DialogueSequence : ScriptableObject
+public class DialogueSequence : ScriptableObject, IReadable
 {
     [SerializeField] SaveSet _persistentData;
     [SerializeField] List<SequenceElement> dialogues = new List<SequenceElement>();
@@ -12,15 +12,9 @@ public class DialogueSequence : ScriptableObject
     public int Count => dialogues.Count;
     [SerializeField] Processor _processor;
 
-    public void AddDialogue(DialogueContainer dialogue)
+    public bool ContainsDialogue(DialogueContainer dialogue)
     {
-        dialogues.Add(new SequenceElement(dialogue, _autoRemove));
-        _persistentData.SaveDialogueSequences();
-    }
-    public void AddToFirst(DialogueContainer dialogue)
-    {
-        dialogues.Insert(0, new SequenceElement(dialogue, _autoRemove));
-        _persistentData.SaveDialogueSequences();
+        return dialogues.Exists(x => x.dialogue == dialogue);
     }
 
     public void RemoveDialogue(DialogueContainer dialogue)
@@ -30,15 +24,23 @@ public class DialogueSequence : ScriptableObject
         _persistentData.SaveDialogueSequences();
     }
 
-    public void AddDialogue(SequenceElementAsset sequenceElement)
+    public void AddDialogue(DialogueContainer dialogue) => AddDialogue(new SequenceElement(dialogue, _autoRemove));
+    public void AddDialogue(SequenceElementAsset sequenceElement) => AddDialogue(sequenceElement.sequenceElement);
+    public void AddDialogue(SequenceElement sequenceElement)
     {
-        dialogues.Add(sequenceElement.sequenceElement);
+        if(ContainsDialogue(sequenceElement.dialogue)) return;
+
+        dialogues.Add(sequenceElement);
         _persistentData.SaveDialogueSequences();
     }
 
-    public void AddToFirst(SequenceElementAsset sequenceElement)
+    public void AddToFirst(DialogueContainer dialogue) => AddToFirst(new SequenceElement(dialogue, _autoRemove));
+    public void AddToFirst(SequenceElementAsset sequenceElement) => AddToFirst(sequenceElement.sequenceElement);
+    public void AddToFirst(SequenceElement sequenceElement)
     {
-        dialogues.Insert(0, sequenceElement.sequenceElement);
+        if(ContainsDialogue(sequenceElement.dialogue)) return;
+
+        dialogues.Insert(0, sequenceElement);
         _persistentData.SaveDialogueSequences();
     }
 
@@ -54,6 +56,8 @@ public class DialogueSequence : ScriptableObject
     }
 
     public void SetAutoRemove(bool autoRemove) => _autoRemove = autoRemove;
+
+    public float Read() => Count;
 }
 
 [Serializable]

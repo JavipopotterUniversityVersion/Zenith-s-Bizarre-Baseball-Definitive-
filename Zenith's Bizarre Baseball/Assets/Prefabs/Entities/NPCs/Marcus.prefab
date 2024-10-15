@@ -173,6 +173,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2477408037538654695}
     m_Modifications:
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8263141001032448010}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetNextDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueSequencer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9455912375952498, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653850347922221368, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: m_Name
+      value: Change sr material to Sprite-Lit-Default
+      objectReference: {fileID: 0}
     - target: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -217,6 +249,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3310884100878567036, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: m_Name
+      value: Change sr material to PixelOutline
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029954968408849223, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: _targetSr
+      value: 
+      objectReference: {fileID: 5518156346418930631}
+    - target: {fileID: 8299579903742862855, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+      propertyPath: _targetSr
+      value: 
+      objectReference: {fileID: 5518156346418930631}
     - target: {fileID: 8960757074279198462, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
       propertyPath: m_Name
       value: TalkTemplate
@@ -228,3 +272,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2310656704431434358, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
   m_PrefabInstance: {fileID: 281171985144703279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6573172995886789718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6403685931703000441, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+  m_PrefabInstance: {fileID: 281171985144703279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8263141001032448010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573172995886789718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f80c2911c7065f40a0648e297daad27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onGetDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: be31b146bcbd7f041a74d6ac35d90d47, type: 2}
+        m_TargetAssemblyTypeName: DialogueCaster, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onNoMoreDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7763918650735078251}
+        m_TargetAssemblyTypeName: State, Assembly-CSharp
+        m_MethodName: ExecuteBehaviour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _dialogueSequence: {fileID: 11400000, guid: 3629f6cdd3ab9064d8a1d4220d1e3c97, type: 2}
+--- !u!114 &7763918650735078251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7518784381286040132, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+  m_PrefabInstance: {fileID: 281171985144703279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

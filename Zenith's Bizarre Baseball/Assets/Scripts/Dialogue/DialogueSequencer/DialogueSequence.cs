@@ -46,8 +46,8 @@ public class DialogueSequence : ScriptableObject, IReadable
 
     public DialogueContainer GetDialogue(int index)
     {
-        if(_processor.ResultOf(dialogues[index].condition, 1) == 0) index--;
         index = Mathf.Clamp(index, 0, dialogues.Count - 1);
+        if(_processor.ResultOf(dialogues[index].condition, 1) == 0) index--;
 
         DialogueContainer dialogue = dialogues[index].dialogue;
         if(dialogues[index].autoRemove) dialogues.Remove(dialogues[index]);
@@ -58,6 +58,7 @@ public class DialogueSequence : ScriptableObject, IReadable
     public void SetAutoRemove(bool autoRemove) => _autoRemove = autoRemove;
 
     public float Read() => Count;
+    public void ResetData() => dialogues.Clear();
 }
 
 [Serializable]

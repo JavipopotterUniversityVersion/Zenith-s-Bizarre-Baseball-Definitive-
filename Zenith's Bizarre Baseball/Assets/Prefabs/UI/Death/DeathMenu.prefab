@@ -301,6 +301,30 @@ MonoBehaviour:
         Value:
           m_PersistentCalls:
             m_Calls:
+            - m_Target: {fileID: 11400000, guid: fc01ca135f0c85249bd0b10ecc8398ca, type: 2}
+              m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
+              m_MethodName: SetAutoRemove
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
+            - m_Target: {fileID: 11400000, guid: fc01ca135f0c85249bd0b10ecc8398ca, type: 2}
+              m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
+              m_MethodName: AddDialogue
+              m_Mode: 2
+              m_Arguments:
+                m_ObjectArgument: {fileID: 11400000, guid: 14911ef14cb0146458acd73c45ca6ad9, type: 2}
+                m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
             - m_Target: {fileID: 11400000, guid: 503e8616aecabe74f922da0ad78965b9, type: 2}
               m_TargetAssemblyTypeName: TimeModifier, Assembly-CSharp
               m_MethodName: PlayTimeModifier

@@ -65635,7 +65635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479520501818461720, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 4142729888667663494, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
       propertyPath: m_Enabled
@@ -65754,6 +65754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 4686134716876760887, guid: 86632128a159a3e4986a7a8a76eb58e3, type: 3}
+      propertyPath: OnEnterCollidables.Array.data[0].collidables.Array.data[0]
+      value: 
+      objectReference: {fileID: 4837403581832162473}
     - target: {fileID: 8321171420972568805, guid: 86632128a159a3e4986a7a8a76eb58e3, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -65800,6 +65804,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86632128a159a3e4986a7a8a76eb58e3, type: 3}
+--- !u!1 &5887532352039643122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3806219361323507394, guid: 86632128a159a3e4986a7a8a76eb58e3, type: 3}
+  m_PrefabInstance: {fileID: 7306772828850207024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4837403581832162473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887532352039643122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100376beca5659458c2fc1e055f3752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCollideEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 25bd1856bbfde66439f032da33f5c1c2, type: 2}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollideEventWithTransform:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7465724682671238271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68650,11 +68689,11 @@ PrefabInstance:
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[2].m_Data
       value: 
-      objectReference: {fileID: 1440856881, guid: 0ee17d5f197b03643ac66cecb182a7fb, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[3].m_Data
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1440856881, guid: 0ee17d5f197b03643ac66cecb182a7fb, type: 3}
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[4].m_Data
       value: 
@@ -69013,11 +69052,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[2].m_RefCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[3].m_RefCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[4].m_RefCount
@@ -70345,7 +70384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_Tiles.Array.data[0].second.m_TileSpriteIndex
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7189183556067101645, guid: 3d01ba14234a27942ba5d391c402b025, type: 3}
       propertyPath: m_Tiles.Array.data[1].second.m_TileSpriteIndex

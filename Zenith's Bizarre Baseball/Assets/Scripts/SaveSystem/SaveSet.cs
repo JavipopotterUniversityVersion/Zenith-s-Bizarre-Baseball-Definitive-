@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using MyBox;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SaveSet", menuName = "SaveSystem/SaveSet")]
 public class SaveSet : ScriptableObject
 {
-    [SerializeField] SerializableDictionary<string, IRef<ISaveable>> _saveables;
+    [SerializeField] SerializableDictionary<string, SaveableData> _saveables;
     [SerializeField] DialogueSequence[] _dialogueSequence;
 
     public void SaveFloat(Float saveable) => Save(saveable);
@@ -29,6 +32,19 @@ public class SaveSet : ScriptableObject
         }
     }
 
+    [ContextMenu("ResetData")]
+    public void ResetData()
+    {
+        _dialogueSequence.ForEach(x => x.ResetData());
+        foreach(KeyValuePair<string, SaveableData> save in _saveables)
+        {
+            save.Value.data.I.LoadValue(save.Value.originalValue);
+            Save(save.Value.data.I);
+        }
+
+        SaveDialogueSequences();
+    }
+
     [ContextMenu("SaveDialogueSequences")]
     public void SaveDialogueSequences()
     {
@@ -44,14 +60,14 @@ public class SaveSet : ScriptableObject
     [ContextMenu("Load")]
     public void Load()
     {
-        foreach(KeyValuePair<string, IRef<ISaveable>> saveable in _saveables)
+        foreach(KeyValuePair<string, SaveableData> saveable in _saveables)
         {
             string persistentDataPath = Application.persistentDataPath + Path.DirectorySeparatorChar + saveable.Key + ".save";
 
             if(File.Exists(persistentDataPath))
             {
                 StreamReader reader = new StreamReader(persistentDataPath);
-                saveable.Value.I.LoadValue(float.Parse(reader.ReadToEnd()));
+                saveable.Value.data.I.LoadValue(float.Parse(reader.ReadToEnd()));
                 reader.Close();
             }
         }
@@ -63,19 +79,52 @@ public class SaveSet : ScriptableObject
         }
     }
 
-    [SerializeField] IRef<ISaveable>[] _saveablesStack;
-
-
-    [ContextMenu("SaveInDictionary")]
-    public void SaveInDictionary()
+    private void OnValidate() 
     {
-        foreach (IRef<ISaveable> saveable in _saveablesStack)
+        List<KeyValuePair<string, SaveableData>> dataToRemove = new List<KeyValuePair<string, SaveableData>>();
+        List<KeyValuePair<string, SaveableData>> dataToAdd = new List<KeyValuePair<string, SaveableData>>();
+
+        foreach(KeyValuePair<string, SaveableData> saveable in _saveables)
         {
-            if(!_saveables.ContainsKey(saveable.I.Key)) _saveables.Add(saveable.I.Key, saveable);
-            else Debug.LogWarning($"Saveable with key {saveable.I.Key} already exists in SaveSet");
+            if(saveable.Value.data.I == null) return;
+
+            string key = saveable.Value.data.I.Key;
+            if(saveable.Key != key)
+            {
+                dataToRemove.Add(saveable);
+                dataToAdd.Add(new KeyValuePair<string, SaveableData>(key, saveable.Value));
+            }
         }
 
-        _saveablesStack = new IRef<ISaveable>[0];
+        dataToRemove.ForEach(x => _saveables.Remove(x));
+        dataToAdd.ForEach(x => _saveables.Add(x));
+    }
+
+    [Serializable]
+    struct SaveableData
+    {
+        public IRef<ISaveable> data;
+        public float originalValue;
+
+        public SaveableData(IRef<ISaveable> saveable, float originalValue = 0)
+        {
+            data = saveable;
+            this.originalValue = originalValue;
+        }
+    }
+
+    [SerializeField] IRef<ISaveable>[] dataToSave;
+
+    [ContextMenu("Add Data Stack")]
+    public void AddDataStack()
+    {
+        foreach(var data in dataToSave)
+        {
+            if(_saveables.ContainsKey(data.I.Key) == false)
+            {
+                _saveables.Add(data.I.Key, new SaveableData(data, data.I.SaveValue()));
+            }
+        }
     }
 }
 

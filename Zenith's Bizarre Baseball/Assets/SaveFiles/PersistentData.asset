@@ -16,15 +16,22 @@ MonoBehaviour:
     list:
     - Key: FirstRun
       Value:
-        target: {fileID: 11400000, guid: d0db0b8113452c048866f27736346d90, type: 2}
+        data:
+          target: {fileID: 11400000, guid: d0db0b8113452c048866f27736346d90, type: 2}
+        originalValue: 1
     - Key: NOfShopItems
       Value:
-        target: {fileID: 11400000, guid: bed693968898076469950cc727c2d7ec, type: 2}
+        data:
+          target: {fileID: 11400000, guid: bed693968898076469950cc727c2d7ec, type: 2}
+        originalValue: 3
     - Key: Deaths
       Value:
-        target: {fileID: 11400000, guid: cbc1d23bd5444434492a552345f8b096, type: 2}
+        data:
+          target: {fileID: 11400000, guid: cbc1d23bd5444434492a552345f8b096, type: 2}
+        originalValue: 0
   _dialogueSequence:
   - {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
   - {fileID: 11400000, guid: 6611088563278284bbf39ea424c3ce2a, type: 2}
   - {fileID: 11400000, guid: 3629f6cdd3ab9064d8a1d4220d1e3c97, type: 2}
-  _saveablesStack: []
+  - {fileID: 11400000, guid: fc01ca135f0c85249bd0b10ecc8398ca, type: 2}
+  dataToSave: []

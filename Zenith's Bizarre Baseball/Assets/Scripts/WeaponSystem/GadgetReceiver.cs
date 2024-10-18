@@ -10,14 +10,18 @@ public class GadgetReceiver : MonoBehaviour
     private void Awake() 
     {
         prefabContainer.OnPrefabChanged.AddListener(OnObjectChange);
+        OnObjectChange();
     }
 
-    void OnObjectChange(GameObject obj)
+    void OnObjectChange()
     {
         if(_currentObject != null)
         {
             Destroy(_currentObject);
-            _currentObject = Instantiate(obj, transform.position, transform.rotation, transform);
+            if(prefabContainer.Prefab != null)
+            {
+                _currentObject = Instantiate(prefabContainer.Prefab, transform.position, transform.rotation, transform);
+            }
         }
     }
 

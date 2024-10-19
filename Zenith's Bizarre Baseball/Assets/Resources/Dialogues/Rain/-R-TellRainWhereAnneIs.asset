@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -R-TellRainWhereAnneIs
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: e6beb1b6-c3f7-4b35-9402-f6e937b4ed26
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: a604def6-07cb-4ac3-8ddd-498538c56204
+  - BaseNodeGuid: a604def6-07cb-4ac3-8ddd-498538c56204
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 688e8326-2507-48f1-ade7-1916ec8a2903
+  - BaseNodeGuid: 688e8326-2507-48f1-ade7-1916ec8a2903
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 3d5c7831-309a-48e4-84cc-d76b87a6f150
+  - BaseNodeGuid: 3d5c7831-309a-48e4-84cc-d76b87a6f150
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 469d43c1-c89c-4f94-a05e-981997f9b783
+  DialogueNodeData:
+  - rid: 1149946647346413672
+  - rid: 1149946647346413673
+  - rid: 1149946647346413674
+  - rid: 1149946647346413675
+  - rid: 1149946647346413676
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:RainasSecond><!:happy><ANIMATION:Talk>Hola
+    Zenith<ANIMATION:Idle>@<ANIMATION:Talk>\xBFHas venido a comprar algo?<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Ya
+    he encontrado a Anne<ANIMATION:Idle>@<ANIMATION:Talk><!:eye_closed>Se ha creado
+    un club de la lucha clandestino<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Bueno,
+    realmente no es muy clandestino<ANIMATION:Idle>@<ANIMATION:Talk>Tiene un cartel
+    muy descarado en la entrada<ANIMATION:Idle>@<CHARACTER:RainasSecond><!:confident><ANIMATION:Talk>Sab\xEDa
+    que no le deber\xEDa haber ense\xF1ado esa peli<ANIMATION:Idle>@<ANIMATION:Talk>Menos
+    mal que es inmortal<ANIMATION:Idle>@<ANIMATION:Talk><!:default>Por cierto, he
+    pensado que quiz\xE1s podr\xEDas pedirle ayuda a Marcus<ANIMATION:Idle>@<ANIMATION:Talk>Quiz\xE1s
+    alg\xFAn cachibache de los suyos puede servirte<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:surprised><ANIMATION:Talk>\xA1Es
+    verdad!<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Le preguntar\xE9 la pr\xF3xima
+    vez que pase por casa<ANIMATION:Idle>@<ANIMATION:Talk>\xA1Gracias Rain!<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946647346413672
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: e6beb1b6-c3f7-4b35-9402-f6e937b4ed26
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: a604def6-07cb-4ac3-8ddd-498538c56204
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: 688e8326-2507-48f1-ade7-1916ec8a2903
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes:
+            - GUID: 3d5c7831-309a-48e4-84cc-d76b87a6f150
+              Position: {x: 615.2, y: 200}
+              LinkedNodes:
+              - GUID: 469d43c1-c89c-4f94-a05e-981997f9b783
+                Position: {x: 829.60004, y: 200}
+                LinkedNodes: []
+    - rid: 1149946647346413673
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: a604def6-07cb-4ac3-8ddd-498538c56204
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: 688e8326-2507-48f1-ade7-1916ec8a2903
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 3d5c7831-309a-48e4-84cc-d76b87a6f150
+            Position: {x: 615.2, y: 200}
+            LinkedNodes:
+            - GUID: 469d43c1-c89c-4f94-a05e-981997f9b783
+              Position: {x: 829.60004, y: 200}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: happy
+        characterIndex: 1
+        DialogueLines:
+        - Hola Zenith
+        - "\xBFHas venido a comprar algo?"
+    - rid: 1149946647346413674
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 688e8326-2507-48f1-ade7-1916ec8a2903
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 3d5c7831-309a-48e4-84cc-d76b87a6f150
+          Position: {x: 615.2, y: 200}
+          LinkedNodes:
+          - GUID: 469d43c1-c89c-4f94-a05e-981997f9b783
+            Position: {x: 829.60004, y: 200}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Ya he encontrado a Anne
+        - <!:eye_closed>Se ha creado un club de la lucha clandestino
+        - <!:confident>Bueno, realmente no es muy clandestino
+        - Tiene un cartel muy descarado en la entrada
+    - rid: 1149946647346413675
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 3d5c7831-309a-48e4-84cc-d76b87a6f150
+        Position: {x: 615.2, y: 200}
+        LinkedNodes:
+        - GUID: 469d43c1-c89c-4f94-a05e-981997f9b783
+          Position: {x: 829.60004, y: 200}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: confident
+        characterIndex: 1
+        DialogueLines:
+        - "Sab\xEDa que no le deber\xEDa haber ense\xF1ado esa peli"
+        - Menos mal que es inmortal
+        - "<!:default>Por cierto, he pensado que quiz\xE1s podr\xEDas pedirle ayuda
+          a Marcus"
+        - "Quiz\xE1s alg\xFAn cachibache de los suyos puede servirte"
+    - rid: 1149946647346413676
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 469d43c1-c89c-4f94-a05e-981997f9b783
+        Position: {x: 829.60004, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: surprised
+        characterIndex: 0
+        DialogueLines:
+        - "\xA1Es verdad!"
+        - "<!:happy>Le preguntar\xE9 la pr\xF3xima vez que pase por casa"
+        - "\xA1Gracias Rain!"

@@ -15,13 +15,11 @@ public class GadgetReceiver : MonoBehaviour
 
     void OnObjectChange()
     {
-        if(_currentObject != null)
+        if(_currentObject != null) Destroy(_currentObject);
+
+         if(prefabContainer.Prefab != null)
         {
-            Destroy(_currentObject);
-            if(prefabContainer.Prefab != null)
-            {
-                _currentObject = Instantiate(prefabContainer.Prefab, transform.position, transform.rotation, transform);
-            }
+            _currentObject = Instantiate(prefabContainer.Prefab, transform.position, transform.rotation, transform);
         }
     }
 

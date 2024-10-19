@@ -52,6 +52,8 @@ public class DoorSet : MonoBehaviour
             }
         }
 
+        GetComponentInParent<TilemapSetsContainer>().Sets.Add(map);
+
         onSet?.Invoke();
     }
 }

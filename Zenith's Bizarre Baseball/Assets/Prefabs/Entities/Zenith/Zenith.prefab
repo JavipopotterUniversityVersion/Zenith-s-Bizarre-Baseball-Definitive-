@@ -466,52 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4313636c7671d4a4dac7c755ed145fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &770981698764510954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2906330236015424576}
-  - component: {fileID: 1698475035525480149}
-  m_Layer: 7
-  m_Name: PhantomImage -> True
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2906330236015424576
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770981698764510954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2896484605424179554}
-  m_Father: {fileID: 8167337695519410629}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1698475035525480149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770981698764510954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f479ab40b867d44894b8d2d1746e1e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  condition: {fileID: 11400000, guid: a7b3efbfc30f6984ba643a6c00869988, type: 2}
 --- !u!1 &910166519658114306
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +778,51 @@ MonoBehaviour:
   onCollideEventWithTransform:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1422362466466049241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5769259420692582602}
+  - component: {fileID: 2975579438072588335}
+  m_Layer: 7
+  m_Name: Gadget 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5769259420692582602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422362466466049241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9213680094746702876}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2975579438072588335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422362466466049241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66addffe59aa6c042b99263e5fde7c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabContainer: {fileID: 11400000, guid: 1bc0d657711c207409621d810b4e6919, type: 2}
 --- !u!1 &1686874213780646343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,7 +1280,7 @@ GameObject:
   - component: {fileID: 6129616908563179949}
   - component: {fileID: 4064202359018212874}
   m_Layer: 0
-  m_Name: NearBoost -> True
+  m_Name: NearBoost -> False
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6933,52 +6932,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifiableType: {fileID: 11400000, guid: 5626564a9e399524eacc88357b039d1a, type: 2}
   identifiableChangeEvents: []
---- !u!1 &4815808076566629568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2896484605424179554}
-  - component: {fileID: 7526619599819619687}
-  m_Layer: 7
-  m_Name: SummonPhantoms
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2896484605424179554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4815808076566629568}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2906330236015424576}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7526619599819619687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4815808076566629568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07eb235ecded17c428c210887c0e0e9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetType: {fileID: 11400000, guid: 18fbdf6ef00ba744dba4f1a7872cd7ca, type: 2}
-  _replacementPrefab: {fileID: 234064552063116179, guid: 0700a4bb3db3f9444a1275407189fba9, type: 3}
 --- !u!1 &5128090047235654304
 GameObject:
   m_ObjectHideFlags: 0
@@ -7777,7 +7730,6 @@ Transform:
   - {fileID: 7800977845919865877}
   - {fileID: 7501967870107711711}
   - {fileID: 4049663904732088132}
-  - {fileID: 2906330236015424576}
   m_Father: {fileID: 9213680093791152062}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7806,11 +7758,6 @@ MonoBehaviour:
     behaviourContainers:
     - {fileID: 3840985005712751578}
     - {fileID: 358151923330777908}
-  - condition:
-    - conditionContainer: {fileID: 770981698764510954}
-      negated: 0
-    behaviourContainers:
-    - {fileID: 4815808076566629568}
   onUpdatePerformers: []
   onExitPerformers:
   - condition: []
@@ -8872,6 +8819,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
   onHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -9783,6 +9733,7 @@ Transform:
   - {fileID: 626848499808229638}
   - {fileID: 5810669999254942076}
   - {fileID: 7021987112263082942}
+  - {fileID: 5769259420692582602}
   m_Father: {fileID: 9213680093490472116}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

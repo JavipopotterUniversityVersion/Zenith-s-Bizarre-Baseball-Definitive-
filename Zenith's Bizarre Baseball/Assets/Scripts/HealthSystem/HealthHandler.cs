@@ -15,6 +15,9 @@ public class HealthHandler : MonoBehaviour, IReadable
     [SerializeField] UnityEvent onGetDamage = new UnityEvent();
     public UnityEvent OnGetDamage => onGetDamage;
 
+    [SerializeField] UnityEvent<HealthHandler, float> onDamageTaken = new UnityEvent<HealthHandler, float>();
+    public UnityEvent<HealthHandler, float> OnDamageTaken => onDamageTaken;
+
     [SerializeField] UnityEvent onHeal = new UnityEvent();
     public UnityEvent OnHeal => onHeal;
 
@@ -50,6 +53,7 @@ public class HealthHandler : MonoBehaviour, IReadable
         {
             CurrentHealth -= damage;
             onGetDamage.Invoke();
+            onDamageTaken.Invoke(this, damage);
         }
         else
         {

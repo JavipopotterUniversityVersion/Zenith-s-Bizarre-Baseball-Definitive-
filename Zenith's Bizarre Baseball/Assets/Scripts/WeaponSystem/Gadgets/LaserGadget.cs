@@ -47,11 +47,11 @@ public class LaserGadget : MonoBehaviour
 
                 Transform nextPoint = null;
 
-                int c = i + 1;
+                int c = i;
                 while(nextPoint == null && c < tempLasersPoints.Count - 1)
                 {
-                    nextPoint = tempLasersPoints[c];
                     c++;
+                    nextPoint = tempLasersPoints[c];
                 }
 
                 if(nextPoint == null) continue;

@@ -18,6 +18,8 @@ public class OverlapBoxCondition : MonoBehaviour, ICondition
     [SerializeField] OverlapType overlapType;
 
     [SerializeField] UnityEvent<Transform> _onOverlap = new UnityEvent<Transform>();
+    public UnityEvent<Transform> OnOverlap => _onOverlap;
+    
     [SerializeField] UnityEvent<Vector2> _onOverlapDirection = new UnityEvent<Vector2>();
     [SerializeField] bool debug = true;
  

@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b57c8e60ee890ed4ea19cb9657a9175a, type: 3}
-  m_Name: EnemyHit_SFX
+  m_Script: {fileID: 11500000, guid: 0dd035af6a0a7f242b2862ac5349ffd5, type: 3}
+  m_Name: Screws
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 6fb6121cc0fb7424889c2a2f2810c2b3, type: 3}
-  volume: {x: 1, y: 1}
-  pitch: {x: 1, y: 1}
-  playIndex: 0
-  playOrder: 0
-  _loop: 0
-  _simultaneousSounds: 2
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeLastValue:
+    m_PersistentCalls:
+      m_Calls: []
+  _value: -1

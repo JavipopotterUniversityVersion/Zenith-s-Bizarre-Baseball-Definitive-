@@ -57,6 +57,20 @@ public class TriggerHandler : MonoBehaviour
             }
         }
     }
+
+    public void SwapIdentifiable(Identifiable from, Identifiable to)
+    {
+        foreach(var collidableGroup in OnEnterCollidables)
+        {
+            for(int i = 0; i < collidableGroup.Targets.Length; i++)
+            {
+                if(collidableGroup.Targets[i] == from)
+                {
+                    collidableGroup.Targets[i] = to;
+                }
+            }
+        }
+    }
 }
 
 [Serializable]

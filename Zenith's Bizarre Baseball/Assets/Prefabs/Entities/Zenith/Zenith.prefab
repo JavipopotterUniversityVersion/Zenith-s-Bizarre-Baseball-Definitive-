@@ -10028,7 +10028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[0].layer.m_Bits
-      value: 65
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[3].layer.m_Bits
@@ -10081,7 +10081,7 @@ PrefabInstance:
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[1]
       value: 
-      objectReference: {fileID: 2046100074709239674}
+      objectReference: {fileID: 825881892009614818}
     - target: {fileID: 2150984968668188389, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
       propertyPath: OnEnterCollidables.Array.data[1].collidables.Array.data[2]
       value: 
@@ -10426,7 +10426,8 @@ PrefabInstance:
       propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 893114879862665561, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
 --- !u!114 &298337885959825806 stripped
 MonoBehaviour:
@@ -10547,17 +10548,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 456120042143402520, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
   m_PrefabInstance: {fileID: 1153429947300558371}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2046100074709239674 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 893114879862665561, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
-  m_PrefabInstance: {fileID: 1153429947300558371}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6279055166213524790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 452089b87139a7644a31f3fdb5f000de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2164154019733269629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1011428584843827806, guid: 38213e06a61f51c41bcc41363d3396b6, type: 3}
@@ -10630,6 +10620,20 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+--- !u!114 &825881892009614818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279055166213524790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf210c47885644a4583947d41bd81ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _from: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
+  _to: {fileID: 11400000, guid: b2773c4c5a644e0488162436b497d49a, type: 2}
 --- !u!114 &3434602039706951586
 MonoBehaviour:
   m_ObjectHideFlags: 0

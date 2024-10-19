@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -M-FirstMissionSuccess
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3629f6cdd3ab9064d8a1d4220d1e3c97, type: 2}
+        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
+        m_MethodName: RemoveDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: e8f6b81b47b9a4a45a1b6c9609fa3e45, type: 2}
+          m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: e7776acd1b2929b4cb6bf67cceec66d4, type: 2}
+        m_TargetAssemblyTypeName: Int, Assembly-CSharp
+        m_MethodName: SubtractValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 6bcb6cf4542eb014195a8fa78b8000c0, type: 2}
+        m_TargetAssemblyTypeName: PrefabContainer, Assembly-CSharp
+        m_MethodName: SetPrefab
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4086841714801781605, guid: ba0ffdba650fd0a46b8f2c74da72f910, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeLinks: []
+  DialogueNodeData: []
+  _translationPreview: 
+  references:
+    version: 2
+    RefIds: []

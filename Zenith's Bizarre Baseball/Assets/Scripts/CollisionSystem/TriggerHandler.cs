@@ -20,7 +20,6 @@ public class TriggerHandler : MonoBehaviour
     bool canCollide = true;
     public void SetCanCollide(bool value) => canCollide = value;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(canCollide) CollidableGroup.CheckCollidables(OnEnterCollidables, collision);

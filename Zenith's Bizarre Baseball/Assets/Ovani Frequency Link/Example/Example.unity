@@ -265,7 +265,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b66a5796a64f5ab43a9fcb099ea4c77d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 94d12470df2ce9e4db8897dbee75c361, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 568289364}
   - component: {fileID: 568289363}
   - component: {fileID: 568289362}
+  - component: {fileID: 568289365}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -471,6 +472,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &568289365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568289361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &886570395
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +629,7 @@ Transform:
   m_GameObject: {fileID: 1056721603}
   m_LocalRotation: {x: -0.024300441, y: -0.9997048, z: 0.00000007806091, w: 0.000002890463}
   m_LocalPosition: {x: -1.25, y: -2.97, z: 6.98}
-  m_LocalScale: {x: 2.45168, y: 1.0099589, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1368698150}
@@ -615,8 +649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FrequencyLink: {fileID: 11400000, guid: 8856ab996d85777449c7e3f65a266247, type: 2}
-  A: {x: 2.45168, y: 1.0099589, z: 1}
-  B: {x: 2.45168, y: 3, z: 1}
+  A: {x: 3, y: 1, z: 1}
+  B: {x: 1, y: 3, z: 1}
   Targets:
     m_PersistentCalls:
       m_Calls:
@@ -887,7 +921,7 @@ Transform:
   m_GameObject: {fileID: 1688293228}
   m_LocalRotation: {x: 0.1063944, y: -0.994324, z: -0.00000029988584, w: 0.0000028759237}
   m_LocalPosition: {x: 1.48, y: -2.77, z: 6.98}
-  m_LocalScale: {x: 2.45168, y: 1.0099589, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2026647297}
@@ -907,8 +941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FrequencyLink: {fileID: 11400000, guid: c7519af7c8418034b9489dfd6c67b105, type: 2}
-  A: {x: 2.45168, y: 1.0099589, z: 1}
-  B: {x: 2.45168, y: 3, z: 1}
+  A: {x: 3, y: 1, z: 1}
+  B: {x: 1, y: 3, z: 1}
   Targets:
     m_PersistentCalls:
       m_Calls:
@@ -1095,7 +1129,7 @@ Transform:
   m_GameObject: {fileID: 1911188765}
   m_LocalRotation: {x: -0, y: -0, z: -0.106394395, w: 0.994324}
   m_LocalPosition: {x: -3.88, y: -2.59, z: 6.98}
-  m_LocalScale: {x: 2.48248, y: 1.0099589, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 348145465}
@@ -1115,8 +1149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FrequencyLink: {fileID: 11400000, guid: b47a160dde3e9e940beb30b90c6054e9, type: 2}
-  A: {x: 2.48248, y: 1.0099589, z: 1}
-  B: {x: 2.48248, y: 3, z: 1}
+  A: {x: 3, y: 1, z: 1}
+  B: {x: 1, y: 3, z: 1}
   Targets:
     m_PersistentCalls:
       m_Calls:

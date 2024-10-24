@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SimpleAudioManager
@@ -38,6 +40,7 @@ namespace SimpleAudioManager
         [Tooltip("The maximum volume for the audio clips.")][Range(0f, 1f)] public float maxVolume = 1f;
         [Tooltip("The amount of time it will take for different songs to blend between one-another.")] public float defaultSongBlendDuration = 1f;
         [Tooltip("The amount of time it will take for different intensities of the same song to blend between one-another.")] public float defaultIntensityBlendDuration = 1f;
+        [SerializeField] SimpleAudioManagerHandler _handler;
 
         [Space(8f)]
         /// <summary>
@@ -62,6 +65,12 @@ namespace SimpleAudioManager
         /// <summary>
         /// Shorthand set Intensity
         /// </summary>
+        public void SumIntensity()
+        {
+            print(_currentIntensityIndex + 1);
+            SetIntensity(_currentIntensityIndex + 1);
+        }
+        public void SetIntensity(float intensity) => SetIntensity((int)intensity);
         public void SetIntensity(int pIntensity) => SetIntensity(pIntensity, defaultIntensityBlendDuration, defaultIntensityBlendDuration);
 
         /// <summary>
@@ -71,6 +80,7 @@ namespace SimpleAudioManager
         {
             if (_currentSongData.intensityClips.Count > Mathf.Max(pIntensity, 0))
             {
+                print("Compila");
                 PlaySong( new PlaySongOptions() {
                     song = _currentSongIndex,
                     intensity = Mathf.Max(pIntensity, 0),
@@ -81,6 +91,13 @@ namespace SimpleAudioManager
             }
         }
 
+
+        public void PlaySong(Song song)
+        {
+            int i = 0;
+            while(i < _songs.Count && _songs[i] != song) i++;
+            PlaySong(i);
+        }
         /// <summary>
         /// Plays the specified song and attempts to match the current intensity
         /// </summary>
@@ -178,12 +195,21 @@ namespace SimpleAudioManager
                 yield return new WaitForSecondsRealtime(0.25f);
                 PlaySong(0);
             }
+
+            _songs = Resources.LoadAll<Song>("SoundPlayers/Themes").ToList();
+            _handler.OnPlaySong.AddListener(PlaySong);
+            _handler.OnStop.AddListener(StopSong);
         }
 
         /// <summary>
         /// Clear out the pseudo-singleton
         /// </summary>
-        private void OnDestroy() => _instance = _instance == this ? null : _instance;
+        private void OnDestroy()
+        {
+            _instance = _instance == this ? null : _instance;
+            _handler.OnPlaySong.RemoveListener(PlaySong);
+            _handler.OnStop.RemoveListener(StopSong);
+        }
 
         /// <summary>
         /// Builds the data pool for the songs

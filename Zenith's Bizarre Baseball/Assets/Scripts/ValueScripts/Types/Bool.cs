@@ -11,6 +11,9 @@ public class Bool : ScriptableICondition, ISaveable
 
     [SerializeField] UnityEvent onValueChanged = new UnityEvent();
     public UnityEvent OnValueChanged => onValueChanged;
+    [SerializeField] UnityEvent onTrue = new UnityEvent();
+    [SerializeField] UnityEvent onFalse = new UnityEvent();
+    [SerializeField] UnityEvent<bool> onChange = new UnityEvent<bool>();
 
     public void SetValue(bool value)
     {
@@ -18,8 +21,15 @@ public class Bool : ScriptableICondition, ISaveable
         {
             _value = value;
             onValueChanged.Invoke();
+
+            if(value) onTrue.Invoke();
+            else onFalse.Invoke();
+
+            onChange.Invoke(value);
         }
     }
+
+    public void SetInverseValue(bool value) => SetValue(!value);
 
     public void RefreshValue() => onValueChanged.Invoke();
 

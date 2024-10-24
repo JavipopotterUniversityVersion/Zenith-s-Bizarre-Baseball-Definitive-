@@ -8,6 +8,7 @@ public class FillableBarCondition : MonoBehaviour, ICondition
     [SerializeField] float _maxScale;
     [SerializeField] Gradient _fillGradient;
     [SerializeField] ObjectProcessor _fillSpeed;
+    [SerializeField] [Range(0,1)] float _threshold;
     SpriteRenderer spriteRenderer;
     bool _exhausted;
 
@@ -15,7 +16,7 @@ public class FillableBarCondition : MonoBehaviour, ICondition
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public bool CheckCondition() => transform.localScale.x > 0 && _exhausted == false;
+    public bool CheckCondition() => transform.localScale.x > (_threshold * _maxScale) && _exhausted == false;
 
     public void Fill() => SetScale(_maxScale);
 
@@ -28,8 +29,6 @@ public class FillableBarCondition : MonoBehaviour, ICondition
     private void Update() 
     {
         float scaleToAdd = _fillSpeed.Result() * Time.deltaTime;
-        if(_exhausted) scaleToAdd *= 0.5f;
-
         float newScale = transform.localScale.x + scaleToAdd;
         SetScale(newScale);
     }

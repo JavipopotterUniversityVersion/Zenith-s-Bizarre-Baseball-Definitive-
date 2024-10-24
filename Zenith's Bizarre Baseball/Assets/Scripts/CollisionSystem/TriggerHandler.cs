@@ -4,21 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum CollidableType {ENTER, STAY, EXIT};
+
 public class TriggerHandler : MonoBehaviour
 {
-    [SerializeField] CollidableGroup[] OnEnterCollidables;
-    public CollidableGroup[] OnEnterCollidablesProp() => OnEnterCollidables;
+    [SerializeField] List<CollidableGroup> OnEnterCollidables = new List<CollidableGroup>();
+    public List<CollidableGroup> OnEnterCollidablesProp() => OnEnterCollidables;
 
-    [SerializeField] CollidableGroup[] OnStayCollidables;
-    public CollidableGroup[] OnStayCollidablesProp() => OnStayCollidables;
+    [SerializeField] List<CollidableGroup> OnStayCollidables;
+    public List<CollidableGroup> OnStayCollidablesProp() => OnStayCollidables;
     [SerializeField] float checkDelay = 0.1f;
     float timer = 0;
 
-    [SerializeField] CollidableGroup[] OnExitCollidables;
-    public CollidableGroup[] OnExitCollidablesProp() => OnExitCollidables;
+    [SerializeField] List<CollidableGroup> OnExitCollidables;
+    public List<CollidableGroup> OnExitCollidablesProp() => OnExitCollidables;
 
     bool canCollide = true;
     public void SetCanCollide(bool value) => canCollide = value;
+
+    public void AddEnterCollidableGroup(CollidableGroup group, CollidableType type)
+    {
+        switch(type)
+        {
+            case CollidableType.ENTER:
+                OnEnterCollidables.Add(group);
+                break;
+            case CollidableType.STAY:
+                OnStayCollidables.Add(group);
+                break;
+            case CollidableType.EXIT:
+                OnExitCollidables.Add(group);
+                break;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -84,6 +102,7 @@ public class CollidableGroup
     [SerializeField] Condition[] conditions;
 
     bool initialized = false;
+
     public bool CheckConditions()
     {
         if(!initialized)
@@ -116,7 +135,8 @@ public class CollidableGroup
     [SerializeField] ICollidable[] collidables;
     public ICollidable[] Collidables => collidables;
 
-    public static void CheckCollidables(CollidableGroup[] collidables, Collider2D collision)
+    public static void CheckCollidables(CollidableGroup[] collidables, Collider2D collision) => CheckCollidables(collidables.ToList(), collision);
+    public static void CheckCollidables(List<CollidableGroup> collidables, Collider2D collision)
     {
         foreach (var collidableGroup in collidables)
         {

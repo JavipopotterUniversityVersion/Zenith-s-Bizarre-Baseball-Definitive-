@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Slider label="Upward Smoothing" high-value="0.25" low-value="0.01" direction="Horizontal" tooltip="How fast the strength will rise" view-data-key="SmoothingUp" binding-path="SmoothingUp" />
+    <ui:Slider label="Downward Smoothing" high-value="0.25" low-value="0.01" direction="Horizontal" tooltip="How fast the strength will fall" view-data-key="SmoothingDown" binding-path="SmoothingDown" />
+    <uie:EnumField label="SamplingMode" value="Rectangular" binding-path="SamplingMode" type="UnityEngine.FFTWindow, UnityEngine.AudioModule" />
+    <uie:FloatField label="Scalar" value="42,2" binding-path="Scalar" />
+    <ui:VisualElement style="flex-grow: 1; height: 10px;" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; min-height: 155px; max-height: 155px;">
+        <ui:Label tabindex="-1" text="V\nO\nL\nU\nM\nE" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; font-size: 20px;" />
+        <ui:VisualElement style="flex-grow: initial; align-items: stretch; justify-content: space-between; flex-direction: column; align-self: stretch;">
+            <ui:VisualElement style="flex-grow: 1; min-width: 28px;" />
+            <ui:MinMaxSlider min-value="0.29" max-value="0.6" low-limit="0" high-limit="1" name="vols" tooltip="This is the range of volume that&apos;ll be measured." style="flex-basis: auto; position: absolute; height: 29px; width: 126px; rotate: -90deg; top: 50px; left: -52px; translate: -3px 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:VisualElement name="Graph" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.4); flex-direction: row; align-items: flex-end;" />
+            <ui:MinMaxSlider min-value="100" max-value="200" low-limit="0" high-limit="1023" name="slid" tooltip="This is the Frequency range that&apos;ll be measured." />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Label tabindex="-1" text="FREQUENCY" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; font-size: 20px;" />
+    <ui:VisualElement style="flex-grow: 1; flex-shrink: 1; justify-content: space-between; align-items: auto; flex-direction: column-reverse; align-self: stretch; height: 41%;" />
+</ui:UXML>

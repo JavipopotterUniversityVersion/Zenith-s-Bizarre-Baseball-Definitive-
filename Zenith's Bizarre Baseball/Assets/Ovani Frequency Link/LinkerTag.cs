@@ -19,4 +19,9 @@ public class LinkerTag : MonoBehaviour
         if (AudioSource == null)
             AudioSource = GetComponent<AudioSource>();
     }
+
+    public void SetSource(AudioSource source)
+    {
+        AudioSource = source;
+    }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2835356142403474774}
   - component: {fileID: 8821381029293141470}
   - component: {fileID: 5566150996600349185}
+  - component: {fileID: 586486842696092677}
   m_Layer: 0
   m_Name: SimpleAudioManager
   m_TagString: Untagged
@@ -52,6 +53,21 @@ MonoBehaviour:
   defaultSongBlendDuration: 1
   defaultIntensityBlendDuration: 1
   _handler: {fileID: 11400000, guid: 1029719db1797ac43a9e71cd54b4c821, type: 2}
+  _onPlay:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 586486842696092677}
+        m_TargetAssemblyTypeName: LinkerTag, Assembly-CSharp
+        m_MethodName: SetSource
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _songs:
   - {fileID: 11400000, guid: ce9c7d840bf5a584b9530bba0d8f2e40, type: 2}
   - {fileID: 11400000, guid: d1150fa8d1366e84a82a46efa307e4df, type: 2}
@@ -106,3 +122,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &586486842696092677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5291770407087042786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5876955a405528d48b0820c94a3fb8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetLinks:
+  - {fileID: 11400000, guid: b47a160dde3e9e940beb30b90c6054e9, type: 2}
+  AudioSource: {fileID: 0}

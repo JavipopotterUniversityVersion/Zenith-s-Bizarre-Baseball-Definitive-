@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SimpleAudioManager
 {
@@ -24,7 +25,6 @@ namespace SimpleAudioManager
         private List<AudioSource> sourcePool = new List<AudioSource>();
         private int _currentSourceIndex = -1;
         private AudioSource _currentSource => (_currentSourceIndex == -1 || sourcePool == null || sourcePool.Count <= 0 || sourcePool.Count < _currentSourceIndex) ? null : sourcePool[_currentSourceIndex];
-
         [Tooltip("Should the current song loop?")] public bool loopCurrentSong = true;
         private Coroutine _loop;
         private Song.Data _currentSongData;
@@ -41,6 +41,7 @@ namespace SimpleAudioManager
         [Tooltip("The amount of time it will take for different songs to blend between one-another.")] public float defaultSongBlendDuration = 1f;
         [Tooltip("The amount of time it will take for different intensities of the same song to blend between one-another.")] public float defaultIntensityBlendDuration = 1f;
         [SerializeField] SimpleAudioManagerHandler _handler;
+        [SerializeField] UnityEvent<AudioSource> _onPlay = new UnityEvent<AudioSource>();
 
         [Space(8f)]
         /// <summary>
@@ -151,6 +152,8 @@ namespace SimpleAudioManager
             _nextSource.clip = _clip;
             _nextSource.time = pOptions.startTime;
             _nextSource.Play();
+
+            _onPlay.Invoke(_nextSource  );
         }
 
         /// <summary>

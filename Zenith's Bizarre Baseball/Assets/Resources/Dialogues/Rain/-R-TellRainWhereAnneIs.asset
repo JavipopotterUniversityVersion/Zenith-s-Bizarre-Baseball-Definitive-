@@ -14,7 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerDialogue:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f1c8cac46212d3b4bb2bcf6935b66af8, type: 2}
+        m_TargetAssemblyTypeName: Mission, Assembly-CSharp
+        m_MethodName: AddMission
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeLinks:
   - BaseNodeGuid: e6beb1b6-c3f7-4b35-9402-f6e937b4ed26
     BasePortIndex: 0

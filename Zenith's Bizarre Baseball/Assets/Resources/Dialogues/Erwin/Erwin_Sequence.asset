@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: Erwin_Sequence
   m_EditorClassIdentifier: 
   _persistentData: {fileID: 11400000, guid: fe5ccb222f84f7448a4a24878ca773d8, type: 2}
-  dialogues:
-  - dialogue: {fileID: 11400000, guid: a39ccb7a6bcfb9548a83b3cf424b9cb4, type: 2}
-    autoRemove: 1
-    condition: 
+  dialogues: []
   _processor:
     operation: input
-    _showReferences: 0
+    _showReferences: 1
     _floatDictionary:
       list: []
     _intDictionary:
@@ -33,6 +30,8 @@ MonoBehaviour:
     _stringDictionary:
       list: []
     _boolDictionary:
-      list: []
+      list:
+      - Key: cup
+        Value: {fileID: 11400000, guid: a2ec2dae0cf4add409a596c31f0a55f4, type: 2}
     _eventDictionary:
       list: []

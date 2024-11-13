@@ -86,8 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2945539639634197335}
   - component: {fileID: 2945539639634197417}
-  - component: {fileID: 4853732673844166544}
-  - component: {fileID: 7620721703298850788}
+  - component: {fileID: 1212940591230588467}
   m_Layer: 5
   m_Name: Heart
   m_TagString: Untagged
@@ -138,7 +137,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4853732673844166544
+--- !u!114 &1212940591230588467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,100 +146,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2945539639634197332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce757e2e7b4119548bb5813026696049, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c9153e141b31914fb7f3e34a22d695b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7620721703298850788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2945539639634197332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aef4c5dbd13ef44698d402a518ee0ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
-  _floatEvents:
-  - _condition:
-      operation: input >= ((index + 1) * 4)
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readablesDictionary: []
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2868605162719911285}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - _condition:
-      operation: input < ((index + 1) * 4)
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-      _conditionDictionary:
-        list: []
-      _readablesDictionary:
-      - Key: index
-        Value:
-          target: {fileID: 4853732673844166544}
-    _event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2868605162719911285}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  _background: {fileID: 2868605162719911285}
+  _parts:
+  - {fileID: 7003387498208133235}
+  - {fileID: 6152793352754598179}
+  - {fileID: 3541041120586474300}
+  - {fileID: 9126895850690214845}
 --- !u!1 &4413151877698696854
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,27 +384,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
       value: 
@@ -502,17 +416,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3451681664080212045, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
   m_PrefabInstance: {fileID: 506231223861354611}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4897773166150829945 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4971441975559186186, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+--- !u!95 &7003387498208133235 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7365489096995381248, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
   m_PrefabInstance: {fileID: 506231223861354611}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce757e2e7b4119548bb5813026696049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1773932424687541181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -707,27 +615,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
       value: 
@@ -741,6 +649,11 @@ PrefabInstance:
 --- !u!224 &3997103049233837040 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3451681664080212045, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+  m_PrefabInstance: {fileID: 1773932424687541181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9126895850690214845 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7365489096995381248, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
   m_PrefabInstance: {fileID: 1773932424687541181}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3698693051305079075
@@ -929,27 +842,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
       value: 
@@ -963,6 +876,11 @@ PrefabInstance:
 --- !u!224 &2067912628646461806 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3451681664080212045, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+  m_PrefabInstance: {fileID: 3698693051305079075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6152793352754598179 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7365489096995381248, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
   m_PrefabInstance: {fileID: 3698693051305079075}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6274419643003667260
@@ -1167,27 +1085,27 @@ PrefabInstance:
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[0].Value.target
       value: 
-      objectReference: {fileID: 4897773166150829945}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[0]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._condition._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readablesDictionary.Array.data[1].Value.target
       value: 
-      objectReference: {fileID: 4853732673844166544}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708531986076186677, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
       propertyPath: _floatEvents.Array.data[1]._processor._readableDictionary.list.Array.data[1].Value.target
       value: 
@@ -1198,6 +1116,11 @@ PrefabInstance:
       objectReference: {fileID: -1715465557, guid: 75b48fe95f202144986d7ff0e4f64cf8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+--- !u!95 &3541041120586474300 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7365489096995381248, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}
+  m_PrefabInstance: {fileID: 6274419643003667260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8716120333902246769 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3451681664080212045, guid: fee4993d894555a43bc0f727bbb6f5c8, type: 3}

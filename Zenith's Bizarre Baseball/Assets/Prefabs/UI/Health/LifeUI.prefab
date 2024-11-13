@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2502548990945291113}
   - component: {fileID: 2502548990945291112}
   - component: {fileID: 2502548990945291127}
-  - component: {fileID: 1742668073161602949}
+  - component: {fileID: 1335857649706319115}
   m_Layer: 5
   m_Name: LifeUI
   m_TagString: Untagged
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1742668073161602949
+--- !u!114 &1335857649706319115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,41 +128,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2502548990945291126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43f8e7a462951246bcf8bdce7875c73, type: 3}
+  m_Script: {fileID: 11500000, guid: 181cf4fdf0aee7a48b8e8fbc964a50bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: {fileID: 11400000, guid: 62ce8544b1c262e4e9e12a087a7e2e93, type: 2}
-  checkOnAwake: 1
-  _onTrue:
-    m_PersistentCalls:
-      m_Calls: []
-  _onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
-        m_TargetAssemblyTypeName: Float, Assembly-CSharp
-        m_MethodName: Refresh
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
-        m_TargetAssemblyTypeName: Float, Assembly-CSharp
-        m_MethodName: Refresh
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _currentHealth: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
+  _maxHealth: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
 --- !u!1001 &746049142480868625
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,47 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
-  m_Name: -M-FirstTalk
+  m_Name: -M-FirstMission
   m_EditorClassIdentifier: 
   onTriggerDialogue:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 3629f6cdd3ab9064d8a1d4220d1e3c97, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: AddDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 2681eba474e59a0488c89153933d21a3, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SequenceElementAsset, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 3629f6cdd3ab9064d8a1d4220d1e3c97, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: SetAutoRemove
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 3629f6cdd3ab9064d8a1d4220d1e3c97, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: AddDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e8f6b81b47b9a4a45a1b6c9609fa3e45, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   NodeLinks:
   - BaseNodeGuid: e6beb1b6-c3f7-4b35-9402-f6e937b4ed26
     BasePortIndex: 0

@@ -11,6 +11,7 @@ public class RoofPainter : MonoBehaviour
     [SerializeField] TileBase _doorTile;
     RoomNode _node;
     [SerializeField] bool paintOnStart = true;
+    [SerializeField] bool paintDoors = true;
 
     private void Start() 
     {
@@ -36,6 +37,7 @@ public class RoofPainter : MonoBehaviour
         }
 
         List<Tilemap> sets = GetComponentInParent<TilemapSetsContainer>().Sets;
+        if(!paintDoors) yield break;
 
         foreach (var set in sets)
         {

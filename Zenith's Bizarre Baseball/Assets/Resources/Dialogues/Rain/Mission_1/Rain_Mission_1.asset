@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e7ae57c34e96049b95373dba010337, type: 3}
+  m_Name: Rain_Mission_1
+  m_EditorClassIdentifier: 
+  sequence: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
+  missionStart: {fileID: 11400000, guid: c90d33e80fcd33c409b61491babb0310, type: 2}
+  missionSuccess: {fileID: 11400000, guid: 520957c296f4fc340be824744c42edd2, type: 2}
+  successCondition: money >= 50
+  missionWait: {fileID: 11400000, guid: 145481f876d08c840ad30c79dc5ac736, type: 2}

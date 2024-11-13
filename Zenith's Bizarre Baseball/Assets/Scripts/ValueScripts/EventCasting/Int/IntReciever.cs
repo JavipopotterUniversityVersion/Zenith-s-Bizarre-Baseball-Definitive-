@@ -17,6 +17,19 @@ public class IntReciever : MonoBehaviour
     [SerializeField] UnityEvent onHighValue = new UnityEvent();
     public UnityEvent OnHighValue => onHighValue;
 
+    [SerializeField] UnityEvent<int> _onValueChanged;
+    [SerializeField] UnityEvent<string> _onValueChangedAsString;
+
+    private void Awake() {
+        _value.OnValueChanged.AddListener(()=>_onValueChanged.Invoke(_value.Value));
+        _value.OnValueChanged.AddListener(()=>_onValueChangedAsString.Invoke(_value.Value.ToString()));
+    }
+
+    private void OnDestroy() {
+        _value.OnValueChanged.RemoveListener(()=>_onValueChanged.Invoke(_value.Value));
+        _value.OnValueChanged.AddListener(()=>_onValueChangedAsString.Invoke(_value.Value.ToString()));
+    }
+
     public void CheckValue() 
     {
         if(_value.Value < _threshold && _value.LastValue >= _threshold)

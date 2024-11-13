@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialNode: {fileID: 511332676968380719, guid: 89e0dfeb83b06b84ea1b2ce8d9f0feb0, type: 3}
-  _extension: 5
+  _extension: 15
   _linearity: 0.25
   EntropyValue: {fileID: 11400000, guid: 06793012aa5b6704ea1795ebd9a40b2c, type: 2}
   onStartedGeneration:
@@ -645,18 +645,24 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _nodeSettings:
-  - _nodePrefab: {fileID: 478305761942953299, guid: 3b49490337d249a43ac3330a4ee2efcf, type: 3}
+  - _nodePrefab: {fileID: 4574652105892775394, guid: 7fb095c7704ab724fbb1159103bba83e, type: 3}
     _probability: 0
     _minNumberOfNodes: 1
     _maxNumberOfNodes: 0
-    minExtension: 0.8
+    minExtension: 0.7
     maxExtension: 1
-  - _nodePrefab: {fileID: 6571429988273290393, guid: d7d025b4772634340a2578f5659b1f8c, type: 3}
+  - _nodePrefab: {fileID: 132112436017034904, guid: d747c49f183b8e94e87cc608d408f185, type: 3}
+    _probability: 0
+    _minNumberOfNodes: 3
+    _maxNumberOfNodes: 0
+    minExtension: 0.7
+    maxExtension: 1
+  - _nodePrefab: {fileID: 9221218953700125037, guid: 0da009e663e3a2c4383c3b7389c29850, type: 3}
     _probability: 0
     _minNumberOfNodes: 1
     _maxNumberOfNodes: 0
-    minExtension: 0.3
-    maxExtension: 0.6
+    minExtension: 0.7
+    maxExtension: 1
   unusedNodes: []
 --- !u!4 &1848092694
 Transform:

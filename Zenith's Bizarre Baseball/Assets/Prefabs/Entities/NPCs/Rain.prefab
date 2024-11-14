@@ -151,6 +151,8 @@ GameObject:
   - component: {fileID: 334573021082602170}
   - component: {fileID: 334573021082602171}
   - component: {fileID: 334573021082602168}
+  - component: {fileID: 3040757274983587600}
+  - component: {fileID: 1370437837913799468}
   m_Layer: 0
   m_Name: Rain
   m_TagString: Untagged
@@ -223,6 +225,87 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.0441813, y: 0.8695202}
   m_EdgeRadius: 0
+--- !u!114 &3040757274983587600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334573021082602169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad98deb5ce160e488d251ed49191ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onEnableEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1370437837913799468}
+        m_TargetAssemblyTypeName: ProcessorCondition, Assembly-CSharp
+        m_MethodName: ExecuteBehaviour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1370437837913799468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334573021082602169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b1cd865b0fdeb43904b14ad26210da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _processor:
+    operation: Deactivate (Seq == 0)
+    _showReferences: 1
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list:
+      - Key: Deactivate
+        Value:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1481442028502704318}
+              m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+              m_MethodName: SetActive
+              m_Mode: 6
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    _conditionDictionary:
+      list: []
+    _readablesDictionary:
+    - Key: Seq
+      Value:
+        target: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
+  onValidate: 0
 --- !u!1 &6080572722847750215
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +878,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cea6a7c29b5624eb3e58e9dc294545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1481442028502704318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8960757074279198462, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}
+  m_PrefabInstance: {fileID: 7553700649528331840}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3461672537637049145 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6403685931703000441, guid: 093c57236b2bfd347b5dc1799fd4b4bc, type: 3}

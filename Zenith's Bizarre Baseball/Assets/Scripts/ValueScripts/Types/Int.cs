@@ -33,6 +33,8 @@ public class Int : ScriptableObject, ISaveable
         onValueChanged.Invoke();
     }
 
+    public void SetValue(Int value) => SetValue(value.Value);
+
     public void AddValue(int value) => SetValue(Value + value);
 
     public void SubtractValue(int value) => SetValue(Value - value);

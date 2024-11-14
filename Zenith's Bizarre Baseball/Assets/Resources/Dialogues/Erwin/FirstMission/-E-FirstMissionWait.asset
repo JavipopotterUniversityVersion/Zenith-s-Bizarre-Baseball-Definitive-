@@ -15,9 +15,38 @@ MonoBehaviour:
   onTriggerDialogue:
     m_PersistentCalls:
       m_Calls: []
-  NodeLinks: []
-  DialogueNodeData: []
-  _translationPreview: 
+  NodeLinks:
+  - BaseNodeGuid: 25814b2d-82fd-4648-a978-9ebc6d68a333
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 2a4a002f-e9cb-4383-a118-271474dad8b6
+  DialogueNodeData:
+  - rid: 2668824016566353997
+  - rid: 2668824016566353998
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ErwinasSecond><!:happy><ANIMATION:Talk>Gracias
+    por ofrecerte a buscar mi taza<ANIMATION:Idle>@<ANIMATION:Talk>Conf\xEDo en que
+    la encontrar\xE1s pronto<ANIMATION:Idle><END>"
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2668824016566353997
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 25814b2d-82fd-4648-a978-9ebc6d68a333
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 2a4a002f-e9cb-4383-a118-271474dad8b6
+          Position: {x: 186.4, y: 200}
+          LinkedNodes: []
+    - rid: 2668824016566353998
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 2a4a002f-e9cb-4383-a118-271474dad8b6
+        Position: {x: 186.4, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: happy
+        characterIndex: 1
+        DialogueLines:
+        - Gracias por ofrecerte a buscar mi taza
+        - "Conf\xEDo en que la encontrar\xE1s pronto"

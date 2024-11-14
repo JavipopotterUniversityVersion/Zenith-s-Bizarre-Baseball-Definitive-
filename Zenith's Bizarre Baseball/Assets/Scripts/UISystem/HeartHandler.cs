@@ -67,6 +67,6 @@ public class HeartHandler : MonoBehaviour
             for(int i = (int)_maxHealth.Value/4; i < lastMaxHealth/4; i++) hearts[i].gameObject.SetActive(false);
         }
 
-        lastMaxHealth = _currentHealth.Value;
+        lastMaxHealth = _maxHealth.Value;
     }
 }

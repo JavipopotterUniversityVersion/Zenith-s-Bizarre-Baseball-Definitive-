@@ -65635,7 +65635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479520501818461720, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 4142729888667663494, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
       propertyPath: m_Enabled
@@ -65681,34 +65681,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8925208282557949725, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8925208282557949725, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8925208282557949725, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 8884774323498514782}
-    - target: {fileID: 8925208282557949725, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8925208282557949725, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ExecuteBehaviour
-      objectReference: {fileID: 0}
-    - target: {fileID: 8925208282557949725, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: ChangeStateOfRoomBehaviour, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8925208282557949725, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-      propertyPath: OnExecuteBehaviour.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 9056696603735183591, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -65725,24 +65697,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 423811508328174991, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
   m_PrefabInstance: {fileID: 6763600377409527461}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6604826990631779905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 465046767582683364, guid: b860fbfa48e4b7b48b107da1574a4ca1, type: 3}
-  m_PrefabInstance: {fileID: 6763600377409527461}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8884774323498514782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6604826990631779905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6133cdf7bb010c8488253ec1e6c19c3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stateOfRoom: 2
 --- !u!1001 &7306772828850207024
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public class IntReciever : MonoBehaviour
     private void Awake() {
         _value.OnValueChanged.AddListener(()=>_onValueChanged.Invoke(_value.Value));
         _value.OnValueChanged.AddListener(()=>_onValueChangedAsString.Invoke(_value.Value.ToString()));
+        _onValueChangedAsString.Invoke(_value.Value.ToString());
     }
 
     private void OnDestroy() {

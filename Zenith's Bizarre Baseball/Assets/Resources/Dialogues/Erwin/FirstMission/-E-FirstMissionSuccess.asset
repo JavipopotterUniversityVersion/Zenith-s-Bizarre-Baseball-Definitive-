@@ -14,22 +14,188 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerDialogue:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 6611088563278284bbf39ea424c3ce2a, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: RemoveDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 2445e79f425f83240994fd163e636de0, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  NodeLinks: []
-  DialogueNodeData: []
-  _translationPreview: 
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: 25814b2d-82fd-4648-a978-9ebc6d68a333
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: eab34b85-0f20-49d5-8752-eda8736f0679
+  - BaseNodeGuid: eab34b85-0f20-49d5-8752-eda8736f0679
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 10999284-9383-47a5-b232-ea1cd9d6f26b
+  - BaseNodeGuid: 10999284-9383-47a5-b232-ea1cd9d6f26b
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 906ebb87-53c9-41ac-8f6a-1faf6d16be83
+  - BaseNodeGuid: 906ebb87-53c9-41ac-8f6a-1faf6d16be83
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: be4dbcc9-78c4-42fc-af5a-01de942a5162
+  - BaseNodeGuid: be4dbcc9-78c4-42fc-af5a-01de942a5162
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 020aca99-8b2e-492f-9997-0e786e0092b2
+  - BaseNodeGuid: 020aca99-8b2e-492f-9997-0e786e0092b2
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: fedfea7e-f91c-4339-a282-04819698728f
+  DialogueNodeData:
+  - rid: 2668824016566354001
+  - rid: 2668824016566354002
+  - rid: 2668824016566354003
+  - rid: 2668824016566354004
+  - rid: 2668824016566354005
+  - rid: 2668824016566354006
+  - rid: 2668824016566354007
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ErwinasSecond><!:happy><ANIMATION:Talk>\xA1La
+    has encontrado!<ANIMATION:Idle>@<ANIMATION:Talk>Muchas gracias Zenith, no s\xE9
+    que har\xEDa sin ti<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>Claro,
+    claro<ANIMATION:Idle>@<ANIMATION:Talk>Ahora dame mi recompensa<ANIMATION:Idle>@<CHARACTER:ErwinasSecond><!:happy><ANIMATION:Talk>Con
+    esta taza me sale muhco mejor lo caf\xE9s<ANIMATION:Idle>@<ANIMATION:Talk>Ahora
+    podr\xE9 transferirte mejor la distribuci\xF3n de tu habilidades<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:annoyed><ANIMATION:Talk>\xBFQu\xE9
+    mierda significa eso?<ANIMATION:Idle>@<CHARACTER:ErwinasSecond><!:default><ANIMATION:Talk>Que
+    tienes 4 puntos m\xE1s de hablidad vamos<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Ah,
+    cojones<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Eso mola, gracias<ANIMATION:Idle><END>"
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2668824016566354001
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 25814b2d-82fd-4648-a978-9ebc6d68a333
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: eab34b85-0f20-49d5-8752-eda8736f0679
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: 10999284-9383-47a5-b232-ea1cd9d6f26b
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes:
+            - GUID: 906ebb87-53c9-41ac-8f6a-1faf6d16be83
+              Position: {x: 615.2, y: 200}
+              LinkedNodes:
+              - GUID: be4dbcc9-78c4-42fc-af5a-01de942a5162
+                Position: {x: 829.60004, y: 200}
+                LinkedNodes:
+                - GUID: 020aca99-8b2e-492f-9997-0e786e0092b2
+                  Position: {x: 1044, y: 200}
+                  LinkedNodes:
+                  - GUID: fedfea7e-f91c-4339-a282-04819698728f
+                    Position: {x: 1258.3999, y: 200}
+                    LinkedNodes: []
+    - rid: 2668824016566354002
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: eab34b85-0f20-49d5-8752-eda8736f0679
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: 10999284-9383-47a5-b232-ea1cd9d6f26b
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 906ebb87-53c9-41ac-8f6a-1faf6d16be83
+            Position: {x: 615.2, y: 200}
+            LinkedNodes:
+            - GUID: be4dbcc9-78c4-42fc-af5a-01de942a5162
+              Position: {x: 829.60004, y: 200}
+              LinkedNodes:
+              - GUID: 020aca99-8b2e-492f-9997-0e786e0092b2
+                Position: {x: 1044, y: 200}
+                LinkedNodes:
+                - GUID: fedfea7e-f91c-4339-a282-04819698728f
+                  Position: {x: 1258.3999, y: 200}
+                  LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: happy
+        characterIndex: 1
+        DialogueLines:
+        - "\xA1La has encontrado!"
+        - "Muchas gracias Zenith, no s\xE9 que har\xEDa sin ti"
+    - rid: 2668824016566354003
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 10999284-9383-47a5-b232-ea1cd9d6f26b
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 906ebb87-53c9-41ac-8f6a-1faf6d16be83
+          Position: {x: 615.2, y: 200}
+          LinkedNodes:
+          - GUID: be4dbcc9-78c4-42fc-af5a-01de942a5162
+            Position: {x: 829.60004, y: 200}
+            LinkedNodes:
+            - GUID: 020aca99-8b2e-492f-9997-0e786e0092b2
+              Position: {x: 1044, y: 200}
+              LinkedNodes:
+              - GUID: fedfea7e-f91c-4339-a282-04819698728f
+                Position: {x: 1258.3999, y: 200}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: confident
+        characterIndex: 0
+        DialogueLines:
+        - Claro, claro
+        - Ahora dame mi recompensa
+    - rid: 2668824016566354004
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 906ebb87-53c9-41ac-8f6a-1faf6d16be83
+        Position: {x: 615.2, y: 200}
+        LinkedNodes:
+        - GUID: be4dbcc9-78c4-42fc-af5a-01de942a5162
+          Position: {x: 829.60004, y: 200}
+          LinkedNodes:
+          - GUID: 020aca99-8b2e-492f-9997-0e786e0092b2
+            Position: {x: 1044, y: 200}
+            LinkedNodes:
+            - GUID: fedfea7e-f91c-4339-a282-04819698728f
+              Position: {x: 1258.3999, y: 200}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: happy
+        characterIndex: 1
+        DialogueLines:
+        - "Con esta taza me sale muhco mejor lo caf\xE9s"
+        - "Ahora podr\xE9 transferirte mejor la distribuci\xF3n de tu habilidades"
+    - rid: 2668824016566354005
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: be4dbcc9-78c4-42fc-af5a-01de942a5162
+        Position: {x: 829.60004, y: 200}
+        LinkedNodes:
+        - GUID: 020aca99-8b2e-492f-9997-0e786e0092b2
+          Position: {x: 1044, y: 200}
+          LinkedNodes:
+          - GUID: fedfea7e-f91c-4339-a282-04819698728f
+            Position: {x: 1258.3999, y: 200}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: annoyed
+        characterIndex: 0
+        DialogueLines:
+        - "\xBFQu\xE9 mierda significa eso?"
+    - rid: 2668824016566354006
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 020aca99-8b2e-492f-9997-0e786e0092b2
+        Position: {x: 1044, y: 200}
+        LinkedNodes:
+        - GUID: fedfea7e-f91c-4339-a282-04819698728f
+          Position: {x: 1258.3999, y: 200}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: default
+        characterIndex: 1
+        DialogueLines:
+        - "Que tienes 4 puntos m\xE1s de hablidad vamos"
+    - rid: 2668824016566354007
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: fedfea7e-f91c-4339-a282-04819698728f
+        Position: {x: 1258.3999, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Ah, cojones
+        - <!:happy>Eso mola, gracias

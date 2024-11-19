@@ -6,16 +6,18 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerClickHandler
+public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
     Button _button;
 
     [SerializeField] UnityEvent onSelect = new UnityEvent();
     [SerializeField] UnityEvent onDeselect = new UnityEvent();
+    EventSystem eventSystem;
 
     private void Awake() 
     {
         _button = GetComponent<Button>();
+        eventSystem = EventSystem.current;
     }
 
     public void Select()
@@ -33,6 +35,11 @@ public class CustomButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPo
     {
         onDeselect.Invoke();
     }
+
+    public void OnPointerExit (PointerEventData eventData) 
+	{
+		eventSystem.SetSelectedGameObject(null);
+	}
 
     public void OnPointerEnter(PointerEventData eventData)
     {

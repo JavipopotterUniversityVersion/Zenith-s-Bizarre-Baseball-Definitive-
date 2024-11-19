@@ -14,7 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerDialogue:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1f270baab1dfdc44d98c86db207542c6, type: 2}
+        m_TargetAssemblyTypeName: Int, Assembly-CSharp
+        m_MethodName: AddValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeLinks:
   - BaseNodeGuid: 25814b2d-82fd-4648-a978-9ebc6d68a333
     BasePortIndex: 0

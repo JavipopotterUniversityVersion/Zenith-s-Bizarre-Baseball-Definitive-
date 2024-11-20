@@ -20,7 +20,7 @@ public class StatButton : MonoBehaviour
 
     private void Awake() 
     {
-        _statPoints = Resources.Load<Int>("StatPoints");
+        _statPoints = Resources.Load<Int>("CurrentStatPoints");
         _statNameText.text = _statName;
         _addButton.onClick.AddListener(AddStat);
         _substractButton.onClick.AddListener(SubstractStat);

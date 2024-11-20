@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2502548990945291112}
   - component: {fileID: 2502548990945291127}
   - component: {fileID: 1335857649706319115}
+  - component: {fileID: 3463434832984893358}
   m_Layer: 5
   m_Name: LifeUI
   m_TagString: Untagged
@@ -133,6 +134,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
   _maxHealth: {fileID: 11400000, guid: 8674b4230c49b2e4983d2af377b97c47, type: 2}
+--- !u!114 &3463434832984893358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2502548990945291126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d25026fefbb7214fae7fe75261ddf95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volume: {fileID: 11400000, guid: 667fd1027fd03b44f85f2454ae0bd724, type: 2}
+  _lowHealthThreshold: 5
+  _lowHealthIntensity: 0.4
+  _currentHealth: {fileID: 11400000, guid: 3c312bf4823a1944f83312b97f1caedf, type: 2}
+  _vignetteLapse: 1
+  _aliveFlag: {fileID: 11400000, guid: 422c1d2a738cd0a4d9e6ee6e7b3352c9, type: 2}
 --- !u!1001 &746049142480868625
 PrefabInstance:
   m_ObjectHideFlags: 0

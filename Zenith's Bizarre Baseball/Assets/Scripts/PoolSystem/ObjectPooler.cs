@@ -19,9 +19,7 @@ public class ObjectPooler : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start() {
+        
         foreach (PoolObject poolObject in poolObjects)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();

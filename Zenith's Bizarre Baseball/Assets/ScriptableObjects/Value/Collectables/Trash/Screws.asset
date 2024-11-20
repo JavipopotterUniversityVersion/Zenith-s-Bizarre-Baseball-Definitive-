@@ -14,8 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 09fcca946709a724491d41d2697b54ff, type: 2}
+        m_TargetAssemblyTypeName: String, Assembly-CSharp
+        m_MethodName: CallString
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onChangeLastValue:
     m_PersistentCalls:
       m_Calls: []
-  _value: 59
+  _value: 0

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -V-FirstLaw_Dialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 0baca6ef-f30a-47c4-b690-0ae3ecbab44b
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: eba30160-a8db-42e5-9ae3-06dff754777f
+  DialogueNodeData:
+  - rid: 1149946383194128540
+  - rid: 1149946383194128541
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\"La
+    llama nunca se apaga, solo se transforma en humo o calor, pero su esencia sigue
+    viajando por el aire.\"<ANIMATION:Idle>@<ANIMATION:Talk>Meh, tiene bastante sentido<ANIMATION:Idle>@<ANIMATION:Talk><!:eye_closed>Aunque
+    no entiendo por qu\xE9 est\xE1 esto aqu\xED<ANIMATION:Idle>@<ANIMATION:Talk><!:default>\xBFEs
+    alg\xFAn tipo de adivinanza?<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946383194128540
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 0baca6ef-f30a-47c4-b690-0ae3ecbab44b
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: eba30160-a8db-42e5-9ae3-06dff754777f
+          Position: {x: 186.4, y: 200}
+          LinkedNodes: []
+    - rid: 1149946383194128541
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: eba30160-a8db-42e5-9ae3-06dff754777f
+        Position: {x: 186.4, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - '"La llama nunca se apaga, solo se transforma en humo o calor, pero su
+          esencia sigue viajando por el aire."'
+        - Meh, tiene bastante sentido
+        - "<!:eye_closed>Aunque no entiendo por qu\xE9 est\xE1 esto aqu\xED"
+        - "<!:default>\xBFEs alg\xFAn tipo de adivinanza?"

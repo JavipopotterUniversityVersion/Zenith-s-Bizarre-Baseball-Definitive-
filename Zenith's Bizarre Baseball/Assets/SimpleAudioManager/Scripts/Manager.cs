@@ -68,7 +68,6 @@ namespace SimpleAudioManager
         /// </summary>
         public void SumIntensity()
         {
-            print(_currentIntensityIndex + 1);
             SetIntensity(_currentIntensityIndex + 1);
         }
         public void SetIntensity(float intensity) => SetIntensity((int)intensity);
@@ -81,7 +80,6 @@ namespace SimpleAudioManager
         {
             if (_currentSongData.intensityClips.Count > Mathf.Max(pIntensity, 0))
             {
-                print("Compila");
                 PlaySong( new PlaySongOptions() {
                     song = _currentSongIndex,
                     intensity = Mathf.Max(pIntensity, 0),

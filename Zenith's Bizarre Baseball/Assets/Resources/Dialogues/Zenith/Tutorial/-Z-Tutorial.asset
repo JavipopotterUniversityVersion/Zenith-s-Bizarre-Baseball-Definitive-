@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -Z-Tutorial
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: 8eefbda4-0a52-4824-b8ff-709e2ed071b3
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: fb86546b-b2e1-4c38-9ca7-24db44c4d756
+  DialogueNodeData:
+  - rid: 2668824089621692506
+  - rid: 2668824089621692507
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>...<ANIMATION:Idle>@<ANIMATION:Talk>\xBFD\xF3nde
+    estoy?<ANIMATION:Idle>@<ANIMATION:Talk><!:eye_closed>Ah, parece que estoy so\xF1ando.<ANIMATION:Idle>@<ANIMATION:Talk>Tengo
+    mi bate...<ANIMATION:Idle>@<ANIMATION:Talk>Esto del suelo...<ANIMATION:Idle>@<ANIMATION:Talk><!:surprised>\xA1Parece
+    el tutorial de un videojuego!<ANIMATION:Idle>@<ANIMATION:Talk><!:confident> Voy
+    a seguirlo a ver que pasa.<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 2668824089621692506
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 8eefbda4-0a52-4824-b8ff-709e2ed071b3
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: fb86546b-b2e1-4c38-9ca7-24db44c4d756
+          Position: {x: 186.4, y: 200}
+          LinkedNodes: []
+    - rid: 2668824089621692507
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: fb86546b-b2e1-4c38-9ca7-24db44c4d756
+        Position: {x: 186.4, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - ...
+        - "\xBFD\xF3nde estoy?"
+        - "<!:eye_closed>Ah, parece que estoy so\xF1ando."
+        - Tengo mi bate...
+        - Esto del suelo...
+        - "<!:surprised>\xA1Parece el tutorial de un videojuego!"
+        - <!:confident> Voy a seguirlo a ver que pasa.

@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -V-Conclusion
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: ca30a07a-334d-48f3-9beb-142b95cce54f
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 2b0cb3fb-6fb9-4bd6-9053-4b5d3d97e815
+  - BaseNodeGuid: 2b0cb3fb-6fb9-4bd6-9053-4b5d3d97e815
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 7c969d1b-4421-4387-ae9b-7eca995a3694
+  - BaseNodeGuid: 7c969d1b-4421-4387-ae9b-7eca995a3694
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: 7abe3409-252e-47b1-aa35-e60fd503b946
+  - BaseNodeGuid: 7abe3409-252e-47b1-aa35-e60fd503b946
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: dbfb43a1-6248-4193-8159-8e405cf990a0
+  - BaseNodeGuid: dbfb43a1-6248-4193-8159-8e405cf990a0
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+  - BaseNodeGuid: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+  - BaseNodeGuid: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+    BasePortIndex: 0
+    PortName: out
+    TargetNodeGuid: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+  DialogueNodeData:
+  - rid: 1149946383194128595
+  - rid: 1149946383194128596
+  - rid: 1149946383194128597
+  - rid: 1149946383194128598
+  - rid: 1149946383194128599
+  - rid: 1149946383194128600
+  - rid: 1149946383194128601
+  - rid: 1149946383194128602
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Estos
+    pilares <!:eye_closed>dicen cosas muy raras<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Quiz\xE1s
+    Erwin sepa que pueden significar<ANIMATION:Idle><CHOICE:\xBFErwin?/1>@@<OPTION:\xBFErwin?><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Ah,
+    s\xED<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>El es mi tutor legal<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Y
+    mi cu\xF1ado<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>Es algo obsesivo y duerme
+    muy poco<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Pero es majo, no te preocupes<ANIMATION:Idle>@<ANIMATION:Talk><!:annoyed>Deber\xEDa
+    volver a casa, estoy muy cansada<ANIMATION:Idle>@<ANIMATION:Talk><!:default>Espera,
+    \xBFC\xF3mo se supone que voy a volver a casa?<ANIMATION:Idle><CHOICE:M\xE1tate/1>@@<OPTION:M\xE1tate><CHARACTER:ZenithasFirst><!:eye_closed><ANIMATION:Talk>No
+    creo que eso funcione<ANIMATION:Idle>@<ANIMATION:Talk>No tengo una forma suficientemente
+    edgy de morir<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Solo tengo un bate
+    lo cual ser\xEDa bastante gr\xE1fico y desagradable...<ANIMATION:Idle><CHOICE:Destroy(Zenith.gameObject,
+    1);/1>@@<OPTION:Destroy(Zenith.gameObject, 1);><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\xBFEh?
+    Qu\xE9 has dicho<!:flop><PROCESS:Restart 1><ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 1149946383194128595
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: ca30a07a-334d-48f3-9beb-142b95cce54f
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 2b0cb3fb-6fb9-4bd6-9053-4b5d3d97e815
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: 7c969d1b-4421-4387-ae9b-7eca995a3694
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes:
+            - GUID: 7abe3409-252e-47b1-aa35-e60fd503b946
+              Position: {x: 811.2, y: 200}
+              LinkedNodes:
+              - GUID: dbfb43a1-6248-4193-8159-8e405cf990a0
+                Position: {x: 1025.6, y: 200}
+                LinkedNodes:
+                - GUID: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+                  Position: {x: 1436, y: 200}
+                  LinkedNodes:
+                  - GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+                    Position: {x: 1650.3999, y: 200}
+                    LinkedNodes:
+                    - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+                      Position: {x: 2083.2, y: 200}
+                      LinkedNodes: []
+    - rid: 1149946383194128596
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 2b0cb3fb-6fb9-4bd6-9053-4b5d3d97e815
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: 7c969d1b-4421-4387-ae9b-7eca995a3694
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 7abe3409-252e-47b1-aa35-e60fd503b946
+            Position: {x: 811.2, y: 200}
+            LinkedNodes:
+            - GUID: dbfb43a1-6248-4193-8159-8e405cf990a0
+              Position: {x: 1025.6, y: 200}
+              LinkedNodes:
+              - GUID: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+                Position: {x: 1436, y: 200}
+                LinkedNodes:
+                - GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+                  Position: {x: 1650.3999, y: 200}
+                  LinkedNodes:
+                  - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+                    Position: {x: 2083.2, y: 200}
+                    LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Estos pilares <!:eye_closed>dicen cosas muy raras
+        - "<!:happy>Quiz\xE1s Erwin sepa que pueden significar"
+    - rid: 1149946383194128597
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 7c969d1b-4421-4387-ae9b-7eca995a3694
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 7abe3409-252e-47b1-aa35-e60fd503b946
+          Position: {x: 811.2, y: 200}
+          LinkedNodes:
+          - GUID: dbfb43a1-6248-4193-8159-8e405cf990a0
+            Position: {x: 1025.6, y: 200}
+            LinkedNodes:
+            - GUID: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+              Position: {x: 1436, y: 200}
+              LinkedNodes:
+              - GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+                Position: {x: 1650.3999, y: 200}
+                LinkedNodes:
+                - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+                  Position: {x: 2083.2, y: 200}
+                  LinkedNodes: []
+        Choices:
+        - ChoiceText: "\xBFErwin?"
+          Value: 1
+    - rid: 1149946383194128598
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 7abe3409-252e-47b1-aa35-e60fd503b946
+        Position: {x: 811.2, y: 200}
+        LinkedNodes:
+        - GUID: dbfb43a1-6248-4193-8159-8e405cf990a0
+          Position: {x: 1025.6, y: 200}
+          LinkedNodes:
+          - GUID: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+            Position: {x: 1436, y: 200}
+            LinkedNodes:
+            - GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+              Position: {x: 1650.3999, y: 200}
+              LinkedNodes:
+              - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+                Position: {x: 2083.2, y: 200}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "Ah, s\xED"
+        - <!:happy>El es mi tutor legal
+        - "<!:confident>Y mi cu\xF1ado"
+        - <!:annoyed>Es algo obsesivo y duerme muy poco
+        - <!:happy>Pero es majo, no te preocupes
+        - "<!:annoyed>Deber\xEDa volver a casa, estoy muy cansada"
+        - "<!:default>Espera, \xBFC\xF3mo se supone que voy a volver a casa?"
+    - rid: 1149946383194128599
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: dbfb43a1-6248-4193-8159-8e405cf990a0
+        Position: {x: 1025.6, y: 200}
+        LinkedNodes:
+        - GUID: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+          Position: {x: 1436, y: 200}
+          LinkedNodes:
+          - GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+            Position: {x: 1650.3999, y: 200}
+            LinkedNodes:
+            - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+              Position: {x: 2083.2, y: 200}
+              LinkedNodes: []
+        Choices:
+        - ChoiceText: "M\xE1tate"
+          Value: 1
+    - rid: 1149946383194128600
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: e7fdf7a4-479b-4b65-a1a5-f74a0b0109ca
+        Position: {x: 1436, y: 200}
+        LinkedNodes:
+        - GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+          Position: {x: 1650.3999, y: 200}
+          LinkedNodes:
+          - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+            Position: {x: 2083.2, y: 200}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: eye_closed
+        characterIndex: 0
+        DialogueLines:
+        - No creo que eso funcione
+        - No tengo una forma suficientemente edgy de morir
+        - "<!:confident>Solo tengo un bate lo cual ser\xEDa bastante gr\xE1fico y
+          desagradable..."
+    - rid: 1149946383194128601
+      type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 9afc5543-bcca-4d7f-8d3a-e49fdb72abf1
+        Position: {x: 1650.3999, y: 200}
+        LinkedNodes:
+        - GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+          Position: {x: 2083.2, y: 200}
+          LinkedNodes: []
+        Choices:
+        - ChoiceText: Destroy(Zenith.gameObject, 1);
+          Value: 1
+    - rid: 1149946383194128602
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: a6fbda61-a197-4ddb-ae1f-d683ada2f394
+        Position: {x: 2083.2, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "\xBFEh? Qu\xE9 has dicho<!:flop><PROCESS:Restart 1>"

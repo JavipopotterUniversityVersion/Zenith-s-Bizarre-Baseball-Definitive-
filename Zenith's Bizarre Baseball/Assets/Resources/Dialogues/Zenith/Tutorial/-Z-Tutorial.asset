@@ -21,17 +21,17 @@ MonoBehaviour:
     PortName: Next
     TargetNodeGuid: fb86546b-b2e1-4c38-9ca7-24db44c4d756
   DialogueNodeData:
-  - rid: 2668824089621692506
-  - rid: 2668824089621692507
+  - rid: 2668824157456433152
+  - rid: 2668824157456433153
   _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>...<ANIMATION:Idle>@<ANIMATION:Talk>\xBFD\xF3nde
     estoy?<ANIMATION:Idle>@<ANIMATION:Talk><!:eye_closed>Ah, parece que estoy so\xF1ando.<ANIMATION:Idle>@<ANIMATION:Talk>Tengo
-    mi bate...<ANIMATION:Idle>@<ANIMATION:Talk>Esto del suelo...<ANIMATION:Idle>@<ANIMATION:Talk><!:surprised>\xA1Parece
+    mi bate...<ANIMATION:Idle>@<ANIMATION:Talk>Este cartel...<ANIMATION:Idle>@<ANIMATION:Talk><!:surprised>\xA1Parece
     el tutorial de un videojuego!<ANIMATION:Idle>@<ANIMATION:Talk><!:confident> Voy
     a seguirlo a ver que pasa.<ANIMATION:Idle><END>"
   references:
     version: 2
     RefIds:
-    - rid: 2668824089621692506
+    - rid: 2668824157456433152
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 8eefbda4-0a52-4824-b8ff-709e2ed071b3
@@ -40,7 +40,7 @@ MonoBehaviour:
         - GUID: fb86546b-b2e1-4c38-9ca7-24db44c4d756
           Position: {x: 186.4, y: 200}
           LinkedNodes: []
-    - rid: 2668824089621692507
+    - rid: 2668824157456433153
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: fb86546b-b2e1-4c38-9ca7-24db44c4d756
@@ -54,6 +54,6 @@ MonoBehaviour:
         - "\xBFD\xF3nde estoy?"
         - "<!:eye_closed>Ah, parece que estoy so\xF1ando."
         - Tengo mi bate...
-        - Esto del suelo...
+        - Este cartel...
         - "<!:surprised>\xA1Parece el tutorial de un videojuego!"
         - <!:confident> Voy a seguirlo a ver que pasa.

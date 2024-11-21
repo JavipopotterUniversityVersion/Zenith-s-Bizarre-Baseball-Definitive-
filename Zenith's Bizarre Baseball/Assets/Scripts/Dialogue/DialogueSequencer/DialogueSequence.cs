@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "DialogueSequence", menuName = "Dialogue/DialogueSequence")]
 public class DialogueSequence : ScriptableObject, IReadable
 {
     [SerializeField] SaveSet _persistentData;
     [SerializeField] List<SequenceElement> dialogues = new List<SequenceElement>();
+    UnityEvent onDialogueAdded = new UnityEvent();
+    public UnityEvent OnDialogueAdded => onDialogueAdded;
     bool _autoRemove = true;
     public int Count => dialogues.Count;
     [SerializeField] Processor _processor;
@@ -32,6 +35,7 @@ public class DialogueSequence : ScriptableObject, IReadable
 
         dialogues.Add(sequenceElement);
         _persistentData.SaveDialogueSequences();
+        onDialogueAdded.Invoke();
     }
 
     public void AddToFirst(DialogueContainer dialogue) => AddToFirst(new SequenceElement(dialogue, _autoRemove));
@@ -42,6 +46,7 @@ public class DialogueSequence : ScriptableObject, IReadable
 
         dialogues.Insert(0, sequenceElement);
         _persistentData.SaveDialogueSequences();
+        onDialogueAdded.Invoke();
     }
 
     public DialogueContainer GetDialogue(int index)

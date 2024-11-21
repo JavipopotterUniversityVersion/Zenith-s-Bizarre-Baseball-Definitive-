@@ -42,15 +42,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "GamePadPoint",
-                    "type": "Value",
-                    "id": "8531e9b8-ab7e-4dfb-8613-8bdbb1cea7f2",
-                    "expectedControlType": "Vector2",
-                    "processors": "NormalizeVector2",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "167d1c6c-bd37-4cbc-be28-4d76e8fbe71f",
@@ -191,28 +182,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ab51257e-196c-4386-b3d7-afe06674232e",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MousePoint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "31164038-1c7c-4dc4-a33e-09597154530f",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GamePadPoint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "cedf698a-af4f-439e-a371-53c40c592077",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -274,6 +243,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "UseGadget",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97987ad8-bed9-44a1-a766-56dbde844376",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(max=0.125)",
+                    "groups": "",
+                    "action": "MousePoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a6da362-92ff-492e-a9fa-a2686573771a",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePoint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

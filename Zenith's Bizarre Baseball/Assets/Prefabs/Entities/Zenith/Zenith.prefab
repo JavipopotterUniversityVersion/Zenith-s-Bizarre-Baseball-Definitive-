@@ -1842,19 +1842,6 @@ MonoBehaviour:
         m_MethodName: EnableInput
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: -4660616899859505521, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.InputSystem.InputActionReference,
-            Unity.InputSystem
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 73692648175306247a34619942a66c77, type: 2}
-        m_TargetAssemblyTypeName: InputEnabler, Assembly-CSharp
-        m_MethodName: EnableInput
-        m_Mode: 2
-        m_Arguments:
           m_ObjectArgument: {fileID: 7357846190526584482, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.InputSystem.InputActionReference,
             Unity.InputSystem
@@ -6980,19 +6967,6 @@ MonoBehaviour:
   OnExecuteBehaviour:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 73692648175306247a34619942a66c77, type: 2}
-        m_TargetAssemblyTypeName: InputEnabler, Assembly-CSharp
-        m_MethodName: DisableInput
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: -4660616899859505521, guid: 833f4a4b72c174a479717061d7553a3a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.InputSystem.InputActionReference,
-            Unity.InputSystem
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 73692648175306247a34619942a66c77, type: 2}
         m_TargetAssemblyTypeName: InputEnabler, Assembly-CSharp
         m_MethodName: DisableInput
@@ -13114,6 +13088,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 402b0cf39a08f634ca6a10fce117a370, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &3792069302413355272
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13571,22 +13557,6 @@ MonoBehaviour:
     m_ActionId: 3e36f3da-8c02-4501-8e56-f69ff7fe44c1
     m_ActionName: Playing/MousePoint[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9213680093490472126}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnGamepadLook
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8531e9b8-ab7e-4dfb-8613-8bdbb1cea7f2
-    m_ActionName: Playing/GamePadPoint
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 167d1c6c-bd37-4cbc-be28-4d76e8fbe71f
     m_ActionName: Playing/Pause[/Keyboard/escape]
@@ -13706,6 +13676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770cf9f7727e5164bb57bba285ac5720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lookAction: {fileID: -5630151704836100654, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
 --- !u!114 &9213680093490472125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13884,6 +13855,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _damageReduction:
+    operation: 0,5
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _maxHealth:
     operation: max
     _showReferences: 0
@@ -14717,6 +14710,7 @@ GameObject:
   - component: {fileID: 9213680094746702876}
   - component: {fileID: 9213680094746702877}
   - component: {fileID: 9213680094746702878}
+  - component: {fileID: 5379635225670491615}
   m_Layer: 7
   m_Name: pointer
   m_TagString: Untagged
@@ -14769,6 +14763,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094b82ddabb36aa4092a12e95730492e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5379635225670491615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213680094746702851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f5029924b23a4439e6469bd7320bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllerInputRef: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
 --- !u!1 &9213680094984968622
 GameObject:
   m_ObjectHideFlags: 0

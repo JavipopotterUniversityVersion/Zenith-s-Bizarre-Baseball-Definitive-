@@ -44,6 +44,12 @@ public class MovementController : MonoBehaviour
         _lastDirection = direction;
     }
 
+    public void MoveTo(Vector2 position)
+    {
+        Vector2 direction = (position - (Vector2)transform.position).normalized;
+        Move(direction);
+    }
+
     public void RecallLastDirection() => rb.velocity = _lastDirection * Speed;
 
     public void MoveForward() => SetVelocity(transform.up);

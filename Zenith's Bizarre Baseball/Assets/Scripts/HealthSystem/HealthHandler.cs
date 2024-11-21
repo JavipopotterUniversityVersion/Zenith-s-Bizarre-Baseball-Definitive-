@@ -23,6 +23,7 @@ public class HealthHandler : MonoBehaviour, IReadable
 
     [SerializeField] UnityEvent onDie = new UnityEvent();
     public UnityEvent OnDie => onDie;
+    [SerializeField] ObjectProcessor _damageReduction;
 
     [SerializeField] ObjectProcessor _maxHealth;
     float _currentHealth = 12;
@@ -51,7 +52,7 @@ public class HealthHandler : MonoBehaviour, IReadable
     {
         if(ignoreConditions || Condition.CheckAllConditions(getDamageConditions))
         {
-            CurrentHealth -= damage;
+            CurrentHealth -= damage * _damageReduction.Result();
             onGetDamage.Invoke();
             onDamageTaken.Invoke(this, damage);
         }

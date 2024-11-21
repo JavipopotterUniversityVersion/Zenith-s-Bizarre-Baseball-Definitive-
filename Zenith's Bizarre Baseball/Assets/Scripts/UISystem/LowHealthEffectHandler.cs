@@ -41,7 +41,6 @@ public class LowHealthEffectHandler : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.H)) _currentHealth.SetValue(3);
         if(_active)
         {
             if(_flag)

@@ -171,6 +171,7 @@ namespace SimpleAudioManager
         /// </summary>
         public void StopSong(float pFadeOutDuration)
         {
+            if(_currentSource == null) return;
             AudioSource _current = _currentSource;
             StartCoroutine(_FadeVolume(_current, _current.volume, 0f, pFadeOutDuration));
         }
@@ -182,6 +183,7 @@ namespace SimpleAudioManager
         /// <summary>
         /// Config
         /// </summary>
+        
         private void Awake()
         {
             _instance = _instance ?? this;
@@ -197,6 +199,7 @@ namespace SimpleAudioManager
                 PlaySong(0);
             }
 
+            DontDestroyOnLoad(gameObject);
             _songs = Resources.LoadAll<Song>("SoundPlayers/Themes").ToList();
             _handler.OnPlaySong.AddListener(PlaySong);
             _handler.OnStop.AddListener(StopSong);

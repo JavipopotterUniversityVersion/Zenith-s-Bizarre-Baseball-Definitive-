@@ -30,6 +30,7 @@ public class String : ScriptableObject
 
     public void CallString()
     {
+        Debug.Log("String Called: " + _value);
         _onStringCall.Invoke();
     }
 

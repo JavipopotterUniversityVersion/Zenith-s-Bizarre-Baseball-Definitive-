@@ -7,22 +7,36 @@ public class PathFindingMap : MonoBehaviour
 {
     [SerializeField] Identifiable targetIdentifiable;
     Transform target;
-    Transform[] pathPoints;
+    List<Transform> pathPoints = new List<Transform>();
+    LayerMask targetLayers;
 
     private void Start() {
+        targetLayers =  LayerMask.GetMask("Walls") | LayerMask.GetMask("Player"); 
+
         target = SearchManager.Instance.GetClosestSearchable(transform.position, targetIdentifiable);
-        pathPoints = transform.Cast<Transform>().ToArray();
+        foreach (PathPoint child in GetComponentsInChildren<PathPoint>())
+        {
+            pathPoints.Add(child.transform);
+        }
     }
 
-    public void FindPath() {
-        List<Transform> path = new List<Transform>();
-        Transform current = transform;
-        while (current != target) {
-            Transform next = pathPoints.OrderBy(p => Vector3.Distance(p.position, current.position)).First();
-            path.Add(next);
-            current = next;
+    public Transform FindPath(Transform start, Rect rect)
+    {
+        List<Transform> sortedPoints = pathPoints.OrderBy(x => Vector3.Distance(x.position, start.position)).ToList();
+
+        List<Transform> nearestPoints = new List<Transform>();
+        for(int i = 0; i < 3; i++)
+        {
+            RaycastHit2D otherHit = Physics2D.BoxCast(rect.position, rect.size, 0, sortedPoints[i].position - start.position, Mathf.Infinity, targetLayers);
+            if(otherHit == false || otherHit.distance > Vector3.Distance(start.position, sortedPoints[i].position)) nearestPoints.Add(sortedPoints[i]);
         }
-        path.Add(target);
-        pathPoints = path.ToArray();
+
+        Transform next = null;
+        if(nearestPoints.Count > 0) 
+        {
+            next = nearestPoints.OrderBy(x => Vector3.Distance(x.position, target.position)).First();
+        }
+        
+        return next;
     }
 }

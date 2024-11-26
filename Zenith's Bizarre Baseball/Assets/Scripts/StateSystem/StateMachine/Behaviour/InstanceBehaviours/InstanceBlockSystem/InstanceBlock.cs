@@ -17,7 +17,7 @@ public class InstanceBlock : MonoBehaviour
 
     int _currentUnitIndex = 0;
 
-    public void Instance(InstanceUnit[] extraUnits)
+    public void Instance(InstanceUnit[] extraUnits, Transform parent = null)
     {
         List<InstanceUnit> units = new List<InstanceUnit>();
         units.AddRange(_instanceUnits);
@@ -30,11 +30,11 @@ public class InstanceBlock : MonoBehaviour
         {
             case InstanceType.Random:
                 selectedUnit = InstanceUnit.GetRandomUnit(units.ToArray());
-                instance = Instantiate(selectedUnit.Instance, transform.position, Quaternion.identity);
+                instance = Instantiate(selectedUnit.Instance, transform.position, Quaternion.identity, parent);
                 break;
             case InstanceType.Order:
                 selectedUnit = InstanceUnit.GetFirstAvailableInstance(units.ToArray(), _currentUnitIndex);
-                instance = Instantiate(selectedUnit.Instance, transform.position, Quaternion.identity);
+                instance = Instantiate(selectedUnit.Instance, transform.position, Quaternion.identity, parent);
                 _currentUnitIndex++;
                 break;
         }

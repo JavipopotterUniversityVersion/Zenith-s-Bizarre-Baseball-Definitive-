@@ -6,6 +6,7 @@ using System.Linq;
 
 public class RandomInstanceOnBlocks : MonoBehaviour, IBehaviour
 {
+    [SerializeField] Transform parent;
     [SerializeField] InstanceGroup[] instanceGroups;
     [SerializeField] InstanceUnit[] UniversalUnits;
     InstanceBlock[] globalInstanceBlocks;
@@ -21,7 +22,7 @@ public class RandomInstanceOnBlocks : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        globalInstanceBlocks[UnityEngine.Random.Range(0,globalInstanceBlocks.Length)].Instance(selectedUnits);
+        globalInstanceBlocks[UnityEngine.Random.Range(0,globalInstanceBlocks.Length)].Instance(selectedUnits, parent);
     }
 
     [Serializable]

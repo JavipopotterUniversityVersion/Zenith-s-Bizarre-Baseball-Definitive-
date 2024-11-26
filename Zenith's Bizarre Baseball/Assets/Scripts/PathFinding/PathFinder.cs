@@ -46,11 +46,11 @@ public class PathFinder : MonoBehaviour, ICondition, IBehaviour
         
             RaycastHit2D hit = Physics2D.BoxCast(realRect.position, realRect.size, 0, finalTarget.position - transform.position, Mathf.Infinity, targetLayers);
             if(hit && hit.transform == finalTarget) target = finalTarget;
-            else target = map.FindPath(transform, realRect);
+            else target = map.FindPath(transform, realRect, finalTarget);
         }
         else
         {
-            target = map.FindPath(transform, realRect);
+            target = map.FindPath(transform, realRect, finalTarget);
         }
     }
 }

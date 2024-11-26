@@ -6,21 +6,19 @@ using System.Linq;
 public class PathFindingMap : MonoBehaviour
 {
     [SerializeField] Identifiable targetIdentifiable;
-    Transform target;
     List<Transform> pathPoints = new List<Transform>();
     LayerMask targetLayers;
 
     private void Start() {
         targetLayers =  LayerMask.GetMask("Walls") | LayerMask.GetMask("Player"); 
 
-        target = SearchManager.Instance.GetClosestSearchable(transform.position, targetIdentifiable);
         foreach (PathPoint child in GetComponentsInChildren<PathPoint>())
         {
             pathPoints.Add(child.transform);
         }
     }
 
-    public Transform FindPath(Transform start, Rect rect)
+    public Transform FindPath(Transform start, Rect rect, Transform target)
     {
         List<Transform> sortedPoints = pathPoints.OrderBy(x => Vector3.Distance(x.position, start.position)).ToList();
 
@@ -32,7 +30,7 @@ public class PathFindingMap : MonoBehaviour
         }
 
         Transform next = null;
-        if(nearestPoints.Count > 0) 
+        if(nearestPoints.Count > 0)
         {
             next = nearestPoints.OrderBy(x => Vector3.Distance(x.position, target.position)).First();
         }

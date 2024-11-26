@@ -245,7 +245,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3266178386000589933}
-  - {fileID: 6836029449879906006}
+  - {fileID: 7343481193846108514}
   m_Father: {fileID: 8955837357540670887}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5028,6 +5028,65 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &2757303885467433532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7343481193846108514}
+  - component: {fileID: 1189399151458307767}
+  m_Layer: 0
+  m_Name: Stop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7343481193846108514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757303885467433532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8217690368348714378}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1189399151458307767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757303885467433532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef76340760308e242bfc6008bf3a8626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnExecuteBehaviour:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2562315249737031471}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3583855181015826211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5090,68 +5149,9 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 0
-    height: 0
---- !u!1 &7428051745440416231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6836029449879906006}
-  - component: {fileID: 1189399151458307767}
-  m_Layer: 0
-  m_Name: Stop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6836029449879906006
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7428051745440416231}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8217690368348714378}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1189399151458307767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7428051745440416231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef76340760308e242bfc6008bf3a8626, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnExecuteBehaviour:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2562315249737031471}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    y: 1.69
+    width: 1.52
+    height: 3.07
 --- !u!1 &9194419458480920115
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,11 +5268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.024118
+      value: -19.44816
       objectReference: {fileID: 0}
     - target: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.642095
+      value: 8.286573
       objectReference: {fileID: 0}
     - target: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5284,15 +5284,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 900547913111903316, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5365,7 +5365,7 @@ PrefabInstance:
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onExitPerformers.Array.data[0].behaviourContainers.Array.data[0]
       value: 
-      objectReference: {fileID: 7428051745440416231}
+      objectReference: {fileID: 2757303885467433532}
     - target: {fileID: 3350605541969514469, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
       propertyPath: onUpdatePerformers.Array.data[0].condition.Array.data[0].negated
       value: 1
@@ -5482,7 +5482,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManSplainner Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8961621500089273037, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 445f36d39dd2b7644a490ae72bc20803, type: 3}
 --- !u!4 &924354927551666681 stripped
 Transform:

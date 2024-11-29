@@ -37,21 +37,21 @@ MonoBehaviour:
     PortName: Output
     TargetNodeGuid: 41411d52-fdb2-4196-a078-156ba8a7c170
   DialogueNodeData:
-  - rid: 1149946566728220784
-  - rid: 1149946566728220785
-  - rid: 1149946566728220786
-  - rid: 1149946566728220787
-  - rid: 1149946566728220788
-  - rid: 1149946566728220789
-  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Bueno,
+  - rid: 2668824341765947410
+  - rid: 2668824341765947411
+  - rid: 2668824341765947412
+  - rid: 2668824341765947413
+  - rid: 2668824341765947414
+  - rid: 2668824341765947415
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:smile><ANIMATION:Talk>Bueno,
     entonces \xBFEchamos un combate?<ANIMATION:Idle><CHOICE:Vale, me apetece/1,,Nah,
     otro d\xEDa/1>@@<OPTION:Vale, me apetece><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Vale,
-    me apetece<ANIMATION:Idle>@<EVENT:Anne_Battle_Trigger_Event>@<OPTION:Nah, otro
-    d\xEDa><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Nah, otro d\xEDa<ANIMATION:Idle><END>"
+    me apetece<ANIMATION:Idle>@<EVENT:Anne_Battle_Trigger_Event><END>@<OPTION:Nah,
+    otro d\xEDa><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Nah, otro d\xEDa<ANIMATION:Idle><END>"
   references:
     version: 2
     RefIds:
-    - rid: 1149946566728220784
+    - rid: 2668824341765947410
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7635e5b9-8c00-4586-bc29-553fdbaca87d
@@ -72,7 +72,7 @@ MonoBehaviour:
             - GUID: d09a482e-612e-454c-b2ec-742855ce16a1
               Position: {x: 811.2, y: 269.59998}
               LinkedNodes: []
-    - rid: 1149946566728220785
+    - rid: 2668824341765947411
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 44f9e9db-0240-4236-8735-0a7c0d1e3fb9
@@ -91,11 +91,11 @@ MonoBehaviour:
             Position: {x: 811.2, y: 269.59998}
             LinkedNodes: []
         Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
-        Emotion: default
+        Emotion: smile
         characterIndex: 1
         DialogueLines:
         - "Bueno, entonces \xBFEchamos un combate?"
-    - rid: 1149946566728220786
+    - rid: 2668824341765947412
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: d09a482e-612e-454c-b2ec-742855ce16a1
@@ -106,7 +106,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Nah, otro d\xEDa"
-    - rid: 1149946566728220787
+    - rid: 2668824341765947413
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 78f97f97-6ea0-4670-b8aa-c50337b8472b
@@ -120,7 +120,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - Vale, me apetece
-    - rid: 1149946566728220788
+    - rid: 2668824341765947414
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: cdb62fd8-3958-4637-98b7-c7273e8ec80d
@@ -140,7 +140,7 @@ MonoBehaviour:
           Value: 1
         - ChoiceText: "Nah, otro d\xEDa"
           Value: 1
-    - rid: 1149946566728220789
+    - rid: 2668824341765947415
       type: {class: EventNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 41411d52-fdb2-4196-a078-156ba8a7c170

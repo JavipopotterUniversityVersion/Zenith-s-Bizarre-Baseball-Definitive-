@@ -14,55 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerDialogue:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2cfc35c18caf1c347b4bfb95e8183aa3, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: SetAutoRemove
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 2cfc35c18caf1c347b4bfb95e8183aa3, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: AddDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 943fbdc677e72cc4a8672fb15cd1862b, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: SetAutoRemove
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 651ea55681e91e942a5b3d8334d29ed0, type: 2}
-        m_TargetAssemblyTypeName: DialogueSequence, Assembly-CSharp
-        m_MethodName: AddToFirst
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 124cf0e634649af41bdc725449e15b97, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DialogueContainer, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   NodeLinks:
   - BaseNodeGuid: b3cd5601-2c47-4aa3-b98c-3873c1362703
     BasePortIndex: 0
@@ -109,42 +61,43 @@ MonoBehaviour:
     PortName: Output
     TargetNodeGuid: 6737c841-8b5d-47eb-b477-ac98839e50b6
   DialogueNodeData:
-  - rid: 1149946566728220809
-  - rid: 1149946566728220810
-  - rid: 1149946566728220811
-  - rid: 1149946566728220812
-  - rid: 1149946566728220813
-  - rid: 1149946566728220814
-  - rid: 1149946566728220815
-  - rid: 1149946566728220816
-  - rid: 1149946566728220817
-  - rid: 1149946566728220818
-  - rid: 1149946566728220819
-  - rid: 1149946566728220820
-  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Hey
+  - rid: 2668824341765947392
+  - rid: 2668824341765947393
+  - rid: 2668824341765947394
+  - rid: 2668824341765947395
+  - rid: 2668824341765947396
+  - rid: 2668824341765947397
+  - rid: 2668824341765947398
+  - rid: 2668824341765947399
+  - rid: 2668824341765947400
+  - rid: 2668824341765947401
+  - rid: 2668824341765947402
+  - rid: 2668824341765947403
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:smile><ANIMATION:Talk>Hey
     Zenith, tengo algo muy chulo que ense\xF1arte<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>\xBFHas
     creado un club de la lucha?<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>\xBFEh?
-    \xBFC\xF3mo lo has sabido?<ANIMATION:Idle>@<ANIMATION:Talk>Se supone que es clandestino<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>Hay
+    \xBFC\xF3mo lo has sabido?<ANIMATION:Idle>@<ANIMATION:Talk><!:angry>Se supone
+    que es clandestino<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:confident><ANIMATION:Talk>Hay
     un puto cartel enorme en la entrada<ANIMATION:Idle>@<ANIMATION:Talk>\xBFQu\xE9
     se supone que tiene eso de clandestino?<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Pero
     es que si no la gente no se entera<ANIMATION:Idle>@<ANIMATION:Talk>En fin, nadie
-    se ha apuntado a\xFAn...<ANIMATION:Idle>@<ANIMATION:Talk>\xA1Podr\xEDas ser la
-    primera!<ANIMATION:Idle>@<ANIMATION:Talk>Venga \xBFUn combate?<ANIMATION:Idle>@<ANIMATION:Talk>Te
+    se ha apuntado a\xFAn...<ANIMATION:Idle>@<ANIMATION:Talk><!:smile>\xA1Podr\xEDas
+    ser la primera!<ANIMATION:Idle>@<ANIMATION:Talk>Venga \xBFUn combate?<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Te
     recompensar\xE9 si me ganas<ANIMATION:Idle><CHOICE:Nah, hoy no/1,,Nah, ganar\xEDa/1>@@<OPTION:Nah,
     hoy no><CHARACTER:ZenithasFirst><!:eye_closed><ANIMATION:Talk>Nah, mejor otro
     d\xEDa<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>Jol\xEDn,
     bueno aqu\xED estoy si cambias de opini\xF3n<ANIMATION:Idle><END>@<OPTION:Nah,
     ganar\xEDa><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>\xBFUn combate
-    contra ti?<ANIMATION:Idle>@<ANIMATION:Talk>Nah, ganar\xEDa<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:default><ANIMATION:Talk>\xBFEso
+    contra ti?<ANIMATION:Idle>@<ANIMATION:Talk>Nah, ganar\xEDa<ANIMATION:Idle>@<CHARACTER:AnneasSecond><!:confident><ANIMATION:Talk>\xBFEso
     crees? \xBFEh?<ANIMATION:Idle>@<ANIMATION:Talk>\xA1Desmu\xE9stralo!<ANIMATION:Idle>@<EVENT:Anne_Battle_Trigger_Event><END>"
   references:
     version: 2
     RefIds:
-    - rid: 1149946566728220809
+    - rid: 2668824341765947392
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: b3cd5601-2c47-4aa3-b98c-3873c1362703
-        Position: {x: 100, y: 206.40001}
+        Position: {x: 100, y: 200}
         LinkedNodes:
         - GUID: 476891f0-a5b2-4a05-aa68-ebbf84985717
           Position: {x: 186.4, y: 192.8}
@@ -179,7 +132,7 @@ MonoBehaviour:
                         - GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6
                           Position: {x: 2097.5999, y: 324}
                           LinkedNodes: []
-    - rid: 1149946566728220810
+    - rid: 2668824341765947393
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 476891f0-a5b2-4a05-aa68-ebbf84985717
@@ -216,11 +169,11 @@ MonoBehaviour:
                         Position: {x: 2097.5999, y: 324}
                         LinkedNodes: []
         Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
-        Emotion: default
+        Emotion: smile
         characterIndex: 1
         DialogueLines:
         - "Hey Zenith, tengo algo muy chulo que ense\xF1arte"
-    - rid: 1149946566728220811
+    - rid: 2668824341765947394
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ad425c07-c7df-457f-aee4-88e6a04d948f
@@ -258,7 +211,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "\xBFHas creado un club de la lucha?"
-    - rid: 1149946566728220812
+    - rid: 2668824341765947395
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 8278fc0a-1a0e-4561-b37c-143e9d37dd7d
@@ -293,8 +246,8 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - "\xBFEh? \xBFC\xF3mo lo has sabido?"
-        - Se supone que es clandestino
-    - rid: 1149946566728220813
+        - <!:angry>Se supone que es clandestino
+    - rid: 2668824341765947396
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: d9f90ccf-a3ca-4216-960e-b7b78d805520
@@ -327,7 +280,7 @@ MonoBehaviour:
         DialogueLines:
         - Hay un puto cartel enorme en la entrada
         - "\xBFQu\xE9 se supone que tiene eso de clandestino?"
-    - rid: 1149946566728220814
+    - rid: 2668824341765947397
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ea049889-6e48-4e18-abbe-6598c5dd5c56
@@ -357,10 +310,10 @@ MonoBehaviour:
         DialogueLines:
         - Pero es que si no la gente no se entera
         - "En fin, nadie se ha apuntado a\xFAn..."
-        - "\xA1Podr\xEDas ser la primera!"
+        - "<!:smile>\xA1Podr\xEDas ser la primera!"
         - "Venga \xBFUn combate?"
-        - "Te recompensar\xE9 si me ganas"
-    - rid: 1149946566728220815
+        - "<!:confident>Te recompensar\xE9 si me ganas"
+    - rid: 2668824341765947398
       type: {class: ChoiceNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 365fabbb-5e51-4cc6-9171-492b2fd809e7
@@ -386,7 +339,7 @@ MonoBehaviour:
           Value: 1
         - ChoiceText: "Nah, ganar\xEDa"
           Value: 1
-    - rid: 1149946566728220816
+    - rid: 2668824341765947399
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: ea980444-49eb-4807-a45f-a5306183b4a8
@@ -404,7 +357,7 @@ MonoBehaviour:
         DialogueLines:
         - "\xBFUn combate contra ti?"
         - "Nah, ganar\xEDa"
-    - rid: 1149946566728220817
+    - rid: 2668824341765947400
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 6bbbdd5a-d328-4b43-be24-3ab9f450c0d9
@@ -418,7 +371,7 @@ MonoBehaviour:
         characterIndex: 0
         DialogueLines:
         - "Nah, mejor otro d\xEDa"
-    - rid: 1149946566728220818
+    - rid: 2668824341765947401
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 16612c65-7542-4646-8af7-bf8f07d440ca
@@ -429,7 +382,7 @@ MonoBehaviour:
         characterIndex: 1
         DialogueLines:
         - "Jol\xEDn, bueno aqu\xED estoy si cambias de opini\xF3n"
-    - rid: 1149946566728220819
+    - rid: 2668824341765947402
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 3ce3344b-05d9-4764-b09a-f77b04eaea36
@@ -439,12 +392,12 @@ MonoBehaviour:
           Position: {x: 2097.5999, y: 324}
           LinkedNodes: []
         Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
-        Emotion: default
+        Emotion: confident
         characterIndex: 1
         DialogueLines:
         - "\xBFEso crees? \xBFEh?"
         - "\xA1Desmu\xE9stralo!"
-    - rid: 1149946566728220820
+    - rid: 2668824341765947403
       type: {class: EventNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 6737c841-8b5d-47eb-b477-ac98839e50b6

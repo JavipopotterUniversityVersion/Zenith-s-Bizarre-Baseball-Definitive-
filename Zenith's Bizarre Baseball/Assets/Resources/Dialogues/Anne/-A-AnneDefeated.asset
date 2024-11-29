@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: -A-AnneDefeated
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: 7635e5b9-8c00-4586-bc29-553fdbaca87d
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 5523c0be-5848-405d-a7ff-7cd90e1a3782
+  DialogueNodeData:
+  - rid: 2668824341765947418
+  - rid: 2668824341765947419
+  _translationPreview: <CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:smile><ANIMATION:Talk>Vaya,
+    eso ha sido divertido<ANIMATION:Idle>@<ANIMATION:Talk>Gracias por luchar conmigo,
+    toma esto<ANIMATION:Idle><END>
+  references:
+    version: 2
+    RefIds:
+    - rid: 2668824341765947418
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 7635e5b9-8c00-4586-bc29-553fdbaca87d
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 5523c0be-5848-405d-a7ff-7cd90e1a3782
+          Position: {x: 186.4, y: 200}
+          LinkedNodes: []
+    - rid: 2668824341765947419
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 5523c0be-5848-405d-a7ff-7cd90e1a3782
+        Position: {x: 186.4, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: smile
+        characterIndex: 1
+        DialogueLines:
+        - Vaya, eso ha sido divertido
+        - Gracias por luchar conmigo, toma esto

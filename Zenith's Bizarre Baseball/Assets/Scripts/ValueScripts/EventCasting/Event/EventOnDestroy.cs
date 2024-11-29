@@ -7,5 +7,5 @@ public class EventOnDestroy : MonoBehaviour
 {
     [SerializeField] UnityEvent _onDestroy = new UnityEvent();
 
-    private void OnDestroy() => _onDestroy?.Invoke();
+    private void OnDisable() => _onDestroy?.Invoke();
 }

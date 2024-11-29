@@ -22832,6 +22832,10 @@ PrefabInstance:
       value: 1.7989166
       objectReference: {fileID: 0}
     - target: {fileID: 3629588959761879873, guid: b2f540645391b7f4096ec5ce2c798af4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -417199415, guid: 6efd633fe1197144d941293212127022, type: 3}
+    - target: {fileID: 3629588959761879873, guid: b2f540645391b7f4096ec5ce2c798af4, type: 3}
       propertyPath: m_DrawMode
       value: 2
       objectReference: {fileID: 0}
@@ -22934,6 +22938,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7641236130793599603, guid: b2f540645391b7f4096ec5ce2c798af4, type: 3}
   m_PrefabInstance: {fileID: 7656034652088287543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6252744894073949214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4393688775740853545, guid: b2f540645391b7f4096ec5ce2c798af4, type: 3}
+  m_PrefabInstance: {fileID: 7656034652088287543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1117510725613774247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252744894073949214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9713637332efe664ebeea69c81362fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - sprite: {fileID: -417199415, guid: 6efd633fe1197144d941293212127022, type: 3}
+    chance: 0.5
+  - sprite: {fileID: -702907159, guid: 6efd633fe1197144d941293212127022, type: 3}
+    chance: 0.5
 --- !u!1001 &7930930417896046589
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1882,6 +1882,28 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+  _finishCondition:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _behaviourName: 
   behaviours:
   - target: {fileID: 607392447098255299}
@@ -3699,13 +3721,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 091957f8c8ec6eb458eb93f8881ae488, type: 2}
     - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: onExitPerformers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: nextStates.Array.data[0].stateContainer
       value: 
       objectReference: {fileID: 1935702694316726928}
     - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
-      propertyPath: onEnterPerformers.Array.data[0].behaviourContainers.Array.size
-      value: 3
+      propertyPath: onExitPerformers.Array.data[0].behaviourContainers.Array.size
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: onEnterPerformers.Array.data[0].behaviourContainers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
+      propertyPath: onExitPerformers.Array.data[0].behaviourContainers.Array.data[0]
+      value: 
+      objectReference: {fileID: 6379139136165230827}
     - target: {fileID: 4630876502752597741, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: onEnterPerformers.Array.data[0].behaviourContainers.Array.data[1]
       value: 
@@ -3716,7 +3750,7 @@ PrefabInstance:
       objectReference: {fileID: 6379139136165230827}
     - target: {fileID: 5457969179495792480, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Name
-      value: Talking -> True
+      value: Talking -> False
       objectReference: {fileID: 0}
     - target: {fileID: 6431957830472421788, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Name

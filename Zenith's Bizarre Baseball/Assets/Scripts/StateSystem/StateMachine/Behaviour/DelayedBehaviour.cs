@@ -6,6 +6,7 @@ using System.Linq;
 public class DelayedBehaviour : MonoBehaviour, IBehaviour, ICondition
 {
     [SerializeField] ObjectProcessor _delayTime;
+    [SerializeField] ObjectProcessor _finishCondition;
     [SerializeField] string _behaviourName;
 
     [SerializeField] IRef<IBehaviour>[] behaviours;
@@ -30,6 +31,7 @@ public class DelayedBehaviour : MonoBehaviour, IBehaviour, ICondition
     {
         float delayTime = _delayTime.Result();
         yield return new WaitForSeconds(delayTime);
+        while(_finishCondition.ResultBool() == false) yield return null;
         behaviours.ToList().ForEach(x => x.I.ExecuteBehaviour());
         finished = true;
     }

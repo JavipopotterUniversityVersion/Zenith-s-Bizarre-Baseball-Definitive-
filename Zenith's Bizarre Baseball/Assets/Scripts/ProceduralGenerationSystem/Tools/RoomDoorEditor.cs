@@ -53,6 +53,7 @@ public class RoomDoorEditorEditor : Editor
     });
 
     if (GUILayout.Button("Select Main Map")) Select(roomDoorEditor.TargetMap.gameObject);
+    if (GUILayout.Button("Select Hole Map")) Select(roomDoorEditor.HoleMap.gameObject);
 
     if (GUILayout.Button("Show All")) ShowAll();
 
@@ -368,6 +369,9 @@ public class RoomDoorEditor : MonoBehaviour
 {
   [SerializeField] Tilemap _targetMap;
   public Tilemap TargetMap => _targetMap;
+
+  [SerializeField] Tilemap _holeMap;
+  public Tilemap HoleMap => _holeMap;
 
   public GameObject limitsContainer;
   public List<RoomDoorData> roomDoorData;

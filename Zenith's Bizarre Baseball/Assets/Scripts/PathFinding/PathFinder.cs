@@ -32,10 +32,13 @@ public class PathFinder : MonoBehaviour, ICondition, IBehaviour
 
     public bool CheckCondition()
     {
+        if(map == null) return true;
         return target == finalTarget;
     }
 
     public void ExecuteBehaviour() {
+        if(map == null) return;
+
         Rect realRect = rect;
         realRect.position += (Vector2)transform.position;
 

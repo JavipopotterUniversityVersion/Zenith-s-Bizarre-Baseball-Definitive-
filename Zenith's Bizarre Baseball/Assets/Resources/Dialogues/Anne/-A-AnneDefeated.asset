@@ -20,16 +20,21 @@ MonoBehaviour:
     BasePortIndex: 0
     PortName: Next
     TargetNodeGuid: 5523c0be-5848-405d-a7ff-7cd90e1a3782
+  - BaseNodeGuid: 5523c0be-5848-405d-a7ff-7cd90e1a3782
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: b171b276-10a9-4de8-8a9c-c289d6a7f3d6
   DialogueNodeData:
-  - rid: 2668824341765947418
-  - rid: 2668824341765947419
+  - rid: 5478139747046785027
+  - rid: 5478139747046785028
+  - rid: 5478139747046785029
   _translationPreview: <CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasSecond><!:smile><ANIMATION:Talk>Vaya,
     eso ha sido divertido<ANIMATION:Idle>@<ANIMATION:Talk>Gracias por luchar conmigo,
-    toma esto<ANIMATION:Idle><END>
+    toma esto<ANIMATION:Idle>@<EVENT:Anne_Rewards><END>
   references:
     version: 2
     RefIds:
-    - rid: 2668824341765947418
+    - rid: 5478139747046785027
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 7635e5b9-8c00-4586-bc29-553fdbaca87d
@@ -37,16 +42,29 @@ MonoBehaviour:
         LinkedNodes:
         - GUID: 5523c0be-5848-405d-a7ff-7cd90e1a3782
           Position: {x: 186.4, y: 200}
-          LinkedNodes: []
-    - rid: 2668824341765947419
+          LinkedNodes:
+          - GUID: b171b276-10a9-4de8-8a9c-c289d6a7f3d6
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes: []
+    - rid: 5478139747046785028
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
         GUID: 5523c0be-5848-405d-a7ff-7cd90e1a3782
         Position: {x: 186.4, y: 200}
-        LinkedNodes: []
+        LinkedNodes:
+        - GUID: b171b276-10a9-4de8-8a9c-c289d6a7f3d6
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes: []
         Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
         Emotion: smile
         characterIndex: 1
         DialogueLines:
         - Vaya, eso ha sido divertido
         - Gracias por luchar conmigo, toma esto
+    - rid: 5478139747046785029
+      type: {class: EventNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: b171b276-10a9-4de8-8a9c-c289d6a7f3d6
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes: []
+        eventAsset: {fileID: 11400000, guid: 82fea982d498c1549b129876dc3bd85d, type: 2}

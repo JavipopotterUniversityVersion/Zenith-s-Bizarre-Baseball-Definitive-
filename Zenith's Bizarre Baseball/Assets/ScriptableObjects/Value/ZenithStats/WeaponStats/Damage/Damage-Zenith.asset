@@ -14,22 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 4
   _readProcessor:
-    operation: '[value] * g (boost/100)'
+    operation: '[value] * g (boost/100) * mC (money*DBM/100)'
     _showReferences: 1
     _floatDictionary:
       list:
       - Key: boost
         Value: {fileID: 11400000, guid: 940f91319b2677f4885b9f62b8f976e2, type: 2}
+      - Key: DBM
+        Value: {fileID: 11400000, guid: f195f045911e405439419fb92e74de2f, type: 2}
     _intDictionary:
       list:
       - Key: level
         Value: {fileID: 11400000, guid: eed37c6397061da45b23838b56fc07c6, type: 2}
+      - Key: money
+        Value: {fileID: 11400000, guid: 8dcb044a5d1ca104ea2087e9e5bb2353, type: 2}
     _curveDictionary:
       list:
       - Key: f
         Value: {fileID: 11400000, guid: 93966faab074a174e90ff97db7b0c6cf, type: 2}
       - Key: g
         Value: {fileID: 11400000, guid: 53a31b157f4f8d94cb92053037a29507, type: 2}
+      - Key: mC
+        Value: {fileID: 11400000, guid: 807c7e58af19d954bb2e1684436b514f, type: 2}
     _operationDictionary:
       list:
       - Key: '[value]'

@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
 {
     enum ArcAreaType { Square, Circle }
-    MovementController movementController;
+    [SerializeField] MovementController movementController;
     [SerializeField] AnimationCurve curve;
 
     [SerializeField]
@@ -22,6 +23,7 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
     [SerializeField] Vector2 rangeY;
 
     [SerializeField] ArcAreaType areaType = ArcAreaType.Square;
+    [SerializeField] UnityEvent _onEnd = new UnityEvent();
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
@@ -93,6 +95,8 @@ public class ArcMovementBehaviour : MonoBehaviour, IBehaviour
             timePassed += Time.deltaTime;
             yield return null;
         }
+
+        _onEnd.Invoke();
     }
 
     private void OnValidate() {

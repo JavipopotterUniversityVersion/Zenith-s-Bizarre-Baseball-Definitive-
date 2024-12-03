@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 904c1a5f20ec3884a947583768731849, type: 3}
-  m_Name: DamageOnCoinCollect-Upgrade
+  m_Name: LessMoneyMoreDamage
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Burrito
-    _icon: {fileID: 21300000, guid: 2e3ab2d2acd25f5418ec745bf22b80d5, type: 3}
-    _description: "Cada vez que recoges una moneda todos los enemigos reciben +1
-      punto de da\xF1o"
+    _name: "Alb\xF3ndiga"
+    _icon: {fileID: 21300000, guid: 1135eae1b9204784fbb0f0e68dc3f0a2, type: 3}
+    _description: "El da\xF1o de Zenith es inversamente proporcional a su dinero"
     _stringProcessor:
       _intDictionary:
         list: []
@@ -31,7 +30,7 @@ MonoBehaviour:
     _onApplyUpgrade:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: b8fd32c9be43dcf4ea95282dbe83c605, type: 2}
+        - m_Target: {fileID: 11400000, guid: f195f045911e405439419fb92e74de2f, type: 2}
           m_TargetAssemblyTypeName: Float, Assembly-CSharp
           m_MethodName: AddValue
           m_Mode: 4

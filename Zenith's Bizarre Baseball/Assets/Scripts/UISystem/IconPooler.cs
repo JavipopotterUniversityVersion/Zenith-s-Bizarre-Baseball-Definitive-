@@ -21,7 +21,8 @@ public class IconPooler : MonoBehaviour
 
     public void ActivateIcon() {
         iconReference.SetActive(true);
-        float yPosition = _target.transform.position.y + _target.bounds.size.y + offset;
+        float yPos = offset > 0 ? _target.bounds.size.y : 0;
+        float yPosition = _target.transform.position.y + yPos + offset;
         iconReference.transform.position = new Vector3(_target.transform.position.x, yPosition, _target.transform.position.z);
     }
 

@@ -25,57 +25,20 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-    _condition:
-      operation: input
-      _showReferences: 0
-      _floatDictionary:
+      _processorDictionary:
         list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-    _upgrade:
-      operation: input
-      _showReferences: 1
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Apply
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: ad7a1df6d560cb34d86f0006a9f07b07, type: 2}
-                m_TargetAssemblyTypeName: Float, Assembly-CSharp
-                m_MethodName: AddValue
-                m_Mode: 4
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 0.25
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
+    _onApplyUpgrade:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: ad7a1df6d560cb34d86f0006a9f07b07, type: 2}
+          m_TargetAssemblyTypeName: Float, Assembly-CSharp
+          m_MethodName: AddValue
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.25
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

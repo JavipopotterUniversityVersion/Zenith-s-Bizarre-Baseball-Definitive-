@@ -26,59 +26,20 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-    _condition:
-      operation: active == 0
-      _showReferences: 1
-      _floatDictionary:
+      _processorDictionary:
         list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list:
-        - Key: active
-          Value: {fileID: 11400000, guid: 71558816f733dfc4ea70e18b63c6b5e7, type: 2}
-      _eventDictionary:
-        list: []
-    _upgrade:
-      operation: Apply 1
-      _showReferences: 1
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Apply
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 71558816f733dfc4ea70e18b63c6b5e7, type: 2}
-                m_TargetAssemblyTypeName: Bool, Assembly-CSharp
-                m_MethodName: SetValue
-                m_Mode: 6
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 1
-                  m_StringArgument: 
-                  m_BoolArgument: 1
-                m_CallState: 2
+    _onApplyUpgrade:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 71558816f733dfc4ea70e18b63c6b5e7, type: 2}
+          m_TargetAssemblyTypeName: Bool, Assembly-CSharp
+          m_MethodName: SetValue
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2

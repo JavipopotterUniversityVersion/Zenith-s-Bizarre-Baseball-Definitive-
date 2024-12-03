@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DoubleDamage
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: 
-    _icon: {fileID: 0}
-    _description: 
+    _name: Curry
+    _icon: {fileID: 21300000, guid: 6479ff4c746389249b51990b8a2cb66f, type: 3}
+    _description: "Zenith hace y recibe el doble de da\xF1o"
     _stringProcessor:
       _intDictionary:
         list: []
@@ -27,41 +27,6 @@ MonoBehaviour:
         list: []
       _processorDictionary:
         list: []
-    _condition:
-      operation: input
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-    _upgrade:
-      operation: input
-      _showReferences: 0
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
+    _onApplyUpgrade:
+      m_PersistentCalls:
+        m_Calls: []

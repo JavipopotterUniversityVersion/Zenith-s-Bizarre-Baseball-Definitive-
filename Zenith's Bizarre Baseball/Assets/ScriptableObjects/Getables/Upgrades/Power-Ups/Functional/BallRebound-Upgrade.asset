@@ -23,7 +23,7 @@ MonoBehaviour:
         list:
         - Key: '[cols]'
           Value:
-            value: {fileID: 11400000, guid: 0c298c3bd919aca44a77cc3d789e459f, type: 2}
+            value: {fileID: 11400000, guid: a6525e08d1abe974fa6b21bea5ed1239, type: 2}
             processor:
               operation: cols + 1
               _showReferences: 0
@@ -49,57 +49,20 @@ MonoBehaviour:
         list: []
       _stringFunctionDictionary:
         list: []
-    _condition:
-      operation: input
-      _showReferences: 0
-      _floatDictionary:
+      _processorDictionary:
         list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list: []
-    _upgrade:
-      operation: Apply 1
-      _showReferences: 1
-      _floatDictionary:
-        list: []
-      _intDictionary:
-        list: []
-      _curveDictionary:
-        list: []
-      _operationDictionary:
-        list: []
-      _functionDictionary:
-        list: []
-      _stringDictionary:
-        list: []
-      _boolDictionary:
-        list: []
-      _eventDictionary:
-        list:
-        - Key: Apply
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: 6351c70477e6606408a810dc08400286, type: 2}
-                m_TargetAssemblyTypeName: Int, Assembly-CSharp
-                m_MethodName: AddValue
-                m_Mode: 3
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 1
-                  m_FloatArgument: 0
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
+    _onApplyUpgrade:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: a6525e08d1abe974fa6b21bea5ed1239, type: 2}
+          m_TargetAssemblyTypeName: Float, Assembly-CSharp
+          m_MethodName: AddValue
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

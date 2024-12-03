@@ -8,6 +8,7 @@ public class CounterCollidable : ICollidable
 {
     [SerializeField] ObjectProcessor _speedToAdd;
     [SerializeField] AnimationCurve _speedCurve;
+    bool _recentBall = false;
 
     public override void OnCollide(Collider2D collider)
     {
@@ -18,7 +19,21 @@ public class CounterCollidable : ICollidable
             float rbSpeed = rb.velocity.magnitude;
             force = force * _speedCurve.Evaluate(rbSpeed/force) * knockable.Reduction;
 
-            rb.velocity = (rbSpeed + force) * (collider.transform.position - transform.position).normalized;
+            Vector2 direction = _recentBall ? -rb.velocity.normalized : (collider.transform.position - transform.position).normalized;
+
+            if(_recentBall == false) 
+            {
+                _recentBall = true;
+                StartCoroutine(RecentBallRoutine());
+            }
+
+            rb.velocity = (rbSpeed + force) * direction;
         }
+    }
+
+    IEnumerator RecentBallRoutine()
+    {
+        yield return new WaitForEndOfFrame();
+        _recentBall = false;
     }
 }

@@ -2091,10 +2091,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _damageReduction:
-    operation: input
-    _showReferences: 0
+    operation: input * GD
+    _showReferences: 1
     _floatDictionary:
-      list: []
+      list:
+      - Key: GD
+        Value: {fileID: 11400000, guid: 68f125909dcc7fc4793bdeb7abb8bbc1, type: 2}
     _intDictionary:
       list: []
     _curveDictionary:

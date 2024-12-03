@@ -599,10 +599,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _damageReduction:
-    operation: input
-    _showReferences: 0
+    operation: input * GD
+    _showReferences: 1
     _floatDictionary:
-      list: []
+      list:
+      - Key: GD
+        Value: {fileID: 11400000, guid: 68f125909dcc7fc4793bdeb7abb8bbc1, type: 2}
     _intDictionary:
       list: []
     _curveDictionary:
@@ -1423,7 +1425,7 @@ GameObject:
   - component: {fileID: 6570528428677485321}
   - component: {fileID: 1918058134344278282}
   m_Layer: 6
-  m_Name: Talking -> False
+  m_Name: Talking -> True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,7 +8,7 @@ public class MightAppearOrNot : MonoBehaviour
 
     void OnEnable()
     {
-        if(Random.Range(0,1f) < 0.5) gameObject.SetActive(true);
+        if(Random.Range(0,1f) < _appearProbability) gameObject.SetActive(true);
         else gameObject.SetActive(false);
     }
 }

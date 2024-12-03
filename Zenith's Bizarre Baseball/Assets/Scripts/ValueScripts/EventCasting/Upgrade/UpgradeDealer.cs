@@ -49,8 +49,7 @@ public class UpgradeData
 
     public static UpgradeData GetRandomUpgrade(UpgradeData[] upgradeDatas)
     {
-        List<UpgradeData> availableUpgrades = new List<UpgradeData>();
-        availableUpgrades.AddRange(upgradeDatas.Where(x => x.Upgrade.Upgrade.CanAppear));
+        List<UpgradeData> availableUpgrades = upgradeDatas.ToList();
         
         float totalChance = availableUpgrades.Sum(x => x._chance);
 

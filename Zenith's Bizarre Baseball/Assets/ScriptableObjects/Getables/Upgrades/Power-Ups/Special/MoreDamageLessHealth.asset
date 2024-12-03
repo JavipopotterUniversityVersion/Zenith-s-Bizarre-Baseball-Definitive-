@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 904c1a5f20ec3884a947583768731849, type: 3}
-  m_Name: PhantomImage_Upgrade
+  m_Name: MoreDamageLessHealth
   m_EditorClassIdentifier: 
   _upgrade:
-    _name: Phantom
-    _icon: {fileID: 21300000, guid: 2e3ab2d2acd25f5418ec745bf22b80d5, type: 3}
-    _description: Cada vez que realizas un sprint las bolas golpeadas se convierten
-      en copias de Zenith que persiguen a los enemigos
+    _name: "Alb\xF3ndiga"
+    _icon: {fileID: 21300000, guid: 1135eae1b9204784fbb0f0e68dc3f0a2, type: 3}
+    _description: 
     _stringProcessor:
       _intDictionary:
         list: []
@@ -25,6 +24,8 @@ MonoBehaviour:
       _stringDictionary:
         list: []
       _stringFunctionDictionary:
+        list: []
+      _processorDictionary:
         list: []
     _condition:
       operation: input
@@ -46,8 +47,8 @@ MonoBehaviour:
       _eventDictionary:
         list: []
     _upgrade:
-      operation: Apply 1
-      _showReferences: 1
+      operation: input
+      _showReferences: 0
       _floatDictionary:
         list: []
       _intDictionary:
@@ -63,20 +64,4 @@ MonoBehaviour:
       _boolDictionary:
         list: []
       _eventDictionary:
-        list:
-        - Key: Apply
-          Value:
-            m_PersistentCalls:
-              m_Calls:
-              - m_Target: {fileID: 11400000, guid: b8fd32c9be43dcf4ea95282dbe83c605, type: 2}
-                m_TargetAssemblyTypeName: Float, Assembly-CSharp
-                m_MethodName: AddValue
-                m_Mode: 4
-                m_Arguments:
-                  m_ObjectArgument: {fileID: 0}
-                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                  m_IntArgument: 0
-                  m_FloatArgument: 1
-                  m_StringArgument: 
-                  m_BoolArgument: 0
-                m_CallState: 2
+        list: []

@@ -33,9 +33,6 @@ public class Upgrade
     public string Description => _stringProcessor.Process(_description);
     [SerializeField] StringProcessor _stringProcessor;
 
-    [SerializeField] Processor _condition;
-    public bool CanAppear => _condition.Result(1) != 0;
-
-    [SerializeField] Processor _upgrade;
-    public bool ApplyUpgrade() => _upgrade.ResultBool(1);
+    [SerializeField] UnityEvent _onApplyUpgrade;
+    public void ApplyUpgrade() => _onApplyUpgrade.Invoke();
 }

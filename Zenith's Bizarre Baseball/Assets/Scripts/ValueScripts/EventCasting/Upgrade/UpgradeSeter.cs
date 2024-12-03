@@ -15,7 +15,7 @@ public class UpgradeSeter : MonoBehaviour
 
     void SetOptions()
     {
-        List<Upgrade> availableUpgrades = _optionSetReference.Upgrades.Where(x => x.CanAppear).ToList();
+        List<Upgrade> availableUpgrades = _optionSetReference.Upgrades.ToList();
 
         for(int i = 0; i < availableUpgrades.Count; i++)
         {

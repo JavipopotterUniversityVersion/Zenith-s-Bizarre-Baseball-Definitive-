@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4451575371662846652}
   - component: {fileID: 469595847185127670}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Mist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,8 @@ GameObject:
   - component: {fileID: 9132954639432700201}
   - component: {fileID: 4674116734408244211}
   - component: {fileID: 6383933748840297785}
-  m_Layer: 0
+  - component: {fileID: 2915272486307473317}
+  m_Layer: 15
   m_Name: VC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,6 +296,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetGroup: {fileID: 6086276079110704591}
+--- !u!114 &2915272486307473317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132954639432700180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3c1a4bd2168254e9649d64ce1e64fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boolSignal: {fileID: 11400000, guid: 121ba2545e4c4b14fa5bfbca13170555, type: 2}
+  _miniMapActive: {fileID: 11400000, guid: ae851f2e453147e458d81d4e022a145f, type: 2}
+  _gameCullingMask:
+    serializedVersion: 2
+    m_Bits: 32759
+  _mapCullingMask:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!1 &9132954639801444085
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +329,6 @@ GameObject:
   - component: {fileID: 9132954639801444084}
   - component: {fileID: 9132954639801444087}
   - component: {fileID: 9132954639801443848}
-  - component: {fileID: 1116815439251842764}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -449,29 +469,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1116815439251842764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9132954639801444085}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_AssetsPPU: 16
-  m_RefResolutionX: 926
-  m_RefResolutionY: 513
-  m_CropFrame: 0
-  m_GridSnapping: 2
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!1 &9132954639864154073
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +481,7 @@ GameObject:
   - component: {fileID: 9132954639864154077}
   - component: {fileID: 9132954639864154075}
   - component: {fileID: 9095544231314064772}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,6 +586,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniMapCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6405064800984760780, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405064800984760780, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6405064800984760785, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -691,6 +696,50 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &7208580720200144513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078933276842647308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43f8e7a462951246bcf8bdce7875c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {fileID: 11400000, guid: ae851f2e453147e458d81d4e022a145f, type: 2}
+  checkOnAwake: 0
+  _onTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2078933276842647310}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2078933276842647310}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!20 &2078933276842647310 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6405064800984760782, guid: 4b262b7b85f4dfd4ba22244ddbbc95b1, type: 3}

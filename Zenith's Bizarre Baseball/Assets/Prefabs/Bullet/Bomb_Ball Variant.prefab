@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f61b1206e1f5f84eb482bc46a96d3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementController: {fileID: 0}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -125,6 +126,9 @@ MonoBehaviour:
   rangeX: {x: 0, y: 0}
   rangeY: {x: 0, y: 0}
   areaType: 0
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &803641587
 GameObject:
   m_ObjectHideFlags: 0

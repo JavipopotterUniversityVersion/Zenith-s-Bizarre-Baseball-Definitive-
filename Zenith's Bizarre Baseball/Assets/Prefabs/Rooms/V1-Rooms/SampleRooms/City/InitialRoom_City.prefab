@@ -1587,6 +1587,28 @@ MonoBehaviour:
     _conditionDictionary:
       list: []
     _readablesDictionary: []
+  _finishCondition:
+    operation: input
+    _showReferences: 0
+    _floatDictionary:
+      list: []
+    _intDictionary:
+      list: []
+    _curveDictionary:
+      list: []
+    _operationDictionary:
+      list: []
+    _functionDictionary:
+      list: []
+    _stringDictionary:
+      list: []
+    _boolDictionary:
+      list: []
+    _eventDictionary:
+      list: []
+    _conditionDictionary:
+      list: []
+    _readablesDictionary: []
   _behaviourName: 
   behaviours:
   - target: {fileID: 992165702613429078}
@@ -2947,11 +2969,19 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: _affectsExtension
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: _doors.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: _limits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: ignoreRoomExtension
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
@@ -3013,6 +3043,14 @@ PrefabInstance:
     - target: {fileID: 1154412589818327336, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: nodeSettings.Array.data[1]._probability
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342119982314264891, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342119982314264891, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 1741355055738978227, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: m_ColliderPaths.Array.size
@@ -22437,6 +22475,10 @@ PrefabInstance:
     - target: {fileID: 8203701510882768026, guid: 010466b03e1ae71439c914e861445706, type: 3}
       propertyPath: paintOnStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664105998230588877, guid: 010466b03e1ae71439c914e861445706, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 010466b03e1ae71439c914e861445706, type: 3}

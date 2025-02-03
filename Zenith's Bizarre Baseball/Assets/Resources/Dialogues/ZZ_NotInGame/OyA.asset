@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: OyA
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 94cc274c-598c-4407-ad5b-4c8c04cd8f71
+  DialogueNodeData:
+  - rid: 8077583426884993061
+  - rid: 8077583426884993062
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:AnneasFirst><!:smile><ANIMATION:Talk>Tiene
+    que ser interesante luchar en 3 dimensiones<ANIMATION:Idle>@<ANIMATION:Talk><!:default>Por
+    cierto, me he econtrado a este t\xEDo<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Pero
+    como a\xFAn no le han dibujado no puede hablar<ANIMATION:Idle>@<ANIMATION:Talk><!:smile>Ya
+    me joder\xEDa<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 8077583426884993061
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 94cc274c-598c-4407-ad5b-4c8c04cd8f71
+          Position: {x: 186.4, y: 200}
+          LinkedNodes: []
+    - rid: 8077583426884993062
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 94cc274c-598c-4407-ad5b-4c8c04cd8f71
+        Position: {x: 186.4, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 5f79ca1d357cd154c8cb7b22a941412f, type: 2}
+        Emotion: smile
+        characterIndex: 0
+        DialogueLines:
+        - Tiene que ser interesante luchar en 3 dimensiones
+        - "<!:default>Por cierto, me he econtrado a este t\xEDo"
+        - "<!:confident>Pero como a\xFAn no le han dibujado no puede hablar"
+        - "<!:smile>Ya me joder\xEDa"

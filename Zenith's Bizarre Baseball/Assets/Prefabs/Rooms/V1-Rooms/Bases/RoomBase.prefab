@@ -177,9 +177,6 @@ GameObject:
   - component: {fileID: 7876875415004248768}
   - component: {fileID: 5070372483945940652}
   - component: {fileID: 5744875027545620359}
-  - component: {fileID: 9026741604457729464}
-  - component: {fileID: 7454446164594336739}
-  - component: {fileID: 4833836648059839877}
   - component: {fileID: 8335052167547922287}
   m_Layer: 15
   m_Name: MiniMapGFX
@@ -453,64 +450,6 @@ MonoBehaviour:
   _doorTile: {fileID: 11400000, guid: 83b0d6501037f754e8efbc79fda20a75, type: 2}
   paintOnStart: 0
   paintDoors: 1
---- !u!114 &9026741604457729464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5070372483945940650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a516d6bf4d7dd4695d96eb49627a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterCollidables:
-  - _targets: []
-    layer:
-      serializedVersion: 2
-      m_Bits: 640
-    conditions: []
-    collidables:
-    - {fileID: 7454446164594336739}
-  OnStayCollidables: []
-  checkDelay: 0.1
-  OnExitCollidables:
-  - _targets: []
-    layer:
-      serializedVersion: 2
-      m_Bits: 640
-    conditions: []
-    collidables:
-    - {fileID: 4833836648059839877}
---- !u!114 &7454446164594336739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5070372483945940650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f984b0431eddf5e46bd54583180db95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetTilemap: {fileID: 0}
-  _color: {r: 1, g: 0.6749892, b: 0.38113207, a: 1}
---- !u!114 &4833836648059839877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5070372483945940650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f984b0431eddf5e46bd54583180db95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetTilemap: {fileID: 0}
-  _color: {r: 0.76792455, g: 0.8282014, b: 1, a: 1}
 --- !u!114 &8335052167547922287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +465,7 @@ MonoBehaviour:
   _boolSignal: {fileID: 11400000, guid: 121ba2545e4c4b14fa5bfbca13170555, type: 2}
   _normalColor: {r: 0.7686275, g: 0.82745105, b: 1, a: 1}
   _overColor: {r: 0.5572097, g: 1, b: 0.4660377, a: 1}
+  _insideColor: {r: 1, g: 0.6745098, b: 0.3803922, a: 1}
   _teleportPoint: {fileID: 3224763606324564518}
   _playerIdentifiable: {fileID: 11400000, guid: 0faa6b2ba2ea10d48be5c61ff3b24bce, type: 2}
 --- !u!1001 &2460399372619061034

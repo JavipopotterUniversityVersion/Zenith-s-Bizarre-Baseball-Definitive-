@@ -204,7 +204,9 @@ public class Processor
 
         if(SearchCurve(value, out string curveName))
         {
-            string curveInput = value.Split(" ")[1];
+            string curveInput = "";
+            if(value.Split(" ").Length > 1) curveInput = value.Split(" ")[1];
+            else Debug.LogWarning("The curve " + curveName + " has no input");
             return _curveDictionary[curveName].Evaluate(Translate(curveInput, input));
         }
 

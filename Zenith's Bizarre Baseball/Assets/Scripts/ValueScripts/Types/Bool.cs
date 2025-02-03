@@ -31,6 +31,7 @@ public class Bool : ScriptableICondition, ISaveable
 
     public void SetInverseValue(bool value) => SetValue(!value);
 
+    [ContextMenu("Refresh Value")]
     public void RefreshValue() => onValueChanged.Invoke();
 
     public void SetRawValue(bool value) => _value = value;

@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: MyJ
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 8e659afb-139b-4c47-9ec0-4d9798c947a4
+  - BaseNodeGuid: 8e659afb-139b-4c47-9ec0-4d9798c947a4
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 5ad4a108-2f90-4047-bf9a-67429a4bf432
+  - BaseNodeGuid: 5ad4a108-2f90-4047-bf9a-67429a4bf432
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: fc116d60-abfa-4cb7-a9f3-1fb4401fb926
+  DialogueNodeData:
+  - rid: 8077583426884993039
+  - rid: 8077583426884993040
+  - rid: 8077583426884993041
+  - rid: 8077583426884993042
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:MarcusasFirst><!:default><ANIMATION:Talk>3
+    dimensiones?<ANIMATION:Idle>@<ANIMATION:Talk><!:happy>Parece emocionante<ANIMATION:Idle>@<CHARACTER:JimasFirst><!:default><ANIMATION:Talk>Una
+    dimensi\xF3n m\xE1s para odiar a la mujeres<ANIMATION:Idle>@<CHARACTER:MarcusasFirst><!:default><ANIMATION:Talk>Qui\xE9n
+    ha invitado a este t\xEDo?<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 8077583426884993039
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 8e659afb-139b-4c47-9ec0-4d9798c947a4
+          Position: {x: 196.8, y: 200}
+          LinkedNodes:
+          - GUID: 5ad4a108-2f90-4047-bf9a-67429a4bf432
+            Position: {x: 411.2, y: 200}
+            LinkedNodes:
+            - GUID: fc116d60-abfa-4cb7-a9f3-1fb4401fb926
+              Position: {x: 625.60004, y: 200}
+              LinkedNodes: []
+    - rid: 8077583426884993040
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 8e659afb-139b-4c47-9ec0-4d9798c947a4
+        Position: {x: 196.8, y: 200}
+        LinkedNodes:
+        - GUID: 5ad4a108-2f90-4047-bf9a-67429a4bf432
+          Position: {x: 411.2, y: 200}
+          LinkedNodes:
+          - GUID: fc116d60-abfa-4cb7-a9f3-1fb4401fb926
+            Position: {x: 625.60004, y: 200}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 541d1a2fdee02ff408746d552f6fde08, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - 3 dimensiones?
+        - <!:happy>Parece emocionante
+    - rid: 8077583426884993041
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 5ad4a108-2f90-4047-bf9a-67429a4bf432
+        Position: {x: 411.2, y: 200}
+        LinkedNodes:
+        - GUID: fc116d60-abfa-4cb7-a9f3-1fb4401fb926
+          Position: {x: 625.60004, y: 200}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 09f5fbe2391fbf4469a6dbb1b5ed195b, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "Una dimensi\xF3n m\xE1s para odiar a la mujeres"
+    - rid: 8077583426884993042
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: fc116d60-abfa-4cb7-a9f3-1fb4401fb926
+        Position: {x: 625.60004, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 541d1a2fdee02ff408746d552f6fde08, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - "Qui\xE9n ha invitado a este t\xEDo?"

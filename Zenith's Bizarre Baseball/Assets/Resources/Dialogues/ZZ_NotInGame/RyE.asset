@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
+  m_Name: RyE
+  m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeLinks:
+  - BaseNodeGuid: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
+    BasePortIndex: 0
+    PortName: Next
+    TargetNodeGuid: 9a141ca7-e737-4f91-a192-1408c0b9b87f
+  - BaseNodeGuid: 9a141ca7-e737-4f91-a192-1408c0b9b87f
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: bff89c8f-1344-4757-88b9-51142c98948b
+  - BaseNodeGuid: bff89c8f-1344-4757-88b9-51142c98948b
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 3cd6e03f-2e6e-4983-be3b-64a1075eda9f
+  - BaseNodeGuid: 3cd6e03f-2e6e-4983-be3b-64a1075eda9f
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: c8f49340-01e8-45dc-8289-508cde38f9e1
+  - BaseNodeGuid: c8f49340-01e8-45dc-8289-508cde38f9e1
+    BasePortIndex: 0
+    PortName: Output
+    TargetNodeGuid: 4a5fa5f7-b930-4e75-ace8-9ad67f27c84a
+  DialogueNodeData:
+  - rid: 8077583426884993053
+  - rid: 8077583426884993054
+  - rid: 8077583426884993055
+  - rid: 8077583426884993056
+  - rid: 8077583426884993057
+  - rid: 8077583426884993058
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ErwinasFirst><!:annoyed><ANIMATION:Talk>Como
+    hemos acabado en esta situaci\xF3n?<ANIMATION:Idle>@<CHARACTER:RainasFirst><!:happy><ANIMATION:Talk>No
+    seas tan gru\xF1on<ANIMATION:Idle>@<ANIMATION:Talk>No todos los d\xEDas puedes
+    estar en un entorno de 3 dimensiones<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Es
+    incre\xEDble experimentar esto en persona<ANIMATION:Idle>@<CHARACTER:ErwinasFirst><!:happy><ANIMATION:Talk>PERSONA!?<ANIMATION:Idle>@<CHARACTER:RainasFirst><!:worried><ANIMATION:Talk>Quiero
+    el divorcio<ANIMATION:Idle>@<CHARACTER:ErwinasFirst><!:default><ANIMATION:Talk>Vaya...<ANIMATION:Idle><END>"
+  references:
+    version: 2
+    RefIds:
+    - rid: 8077583426884993053
+      type: {class: NodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
+        Position: {x: 100, y: 200}
+        LinkedNodes:
+        - GUID: 9a141ca7-e737-4f91-a192-1408c0b9b87f
+          Position: {x: 186.4, y: 200}
+          LinkedNodes:
+          - GUID: bff89c8f-1344-4757-88b9-51142c98948b
+            Position: {x: 400.80002, y: 200}
+            LinkedNodes:
+            - GUID: 3cd6e03f-2e6e-4983-be3b-64a1075eda9f
+              Position: {x: 615.2, y: 200}
+              LinkedNodes:
+              - GUID: c8f49340-01e8-45dc-8289-508cde38f9e1
+                Position: {x: 829.60004, y: 200}
+                LinkedNodes:
+                - GUID: 4a5fa5f7-b930-4e75-ace8-9ad67f27c84a
+                  Position: {x: 1044, y: 200}
+                  LinkedNodes: []
+    - rid: 8077583426884993054
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 9a141ca7-e737-4f91-a192-1408c0b9b87f
+        Position: {x: 186.4, y: 200}
+        LinkedNodes:
+        - GUID: bff89c8f-1344-4757-88b9-51142c98948b
+          Position: {x: 400.80002, y: 200}
+          LinkedNodes:
+          - GUID: 3cd6e03f-2e6e-4983-be3b-64a1075eda9f
+            Position: {x: 615.2, y: 200}
+            LinkedNodes:
+            - GUID: c8f49340-01e8-45dc-8289-508cde38f9e1
+              Position: {x: 829.60004, y: 200}
+              LinkedNodes:
+              - GUID: 4a5fa5f7-b930-4e75-ace8-9ad67f27c84a
+                Position: {x: 1044, y: 200}
+                LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: annoyed
+        characterIndex: 0
+        DialogueLines:
+        - "Como hemos acabado en esta situaci\xF3n?"
+    - rid: 8077583426884993055
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 3cd6e03f-2e6e-4983-be3b-64a1075eda9f
+        Position: {x: 615.2, y: 200}
+        LinkedNodes:
+        - GUID: c8f49340-01e8-45dc-8289-508cde38f9e1
+          Position: {x: 829.60004, y: 200}
+          LinkedNodes:
+          - GUID: 4a5fa5f7-b930-4e75-ace8-9ad67f27c84a
+            Position: {x: 1044, y: 200}
+            LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: happy
+        characterIndex: 0
+        DialogueLines:
+        - PERSONA!?
+    - rid: 8077583426884993056
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: bff89c8f-1344-4757-88b9-51142c98948b
+        Position: {x: 400.80002, y: 200}
+        LinkedNodes:
+        - GUID: 3cd6e03f-2e6e-4983-be3b-64a1075eda9f
+          Position: {x: 615.2, y: 200}
+          LinkedNodes:
+          - GUID: c8f49340-01e8-45dc-8289-508cde38f9e1
+            Position: {x: 829.60004, y: 200}
+            LinkedNodes:
+            - GUID: 4a5fa5f7-b930-4e75-ace8-9ad67f27c84a
+              Position: {x: 1044, y: 200}
+              LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: happy
+        characterIndex: 0
+        DialogueLines:
+        - "No seas tan gru\xF1on"
+        - "No todos los d\xEDas puedes estar en un entorno de 3 dimensiones"
+        - "<!:confident>Es incre\xEDble experimentar esto en persona"
+    - rid: 8077583426884993057
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: c8f49340-01e8-45dc-8289-508cde38f9e1
+        Position: {x: 829.60004, y: 200}
+        LinkedNodes:
+        - GUID: 4a5fa5f7-b930-4e75-ace8-9ad67f27c84a
+          Position: {x: 1044, y: 200}
+          LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: b16c3b63a2c3f1c4293fbea044e4a8e5, type: 2}
+        Emotion: worried
+        characterIndex: 0
+        DialogueLines:
+        - Quiero el divorcio
+    - rid: 8077583426884993058
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 4a5fa5f7-b930-4e75-ace8-9ad67f27c84a
+        Position: {x: 1044, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: 7aac6420f67af9c46b457cfb4a3ae504, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - Vaya...

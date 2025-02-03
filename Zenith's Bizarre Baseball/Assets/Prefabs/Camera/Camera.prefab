@@ -309,13 +309,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boolSignal: {fileID: 11400000, guid: 121ba2545e4c4b14fa5bfbca13170555, type: 2}
-  _miniMapActive: {fileID: 11400000, guid: ae851f2e453147e458d81d4e022a145f, type: 2}
+  _miniMapIsActivate: {fileID: 11400000, guid: ae851f2e453147e458d81d4e022a145f, type: 2}
   _gameCullingMask:
     serializedVersion: 2
     m_Bits: 32759
   _mapCullingMask:
     serializedVersion: 2
     m_Bits: 32768
+  _moveSpeed: 400
+  _zoomSpeed: 10
+  _zoomAction: {fileID: 7156283290880935447, guid: bcf790f0a5a52274ca5c2432121c968c, type: 3}
+  _navigateAction: {fileID: 8417025884408532717, guid: bcf790f0a5a52274ca5c2432121c968c, type: 3}
 --- !u!1 &9132954639801444085
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9132954639801444085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.903088, y: 12.909349, z: -20.370358}
+  m_LocalPosition: {x: 9.837334, y: 13.246791, z: -23.113932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -378,8 +382,8 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 16
-  m_Depth: -1
+  orthographic size: 15.119433
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 32759

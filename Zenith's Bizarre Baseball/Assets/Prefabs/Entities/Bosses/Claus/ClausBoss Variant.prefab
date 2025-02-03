@@ -2762,6 +2762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f61b1206e1f5f84eb482bc46a96d3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementController: {fileID: 0}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -2846,6 +2847,9 @@ MonoBehaviour:
   rangeX: {x: 30, y: 30}
   rangeY: {x: -15, y: 15}
   areaType: 1
+  _onEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6378401176251758774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,7 +3754,7 @@ PrefabInstance:
       objectReference: {fileID: 6379139136165230827}
     - target: {fileID: 5457969179495792480, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Name
-      value: Talking -> False
+      value: Talking -> True
       objectReference: {fileID: 0}
     - target: {fileID: 6431957830472421788, guid: 540ee4f9d73c3d845869ea4cdb052835, type: 3}
       propertyPath: m_Name

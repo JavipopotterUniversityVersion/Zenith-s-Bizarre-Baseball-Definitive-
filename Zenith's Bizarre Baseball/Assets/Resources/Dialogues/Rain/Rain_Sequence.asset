@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Rain_Sequence
   m_EditorClassIdentifier: 
   _persistentData: {fileID: 11400000, guid: fe5ccb222f84f7448a4a24878ca773d8, type: 2}
-  dialogues: []
+  dialogues:
+  - dialogue: {fileID: 11400000, guid: 520957c296f4fc340be824744c42edd2, type: 2}
+    autoRemove: 1
+    condition: money >= 50
+  - dialogue: {fileID: 11400000, guid: 145481f876d08c840ad30c79dc5ac736, type: 2}
+    autoRemove: 0
+    condition: 
   _processor:
     operation: input
     _showReferences: 1

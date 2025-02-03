@@ -12,180 +12,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9829ca1aa707e468ac4ed0d9ecf1c6, type: 3}
   m_Name: ClausEncounter
   m_EditorClassIdentifier: 
+  onTriggerDialogue:
+    m_PersistentCalls:
+      m_Calls: []
   NodeLinks:
-  - BaseNodeGuid: fa922f9f-911f-41e7-b8f7-f49d3b62732c
+  - BaseNodeGuid: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
     BasePortIndex: 0
     PortName: Next
-    TargetNodeGuid: 8d6b47da-02f2-4816-a4b4-d29166797974
-  - BaseNodeGuid: 8d6b47da-02f2-4816-a4b4-d29166797974
+    TargetNodeGuid: 5b429361-ca82-44ae-9ea3-4f583303b72b
+  - BaseNodeGuid: 5b429361-ca82-44ae-9ea3-4f583303b72b
     BasePortIndex: 0
     PortName: Output
-    TargetNodeGuid: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
-  - BaseNodeGuid: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
+    TargetNodeGuid: 4f9e90a2-581d-46f2-a9e3-ebedc6ad0e31
+  - BaseNodeGuid: 4f9e90a2-581d-46f2-a9e3-ebedc6ad0e31
     BasePortIndex: 0
     PortName: Output
-    TargetNodeGuid: 52100164-14e9-4228-b20a-c3a93334df57
-  - BaseNodeGuid: 52100164-14e9-4228-b20a-c3a93334df57
-    BasePortIndex: 0
-    PortName: Output
-    TargetNodeGuid: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
-  - BaseNodeGuid: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
-    BasePortIndex: 0
-    PortName: Output
-    TargetNodeGuid: 526a22c4-727f-4bc6-80fe-9ce860b29502
-  - BaseNodeGuid: 526a22c4-727f-4bc6-80fe-9ce860b29502
-    BasePortIndex: 0
-    PortName: Output
-    TargetNodeGuid: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
+    TargetNodeGuid: 162350de-89d7-486e-87f4-36b2fb7f48a7
   DialogueNodeData:
-  - rid: 1149946283741413643
-  - rid: 1149946283741413644
-  - rid: 1149946283741413645
-  - rid: 1149946283741413646
-  - rid: 1149946283741413647
-  - rid: 1149946283741413648
-  - rid: 1149946283741413649
-  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>TUUUUUUU<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>\xBFYo?<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Pagar\xE1s
-    por lo que has hecho<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>Sinceramente
-    no s\xE9 de que co\xF1o me est\xE1s hablando<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><EMOTION:default><ANIMATION:Talk>Te
-    voy a dar una paliza<ANIMATION:Idle>@<CHARACTER:ClausasSecond><EMOTION:default><ANIMATION:Talk>\xBFEh?\xBFMe
-    vas a dar una paliza?<ANIMATION:Idle>@<ANIMATION:Talk>Adelante, intent\xE1lo<ANIMATION:Idle><END>"
+  - rid: 8077583426884993028
+  - rid: 8077583426884993029
+  - rid: 8077583426884993030
+  - rid: 8077583426884993031
+  _translationPreview: "<CHARACTER:NullasFirst><CHARACTER:NullasSecond><CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>Vaya,
+    el mundo est\xE1 en 3 dimensiones<ANIMATION:Idle>@<ANIMATION:Talk><!:confident>Que
+    guapo no?<ANIMATION:Idle>@<CHARACTER:ClausasSecond><!:default><ANIMATION:Talk>Deber\xEDamos
+    preocuparnos<ANIMATION:Idle>@<CHARACTER:ZenithasFirst><!:default><ANIMATION:Talk>...<ANIMATION:Idle>@<ANIMATION:Talk>Nah<ANIMATION:Idle><END>"
   references:
     version: 2
     RefIds:
-    - rid: 1149946283741413643
+    - rid: 8077583426884993028
       type: {class: NodeData, ns: , asm: Assembly-CSharp}
       data:
-        GUID: fa922f9f-911f-41e7-b8f7-f49d3b62732c
+        GUID: f2f5f518-4a9a-4ddd-b323-bbe3b5cbe1f0
         Position: {x: 100, y: 200}
         LinkedNodes:
-        - GUID: 8d6b47da-02f2-4816-a4b4-d29166797974
-          Position: {x: 186.4, y: 200}
+        - GUID: 5b429361-ca82-44ae-9ea3-4f583303b72b
+          Position: {x: 197.59999, y: 200}
           LinkedNodes:
-          - GUID: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
-            Position: {x: 400.80002, y: 200}
+          - GUID: 4f9e90a2-581d-46f2-a9e3-ebedc6ad0e31
+            Position: {x: 420.80002, y: 200}
             LinkedNodes:
-            - GUID: 52100164-14e9-4228-b20a-c3a93334df57
-              Position: {x: 615.2, y: 200}
-              LinkedNodes:
-              - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
-                Position: {x: 829.60004, y: 200}
-                LinkedNodes:
-                - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
-                  Position: {x: 1044, y: 200}
-                  LinkedNodes:
-                  - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
-                    Position: {x: 1258.3999, y: 200}
-                    LinkedNodes: []
-    - rid: 1149946283741413644
-      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
-      data:
-        GUID: 8d6b47da-02f2-4816-a4b4-d29166797974
-        Position: {x: 186.4, y: 200}
-        LinkedNodes:
-        - GUID: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
-          Position: {x: 400.80002, y: 200}
-          LinkedNodes:
-          - GUID: 52100164-14e9-4228-b20a-c3a93334df57
-            Position: {x: 615.2, y: 200}
-            LinkedNodes:
-            - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
-              Position: {x: 829.60004, y: 200}
-              LinkedNodes:
-              - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
-                Position: {x: 1044, y: 200}
-                LinkedNodes:
-                - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
-                  Position: {x: 1258.3999, y: 200}
-                  LinkedNodes: []
-        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: default
-        characterIndex: 0
-        DialogueLines:
-        - TUUUUUUU
-    - rid: 1149946283741413645
-      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
-      data:
-        GUID: 8ed85bb7-2894-49d9-9555-6e95932e3f0b
-        Position: {x: 400.80002, y: 200}
-        LinkedNodes:
-        - GUID: 52100164-14e9-4228-b20a-c3a93334df57
-          Position: {x: 615.2, y: 200}
-          LinkedNodes:
-          - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
-            Position: {x: 829.60004, y: 200}
-            LinkedNodes:
-            - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
-              Position: {x: 1044, y: 200}
-              LinkedNodes:
-              - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
-                Position: {x: 1258.3999, y: 200}
-                LinkedNodes: []
-        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
-        Emotion: default
-        characterIndex: 1
-        DialogueLines:
-        - "\xBFYo?"
-    - rid: 1149946283741413646
-      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
-      data:
-        GUID: 52100164-14e9-4228-b20a-c3a93334df57
-        Position: {x: 615.2, y: 200}
-        LinkedNodes:
-        - GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
-          Position: {x: 829.60004, y: 200}
-          LinkedNodes:
-          - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
-            Position: {x: 1044, y: 200}
-            LinkedNodes:
-            - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
-              Position: {x: 1258.3999, y: 200}
+            - GUID: 162350de-89d7-486e-87f4-36b2fb7f48a7
+              Position: {x: 635.2, y: 200}
               LinkedNodes: []
-        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
-        Emotion: default
-        characterIndex: 0
-        DialogueLines:
-        - "Pagar\xE1s por lo que has hecho"
-    - rid: 1149946283741413647
+    - rid: 8077583426884993029
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
-        GUID: 5c6516d9-fd26-4978-8d1b-b89ec652ee10
-        Position: {x: 829.60004, y: 200}
+        GUID: 5b429361-ca82-44ae-9ea3-4f583303b72b
+        Position: {x: 197.59999, y: 200}
         LinkedNodes:
-        - GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
-          Position: {x: 1044, y: 200}
+        - GUID: 4f9e90a2-581d-46f2-a9e3-ebedc6ad0e31
+          Position: {x: 420.80002, y: 200}
           LinkedNodes:
-          - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
-            Position: {x: 1258.3999, y: 200}
+          - GUID: 162350de-89d7-486e-87f4-36b2fb7f48a7
+            Position: {x: 635.2, y: 200}
             LinkedNodes: []
-        Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
-        Emotion: default
-        characterIndex: 1
-        DialogueLines:
-        - "Sinceramente no s\xE9 de que co\xF1o me est\xE1s hablando"
-    - rid: 1149946283741413648
-      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
-      data:
-        GUID: 526a22c4-727f-4bc6-80fe-9ce860b29502
-        Position: {x: 1044, y: 200}
-        LinkedNodes:
-        - GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
-          Position: {x: 1258.3999, y: 200}
-          LinkedNodes: []
         Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
         Emotion: default
         characterIndex: 0
         DialogueLines:
-        - Te voy a dar una paliza
-    - rid: 1149946283741413649
+        - "Vaya, el mundo est\xE1 en 3 dimensiones"
+        - <!:confident>Que guapo no?
+    - rid: 8077583426884993030
       type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
       data:
-        GUID: 939a7dd0-7cd6-4534-83fd-ca89375c5b90
-        Position: {x: 1258.3999, y: 200}
-        LinkedNodes: []
+        GUID: 4f9e90a2-581d-46f2-a9e3-ebedc6ad0e31
+        Position: {x: 420.80002, y: 200}
+        LinkedNodes:
+        - GUID: 162350de-89d7-486e-87f4-36b2fb7f48a7
+          Position: {x: 635.2, y: 200}
+          LinkedNodes: []
         Speaker: {fileID: 11400000, guid: 96b94129bcf922b4e84b58d49424dcf0, type: 2}
         Emotion: default
         characterIndex: 1
         DialogueLines:
-        - "\xBFEh?\xBFMe vas a dar una paliza?"
-        - "Adelante, intent\xE1lo"
+        - "Deber\xEDamos preocuparnos"
+    - rid: 8077583426884993031
+      type: {class: DialogueNodeData, ns: , asm: Assembly-CSharp}
+      data:
+        GUID: 162350de-89d7-486e-87f4-36b2fb7f48a7
+        Position: {x: 635.2, y: 200}
+        LinkedNodes: []
+        Speaker: {fileID: 11400000, guid: aa525e75ee71caa4ab62e4b8b1aaddb1, type: 2}
+        Emotion: default
+        characterIndex: 0
+        DialogueLines:
+        - ...
+        - Nah

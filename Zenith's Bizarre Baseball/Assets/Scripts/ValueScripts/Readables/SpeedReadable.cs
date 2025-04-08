@@ -11,6 +11,6 @@ public class SpeedReadable : MonoBehaviour, IReadable
     public float Read()
     {
         if(rb == null) return 0;
-        return rb.velocity.magnitude;
+        return rb.linearVelocity.magnitude;
     }
 }

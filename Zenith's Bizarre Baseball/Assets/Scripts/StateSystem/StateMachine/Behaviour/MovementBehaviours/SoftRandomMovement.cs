@@ -31,7 +31,7 @@ public class SoftRandomMovement : MonoBehaviour, IBehaviour
         }
         else
         {
-            Vector2 lerpDirection = Vector2.Lerp(movementController.Rb.velocity.normalized,
+            Vector2 lerpDirection = Vector2.Lerp(movementController.Rb.linearVelocity.normalized,
             randomDirection, timer / maxTime * lerpFactor);
 
             movementController.Move(lerpDirection * multiplier);

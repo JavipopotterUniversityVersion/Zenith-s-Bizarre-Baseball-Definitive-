@@ -18,6 +18,6 @@ public class DashPerformer : MonoBehaviour
 
     public void Dash()
     {
-        rb.velocity = dashDirection * dashSpeed.Value;
+        rb.linearVelocity = dashDirection * dashSpeed.Value;
     }
 }

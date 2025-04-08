@@ -9,7 +9,7 @@ public class SpeedSeterCollidable : ICollidable
     {
         if(collider.TryGetComponent(out Rigidbody2D rb))
         {
-            rb.velocity = rb.velocity.normalized * _speedProcessor.Result(rb.velocity.magnitude);
+            rb.linearVelocity = rb.linearVelocity.normalized * _speedProcessor.Result(rb.linearVelocity.magnitude);
         }
     }
 }

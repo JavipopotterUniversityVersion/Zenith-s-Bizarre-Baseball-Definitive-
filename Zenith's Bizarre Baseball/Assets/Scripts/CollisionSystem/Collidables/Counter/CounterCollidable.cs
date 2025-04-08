@@ -16,10 +16,10 @@ public class CounterCollidable : ICollidable
         {
             float force = _speedToAdd.Result();
 
-            float rbSpeed = rb.velocity.magnitude;
+            float rbSpeed = rb.linearVelocity.magnitude;
             force = force * _speedCurve.Evaluate(rbSpeed/force) * knockable.Reduction;
 
-            Vector2 direction = _recentBall ? -rb.velocity.normalized : (collider.transform.position - transform.position).normalized;
+            Vector2 direction = _recentBall ? -rb.linearVelocity.normalized : (collider.transform.position - transform.position).normalized;
 
             if(_recentBall == false) 
             {
@@ -27,7 +27,7 @@ public class CounterCollidable : ICollidable
                 StartCoroutine(RecentBallRoutine());
             }
 
-            rb.velocity = (rbSpeed + force) * direction;
+            rb.linearVelocity = (rbSpeed + force) * direction;
         }
     }
 

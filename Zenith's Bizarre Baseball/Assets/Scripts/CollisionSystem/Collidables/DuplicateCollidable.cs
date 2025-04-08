@@ -81,7 +81,7 @@ public class DuplicateCollidable : ICollidable, IGameObjectProcessor
             float angle = Mathf.Deg2Rad * (transform.eulerAngles.z + angleOffset + 90);
             Vector2 relativeDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             rb.transform.position += (Vector3) relativeDirection * initialDistance;
-            rb.velocity = relativeDirection.normalized * gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
+            rb.linearVelocity = relativeDirection.normalized * gameObject.GetComponent<Rigidbody2D>().linearVelocity.magnitude;
         }
 
         IGameObjectProcessor.Process(clone, _processors);

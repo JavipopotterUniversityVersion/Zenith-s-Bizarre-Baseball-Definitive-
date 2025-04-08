@@ -10,7 +10,7 @@ public class StopBehaviour : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        movementController.Rb.velocity = Vector2.zero;
+        movementController.Rb.linearVelocity = Vector2.zero;
     }
 
     private void OnValidate() {

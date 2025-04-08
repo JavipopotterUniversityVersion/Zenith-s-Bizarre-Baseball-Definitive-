@@ -27,7 +27,7 @@ public class BrokenSpriteHandler : MonoBehaviour
             rb.simulated = true;
             float angle = Random.Range(0, 360);
 
-            rb.velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Random.Range(10, 20);
+            rb.linearVelocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Random.Range(10, 20);
         }
 
         if(fadeOnBreak) StartCoroutine(StartFade());

@@ -8,6 +8,6 @@ public class InvertVelocityBehhaviour : MonoBehaviour, IBehaviour
 
     public void ExecuteBehaviour()
     {
-        rb.velocity = -rb.velocity;
+        rb.linearVelocity = -rb.linearVelocity;
     }
 }

@@ -14,6 +14,6 @@ public class Knockable : MonoBehaviour
 
     public void Knock(Vector2 force)
     {
-        rb.velocity = force * _reduction.Result();
+        rb.linearVelocity = force * _reduction.Result();
     }
 }

@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1608287890376158429, guid: 1a531c31fe5d1024dbca615fb2bd3148, type: 3}
@@ -84,6 +85,15 @@ PrefabInstance:
       value: LinkerGadget Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2166056230862449348, guid: 1a531c31fe5d1024dbca615fb2bd3148, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1795568357614601707}
+    - targetCorrespondingSourceObject: {fileID: 2166056230862449348, guid: 1a531c31fe5d1024dbca615fb2bd3148, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5581289752725238494}
   m_SourcePrefab: {fileID: 100100000, guid: 1a531c31fe5d1024dbca615fb2bd3148, type: 3}
 --- !u!1 &1881371238453640518 stripped
 GameObject:
@@ -92,6 +102,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!120 &1795568357614601707
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -107,6 +118,9 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -179,16 +193,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!114 &5581289752725238494
 MonoBehaviour:
   m_ObjectHideFlags: 0

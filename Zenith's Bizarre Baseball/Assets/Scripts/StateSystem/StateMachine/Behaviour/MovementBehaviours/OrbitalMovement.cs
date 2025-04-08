@@ -52,7 +52,7 @@ public class OrbitalMovement : MonoBehaviour, IBehaviour
         else
             finalDirection = perpendicular;
 
-        Vector2 ultimateDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, 
+        Vector2 ultimateDirection = Vector2.Lerp(movementController.Rb.linearVelocity.normalized, 
         finalDirection, Time.deltaTime * weight * 100) * Mathf.Abs(_multiplierProcessor.Result(multiplier));
 
         movementController.Move(ultimateDirection);

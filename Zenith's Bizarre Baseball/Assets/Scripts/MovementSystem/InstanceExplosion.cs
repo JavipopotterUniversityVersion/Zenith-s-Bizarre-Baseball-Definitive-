@@ -31,7 +31,7 @@ public class InstanceExplosion : ICollidable, IBehaviour
                     if(obj.TryGetComponent(out Rigidbody2D rb))
                     {
                         float angle = UnityEngine.Random.Range(_angleRange.x, _angleRange.y) * Mathf.Deg2Rad;
-                        rb.velocity = (new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized
+                        rb.linearVelocity = (new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized
                         + (Vector2)transform.up.normalized).normalized * UnityEngine.Random.Range(_force.x, _force.y);
                         rb.angularVelocity = UnityEngine.Random.Range(_angularForce.x, _angularForce.y);
                     }

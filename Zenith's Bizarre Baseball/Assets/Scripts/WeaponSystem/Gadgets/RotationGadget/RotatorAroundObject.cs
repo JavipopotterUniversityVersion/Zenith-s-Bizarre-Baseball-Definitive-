@@ -17,7 +17,7 @@ public class RotatorAroundObject : MonoBehaviour
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
-        _speed = rb.velocity.magnitude;
+        _speed = rb.linearVelocity.magnitude;
     }
 
     void Update()
@@ -25,6 +25,6 @@ public class RotatorAroundObject : MonoBehaviour
         Vector2 direction = (_target.position - transform.position).normalized;
         direction = new Vector2(direction.y, direction.x);
         direction *= orientation;
-        rb.velocity = direction * _speed;
+        rb.linearVelocity = direction * _speed;
     }
 }

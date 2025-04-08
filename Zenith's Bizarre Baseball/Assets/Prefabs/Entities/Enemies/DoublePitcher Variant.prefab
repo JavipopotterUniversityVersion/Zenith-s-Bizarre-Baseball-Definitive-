@@ -24,6 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336117191047721752}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,7 +32,6 @@ Transform:
   m_Children:
   - {fileID: 7458878576265257155}
   m_Father: {fileID: 6264812224806098177}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
 --- !u!114 &8182484840118081094
 MonoBehaviour:
@@ -54,6 +54,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1101453620180574850, guid: c252dd4eb7ac8e84081ad03d177e18d3, type: 3}
@@ -177,6 +178,12 @@ PrefabInstance:
       value: Move Away -12 m/s
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8545062897018968800, guid: c252dd4eb7ac8e84081ad03d177e18d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2876549739431385951}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c252dd4eb7ac8e84081ad03d177e18d3, type: 3}
 --- !u!4 &6264812224806098177 stripped
 Transform:
@@ -188,6 +195,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2876549739431385951}
     m_Modifications:
     - target: {fileID: 3854115010050469586, guid: f690c1bc2c48ba645818de186b29feac, type: 3}
@@ -243,6 +251,9 @@ PrefabInstance:
       value: Baseball Glove
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f690c1bc2c48ba645818de186b29feac, type: 3}
 --- !u!1 &2900365614496060151 stripped
 GameObject:

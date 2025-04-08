@@ -33,13 +33,13 @@ public class MovementController : MonoBehaviour
     {
         if(direction != Vector2.zero)
         {
-            if(rb.velocity == Vector2.zero) OnStartMoving.Invoke();
+            if(rb.linearVelocity == Vector2.zero) OnStartMoving.Invoke();
             else onMoving.Invoke(direction);
         }
         else if(direction == Vector2.zero) onStopMoving.Invoke();
 
-        if(_ignoreSpeed) rb.velocity = rb.velocity.magnitude * direction.normalized;
-        else rb.velocity = direction * Speed;
+        if(_ignoreSpeed) rb.linearVelocity = rb.linearVelocity.magnitude * direction.normalized;
+        else rb.linearVelocity = direction * Speed;
 
         _lastDirection = direction;
     }
@@ -50,11 +50,11 @@ public class MovementController : MonoBehaviour
         Move(direction);
     }
 
-    public void RecallLastDirection() => rb.velocity = _lastDirection * Speed;
+    public void RecallLastDirection() => rb.linearVelocity = _lastDirection * Speed;
 
     public void MoveForward() => SetVelocity(transform.up);
     void SetVelocity(Vector2 direction)
     { 
-        rb.velocity = direction * Speed;
+        rb.linearVelocity = direction * Speed;
     }
 }

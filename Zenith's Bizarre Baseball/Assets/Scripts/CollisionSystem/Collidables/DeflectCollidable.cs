@@ -10,7 +10,7 @@ public class DeflectCollidable : ICollidable
     {
         if (collider.TryGetComponent(out Rigidbody2D rigidbody))
         {
-            rigidbody.velocity = Vector2.Reflect(rigidbody.velocity, (collider.transform.position - transform.position).normalized) * _deflectMultiplier.Value;
+            rigidbody.linearVelocity = Vector2.Reflect(rigidbody.linearVelocity, (collider.transform.position - transform.position).normalized) * _deflectMultiplier.Value;
         }
     }
 }

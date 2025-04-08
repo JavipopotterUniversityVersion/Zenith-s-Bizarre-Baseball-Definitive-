@@ -13,7 +13,7 @@ public class ReboundCollidable : ICollidable
 
     public override void OnCollide(Collider2D collider)
     {
-        rb.velocity = Vector2.Reflect(rb.velocity, (collider.transform.position - transform.position).normalized) * _reboundMultiplier.Value;
+        rb.linearVelocity = Vector2.Reflect(rb.linearVelocity, (collider.transform.position - transform.position).normalized) * _reboundMultiplier.Value;
         StartCoroutine(CheckSuccess());
     }
 

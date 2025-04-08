@@ -24,7 +24,7 @@ public class FollowTarget : MonoBehaviour, IBehaviour
         Vector2 fixedDirection;
         
         if(instant) fixedDirection = direction;
-        else fixedDirection = Vector2.Lerp(movementController.Rb.velocity.normalized, direction, Time.deltaTime * weight * 100).normalized;
+        else fixedDirection = Vector2.Lerp(movementController.Rb.linearVelocity.normalized, direction, Time.deltaTime * weight * 100).normalized;
 
         movementController.Move(fixedDirection * _multiplierProcessor.Result(multiplier));
     }

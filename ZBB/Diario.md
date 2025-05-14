@@ -1,0 +1,3 @@
+**14/05/2025**
+Hemos creado un proyecto de obsidian para guardar la documentación y hemos respondido a todas las preguntas relacionadas a las convenciones de código y a todas preguntas relacionadas al arte. También Javi le ha explicado a Mika todo el lore de los personajes para ponernos en contexto.
+Para la siguiente sesión responderemos a las preguntas que queden, haremos las que no existan y empezaremos con Narrativa para dejarla bien asentada y poder desarrollar acorde a esta.
